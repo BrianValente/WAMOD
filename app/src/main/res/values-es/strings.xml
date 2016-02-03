@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- WAMOD -->
+    <string name="wamod_settings">WAMOD Settings</string>
+    <string name="chat_with">Chat con %1$s</string>
+    <string name="profile_of">Perfil de %1$s</string>
+
+    <string name="wamod_general">General</string>
+    <string name="wamod_statusbarcolor">Color de la barra de estado</string>
+    <string name="wamod_toolbarcolor">Color del toolbar</string>
+    <string name="wamod_toolbarforeground">Color del texto del toolbar</string>
+    <string name="wamod_navbarcolor">Color de la barra de navegación</string>
+    <string name="wamod_home">Inicio</string>
+    <string name="wamod_hometheme">Tema del inicio</string>
+    <string name="wamod_conversation">Conversación</string>
+    <string name="wamod_hideprofilephoto">Ocultar foto de contacto</string>
+    <string name="wamod_hidetoolbaricons">Ocultar los botones del toolbar</string>
+    <string name="wamod_proximitysensor">Sensor de proximidad</string>
+    <string name="wamod_rightbubblecolor">Color de la burbuja derecha</string>
+    <string name="wamod_rightbubbletextcolor">Color del mensaje de la burbuja derecha</string>
+    <string name="wamod_rightbubbledatecolor">Color de la hora de la burbuja derecha</string>
+    <string name="wamod_leftbubblecolor">Color de la burbuja izquierda</string>
+    <string name="wamod_leftbubbletextcolor">Color del mensaje de la burbuja izquierda</string>
+    <string name="wamod_leftbubbledatecolor">Color de la hora de la burbuja izquierda</string>
+    <string name="wamod_enablecustomparticipantnamecolor">Activar color personalizado del nombre en grupos</string>
+    <string name="wamod_bubblestyle">Estilo de las burbujas</string>
+    <string name="wamod_bubblelayoutstyle">Layout de las burbujas</string>
+    <string name="wamod_tickstyle">Estilo de los tick</string>
+    <string name="wamod_entrystyle">Estilo del footer</string>
+    <string name="wamod_personalizeentry">Personalizar footer</string>
+    <string name="wamod_overviewlollipopup">Apps. recientes (Lollipop en adelante)</string>
+    <string name="wamod_enablecardcolor">Activar color de las tarjetas</string>
+    <string name="wamod_openchatslikenewtasks">Abrir chats en tarjetas</string>
+    <string name="wamod_privacy">Privacidad</string>
+    <string name="wamod_freezelastseen">Congelar últ. vez</string>
+    <string name="wamod_no2ndtick">No 2nd tick</string>
+    <string name="wamod_nobluetick">No tick azul</string>
+    <string name="wamod_hidetyping">Ocultar "Escribiendo"</string>
+    <string name="wamod_alwaysonline">Siempre en línea</string>
+    <string name="wamod_miscellaneous">Misceláneos</string>
+    <string name="wamod_disablecolorpicker">Desactivar selector de color</string>
+    <string name="wamod_checkforupdates">Buscar actualizaciones</string>
+    <string name="wamod_restoredefaults">Restaurar valores por defecto</string>
+    <string name="wamod_about">Acerca de</string>
+    <string name="wamod_opengooglepluscommunity">Abrir comunidad de Google+</string>
+    <string name="wamod_opendevtwitterprofile">Abrir perfil de Twitter del desarrollador</string>
+    <string name="wamod_darkmode">Modo oscuro</string>
+    <string name="wamod_customparticipantnamecolor">Color del nombre en grupos</string>
+    <string name="wamod_darkmodesummary">La interfaz se vuelve oscura</string>
+    <string name="wamod_hideprofilephotosummary">Oculta la foto del contacto del toolbar</string>
+    <string name="wamod_hidetoolbarattachsummary">Oculta los botones de llamar y adjuntar</string>
+    <string name="wamod_proximitysensorsummary">Activa el sensor de proximidad mientras escuchas una nota de voz</string>
+    <string name="wamod_enablecardcolorsummary">Las tarjetas tendrán el color del toolbar</string>
+    <string name="wamod_openchatslikenewtaskssummary">Se podrán abrir varios chats al mismo tiempo</string>
+    <string name="wamod_freezelastseensummary">Tu últ. vez se congelará</string>
+    <string name="wamod_no2ndticksummary">La gente no sabrá si te han llegado sus mensajes</string>
+    <string name="wamod_noblueticksummary">La gente no sabrá si has leído sus mensajes</string>
+    <string name="wamod_hidetypingsummary">La gente no sabrá si estás escribiendo</string>
+    <string name="wamod_alwaysonlinesummary">¡Pero no quites WhatsApp de las apps recientes!</string>
+    <string name="wamod_restoredefaultsprompt">¿Seguro de que quieres restaurar TODAS tus configuraciones a sus valores por defecto?</string>
+    <string name="wamod_donerestartwamod">Hecho, reinicia WAMOD</string>
+    <string name="wamod_updateavailable">Actualización de WAMOD disponible</string>
+    <string name="wamod_updateavailablemessage">%1$s está disponible para descargar. Tu versión es %2$s.</string>
+    <string name="wamod_download">Descargar</string>
+    <string name="wamod_later">Más tarde</string>
+    <string name="wamod_ignorethisupdate">Ignorar esta versión</string>
+    <string name="wamod_uptodate">WAMOD está actualizado</string>
+    <string name="wamod_errorcontactingserver">Hubo un error contactando con el servidor</string>
+    <string name="wamod_onlylollipopandup">Sólo Lollipop en adelante</string>
+    <string name="wamod_insertahexcolorwithout">Inserta un color (sin #)</string>
+    <string name="wamod_wamodsettings">Configuración de WAMOD</string>
+</resources>

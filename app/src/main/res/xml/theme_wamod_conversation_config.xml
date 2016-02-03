@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="content">
+    <PreferenceCategory
+        android:title="Text entry">
+        <Preference
+            android:key="theme_wamod_conversation_entry_bgcolor"
+            android:title="Background color"
+            android:summary="" />
+        <Preference
+            android:key="theme_wamod_conversation_entry_entrybgcolor"
+            android:title="Entry background color"
+            android:summary=""/>
+        <Preference
+            android:key="theme_wamod_conversation_entry_hinttextcolor"
+            android:title="Entry hint text color"
+            android:summary=""/>
+        <Preference
+            android:key="theme_wamod_conversation_entry_textcolor"
+            android:title="Entry text color"
+            android:summary=""/>
+        <Preference
+            android:key="theme_wamod_conversation_entry_emojibtncolor"
+            android:title="Emoji button color"
+            android:summary=""/>
+        <Preference
+            android:key="theme_wamod_conversation_entry_btncolor"
+            android:title="Attach buttons color"
+            android:summary=""/>
+        <Preference
+            android:key="theme_wamod_conversation_entry_sendbtncolor"
+            android:title="Send button color"
+            android:summary=""/>
+    </PreferenceCategory>
+</PreferenceScreen>
