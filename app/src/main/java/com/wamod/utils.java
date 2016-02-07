@@ -38,7 +38,7 @@ import java.io.InputStream;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodversion = "test";
+    public static String wamodversion = "1.0.1";
 
     public static long timeSinceLastCheckin = 0;
 
