@@ -2,25 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/classes-65bce7f07a3d55f50fd19d5aaefc59a883511762.jar" />
+        <dex dex="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/pre-dexed/debug/classes-b39a1c5eed6510bc739ea50e7fae81a3037c1a52.jar" />
     </item>
     <item
-        jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/AndroidStudioProject/library/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ece2c73d58618f45d45f99a6e3bef7e3cfea0a2c">
-        <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/classes-86b872a6ec17101dd733ece240d2ad6e62dbcac6.jar" />
-    </item>
-    <item
-        jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-c986602f2d9bb76f1e2aa8db87c7ba27ce9e5a1e.jar" />
+        <dex dex="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-abacec44bdbd36a6583648323449b692ba0d8063.jar" />
     </item>
     <item
         jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
@@ -35,6 +28,41 @@
         revision="22.0.1"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
         <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-a8f31a57aa972b01175524f6d4eb7cc26c2afa34.jar" />
+    </item>
+    <item
+        jar="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/exploded-aar/WAMOD/library/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2be824282ac16770404c5823900b1cd03105d254">
+        <dex dex="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/pre-dexed/debug/classes-68738c8496a0bad23b18e86a4b75ba9d440d5d6a.jar" />
+    </item>
+    <item
+        jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-c986602f2d9bb76f1e2aa8db87c7ba27ce9e5a1e.jar" />
+    </item>
+    <item
+        jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/classes-65bce7f07a3d55f50fd19d5aaefc59a883511762.jar" />
+    </item>
+    <item
+        jar="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/exploded-aar/AndroidStudioProject/library/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ece2c73d58618f45d45f99a6e3bef7e3cfea0a2c">
+        <dex dex="/Users/brianvalente/wamod/2.12.391/AndroidStudioProject/app/build/intermediates/pre-dexed/debug/classes-86b872a6ec17101dd733ece240d2ad6e62dbcac6.jar" />
+    </item>
+    <item
+        jar="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/brianvalente/wamod/AndroidStudioProject/WAMOD/app/build/intermediates/pre-dexed/debug/classes-6ac97a120ae1b705df9a3bf3dc71459c25eb78e1.jar" />
     </item>
 
 </items>

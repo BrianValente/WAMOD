@@ -60,13 +60,15 @@
         <item>Stock</item>
         <item>WAMOD</item>
         <item>Hangouts</item>
-        <item>iMessage</item>
+        <item>iMessage by Naza Herrera</item>
+        <item>Aran by Arnold Angulo</item>
     </string-array>
     <string-array name="conversation_style_entry_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="conversation_style_toolbar">

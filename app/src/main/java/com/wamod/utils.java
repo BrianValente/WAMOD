@@ -38,7 +38,7 @@ import java.io.InputStream;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodversion = "1.0";
+    public static String wamodversion = "test";
 
     public static long timeSinceLastCheckin = 0;
 
@@ -173,9 +173,17 @@ public class utils extends Activity {
             case 6:
                 utils.edit.putBoolean("conversation_androidgallery", true);
             case 7:
+                utils.edit.putString("theme_aran_conversation_bgcolor", "000000");
+                utils.edit.putString("theme_aran_conversation_entry_bgcolor", "222222");
+                utils.edit.putString("theme_aran_conversation_entry_hintcolor", "ffffff");
+                utils.edit.putString("theme_aran_conversation_entry_textcolor", "ffffff");
+                utils.edit.putString("theme_aran_conversation_mic_color", "ee5555");
+                utils.edit.putString("theme_aran_conversation_send_color", "ffffff");
+                utils.edit.putString("theme_aran_conversation_emoji_color", "ffffff");
+            case 8:
                 break;
         }
-        utils.edit.putInt("wamodversion", 6);
+        utils.edit.putInt("wamodversion", 7);
         utils.edit.apply();
     }
 

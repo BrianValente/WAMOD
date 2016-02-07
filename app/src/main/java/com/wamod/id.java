@@ -93,6 +93,9 @@ public class id {
     public static int conversationentrywamod_contact = 0x7f1003b7;
     public static int conversationentrywamod_camera = 0x7f1003b8;
 
+    /** Conversation entry: ARAN */
+
+
     /** Contact info */
     public static int profileof = 0x7f0805fe;
 

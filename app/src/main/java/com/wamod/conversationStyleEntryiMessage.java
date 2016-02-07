@@ -9,7 +9,6 @@ import com.whatsapp.av5;
  */
 public class conversationStyleEntryiMessage {
     public static void init(com.whatsapp.Conversation activity) {
-        ImageButton emoji = (ImageButton) activity.findViewById(id.emojibtn);
-        emoji.setOnClickListener(new av5());
+
     }
 }

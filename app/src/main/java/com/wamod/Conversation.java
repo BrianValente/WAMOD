@@ -699,6 +699,10 @@ public class Conversation extends DialogToastListActivity {
                 // iMessage
                 conversationStyleEntryiMessage.init(a);
                 break;
+            case "4":
+                // Aran
+                conversationStyleEntryAran.init(a);
+                break;
         }
 
         if (utils.prefs.getBoolean("conversation_toolbarexit", false)) {
@@ -726,6 +730,10 @@ public class Conversation extends DialogToastListActivity {
                 break;
             case 3:
                 conversation = 0x7f0300f9;
+                emoji_picker_horizontal = 0x7f030078;
+                break;
+            case 4:
+                conversation = 0x7f0300fc;
                 emoji_picker_horizontal = 0x7f030078;
                 break;
         }
