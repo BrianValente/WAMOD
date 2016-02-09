@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="content">
+    <PreferenceCategory
+        android:title="Text entry">
+        <Preference
+            android:key="theme_simple_conversation_bgcolor"
+            android:title="Background color"
+            android:summary="" />
+        <Preference
+            android:key="theme_simple_conversation_entry_hintcolor"
+            android:title="Hint color"
+            android:summary="" />
+        <Preference
+            android:key="theme_simple_conversation_entry_textcolor"
+            android:title="Text color"
+            android:summary="" />
+        <Preference
+            android:key="theme_simple_conversation_mic_color"
+            android:title="Microphone button color"
+            android:summary=""/>
+        <Preference
+            android:key="theme_simple_conversation_send_color"
+            android:title="Send button color"
+            android:summary=""/>
+    </PreferenceCategory>
+</PreferenceScreen>

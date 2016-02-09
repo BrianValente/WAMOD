@@ -32,6 +32,8 @@ public class conversationStyleEntryWAMOD {
         final ImageButton voicenote = (ImageButton) activity.findViewById(id.voice_note_btn);
         final ImageButton emojibtn = (ImageButton) activity.findViewById(id.emojibtn);
 
+        entry.clearFocus();
+
 
         footer.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_bgcolor", "ffffff")));
         bg.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_entrybgcolor", "ffffff")), PorterDuff.Mode.MULTIPLY);

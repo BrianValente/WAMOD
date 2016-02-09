@@ -1,36 +1,20 @@
 package com.wamod;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.opengl.Visibility;
 import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.whatsapp.App;
 import com.whatsapp.DialogToastListActivity;
-import com.whatsapp.Main;
 
 /**
  * Created by brianvalente on 7/9/15.
@@ -379,7 +363,7 @@ public class Conversation extends DialogToastListActivity {
                 break;
             case "3":
                 // iMessage
-                conversationStyleEntryiMessage.init(activity);
+                conversationStyleEntrySimple.init(activity);
                 break;
         }
 
@@ -696,12 +680,16 @@ public class Conversation extends DialogToastListActivity {
                 conversationStyleEntryHangouts.init(a);
                 break;
             case "3":
-                // iMessage
-                conversationStyleEntryiMessage.init(a);
+                // Simple
+                conversationStyleEntrySimple.init(a);
                 break;
             case "4":
                 // Aran
                 conversationStyleEntryAran.init(a);
+                break;
+            case "5":
+                // Mood
+                conversationStyleEntryMood.init(a);
                 break;
         }
 
@@ -734,6 +722,10 @@ public class Conversation extends DialogToastListActivity {
                 break;
             case 4:
                 conversation = 0x7f0300fc;
+                emoji_picker_horizontal = 0x7f030078;
+                break;
+            case 5:
+                conversation = 0x7f0300fd;
                 emoji_picker_horizontal = 0x7f030078;
                 break;
         }

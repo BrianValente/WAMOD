@@ -62,6 +62,9 @@ public class id {
     /** WAMOD SETTINGS ENTRY */
     public static int theme_wamod_conversation_config = 0x7f060015;
     public static int theme_hangouts_conversation_config = 0x7f060016;
+    public static int theme_aran_conversation_config = 0x7f060017;
+    public static int theme_simple_conversation_config = 0x7f060018;
+    public static int theme_mood_conversation_config = 0x7f060019;
 
     /** CONVERSATION */
     public static int conversationtitle = 0x7f100187;
@@ -78,6 +81,8 @@ public class id {
     public static int entry = 0x7f1001e0;
     public static int emojibtn = 0x7f1001df;
 
+    public static int wamod_blur = 0x7f1003ca;
+
     /** Conversation entry: Hangouts */
     public static int conversationentryhangouts_gallery = 0x7f1003b9;
     public static int conversationentryhangouts_camera = 0x7f1003ba;
@@ -93,7 +98,8 @@ public class id {
     public static int conversationentrywamod_contact = 0x7f1003b7;
     public static int conversationentrywamod_camera = 0x7f1003b8;
 
-    /** Conversation entry: ARAN */
+    /** Conversation entry: Simple */
+
 
 
     /** Contact info */
