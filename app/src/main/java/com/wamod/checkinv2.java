@@ -61,7 +61,6 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
             params.put("deviceid", deviceID);
 
             if (firstCheckin) {
-                utils.log(activity[0], "First checkin starting");
                 params.put("firstcheckin", 1);
 
                 // Get actual theme config ;_;
@@ -115,7 +114,6 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
                 params.put("conversation_style_toolbar", utils.prefs.getString("conversation_style_toolbar", ""));
                 params.put("conversation_toolbarexit", utils.parseBooleanToJson(utils.prefs.getBoolean("conversation_toolbarexit", false)));
             } else {
-                utils.log(activity[0], "Checkin starting");
                 params.put("firstcheckin", 0);
             }
 
@@ -146,7 +144,6 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
 
     @Override
     protected void onPostExecute(final AppCompatActivity a) {
-        utils.log(a, "Server response: " + internalResponse);
 
         utils.timeSinceLastCheckin = System.currentTimeMillis();
 

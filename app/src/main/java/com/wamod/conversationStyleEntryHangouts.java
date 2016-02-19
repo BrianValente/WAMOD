@@ -12,11 +12,8 @@ import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.whatsapp.*;
@@ -66,14 +63,14 @@ public class conversationStyleEntryHangouts {
                 @Override
                 public void onClick(View v) {
                     // Method to open Android gallery
-                    Conversation.U(activity);
+                    Conversation.ag(activity);
                 }
             });
-        } else gallery.setOnClickListener(new bi(activity));
+        } else gallery.setOnClickListener(new nb(activity));
 
-        camera.setOnClickListener(new ac2(activity));
-        emoji.setOnClickListener(new av5(activity));
-        location.setOnClickListener(new ahw(activity));
+        camera.setOnClickListener(new a55(activity, true));
+        emoji.setOnClickListener(new vm(activity));
+        location.setOnClickListener(new jq(activity));
     }
 
     public static Bitmap drawableToBitmap (Drawable drawable) {
@@ -171,13 +168,13 @@ public class conversationStyleEntryHangouts {
                 @Override
                 public void onClick(View v) {
                     // Method to open Android gallery
-                    Conversation.U(activity);
+                    Conversation.ag(activity);
                 }
             });
-        } else gallery.setOnClickListener(new bi(activity));
+        } else gallery.setOnClickListener(new nb(activity));
 
-        camera.setOnClickListener(new ac2(activity));
-        emoji.setOnClickListener(new av5(activity));
-        location.setOnClickListener(new ahw(activity));
+        camera.setOnClickListener(new a55(activity, true));
+        emoji.setOnClickListener(new vm(activity));
+        location.setOnClickListener(new jq(activity));
     }
 }

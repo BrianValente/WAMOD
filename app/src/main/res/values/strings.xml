@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">WAMOD Settings</string>
-    <string name="title_activity_test">Test</string>
+
+    <string name="conversation_last_seen">seen</string>
+    <string name="conversation_contact_online">online now</string>
+    <string name="type_a_message">Say something</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
@@ -82,14 +85,17 @@
     <string name="wamod_unlinkdevice_message">Are you sure you want to unlink your device from WAMOD Themes?</string>
     <string name="wamod_crash_title">WAMOD crashed!</string>
     <string name="wamod_crash_message">There was an error loading your configuration so the default values have been restored.</string>
-    <string name="wamod_crash_button">Okay ☹️</string>
+    <string name="wamod_crash_button">Okay ☹</string>
     <string name="wamod_wamodthemes">WAMOD Themes️</string>
     <string name="wamod_wamodthemes_constantlycheck">Constantly check for a new theme</string>
     <string name="wamod_wamodthemes_constantlycheck_summary">Uses a little more of data</string>
-    <string name="wamod_loading">Loading...️</string>
-    <string name="wamod_done">Done️</string>
+    <string name="wamod_loading">Loading...</string>
+    <string name="wamod_done">Done</string>
     <string name="wamod_error">There was an error</string>
     <string name="wamod_visitwamodthemes">Visit WAMOD Themes</string>
     <string name="wamod_androidgallery">Use Android Gallery</string>
     <string name="wamod_androidgallerysummary">You can attach photos and videos using your favorite gallery</string>
+    <string name="tabs_indicator_color">Tabs indicator color</string>
+    <string name="wamod_settings">WAMOD Settings</string>
+    <string name="wamod_credits">Credits</string>
 </resources>

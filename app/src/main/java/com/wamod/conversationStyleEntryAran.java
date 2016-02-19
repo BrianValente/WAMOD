@@ -3,24 +3,19 @@ package com.wamod;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.whatsapp.Conversation;
-import com.whatsapp.ac2;
-import com.whatsapp.ahw;
-import com.whatsapp.av5;
-import com.whatsapp.bi;
+import com.whatsapp.vm;
 
 /**
  * Created by brianvalente on 9/21/15.
  */
 public class conversationStyleEntryAran {
     public static void init(final Conversation a) {
+
         FrameLayout footer = (FrameLayout) a.findViewById(id.conversationentrywamod_footer);
         FrameLayout inputLayout = (FrameLayout) a.findViewById(id.input_layout);
         ImageButton emojiBtn = (ImageButton) a.findViewById(id.conversationentryhangouts_emoji);
@@ -42,5 +37,7 @@ public class conversationStyleEntryAran {
 
         entryET.setTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_textcolor", "ffffff")));
         entryET.setHintTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_hintcolor", "ffffff")));
+
+        emojiBtn.setOnClickListener(new vm(a));
     }
 }

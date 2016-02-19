@@ -2,7 +2,7 @@
 <resources>
 
     <!-- WAMOD -->
-    <string name="wamod_settings">WAMOD Settings</string>
+    <string name="wamod_settings">Ajustes de WAMOD</string>
     <string name="chat_with">Chat con %1$s</string>
     <string name="profile_of">Perfil de %1$s</string>
 
@@ -70,4 +70,30 @@
     <string name="wamod_onlylollipopandup">Sólo Lollipop en adelante</string>
     <string name="wamod_insertahexcolorwithout">Inserta un color (sin #)</string>
     <string name="wamod_wamodsettings">Configuración de WAMOD</string>
+    <string name="tabs_indicator_color">Color del indicador de las pestañas</string>
+    <string name="wamod_androidgallery">Usar galería de Android</string>
+    <string name="wamod_androidgallerysummary">Puedes adjuntar fotos usando tu galería favorita</string>
+    <string name="wamod_closebutton">Botón cerrar</string>
+    <string name="wamod_visitwamodthemes">Visitar WAMOD Themes</string>
+    <string name="wamod_wamodthemes">WAMOD Themes</string>
+    <string name="wamod_wamodthemes_constantlycheck">Buscar por nuevos temas constantemente</string>
+    <string name="wamod_wamodthemes_constantlycheck_summary">Usa más datos</string>
+    <string name="wamod_unlinkdevice_title">Desenlazar dispositivo</string>
+    <string name="wamod_unlinkdevice_message">¿Estás seguro de que quieres desenlazar tu dispositivo?</string>
+    <string name="wamod_unlinkdevice">Desenlazar dispositivo de WAMOD Themes</string>
+    <string name="wamod_unavailable">No disponible</string>
+    <string name="wamod_loading">Cargando...</string>
+    <string name="wamod_marshmallowandup">Android 6.0 (Marshmallow) en adelante</string>
+    <string name="wamod_error">Hubo un error</string>
+    <string name="wamod_enablecustomconversationbgcolor">Activar color de fondo</string>
+    <string name="wamod_done">Hecho</string>
+    <string name="wamod_darkstatusbaricons">Iconos oscuros en la barra de estado</string>
+    <string name="wamod_customconversationbgcolor">Color de fondo personalizado</string>
+    <string name="wamod_crash_title">¡WAMOD se murió!</string>
+    <string name="wamod_crash_message">Hubo un error al cargar tu configuración la última vez que ingresaste, por lo que se cargaron los valores por defecto.</string>
+    <string name="wamod_crash_button">Okay ☹</string>
+    <string name="wamod_conversation_toolbar_style">Estilo del toolbar</string>
+    <string name="wamod_closebuttonsummary">Cierra la actividad instantaneamente</string>
+    <string name="title_activity_theme_wamod_conversation_config">Ajustes del tema</string>
+    <string name="wamod_credits">Créditos</string>
 </resources>

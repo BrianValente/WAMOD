@@ -2,12 +2,9 @@ package com.wamod;
 
 import android.graphics.Color;
 import android.util.TypedValue;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-
-import com.whatsapp.av5;
 
 /**
  * Created by brianvalente on 10/4/15.

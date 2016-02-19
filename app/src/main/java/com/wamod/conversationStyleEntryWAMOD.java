@@ -59,7 +59,7 @@ public class conversationStyleEntryWAMOD {
         if (entry.getText().toString().trim().length() == 0) {
             entry.setGravity(Gravity.CENTER);
             entry.setPadding(entry.getPaddingLeft(), entry.getPaddingTop(), entry.getPaddingLeft(), entry.getPaddingBottom());
-            entry.setCursorVisible(false);
+            //entry.setCursorVisible(false);
         }
         entry.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
@@ -76,7 +76,7 @@ public class conversationStyleEntryWAMOD {
                 } else {
                     entry.setGravity(Gravity.CENTER);
                     entry.setPadding(entry.getPaddingLeft(), entry.getPaddingTop(), entry.getPaddingLeft(), entry.getPaddingBottom());
-                    entry.setCursorVisible(false);
+                    //entry.setCursorVisible(false);
                 }
             }
         });
@@ -86,15 +86,15 @@ public class conversationStyleEntryWAMOD {
                 @Override
                 public void onClick(View v) {
                     // Method to open Android gallery
-                    Conversation.U(activity);
+                    Conversation.ag(activity);
                 }
             });
-        } else gallery.setOnClickListener(new bi(activity));
+        } else gallery.setOnClickListener(new nb(activity));
 
-        gallery.setOnLongClickListener(new a12(activity));
-        audio.setOnClickListener(new ah3(activity));
-        location.setOnClickListener(new ahw(activity));
-        contact.setOnClickListener(new add(activity));
-        camera.setOnClickListener(new ac2(activity));
+        gallery.setOnLongClickListener(new _d(activity));
+        audio.setOnClickListener(new alh(activity));
+        location.setOnClickListener(new jq(activity));
+        contact.setOnClickListener(new al6(activity));
+        camera.setOnClickListener(new a55(activity, true));
     }
 }

@@ -96,27 +96,27 @@ public class HomeActivity extends AppCompatActivity {
         int conversationsRow, callsRow, contactPickerRow;
         switch (homeThemeID) {
             case 0:
-                conversationsRow = 0x7f030068;
-                callsRow = 0x7f030031;
-                contactPickerRow = 0x7f030043;
+                conversationsRow = 0x7f03006a;
+                callsRow = 0x7f030032;
+                contactPickerRow = 0x7f030044;
                 break;
             default:
             case 1:
-                conversationsRow = 0x7f0300ec;
-                callsRow = 0x7f0300ed;
-                contactPickerRow = 0x7f0300ee;
+                conversationsRow = 0x7f031001;
+                callsRow = 0x7f031002;
+                contactPickerRow = 0x7f031003;
                 break;
             case 2:
                 // Stock w/ counter in photo
-                conversationsRow = 0x7f0300f7;
-                callsRow = 0x7f030031;
-                contactPickerRow = 0x7f030043;
+                conversationsRow = 0x7f031010;
+                callsRow = 0x7f030032;
+                contactPickerRow = 0x7f030044;
                 break;
             case 3:
                 // Telegram
-                conversationsRow = 0x7f0300f8;
-                callsRow = 0x7f030031;
-                contactPickerRow = 0x7f030043;
+                conversationsRow = 0x7f031011;
+                callsRow = 0x7f030032;
+                contactPickerRow = 0x7f030044;
                 break;
         }
         switch (id) {
@@ -134,5 +134,12 @@ public class HomeActivity extends AppCompatActivity {
         int hex = getHomeTheme(0);
     }
 
+    public static int getTabsIndicatorColor() {
+        int color = Color.parseColor("#" + utils.prefs.getString("home_tabsindicatorcolor", "ffffff"));
+        return color;
+    }
 
+    private void callgetcolor() {
+        int color = getTabsIndicatorColor();
+    }
 }

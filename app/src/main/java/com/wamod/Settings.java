@@ -22,6 +22,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -87,6 +89,7 @@ public class Settings extends AppCompatActivity {
             preferences.add(0, findPreference("general_toolbarcolor"));
             preferences.add(0, findPreference("general_toolbarforeground"));
             preferences.add(0, findPreference("general_navbarcolor"));
+            preferences.add(0, findPreference("home_tabsindicatorcolor"));
             preferences.add(0, findPreference("conversation_rightbubblecolor"));
             preferences.add(0, findPreference("conversation_rightbubbletextcolor"));
             preferences.add(0, findPreference("conversation_rightbubbledatecolor"));
@@ -225,7 +228,6 @@ public class Settings extends AppCompatActivity {
             preferences.add(0, findPreference("conversation_style_toolbar"));
             preferences.add(0, findPreference("home_theme"));
             preferences.add(0, findPreference("conversation_style_bubble"));
-            //preferences.add(0, findPreference("conversation_style_bubble_layout"));
             preferences.add(0, findPreference("conversation_style_tick"));
 
             final ArrayList<Integer> nameArray = new ArrayList<Integer>();
@@ -371,6 +373,36 @@ public class Settings extends AppCompatActivity {
 
                     alertDialog.show();
                     return true;
+                }
+            });
+
+            Preference credits = findPreference("credits");
+            credits.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(ctx);
+                    alert.setTitle("Credits");
+
+                    WebView wv = new WebView(ctx);
+                    wv.loadUrl("file:///android_asset/wamod_credits.html");
+                    wv.setWebViewClient(new WebViewClient() {
+                        @Override
+                        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                            view.loadUrl(url);
+
+                            return true;
+                        }
+                    });
+
+                    alert.setView(wv);
+                    alert.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alert.show();
+                    return false;
                 }
             });
         }

@@ -3,13 +3,11 @@ package com.wamod;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.util.TypedValue;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.whatsapp.av5;
+import com.whatsapp.vm;
 
 /**
  * Created by brianvalente on 10/4/15.
@@ -29,7 +27,7 @@ public class conversationStyleEntryMood {
         voiceNoteBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_mood_conversation_mic_color", "000000")));
         sendBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_mood_conversation_send_color", "000000")));
         emojiBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_mood_conversation_emoji_color", "000000")));
-        emojiBtn.setOnClickListener(new av5(a));
+        emojiBtn.setOnClickListener(new vm(a));
 
         Drawable inputLayoutBg = inputLayout.getBackground();
         inputLayoutBg.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_mood_conversation_background_color", "55ffffff")), PorterDuff.Mode.MULTIPLY);
