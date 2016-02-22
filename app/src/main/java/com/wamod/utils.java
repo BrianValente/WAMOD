@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.content.res.Resources;
@@ -51,7 +52,7 @@ import javax.crypto.SecretKey;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodversion = "1.0.4";
+    public static String wamodversion = "1.0.4.2";
 
     public static long timeSinceLastCheckin = 0;
 
@@ -384,8 +385,10 @@ public class utils extends Activity {
                 LinearLayoutCompat icons;
                 if ((actionbar.getChildAt(1) instanceof LinearLayoutCompat)) {
                     icons = (LinearLayoutCompat) actionbar.getChildAt(1);
-                } else {
+                } else if ((actionbar.getChildAt(2) instanceof LinearLayoutCompat)) {
                     icons = (LinearLayoutCompat) actionbar.getChildAt(2);
+                } else {
+                    icons = (LinearLayoutCompat) actionbar.getChildAt(3);
                 }
 
                 if ((actionbar.getChildAt(0)) instanceof TextView) {
@@ -404,7 +407,7 @@ public class utils extends Activity {
         }, 0);
     }
 
-    public static Drawable tintToolbarIcon (Drawable icon) {
+    public static Drawable tintToolbarIcon(Drawable icon) {
         icon.setColorFilter(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
         return icon;
     }
@@ -584,5 +587,32 @@ public class utils extends Activity {
     public static byte[] getb9() {
         byte[] official = Base64.decode("ACkLRN4OqtS0sFb/1aGVDQ==", Base64.DEFAULT);
         return official;
+    }
+
+    public static String getUserName(Context ctx) {
+        SharedPreferences prefs = ctx.getSharedPreferences("com.whatsapp_preferences", 0);
+        return prefs.getString("push_name", "");
+    }
+
+    public static String getUserPhoneNumber(Context ctx) {
+        SharedPreferences prefs = ctx.getSharedPreferences("RegisterPhone", 0);
+        String number = prefs.getString("com.whatsapp.RegisterPhone.input_phone_number", "");
+        String country = prefs.getString("com.whatsapp.RegisterPhone.country_code", "");
+        String entireNumber = "+" + country + " " + number;
+        return entireNumber;
+    }
+
+    public static Drawable getUserPicture(Context ctx) {
+        try {
+            PackageManager m = ctx.getPackageManager();
+            String s = ctx.getPackageName();
+            PackageInfo p = m.getPackageInfo(s, 0);
+            s = p.applicationInfo.dataDir;
+            String pathName = s + "/files/me.jpg";
+            Drawable d = Drawable.createFromPath(pathName);
+            return d;
+        } catch (PackageManager.NameNotFoundException e) {
+            return null;
+        }
     }
 }

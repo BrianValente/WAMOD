@@ -112,12 +112,12 @@ public class id {
     public static int wamod_theme_test_conversation_extras = 0x7f101014;
     public static int wamod_theme_test_conversation_extras_mic_delete = 0x7f101015;
     public static int wamod_theme_test_conversation_extras_mic_send = 0x7f101016;
-    public static int wamod_theme_test_conversation_entry_attach_gallery = 0x7f101024;
-    public static int wamod_theme_test_conversation_entry_attach_camera = 0x7f101025;
-    public static int wamod_theme_test_conversation_entry_attach_audio = 0x7f101026;
-    public static int wamod_theme_test_conversation_entry_attach_contact = 0x7f101027;
-    public static int wamod_theme_test_conversation_entry_attach_location = 0x7f101028;
-    public static int wamod_theme_test_conversation_entry_attach_edit = 0x7f101029;
+    public static int wamod_theme_test_conversation_entry_attach_gallery = 0x7f101032;
+    public static int wamod_theme_test_conversation_entry_attach_camera = 0x7f101033;
+    public static int wamod_theme_test_conversation_entry_attach_audio = 0x7f101034;
+    public static int wamod_theme_test_conversation_entry_attach_contact = 0x7f101035;
+    public static int wamod_theme_test_conversation_entry_attach_location = 0x7f101036;
+    public static int wamod_theme_test_conversation_entry_attach_edit = 0x7f101037;
 
 
     /** Contact info */
@@ -136,4 +136,21 @@ public class id {
     public static int text_content_layout = 0x7f100223;
     public static int message_text = 0x7f100224;
     public static int date = 0x7f100202;
+
+    /** Drawer */
+    public static int wamod_ic_menu = 0x7f021055;
+    public static int wamod_drawer = 0x7f101024;
+    public static int wamod_drawer_usernametv = 0x7f101025;
+    public static int wamod_drawer_usernumbertv = 0x7f101026;
+    public static final int wamod_drawer_newgroup = 0x7f101027;
+    public static final int wamod_drawer_newbroadcast = 0x7f101028;
+    public static final int wamod_drawer_wamodweb = 0x7f101029;
+    public static final int wamod_drawer_setstatus = 0x7f10102a;
+    public static final int wamod_drawer_changeprofilepic = 0x7f10102b;
+    public static final int wamod_drawer_search = 0x7f10102c;
+    public static final int wamod_drawer_settings = 0x7f10102d;
+    public static final int wamod_drawer_wamodsettings = 0x7f10102e;
+    public static final int wamod_drawer_container = 0x7f10102f;
+    public static final int wamod_drawer_back = 0x7f101030;
+    public static int wamod_drawer_photo = 0x7f101031;
 }
