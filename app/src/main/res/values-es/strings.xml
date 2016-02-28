@@ -96,4 +96,7 @@
     <string name="wamod_closebuttonsummary">Cierra la actividad instantaneamente</string>
     <string name="title_activity_theme_wamod_conversation_config">Ajustes del tema</string>
     <string name="wamod_credits">Créditos</string>
+    <string name="wamod_selectdrawerbackground">Seleccionar fondo del drawer</string>
+    <string name="wamod_darkdrawer">Drawer oscuro</string>
+    <string name="wamod_blacktextindrawerheader">Texto negro en la cabecera del drawer </string>
 </resources>

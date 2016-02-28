@@ -1,6 +1,7 @@
 package com.wamod;
 
 import android.app.ActivityManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -8,16 +9,24 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v4.view.MotionEventCompat;
+import android.support.v4.widget.ViewDragHelper;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.HorizontalScrollView;
@@ -27,10 +36,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.pkmmte.view.CircularImageView;
 import com.whatsapp.Broadcasts;
 import com.whatsapp.NewGroup;
 import com.whatsapp.ProfileInfoActivity;
 import com.whatsapp.SetStatus;
+import com.whatsapp.StarredMessagesActivity;
 import com.whatsapp.WebSessionsActivity;
 
 import java.util.ArrayList;
@@ -109,115 +120,27 @@ public class HomeActivity extends AppCompatActivity {
         Drawable upIndicator = a.getResources().getDrawable(id.wamod_ic_menu);
         upIndicator.setColorFilter(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
         actionbar.setHomeAsUpIndicator(upIndicator);
-
-
-        final View content = a.findViewById(android.R.id.content);
-        content.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                content.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                if (a.findViewById(id.wamod_drawer) != null) initDrawer(a);
-            }
-        });
-    }
-
-    public static void showDrawer(final com.whatsapp.HomeActivity a) {
-        final LinearLayout drawerContainer = (LinearLayout)   a.findViewById(id.wamod_drawer_container);
-        drawerContainer.setX(0);
-    }
-
-    public static void hideDrawer(final com.whatsapp.HomeActivity a) {
-        LinearLayout drawerContainer = (LinearLayout) a.findViewById(id.wamod_drawer_container);
-        int margin = a.findViewById(android.R.id.content).getWidth();
-        drawerContainer.setX(-margin);
-    }
-
-    public static void initDrawer(final com.whatsapp.HomeActivity a) {
-        TextView userNameTV                          = (TextView)       a.findViewById(id.wamod_drawer_usernametv);
-        TextView userNumberTV                        = (TextView)       a.findViewById(id.wamod_drawer_usernumbertv);
-        ImageView wamod_drawer_photo                 = (ImageView)      a.findViewById(id.wamod_drawer_photo);
-        RelativeLayout wamod_drawer_newgroup         = (RelativeLayout) a.findViewById(id.wamod_drawer_newgroup);
-        RelativeLayout wamod_drawer_newbroadcast     = (RelativeLayout) a.findViewById(id.wamod_drawer_newbroadcast);
-        RelativeLayout wamod_drawer_wamodweb         = (RelativeLayout) a.findViewById(id.wamod_drawer_wamodweb);
-        RelativeLayout wamod_drawer_setstatus        = (RelativeLayout) a.findViewById(id.wamod_drawer_setstatus);
-        RelativeLayout wamod_drawer_changeprofilepic = (RelativeLayout) a.findViewById(id.wamod_drawer_changeprofilepic);
-        RelativeLayout wamod_drawer_search           = (RelativeLayout) a.findViewById(id.wamod_drawer_search);
-        RelativeLayout wamod_drawer_settings         = (RelativeLayout) a.findViewById(id.wamod_drawer_settings);
-        RelativeLayout wamod_drawer_wamodsettings    = (RelativeLayout) a.findViewById(id.wamod_drawer_wamodsettings);
-        ImageButton    wamod_drawer_back             = (ImageButton)    a.findViewById(id.wamod_drawer_back);
-        ArrayList<RelativeLayout> menuItems = new ArrayList<>();
-        menuItems.add(wamod_drawer_newgroup);
-        menuItems.add(wamod_drawer_newbroadcast);
-        menuItems.add(wamod_drawer_wamodweb);
-        menuItems.add(wamod_drawer_setstatus);
-        menuItems.add(wamod_drawer_changeprofilepic);
-        menuItems.add(wamod_drawer_search);
-        menuItems.add(wamod_drawer_settings);
-        menuItems.add(wamod_drawer_wamodsettings);
-
-        hideDrawer(a);
-        userNameTV.setText(utils.getUserName(a));
-        userNumberTV.setText(utils.getUserPhoneNumber(a));
-
-        for (final RelativeLayout item : menuItems) {
-            item.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent;
-                    switch (item.getId()) {
-                        case id.wamod_drawer_newgroup:
-                            intent = new Intent(a, NewGroup.class);
-                            a.startActivity(intent);
-                            break;
-                        case id.wamod_drawer_newbroadcast:
-                            intent = new Intent(a, Broadcasts.class);
-                            a.startActivity(intent);
-                            break;
-                        case id.wamod_drawer_wamodweb:
-                            intent = new Intent(a, WebSessionsActivity.class);
-                            a.startActivity(intent);
-                            break;
-                        case id.wamod_drawer_setstatus:
-                            intent = new Intent(a, SetStatus.class);
-                            a.startActivity(intent);
-                            break;
-                        case id.wamod_drawer_changeprofilepic:
-                            intent = new Intent(a, ProfileInfoActivity.class);
-                            a.startActivity(intent);
-                            break;
-                        case id.wamod_drawer_search:
-                            a.o();
-                            break;
-                        case id.wamod_drawer_settings:
-                            intent = new Intent(a, com.whatsapp.Settings.class);
-                            a.startActivity(intent);
-                            break;
-                        case id.wamod_drawer_wamodsettings:
-                            intent = new Intent(a, Settings.class);
-                            a.startActivity(intent);
-                            break;
-                    }
-                    hideDrawer(a);
-                }
-            });
-        }
-
-        wamod_drawer_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideDrawer(a);
-            }
-        });
-
-        wamod_drawer_photo.setImageDrawable(utils.getUserPicture(a));
     }
 
     public static boolean _onOptionsItemSelected(com.whatsapp.HomeActivity a, MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            showDrawer(a);
+            NavigationDrawer drawer = (NavigationDrawer) a.findViewById(id.wamod_drawer_parent);
+            drawer.openDrawer2(true);
             return true;
         }
         return false;
+    }
+
+    public static boolean _onBackPressed(com.whatsapp.HomeActivity a) {
+        NavigationDrawer drawer = (NavigationDrawer) a.findViewById(id.wamod_drawer_parent);
+        if (drawer.drawerOpen) {
+            drawer.openDrawer2(false);
+            return true;
+        } else return false;
+    }
+
+    private void callOnBackPressed() {
+        if (_onBackPressed(null)) return;
     }
 
     public static void test(MenuItem item) {

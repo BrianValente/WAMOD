@@ -139,6 +139,8 @@ public class id {
 
     /** Drawer */
     public static int wamod_ic_menu = 0x7f021055;
+    public static int wamod_drawer_parent = 0x7f10103b;
+    public static int wamod_drawer_overlay = 0x7f10103c;
     public static int wamod_drawer = 0x7f101024;
     public static int wamod_drawer_usernametv = 0x7f101025;
     public static int wamod_drawer_usernumbertv = 0x7f101026;
@@ -147,10 +149,15 @@ public class id {
     public static final int wamod_drawer_wamodweb = 0x7f101029;
     public static final int wamod_drawer_setstatus = 0x7f10102a;
     public static final int wamod_drawer_changeprofilepic = 0x7f10102b;
+    public static final int wamod_drawer_starredmessages = 0x7f101039;
     public static final int wamod_drawer_search = 0x7f10102c;
     public static final int wamod_drawer_settings = 0x7f10102d;
     public static final int wamod_drawer_wamodsettings = 0x7f10102e;
     public static final int wamod_drawer_container = 0x7f10102f;
     public static final int wamod_drawer_back = 0x7f101030;
     public static int wamod_drawer_photo = 0x7f101031;
+    public static int wamod_drawer_header = 0x7f101038;
+    public static int wamod_drawer_buttons = 0x7f10103a;
+    public static int wamod_drawer_bgview = 0x7f10103d;
+    public static int wamod_drawer_bg = 0x7f021056;
 }

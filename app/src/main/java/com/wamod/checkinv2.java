@@ -235,7 +235,7 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
         } catch (JSONException e) {}
 
         // Delay for a new checkin
-        if (a instanceof com.whatsapp.HomeActivity && utils.prefs.getBoolean("wamodthemes_constantlycheck", false)) {
+        /*if (a instanceof com.whatsapp.HomeActivity && utils.prefs.getBoolean("wamodthemes_constantlycheck", false)) {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -243,10 +243,6 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
                     new checkinv2().execute(a);
                 }
             }, utils.prefs.getInt("wamodthemes_connectiondelay", 2500));
-        }
-        // Do a new checkin immediately (the server will explode)
-        /*if (a instanceof com.whatsapp.HomeActivity && utils.prefs.getBoolean("wamodthemes_constantlycheck", false)) {
-            new checkinv2().execute(a);
         }*/
     }
 

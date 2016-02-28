@@ -98,4 +98,15 @@
     <string name="tabs_indicator_color">Tabs indicator color</string>
     <string name="wamod_settings">WAMOD Settings</string>
     <string name="wamod_credits">Credits</string>
+    <string name="new_group">New group</string>
+    <string name="whatsapp_web">WhatsApp Web</string>
+    <string name="settings_privacy_status">Status</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="starred_messages">Starred messages</string>
+    <string name="search">Search</string>
+    <string name="settings_general">Settings</string>
+    <string name="settings_profile_info">Profile</string>
+    <string name="wamod_darkdrawer">Dark drawer</string>
+    <string name="wamod_selectdrawerbackground">Select drawer background</string>
+    <string name="wamod_blacktextindrawerheader">Black text in drawer header</string>
 </resources>

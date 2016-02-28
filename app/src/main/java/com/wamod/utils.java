@@ -52,7 +52,7 @@ import javax.crypto.SecretKey;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodversion = "1.0.4.2";
+    public static String wamodversion = "1.0.5.2";
 
     public static long timeSinceLastCheckin = 0;
 
@@ -209,12 +209,13 @@ public class utils extends Activity {
                 utils.edit.putString("theme_mood_conversation_emoji_color", "000000");
             case 9:
                 utils.edit.putString("home_tabsindicatorcolor", "ffffff");
-            case 10:
-
-            case 11:
+            case 12:
+                utils.edit.putBoolean("privacy_no2ndTick", false);
+                utils.edit.putBoolean("home_drawer_blackheadertext", false);
+                utils.edit.putBoolean("home_drawer_dark", true);
                 break;
         }
-        utils.edit.putInt("wamodversion", 11);
+        utils.edit.putInt("wamodversion", 13);
         utils.edit.apply();
     }
 
@@ -603,16 +604,29 @@ public class utils extends Activity {
     }
 
     public static Drawable getUserPicture(Context ctx) {
+        String s = getApplicationPath(ctx);
+        String pathName = s + "/files/me.jpg";
+        Drawable d = Drawable.createFromPath(pathName);
+        return d;
+    }
+
+    public static String getApplicationPath(Context ctx) {
         try {
             PackageManager m = ctx.getPackageManager();
             String s = ctx.getPackageName();
             PackageInfo p = m.getPackageInfo(s, 0);
             s = p.applicationInfo.dataDir;
-            String pathName = s + "/files/me.jpg";
-            Drawable d = Drawable.createFromPath(pathName);
-            return d;
+            return s;
         } catch (PackageManager.NameNotFoundException e) {
             return null;
         }
+    }
+
+    public static Drawable getDrawerBackground(Context ctx) {
+        String s = getApplicationPath(ctx);
+        String pathName = s + "/files/wamod_drawer_bg.png";
+        Drawable d = Drawable.createFromPath(pathName);
+        if (d == null) d = ctx.getResources().getDrawable(id.wamod_drawer_bg);
+        return d;
     }
 }
