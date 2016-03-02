@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<!-- WAMOD -->
+    <!-- WAMOD -->
     <string name="wamod_settings">Tetapan WAMOD</string>
-	<string name="chat_with">Berbual dengan %1$s</string>
+    <string name="chat_with">Berbual dengan %1$s</string>
     <string name="profile_of">Profil kepunyaan %1$s</string>
-	<string name="title_activity_test">Sedang menguji</string>
-	<string name="action_settings">Tetapan</string>
+    <string name="title_activity_test">Sedang menguji</string>
+    <string name="action_settings">Tetapan</string>
     <string name="title_activity_theme_hangouts_conversation_config">Tetapan tema hangouts</string> 
-	<string name="wamod_general">Umum</string>
+    <string name="wamod_general">Umum</string>
     <string name="wamod_statusbarcolor">Warna statusbar</string>
     <string name="wamod_toolbarcolor">Warna toolbar</string>
     <string name="wamod_toolbarforeground">Warna teks toolbar</string>
@@ -26,7 +26,7 @@
     <string name="wamod_leftbubbletextcolor">Warna teks bubble kiri</string>
     <string name="wamod_leftbubbledatecolor">Warna tarikh bubble kiri</string>
     <string name="wamod_enablecustomparticipantnamecolor">Warna nama ahli kumpulan</string>
-	<string name="wamod_enablecustomconversationbgcolor">Aktifkan warna latar</string>
+    <string name="wamod_enablecustomconversationbgcolor">Aktifkan warna latar</string>
     <string name="wamod_customconversationbgcolor">Warna latar pilihan</string>
     <string name="wamod_bubblestyle">Jenis bubble</string>
     <string name="wamod_bubblelayoutstyle">Jenis susun atur bubble</string>
@@ -95,8 +95,8 @@
     <string name="wamod_visitwamodthemes">Lawat tema WAMOD</string>
     <string name="wamod_androidgallery">Guna galeri android</string>
     <string name="wamod_androidgallerysummary">Anda boleh pilih gambar dan video menggunakan galeri kegemaran anda</string>
-	<string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
-	<string name="wamod_credits">Kredit</string>
+    <string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
+    <string name="wamod_credits">Kredit</string>
     <string name="wamod_selectdrawerbackground">Pilih latar belakang drawer</string>
     <string name="wamod_darkdrawer">Drawer gelap</string>
     <string name="wamod_blacktextindrawerheader">Teks gelap pada drawer</string>
