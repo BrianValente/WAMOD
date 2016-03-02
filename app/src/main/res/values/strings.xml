@@ -58,8 +58,8 @@
     <string name="wamod_enablecardcolorsummary">Tints the card with the toolbar color</string>
     <string name="wamod_openchatslikenewtaskssummary">Multiple chats can be opened at the same time</string>
     <string name="wamod_freezelastseensummary">Your last seen will be frozen</string>
-    <string name="wamod_no2ndticksummary">The receiver won\'t know if you\'ve received the message</string>
-    <string name="wamod_noblueticksummary">The receiver won\'t know if you\'ve read the message</string>
+    <string name="wamod_no2ndticksummary">The sender won\'t know if you\'ve received the message</string>
+    <string name="wamod_noblueticksummary">The sender won\'t know if you\'ve read the message</string>
     <string name="wamod_hidetypingsummary">The receiver won\'t know if you\'re typing</string>
     <string name="wamod_alwaysonlinesummary">But don\'t close the app from recents!</string>
     <string name="wamod_restoredefaultsprompt">Are you sure you want to restore ALL of your configurations?</string>
