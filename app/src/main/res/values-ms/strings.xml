@@ -2,12 +2,13 @@
 <resources>
 
     <!-- WAMOD -->
-    <string name="wamod_settings">Tetapan WAMOD</string>
     <string name="chat_with">Berbual dengan %1$s</string>
     <string name="profile_of">Profil kepunyaan %1$s</string>
     <string name="title_activity_test">Sedang menguji</string>
     <string name="action_settings">Tetapan</string>
+    <string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
     <string name="title_activity_theme_hangouts_conversation_config">Tetapan tema hangouts</string> 
+    <string name="wamod_settings">Tetapan WAMOD</string>
     <string name="wamod_general">Umum</string>
     <string name="wamod_statusbarcolor">Warna statusbar</string>
     <string name="wamod_toolbarcolor">Warna toolbar</string>
@@ -15,7 +16,7 @@
     <string name="wamod_navbarcolor">Warna bar navigasi</string>
     <string name="wamod_home">Utama</string>
     <string name="wamod_hometheme">Tema utama</string>
-    <string name="wamod_conversation">Perbualan</string>
+    <string name="wamod_conversation">Chat</string>
     <string name="wamod_hideprofilephoto">Sembunyi gambar profil</string>
     <string name="wamod_hidetoolbaricons">Sembunyi ikon toolbar</string>
     <string name="wamod_proximitysensor">Sensor jarak</string>
@@ -68,34 +69,33 @@
     <string name="wamod_updateavailablemessage">%1$s sedia untuk dimuat turun. Versi anda ialah %2$s.</string>
     <string name="wamod_download">Muat turun</string>
     <string name="wamod_later">Kemudian</string>
-    <string name="wamod_ignorethisupdate">Tidak perlu</string>
+    <string name="wamod_ignorethisupdate">Biarkan</string>
     <string name="wamod_uptodate">Tiada kemas kini</string>
-    <string name="wamod_errorcontactingserver">Ralat ketika meyambung dengan pelayan</string>
+    <string name="wamod_errorcontactingserver">Ralat ketika menghubungi pelayan</string>
     <string name="wamod_onlylollipopandup">Hanya Lollipop dan ke atas</string>
     <string name="wamod_insertahexcolorwithout">Masukkan warna HEX (tanpa #)</string>
     <string name="wamod_wamodsettings">Tetapan WAMOD</string>
     <string name="wamod_conversation_toolbar_style">Jenis Toolbar</string>
     <string name="wamod_closebutton">Butang tutup</string>
-    <string name="wamod_closebuttonsummary">Tutup aktiviti dengan segera</string>
+    <string name="wamod_closebuttonsummary">Tutup aktiviti serta merta</string>
     <string name="wamod_unavailable">Tidak tersedia</string>
     <string name="wamod_darkstatusbaricons">Ikon statusbar yang gelap</string>
     <string name="wamod_marshmallowandup">Android 6.0 (Marshmallow) dan ke atas</string>
     <string name="wamod_unlinkdevice">Putuskan sambungan peranti dari tema WAMOD</string>
     <string name="wamod_unlinkdevice_title">Putuskan sambungan peranti</string>
     <string name="wamod_unlinkdevice_message">Adakah anda pasti untuk putuskan sambungan?</string>
-    <string name="wamod_crash_title">WAMOD crashed!</string>
-    <string name="wamod_crash_message">Terdapat ralat pada tetapan anda jadi tetapan asal telah diguna.</string>
+    <string name="wamod_crash_title">WAMOD gagal berfungsi!</string>
+    <string name="wamod_crash_message">Terdapat ralat pada tetapan anda jadi tetapan asal telah diguna</string>
     <string name="wamod_crash_button">Baiklah ☹️</string>
     <string name="wamod_wamodthemes">Tema WAMOD</string>
     <string name="wamod_wamodthemes_constantlycheck">Sentiasa periksa tema baru</string>
-    <string name="wamod_wamodthemes_constantlycheck_summary">Guna sedikit tambahan data </string>
+    <string name="wamod_wamodthemes_constantlycheck_summary">Guna sedikit data tambahan</string>
     <string name="wamod_loading">Sedang memuat...️</string>
     <string name="wamod_done">Selesai</string>
     <string name="wamod_error">Terdapat ralat</string>
     <string name="wamod_visitwamodthemes">Lawat tema WAMOD</string>
     <string name="wamod_androidgallery">Guna galeri android</string>
     <string name="wamod_androidgallerysummary">Anda boleh pilih gambar dan video menggunakan galeri kegemaran anda</string>
-    <string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
     <string name="wamod_credits">Kredit</string>
     <string name="wamod_selectdrawerbackground">Pilih latar belakang drawer</string>
     <string name="wamod_darkdrawer">Drawer gelap</string>
