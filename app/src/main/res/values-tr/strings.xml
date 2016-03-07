@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">WAMOD Ayarları</string>
 
-    <string name="conversation_last_seen">görüldü</string>
-    <string name="conversation_contact_online">şuan çevrim içi</string>
-    <string name="type_a_message">Bir şeyler söyle</string>
+    <string name="conversation_last_seen">son görülme</string>
+    <string name="conversation_contact_online">çevrimiçi</string>
+    <string name="type_a_message">Bir mesaj yaz</string>
 
     <string name="action_settings">Ayarlar</string>
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
@@ -97,7 +97,7 @@
     <string name="wamod_androidgallerysummary">En sık kullandığınız galeriyi kullanarak fotoğraf ve videoları ekleyebilirsiniz</string>
     <string name="tabs_indicator_color">Sekmeler göstergesi rengi</string>
     <string name="wamod_settings">WAMOD Ayarları</string>
-    <string name="wamod_credits">Katkıda Bulunanalar</string>
+    <string name="wamod_credits">Katkıda Bulunanlar</string>
     <string name="new_group">Yeni grup</string>
     <string name="whatsapp_web">WhatsApp Web</string>
     <string name="settings_privacy_status">Durum</string>
