@@ -58,8 +58,8 @@
     <string name="wamod_enablecardcolorsummary">Araç çubuğu rengi ile kartı renklendir</string>
     <string name="wamod_openchatslikenewtaskssummary">Çoklu sohbetler aynı anda açılabilir</string>
     <string name="wamod_freezelastseensummary">Son görülme durdurulmuş olacak</string>
-    <string name="wamod_no2ndticksummary">Mesajını alsanızda alıcı bilmeyecektir</string>
-    <string name="wamod_noblueticksummary">Mesajını okuduysanız alıcı bilmeyecektir</string>
+    <string name="wamod_no2ndticksummary">Mesajını alsanızda gönderici bilmeyecektir</string>
+    <string name="wamod_noblueticksummary">Mesajını okuduysanız gönderici bilmeyecektir</string>
     <string name="wamod_hidetypingsummary">Yazarken alıcı bilmeyecektir</string>
     <string name="wamod_alwaysonlinesummary">Son kullanılanlarda uygulamayı kapatmayın!</string>
     <string name="wamod_restoredefaultsprompt">Yapılandırmaların tümünü geri yüklemek istediğiniz emin misiniz?</string>
