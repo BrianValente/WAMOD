@@ -42,11 +42,11 @@ public class Conversation extends DialogToastListActivity {
 
 
     public static void changeConversationTitleTextColor(TextView tv) {
-        tv.setTextColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")));
+        tv.setTextColor(utils.getUIColor(utils.COLOR_TOOLBARTEXT));
     }
 
     public static void changeConversationSubtitleTextColor(TextView tv) {
-        tv.setTextColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")));
+        tv.setTextColor(utils.getUIColor(utils.COLOR_TOOLBARTEXT));
     }
 
 
@@ -96,11 +96,11 @@ public class Conversation extends DialogToastListActivity {
         int incoming_normal = 0, incoming_normal_ext = 0, outgoing_normal = 0, outgoing_normal_ext = 0, input = 0;
         switch (bubbleID) {
             case "0":
-                incoming_normal = 0x7f020076;
-                incoming_normal_ext = 0x7f020077;
-                outgoing_normal = 0x7f02007e;
-                outgoing_normal_ext = 0x7f02007f;
-                input = 0x7f020538;
+                incoming_normal = 0x7f020073;
+                incoming_normal_ext = 0x7f020074;
+                outgoing_normal = 0x7f020079;
+                outgoing_normal_ext = 0x7f02007a;
+                input = 0x7f02082e;
                 break;
             case "1":
                 incoming_normal = 0x7f021000;
@@ -216,12 +216,12 @@ public class Conversation extends DialogToastListActivity {
 
     public static void setTaskDescription(AppCompatActivity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            String contactName = ((TextView)activity.findViewById(id.conversationtitle)).getText().toString();
-            String title = activity.getString(id.appname);
-            if (utils.prefs.getBoolean("overview_multiplechats", true)) title = activity.getString(id.chatwith, contactName);
+            String contactName = ((TextView)activity.findViewById(Resources.id.conversation_contact_name)).getText().toString();
+            String title = activity.getString(Resources.string.app_name);
+            if (utils.prefs.getBoolean("overview_multiplechats", true)) title = activity.getString(Resources.string.chat_with, contactName);
             int color = Color.parseColor("#075e54");
             if (utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"));
-            ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), id.appicon), color);
+            ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), Resources.drawable.icon), color);
             activity.setTaskDescription(taskDesc);
 
             for (int i=0; i < App.openedChats.size(); i++) {
@@ -238,32 +238,35 @@ public class Conversation extends DialogToastListActivity {
 
     public static void initConversation(com.whatsapp.Conversation a) {
 
+        // Init attachments
+        a.E();
+
         // Load colors
-        utils.loadColors(a);
+        utils.loadColorsV2(a);
         setTaskDescription(a);
+
 
         // Hides profile photo if activated
         if (utils.prefs.getBoolean("conversation_hideprofilephoto", false)) {
-            ImageView profilePhoto = (ImageView) a.findViewById(id.conversationcontactphoto);
-            profilePhoto.getLayoutParams().width = 0;
-            profilePhoto.getLayoutParams().height = 0;
-            profilePhoto.setVisibility(View.GONE);
+            ImageView profilePhoto = (ImageView) a.findViewById(Resources.id.conversation_contact_photo);
+            if (profilePhoto != null) {
+                profilePhoto.getLayoutParams().width = 0;
+                profilePhoto.getLayoutParams().height = 0;
+                profilePhoto.setVisibility(View.GONE);
+            }
         }
-
-        // Center title if activated
-
-        //if (utils.prefs.getBoolean("conversation_centeredtitle", false)) {
 
 
         // Change background color if activated
         if (utils.prefs.getBoolean("conversation_custombackcolorbool", false)) {
-            ImageView bg = (ImageView) a.findViewById(id.conversation_background);
+            ImageView bg = (ImageView) a.findViewById(Resources.id.conversation_background);
             bg.setVisibility(View.GONE);
-            View content = a.findViewById(id.conversation_layout);
+            View content = a.findViewById(Resources.id.conversation_layout);
             content.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("conversation_custombackcolor", "FFFFFF")));
         }
-        // Initializes the entry style
 
+
+        // Initializes the entry style
         switch (utils.prefs.getString("conversation_style_entry","0")) {
             case "0":
                 // Stock
@@ -294,10 +297,13 @@ public class Conversation extends DialogToastListActivity {
                 break;
         }
 
+
         if (utils.prefs.getBoolean("conversation_toolbarexit", false)) {
-            ImageView back = (ImageView) a.findViewById(id.up);
+            ImageView back = (ImageView) a.findViewById(Resources.id.up);
             //back.setImageBitmap(new BitmapFactory(activity.getResources().getDrawable(replace_ids_here.ic_action_close)));
-            back.setImageBitmap(BitmapFactory.decodeResource(a.getResources(), id.wamod_action_close));
+            Drawable x = a.getResources().getDrawable(Resources.drawable.wamod_action_close);
+            x.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+            back.setImageDrawable(x);
         }
     }
 
@@ -306,32 +312,32 @@ public class Conversation extends DialogToastListActivity {
         int conversation = 0, emoji_picker_horizontal = 0;
         switch (activeTheme) {
             case 0:
-                conversation = 0x7f030046;
-                emoji_picker_horizontal = 0x7f03007a;
+                conversation = 0x7f030047;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
             case 1:
                 conversation = 0x7f031004;
-                emoji_picker_horizontal = 0x7f03007a;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
             case 2:
                 conversation = 0x7f031006;
-                emoji_picker_horizontal = 0x7f03007a;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
             case 3:
                 conversation = 0x7f031008;
-                emoji_picker_horizontal = 0x7f03007a;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
             case 4:
                 conversation = 0x7f031009;
-                emoji_picker_horizontal = 0x7f03007a;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
             case 5:
                 conversation = 0x7f03100a;
-                emoji_picker_horizontal = 0x7f03007a;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
             case 6:
                 conversation = 0x7f03100b;
-                emoji_picker_horizontal = 0x7f03007a;
+                emoji_picker_horizontal = 0x7f03008a;
                 break;
         }
         switch (id) {

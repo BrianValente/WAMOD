@@ -1,17 +1,10 @@
 package com.wamod;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.net.wifi.WifiManager;
-import android.os.Bundle;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by brianvalente on 7/8/15.
@@ -24,6 +17,7 @@ public class app extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         setContext(getApplicationContext());
         utils.initWAMOD();
     }
@@ -33,6 +27,7 @@ public class app extends Application {
     }
     public static void setContext(Context ctx){
         context = ctx;
+        utils.context = ctx;
         utils.prefs = context.getSharedPreferences("wamod", 0);
         utils.edit = utils.prefs.edit();
     }

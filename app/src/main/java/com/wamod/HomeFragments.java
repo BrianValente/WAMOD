@@ -11,37 +11,49 @@ import android.widget.TextView;
 public class HomeFragments {
     public static void ConversationsFragment(View a) {
         if (utils.darkMode()) {
-            TextView chatNameTV = (TextView) a.findViewById(id.conversations_row_contact_name);
-            TextView dateTV = (TextView) a.findViewById(id.conversations_row_date);
-            TextView msgTV = (TextView) a.findViewById(id.single_msg_tv);
-            TextView senderTV = (TextView) a.findViewById(id.msg_from_tv);
+            try {
+                TextView chatNameTV = (TextView) a.findViewById(Resources.id.conversations_row_contact_name);
+                TextView dateTV = (TextView) a.findViewById(Resources.id.conversations_row_date);
+                TextView msgTV = (TextView) a.findViewById(Resources.id.single_msg_tv);
+                TextView senderTV = (TextView) a.findViewById(Resources.id.msg_from_tv);
 
-            chatNameTV.setTextColor(utils.getDarkColor(0));
-            dateTV.setTextColor(utils.getDarkColor(1));
-            msgTV.setTextColor(utils.getDarkColor(1));
-            senderTV.setTextColor(utils.getDarkColor(1));
+                chatNameTV.setTextColor(utils.getDarkColor(0));
+                dateTV.setTextColor(utils.getDarkColor(1));
+                msgTV.setTextColor(utils.getDarkColor(1));
+                senderTV.setTextColor(utils.getDarkColor(1));
+            } catch (Exception e) {
+                if (utils.debug) throw new RuntimeException(e);
+            }
         }
     }
 
     public static void CallsFragment(View a) {
         if (utils.darkMode()) {
-            TextView contactNameTV = (TextView) a.findViewById(id.contact_name);
-            TextView dateTV = (TextView) a.findViewById(id.date_time);
+            try {
+                TextView contactNameTV = (TextView) a.findViewById(Resources.id.contact_name);
+                TextView dateTV = (TextView) a.findViewById(Resources.id.date_time);
 
-            contactNameTV.setTextColor(utils.getDarkColor(0));
-            dateTV.setTextColor(utils.getDarkColor(1));
+                contactNameTV.setTextColor(utils.getDarkColor(0));
+                dateTV.setTextColor(utils.getDarkColor(1));
+            } catch (Exception e) {
+                if (utils.debug) throw new RuntimeException(e);
+            }
         }
     }
 
     public static void ContactsFragment(View a) {
         if (utils.darkMode()) {
-            TextView contactNameTV = (TextView) a.findViewById(id.contactpicker_row_name);
-            TextView statusTV = (TextView) a.findViewById(id.contactpicker_row_status);
-            TextView phoneTypeTV = (TextView) a.findViewById(id.contactpicker_row_phone_type);
+            try {
+                TextView contactNameTV = (TextView) a.findViewById(Resources.id.contactpicker_row_name);
+                TextView statusTV = (TextView) a.findViewById(Resources.id.contactpicker_row_status);
+                TextView phoneTypeTV = (TextView) a.findViewById(Resources.id.contactpicker_row_phone_type);
 
-            contactNameTV.setTextColor(utils.getDarkColor(0));
-            statusTV.setTextColor(utils.getDarkColor(1));
-            phoneTypeTV.setTextColor(utils.getDarkColor(1));
+                contactNameTV.setTextColor(utils.getDarkColor(0));
+                statusTV.setTextColor(utils.getDarkColor(1));
+                phoneTypeTV.setTextColor(utils.getDarkColor(1));
+            } catch (Exception e) {
+                if (utils.debug) throw new RuntimeException(e);
+            }
         }
     }
 }

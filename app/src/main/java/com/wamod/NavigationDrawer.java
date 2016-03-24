@@ -4,20 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.pkmmte.view.CircularImageView;
 import com.whatsapp.*;
@@ -66,8 +66,8 @@ public class NavigationDrawer extends RelativeLayout {
         Log.i("WAMOD", "Initiating drawer");
 
         mDragHelper = ViewDragHelper.create(NavigationDrawer.this, 1.0f, new DragHelperCallback());
-        mDragView = (RelativeLayout) findViewById(id.wamod_drawer);
-        overlay = (LinearLayout) findViewById(id.wamod_drawer_overlay);
+        mDragView = (RelativeLayout) findViewById(Resources.id.wamod_drawer);
+        overlay = (LinearLayout) findViewById(Resources.id.wamod_drawer_overlay);
         mDragView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -83,7 +83,7 @@ public class NavigationDrawer extends RelativeLayout {
             }
         });
 
-        LinearLayout buttons = (LinearLayout) findViewById(id.wamod_drawer_buttons);
+        LinearLayout buttons = (LinearLayout) findViewById(Resources.id.wamod_drawer_buttons);
         for (int i=0; i<buttons.getChildCount(); i++) {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
                 final RelativeLayout item = (RelativeLayout) buttons.getChildAt(i);
@@ -97,46 +97,46 @@ public class NavigationDrawer extends RelativeLayout {
                     }*/
                     int color = Color.parseColor("#222222");
                     TextView label = (TextView) item.getChildAt(1);
-                    label.setTextColor(color);
+                    if (label != null) label.setTextColor(color);
                     ImageView icon = (ImageView) item.getChildAt(0);
-                    icon.setColorFilter(color);
+                    if (icon != null) icon.setColorFilter(color);
                 }
-                item.setOnClickListener(new View.OnClickListener() {
+                if (item != null) item.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent;
-                        switch (item.getId()) {
-                            case id.wamod_drawer_newgroup:
-                                intent = new Intent(activity, NewGroup.class);
-                                activity.startActivity(intent);
-                                break;
-                            case id.wamod_drawer_wamodweb:
-                                intent = new Intent(activity, WebSessionsActivity.class);
-                                activity.startActivity(intent);
-                                break;
-                            case id.wamod_drawer_setstatus:
-                                intent = new Intent(activity, SetStatus.class);
-                                activity.startActivity(intent);
-                                break;
-                            case id.wamod_drawer_changeprofilepic:
-                                intent = new Intent(activity, ProfileInfoActivity.class);
-                                activity.startActivity(intent);
-                                break;
-                            case id.wamod_drawer_starredmessages:
-                                intent = new Intent(activity, StarredMessagesActivity.class);
-                                activity.startActivity(intent);
-                                break;
-                            case id.wamod_drawer_search:
-                                activity.o();
-                                break;
-                            case id.wamod_drawer_settings:
-                                intent = new Intent(activity, com.whatsapp.Settings.class);
-                                activity.startActivity(intent);
-                                break;
-                            case id.wamod_drawer_wamodsettings:
-                                intent = new Intent(activity, Settings.class);
-                                activity.startActivity(intent);
-                                break;
+                        int id = item.getId();
+                        if (id == Resources.id.wamod_drawer_newgroup) {
+                            intent = new Intent(activity, NewGroup.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_wamodweb) {
+                            intent = new Intent(activity, WebSessionsActivity.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_setstatus) {
+                            intent = new Intent(activity, SetStatus.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_changeprofilepic) {
+                            intent = new Intent(activity, ProfileInfoActivity.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_starredmessages) {
+                            intent = new Intent(activity, StarredMessagesActivity.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_wamodweb) {
+                            intent = new Intent(activity, WebSessionsActivity.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_settings) {
+                            intent = new Intent(activity, com.whatsapp.Settings.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_wamodsettings) {
+                            intent = new Intent(activity, WAMODSettingsActivity.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.id.wamod_drawer_debug1) {
+                            utils.switchAccount(getContext());
+                        } else if (id == Resources.id.wamod_drawer_search) {
+                            activity.onSearchRequested();
+                        } else if (id == Resources.id.wamod_drawer_privacy) {
+                            intent = new Intent(activity, WAMODSettingsActivity_Privacy.class);
+                            activity.startActivity(intent);
                         }
                         openDrawer2(false);
                     }
@@ -147,18 +147,27 @@ public class NavigationDrawer extends RelativeLayout {
             }
         }
 
-        TextView userNameTV                  = (TextView)          findViewById(id.wamod_drawer_usernametv);
-        TextView userNumberTV                = (TextView)          findViewById(id.wamod_drawer_usernumbertv);
-        CircularImageView wamod_drawer_photo = (CircularImageView) findViewById(id.wamod_drawer_photo);
+        TextView userNameTV                  = (TextView)          findViewById(Resources.id.wamod_drawer_usernametv);
+        TextView userNumberTV                = (TextView)          findViewById(Resources.id.wamod_drawer_usernumbertv);
+        CircularImageView wamod_drawer_photo = (CircularImageView) findViewById(Resources.id.wamod_drawer_photo);
 
         userNameTV.setText(utils.getUserName(activity));
         userNumberTV.setText(utils.getUserPhoneNumber(activity));
-        wamod_drawer_photo.setImageDrawable(utils.getUserPicture(activity));
+        Drawable userPic = utils.getUserPicture(activity);
+        if (userPic != null) wamod_drawer_photo.setImageDrawable(userPic);
 
         if (utils.prefs.getBoolean("home_drawer_blackheadertext", false)) {
             userNameTV.setTextColor(Color.BLACK);
             userNumberTV.setTextColor(Color.BLACK);
         }
+
+        wamod_drawer_photo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, ProfileInfoActivity.class);
+                activity.startActivity(intent);
+            }
+        });
 
         if (!utils.prefs.getBoolean("home_drawer_dark", true)) mDragView.setBackgroundColor(Color.parseColor("#fefefe"));
 
@@ -169,8 +178,55 @@ public class NavigationDrawer extends RelativeLayout {
             }
         });
 
-        ImageView drawerHeaderBg = (ImageView) findViewById(id.wamod_drawer_bgview);
+        ImageView drawerHeaderBg = (ImageView) findViewById(Resources.id.wamod_drawer_bgview);
         drawerHeaderBg.setImageDrawable(utils.getDrawerBackground(getContext()));
+
+        final CircularImageView wamod_drawer_header_2ndprofilepic = (CircularImageView) findViewById(Resources.id.wamod_drawer_header_2ndprofilepic);
+        wamod_drawer_header_2ndprofilepic.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utils.switchAccount(activity);
+            }
+        });
+        final Drawable secondNumberProfilePhoto = utils.get2ndNumberUserPicture(getContext());
+        if (secondNumberProfilePhoto != null) wamod_drawer_header_2ndprofilepic.setImageDrawable(secondNumberProfilePhoto);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final int padding = utils.getStatusBarHeight(getContext());
+            wamod_drawer_header_2ndprofilepic.setPadding(0, padding, 0, 0);
+
+            ViewGroup userInfo = (ViewGroup) wamod_drawer_photo.getParent();
+            userInfo.setPadding(userInfo.getPaddingLeft(), padding, userInfo.getPaddingRight(), userInfo.getPaddingBottom());
+
+            final RelativeLayout drawerHeader = (RelativeLayout) findViewById(Resources.id.wamod_drawer_header);
+            drawerHeader.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    LayoutParams params = new LayoutParams(NavigationDrawer.this.getWidth(), drawerHeader.getHeight() + padding);
+                    drawerHeader.setLayoutParams(params);
+
+                    LinearLayout mainLayout = (LinearLayout) NavigationDrawer.this.getChildAt(0);
+                    mainLayout.setPadding(0, padding, 0, 0);
+
+                    NavigationDrawer.this.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("general_statusbarcolor", "ffffff")));
+
+                    LayoutParams params1 = (RelativeLayout.LayoutParams) wamod_drawer_header_2ndprofilepic.getLayoutParams();
+                    params1.setMargins(params1.leftMargin, params1.topMargin + padding, params1.rightMargin, params1.bottomMargin);
+                    wamod_drawer_header_2ndprofilepic.setLayoutParams(params1);
+
+                    final LinearLayout statusbar = (LinearLayout) findViewById(Resources.id.wamod_drawer_statusbar);
+                    statusbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                        @Override
+                        public void onGlobalLayout() {
+                            statusbar.setLayoutParams(new LayoutParams(NavigationDrawer.this.getWidth(), utils.getStatusBarHeight(getContext())));
+                            statusbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        }
+                    });
+
+                    drawerHeader.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            });
+        }
     }
 
     @Override
@@ -212,10 +268,6 @@ public class NavigationDrawer extends RelativeLayout {
         if(mDragHelper.continueSettling(true)) {
             ViewCompat.postInvalidateOnAnimation(this);
         }
-        /*String additionalMessage;
-        if (drawerOpen) additionalMessage = "Drawer must be opened";
-        else additionalMessage = "Drawer must be closed";
-        Log.i("WAMOD", "computeScroll executed. " + additionalMessage);*/
 
         if (isMoving && finishedMoving()) isMoving = false;
 
@@ -255,6 +307,9 @@ public class NavigationDrawer extends RelativeLayout {
 
             final int newLeft = Math.min(Math.max(left, leftBound), rightBound);
 
+            // Get percentage
+            //updateOverlayOpacity(left);
+
             return newLeft;
         }
 
@@ -292,7 +347,12 @@ public class NavigationDrawer extends RelativeLayout {
         @Override
         public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
             super.onViewPositionChanged(changedView, left, top, dx, dy);
+
+            // Get percentage
+            //updateOverlayOpacity(left);
         }
+
+
     }
 
     private void openDrawer(boolean open) {
@@ -326,5 +386,24 @@ public class NavigationDrawer extends RelativeLayout {
         }
         isMoving = true;
         invalidate();
+    }
+
+    /*private void updateOverlayOpacity(int left) {
+        int percentage = (left * 100) / mDragView.getWidth();
+        int alpha = ((percentage * 255) / 100) - 75;
+        if (alpha < 0) alpha = 0;
+        if (!drawerOpen && !isMoving) overlay.setVisibility(GONE);
+        else overlay.setVisibility(VISIBLE);
+
+        if (!drawerOpen) overlay.setClickable(false);
+        else overlay.setClickable(true);
+
+        overlay.getBackground().setAlpha(alpha);
+    }*/
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        //updateOverlayOpacity(drawerOpen ? mDragView.getWidth() : 0);
     }
 }

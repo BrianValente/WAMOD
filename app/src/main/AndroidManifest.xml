@@ -12,7 +12,7 @@
         android:label="WAMOD"
         android:theme="@style/Theme.AppCompat" >
         <activity
-            android:name=".DrawerActivity"
+            android:name="com.wamod.DrawerActivity"
             android:label="WAMOD" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.wamod.Test" android:theme="@style/AppTheme">
+        </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="f7f35f6ca95ccd57ca5ea79f49dd3850d17ade7f" />
     </application>
 
 </manifest>

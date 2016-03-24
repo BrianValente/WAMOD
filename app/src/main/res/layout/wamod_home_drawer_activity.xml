@@ -2,5 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/wamod_home_drawer" />
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/wamod_fab"
+        android:elevation="12dp"
+        android:id="@+id/fab"
+        android:src="@drawable/wamod_fab_clearcalls"
+        android:scaleType="centerInside"
+        android:clickable="true"
+        android:onClick="forceCrash"/>
 </RelativeLayout>

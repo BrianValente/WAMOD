@@ -5,32 +5,48 @@ import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
+import android.preference.PreferenceActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.crashlytics.android.Crashlytics;
+import com.whatsapp.*;
+import com.whatsapp.registration.a;
+
+import org.apache.commons.io.FileUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -39,6 +55,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
@@ -46,19 +64,25 @@ import java.security.cert.X509Certificate;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 
+import io.fabric.sdk.android.Fabric;
+
 /**
  * Created by brianvalente on 7/8/15.
  */
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodversion = "1.0.5.2";
+    public static String wamodversion = "1.0.7";
+    public static Context context;
+    public static boolean debug = false;
 
     public static long timeSinceLastCheckin = 0;
 
     public static final int COLOR_STATUSBAR = 0;
     public static final int COLOR_TOOLBAR = 1;
     public static final int COLOR_NAVBAR = 2;
+    public static final int COLOR_FOREGROUND = 3;
+    public static final int COLOR_TOOLBARTEXT = 4;
     
     public static void loadColors(android.support.v7.app.ActionBar actionBar, Window window) {
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"))));
@@ -69,6 +93,7 @@ public class utils extends Activity {
     }
 
     public static void loadColors(Toolbar toolbar, Window window) {
+        toolbar.setTitleTextColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "ffffff")));
         toolbar.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff")));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             window.setStatusBarColor(Color.parseColor("#" + utils.prefs.getString("general_statusbarcolor", "ffffff")));
@@ -92,6 +117,79 @@ public class utils extends Activity {
         }
     }
 
+
+    public static void loadColorsV2(AppCompatActivity a) {
+        //if (a instanceof MediaView) return;
+        ActionBar actionbar = a.getSupportActionBar();
+        boolean changeToolbarColor = !(a instanceof ChatInfoActivity) &&
+                                     !(a instanceof MediaView) &&
+                                     !(a instanceof ViewProfilePhoto) &&
+                                     !(a instanceof QuickContactActivity);
+        if (actionbar != null && changeToolbarColor) {
+            actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
+            int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
+            ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
+            if (actionbarVG != null) {
+                for (int i=0; i<actionbarVG.getChildCount(); i++) {
+                    View child = actionbarVG.getChildAt(i);
+                    if (child instanceof TextView) ((TextView)child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                    if (child instanceof ImageButton) ((ImageButton)child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                }
+            }
+        }
+
+        Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
+        if (toolbar != null && changeToolbarColor) {
+            toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
+            toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (changeToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
+            a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
+            if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
+                a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            else
+                a.findViewById(android.R.id.content).setSystemUiVisibility(0);
+            if (a instanceof QuickContactActivity) a.getWindow().setStatusBarColor(Color.TRANSPARENT);
+
+            if (utils.prefs.getBoolean("overview_cardcolor", true) && !(a instanceof com.whatsapp.Conversation)) {
+                a.setTaskDescription(new ActivityManager.TaskDescription(a.getResources().getString(Resources.string.app_name), BitmapFactory.decodeResource(a.getResources(), id.appicon), getUIColor(COLOR_TOOLBAR)));
+            }
+        }
+    }
+
+    public static void loadColorsV2(PreferenceActivity a) {
+        android.app.ActionBar actionbar = a.getActionBar();
+        if (actionbar != null) {
+            actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
+            int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
+            ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
+            if (actionbarVG != null) {
+                for (int i=0; i<actionbarVG.getChildCount(); i++) {
+                    View child = actionbarVG.getChildAt(i);
+                    if (child instanceof TextView) ((TextView)child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                    if (child instanceof ImageButton) ((ImageButton)child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                }
+            }
+        }
+
+        Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
+        if (toolbar != null) {
+            toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
+            toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
+            a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
+            if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
+                a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            else
+                a.findViewById(android.R.id.content).setSystemUiVisibility(0);
+        }
+    }
+
     public static int getUIColor(int color) {
         String value = null;
         switch (color) {
@@ -103,6 +201,12 @@ public class utils extends Activity {
                 break;
             case COLOR_NAVBAR:
                 value = "general_navbarcolor";
+                break;
+            case COLOR_FOREGROUND:
+                value = "general_toolbarforeground";
+                break;
+            case COLOR_TOOLBARTEXT:
+                value = "general_toolbartextcolor";
                 break;
         }
         int colorint = Color.parseColor("#" + utils.prefs.getString(value, "ffffff"));
@@ -213,10 +317,21 @@ public class utils extends Activity {
                 utils.edit.putBoolean("privacy_no2ndTick", false);
                 utils.edit.putBoolean("home_drawer_blackheadertext", false);
                 utils.edit.putBoolean("home_drawer_dark", true);
+            case 13:
+                utils.edit.putString("general_toolbartextcolor", utils.prefs.getString("general_toolbarforeground", "ffffff"));
                 break;
         }
-        utils.edit.putInt("wamodversion", 13);
+        utils.edit.putInt("wamodversion", 14);
         utils.edit.apply();
+
+        if (!debug) {
+            try {
+                Signature sign = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
+                if (sign.hashCode() == -282729318) Fabric.with(utils.context, new Crashlytics());
+            } catch (PackageManager.NameNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public static void initWAMODfromHome(AppCompatActivity a) {
@@ -243,14 +358,14 @@ public class utils extends Activity {
 
         switch (bubbleID) {
             case "0":
-                message_unsent = 0x7f020896;
-                message_got_receipt_from_server = 0x7f02088e;
-                message_got_receipt_from_target = 0x7f020890;
-                message_got_read_receipt_from_target = 0x7f02088c;
-                message_unsent_onmedia = 0x7f020897;
-                message_got_receipt_from_server_onmedia = 0x7f02088f;
-                message_got_receipt_from_target_onmedia = 0x7f020891;
-                message_got_read_receipt_from_target_onmedia = 0x7f02088d;
+                message_unsent = Resources.drawable.message_unsent;
+                message_got_receipt_from_server = Resources.drawable.message_got_receipt_from_server;
+                message_got_receipt_from_target = Resources.drawable.message_got_receipt_from_target;
+                message_got_read_receipt_from_target = Resources.drawable.message_got_read_receipt_from_target;
+                message_unsent_onmedia = Resources.drawable.message_unsent_onmedia;
+                message_got_receipt_from_server_onmedia = Resources.drawable.message_got_receipt_from_server_onmedia;
+                message_got_receipt_from_target_onmedia = Resources.drawable.message_got_receipt_from_target_onmedia;
+                message_got_read_receipt_from_target_onmedia = Resources.drawable.message_got_read_receipt_from_target_onmedia;
                 break;
             case "1":
                 message_unsent = 0x7f021023;
@@ -376,7 +491,7 @@ public class utils extends Activity {
         return value;
     }
 
-    public static void tintToolbarItems(final ViewGroup actionbar,final Resources resources) {
+    public static void tintToolbarItems(final ViewGroup actionbar,final android.content.res.Resources resources) {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -455,6 +570,13 @@ public class utils extends Activity {
         System.exit(2);
     }
 
+    public static void restartWAMOD(Context ctx) {
+        PendingIntent intent = PendingIntent.getActivity(ctx, 0, new Intent(ctx, HomeActivity.class), PendingIntent.FLAG_ONE_SHOT);
+        AlarmManager manager = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
+        manager.set(AlarmManager.RTC, System.currentTimeMillis() + 0, intent);
+        System.exit(2);
+    }
+
     public static void crashWAMOD(AppCompatActivity a) {
         utils.edit.putInt("wamodversion", 0);
         utils.edit.putBoolean("crash", true);
@@ -476,6 +598,10 @@ public class utils extends Activity {
 
     public static void log(String message) {
         Log.i("WAMOD", message);
+    }
+
+    public static void calllog(String message) {
+        log("text");
     }
 
     public static void logSignatures(Signature[] sign) {
@@ -586,7 +712,9 @@ public class utils extends Activity {
     }
 
     public static byte[] getb9() {
-        byte[] official = Base64.decode("ACkLRN4OqtS0sFb/1aGVDQ==", Base64.DEFAULT);
+        //byte[] official = Base64.decode("ACkLRN4OqtS0sFb/1aGVDQ==", Base64.DEFAULT);
+        // 2.12.489 byte[] official = Base64.decode("w8Ar4WLq2n9/S5aonWMCGQ==", Base64.DEFAULT);
+        byte[] official = Base64.decode("1E2kZOex25HvKMQPFpG1ZQ==", Base64.DEFAULT);
         return official;
     }
 
@@ -626,7 +754,179 @@ public class utils extends Activity {
         String s = getApplicationPath(ctx);
         String pathName = s + "/files/wamod_drawer_bg.png";
         Drawable d = Drawable.createFromPath(pathName);
-        if (d == null) d = ctx.getResources().getDrawable(id.wamod_drawer_bg);
+        if (d == null) d = ctx.getResources().getDrawable(Resources.drawable.wamod_drawer_bg);
         return d;
+    }
+
+    public static boolean switchAccount(final Context ctx) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+        builder.setTitle(ctx.getResources().getString(Resources.string.wamod_switchaccount_prompt_title));
+        builder.setMessage(ctx.getResources().getString(Resources.string.wamod_switchaccount_prompt_message));
+        builder.setPositiveButton(ctx.getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int dialogID) {
+                copyWhatsAppFolderTemporary(ctx, "cache");
+                copyWhatsAppFolderTemporary(ctx, "databases");
+                copyWhatsAppFolderTemporary(ctx, "files");
+                copyWhatsAppFolderTemporary(ctx, "no_backup");
+                copyWhatsAppFolderTemporary(ctx, "shared_prefs");
+                deleteWhatsAppFolder(ctx, "cache");
+                deleteWhatsAppFolder(ctx, "databases");
+                deleteWhatsAppFolder(ctx, "files");
+                deleteWhatsAppFolder(ctx, "no_backup");
+                deleteWhatsAppFolder(ctx, "shared_prefs");
+                copyToWhatsAppFolder(ctx, "cache");
+                copyToWhatsAppFolder(ctx, "databases");
+                copyToWhatsAppFolder(ctx, "files");
+                copyToWhatsAppFolder(ctx, "no_backup");
+                copyToWhatsAppFolder(ctx, "shared_prefs");
+                deleteWhatsAppFolder(ctx, "WAMOD/cache");
+                deleteWhatsAppFolder(ctx, "WAMOD/databases");
+                deleteWhatsAppFolder(ctx, "WAMOD/files");
+                deleteWhatsAppFolder(ctx, "WAMOD/no_backup");
+                deleteWhatsAppFolder(ctx, "WAMOD/shared_prefs");
+                copyWhatsAppFolderFromTemp(ctx, "cache");
+                copyWhatsAppFolderFromTemp(ctx, "databases");
+                copyWhatsAppFolderFromTemp(ctx, "files");
+                copyWhatsAppFolderFromTemp(ctx, "no_backup");
+                copyWhatsAppFolderFromTemp(ctx, "shared_prefs");
+                deleteWAMODTempFolder(ctx);
+                Toast.makeText(ctx, ctx.getResources().getString(id.donerestartwamod), Toast.LENGTH_LONG).show();
+                restartWAMOD(ctx);
+            }
+        });
+        builder.setNegativeButton(ctx.getResources().getString(android.R.string.cancel), null);
+        builder.show();
+        return true;
+    }
+
+    private static void copyWhatsAppFolderFromTemp(Context ctx, String name) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File dest = new File(appPath + "/WAMOD/" + name);
+            File source = new File(appPath + "/WAMOD_temp/" + name);
+            if (!dest.exists()) dest.mkdirs();
+            FileUtils.copyDirectory(source, dest);
+        } catch (IOException e) {}
+    }
+
+    private static void copyToWhatsAppFolder(Context ctx, String name) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File dest = new File(appPath + "/" + name);
+            File source = new File(appPath + "/WAMOD/" + name);
+            if (!dest.exists()) dest.mkdirs();
+            FileUtils.copyDirectory(source, dest);
+        } catch (IOException e) {}
+    }
+
+    private static void copyWhatsAppFolderTemporary(Context ctx, String name) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File dest = new File(appPath + "/WAMOD_temp/" + name);
+            File source = new File(appPath + "/" + name);
+            if (!dest.exists()) dest.mkdirs();
+            FileUtils.copyDirectory(source, dest);
+        } catch (IOException e) {}
+    }
+
+
+    private static void deleteWhatsAppFolder(Context ctx, String name) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File source = new File(appPath + "/" + name);
+            FileUtils.deleteDirectory(source);
+        } catch (IOException e) {}
+    }
+
+    private static void deleteWAMODTempFolder(Context ctx) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File source = new File(appPath + "/WAMOD_temp");
+            FileUtils.deleteDirectory(source);
+        } catch (IOException e) {}
+    }
+
+    public static String get2ndNumberUserName(Context ctx) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File dest = new File(appPath + "/shared_prefs/com.whatsapp_preferences_2nd.xml");
+            File source = new File(appPath + "/WAMOD/shared_prefs/com.whatsapp_preferences.xml");
+            FileUtils.copyDirectory(source, dest);
+            SharedPreferences prefs = ctx.getSharedPreferences("com.whatsapp_preferences_2nd", 0);
+            return prefs.getString("push_name", "");
+        } catch (IOException e) {}
+        return null;
+    }
+
+    public static String get2ndNumberUserPhoneNumber(Context ctx) {
+        try {
+            String appPath = getApplicationPath(ctx);
+            File dest = new File(appPath + "/shared_prefs/RegisterPhone_2nd.xml");
+            File source = new File(appPath + "/WAMOD/shared_prefs/RegisterPhone.xml");
+            FileUtils.copyDirectory(source, dest);
+            SharedPreferences prefs = ctx.getSharedPreferences("RegisterPhone_2nd", 0);
+            String number = prefs.getString("com.whatsapp.RegisterPhone.input_phone_number", "");
+            String country = prefs.getString("com.whatsapp.RegisterPhone.country_code", "");
+            String entireNumber = "+" + country + " " + number;
+            return entireNumber;
+        } catch (IOException e) {}
+        return null;
+    }
+
+    public static Drawable get2ndNumberUserPicture(Context ctx) {
+        String s = getApplicationPath(ctx);
+        String pathName = s + "/WAMOD/files/me.jpg";
+        Drawable d = Drawable.createFromPath(pathName);
+        return d;
+    }
+
+    public static int getStatusBarHeight(Context ctx) {
+        int result = 0;
+        int resourceId = ctx.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = ctx.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    public static com.whatsapp.registration.a getRegistrationClass(String number) {
+        Mac mac = null;
+        try {
+            SecretKey secretKey = getSecretKey();
+            mac = Mac.getInstance("HMACSHA1");
+            mac.init(secretKey);
+            Signature sign = getSignature()[0];
+            byte[] signBytes = sign.toByteArray();
+            mac.update(signBytes);
+            mac.update(getb9());
+            mac.update(number.getBytes("UTF-8"));
+        } catch (NoSuchAlgorithmException e) {}
+          catch (InvalidKeyException e) {}
+          catch (UnsupportedEncodingException e) {}
+        byte[] _final = mac.doFinal();
+        Log.i("WAMOD", Base64.encodeToString(_final, Base64.DEFAULT));
+        return new a(_final);
+    }
+
+    private void call_getRegistrationClass() {
+        a test = getRegistrationClass(null);
+    }
+
+    public static void logItWorks() {
+        Log.i("WAMOD", "It works!");
+    }
+
+    public static int[] Nexus6PResToActualDevice(Context ctx, int x, int y) {
+        int[] newValues = new int[2];
+        DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
+
+        newValues[0] = (metrics.widthPixels * x) / 1440;
+        newValues[1] = (metrics.heightPixels * y) / 2560;
+
+        return newValues;
+    }
+
+    public static final int getHexID(String name, String type) {
+        return utils.context.getResources().getIdentifier(name, type, utils.context.getPackageName());
     }
 }

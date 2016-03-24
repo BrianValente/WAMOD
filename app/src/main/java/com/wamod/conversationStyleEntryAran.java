@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.whatsapp.Conversation;
-import com.whatsapp.vm;
+import com.whatsapp.aax;
 
 /**
  * Created by brianvalente on 9/21/15.
@@ -16,12 +16,12 @@ import com.whatsapp.vm;
 public class conversationStyleEntryAran {
     public static void init(final Conversation a) {
 
-        FrameLayout footer = (FrameLayout) a.findViewById(id.conversationentrywamod_footer);
-        FrameLayout inputLayout = (FrameLayout) a.findViewById(id.input_layout);
-        ImageButton emojiBtn = (ImageButton) a.findViewById(id.conversationentryhangouts_emoji);
-        ImageButton voiceNoteBtn = (ImageButton) a.findViewById(id.voice_note_btn);
-        ImageButton sendBtn = (ImageButton) a.findViewById(id.send);
-        EditText entryET = (EditText) a.findViewById(id.entry);
+        FrameLayout footer = (FrameLayout) a.findViewById(Resources.id.footer);
+        FrameLayout inputLayout = (FrameLayout) a.findViewById(Resources.id.input_layout);
+        ImageButton emojiBtn = (ImageButton) a.findViewById(Resources.id.wamod_theme_hangouts_conversation_emoji);
+        ImageButton voiceNoteBtn = (ImageButton) a.findViewById(Resources.id.voice_note_btn);
+        ImageButton sendBtn = (ImageButton) a.findViewById(Resources.id.send);
+        EditText entryET = (EditText) a.findViewById(Resources.id.entry);
 
         footer.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_bgcolor", "000000")));
 
@@ -38,6 +38,6 @@ public class conversationStyleEntryAran {
         entryET.setTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_textcolor", "ffffff")));
         entryET.setHintTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_hintcolor", "ffffff")));
 
-        emojiBtn.setOnClickListener(new vm(a));
+        emojiBtn.setOnClickListener(new aax(a));
     }
 }

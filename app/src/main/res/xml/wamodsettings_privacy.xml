@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.wamod.CheckboxPreference android:title="@string/wamod_freezelastseen" android:key="privacy_freezelastseen" android:summary="@string/wamod_freezelastseensummary" />
+    <!--<com.wamod.CheckboxPreference android:title="@string/wamod_no2ndtick" android:key="privacy_no2ndTick" android:summary="@string/wamod_no2ndticksummary" />-->
+    <com.wamod.CheckboxPreference android:title="@string/wamod_nobluetick" android:key="privacy_noBlueTick" android:summary="@string/wamod_noblueticksummary" />
+    <com.wamod.CheckboxPreference android:title="@string/wamod_hidetyping" android:key="privacy_hideTyping" android:summary="@string/wamod_hidetypingsummary" />
+    <com.wamod.CheckboxPreference android:title="@string/wamod_alwaysonline" android:key="privacy_alwaysOnline" android:summary="@string/wamod_alwaysonlinesummary" />
+</PreferenceScreen>

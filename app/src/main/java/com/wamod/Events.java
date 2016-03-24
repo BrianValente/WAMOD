@@ -11,18 +11,19 @@ import com.whatsapp.Conversation;
  */
 public class Events {
     public static class VoiceNoteManager {
-        vj VoiceNote;
+        nv VoiceNote;
         VoiceNoteManager(Conversation conversation) {
-            VoiceNote = conversation.m(conversation);
+            VoiceNote = new nr(conversation, conversation, conversation);
+            VoiceNote.a(conversation.bv);
         }
         public void StartRecording() {
-            VoiceNote.a();
+            VoiceNote.e();
         }
         public void StopRecording() {
-            VoiceNote.a(true);
+            VoiceNote.b(true);
         }
         public void DiscardRecord() {
-            VoiceNote.a(false);
+            VoiceNote.b(false);
         }
     }
 
@@ -43,22 +44,22 @@ public class Events {
             btn.performClick();
         }
         private void attachPhotoUsingAndroidGallery() {
-            conversation.ag(conversation);
+            conversation.l(conversation);
         }
         private void attachPhotoUsingStockGallery() {
-            performClick(new nb(conversation));
+            performClick(new sf(conversation));
         }
         public void attachFromCamera() {
-            performClick(new a55(conversation, true));
+            performClick(new ask(conversation, true));
         }
         public void attachAudio() {
-            performClick(new alh(conversation));
+            performClick(new zo(conversation));
         }
         public void attachContact() {
-            performClick(new al6(conversation));
+            performClick(new gw(conversation));
         }
         public void attachLocation() {
-            performClick(new jq(conversation));
+            performClick(new x3(conversation));
         }
     }
 }

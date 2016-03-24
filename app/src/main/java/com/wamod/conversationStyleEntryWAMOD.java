@@ -12,25 +12,24 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.whatsapp.*;
-import com.whatsapp.Conversation;
 
 /**
  * Created by brianvalente on 9/21/15.
  */
 public class conversationStyleEntryWAMOD {
     public static void init(final com.whatsapp.Conversation activity) {
-        final View footer = activity.findViewById(id.conversationentrywamod_footer);
-        final Drawable bg = activity.getResources().getDrawable(id.conversationentrywamod_bg);
-        final FrameLayout inputBg = (FrameLayout) activity.findViewById(id.input_layout);
-        final EditText entry = (EditText) activity.findViewById(id.entry);
-        final ImageButton gallery = (ImageButton) activity.findViewById(id.conversationentrywamod_gallery);
-        final ImageButton audio = (ImageButton) activity.findViewById(id.conversationentrywamod_audio);
-        final ImageButton location = (ImageButton) activity.findViewById(id.conversationentrywamod_location);
-        final ImageButton contact = (ImageButton) activity.findViewById(id.conversationentrywamod_contact);
-        final ImageButton camera = (ImageButton) activity.findViewById(id.conversationentrywamod_camera);
-        final ImageButton send = (ImageButton) activity.findViewById(id.send);
-        final ImageButton voicenote = (ImageButton) activity.findViewById(id.voice_note_btn);
-        final ImageButton emojibtn = (ImageButton) activity.findViewById(id.emojibtn);
+        final View footer = activity.findViewById(Resources.id.footer);
+        final Drawable bg = activity.getResources().getDrawable(Resources.drawable.wamod_theme_wamod_conversation_input);
+        final FrameLayout inputBg = (FrameLayout) activity.findViewById(Resources.id.input_layout);
+        final EditText entry = (EditText) activity.findViewById(Resources.id.entry);
+        final ImageButton gallery = (ImageButton) activity.findViewById(Resources.id.wamod_theme_wamod_conversation_gallery);
+        final ImageButton audio = (ImageButton) activity.findViewById(Resources.id.wamod_theme_wamod_conversation_audio);
+        final ImageButton location = (ImageButton) activity.findViewById(Resources.id.wamod_theme_wamod_conversation_location);
+        final ImageButton contact = (ImageButton) activity.findViewById(Resources.id.wamod_theme_wamod_conversation_contact);
+        final ImageButton camera = (ImageButton) activity.findViewById(Resources.id.wamod_theme_wamod_conversation_camera);
+        final ImageButton send = (ImageButton) activity.findViewById(Resources.id.send);
+        final ImageButton voicenote = (ImageButton) activity.findViewById(Resources.id.voice_note_btn);
+        final ImageButton emojibtn = (ImageButton) activity.findViewById(Resources.id.emoji_picker_btn);
 
         entry.clearFocus();
 
@@ -81,20 +80,20 @@ public class conversationStyleEntryWAMOD {
             }
         });
 
-        if (utils.prefs.getBoolean("conversation_androidgallery", true)) {
-            gallery.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Method to open Android gallery
-                    Conversation.ag(activity);
-                }
-            });
-        } else gallery.setOnClickListener(new nb(activity));
 
-        gallery.setOnLongClickListener(new _d(activity));
-        audio.setOnClickListener(new alh(activity));
-        location.setOnClickListener(new jq(activity));
-        contact.setOnClickListener(new al6(activity));
-        camera.setOnClickListener(new a55(activity, true));
+        gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Method to open Android gallery
+                new Events.AttachmentsManager(activity).attachFromGallery();
+            }
+        });
+
+
+        gallery.setOnLongClickListener(new ay4(activity));
+        audio.setOnClickListener(new zo(activity));
+        location.setOnClickListener(new x3(activity));
+        contact.setOnClickListener(new gw(activity));
+        camera.setOnClickListener(new ask(activity, true));
     }
 }

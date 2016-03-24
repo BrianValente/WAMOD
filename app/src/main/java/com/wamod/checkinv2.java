@@ -210,7 +210,7 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
 
             // Check if there's a new version available
             //Log.i("WAMOD", "Everything fine before checking for updates");
-            if (firstCheckin || a instanceof com.wamod.Settings) {
+            if (firstCheckin || !(a instanceof com.whatsapp.HomeActivity)) {
                 final String latestWAMODCodename = jObj.getString("latestversion_codename");
                 final String latestWAMODDescription = jObj.getString("latestversion_description");
                 final String latestWAMODDescriptionES = jObj.getString("latestversion_description-es");
@@ -258,7 +258,7 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
         if (!update.codename.contentEquals(utils.wamodversion) && !(activity instanceof com.whatsapp.HomeActivity && utils.prefs.getString("ignoreupdate", "").contentEquals(update.codename))) {
             // Show an update dialog
 
-            AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
 
             alertDialog.setTitle(activity.getResources().getString(id.updateavailable));
             String description = update.description;
@@ -266,27 +266,25 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
             String message = activity.getResources().getString(id.updateavailablemessage, update.codename, utils.wamodversion) + " " + description;
             alertDialog.setMessage(message);
 
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, activity.getResources().getString(id.download), new DialogInterface.OnClickListener() {
+            alertDialog.setPositiveButton(activity.getResources().getString(id.download), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, update.link);
                     activity.startActivity(browserIntent);
                 }
             });
 
-            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, activity.getResources().getString(id.later), new DialogInterface.OnClickListener() {
+            alertDialog.setNegativeButton(activity.getResources().getString(id.later), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     //...
                 }
             });
 
-            if (activity instanceof com.whatsapp.HomeActivity) {
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, activity.getResources().getString(id.ignorethisupdate), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        utils.edit.putString("ignoreupdate", update.codename);
-                        utils.edit.apply();
-                    }
-                });
-            }
+            alertDialog.setNeutralButton(activity.getResources().getString(id.ignorethisupdate), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    utils.edit.putString("ignoreupdate", update.codename);
+                    utils.edit.apply();
+                }
+            });
 
             alertDialog.show();
 

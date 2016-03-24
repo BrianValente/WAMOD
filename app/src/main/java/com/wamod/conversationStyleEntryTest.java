@@ -47,7 +47,6 @@ public class conversationStyleEntryTest extends Conversation {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.as_wamod_theme_test_conversation);
 
-        setIDs();
         init(this);
     }
 
@@ -58,22 +57,22 @@ public class conversationStyleEntryTest extends Conversation {
         mVoiceNoteManager   = new Events.VoiceNoteManager(a);
         mAttachmentsManager = new Events.AttachmentsManager(a);
 
-        EditText originalEditText                   = (EditText)           a.findViewById(id.entry);
-        final ImageButton attachBtn                 = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_btn);
-        final ImageButton sendBtn                   = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_send);
-        final ImageButton micBtn                    = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_mic);
-        attachPopup                                 = (LinearLayout)       a.findViewById(id.wamod_theme_test_conversation_entry_attach_layout);
-        final RevealLinearLayout reveallinearlayout = (RevealLinearLayout) a.findViewById(id.wamod_theme_test_conversation_entry_reveallinearlayout);
+        EditText originalEditText                   = (EditText)           a.findViewById(Resources.id.entry);
+        final ImageButton attachBtn                 = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_btn);
+        final ImageButton sendBtn                   = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_send);
+        final ImageButton micBtn                    = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_mic);
+        attachPopup                                 = (LinearLayout)       a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_layout);
+        final RevealLinearLayout reveallinearlayout = (RevealLinearLayout) a.findViewById(Resources.id.wamod_theme_test_conversation_entry_reveallinearlayout);
         final ListView listView                     = (ListView)           a.findViewById(android.R.id.list);
-        final EditText edittext                     = (EditText)           a.findViewById(id.wamod_theme_test_conversation_entry_edittext);
-        final ImageButton extrasMicDelete           = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_extras_mic_delete);
-        final ImageButton extrasMicSend             = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_extras_mic_send);
-        final ImageButton attachments_GalleryBtn    = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_gallery);
-        final ImageButton attachments_CameraBtn     = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_camera);
-        final ImageButton attachments_AudioBtn      = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_audio);
-        final ImageButton attachments_ContactBtn    = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_contact);
-        final ImageButton attachments_LocationBtn   = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_location);
-        final ImageButton attachments_EditBtn       = (ImageButton)        a.findViewById(id.wamod_theme_test_conversation_entry_attach_edit);
+        final EditText edittext                     = (EditText)           a.findViewById(Resources.id.wamod_theme_test_conversation_entry_edittext);
+        final ImageButton extrasMicDelete           = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_extras_mic_delete);
+        final ImageButton extrasMicSend             = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_extras_mic_send);
+        final ImageButton attachments_GalleryBtn    = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_gallery);
+        final ImageButton attachments_CameraBtn     = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_camera);
+        final ImageButton attachments_AudioBtn      = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_audio);
+        final ImageButton attachments_ContactBtn    = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_contact);
+        final ImageButton attachments_LocationBtn   = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_location);
+        final ImageButton attachments_EditBtn       = (ImageButton)        a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_edit);
 
         if (wamod) listView.setPadding(0, 0, 0, HEIGHT_PX);
 
@@ -152,8 +151,8 @@ public class conversationStyleEntryTest extends Conversation {
     private static void VoiceNoteControl(Conversation a, int action) {
         hideKeyboard(a);
 
-        final RelativeLayout micContainer = (RelativeLayout) a.findViewById(id.wamod_theme_test_conversation_extras_mic_container);
-        final RevealLinearLayout extras = (RevealLinearLayout) a.findViewById(id.wamod_theme_test_conversation_extras);
+        final RelativeLayout micContainer = (RelativeLayout) a.findViewById(Resources.id.wamod_theme_test_conversation_extras_mic_container);
+        final RevealLinearLayout extras = (RevealLinearLayout) a.findViewById(Resources.id.wamod_theme_test_conversation_extras);
 
         micContainer.setVisibility(View.VISIBLE);
 
@@ -209,8 +208,8 @@ public class conversationStyleEntryTest extends Conversation {
         @Override public void afterTextChanged(Editable s) {}
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            final ImageButton sendBtn = (ImageButton) a.findViewById(id.wamod_theme_test_conversation_entry_send);
-            final ImageButton micBtn = (ImageButton) a.findViewById(id.wamod_theme_test_conversation_entry_mic);
+            final ImageButton sendBtn = (ImageButton) a.findViewById(Resources.id.wamod_theme_test_conversation_entry_send);
+            final ImageButton micBtn = (ImageButton) a.findViewById(Resources.id.wamod_theme_test_conversation_entry_mic);
 
             if (s.length() == 0) {
                 micBtn.setVisibility(View.VISIBLE);
@@ -223,7 +222,7 @@ public class conversationStyleEntryTest extends Conversation {
     }
 
     private static void animateVoiceNote(final Conversation a) {
-        final ImageView wave1 = (ImageView) a.findViewById(id.wamod_theme_test_conversation_extras_mic_wave1);
+        final ImageView wave1 = (ImageView) a.findViewById(Resources.id.wamod_theme_test_conversation_extras_mic_wave1);
         Animation anim = new Animation() {
             float waveWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, (float)279.67, a.getResources().getDisplayMetrics());
             @Override
@@ -251,9 +250,9 @@ public class conversationStyleEntryTest extends Conversation {
         }
 
         public void onClick(View v) {
-            EditText originalEditText = (EditText) a.findViewById(id.entry);
+            EditText originalEditText = (EditText) a.findViewById(Resources.id.entry);
             originalEditText.setText(edittext.getText());
-            a.al(a);
+            a.I(a);
             edittext.setText("");
         }
     }
@@ -266,9 +265,9 @@ public class conversationStyleEntryTest extends Conversation {
         }
 
         public void onClick(View v) {
-            final ImageButton attachBtn = (ImageButton) a.findViewById(id.wamod_theme_test_conversation_entry_attach_btn);
+            final ImageButton attachBtn = (ImageButton) a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_btn);
 
-            attachPopup = (LinearLayout) a.findViewById(id.wamod_theme_test_conversation_entry_attach_layout);
+            attachPopup = (LinearLayout) a.findViewById(Resources.id.wamod_theme_test_conversation_entry_attach_layout);
 
             SupportAnimator animator;
             final int DURATION = ANIMATION_DURATION;
@@ -316,22 +315,6 @@ public class conversationStyleEntryTest extends Conversation {
                 animator.start();
             }
         }
-    }
-
-    private void setIDs() {
-        id.wamod_theme_test_conversation_entry_send               = R.id.wamod_theme_test_conversation_entry_send;
-        id.wamod_theme_test_conversation_entry_attach_btn         = R.id.wamod_theme_test_conversation_entry_attach_btn;
-        id.wamod_theme_test_conversation_entry_attach_layout      = R.id.wamod_theme_test_conversation_entry_attach_layout;
-        id.wamod_theme_test_conversation_entry_reveallinearlayout = R.id.wamod_theme_test_conversation_entry_reveallinearlayout;
-        id.wamod_theme_test_conversation_entry_layout             = R.id.wamod_theme_test_conversation_entry_layout;
-        id.wamod_theme_test_conversation_entry_edittext           = R.id.wamod_theme_test_conversation_entry_edittext;
-        id.wamod_theme_test_conversation_extras_mic_wave1         = R.id.wamod_theme_test_conversation_extras_mic_wave1;
-        //id.voice_note_btn                                         = R.id.voice_note_btn;
-        id.wamod_theme_test_conversation_entry_mic                = R.id.wamod_theme_test_conversation_entry_mic;
-        id.wamod_theme_test_conversation_extras_mic_delete        = R.id.wamod_theme_test_conversation_extras_mic_delete;
-        id.wamod_theme_test_conversation_extras_mic_send          = R.id.wamod_theme_test_conversation_extras_mic_send;
-
-        wamod = false;
     }
 
     private static void hideKeyboard(Conversation a) {

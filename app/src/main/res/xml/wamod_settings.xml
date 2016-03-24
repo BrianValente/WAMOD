@@ -62,7 +62,7 @@
         <Preference android:icon="@null" android:title="@string/wamod_restoredefaults" android:key="restoredefaults" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/wamod_about" android:key="conversation_section">
-        <Preference android:icon="@null" android:title="WAMOD 1.0.5.2" android:summary="WhatsApp 2.12.445" />
+        <Preference android:icon="@null" android:title="WAMOD 1.0.5.2" android:summary="WhatsApp 2.12.489" />
         <Preference android:icon="@null" android:title="@string/wamod_opengooglepluscommunity">
             <intent android:action="android.intent.action.VIEW" android:data="https://plus.google.com/communities/100280777780708899394" />
         </Preference>

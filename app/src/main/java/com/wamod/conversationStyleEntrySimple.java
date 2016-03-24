@@ -11,11 +11,11 @@ import android.widget.ImageButton;
  */
 public class conversationStyleEntrySimple {
     public static void init(com.whatsapp.Conversation a) {
-        EditText entry = (EditText) a.findViewById(id.entry);
-        ImageButton voiceNoteBtn = (ImageButton) a.findViewById(id.voice_note_btn);
-        ImageButton sendBtn = (ImageButton) a.findViewById(id.send);
+        EditText entry = (EditText) a.findViewById(Resources.id.entry);
+        ImageButton voiceNoteBtn = (ImageButton) a.findViewById(Resources.id.voice_note_btn);
+        ImageButton sendBtn = (ImageButton) a.findViewById(Resources.id.send);
 
-        FrameLayout footer = (FrameLayout) a.findViewById(id.conversationentrywamod_footer);
+        FrameLayout footer = (FrameLayout) a.findViewById(Resources.id.footer);
 
         footer.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("theme_simple_conversation_bgcolor", "ffffff")));
 

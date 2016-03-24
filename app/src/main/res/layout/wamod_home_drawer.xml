@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--<LinearLayout
@@ -23,7 +23,7 @@
                     android:clickable="true">
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="155dp"
                         android:id="@+id/wamod_drawer_header">
                         <ImageView
                             android:layout_width="match_parent"
@@ -31,30 +31,36 @@
                             android:src="@drawable/wamod_drawer_bg"
                             android:scaleType="centerCrop"
                             android:id="@+id/wamod_drawer_bgview"/>
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_margin="15dp">
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="16dp"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="9dp">
                             <com.pkmmte.view.CircularImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:src="@drawable/wamod_brian_"
-                                android:id="@+id/wamod_drawer_photo"/>
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/wamod_drawer_account"
+                                android:id="@+id/wamod_drawer_photo"
+                                app:border="true"
+                                app:border_color="#aacccccc"
+                                app:border_width="1dp"
+                                android:layout_marginBottom="7dp"/>
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
+                                android:layout_alignParentBottom="true"
                                 android:layout_toRightOf="@id/wamod_drawer_photo"
                                 android:orientation="vertical"
-                                android:layout_marginLeft="7dp">
+                                android:layout_marginLeft="1dp">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Lorem ipsum"
                                     android:textColor="#ffffff"
                                     android:textStyle="bold"
-                                    android:textSize="14sp"
+                                    android:textSize="15sp"
                                     android:id="@+id/wamod_drawer_usernametv"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -62,10 +68,27 @@
                                     android:text="dolor sit amet"
                                     android:textColor="#ffffff"
                                     android:id="@+id/wamod_drawer_usernumbertv"
-                                    android:textSize="14sp"
+                                    android:textSize="15sp"
                                     android:layout_marginTop="1dp"/>
                             </LinearLayout>
-                        </RelativeLayout>
+                        </LinearLayout>
+                        <com.pkmmte.view.CircularImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/wamod_drawer_2ndaccount"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="8dp"
+                            android:id="@+id/wamod_drawer_header_2ndprofilepic"
+                            app:border="true"
+                            app:border_color="#aacccccc"
+                            app:border_width="1dp"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:id="@+id/wamod_drawer_statusbar"
+                            android:orientation="vertical"
+                            android:background="#55000000"/>
                         <!--<ImageButton
                             android:layout_width="?actionBarSize"
                             android:layout_height="?actionBarSize"
@@ -96,7 +119,7 @@
                                         android:layout_height="24dp"
                                         android:src="@drawable/wamod_drawer_ic_newgroup"
                                         android:layout_centerVertical="true"
-                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginLeft="16dp"
                                         android:padding="2dp"/>
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -105,7 +128,7 @@
                                         android:text="@string/new_group"
                                         android:textSize="15sp"
                                         android:layout_centerVertical="true"
-                                        android:layout_marginLeft="72dp" />
+                                        android:layout_marginLeft="72dp"/>
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -118,7 +141,7 @@
                                     android:layout_height="24dp"
                                     android:src="@drawable/wamod_drawer_ic_wamodweb"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginLeft="16dp"
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -140,7 +163,7 @@
                                     android:layout_height="24dp"
                                     android:src="@drawable/wamod_drawer_ic_status"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginLeft="16dp"
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -151,7 +174,7 @@
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="72dp"/>
                             </RelativeLayout>
-                            <RelativeLayout
+                            <!--<RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
                                 android:background="?selectableItemBackground"
@@ -172,7 +195,7 @@
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="72dp"/>
-                            </RelativeLayout>
+                            </RelativeLayout>-->
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="48dp"
@@ -184,7 +207,7 @@
                                     android:layout_height="24dp"
                                     android:src="@drawable/wamod_drawer_ic_starredmessages"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginLeft="16dp"
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -200,19 +223,19 @@
                                 android:layout_height="48dp"
                                 android:background="?selectableItemBackground"
                                 android:clickable="true"
-                                android:id="@+id/wamod_drawer_search">
+                                android:id="@+id/wamod_drawer_privacy">
                                 <ImageView
                                     android:layout_width="24dp"
                                     android:layout_height="24dp"
-                                    android:src="@drawable/wamod_drawer_ic_search"
+                                    android:src="@drawable/wamod_drawer_ic_privacy"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginLeft="16dp"
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#ffffff"
-                                    android:text="@string/search"
+                                    android:text="@string/wamod_privacy"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="72dp"/>
@@ -221,10 +244,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:background="#30ffffff"
-                                android:layout_marginLeft="32dp"
-                                android:layout_marginRight="32dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="0dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
                                 android:clickable="true" />
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -232,13 +255,6 @@
                                 android:background="?selectableItemBackground"
                                 android:clickable="true"
                                 android:id="@+id/wamod_drawer_settings">
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:src="@drawable/wamod_drawer_ic_settings"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="20dp"
-                                    android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -246,7 +262,7 @@
                                     android:text="@string/settings_general"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="72dp"/>
+                                    android:layout_marginLeft="20dp"/>
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -254,13 +270,6 @@
                                 android:background="?selectableItemBackground"
                                 android:clickable="true"
                                 android:id="@+id/wamod_drawer_wamodsettings">
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:src="@drawable/wamod_drawer_ic_wamodsettings"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="20dp"
-                                    android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -268,7 +277,7 @@
                                     android:text="@string/wamod_wamodsettings"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="72dp"/>
+                                    android:layout_marginLeft="20dp"/>
                             </RelativeLayout>
                         </LinearLayout>
                     </ScrollView>

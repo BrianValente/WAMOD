@@ -1,50 +1,24 @@
 package com.wamod;
 
 import android.app.ActivityManager;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.widget.ViewDragHelper;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
-import android.util.TypedValue;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.Transformation;
+import android.view.Window;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.pkmmte.view.CircularImageView;
-import com.whatsapp.Broadcasts;
-import com.whatsapp.NewGroup;
-import com.whatsapp.ProfileInfoActivity;
-import com.whatsapp.SetStatus;
-import com.whatsapp.StarredMessagesActivity;
-import com.whatsapp.WebSessionsActivity;
-
-import java.util.ArrayList;
 
 /**
  * Created by brianvalente on 7/9/15.
@@ -70,17 +44,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public static void initHomeActivity(final com.whatsapp.HomeActivity a) {
-
         if (utils.prefs.getBoolean("crash", false)) {
             utils.edit.putBoolean("crash", false);
             utils.edit.apply();
 
-            AlertDialog dialog = new AlertDialog.Builder(a).create();
+            AlertDialog.Builder dialog = new AlertDialog.Builder(a);
 
-            dialog.setTitle(a.getResources().getString(id.wamod_crash_title));
-            dialog.setMessage(a.getResources().getString(id.wamod_crash_message));
+            dialog.setTitle(a.getResources().getString(Resources.string.wamod_crash_title));
+            dialog.setMessage(a.getResources().getString(Resources.string.wamod_crash_message));
 
-            dialog.setButton(AlertDialog.BUTTON_POSITIVE, a.getResources().getString(id.wamod_crash_button), new DialogInterface.OnClickListener() {
+            dialog.setPositiveButton(a.getResources().getString(Resources.string.wamod_crash_button), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
 
                 }
@@ -89,25 +62,27 @@ public class HomeActivity extends AppCompatActivity {
             dialog.show();
         }
 
-        Toolbar toolbar = (Toolbar) a.findViewById(id.toolbar);
-        HorizontalScrollView tabs = (HorizontalScrollView) a.findViewById(id.tabs);
+        Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
+        HorizontalScrollView tabs = (HorizontalScrollView) a.findViewById(Resources.id.tabs);
 
         try {
-            utils.loadColors(toolbar, a.getWindow());
+            utils.loadColorsV2(a);
             tabs.setBackgroundColor(utils.getUIColor(utils.COLOR_TOOLBAR));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                String title = a.getString(id.appname);
+                String title = a.getString(Resources.string.app_name);
                 int color = Color.parseColor("#075e54");
                 if (utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"));
-                ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(a.getResources(), id.appicon), color);
+                ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(a.getResources(), Resources.drawable.icon), color);
                 a.setTaskDescription(taskDesc);
             }
 
             // Check if dark mode is activated and change the background
+            View pager = a.findViewById(Resources.id.pager);
             if (utils.darkMode()) {
-                View pager = a.findViewById(id.pager);
                 pager.setBackgroundColor(utils.getDarkColor(2));
+            } else {
+                pager.setBackgroundColor(Color.WHITE);
             }
         } catch (RuntimeException e) {
             utils.crashWAMOD(a);
@@ -117,22 +92,48 @@ public class HomeActivity extends AppCompatActivity {
 
         ActionBar actionbar = a.getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
-        Drawable upIndicator = a.getResources().getDrawable(id.wamod_ic_menu);
+        Drawable upIndicator = a.getResources().getDrawable(Resources.drawable.wamod_ic_menu);
         upIndicator.setColorFilter(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
         actionbar.setHomeAsUpIndicator(upIndicator);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window w = a.getWindow(); // in Activity's onCreate() for instance
+            //w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            w.setStatusBarColor(Color.parseColor("#00000000"));
+        }
+    }
+
+    public static void _onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+
+        // Search
+        Drawable searchIcon = utils.context.getResources().getDrawable(Resources.drawable.ic_action_search);
+        searchIcon.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+        menu.add(0, 0, 0, Resources.string.search).setIcon(searchIcon).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        _onPrepareOptionsMenu(menu);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     public static boolean _onOptionsItemSelected(com.whatsapp.HomeActivity a, MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            NavigationDrawer drawer = (NavigationDrawer) a.findViewById(id.wamod_drawer_parent);
-            drawer.openDrawer2(true);
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavigationDrawer drawer = (NavigationDrawer) a.findViewById(Resources.id.wamod_drawer_parent);
+                drawer.openDrawer2(true);
+                return true;
+            case 0:
+                a.onSearchRequested();
+                return true;
         }
         return false;
     }
 
     public static boolean _onBackPressed(com.whatsapp.HomeActivity a) {
-        NavigationDrawer drawer = (NavigationDrawer) a.findViewById(id.wamod_drawer_parent);
+        NavigationDrawer drawer = (NavigationDrawer) a.findViewById(Resources.id.wamod_drawer_parent);
         if (drawer.drawerOpen) {
             drawer.openDrawer2(false);
             return true;
@@ -153,9 +154,9 @@ public class HomeActivity extends AppCompatActivity {
         int conversationsRow, callsRow, contactPickerRow;
         switch (homeThemeID) {
             case 0:
-                conversationsRow = 0x7f03006a;
+                conversationsRow = 0x7f03006c;
                 callsRow = 0x7f030032;
-                contactPickerRow = 0x7f030044;
+                contactPickerRow = 0x7f030045;
                 break;
             default:
             case 1:
@@ -198,5 +199,14 @@ public class HomeActivity extends AppCompatActivity {
 
     private void callgetcolor() {
         int color = getTabsIndicatorColor();
+    }
+
+    public static void styleFAB(ImageView fab) {
+        Drawable bg = fab.getBackground();
+        bg.setColorFilter(utils.getUIColor(utils.COLOR_TOOLBAR), PorterDuff.Mode.MULTIPLY);
+        fab.setBackground(bg);
+        Drawable icon = fab.getDrawable();
+        icon.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+        fab.setImageDrawable(icon);
     }
 }

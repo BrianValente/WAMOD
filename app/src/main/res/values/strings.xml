@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
     <string name="chat_with">Chat with %1$s</string>
+    <string name="profile_of">Profile of %1$s</string>
     <string name="wamod_general">General</string>
     <string name="wamod_statusbarcolor">Status bar color</string>
     <string name="wamod_toolbarcolor">Toolbar color</string>
@@ -109,4 +110,6 @@
     <string name="wamod_darkdrawer">Dark drawer</string>
     <string name="wamod_selectdrawerbackground">Select drawer background</string>
     <string name="wamod_blacktextindrawerheader">Black text in drawer header</string>
+    <string name="wamod_switchaccount_prompt_title">Switch account</string>
+    <string name="wamod_switchaccount_prompt_message">Are you sure you want to switch your account?</string>
 </resources>
