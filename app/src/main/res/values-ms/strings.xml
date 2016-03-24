@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- WAMOD -->
     <string name="chat_with">Berbual dengan %1$s</string>
     <string name="profile_of">Profil kepunyaan %1$s</string>
