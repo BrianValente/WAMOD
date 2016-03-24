@@ -96,10 +96,15 @@ public class NavigationDrawer extends RelativeLayout {
                         label.setTextColor(Color.parseColor("#22222"));
                     }*/
                     int color = Color.parseColor("#222222");
-                    TextView label = (TextView) item.getChildAt(1);
-                    if (label != null) label.setTextColor(color);
-                    ImageView icon = (ImageView) item.getChildAt(0);
-                    if (icon != null) icon.setColorFilter(color);
+
+                    View label1 = item.getChildAt(0);
+                    if (label1 != null && label1 instanceof TextView) ((TextView) label1).setTextColor(color);
+
+                    View label = item.getChildAt(1);
+                    if (label != null && label instanceof TextView) ((TextView) label).setTextColor(color);
+
+                    View icon = item.getChildAt(0);
+                    if (icon != null && icon instanceof ImageView) ((ImageView) icon).setColorFilter(color);
                 }
                 if (item != null) item.setOnClickListener(new View.OnClickListener() {
                     @Override

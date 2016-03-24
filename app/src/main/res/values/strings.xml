@@ -66,7 +66,7 @@
     <string name="wamod_restoredefaultsprompt">Are you sure you want to restore ALL of your configurations?</string>
     <string name="wamod_donerestartwamod">Done, restart WAMOD</string>
     <string name="wamod_updateavailable">WAMOD update available</string>
-    <string name="wamod_updateavailablemessage">%1$s is availabre for download. Your version is %2$s.</string>
+    <string name="wamod_updateavailablemessage">%1$s is available for download. Your version is %2$s.</string>
     <string name="wamod_download">Download</string>
     <string name="wamod_later">Later</string>
     <string name="wamod_ignorethisupdate">Ignore this update</string>
