@@ -82,24 +82,4 @@
     <string name="wamod_unlinkdevice">WAMOD Themes থেকে ডিভাইসটি লিঙ্কমুক্ত</string>
     <string name="wamod_unlinkdevice_title">বিযুক্ত ডিভাইস</string>
     <string name="wamod_unlinkdevice_message">আপনি কি নিশ্চিত যে আপনি WAMOD থিমস থেকে আপনার ডিভাইসটি লিঙ্কমুক্ত ইচ্ছুক?</string>
-    <string name="wamod_crash_title">WAMOD বিধ্বস্ত!</string>
-    <string name="wamod_crash_message">আপনার কনফিগারেশন লোড তাই ডিফল্ট মান পুনরুদ্ধার করা হয়েছে একটি ত্রুটি হয়েছিল.</string>
-    <string name="wamod_crash_button">ঠিক আছে ☹</string>
-    <string name="wamod_wamodthemes">WAMOD Themes️</string>
-    <string name="wamod_wamodthemes_constantlycheck">প্রতিনিয়ত নতুন থিম জন্য পরীক্ষা</string>
-    <string name="wamod_wamodthemes_constantlycheck_summary">Data একটু বেশি ব্যবহার</string>
-    <string name="wamod_loading">Loading...</string>
-    <string name="wamod_done">সম্পন্ন</string>
-    <string name="wamod_error">সেখানে একটা ভুল ছিল</string>
-    <string name="wamod_visitwamodthemes">WAMOD Themes পরিদর্শন</string>
-    <string name="wamod_androidgallery">Use Android Gallery</string>
-    <string name="wamod_androidgallerysummary">আপনি আপনার প্রিয় গ্যালারি ব্যবহার করে ফটো এবং ভিডিও সংযুক্ত করতে পারেন</string>
-    <string name="tabs_indicator_color">ট্যাব নির্দেশক রঙ</string>
-    <string name="wamod_settings">WAMOD সেটিংস</string>
-    <string name="wamod_credits">ক্রেডিট</string>
-    <string name="wamod_darkdrawer">ডার্ক ড্রয়ারের</string>
-    <string name="wamod_selectdrawerbackground">নির্বাচন ড্রয়ারের পটভূমি</string>
-    <string name="wamod_blacktextindrawerheader">ড্রয়ারের হেডারের মধ্যে কালো টেক্সট</string>
-    <string name="wamod_switchaccount_prompt_title">সুইচ অ্যাকাউন্ট</string>
-    <string name="wamod_switchaccount_prompt_message">আপনি আপনার অ্যাকাউন্টে স্যুইচ করতে চান আপনি কি নিশ্চিত?</string>
 </resources>
