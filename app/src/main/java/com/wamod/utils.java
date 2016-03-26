@@ -72,7 +72,8 @@ import io.fabric.sdk.android.Fabric;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodversion = "1.0.7.1";
+    public static String wamodVersionName = "1.0.7.2";
+    public static int wamodVersionCode = 24;
     public static Context context;
     public static boolean debug = false;
 
@@ -119,74 +120,84 @@ public class utils extends Activity {
 
 
     public static void loadColorsV2(AppCompatActivity a) {
-        //if (a instanceof MediaView) return;
-        ActionBar actionbar = a.getSupportActionBar();
-        boolean changeToolbarColor = !(a instanceof ChatInfoActivity) &&
-                                     !(a instanceof MediaView) &&
-                                     !(a instanceof ViewProfilePhoto) &&
-                                     !(a instanceof QuickContactActivity);
-        if (actionbar != null && changeToolbarColor) {
-            actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
-            int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
-            ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
-            if (actionbarVG != null) {
-                for (int i=0; i<actionbarVG.getChildCount(); i++) {
-                    View child = actionbarVG.getChildAt(i);
-                    if (child instanceof TextView) ((TextView)child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
-                    if (child instanceof ImageButton) ((ImageButton)child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+        try {
+            //if (a instanceof MediaView) return;
+            ActionBar actionbar = a.getSupportActionBar();
+            boolean changeToolbarColor = !(a instanceof ChatInfoActivity) &&
+                                         !(a instanceof MediaView) &&
+                                         !(a instanceof ViewProfilePhoto) &&
+                                         !(a instanceof QuickContactActivity);
+            if (actionbar != null && changeToolbarColor) {
+                actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
+                int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
+                ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
+                if (actionbarVG != null) {
+                    for (int i=0; i<actionbarVG.getChildCount(); i++) {
+                        View child = actionbarVG.getChildAt(i);
+                        if (child instanceof TextView) ((TextView)child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                        if (child instanceof ImageButton) ((ImageButton)child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                    }
                 }
             }
-        }
 
-        Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
-        if (toolbar != null && changeToolbarColor) {
-            toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
-            toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (changeToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
-            a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
-            if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
-                a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            else
-                a.findViewById(android.R.id.content).setSystemUiVisibility(0);
-            if (a instanceof QuickContactActivity) a.getWindow().setStatusBarColor(Color.TRANSPARENT);
-
-            if (utils.prefs.getBoolean("overview_cardcolor", true) && !(a instanceof com.whatsapp.Conversation)) {
-                a.setTaskDescription(new ActivityManager.TaskDescription(a.getResources().getString(Resources.string.app_name), BitmapFactory.decodeResource(a.getResources(), id.appicon), getUIColor(COLOR_TOOLBAR)));
+            Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
+            if (toolbar != null && changeToolbarColor) {
+                toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
+                toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
             }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                if (changeToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
+                a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
+                if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
+                    a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                else
+                    a.findViewById(android.R.id.content).setSystemUiVisibility(0);
+                if (a instanceof QuickContactActivity) a.getWindow().setStatusBarColor(Color.TRANSPARENT);
+
+                if (utils.prefs.getBoolean("overview_cardcolor", true) && !(a instanceof com.whatsapp.Conversation)) {
+                    a.setTaskDescription(new ActivityManager.TaskDescription(a.getResources().getString(Resources.string.app_name), BitmapFactory.decodeResource(a.getResources(), Resources.drawable.icon), getUIColor(COLOR_TOOLBAR)));
+                }
+            }
+        } catch (Exception e) {
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
     public static void loadColorsV2(PreferenceActivity a) {
-        android.app.ActionBar actionbar = a.getActionBar();
-        if (actionbar != null) {
-            actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
-            int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
-            ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
-            if (actionbarVG != null) {
-                for (int i=0; i<actionbarVG.getChildCount(); i++) {
-                    View child = actionbarVG.getChildAt(i);
-                    if (child instanceof TextView) ((TextView)child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
-                    if (child instanceof ImageButton) ((ImageButton)child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+        try {
+            android.app.ActionBar actionbar = a.getActionBar();
+            if (actionbar != null) {
+                actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
+                int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
+                ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
+                if (actionbarVG != null) {
+                    for (int i = 0; i < actionbarVG.getChildCount(); i++) {
+                        View child = actionbarVG.getChildAt(i);
+                        if (child instanceof TextView)
+                            ((TextView) child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                        if (child instanceof ImageButton)
+                            ((ImageButton) child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                    }
                 }
             }
-        }
 
-        Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
-        if (toolbar != null) {
-            toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
-            toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
-        }
+            Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
+            if (toolbar != null) {
+                toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
+                toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+            }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
-            a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
-            if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
-                a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            else
-                a.findViewById(android.R.id.content).setSystemUiVisibility(0);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
+                a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
+                if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
+                    a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                else
+                    a.findViewById(android.R.id.content).setSystemUiVisibility(0);
+            }
+        } catch (Exception e) {
+            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -318,10 +329,16 @@ public class utils extends Activity {
                 utils.edit.putBoolean("home_drawer_blackheadertext", false);
                 utils.edit.putBoolean("home_drawer_dark", true);
             case 13:
-                utils.edit.putString("general_toolbartextcolor", utils.prefs.getString("general_toolbarforeground", "ffffff"));
+                utils.edit.putString("general_toolbartextcolor", "ffffff");
+            case 23:
+                utils.edit.putBoolean("home_bottomnavigationbar", true);
+                utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
+                utils.edit.putString("home_bottomnavigationbar_colors_bg", "555555");
+                utils.edit.putString("home_bottomnavigationbar_colors_activeitem", "ffffff");
+                utils.edit.putString("home_bottomnavigationbar_colors_inactiveitem", "888888");
                 break;
         }
-        utils.edit.putInt("wamodversion", 14);
+        utils.edit.putInt("wamodversion", wamodVersionCode);
         utils.edit.apply();
 
         if (!debug) {
@@ -544,11 +561,11 @@ public class utils extends Activity {
 
     public static void setTaskDescription(AppCompatActivity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            String title = activity.getString(id.app_name);
+            String title = activity.getString(Resources.string.app_name);
             if (utils.prefs.getBoolean("overview_multiplechats", true)) title = activity.getTitle().toString();
             int color = Color.parseColor("#075e54");
             if (utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"));
-            ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), id.icon), color);
+            ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), Resources.drawable.icon), color);
             activity.setTaskDescription(taskDesc);
         }
     }
@@ -600,10 +617,6 @@ public class utils extends Activity {
         Log.i("WAMOD", message);
     }
 
-    public static void calllog(String message) {
-        log("text");
-    }
-
     public static void logSignatures(Signature[] sign) {
         for (int i=0; i<sign.length; i++) {
             final byte[] rawCert = sign[i].toByteArray();
@@ -648,11 +661,6 @@ public class utils extends Activity {
         for (int i=0; i<strings.length; i++) {
             log(className + " string " + i + " : " + strings[i]);
         }
-    }
-
-    private void call_decodeStrings() {
-        String[] strings = null;
-        decodeStrings("com.whatsapp.App", strings);
     }
 
     public static void logByteArray(byte[] bytes1, byte[] bytes2, int int1, int int2) {
@@ -753,9 +761,13 @@ public class utils extends Activity {
     public static Drawable getDrawerBackground(Context ctx) {
         String s = getApplicationPath(ctx);
         String pathName = s + "/files/wamod_drawer_bg.png";
-        Drawable d = Drawable.createFromPath(pathName);
-        if (d == null) d = ctx.getResources().getDrawable(Resources.drawable.wamod_drawer_bg);
-        return d;
+        try {
+            Drawable d = Drawable.createFromPath(pathName);
+            if (d == null) d = ctx.getResources().getDrawable(Resources.drawable.wamod_drawer_bg);
+            return d;
+        } catch (OutOfMemoryError e) {
+            return ctx.getResources().getDrawable(Resources.drawable.wamod_drawer_bg);
+        }
     }
 
     public static boolean switchAccount(final Context ctx) {
@@ -790,7 +802,6 @@ public class utils extends Activity {
                 copyWhatsAppFolderFromTemp(ctx, "no_backup");
                 copyWhatsAppFolderFromTemp(ctx, "shared_prefs");
                 deleteWAMODTempFolder(ctx);
-                Toast.makeText(ctx, ctx.getResources().getString(id.donerestartwamod), Toast.LENGTH_LONG).show();
                 restartWAMOD(ctx);
             }
         });
@@ -908,10 +919,6 @@ public class utils extends Activity {
         return new a(_final);
     }
 
-    private void call_getRegistrationClass() {
-        a test = getRegistrationClass(null);
-    }
-
     public static void logItWorks() {
         Log.i("WAMOD", "It works!");
     }
@@ -928,5 +935,21 @@ public class utils extends Activity {
 
     public static final int getHexID(String name, String type) {
         return utils.context.getResources().getIdentifier(name, type, utils.context.getPackageName());
+    }
+
+    public static String getVersionName() {
+        return wamodVersionName;
+    }
+
+    public static int getVersionCode() {
+        return wamodVersionCode;
+    }
+
+    public static void toastHome() {
+        Toast.makeText(utils.context, "Content loaded", Toast.LENGTH_SHORT).show();
+    }
+
+    public static void asdfdsf() {
+        toastHome();
     }
 }

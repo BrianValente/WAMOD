@@ -11,6 +11,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -43,7 +44,7 @@ public class WAMODSettingsActivity_Home extends AppCompatActivity {
         public void onCreate(Bundle paramBundle) {
             super.onCreate(paramBundle);
             getPreferenceManager().setSharedPreferencesName("wamod");
-            addPreferencesFromResource(Resources.xml.wamodsetings_home);
+            addPreferencesFromResource(Resources.xml.wamodsettings_home);
 
             Preference drawerBg = findPreference("home_drawer_bg");
             drawerBg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -59,34 +60,40 @@ public class WAMODSettingsActivity_Home extends AppCompatActivity {
 
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             //super.onActivityResult(requestCode, resultCode, data);
-            if (null != data) {
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
-                Cursor cursor = ctx.getContentResolver().query(selectedImage,filePathColumn, null, null, null);
-                cursor.moveToFirst();
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                String picturePath = cursor.getString(columnIndex);
-                cursor.close();
-                Bitmap photo = BitmapFactory.decodeFile(picturePath);
+            try {
+                if (null != data) {
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Cursor cursor = ctx.getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    cursor.moveToFirst();
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    String picturePath = cursor.getString(columnIndex);
+                    cursor.close();
+                    Bitmap photo = BitmapFactory.decodeFile(picturePath);
 
-                FileOutputStream out = null;
-                try {
-                    String path = utils.getApplicationPath(ctx) + "/files/wamod_drawer_bg.png";
-                    out = new FileOutputStream(path);
-                    photo.compress(Bitmap.CompressFormat.PNG, 100, out); // bmp is your Bitmap instance
-                    // PNG is a lossless format, the compression factor (100) is ignored
-                    Toast.makeText(ctx, ctx.getResources().getString(id.wamod_done), Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
+                    FileOutputStream out = null;
                     try {
-                        if (out != null) {
-                            out.close();
-                        }
-                    } catch (IOException e) {
+                        String path = utils.getApplicationPath(ctx) + "/files/wamod_drawer_bg.png";
+                        out = new FileOutputStream(path);
+                        photo.compress(Bitmap.CompressFormat.PNG, 100, out); // bmp is your Bitmap instance
+                        // PNG is a lossless format, the compression factor (100) is ignored
+                        Toast.makeText(ctx, ctx.getResources().getString(id.wamod_done), Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
                         e.printStackTrace();
+                    } finally {
+                        try {
+                            if (out != null) {
+                                out.close();
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
+            } catch (Exception e) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ctx);
+                dialog.setMessage("There was an error, try another image.");
+                dialog.show();
             }
         }
     }

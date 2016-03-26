@@ -28,7 +28,7 @@ public class WAMODSettingsActivity_Privacy extends AppCompatActivity {
         public void onCreate(Bundle paramBundle) {
             super.onCreate(paramBundle);
             getPreferenceManager().setSharedPreferencesName("wamod");
-            addPreferencesFromResource(Resources.xml.wamodsetings_privacy);
+            addPreferencesFromResource(Resources.xml.wamodsettings_privacy);
         }
     }
 

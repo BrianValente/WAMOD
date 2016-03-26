@@ -23,7 +23,7 @@
     <string name="wamod_crash_button">Tamam ☹</string>
     <string name="wamod_crash_message">Yapılandırmanız yüklenirrken bir hata oluştu ve varsayılan değerler geri yüklenmiştir.</string>
     <string name="wamod_crash_title">WAMOD çöktü!</string>
-    <string name="wamod_credits">Katkıda Bulunanalar</string>
+    <string name="wamod_credits">Katkıda Bulunanlar</string>
     <string name="wamod_customconversationbgcolor">Özel arka plan rengi</string>
     <string name="wamod_customparticipantnamecolor">Özel katılımcı adı rengi</string>
     <string name="wamod_darkdrawer">Koyu renk çekmece</string>

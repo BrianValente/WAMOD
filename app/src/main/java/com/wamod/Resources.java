@@ -72,7 +72,8 @@ public final class Resources {
 
 
         /** HomeActivity */
-        public static int tabs = utils.getHexID("tabs", "id");
+        public static int tabs         = utils.getHexID("tabs", "id");
+        public static int pager_holder = utils.getHexID("pager_holder", "id");
 
         public static int conversations_row_contact_name = utils.getHexID("conversations_row_contact_name", "id");
         public static int conversations_row_date         = utils.getHexID("conversations_row_date", "id");
@@ -83,6 +84,12 @@ public final class Resources {
         public static int contactpicker_row_name         = utils.getHexID("contactpicker_row_name", "id");
         public static int contactpicker_row_status       = utils.getHexID("contactpicker_row_status", "id");
         public static int contactpicker_row_phone_type   = utils.getHexID("contactpicker_row_phone_type", "id");
+
+        public static int wamod_bottomnav          = utils.getHexID("wamod_bottomnav", "id");
+        public static int wamod_bottomnav_viewstub = utils.getHexID("wamod_bottomnav_viewstub", "id");
+        public static int wamod_bottomnav_calls    = utils.getHexID("wamod_bottomnav_calls", "id");
+        public static int wamod_bottomnav_chats    = utils.getHexID("wamod_bottomnav_chats", "id");
+        public static int wamod_bottomnav_contacts = utils.getHexID("wamod_bottomnav_contacts", "id");
 
 
         /** Conversation */
@@ -96,7 +103,7 @@ public final class Resources {
         public static int send                          = utils.getHexID("send", "id");
         public static int footer                        = utils.getHexID("footer", "id");
         public static int input_layout                  = utils.getHexID("input_layout", "id");
-        public static int emoji_picker_btn                     = utils.getHexID("emoji_picker_btn", "id");
+        public static int emoji_picker_btn              = utils.getHexID("emoji_picker_btn", "id");
 
         public static int wamod_theme_hangouts_conversation_gallery  = utils.getHexID("wamod_theme_hangouts_conversation_gallery", "id");
         public static int wamod_theme_hangouts_conversation_camera   = utils.getHexID("wamod_theme_hangouts_conversation_camera", "id");
@@ -183,12 +190,12 @@ public final class Resources {
 
     public static class xml {
         /** WAMOD Settings */
-        public static final int wamodsetings               = utils.getHexID("wamodsetings", "xml");
-        public static final int wamodsetings_generalcolors = utils.getHexID("wamodsetings_generalcolors", "xml");
-        public static final int wamodsetings_home          = utils.getHexID("wamodsetings_home", "xml");
-        public static final int wamodsetings_conversation  = utils.getHexID("wamodsetings_conversation", "xml");
-        public static final int wamodsetings_privacy       = utils.getHexID("wamodsetings_privacy", "xml");
-        public static final int wamodsetings_miscellaneous = utils.getHexID("wamodsetings_miscellaneous", "xml");
-        public static final int wamodsetings_wamodthemes   = utils.getHexID("wamodsetings_wamodthemes", "xml");
+        public static final int wamodsettings               = utils.getHexID("wamodsettings", "xml");
+        public static final int wamodsettings_generalcolors = utils.getHexID("wamodsettings_generalcolors", "xml");
+        public static final int wamodsettings_home          = utils.getHexID("wamodsettings_home", "xml");
+        public static final int wamodsettings_conversation  = utils.getHexID("wamodsettings_conversation", "xml");
+        public static final int wamodsettings_privacy       = utils.getHexID("wamodsettings_privacy", "xml");
+        public static final int wamodsettings_miscellaneous = utils.getHexID("wamodsettings_miscellaneous", "xml");
+        public static final int wamodsettings_wamodthemes   = utils.getHexID("wamodsettings_wamodthemes", "xml");
     }
 }

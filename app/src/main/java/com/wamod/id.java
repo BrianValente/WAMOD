@@ -5,7 +5,6 @@ package com.wamod;
  */
 public class id {
     /** APP */
-    public static int icon = 0x7f02083d;
     public static int app_name = 0x7f080612;
     public static int action_bar = 0x7f10008e;
 

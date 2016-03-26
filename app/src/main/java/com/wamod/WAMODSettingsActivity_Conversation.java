@@ -28,7 +28,7 @@ public class WAMODSettingsActivity_Conversation extends AppCompatActivity {
         public void onCreate(Bundle paramBundle) {
             super.onCreate(paramBundle);
             getPreferenceManager().setSharedPreferencesName("wamod");
-            addPreferencesFromResource(Resources.xml.wamodsetings_conversation);
+            addPreferencesFromResource(Resources.xml.wamodsettings_conversation);
         }
     }
 

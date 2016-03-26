@@ -235,7 +235,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#ffffff"
-                                    android:text="@string/wamod_privacy"
+                                    android:text="@string/settings_privacy"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="72dp"/>

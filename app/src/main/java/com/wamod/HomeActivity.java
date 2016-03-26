@@ -1,6 +1,7 @@
 package com.wamod;
 
 import android.app.ActivityManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -11,9 +12,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.HorizontalScrollView;
@@ -65,27 +68,22 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
         HorizontalScrollView tabs = (HorizontalScrollView) a.findViewById(Resources.id.tabs);
 
-        try {
-            utils.loadColorsV2(a);
-            tabs.setBackgroundColor(utils.getUIColor(utils.COLOR_TOOLBAR));
+        utils.loadColorsV2(a);
+        tabs.setBackgroundColor(utils.getUIColor(utils.COLOR_TOOLBAR));
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                String title = a.getString(Resources.string.app_name);
-                int color = Color.parseColor("#075e54");
-                if (utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"));
-                ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(a.getResources(), Resources.drawable.icon), color);
-                a.setTaskDescription(taskDesc);
-            }
+        // Check if dark mode is activated and change the background
+        View pager = a.findViewById(Resources.id.pager);
+        if (utils.darkMode()) {
+            pager.setBackgroundColor(utils.getDarkColor(2));
+        } else {
+            pager.setBackgroundColor(Color.WHITE);
+        }
 
-            // Check if dark mode is activated and change the background
-            View pager = a.findViewById(Resources.id.pager);
-            if (utils.darkMode()) {
-                pager.setBackgroundColor(utils.getDarkColor(2));
-            } else {
-                pager.setBackgroundColor(Color.WHITE);
-            }
-        } catch (RuntimeException e) {
-            utils.crashWAMOD(a);
+
+        // Load bottom navbar
+        if (utils.prefs.getBoolean("home_bottomnavigationbar", true)) {
+            ViewStub wamod_bottomnav_viewstub = (ViewStub) a.findViewById(Resources.id.wamod_bottomnav_viewstub);
+            if (wamod_bottomnav_viewstub != null) wamod_bottomnav_viewstub.inflate();
         }
 
         utils.initWAMODfromHome(a);
@@ -208,5 +206,9 @@ public class HomeActivity extends AppCompatActivity {
         Drawable icon = fab.getDrawable();
         icon.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
         fab.setImageDrawable(icon);
+    }
+
+    public void _onCreate(Context ctx) {
+
     }
 }

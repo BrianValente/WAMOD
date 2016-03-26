@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.whatsapp.App;
 import com.whatsapp.DialogToastListActivity;
@@ -221,8 +222,12 @@ public class Conversation extends DialogToastListActivity {
             if (utils.prefs.getBoolean("overview_multiplechats", true)) title = activity.getString(Resources.string.chat_with, contactName);
             int color = Color.parseColor("#075e54");
             if (utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"));
-            ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), Resources.drawable.icon), color);
-            activity.setTaskDescription(taskDesc);
+            try {
+                ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), Resources.drawable.icon), color);
+                activity.setTaskDescription(taskDesc);
+            } catch (Exception e) {
+                Toast.makeText(utils.context, e.getMessage(), Toast.LENGTH_LONG).show();
+            }
 
             for (int i=0; i < App.openedChats.size(); i++) {
                 chat chat = App.openedChats.get(i);

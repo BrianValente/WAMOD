@@ -169,6 +169,7 @@ public class NavigationDrawer extends RelativeLayout {
         wamod_drawer_photo.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                openDrawer2(false);
                 Intent intent = new Intent(activity, ProfileInfoActivity.class);
                 activity.startActivity(intent);
             }

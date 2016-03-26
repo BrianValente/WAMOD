@@ -28,7 +28,7 @@ public class WAMODSettingsActivity_Miscellaneous extends AppCompatActivity {
         public void onCreate(Bundle paramBundle) {
             super.onCreate(paramBundle);
             getPreferenceManager().setSharedPreferencesName("wamod");
-            addPreferencesFromResource(Resources.xml.wamodsetings_miscellaneous);
+            addPreferencesFromResource(Resources.xml.wamodsettings_miscellaneous);
         }
     }
 

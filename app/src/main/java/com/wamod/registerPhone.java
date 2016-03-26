@@ -37,7 +37,7 @@ public class registerPhone extends AsyncTask<String, Void, String> {
 
         String device = Build.MODEL;
 
-        String wamodversion = utils.wamodversion;
+        String wamodversion = utils.wamodVersionName;
 
         String ip = "";
 
