@@ -1,12 +1,15 @@
-<resources>
+﻿<resources>
     <!-- WAMOD -->
-    <string name="chat_with">Berbual dengan %1$s</string>
-    <string name="profile_of">Profil kepunyaan %1$s</string>
-    <string name="title_activity_test">Sedang menguji</string>
+    <string name="app_name">Tetapan WAMOD</string>
+    <string name="conversation_last_seen">Telah dilihat</string>
+    <string name="conversation_contact_online">Aktif sekarang</string>
+    <string name="type_a_message">Tulis sesuatu</string>
     <string name="action_settings">Tetapan</string>
     <string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
     <string name="title_activity_theme_hangouts_conversation_config">Tetapan tema hangouts</string> 
-    <string name="wamod_settings">Tetapan WAMOD</string>
+    <string name="chat_with">Berbual dengan %1$s</string>
+    <string name="profile_of">Profil kepunyaan %1$s</string>
+    <string name="title_activity_test">Sedang menguji</string>  
     <string name="wamod_general">Umum</string>
     <string name="wamod_statusbarcolor">Warna statusbar</string>
     <string name="wamod_toolbarcolor">Warna toolbar</string>
@@ -94,8 +97,25 @@
     <string name="wamod_visitwamodthemes">Lawat tema WAMOD</string>
     <string name="wamod_androidgallery">Guna galeri android</string>
     <string name="wamod_androidgallerysummary">Anda boleh pilih gambar dan video menggunakan galeri kegemaran anda</string>
-    <string name="wamod_credits">Kredit</string>
-    <string name="wamod_selectdrawerbackground">Pilih latar belakang drawer</string>
+    <string name="tabs_indicator_color">Warna tab penunjuk</string>
+    <string name="wamod_settings">Tetapan WAMOD</string>
+    <string name="wamod_credits">Credits</string>
+    <string name="new_group">Kumpulan baru</string>
+    <string name="whatsapp_web">WhatsApp Web</string>
+    <string name="settings_privacy_status">Status</string>
+    <string name="profile_photo">Gambar profil</string>
+    <string name="starred_messages">Mesej disimpan</string>
+    <string name="search">Cari</string>
+    <string name="settings_general">Tetapan</string>
+    <string name="settings_profile_info">Profil</string>
     <string name="wamod_darkdrawer">Drawer gelap</string>
+    <string name="wamod_selectdrawerbackground">Pilih latar belakang drawer</string>
     <string name="wamod_blacktextindrawerheader">Teks gelap pada drawer</string>
+    <string name="wamod_switchaccount_prompt_title">Tukar akaun</string>
+    <string name="wamod_switchaccount_prompt_message">Adakah anda pasti untuk menukar akaun?</string>
+    <string name="calls">Panggilan</string>
+    <string name="chats">Chats</string>
+    <string name="contacts">kenalan</string>
+    <string name="settings_privacy">Privasi</string>
+    <string name="wamod_generalcolors">Warna umum</string>
 </resources>
