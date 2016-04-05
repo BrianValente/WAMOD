@@ -2,10 +2,10 @@
 <resources>
     
     <!-- WAMOD -->
-	  <string name="mark_read_label">Segna come letto</string>
-	  <string name="transition_photo">Foto</string>
+    <string name="mark_read_label">Segna come letto</string>
+    <string name="transition_photo">Foto</string>
     <string name="action_settings">Impostazioni</string>
-	  <string name="wamod_general">Generale</string>
+    <string name="wamod_general">Generale</string>
     <string name="wamod_statusbarcolor">Colori Status bar</string>
     <string name="wamod_toolbarcolor">Colori barra degli strumenti</string>
     <string name="wamod_toolbarforeground">Toolbar in primo piano</string>
