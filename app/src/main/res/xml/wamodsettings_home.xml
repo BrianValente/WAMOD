@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:entries="@array/home_theme" android:title="@string/wamod_hometheme" android:key="home_theme" android:summary="WAMOD" android:entryValues="@array/home_theme_values" />
+    <com.wamod.ColorPickerPreference android:title="@string/tabs_indicator_color" android:key="home_tabsindicatorcolor" android:summary="" />
+    <com.wamod.CheckboxPreference android:title="@string/wamod_darkmode" android:key="general_darkmode" android:summary="@string/wamod_darkmodesummary" />
+    <com.wamod.CheckboxPreference android:title="@string/wamod_darkdrawer" android:key="home_drawer_dark" />
+    <com.wamod.ActionPreference android:title="@string/wamod_selectdrawerbackground" android:key="home_drawer_bg" />
+    <com.wamod.CheckboxPreference android:title="@string/wamod_blacktextindrawerheader" android:key="home_drawer_blackheadertext" />
+    <PreferenceCategory android:title="Bottom navigation bar">
+        <com.wamod.CheckboxPreference android:title="Enable" android:key="home_bottomnavigationbar" />
+        <com.wamod.CheckboxPreference android:title="Auto colors" android:summary="Colors are selected automatically" android:key="home_bottomnavigationbar_autocolor" />
+        <com.wamod.ColorPickerPreference android:title="Navigation bar color" android:key="home_bottomnavigationbar_colors_bg" android:summary="" />
+        <com.wamod.ColorPickerPreference android:title="Active item color" android:key="home_bottomnavigationbar_colors_activeitem" android:summary="" />
+        <com.wamod.ColorPickerPreference android:title="Inactive item color" android:key="home_bottomnavigationbar_colors_inactiveitem" android:summary="" />
+    </PreferenceCategory>
+</PreferenceScreen>
