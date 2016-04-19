@@ -34,8 +34,12 @@
                         android:layout_height="39.00dp"
                         android:src="@drawable/wamod_theme_test_conversation_extras_mic_wave1"
                         android:id="@+id/wamod_theme_test_conversation_extras_mic_wave1"
+<<<<<<< HEAD
                         android:layout_marginLeft="-50dp"
                         android:layout_marginStart="-50dp"/>
+=======
+                        android:layout_marginLeft="-50dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     <ImageView
                         android:layout_width="279.67dp"
                         android:layout_height="39.00dp"
@@ -72,7 +76,10 @@
                     android:foreground="?selectableItemBackground"
                     android:src="@drawable/wamod_theme_test_conversation_extras_send"
                     android:layout_marginLeft="90dp"
+<<<<<<< HEAD
                     android:layout_marginStart="90dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:id="@+id/wamod_theme_test_conversation_extras_mic_send"
                     android:elevation="12dp"/>
             </LinearLayout>

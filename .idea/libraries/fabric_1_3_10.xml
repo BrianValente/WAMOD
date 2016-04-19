@@ -1,8 +1,13 @@
 <component name="libraryTable">
   <library name="fabric-1.3.10">
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.10/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.10/jars/classes.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.10/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.10/res" />
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
     </CLASSES>
     <JAVADOC />
     <SOURCES />

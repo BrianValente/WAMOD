@@ -36,7 +36,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="16dp"
+<<<<<<< HEAD
                             android:layout_marginStart="16dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             android:orientation="vertical"
                             android:layout_marginBottom="9dp">
                             <com.pkmmte.view.CircularImageView
@@ -53,10 +56,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentBottom="true"
                                 android:layout_toRightOf="@id/wamod_drawer_photo"
+<<<<<<< HEAD
                                 android:layout_toEndOf="@id/wamod_drawer_photo"
                                 android:orientation="vertical"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginStart="1dp">
+=======
+                                android:orientation="vertical"
+                                android:layout_marginLeft="1dp">
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -81,7 +89,10 @@
                             android:src="@drawable/wamod_drawer_2ndaccount"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
+<<<<<<< HEAD
                             android:layout_alignParentEnd="true"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             android:layout_margin="8dp"
                             android:id="@+id/wamod_drawer_header_2ndprofilepic"
                             app:border="true"
@@ -124,7 +135,10 @@
                                         android:src="@drawable/wamod_drawer_ic_newgroup"
                                         android:layout_centerVertical="true"
                                         android:layout_marginLeft="16dp"
+<<<<<<< HEAD
                                         android:layout_marginStart="16dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                         android:padding="2dp"/>
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -133,8 +147,12 @@
                                         android:text="@string/new_group"
                                         android:textSize="15sp"
                                         android:layout_centerVertical="true"
+<<<<<<< HEAD
                                         android:layout_marginLeft="72dp"
                                         android:layout_marginStart="72dp"/>
+=======
+                                        android:layout_marginLeft="72dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -148,7 +166,10 @@
                                     android:src="@drawable/wamod_drawer_ic_wamodweb"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="16dp"
+<<<<<<< HEAD
                                     android:layout_marginStart="16dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -157,8 +178,12 @@
                                     android:text="@string/whatsapp_web"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
+<<<<<<< HEAD
                                     android:layout_marginLeft="72dp"
                                     android:layout_marginStart="72dp"/>
+=======
+                                    android:layout_marginLeft="72dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -172,7 +197,10 @@
                                     android:src="@drawable/wamod_drawer_ic_status"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="16dp"
+<<<<<<< HEAD
                                     android:layout_marginStart="16dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -181,8 +209,12 @@
                                     android:text="@string/settings_privacy_status"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
+<<<<<<< HEAD
                                     android:layout_marginLeft="72dp"
                                     android:layout_marginStart="72dp"/>
+=======
+                                    android:layout_marginLeft="72dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                             <!--<RelativeLayout
                                 android:layout_width="match_parent"
@@ -218,7 +250,10 @@
                                     android:src="@drawable/wamod_drawer_ic_starredmessages"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="16dp"
+<<<<<<< HEAD
                                     android:layout_marginStart="16dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -227,8 +262,12 @@
                                     android:text="@string/starred_messages"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
+<<<<<<< HEAD
                                     android:layout_marginLeft="72dp"
                                     android:layout_marginStart="72dp"/>
+=======
+                                    android:layout_marginLeft="72dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -242,7 +281,10 @@
                                     android:src="@drawable/wamod_drawer_ic_privacy"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="16dp"
+<<<<<<< HEAD
                                     android:layout_marginStart="16dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                     android:padding="2dp"/>
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -251,17 +293,25 @@
                                     android:text="@string/settings_privacy"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
+<<<<<<< HEAD
                                     android:layout_marginLeft="72dp"
                                     android:layout_marginStart="72dp"/>
+=======
+                                    android:layout_marginLeft="72dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:background="#30ffffff"
                                 android:layout_marginLeft="0dp"
+<<<<<<< HEAD
                                 android:layout_marginStart="0dp"
                                 android:layout_marginRight="0dp"
                                 android:layout_marginEnd="0dp"
+=======
+                                android:layout_marginRight="0dp"
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:clickable="true" />
@@ -278,8 +328,12 @@
                                     android:text="@string/settings_general"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
+<<<<<<< HEAD
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginStart="20dp"/>
+=======
+                                    android:layout_marginLeft="20dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -294,8 +348,12 @@
                                     android:text="@string/wamod_wamodsettings"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
+<<<<<<< HEAD
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginStart="20dp"/>
+=======
+                                    android:layout_marginLeft="20dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                             </RelativeLayout>
                         </LinearLayout>
                     </ScrollView>
