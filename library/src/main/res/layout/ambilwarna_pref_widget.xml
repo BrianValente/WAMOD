@@ -5,6 +5,10 @@
         android:layout_height="24dp"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="6dp"
+<<<<<<< HEAD
+        android:layout_marginEnd="6dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
         android:focusable="false"
         android:clickable="false">
 

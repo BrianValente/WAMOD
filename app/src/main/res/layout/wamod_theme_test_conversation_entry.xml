@@ -29,6 +29,10 @@
                     android:layout_height="54dp"
                     android:src="@drawable/attach_gallery"
                     android:layout_marginRight="30dp"
+<<<<<<< HEAD
+                    android:layout_marginEnd="30dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:background="?selectableItemBackgroundBorderless"
                     android:id="@+id/wamod_theme_test_conversation_entry_attach_gallery" />
                 <ImageButton
@@ -36,7 +40,13 @@
                     android:layout_height="54dp"
                     android:src="@drawable/attach_camera"
                     android:layout_marginLeft="30dp"
+<<<<<<< HEAD
+                    android:layout_marginStart="30dp"
                     android:layout_marginRight="30dp"
+                    android:layout_marginEnd="30dp"
+=======
+                    android:layout_marginRight="30dp"
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:background="?selectableItemBackgroundBorderless"
                     android:id="@+id/wamod_theme_test_conversation_entry_attach_camera"/>
                 <ImageButton
@@ -44,6 +54,10 @@
                     android:layout_height="54dp"
                     android:src="@drawable/attach_audio"
                     android:layout_marginLeft="30dp"
+<<<<<<< HEAD
+                    android:layout_marginStart="30dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:background="?selectableItemBackgroundBorderless"
                     android:id="@+id/wamod_theme_test_conversation_entry_attach_audio"/>
             </LinearLayout>
@@ -58,7 +72,12 @@
                     android:text="Gallery"
                     android:gravity="center_horizontal"
                     android:textColor="#777777"
+<<<<<<< HEAD
+                    android:layout_marginRight="27dp"
+                    android:layout_marginEnd="27dp"/>
+=======
                     android:layout_marginRight="27dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                 <TextView
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
@@ -66,14 +85,25 @@
                     android:gravity="center_horizontal"
                     android:textColor="#777777"
                     android:layout_marginLeft="27dp"
+<<<<<<< HEAD
+                    android:layout_marginStart="27dp"
+                    android:layout_marginRight="27dp"
+                    android:layout_marginEnd="27dp"/>
+=======
                     android:layout_marginRight="27dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                 <TextView
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="Audio"
                     android:gravity="center_horizontal"
                     android:textColor="#777777"
+<<<<<<< HEAD
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginStart="27dp"/>
+=======
                     android:layout_marginLeft="27dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,6 +115,10 @@
                     android:layout_height="54dp"
                     android:src="@drawable/attach_contact"
                     android:layout_marginRight="30dp"
+<<<<<<< HEAD
+                    android:layout_marginEnd="30dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:background="?selectableItemBackgroundBorderless"
                     android:id="@+id/wamod_theme_test_conversation_entry_attach_contact"/>
                 <ImageButton
@@ -92,7 +126,13 @@
                     android:layout_height="54dp"
                     android:src="@drawable/attach_location"
                     android:layout_marginLeft="30dp"
+<<<<<<< HEAD
+                    android:layout_marginStart="30dp"
                     android:layout_marginRight="30dp"
+                    android:layout_marginEnd="30dp"
+=======
+                    android:layout_marginRight="30dp"
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:background="?selectableItemBackgroundBorderless"
                     android:id="@+id/wamod_theme_test_conversation_entry_attach_location"/>
                 <ImageButton
@@ -100,6 +140,10 @@
                     android:layout_height="54dp"
                     android:src="@drawable/attach_contact"
                     android:layout_marginLeft="30dp"
+<<<<<<< HEAD
+                    android:layout_marginStart="30dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:background="?selectableItemBackgroundBorderless"
                     android:id="@+id/wamod_theme_test_conversation_entry_attach_edit"/>
             </LinearLayout>
@@ -114,7 +158,12 @@
                     android:text="Contact"
                     android:gravity="center_horizontal"
                     android:textColor="#777777"
+<<<<<<< HEAD
+                    android:layout_marginRight="27dp"
+                    android:layout_marginEnd="27dp"/>
+=======
                     android:layout_marginRight="27dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                 <TextView
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
@@ -122,6 +171,11 @@
                     android:gravity="center_horizontal"
                     android:textColor="#777777"
                     android:layout_marginLeft="27dp"
+<<<<<<< HEAD
+                    android:layout_marginStart="27dp"
+                    android:layout_marginEnd="27dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                     android:layout_marginRight="27dp"/>
                 <TextView
                     android:layout_width="60dp"
@@ -129,7 +183,12 @@
                     android:text="Edit"
                     android:gravity="center_horizontal"
                     android:textColor="#777777"
+<<<<<<< HEAD
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginStart="27dp"/>
+=======
                     android:layout_marginLeft="27dp"/>
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -138,6 +197,11 @@
             android:background="#88000000"
             android:paddingTop="2dp"
             android:paddingLeft="2dp"
+<<<<<<< HEAD
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
             android:paddingRight="2dp"
             android:paddingBottom="2.25dp"
             android:id="@+id/wamod_theme_test_conversation_entry_layout">
@@ -148,6 +212,11 @@
                 android:layout_marginBottom="0dp"
                 android:padding="10dp"
                 android:layout_marginLeft="0dp"
+<<<<<<< HEAD
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                 android:layout_marginRight="0dp"
                 android:id="@+id/wamod_theme_test_conversation_entry_attach_btn"
                 android:background="?actionBarItemBackground"
@@ -176,6 +245,11 @@
                 android:layout_marginBottom="0dp"
                 android:padding="10dp"
                 android:layout_marginLeft="0dp"
+<<<<<<< HEAD
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                 android:layout_marginRight="0dp"
                 android:id="@+id/wamod_theme_test_conversation_entry_send"
                 android:background="?actionBarItemBackground"
@@ -190,6 +264,11 @@
                 android:layout_marginBottom="0dp"
                 android:padding="10dp"
                 android:layout_marginLeft="0dp"
+<<<<<<< HEAD
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+=======
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
                 android:layout_marginRight="0dp"
                 android:id="@+id/wamod_theme_test_conversation_entry_mic"
                 android:background="?actionBarItemBackground"

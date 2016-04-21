@@ -10,7 +10,12 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="WAMOD"
+<<<<<<< HEAD
+        android:theme="@style/Theme.AppCompat"
+        android:supportsRtl="true">
+=======
         android:theme="@style/Theme.AppCompat" >
+>>>>>>> bebcc5b8b8f8dbbf7d953249c821ff15c7e2e341
         <activity
             android:name="com.wamod.DrawerActivity"
             android:label="WAMOD" >
