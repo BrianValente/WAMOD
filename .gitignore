@@ -1,5 +1,8 @@
 smali/*
 build/*
-gradle/*
 .idea/*
 .gradle/*
+AndroidStudioProject.iml
+WAMOD.iml
+android-mvn-push.gradle
+local.properties
