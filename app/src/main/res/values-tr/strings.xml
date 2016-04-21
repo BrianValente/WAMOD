@@ -38,9 +38,11 @@
     <string name="wamod_enablecardcolor">Kart rengini etkinleştirme</string>
     <string name="wamod_openchatslikenewtasks">Yeni görevler gibi açık sohbetler</string>
     <string name="wamod_privacy">Gizlilik</string>
+    <string name="wamod_freezelastseen">Son görülmeyi durdur</string>
     <string name="wamod_no2ndtick">2. tik yok</string>
     <string name="wamod_nobluetick">Mavi tik yok</string>
     <string name="wamod_hidetyping">Yazıyor\'u gizle</string>
+    <string name="wamod_alwaysonline">Her zaman çevrimiçi</string>
     <string name="wamod_miscellaneous">Çeşitli ayarlar</string>
     <string name="wamod_disablecolorpicker">Renk seçiciyi devre dışı bırak</string>
     <string name="wamod_checkforupdates">Güncellemeleri kontrol et</string>

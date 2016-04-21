@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- WAMOD -->
     <string name="mark_read_label">Segna come letto</string>
     <string name="transition_photo">Foto</string>
