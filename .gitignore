@@ -1,3 +1,5 @@
 smali/*
 build/*
 gradle/*
+.idea/*
+.gradle/*
