@@ -1,14 +1,40 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.App.Home.Splash" parent="@style/AppTheme">
+    <style name="Theme.App" parent="@style/AppTheme">
         <item name="android:windowBackground">@drawable/splash</item>
         <item name="android:statusBarColor">#E0E0E0</item>
         <item name="android:navigationBarColor">#E0E0E0</item>
     </style>
 
+
+    <style name="WAMOD.Theme" parent="Theme.AppCompat.DayNight">
+    </style>
+    <style name="WAMOD.Theme.Day" parent="Theme.AppCompat.Light">
+    </style>
+
+    <style name="WAMOD.Theme.Home" parent="WAMOD.Theme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="WAMOD.Theme.Home.Day" parent="WAMOD.Theme.Day">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="WAMOD.Theme.Conversation" parent="WAMOD.Theme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="WAMOD.Theme.Conversation.Day" parent="WAMOD.Theme.Day">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="WAMOD.Theme.Settings" parent="WAMOD.Theme"></style>
+    <style name="WAMOD.Theme.Settings.Day" parent="WAMOD.Theme.Day"></style>
 </resources>

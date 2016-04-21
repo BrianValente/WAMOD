@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.UiModeManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +16,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Point;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -24,21 +28,24 @@ import android.preference.PreferenceActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,6 +67,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.util.Calendar;
 
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
@@ -72,8 +80,8 @@ import io.fabric.sdk.android.Fabric;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.0.7.3";
-    public static int wamodVersionCode = 24;
+    public static String wamodVersionName = "1.0.8";
+    public static int wamodVersionCode = 25;
     public static Context context;
     public static boolean debug = false;
 
@@ -84,7 +92,10 @@ public class utils extends Activity {
     public static final int COLOR_NAVBAR = 2;
     public static final int COLOR_FOREGROUND = 3;
     public static final int COLOR_TOOLBARTEXT = 4;
-    
+
+    public static boolean switchReady = false;
+
+
     public static void loadColors(android.support.v7.app.ActionBar actionBar, Window window) {
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"))));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
@@ -123,11 +134,11 @@ public class utils extends Activity {
         try {
             //if (a instanceof MediaView) return;
             ActionBar actionbar = a.getSupportActionBar();
-            boolean changeToolbarColor = !(a instanceof ChatInfoActivity) &&
-                                         !(a instanceof MediaView) &&
-                                         !(a instanceof ViewProfilePhoto) &&
-                                         !(a instanceof QuickContactActivity);
-            if (actionbar != null && changeToolbarColor) {
+            boolean coloredToolbarColor = !(a instanceof ChatInfoActivity) &&
+                                          !(a instanceof MediaView) &&
+                                          !(a instanceof ViewProfilePhoto) &&
+                                          !(a instanceof QuickContactActivity);
+            if (actionbar != null && coloredToolbarColor) {
                 actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
                 int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
                 ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
@@ -141,13 +152,22 @@ public class utils extends Activity {
             }
 
             Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
-            if (toolbar != null && changeToolbarColor) {
+            if (toolbar != null && coloredToolbarColor) {
                 toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
                 toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+
+                if (a instanceof com.whatsapp.Conversation) {
+                    ImageView up = (ImageView) toolbar.findViewById(Resources.id.up);
+                    TextView conversation_contact_name = (TextView) toolbar.findViewById(Resources.id.conversation_contact_name);
+                    TextView conversation_contact_status = (TextView) toolbar.findViewById(Resources.id.conversation_contact_status);
+                    up.setColorFilter(getUIColor(COLOR_FOREGROUND));
+                    conversation_contact_name.setTextColor(getUIColor(utils.COLOR_TOOLBARTEXT));
+                    conversation_contact_status.setTextColor(getUIColor(utils.COLOR_TOOLBARTEXT));
+                }
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                if (changeToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
+                if (coloredToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
                 a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
                 if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
                     a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
@@ -160,8 +180,57 @@ public class utils extends Activity {
                 }
             }
         } catch (Exception e) {
-            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+            manageException(e);
         }
+
+        /*try {
+            if (nightModeShouldRun()) {
+                final ViewGroup content = (ViewGroup) a.findViewById(android.R.id.content);
+                content.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        for (int i=0; i<content.getChildCount();i++) {
+                            View v = content.getChildAt(i);
+                            if (v instanceof ScrollView) {
+                                ScrollView scrollView = (ScrollView) v;
+                                scrollView.setBackgroundColor(getDarkColor(2));
+                            }
+                        }
+                    }
+                });
+            }
+        } catch (Exception e) {
+            Log.i("WAMOD", e.getMessage());
+            if (debug) throw new RuntimeException(e);
+        }*/
+
+        try {
+            if (a instanceof com.whatsapp.HomeActivity) {
+                com.wamod.HomeActivity.initHomeActivity((com.whatsapp.HomeActivity) a);
+            } else if (a instanceof com.whatsapp.Conversation) {
+                com.wamod.Conversation.initConversation((com.whatsapp.Conversation) a);
+            } else if (a instanceof com.whatsapp.Settings) {
+                com.wamod.Settings._onCreate(a);
+            } else if (a instanceof com.whatsapp.ProfileInfoActivity) {
+                com.wamod.ProfileInfoActivity._onCreate(a);
+            } else if (a instanceof com.whatsapp.NewGroup) {
+                com.wamod.NewGroup._onCreate(a);
+            } else if (a instanceof com.whatsapp.StarredMessagesActivity) {
+                com.wamod.StarredMessagesActivity._onCreate(a);
+            } else if (a instanceof com.whatsapp.SetStatus) {
+                com.wamod.SetStatus._onCreate(a);
+            } else if (a instanceof com.whatsapp.WebSessionsActivity) {
+                com.wamod.WebSessionsActivity._onCreate(a);
+            } else if (a instanceof com.whatsapp.ContactInfo) {
+                com.wamod.ContactInfo._onCreate(a);
+            } else if (a instanceof com.whatsapp.GroupChatInfo) {
+                com.wamod.GroupChatInfo._onCreate(a);
+            }
+        } catch (Exception e) {
+            manageException(e);
+        }
+
+        
     }
 
     public static void loadColorsV2(PreferenceActivity a) {
@@ -198,6 +267,13 @@ public class utils extends Activity {
             }
         } catch (Exception e) {
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        if (a instanceof com.whatsapp.DialogToastPreferenceActivity) {
+            ListView list = (ListView) a.findViewById(android.R.id.list);
+            if (list != null && utils.nightModeShouldRun()) {
+                list.setBackgroundColor(utils.getDarkColor(2));
+            }
         }
     }
 
@@ -336,6 +412,10 @@ public class utils extends Activity {
                 utils.edit.putString("home_bottomnavigationbar_colors_bg", "555555");
                 utils.edit.putString("home_bottomnavigationbar_colors_activeitem", "ffffff");
                 utils.edit.putString("home_bottomnavigationbar_colors_inactiveitem", "888888");
+            case 24:
+                utils.edit.putBoolean("home_bottomnavigationbar", true);
+                utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
+                utils.edit.putBoolean("home_drawer_showsecondaccount", true);
                 break;
         }
         utils.edit.putInt("wamodversion", wamodVersionCode);
@@ -358,8 +438,20 @@ public class utils extends Activity {
         new checkinv2().execute(a);
     }
 
-    public static boolean darkMode() {
-        return utils.prefs.getBoolean("general_darkmode", false);
+    public static boolean nightModeShouldRun() {
+        if (!utils.prefs.getBoolean("nightmode_enable", false)) return false;
+        if (!utils.prefs.getBoolean("nightmode_atnightonly", false)) return true;
+        Boolean isNight;
+        Calendar cal = Calendar.getInstance();
+        int hour = cal.get(Calendar.HOUR_OF_DAY);
+        isNight = hour < 6 || hour > 18;
+        return isNight;
+    }
+
+    public static boolean ddarkMode() {
+        UiModeManager uiModeManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);
+        return uiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_YES;
+        //return utils.prefs.getBoolean("general_darkmode", false);
     }
 
     public static int getTickDrawableHex(int optionID) {
@@ -480,6 +572,9 @@ public class utils extends Activity {
             default:
             case 2:
                 colorStr = "#303030";
+                break;
+            case 3:
+                colorStr = "#424242";
         }
         int color = Color.parseColor(colorStr);
         return color;
@@ -722,7 +817,8 @@ public class utils extends Activity {
     public static byte[] getb9() {
         //byte[] official = Base64.decode("ACkLRN4OqtS0sFb/1aGVDQ==", Base64.DEFAULT);
         // 2.12.489 byte[] official = Base64.decode("w8Ar4WLq2n9/S5aonWMCGQ==", Base64.DEFAULT);
-        byte[] official = Base64.decode("1E2kZOex25HvKMQPFpG1ZQ==", Base64.DEFAULT);
+        // 2.12.551 byte[] official = Base64.decode("1E2kZOex25HvKMQPFpG1ZQ==", Base64.DEFAULT);
+        byte[] official = Base64.decode("HQ3bHbhJnKQdh+B/qpAHhQ==", Base64.DEFAULT); // 2.16.21
         return official;
     }
 
@@ -802,7 +898,7 @@ public class utils extends Activity {
                 copyWhatsAppFolderFromTemp(ctx, "no_backup");
                 copyWhatsAppFolderFromTemp(ctx, "shared_prefs");
                 deleteWAMODTempFolder(ctx);
-                restartWAMOD(ctx);
+                while (true) if (switchReady) restartWAMOD(ctx);
             }
         });
         builder.setNegativeButton(ctx.getResources().getString(android.R.string.cancel), null);
@@ -811,6 +907,7 @@ public class utils extends Activity {
     }
 
     private static void copyWhatsAppFolderFromTemp(Context ctx, String name) {
+        switchReady = false;
         try {
             String appPath = getApplicationPath(ctx);
             File dest = new File(appPath + "/WAMOD/" + name);
@@ -818,9 +915,11 @@ public class utils extends Activity {
             if (!dest.exists()) dest.mkdirs();
             FileUtils.copyDirectory(source, dest);
         } catch (IOException e) {}
+        switchReady = true;
     }
 
     private static void copyToWhatsAppFolder(Context ctx, String name) {
+        switchReady = false;
         try {
             String appPath = getApplicationPath(ctx);
             File dest = new File(appPath + "/" + name);
@@ -828,9 +927,11 @@ public class utils extends Activity {
             if (!dest.exists()) dest.mkdirs();
             FileUtils.copyDirectory(source, dest);
         } catch (IOException e) {}
+        switchReady = true;
     }
 
     private static void copyWhatsAppFolderTemporary(Context ctx, String name) {
+        switchReady = false;
         try {
             String appPath = getApplicationPath(ctx);
             File dest = new File(appPath + "/WAMOD_temp/" + name);
@@ -838,23 +939,28 @@ public class utils extends Activity {
             if (!dest.exists()) dest.mkdirs();
             FileUtils.copyDirectory(source, dest);
         } catch (IOException e) {}
+        switchReady = true;
     }
 
 
     private static void deleteWhatsAppFolder(Context ctx, String name) {
+        switchReady = false;
         try {
             String appPath = getApplicationPath(ctx);
             File source = new File(appPath + "/" + name);
             FileUtils.deleteDirectory(source);
         } catch (IOException e) {}
+        switchReady = true;
     }
 
     private static void deleteWAMODTempFolder(Context ctx) {
+        switchReady = false;
         try {
             String appPath = getApplicationPath(ctx);
             File source = new File(appPath + "/WAMOD_temp");
             FileUtils.deleteDirectory(source);
         } catch (IOException e) {}
+        switchReady = true;
     }
 
     public static String get2ndNumberUserName(Context ctx) {
@@ -951,5 +1057,79 @@ public class utils extends Activity {
 
     public static void asdfdsf() {
         toastHome();
+    }
+
+    public static void loadColorsBeforeSuper(AppCompatActivity a) {
+        Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
+        if (a instanceof WAMODSettings) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Settings);
+            else a.setTheme(Resources.style.WAMOD_Theme_Settings_Day);
+        } else if (a instanceof com.whatsapp.HomeActivity) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+        } else if (a instanceof com.whatsapp.StarredMessagesActivity) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+        } else if (a instanceof com.whatsapp.VoipActivity) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+        } else if (a instanceof com.whatsapp.QuickContactActivity) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+        } else if (a instanceof com.whatsapp.wallpaper.SolidColorWallpaper) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+        } else if (a instanceof com.whatsapp.wallpaper.SolidColorWallpaperPreview) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+        } else if (a instanceof com.whatsapp.Conversation) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Conversation);
+            else a.setTheme(Resources.style.WAMOD_Theme_Conversation_Day);
+        } else if (a instanceof com.whatsapp.ContactInfo) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Conversation);
+            else a.setTheme(Resources.style.WAMOD_Theme_Conversation_Day);
+        } else if (a instanceof com.whatsapp.GroupChatInfo) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Conversation);
+            else a.setTheme(Resources.style.WAMOD_Theme_Conversation_Day);
+        } else if (a instanceof com.whatsapp.MediaGallery) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Conversation);
+            else a.setTheme(Resources.style.WAMOD_Theme_Conversation_Day);
+        }/* else if (a instanceof com.whatsapp.WAAppCompatActivity) {
+            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme);
+            else a.setTheme(Resources.style.WAMOD_Theme_Day);
+        }*/
+    }
+
+    public static void loadColorsBeforeSuper(PreferenceActivity a) {
+        Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
+        if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme);
+        else a.setTheme(Resources.style.WAMOD_Theme_Day);
+    }
+
+    public static Drawable tintToColor(Drawable drawable, int color) {
+        if (drawable == null) return null;
+        int red   = (color & 0xFF0000) / 0xFFFF;
+        int green = (color & 0xFF00) / 0xFF;
+        int blue  = color & 0xFF;
+        float[] matrix = { 0, 0, 0, 0, red,
+                0, 0, 0, 0, green,
+                0, 0, 0, 0, blue,
+                0, 0, 0, 1, 0 };
+        ColorFilter colorFilter = new ColorMatrixColorFilter(matrix);
+
+        drawable.setColorFilter(colorFilter);
+
+        return drawable;
+    }
+
+    public static void manageException(Exception e) {
+        if (debug) throw new RuntimeException(e);
+        else Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+    }
+
+    public static void copyToClipboard(String s) {
+        ClipboardManager clipboard = (ClipboardManager) utils.context.getSystemService(utils.context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("", s);
+        clipboard.setPrimaryClip(clip);
     }
 }

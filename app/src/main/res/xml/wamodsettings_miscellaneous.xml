@@ -4,7 +4,6 @@
     <com.wamod.CheckboxPreference android:title="@string/wamod_androidgallery" android:key="conversation_androidgallery" android:summary="@string/wamod_androidgallerysummary" />
     <com.wamod.CheckboxPreference android:title="@string/wamod_enablecardcolor" android:key="overview_cardcolor" android:summary="@string/wamod_enablecardcolorsummary" />
     <com.wamod.CheckboxPreference android:title="@string/wamod_openchatslikenewtasks" android:key="overview_multiplechats" android:summary="@string/wamod_openchatslikenewtaskssummary" />
-    <com.wamod.CheckboxPreference android:title="@string/wamod_disablecolorpicker" android:key="debug_disablecolorpicker" />
     <com.wamod.ActionPreference android:icon="@null" android:title="@string/wamod_checkforupdates" android:key="checkforupdates" />
     <com.wamod.ActionPreference android:icon="@null" android:title="@string/wamod_restoredefaults" android:key="restoredefaults" />
 </PreferenceScreen>

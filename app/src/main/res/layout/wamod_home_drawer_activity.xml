@@ -17,4 +17,7 @@
         android:scaleType="centerInside"
         android:clickable="true"
         android:onClick="forceCrash"/>
+    <com.wamod.ViewPager
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></com.wamod.ViewPager>
 </RelativeLayout>

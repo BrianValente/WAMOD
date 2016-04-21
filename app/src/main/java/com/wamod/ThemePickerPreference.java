@@ -14,9 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
@@ -59,5 +61,17 @@ public class ThemePickerPreference extends ListPreference {
     public void setValue(String value) {
         super.setValue(value);
         init();
+    }
+
+    @Override
+    protected void onBindView(View view) {
+        super.onBindView(view);
+        if (utils.nightModeShouldRun()) {
+            TextView title = (TextView) view.findViewById(android.R.id.title);
+            if (title != null) title.setTextColor(utils.getDarkColor(0));
+
+            TextView summary = (TextView) view.findViewById(android.R.id.summary);
+            if (summary != null) summary.setTextColor(utils.getDarkColor(1));
+        }
     }
 }

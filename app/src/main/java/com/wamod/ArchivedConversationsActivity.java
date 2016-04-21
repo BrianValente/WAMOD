@@ -19,7 +19,7 @@ public class ArchivedConversationsActivity extends AppCompatActivity {
     }
 
     public static void initDarkMode(Activity activity) {
-        if (utils.darkMode()) {
+        if (utils.nightModeShouldRun()) {
             FrameLayout container = (FrameLayout) activity.findViewById(R.id.action0);
             container.setBackgroundColor(utils.getDarkColor(2));
         }

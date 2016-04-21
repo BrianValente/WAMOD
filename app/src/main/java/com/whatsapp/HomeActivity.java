@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
         return false;
     }
 
-    public class TabsPager extends ViewPager {
+    public class TabsPager extends com.wamod.ViewPager {
         public TabsPager(Context context) {
             super(context);
         }

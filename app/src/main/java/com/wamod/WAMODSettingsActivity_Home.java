@@ -22,11 +22,12 @@ import java.io.IOException;
 /**
  * Created by BrianValente on 3/3/16.
  */
-public class WAMODSettingsActivity_Home extends AppCompatActivity {
+public class WAMODSettingsActivity_Home extends WAMODSettings {
     static Context ctx;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        utils.loadColorsBeforeSuper(this);
         super.onCreate(savedInstanceState);
         ctx = this;
         getFragmentManager().beginTransaction().replace(android.R.id.content, new WAMODSettingsFragment()).commit();

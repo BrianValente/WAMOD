@@ -145,6 +145,8 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
     @Override
     protected void onPostExecute(final AppCompatActivity a) {
 
+        Log.i("WAMOD", "Server response: " + internalResponse);
+
         utils.timeSinceLastCheckin = System.currentTimeMillis();
 
         try {

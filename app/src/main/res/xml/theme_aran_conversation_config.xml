@@ -5,31 +5,38 @@
     android:key="content">
     <PreferenceCategory
         android:title="Text entry">
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_bgcolor"
             android:title="Background color"
             android:summary="" />
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_entry_bgcolor"
             android:title="Entry background color"
             android:summary="" />
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_entry_hintcolor"
             android:title="Hint color"
             android:summary="" />
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_entry_textcolor"
             android:title="Text color"
             android:summary="" />
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_emoji_color"
             android:title="Emoji button color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_mic_color"
             android:title="Microphone button color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_aran_conversation_send_color"
             android:title="Send button color"
             android:summary=""/>

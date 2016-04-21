@@ -252,7 +252,7 @@ public class conversationStyleEntryTest extends Conversation {
         public void onClick(View v) {
             EditText originalEditText = (EditText) a.findViewById(Resources.id.entry);
             originalEditText.setText(edittext.getText());
-            a.I(a);
+            a.j(a);
             edittext.setText("");
         }
     }

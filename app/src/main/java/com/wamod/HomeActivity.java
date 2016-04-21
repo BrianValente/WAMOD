@@ -8,6 +8,9 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -19,9 +22,11 @@ import android.view.View;
 import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by brianvalente on 7/9/15.
@@ -31,18 +36,16 @@ public class HomeActivity extends AppCompatActivity {
     public static void changeActiveTabTextColor(TextView tv) {
         try {
             tv.setTextColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")));
-        } catch (RuntimeException e) {
-            utils.crashWAMOD();
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            Toast.makeText(tv.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
     public static void changeInactiveTabTextColor(TextView tv) {
         try {
             tv.setTextColor(Color.parseColor("#" + "66" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")));
-        } catch (RuntimeException e) {
-            utils.crashWAMOD();
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            Toast.makeText(tv.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -68,12 +71,12 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
         HorizontalScrollView tabs = (HorizontalScrollView) a.findViewById(Resources.id.tabs);
 
-        utils.loadColorsV2(a);
+        //utils.loadColorsV2(a);
         tabs.setBackgroundColor(utils.getUIColor(utils.COLOR_TOOLBAR));
 
         // Check if dark mode is activated and change the background
         View pager = a.findViewById(Resources.id.pager);
-        if (utils.darkMode()) {
+        if (utils.nightModeShouldRun()) {
             pager.setBackgroundColor(utils.getDarkColor(2));
         } else {
             pager.setBackgroundColor(Color.WHITE);
@@ -81,10 +84,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
         // Load bottom navbar
-        if (utils.prefs.getBoolean("home_bottomnavigationbar", true)) {
-            ViewStub wamod_bottomnav_viewstub = (ViewStub) a.findViewById(Resources.id.wamod_bottomnav_viewstub);
-            if (wamod_bottomnav_viewstub != null) wamod_bottomnav_viewstub.inflate();
-        }
+        ViewStub wamod_bottomnav_viewstub = (ViewStub) a.findViewById(Resources.id.wamod_bottomnav_viewstub);
+        if (wamod_bottomnav_viewstub != null) wamod_bottomnav_viewstub.inflate();
 
         utils.initWAMODfromHome(a);
 
@@ -99,6 +100,15 @@ public class HomeActivity extends AppCompatActivity {
             //w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             w.setStatusBarColor(Color.parseColor("#00000000"));
+
+            /*DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
+            drawerLayout.setBackgroundColor(utils.getUIColor(utils.COLOR_STATUSBAR));*/
+
+
+            int padding = utils.getStatusBarHeight(a);
+            CoordinatorLayout coordinatorLayout = (CoordinatorLayout) a.findViewById(Resources.id.wamod_drawer_overlay);
+            coordinatorLayout.setPadding(0,padding,0,0);
+            coordinatorLayout.setBackgroundColor(utils.getUIColor(utils.COLOR_STATUSBAR));
         }
     }
 
@@ -120,8 +130,11 @@ public class HomeActivity extends AppCompatActivity {
     public static boolean _onOptionsItemSelected(com.whatsapp.HomeActivity a, MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavigationDrawer drawer = (NavigationDrawer) a.findViewById(Resources.id.wamod_drawer_parent);
-                drawer.openDrawer2(true);
+                /*NavigationDrawer drawer = (NavigationDrawer) a.findViewById(Resources.id.wamod_drawer_parent);
+                drawer.openDrawer2(true);*/
+                NavigationView navigationView = (NavigationView) a.findViewById(Resources.id.wamod_drawer);
+                DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
+                drawerLayout.openDrawer(navigationView);
                 return true;
             case 0:
                 a.onSearchRequested();
@@ -131,9 +144,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public static boolean _onBackPressed(com.whatsapp.HomeActivity a) {
-        NavigationDrawer drawer = (NavigationDrawer) a.findViewById(Resources.id.wamod_drawer_parent);
-        if (drawer.drawerOpen) {
-            drawer.openDrawer2(false);
+        NavigationView navigationView = (NavigationView) a.findViewById(Resources.id.wamod_drawer);
+        DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
+        if (drawerLayout.isDrawerOpen(navigationView)) {
+            drawerLayout.closeDrawer(navigationView);
             return true;
         } else return false;
     }
@@ -153,7 +167,7 @@ public class HomeActivity extends AppCompatActivity {
         switch (homeThemeID) {
             case 0:
                 conversationsRow = 0x7f03006c;
-                callsRow = 0x7f030032;
+                callsRow = 0x7f030031;
                 contactPickerRow = 0x7f030045;
                 break;
             default:
@@ -165,13 +179,13 @@ public class HomeActivity extends AppCompatActivity {
             case 2:
                 // Stock w/ counter in photo
                 conversationsRow = 0x7f031010;
-                callsRow = 0x7f030032;
+                callsRow = 0x7f030031;
                 contactPickerRow = 0x7f030044;
                 break;
             case 3:
                 // Telegram
                 conversationsRow = 0x7f031011;
-                callsRow = 0x7f030032;
+                callsRow = 0x7f030031;
                 contactPickerRow = 0x7f030044;
                 break;
         }

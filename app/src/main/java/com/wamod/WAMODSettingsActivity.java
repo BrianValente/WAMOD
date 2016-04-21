@@ -14,11 +14,12 @@ import android.webkit.WebViewClient;
 /**
  * Created by BrianValente on 3/3/16.
  */
-public class WAMODSettingsActivity extends AppCompatActivity {
+public class WAMODSettingsActivity extends WAMODSettings {
     static Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        utils.loadColorsBeforeSuper(this);
         super.onCreate(savedInstanceState);
         ctx = this;
         getFragmentManager().beginTransaction().replace(android.R.id.content, new WAMODSettingsFragment()).commit();

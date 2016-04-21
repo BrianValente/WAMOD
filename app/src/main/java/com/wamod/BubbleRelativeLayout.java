@@ -26,7 +26,6 @@ public class BubbleRelativeLayout {
         boolean rightBubble = false;
         if (status != null) rightBubble = true;
         boolean changeDateColor = false;
-        boolean extension = bubble.extension;
         //if (bubble.getTag(Resources.id.wamod_drawer_debug1) != null) extension = true;
 
         /*int paddingHorizontal = utils.Nexus6PResToActualDevice(bubble.getContext(), 20, 0)[0];

@@ -4,7 +4,11 @@
     <com.wamod.ActionPreference android:icon="@null" android:title="Device ID" android:key="device_id" android:summary="@string/wamod_unavailable" />
     <com.wamod.ActionPreference android:icon="@null" android:title="@string/wamod_unlinkdevice" android:key="wamodthemes_unlinkdevice" />
     <!--<CheckBoxPreference android:icon="@null" android:title="@string/wamod_wamodthemes_constantlycheck" android:summary="@string/wamod_wamodthemes_constantlycheck_summary" android:key="wamodthemes_constantlycheck" />-->
-    <Preference android:icon="@null" android:title="@string/wamod_visitwamodthemes">
+    <com.wamod.Preference android:icon="@null" android:title="@string/wamod_visitwamodthemes">
         <intent android:action="android.intent.action.VIEW" android:data="http://wamod.ml/" />
-    </Preference>
+    </com.wamod.Preference>
+    <PreferenceCategory android:title="Quick Theme Sharing">
+        <com.wamod.ActionPreference android:icon="@null" android:title="Upload theme" android:key="wamodthemes_qts_upload" />
+        <com.wamod.ActionPreference android:icon="@null" android:title="Download theme" android:key="wamodthemes_qts_download" />
+    </PreferenceCategory>
 </PreferenceScreen>

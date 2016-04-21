@@ -10,7 +10,7 @@ import android.widget.TextView;
  */
 public class HomeFragments {
     public static void ConversationsFragment(View a) {
-        if (utils.darkMode()) {
+        if (utils.nightModeShouldRun()) {
             try {
                 TextView chatNameTV = (TextView) a.findViewById(Resources.id.conversations_row_contact_name);
                 TextView dateTV = (TextView) a.findViewById(Resources.id.conversations_row_date);
@@ -28,7 +28,7 @@ public class HomeFragments {
     }
 
     public static void CallsFragment(View a) {
-        if (utils.darkMode()) {
+        if (utils.nightModeShouldRun()) {
             try {
                 TextView contactNameTV = (TextView) a.findViewById(Resources.id.contact_name);
                 TextView dateTV = (TextView) a.findViewById(Resources.id.date_time);
@@ -42,7 +42,7 @@ public class HomeFragments {
     }
 
     public static void ContactsFragment(View a) {
-        if (utils.darkMode()) {
+        if (utils.nightModeShouldRun()) {
             try {
                 TextView contactNameTV = (TextView) a.findViewById(Resources.id.contactpicker_row_name);
                 TextView statusTV = (TextView) a.findViewById(Resources.id.contactpicker_row_status);

@@ -5,31 +5,38 @@
     android:key="content">
     <PreferenceCategory
         android:title="Text entry">
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_bgcolor"
             android:title="Background color"
             android:summary="" />
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_entrybgcolor"
             android:title="Entry background color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_hinttextcolor"
             android:title="Entry hint text color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_textcolor"
             android:title="Entry text color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_emojibtncolor"
             android:title="Emoji button color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_btncolor"
             android:title="Attach buttons color"
             android:summary=""/>
-        <Preference
+        <com.wamod.NewColorPickerPreference
+            app:wamod_supportsAlpha="true"
             android:key="theme_wamod_conversation_entry_sendbtncolor"
             android:title="Send button color"
             android:summary=""/>

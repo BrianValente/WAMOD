@@ -11,12 +11,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent">-->
-            <RelativeLayout
+            <com.wamod.NavigationDrawerGoogle
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#404040"
-                android:id="@+id/wamod_drawer">
+                android:background="#404040">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -282,7 +281,7 @@
                         </LinearLayout>
                     </ScrollView>
                 </RelativeLayout>
-            </RelativeLayout>
+            </com.wamod.NavigationDrawerGoogle>
     <!--</com.wamod.NavigationDrawer>
     </LinearLayout>-->
 </merge>

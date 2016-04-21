@@ -5,6 +5,8 @@ import android.preference.CheckBoxPreference;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -41,4 +43,17 @@ public class CheckboxPreference extends android.preference.CheckBoxPreference {
                 break;
         }
     }
+
+    @Override
+    protected void onBindView(View view) {
+        super.onBindView(view);
+        if (utils.nightModeShouldRun()) {
+            TextView title = (TextView) view.findViewById(android.R.id.title);
+            if (title != null) title.setTextColor(utils.getDarkColor(0));
+
+            TextView summary = (TextView) view.findViewById(android.R.id.summary);
+            if (summary != null) summary.setTextColor(utils.getDarkColor(1));
+        }
+    }
+
 }

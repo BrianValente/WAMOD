@@ -6,9 +6,16 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.text.SpannableStringBuilder;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,14 +24,16 @@ import android.widget.Toast;
 import com.whatsapp.App;
 import com.whatsapp.DialogToastListActivity;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
 /**
  * Created by brianvalente on 7/9/15.
  */
 public class Conversation extends DialogToastListActivity {
-    public static void backPressed(DialogToastListActivity activity) {
-        if (utils.prefs.getBoolean("conversation_toolbarexit", false)) {
-            activity.finish();
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && utils.prefs.getBoolean("overview_multiplechats", true)) {
+    public static void _onBackPressed(DialogToastListActivity activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && utils.prefs.getBoolean("overview_multiplechats", true)) {
             activity.moveTaskToBack(true);
         } else {
             activity.finish();
@@ -229,25 +238,32 @@ public class Conversation extends DialogToastListActivity {
                 Toast.makeText(utils.context, e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
-            for (int i=0; i < App.openedChats.size(); i++) {
+            /*for (int i=0; i < App.openedChats.size(); i++) {
                 chat chat = App.openedChats.get(i);
                 if (chat.name.contentEquals(contactName)) {
                     chat.activity.finish();
                     App.openedChats.remove(i);
                 }
             }
-            App.openedChats.add(new chat(contactName,activity));
+            App.openedChats.add(new chat(contactName,activity));*/
         }
     }
 
 
     public static void initConversation(com.whatsapp.Conversation a) {
 
+        ViewGroup cntnt = (ViewGroup) a.findViewById(android.R.id.content);
+        if (cntnt.getTag(Resources.id.bullet) == null) cntnt.setTag(Resources.id.bullet, true);
+        else return;
+
+
         // Init attachments
-        a.E();
+        a.X();
+
+        // Load contact
+        a.k(a);
 
         // Load colors
-        utils.loadColorsV2(a);
         setTaskDescription(a);
 
 
@@ -310,6 +326,89 @@ public class Conversation extends DialogToastListActivity {
             x.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
             back.setImageDrawable(x);
         }
+    }
+
+    public void callInitConversation() {
+        initConversation(null);
+    }
+
+    public static void tintToolbarButtons(com.whatsapp.Conversation a) {
+        ViewGroup toolbar = (ViewGroup) a.findViewById(Resources.id.toolbar);
+        View linearLayoutCompat = toolbar.getChildAt(2);
+        if (linearLayoutCompat != null) {
+            final LinearLayoutCompat LinearLayoutCompat2 = (LinearLayoutCompat) linearLayoutCompat;
+            linearLayoutCompat.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    for (int i = 0; i < LinearLayoutCompat2.getChildCount(); i++) {
+                        final View child = LinearLayoutCompat2.getChildAt(i);
+                        child.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                            @Override
+                            public void onGlobalLayout() {
+                                if (child instanceof TextView) {
+                                    Log.i("WAMOD", "Attach button");
+                                    TextView tv = (TextView) child;
+                                    Drawable[] icon = tv.getCompoundDrawables();
+                                    icon[0].setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                                    tv.setCompoundDrawables(icon[0], icon[1], icon[2], icon[3]);
+                                } else if (child instanceof ImageButton) {
+                                    Log.i("WAMOD", "Call button");
+                                    ImageButton im = (ImageButton) child;
+                                    im.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND));
+                                } else if (child instanceof ImageView) {
+                                    Log.i("WAMOD", "More button");
+                                    ImageView im = (ImageView) child;
+                                    im.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND));
+                                }
+                                child.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                            }
+                        });
+                    }
+                    LinearLayoutCompat2.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            });
+        }
+    }
+
+    public static void _startSupportActionMode(final com.whatsapp.Conversation a) {
+        ViewGroup action_mode_bar = (ViewGroup) a.findViewById(Resources.id.action_mode_bar);
+        if (action_mode_bar != null) {
+            action_mode_bar.setBackgroundColor(utils.getUIColor(utils.COLOR_TOOLBAR));
+            final ImageView action_mode_close_button = (ImageView) a.findViewById(Resources.id.action_mode_close_button);
+            final TextView action_bar_title = (TextView) a.findViewById(Resources.id.action_bar_title);
+            final TextView menuitem_delete  = (TextView) a.findViewById(Resources.id.menuitem_delete);
+
+            if (menuitem_delete != null) menuitem_delete.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    ViewGroup parent = (ViewGroup) menuitem_delete.getParent();
+
+                    for (int i=0; i<parent.getChildCount(); i++) {
+                        View v = parent.getChildAt(i);
+                        if (v instanceof TextView) {
+                            TextView tv = (TextView) v;
+                            Drawable[] icon = tv.getCompoundDrawables();
+                            icon[0] = utils.tintToColor(icon[0], utils.getUIColor(utils.COLOR_FOREGROUND));
+                            tv.setCompoundDrawables(icon[0], null, null, null);
+                        } else if (v instanceof ImageView) {
+                            ImageView im = (ImageView) v;
+                            im.setImageDrawable(utils.tintToColor(im.getDrawable(), utils.COLOR_FOREGROUND));
+                        }
+                    }
+
+                    action_mode_close_button.setImageDrawable(utils.tintToColor(action_mode_close_button.getDrawable(), utils.getUIColor(utils.COLOR_FOREGROUND)));
+                    if (action_bar_title != null) action_bar_title.setTextColor(utils.getUIColor(utils.COLOR_TOOLBARTEXT));
+
+                    //menuitem_delete.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            });
+
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) a.getWindow().setStatusBarColor(utils.getUIColor(utils.COLOR_STATUSBAR));
+    }
+
+    private void callSAM() {
+        _startSupportActionMode(null);
     }
 
     public static int getConversationEntry(int id) {

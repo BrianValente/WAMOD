@@ -94,6 +94,7 @@ public final class Resources {
 
         /** Conversation */
         public static int conversation_contact_name     = utils.getHexID("conversation_contact_name", "id");
+        public static int conversation_contact_status   = utils.getHexID("conversation_contact_status", "id");
         public static int conversation_contact_photo    = utils.getHexID("conversation_contact_photo", "id");
         public static int conversation_background       = utils.getHexID("conversation_background", "id");
         public static int conversation_layout           = utils.getHexID("conversation_layout", "id");
@@ -133,6 +134,97 @@ public final class Resources {
         public static int wamod_theme_wamod_conversation_location = utils.getHexID("wamod_theme_wamod_conversation_location", "id");
         public static int wamod_theme_wamod_conversation_contact  = utils.getHexID("wamod_theme_wamod_conversation_contact", "id");
         public static int wamod_theme_wamod_conversation_camera   = utils.getHexID("wamod_theme_wamod_conversation_camera", "id");
+
+        public static int action_mode_bar  = utils.getHexID("action_mode_bar", "id");
+        public static int action_bar_title = utils.getHexID("action_bar_title", "id");
+        public static int menuitem_star    = utils.getHexID("menuitem_star", "id");
+        public static int menuitem_delete  = utils.getHexID("menuitem_delete", "id");
+        public static int menuitem_copy    = utils.getHexID("menuitem_copy", "id");
+        public static int menuitem_forward = utils.getHexID("menuitem_forward", "id");
+        public static int action_mode_close_button = utils.getHexID("action_mode_close_button", "id");
+
+
+        /** Color picker */
+        public static int wamod_colorpicker_seekbar_red   = utils.getHexID("wamod_colorpicker_seekbar_red", "id");
+        public static int wamod_colorpicker_seekbar_green = utils.getHexID("wamod_colorpicker_seekbar_green", "id");
+        public static int wamod_colorpicker_seekbar_blue  = utils.getHexID("wamod_colorpicker_seekbar_blue", "id");
+        public static int wamod_colorpicker_seekbar_alpha = utils.getHexID("wamod_colorpicker_seekbar_alpha", "id");
+        public static int wamod_colorpicker_tv_hex        = utils.getHexID("wamod_colorpicker_tv_hex", "id");
+        public static int wamod_colorpicker_preview       = utils.getHexID("wamod_colorpicker_preview", "id");
+
+
+        /** Settings */
+        public static final int profile_info_name   = utils.getHexID("profile_info_name", "id");
+        public static final int profile_info_status = utils.getHexID("profile_info_status", "id");
+
+
+        /** ProfileInfoActivity **/
+        public static final int registration_name            = utils.getHexID("registration_name", "id");
+        public static final int phone                        = utils.getHexID("phone", "id");
+        public static final int change_registration_name_btn = utils.getHexID("change_registration_name_btn", "id");
+
+
+        /** New group **/
+        public static final int change_photo_btn   = utils.getHexID("change_photo_btn", "id");
+        public static final int emoji_btn          = utils.getHexID("emoji_btn", "id");
+        public static final int group_name         = utils.getHexID("group_name", "id");
+        public static final int subject_counter_tv = utils.getHexID("subject_counter_tv", "id");
+        public static final int image_frame_layout = utils.getHexID("image_frame_layout", "id");
+
+
+        /** Starred messages **/
+        public static final int empty          = utils.getHexID("empty", "id");
+        public static final int sender_name    = utils.getHexID("sender_name", "id");
+        public static final int bullet         = utils.getHexID("bullet", "id");
+        public static final int recipient_name = utils.getHexID("recipient_name", "id");
+        public static final int message_date   = utils.getHexID("message_date", "id");
+        public static final int chevron        = utils.getHexID("chevron", "id");
+
+
+        /** SetStatus **/
+        public static final int status_title        = utils.getHexID("status_title", "id");
+        public static final int select_status_title = utils.getHexID("select_status_title", "id");
+        public static final int status_tv           = utils.getHexID("status_tv", "id");
+        public static final int round_more_btn      = utils.getHexID("round_more_btn", "id");
+        public static final int status_row          = utils.getHexID("status_row", "id");
+        public static final int list                = utils.getHexID("list", "id");
+
+
+
+        /** WebSessionsActivity **/
+        public static final int header         = utils.getHexID("header", "id");
+        public static final int logout_all     = utils.getHexID("logout_all", "id");
+        public static final int sessions_title = utils.getHexID("sessions_title", "id");
+        public static final int hint           = utils.getHexID("hint", "id");
+        public static final int name           = utils.getHexID("name", "id");
+
+
+        /** ContactInfo **/
+        public static final int status_info            = utils.getHexID("status_info", "id");
+        public static final int title_tv               = utils.getHexID("title_tv", "id");
+        public static final int subtitle_tv            = utils.getHexID("subtitle_tv", "id");
+        public static final int primary_action_icon    = utils.getHexID("primary_action_icon", "id");
+        public static final int secondary_action_btn   = utils.getHexID("secondary_action_btn", "id");
+        public static final int mute_layout            = utils.getHexID("mute_layout", "id");
+        public static final int notifications_layout   = utils.getHexID("notifications_layout", "id");
+        public static final int groups_title           = utils.getHexID("groups_title", "id");
+        public static final int media_card             = utils.getHexID("media_card", "id");
+        public static final int media_title            = utils.getHexID("media_title", "id");
+        public static final int media_info             = utils.getHexID("media_info", "id");
+        public static final int encryption_info        = utils.getHexID("encryption_info", "id");
+        public static final int encryption_indicator   = utils.getHexID("encryption_indicator", "id");
+        public static final int starred_messages_btn   = utils.getHexID("starred_messages_btn", "id");
+        public static final int starred_messages_count = utils.getHexID("starred_messages_count", "id");
+
+
+        /** GroupChatInfo **/
+        public static final int participants_title = utils.getHexID("participants_title", "id");
+        public static final int owner = utils.getHexID("owner", "id");
+        public static final int push_name = utils.getHexID("push_name", "id");
+        public static final int exit_group_btn = utils.getHexID("exit_group_btn", "id");
+        public static final int add_participant_layout = utils.getHexID("add_participant_layout", "id");
+        public static final int add_participant_text = utils.getHexID("add_participant_text", "id");
+        public static final int add_participant_icon = utils.getHexID("add_participant_icon", "id");
     }
 
     public static class drawable {
@@ -192,10 +284,34 @@ public final class Resources {
         /** WAMOD Settings */
         public static final int wamodsettings               = utils.getHexID("wamodsettings", "xml");
         public static final int wamodsettings_generalcolors = utils.getHexID("wamodsettings_generalcolors", "xml");
+        public static final int wamodsettings_nightmode     = utils.getHexID("wamodsettings_nightmode", "xml");
         public static final int wamodsettings_home          = utils.getHexID("wamodsettings_home", "xml");
         public static final int wamodsettings_conversation  = utils.getHexID("wamodsettings_conversation", "xml");
         public static final int wamodsettings_privacy       = utils.getHexID("wamodsettings_privacy", "xml");
         public static final int wamodsettings_miscellaneous = utils.getHexID("wamodsettings_miscellaneous", "xml");
         public static final int wamodsettings_wamodthemes   = utils.getHexID("wamodsettings_wamodthemes", "xml");
+    }
+
+    public static class layout {
+        /** Color picker */
+        public static final int wamod_colorpicker_dialog = utils.getHexID("wamod_colorpicker_dialog", "layout");
+    }
+
+    public static class styleable {
+        /** Color picker */
+        public static final int[] NewColorPickerPreference = {utils.getHexID("wamod_supportsAlpha", "attr")};
+        public static final int NewColorPickerPreference_alpha = 0;
+    }
+
+    public static class style {
+        /** Color picker */
+        public static final int WAMOD_Theme = utils.getHexID("WAMOD.Theme", "style");
+        public static final int WAMOD_Theme_Day = utils.getHexID("WAMOD.Theme.Day", "style");
+        public static final int WAMOD_Theme_Settings = utils.getHexID("WAMOD.Theme.Settings", "style");
+        public static final int WAMOD_Theme_Settings_Day = utils.getHexID("WAMOD.Theme.Settings.Day", "style");
+        public static final int WAMOD_Theme_Home = utils.getHexID("WAMOD.Theme.Home", "style");
+        public static final int WAMOD_Theme_Home_Day = utils.getHexID("WAMOD.Theme.Home.Day", "style");
+        public static final int WAMOD_Theme_Conversation = utils.getHexID("WAMOD.Theme.Conversation", "style");
+        public static final int WAMOD_Theme_Conversation_Day = utils.getHexID("WAMOD.Theme.Conversation.Day", "style");
     }
 }

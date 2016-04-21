@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.wamod.ColorPickerPreference android:title="@string/wamod_statusbarcolor" android:key="general_statusbarcolor" android:summary="" />
-    <com.wamod.ColorPickerPreference android:title="@string/wamod_toolbarcolor" android:key="general_toolbarcolor" android:summary="" />
-    <com.wamod.ColorPickerPreference android:title="Toolbar text color" android:key="general_toolbartextcolor" android:summary="" />
-    <com.wamod.ColorPickerPreference android:title="@string/wamod_toolbarforeground" android:key="general_toolbarforeground" android:summary="" />
-    <com.wamod.ColorPickerPreference android:title="@string/wamod_navbarcolor" android:key="general_navbarcolor" android:summary="" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.wamod.NewColorPickerPreference app:wamod_supportsAlpha="false" android:title="@string/wamod_statusbarcolor" android:key="general_statusbarcolor" android:summary="" />
+    <com.wamod.NewColorPickerPreference app:wamod_supportsAlpha="false" android:title="@string/wamod_toolbarcolor" android:key="general_toolbarcolor" android:summary="" />
+    <com.wamod.NewColorPickerPreference app:wamod_supportsAlpha="false" android:title="Toolbar text color" android:key="general_toolbartextcolor" android:summary="" />
+    <com.wamod.NewColorPickerPreference app:wamod_supportsAlpha="false" android:title="@string/wamod_toolbarforeground" android:key="general_toolbarforeground" android:summary="" />
+    <com.wamod.NewColorPickerPreference app:wamod_supportsAlpha="false" android:title="@string/wamod_navbarcolor" android:key="general_navbarcolor" android:summary="" />
     <com.wamod.CheckboxPreference android:title="@string/wamod_darkstatusbaricons" android:key="general_darkstatusbaricons" android:summary="@string/wamod_marshmallowandup" />
+    <PreferenceCategory android:title="Night mode">
+        <com.wamod.CheckboxPreference android:title="Enable" android:key="nightmode_enable" android:summary="The UI will be dark" />
+        <com.wamod.CheckboxPreference android:title="Only at night" android:key="nightmode_atnightonly" android:summary="Night mode will be enabled only at night" />
+    </PreferenceCategory>
 </PreferenceScreen>

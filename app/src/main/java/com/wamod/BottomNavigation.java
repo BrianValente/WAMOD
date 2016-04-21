@@ -6,16 +6,19 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
+import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Scroller;
 import android.widget.TextView;
 import com.whatsapp.HomeActivity;
 
@@ -76,7 +79,7 @@ public class BottomNavigation extends LinearLayout {
                 content.setLayoutParams(params);*/
                 content.setPadding(0,0,0,getHeight());
 
-                pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                pager.addOnPageChangeListener(new HomeActivity.TabsPager.OnPageChangeListener() {
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -233,20 +236,24 @@ public class BottomNavigation extends LinearLayout {
     }
 
     private void loadColors() {
-        if (utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", true)) {
-            if (utils.prefs.getBoolean("general_darkmode", true)) {
-                backgroundColor = utils.getDarkColor(2);
-                inactiveColor = utils.getDarkColor(1);
+        try {
+            if (utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", true)) {
+                if (utils.nightModeShouldRun()) {
+                    backgroundColor = utils.getDarkColor(2);
+                    inactiveColor = utils.getDarkColor(1);
+                } else {
+                    backgroundColor = Color.WHITE;
+                    inactiveColor = Color.parseColor("#555555");
+                }
+                activeColor = utils.getUIColor(utils.COLOR_TOOLBAR);
             } else {
-                backgroundColor = Color.WHITE;
-                inactiveColor = Color.parseColor("#555555");
+                backgroundColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_bg", "FFFFFF"));
+                activeColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", "000000"));
+                inactiveColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", "555555"));
             }
-            activeColor = utils.getUIColor(utils.COLOR_TOOLBAR);
-        } else {
-            backgroundColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_bg", "FFFFFF"));
-            activeColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", "000000"));
-            inactiveColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", "555555"));
+            setBackgroundColor(backgroundColor);
+        } catch (Exception e) {
+            utils.manageException(e);
         }
-        setBackgroundColor(backgroundColor);
     }
 }

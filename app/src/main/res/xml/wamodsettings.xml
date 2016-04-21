@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <Preference
+    <com.wamod.IconPreference
         android:title="@string/wamod_generalcolors"
         android:icon="@drawable/wamod_ic_colorpalette">
         <intent
             android:targetClass="com.wamod.WAMODSettingsActivity_GeneralColors"
             android:targetPackage="com.whatsapp"/>
-    </Preference>
-    <Preference
+    </com.wamod.IconPreference>
+    <com.wamod.IconPreference
         android:title="@string/wamod_home"
         android:icon="@drawable/wamod_ic_home">
         <intent
             android:targetClass="com.wamod.WAMODSettingsActivity_Home"
             android:targetPackage="com.whatsapp"/>
-    </Preference>
-    <Preference
+    </com.wamod.IconPreference>
+    <com.wamod.IconPreference
         android:title="@string/wamod_conversation"
         android:icon="@drawable/wamod_ic_conversation">
         <intent
             android:targetClass="com.wamod.WAMODSettingsActivity_Conversation"
             android:targetPackage="com.whatsapp"/>
-    </Preference>
-    <Preference
+    </com.wamod.IconPreference>
+    <com.wamod.IconPreference
         android:title="@string/settings_privacy"
         android:icon="@drawable/wamod_ic_privacy">
         <intent
             android:targetClass="com.wamod.WAMODSettingsActivity_Privacy"
             android:targetPackage="com.whatsapp"/>
-    </Preference>
-    <Preference
+    </com.wamod.IconPreference>
+    <com.wamod.IconPreference
         android:title="@string/wamod_wamodthemes"
         android:icon="@drawable/wamod_ic_wamodthemes">
         <intent
             android:targetClass="com.wamod.WAMODSettingsActivity_WAMODThemes"
             android:targetPackage="com.whatsapp"/>
-    </Preference>
-    <Preference
+    </com.wamod.IconPreference>
+    <com.wamod.IconPreference
         android:title="@string/wamod_miscellaneous"
         android:icon="@drawable/wamod_ic_miscellaneous">
         <intent
             android:targetClass="com.wamod.WAMODSettingsActivity_Miscellaneous"
             android:targetPackage="com.whatsapp"/>
-    </Preference>
+    </com.wamod.IconPreference>
     <PreferenceCategory android:title="@string/wamod_about" android:key="conversation_section">
-        <Preference android:icon="@null" android:title="WAMOD 1.0.7.3" android:summary="WhatsApp 2.12.551" />
-        <Preference android:icon="@null" android:title="@string/wamod_opengooglepluscommunity">
+        <com.wamod.Preference android:icon="@null" android:title="WAMOD 1.0.8" android:summary="WhatsApp 2.16.21" />
+        <com.wamod.Preference android:icon="@null" android:title="@string/wamod_opengooglepluscommunity">
             <intent android:action="android.intent.action.VIEW" android:data="https://plus.google.com/communities/100280777780708899394" />
-        </Preference>
-        <Preference android:icon="@null" android:title="@string/wamod_opendevtwitterprofile">
+        </com.wamod.Preference>
+        <com.wamod.Preference android:icon="@null" android:title="@string/wamod_opendevtwitterprofile">
             <intent android:action="android.intent.action.VIEW" android:data="https://twitter.com/brianelv" />
-        </Preference>
+        </com.wamod.Preference>
         <com.wamod.ActionPreference android:icon="@null" android:title="@string/wamod_credits" android:key="credits" />
     </PreferenceCategory>
 </PreferenceScreen>

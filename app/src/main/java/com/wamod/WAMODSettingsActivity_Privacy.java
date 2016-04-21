@@ -9,9 +9,10 @@ import android.view.MenuItem;
 /**
  * Created by BrianValente on 3/3/16.
  */
-public class WAMODSettingsActivity_Privacy extends AppCompatActivity {
+public class WAMODSettingsActivity_Privacy extends WAMODSettings {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        utils.loadColorsBeforeSuper(this);
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction().replace(android.R.id.content, new WAMODSettingsFragment()).commit();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
