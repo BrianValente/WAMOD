@@ -58,7 +58,6 @@
     <string name="wamod_proximitysensorsummary">Bir sesli not dinlerken yakınlık sensörünü etkinleştir</string>
     <string name="wamod_enablecardcolorsummary">Araç çubuğu rengi ile kartı renklendir</string>
     <string name="wamod_openchatslikenewtaskssummary">Çoklu sohbetler aynı anda açılabilir</string>
-    <string name="wamod_freezelastseen">Son görülme durdurulmuş olacak</string>
     <string name="wamod_no2ndticksummary">Mesajını aldığınızda gönderici bilmeyecektir</string>
     <string name="wamod_noblueticksummary">Mesajını okuduğunuzda gönderici bilmeyecektir</string>
     <string name="wamod_hidetypingsummary">Yazarken alıcı bilmeyecektir</string>
@@ -91,7 +90,6 @@
     <string name="wamod_wamodthemes_constantlycheck">Sürekli olarak yeni bir tema olup olmadığını kontrol edin</string>
     <string name="wamod_wamodthemes_constantlycheck_summary">Azda olsa veri kullanımı olacaktır</string>
     <string name="wamod_loading">Yükleniyor...</string>
-    <string name="wamod_alwaysonline">Her zaman çevrimiçi</string>
     <string name="wamod_error">Bir hata oluştu</string>
     <string name="wamod_visitwamodthemes">WAMOD Temalarını ziyaret et</string>
     <string name="wamod_androidgallery">Android Galleri Uygulamasını Kullan</string>

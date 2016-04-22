@@ -4,5 +4,5 @@ build/*
 .gradle/*
 AndroidStudioProject.iml
 WAMOD.iml
-android-mvn-push.gradle
 local.properties
+*.smali

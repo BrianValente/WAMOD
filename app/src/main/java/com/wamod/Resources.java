@@ -278,6 +278,16 @@ public final class Resources {
 
         /** Conversation */
         public static final int chat_with   = utils.getHexID("chat_with", "string");
+
+
+        /** QTS */
+        public static final int wamod_qts_upload           = utils.getHexID("wamod_qts_upload", "string");
+        public static final int wamod_qts_upload_prompt    = utils.getHexID("wamod_qts_upload_prompt", "string");
+        public static final int wamod_qts_upload_success   = utils.getHexID("wamod_qts_upload_success", "string");
+        public static final int wamod_qts_download         = utils.getHexID("wamod_qts_download", "string");
+        public static final int wamod_qts_download_themeid = utils.getHexID("wamod_qts_download_themeid", "string");
+
+        public static final int wamod_error = utils.getHexID("wamod_error", "string");
     }
 
     public static class xml {

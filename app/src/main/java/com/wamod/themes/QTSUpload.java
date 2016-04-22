@@ -190,7 +190,7 @@ l
 
         try {
             JSONObject jObj = new JSONObject(internalResponse);
-            String themeID = jObj.getString("theme_id");1
+            String themeID = jObj.getString("theme_id");
             utils.copyToClipboard(themeID);
             Toast.makeText(activity, utils.context.getResources().getString(Resources.string.wamod_qts_upload_success, themeID), Toast.LENGTH_LONG).show();
         } catch (JSONException e) {
