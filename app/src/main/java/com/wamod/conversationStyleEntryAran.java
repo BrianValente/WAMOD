@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.whatsapp.Conversation;
-import com.whatsapp.aga;
+import com.whatsapp.api;
 
 /**
  * Created by brianvalente on 9/21/15.
@@ -38,6 +38,6 @@ public class conversationStyleEntryAran {
         entryET.setTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_textcolor", "ffffff")));
         entryET.setHintTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_hintcolor", "ffffff")));
 
-        emojiBtn.setOnClickListener(new aga(a));
+        emojiBtn.setOnClickListener(new api(a));
     }
 }

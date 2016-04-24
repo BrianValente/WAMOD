@@ -17,8 +17,8 @@ public class Conversation extends DialogToastActivity {
     public static void j(Conversation c) {}
 
     // For voice notes
-    public static ts W(Conversation c) {
-        return new ts(c,c);
+    public static agq W(Conversation c) {
+        return new agq(c,c);
     }
 
     // Init attachments

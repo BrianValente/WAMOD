@@ -57,8 +57,8 @@ public class conversationStyleEntryHangouts {
             }
         });
 
-        camera.setOnClickListener(new eg(activity, true));
-        emoji.setOnClickListener(new aga(activity));
-        location.setOnClickListener(new abt(activity));
+        camera.setOnClickListener(new aec(activity, true));
+        emoji.setOnClickListener(new api(activity));
+        location.setOnClickListener(new aqy(activity));
     }
 }

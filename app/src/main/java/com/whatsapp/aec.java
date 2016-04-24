@@ -5,12 +5,12 @@ import android.view.View;
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class eg implements View.OnClickListener {
+public class aec implements View.OnClickListener {
     // OPEN ANDROID CAMERA
     @Override
     public void onClick(View v) {}
 
-    public eg(Conversation conversation, boolean trueplox) {}
+    public aec(Conversation conversation, boolean trueplox) {}
 
-    public eg() {}
+    public aec() {}
 }

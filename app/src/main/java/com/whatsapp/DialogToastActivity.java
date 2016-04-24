@@ -1,12 +1,11 @@
 package com.whatsapp;
 
 import android.support.annotation.LayoutRes;
-import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class DialogToastActivity extends WAAppCompatActivity implements el {
+public class DialogToastActivity extends WAAppCompatActivity implements t4 {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
