@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_theme">
+        <item>Padrão</item>
+        <item>WAMOD</item>
+    </string-array>
+    <string-array name="home_theme_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="conversation_style_bubble">
+        <item>Padrão</item>
+        <item>WAMOD</item>
+        <item>Materializado</item>
+        <item>WhatsAppLB</item>
+        <item>Hangouts Antigo</item>
+        <item>Arredondado</item>
+        <item>Facebook Messenger</item>
+        <item>New Hangouts</item>
+    </string-array>
+    <string-array name="conversation_style_bubble_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="conversation_style_bubble_layout">
+        <item>Padrão</item>
+        <item>WAMOD</item>
+    </string-array>
+    <string-array name="conversation_style_bubble_layout_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="conversation_style_tick">
+        <item>Padrão</item>
+        <item>iOS</item>
+        <item>WACA Novo</item>
+        <item>WACA Antigo</item>
+        <item>Joaquins WAMD</item>
+        <item>Círculos</item>
+    </string-array>
+    <string-array name="conversation_style_tick_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="conversation_style_entry">
+        <item>Padrão</item>
+        <item>WAMOD</item>
+        <item>Hangouts</item>
+        <item>Simples</item>
+        <item>Aran de Arnold Angulo</item>
+        <item>Mood de Shivam Srivastava</item>
+    </string-array>
+    <string-array name="conversation_style_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="conversation_style_toolbar">
+        <item>Padrão</item>
+        <item>Padrão centralizado</item>
+        <item>WAMOD</item>
+        <item>WAMOD centralizado</item>
+    </string-array>
+    <string-array name="conversation_style_toolbar_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>
