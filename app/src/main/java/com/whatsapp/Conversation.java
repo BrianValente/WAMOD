@@ -11,23 +11,23 @@ public class Conversation extends DialogToastActivity {
     }
 
     // Opens Android Gallery
-    public static void U(Conversation c) {}
+    public static void ac(Conversation c) {}
 
     // Send message
-    public static void j(Conversation c) {}
+    public static void ai(Conversation c) {}
 
     // For voice notes
-    public static agq W(Conversation c) {
+    public static agq U(Conversation c) {
         return new agq(c,c);
     }
 
     // Init attachments
-    public void X() {}
+    public void u() {}
 
     public void onCreateOptionsMenu() {
         com.wamod.Conversation.tintToolbarButtons(null);
     }
 
     // Load contact
-    public static void k(Conversation c) {}
+    public static void i(Conversation c) {}
 }

@@ -258,10 +258,10 @@ public class Conversation extends DialogToastListActivity {
 
 
         // Init attachments
-        a.X();
+        a.u();
 
         // Load contact
-        a.k(a);
+        a.i(a);
 
         // Load colors
         setTaskDescription(a);

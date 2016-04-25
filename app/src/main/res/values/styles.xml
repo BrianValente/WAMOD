@@ -11,30 +11,45 @@
         <item name="android:navigationBarColor">#E0E0E0</item>
     </style>
 
-
-    <style name="WAMOD.Theme" parent="Theme.AppCompat.DayNight">
-    </style>
-    <style name="WAMOD.Theme.Day" parent="Theme.AppCompat.Light">
+    <style name="Theme.App.Home" parent="@style/AppTheme">
     </style>
 
-    <style name="WAMOD.Theme.Home" parent="WAMOD.Theme">
+
+    <style name="Theme.App.Home.Splash" parent="@style/Theme.App.Home">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">#ffbdbdbd</item>
+        <item name="android:navigationBarColor">#ffbdbdbd</item>
+    </style>
+
+    <style name="WAMOD.Theme.ActionMode" parent="@style/Base.Widget.AppCompat.ActionMode">
+        <item name="actionModeBackground">@null</item>
+    </style>
+
+    <style name="WAMOD.Theme.Settings" parent="@style/WAMOD.Theme" />
+
+    <style name="WAMOD.Theme.Settings.Day" parent="@style/WAMOD.Theme.Day" />
+
+    <style name="WAMOD.Theme.Home" parent="@style/WAMOD.Theme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="WAMOD.Theme.Home.Day" parent="WAMOD.Theme.Day">
+
+    <style name="WAMOD.Theme.Home.Day" parent="@style/WAMOD.Theme.Day">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="WAMOD.Theme.Conversation" parent="WAMOD.Theme">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="WAMOD.Theme.Conversation.Day" parent="WAMOD.Theme.Day">
+    <style name="WAMOD.Theme" parent="@style/Theme.App" />
+
+    <style name="WAMOD.Theme.Day" parent="@style/Theme.App" />
+
+    <style name="WAMOD.Theme.Conversation" parent="@style/WAMOD.Theme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="WAMOD.Theme.Settings" parent="WAMOD.Theme"></style>
-    <style name="WAMOD.Theme.Settings.Day" parent="WAMOD.Theme.Day"></style>
+    <style name="WAMOD.Theme.Conversation.Day" parent="@style/WAMOD.Theme.Day">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

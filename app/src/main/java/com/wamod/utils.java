@@ -83,7 +83,7 @@ public class utils extends Activity {
     public static String wamodVersionName = "1.0.8";
     public static int wamodVersionCode = 25;
     public static Context context;
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     public static long timeSinceLastCheckin = 0;
 
