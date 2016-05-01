@@ -44,7 +44,7 @@ public class Events {
             btn.performClick();
         }
         private void attachPhotoUsingAndroidGallery() {
-            conversation.U(conversation);
+            conversation.ac(conversation);
         }
         private void attachPhotoUsingStockGallery() {
             performClick(new fz(conversation));
