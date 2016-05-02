@@ -9,12 +9,14 @@ import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by brianvalente on 9/20/15.
@@ -27,16 +29,27 @@ public class ContactInfo extends AppCompatActivity {
                 content.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
+
+
+                        Log.i("Night_Mode", "0");
+
+
+
                         ListView list = (ListView) a.findViewById(android.R.id.list);
                         list.setBackgroundColor(utils.getDarkColor(2));
+
+                        Log.i("Night_Mode", "1");
 
                         ViewGroup media_card = (ViewGroup) a.findViewById(Resources.id.media_card);
                         ViewGroup media_card_2 = (ViewGroup) media_card.getChildAt(0);
                         TextView media_title = (TextView) a.findViewById(Resources.id.media_title);
                         TextView media_info = (TextView) a.findViewById(Resources.id.media_info);
-                        if (media_card_2 != null) media_card_2.setBackground(utils.tintToColor(media_card_2.getBackground(), utils.getDarkColor(3)));
+                        //if (media_card_2 != null) media_card_2.setBackground(utils.tintToColor(media_card_2.getBackground(), utils.getDarkColor(3)));
+                        if (media_card_2 != null) media_card_2.setBackgroundColor(utils.getDarkColor(3));
                         if (media_title != null) media_title.setTextColor(utils.getDarkColor(0));
                         if (media_info != null) media_info.setTextColor(utils.getDarkColor(1));
+
+                        Log.i("Night_Mode", "2");
 
                         TextView status = (TextView) a.findViewById(Resources.id.status);
                         TextView status_info = (TextView) a.findViewById(Resources.id.status_info);
@@ -46,7 +59,7 @@ public class ContactInfo extends AppCompatActivity {
                         ImageView secondary_action_btn = (ImageView) a.findViewById(Resources.id.secondary_action_btn);
                         ViewGroup phoneAndStatusContainer = (ViewGroup) status.getParent();
                         TextView phoneAndStatusTV = (TextView) ((ViewGroup) phoneAndStatusContainer.getChildAt(0)).getChildAt(0);
-                        phoneAndStatusContainer.setBackground(utils.tintToColor(phoneAndStatusContainer.getBackground(), utils.getDarkColor(3)));
+                        phoneAndStatusContainer.setBackgroundColor(utils.getDarkColor(3));
                         primary_action_icon.setImageDrawable(utils.tintToColor(primary_action_icon.getDrawable(), utils.getDarkColor(1)));
                         secondary_action_btn.setImageDrawable(utils.tintToColor(secondary_action_btn.getDrawable(), utils.getDarkColor(1)));
                         phoneAndStatusTV.setTextColor(utils.getDarkColor(0));
@@ -55,16 +68,22 @@ public class ContactInfo extends AppCompatActivity {
                         title_tv.setTextColor(utils.getDarkColor(1));
                         subtitle_tv.setTextColor(utils.getDarkColor(1));
 
+                        Log.i("Night_Mode", "3");
+
                         ViewGroup mute_layout = (ViewGroup) a.findViewById(Resources.id.mute_layout);
                         ViewGroup muteContainer = (ViewGroup) mute_layout.getParent();
                         TextView muteTV = (TextView) ((ViewGroup) mute_layout.getChildAt(0)).getChildAt(0);
                         TextView customNotificationsTV = (TextView) ((ViewGroup) a.findViewById(Resources.id.notifications_layout)).getChildAt(0);
+
+                        Log.i("Night_Mode", "4");
 
 
                         TextView starred_messages_btn = (TextView) a.findViewById(Resources.id.starred_messages_btn);
                         TextView starred_messages_count = (TextView) a.findViewById(Resources.id.starred_messages_count);
                         starred_messages_btn.setTextColor(utils.getDarkColor(0));
                         starred_messages_count.setTextColor(utils.getDarkColor(1));
+
+                        Log.i("Night_Mode", "5");
 
 
                         TextView encryption_info = (TextView) a.findViewById(Resources.id.encryption_info);
@@ -77,15 +96,22 @@ public class ContactInfo extends AppCompatActivity {
                             encryption_indicator.setImageDrawable(utils.tintToColor(encryption_indicator.getDrawable(), utils.getDarkColor(0)));
                         }
 
+                        Log.i("Night_Mode", "6");
 
-                        muteContainer.setBackground(utils.tintToColor(muteContainer.getBackground(), utils.getDarkColor(3)));
+
+                        muteContainer.setBackgroundColor(utils.getDarkColor(3));
                         muteTV.setTextColor(utils.getDarkColor(0));
                         customNotificationsTV.setTextColor(utils.getDarkColor(0));
+
+
+                        Log.i("Night_Mode", "7");
 
                         TextView groups_title = (TextView) a.findViewById(Resources.id.groups_title);
                         ViewGroup groupsheader = (ViewGroup) groups_title.getParent();
                         groups_title.setTextColor(utils.getDarkColor(0));
-                        groupsheader.setBackground(utils.tintToColor(groupsheader.getBackground(), utils.getDarkColor(3)));
+                        groupsheader.setBackgroundColor(utils.getDarkColor(3));
+
+                        Log.i("Night_Mode", "8");
 
                         content.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
@@ -99,12 +125,14 @@ public class ContactInfo extends AppCompatActivity {
     public static void _getView(View v) {
         try {
             if (utils.nightModeShouldRun()) {
-                v.setBackground(utils.tintToColor(v.getBackground(), utils.getDarkColor(3)));
+                v.setBackgroundColor(utils.getDarkColor(3));
                 TextView name = (TextView) v.findViewById(Resources.id.name);
                 TextView status = (TextView) v.findViewById(Resources.id.status);
                 name.setTextColor(utils.getDarkColor(0));
                 status.setTextColor(utils.getDarkColor(1));
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            utils.manageException(e);
+        }
     }
 }

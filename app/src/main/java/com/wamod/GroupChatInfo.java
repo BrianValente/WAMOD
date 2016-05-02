@@ -27,7 +27,7 @@ public class GroupChatInfo extends AppCompatActivity {
                         TextView media_title = (TextView) a.findViewById(Resources.id.media_title);
                         TextView media_info = (TextView) a.findViewById(Resources.id.media_info);
                         if (media_card_2 != null)
-                            media_card_2.setBackground(utils.tintToColor(media_card_2.getBackground(), utils.getDarkColor(3)));
+                            media_card_2.setBackgroundColor(utils.getDarkColor(3));
                         if (media_title != null) media_title.setTextColor(utils.getDarkColor(0));
                         if (media_info != null) media_info.setTextColor(utils.getDarkColor(1));
 
@@ -55,7 +55,7 @@ public class GroupChatInfo extends AppCompatActivity {
                         starred_messages_count.setTextColor(utils.getDarkColor(1));
 
 
-                        muteContainer.setBackground(utils.tintToColor(muteContainer.getBackground(), utils.getDarkColor(3)));
+                        muteContainer.setBackgroundColor(utils.getDarkColor(3));
                         muteTV.setTextColor(utils.getDarkColor(0));
                         customNotificationsTV.setTextColor(utils.getDarkColor(0));
 
@@ -63,7 +63,7 @@ public class GroupChatInfo extends AppCompatActivity {
                         TextView participants_title = (TextView) a.findViewById(Resources.id.participants_title);
                         ViewGroup participants_header = (ViewGroup) participants_title.getParent();
                         participants_title.setTextColor(utils.getDarkColor(0));
-                        participants_header.setBackground(utils.tintToColor(participants_header.getBackground(), utils.getDarkColor(3)));
+                        participants_header.setBackgroundColor(utils.getDarkColor(3));
 
 
                         ViewGroup exit_group_btn = (ViewGroup) a.findViewById(Resources.id.exit_group_btn) ;
@@ -90,7 +90,7 @@ public class GroupChatInfo extends AppCompatActivity {
     public static void _getView(View v) {
         try {
             if (utils.nightModeShouldRun()) {
-                v.setBackground(utils.tintToColor(v.getBackground(), utils.getDarkColor(3)));
+                v.setBackgroundColor(utils.getDarkColor(3));
                 TextView name = (TextView) v.findViewById(Resources.id.name);
                 TextView status = (TextView) v.findViewById(Resources.id.status);
                 TextView owner = (TextView) v.findViewById(Resources.id.owner);
