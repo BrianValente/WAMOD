@@ -103,63 +103,56 @@ public class Conversation extends DialogToastListActivity {
 
     public static int getBubbleDrawableHex(int optionID) {
         String bubbleID = utils.prefs.getString("conversation_style_bubble", "0");
-        int incoming_normal = 0, incoming_normal_ext = 0, outgoing_normal = 0, outgoing_normal_ext = 0, input = 0;
+        int incoming_normal = 0, incoming_normal_ext = 0, outgoing_normal = 0, outgoing_normal_ext = 0;
         switch (bubbleID) {
             case "0":
-                incoming_normal = 0x7f020073;
-                incoming_normal_ext = 0x7f020074;
-                outgoing_normal = 0x7f020079;
-                outgoing_normal_ext = 0x7f02007a;
-                input = 0x7f02082e;
+            default:
+                incoming_normal = utils.getHexID("balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("balloon_outgoing_normal_ext", "drawable");
                 break;
             case "1":
-                incoming_normal = 0x7f021000;
-                incoming_normal_ext = 0x7f021001;
-                outgoing_normal = 0x7f021002;
-                outgoing_normal_ext = 0x7f021003;
-                input = 0x7f021004;
+                incoming_normal = utils.getHexID("wamod_style_bubble_wamod_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_wamod_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_wamod_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_wamod_balloon_outgoing_normal_ext", "drawable");
                 break;
             case "2":
-                incoming_normal = 0x7f021005;
-                incoming_normal_ext = 0x7f021006;
-                outgoing_normal = 0x7f021007;
-                outgoing_normal_ext = 0x7f021008;
-                input = 0x7f021009;
+                incoming_normal = utils.getHexID("wamod_style_bubble_materialized_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_materialized_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_materialized_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_materialized_balloon_outgoing_normal_ext", "drawable");
                 break;
             case "3":
-                incoming_normal = 0x7f02100a;
-                incoming_normal_ext = 0x7f02100b;
-                outgoing_normal = 0x7f02100c;
-                outgoing_normal_ext = 0x7f02100d;
-                input = 0x7f02100e;
+                incoming_normal = utils.getHexID("wamod_style_bubble_lb_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_lb_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_lb_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_lb_balloon_outgoing_normal_ext", "drawable");
                 break;
             case "4":
-                incoming_normal = 0x7f02100f;
-                incoming_normal_ext = 0x7f021010;
-                outgoing_normal = 0x7f021011;
-                outgoing_normal_ext = 0x7f021012;
-                input = 0x7f021013;
+                incoming_normal = utils.getHexID("wamod_style_bubble_hangouts_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_hangouts_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_hangouts_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_hangouts_balloon_outgoing_normal_ext", "drawable");
                 break;
             case "5":
-                incoming_normal = 0x7f021014;
-                incoming_normal_ext = 0x7f021015;
-                outgoing_normal = 0x7f021016;
-                outgoing_normal_ext = 0x7f021017;
-                input = 0x7f021018;
+                incoming_normal = utils.getHexID("wamod_style_bubble_rounded_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_rounded_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_rounded_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_rounded_balloon_outgoing_normal_ext", "drawable");
                 break;
             case "6":
-                incoming_normal = 0x7f021019;
-                incoming_normal_ext = 0x7f02101a;
-                outgoing_normal = 0x7f02101b;
-                outgoing_normal_ext = 0x7f02101c;
-                input = 0x7f02101d;
+                incoming_normal = utils.getHexID("wamod_style_bubble_fbm_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_fbm_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_fbm_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_fbm_balloon_outgoing_normal_ext", "drawable");
                 break;
             case "7":
-                incoming_normal = 0x7f02101e;
-                incoming_normal_ext = 0x7f02101f;
-                outgoing_normal = 0x7f021020;
-                outgoing_normal_ext = 0x7f021021;
-                input = 0x7f021022;
+                incoming_normal = utils.getHexID("wamod_style_bubble_newhangouts_balloon_incoming_normal", "drawable");
+                incoming_normal_ext = utils.getHexID("wamod_style_bubble_newhangouts_balloon_incoming_normal_ext", "drawable");
+                outgoing_normal = utils.getHexID("wamod_style_bubble_newhangouts_balloon_outgoing_normal", "drawable");
+                outgoing_normal_ext = utils.getHexID("wamod_style_bubble_newhangouts_balloon_outgoing_normal_ext", "drawable");
                 break;
         }
 
@@ -172,8 +165,6 @@ public class Conversation extends DialogToastListActivity {
                 return outgoing_normal;
             case 3:
                 return outgoing_normal_ext;
-            case 4:
-                return input;
         }
 
         return incoming_normal;
