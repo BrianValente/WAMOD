@@ -80,10 +80,10 @@ import io.fabric.sdk.android.Fabric;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.0.8";
+    public static String wamodVersionName = "1.1 RC1";
     public static int wamodVersionCode = 25;
     public static Context context;
-    public static boolean debug = true;
+    public static boolean debug = false;
 
     public static long timeSinceLastCheckin = 0;
 
@@ -704,7 +704,7 @@ public class utils extends Activity {
     }
 
     public static void log(AppCompatActivity a, String message) {
-        if (utils.prefs.getBoolean("log_in_toasts", false)) Toast.makeText(a, message, 500).show();
+        if (utils.prefs.getBoolean("log_in_toasts", false)) Toast.makeText(a, message, Toast.LENGTH_LONG).show();
         else Log.i("WAMOD", message);
     }
 
@@ -818,7 +818,8 @@ public class utils extends Activity {
         //byte[] official = Base64.decode("ACkLRN4OqtS0sFb/1aGVDQ==", Base64.DEFAULT);
         // 2.12.489 byte[] official = Base64.decode("w8Ar4WLq2n9/S5aonWMCGQ==", Base64.DEFAULT);
         // 2.12.551 byte[] official = Base64.decode("1E2kZOex25HvKMQPFpG1ZQ==", Base64.DEFAULT);
-        byte[] official = Base64.decode("HQ3bHbhJnKQdh+B/qpAHhQ==", Base64.DEFAULT); // 2.16.21
+        // 2.16.21 byte[] official = Base64.decode("HQ3bHbhJnKQdh+B/qpAHhQ==", Base64.DEFAULT);
+        byte[] official = Base64.decode("qioEf1LzV3gfqCATDwgzGg==", Base64.DEFAULT); // 2.16.43
         return official;
     }
 
