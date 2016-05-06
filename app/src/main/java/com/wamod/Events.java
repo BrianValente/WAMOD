@@ -14,7 +14,7 @@ public class Events {
         agq VoiceNote;
         VoiceNoteManager(Conversation conversation) {
             VoiceNote = new agg(conversation, conversation, conversation);
-            VoiceNote.a(conversation.aa);
+            VoiceNote.a(conversation.a8);
         }
         public void StartRecording() {
             VoiceNote.c();

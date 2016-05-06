@@ -4,7 +4,7 @@ package com.whatsapp;
  * Created by brianvalente on 9/21/15.
  */
 public class Conversation extends DialogToastActivity {
-    public String aa; // Contact's number
+    public String a8; // Contact's number
 
     public void callInitConversation() {
         com.wamod.Conversation.initConversation(this);
