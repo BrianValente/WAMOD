@@ -1,11 +1,4 @@
 <resources>
-    <string name="app_name">WAMOD Ayarları</string>
-
-    <string name="conversation_last_seen">son görülme</string>
-    <string name="conversation_contact_online">çevrimiçi</string>
-    <string name="type_a_message">Bir mesaj yaz</string>
-
-    <string name="action_settings">Ayarlar</string>
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
     <string name="chat_with">%1$s ile sohbet et</string>
     <string name="profile_of">%1$s profili</string>
@@ -97,22 +90,10 @@
     <string name="tabs_indicator_color">Sekmeler göstergesi rengi</string>
     <string name="wamod_settings">WAMOD Ayarları</string>
     <string name="wamod_credits">Katkıda Bulunanlar</string>
-    <string name="new_group">Yeni grup</string>
-    <string name="whatsapp_web">WhatsApp Web</string>
-    <string name="settings_privacy_status">Durum</string>
-    <string name="profile_photo">Profil resmi</string>
-    <string name="starred_messages">Yıldızlı mesajlar</string>
-    <string name="search">Bul</string>
-    <string name="settings_general">Ayarlar</string>
-    <string name="settings_profile_info">Profil</string>
     <string name="wamod_darkdrawer">Koyu renk çekmece</string>
     <string name="wamod_selectdrawerbackground">Çekmece arka planı seç</string>
     <string name="wamod_blacktextindrawerheader">Çekmece başlığında siyah metin</string>
     <string name="wamod_switchaccount_prompt_title">Hesap değiştir</string>
     <string name="wamod_switchaccount_prompt_message">Hesaplarınız arasında geçiş yapmak istediğinizden emin misiniz?</string>
-    <string name="calls">Aramalar</string>
-    <string name="chats">Sohbetler</string>
-    <string name="contacts">Kişiler</string>
-    <string name="settings_privacy">Gizlilik</string>
     <string name="wamod_generalcolors">Genel renkler</string>
 </resources>

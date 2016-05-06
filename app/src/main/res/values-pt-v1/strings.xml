@@ -1,9 +1,4 @@
 <resources>
-    <string name="app_name">Configurações WAMOD</string>
-    <string name="conversation_last_seen">visto</string>
-    <string name="conversation_contact_online">online agora</string>
-    <string name="type_a_message">Diga algo</string>
-    <string name="action_settings">Configurações</string>
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
     <string name="chat_with">Conversa com %1$s</string>
     <string name="profile_of">Perfil de %1$s</string>
@@ -97,22 +92,10 @@
     <string name="tabs_indicator_color">Cor do indicador de abas</string>
     <string name="wamod_settings">Configurações WAMOD</string>
     <string name="wamod_credits">Créditos</string>
-    <string name="new_group">Novo grupo</string>
-    <string name="whatsapp_web">WhatsApp Web</string>
-    <string name="settings_privacy_status">Status</string>
-    <string name="profile_photo">Foto de perfil</string>
-    <string name="starred_messages">Mensagens marcadas</string>
-    <string name="search">Pesquisar</string>
-    <string name="settings_general">Configurações</string>
-    <string name="settings_profile_info">Perfil</string>
     <string name="wamod_darkdrawer">Gaveta escura</string>
     <string name="wamod_selectdrawerbackground">Escolher fundo da gaveta lateral</string>
     <string name="wamod_blacktextindrawerheader">Cabeçalho da gaveta com texto escuro</string>
     <string name="wamod_switchaccount_prompt_title">Trocar de conta</string>
     <string name="wamod_switchaccount_prompt_message">Deseja mesmo trocar de conta?</string>
-    <string name="calls">Chamadas</string>
-    <string name="chats">Conversas</string>
-    <string name="contacts">Contatos</string>
-    <string name="settings_privacy">Privacidade</string>
     <string name="wamod_generalcolors">Cores gerais</string>
 </resources>

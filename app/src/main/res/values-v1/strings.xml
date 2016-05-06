@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">WAMOD Settings</string>
-
     <string name="conversation_last_seen">seen</string>
     <string name="conversation_contact_online">online now</string>
     <string name="type_a_message">Say something</string>
@@ -48,8 +46,8 @@
     <string name="wamod_checkforupdates">Check for updates</string>
     <string name="wamod_restoredefaults">Restore defaults</string>
     <string name="wamod_about">About</string>
-    <string name="wamod_opengooglepluscommunity">Open Google+ community</string>
-    <string name="wamod_opendevtwitterprofile">Open Dev Twitter profile</string>
+    <string name="wamod_opengooglepluscommunity">Google+ community</string>
+    <string name="wamod_opendevtwitterprofile">Developer Twitter profile</string>
     <string name="wamod_darkmode">Dark mode</string>
     <string name="wamod_customparticipantnamecolor">Custom participant name color</string>
     <string name="wamod_darkmodesummary">The UI gets darker</string>
