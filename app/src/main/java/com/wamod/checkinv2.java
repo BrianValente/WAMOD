@@ -217,10 +217,12 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
                 final String latestWAMODDescription = jObj.getString("latestversion_description");
                 final String latestWAMODDescriptionES = jObj.getString("latestversion_description-es");
                 final String latestWAMODLink = jObj.getString("latestversion_link");
+                final int    latestWAMODCode = jObj.getInt("latestversion_code");
                 Update update = new Update();
                 update.codename = latestWAMODCodename;
                 update.description = latestWAMODDescription;
                 update.descriptionES = latestWAMODDescriptionES;
+                update.code = latestWAMODCode;
                 update.link = Uri.parse(latestWAMODLink);
                 updateDialog(a, update);
             }
@@ -257,7 +259,8 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
 
         Log.i("WAMOD", "Activity inside the update method: " + activity.toString());
 
-        if (!update.codename.contentEquals(utils.wamodVersionName) && !(activity instanceof com.whatsapp.HomeActivity && utils.prefs.getString("ignoreupdate", "").contentEquals(update.codename))) {
+        //if (!update.codename.contentEquals(utils.wamodVersionName) && !(activity instanceof com.whatsapp.HomeActivity && utils.prefs.getString("ignoreupdate", "").contentEquals(update.codename))) {
+        if (utils.getVersionCode() < update.code && !(activity instanceof com.whatsapp.HomeActivity && utils.prefs.getString("ignoreupdate", "").contentEquals(update.codename))) {
             // Show an update dialog
 
             try {
@@ -306,5 +309,6 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
         public String description;
         public String descriptionES;
         public Uri link;
+        public int code;
     }
 }
