@@ -1,19 +1,13 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
-        <!-- Customize your theme here. -->
+    <style name="Theme.Conversation.ActionBar" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:background">?actionBarItemBackground</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:minHeight">@dimen/abc_action_button_min_height_material</item>
+        <item name="android:maxLines">2</item>
+        <item name="textAllCaps">@bool/abc_config_actionMenuItemAllCaps</item>
     </style>
-
-    <style name="Theme.App" parent="@style/AppTheme">
-        <item name="android:windowBackground">@drawable/splash</item>
-        <item name="android:statusBarColor">#E0E0E0</item>
-        <item name="android:navigationBarColor">#E0E0E0</item>
-    </style>
-
-    <style name="Theme.App.Home" parent="@style/AppTheme">
-    </style>
-
 
     <style name="Theme.App.Home.Splash" parent="@style/Theme.App.Home">
         <item name="android:windowBackground">@drawable/splash</item>
@@ -25,8 +19,24 @@
         <item name="actionModeBackground">@null</item>
     </style>
 
-    <style name="WAMOD.Theme.Settings" parent="@style/WAMOD.Theme" />
+    <style name="WAMOD.Theme" parent="@style/Theme.AppCompat">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">#aaaaaa</item>
+        <item name="colorPrimaryDark">#aaaaaa</item>
+        <item name="colorAccent">#aaaaaa</item>
+    </style>
 
+    <style name="WAMOD.Theme.Day" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">#aaaaaa</item>
+        <item name="colorPrimaryDark">#aaaaaa</item>
+        <item name="colorAccent">#aaaaaa</item>
+    </style>
+
+    <style name="WAMOD.Theme.Settings" parent="@style/WAMOD.Theme" />
     <style name="WAMOD.Theme.Settings.Day" parent="@style/WAMOD.Theme.Day" />
 
     <style name="WAMOD.Theme.Home" parent="@style/WAMOD.Theme">
@@ -38,10 +48,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="WAMOD.Theme" parent="@style/Theme.App" />
-
-    <style name="WAMOD.Theme.Day" parent="@style/Theme.App" />
 
     <style name="WAMOD.Theme.Conversation" parent="@style/WAMOD.Theme">
         <item name="windowActionBar">false</item>
