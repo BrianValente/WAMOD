@@ -107,7 +107,8 @@
                 android:layout_height="wrap_content"
                 android:maxLength="8"
                 android:textColor="#aaaaaa"
-                android:id="@+id/wamod_colorpicker_tv_hex"/>
+                android:id="@+id/wamod_colorpicker_tv_hex"
+                android:inputType="textNoSuggestions|textVisiblePassword"/>
         </LinearLayout>
         <View
             android:layout_width="100dp"
