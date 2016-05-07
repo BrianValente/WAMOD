@@ -102,4 +102,10 @@
     <string name="wamod_switchaccount_prompt_title">Account wechseln</string>
     <string name="wamod_switchaccount_prompt_message">Bist du dir sicher das du dein Account wechseln willst?</string>
     <string name="wamod_generalcolors">Allgemeine Farben</string>
+	<!-- QTS -->
+    <string name="wamod_qts_upload">Theme hochladen</string>
+    <string name="wamod_qts_download">Theme herunterladen</string>
+    <string name="wamod_qts_download_themeid">Themen-ID</string>
+    <string name="wamod_qts_upload_prompt">Willst du dein Theme wirklich hochladen?</string>
+    <string name="wamod_qts_upload_success">Ihre ID lautet %1$s und wurde zwischengespeichert! Teile sie mit deinen Freunden!</string>
 </resources>
