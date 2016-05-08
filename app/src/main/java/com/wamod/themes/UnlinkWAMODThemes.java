@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.themes;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -11,6 +11,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.wamod.Resources;
+import com.wamod.utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +28,7 @@ import java.util.Map;
 /**
  * Created by brianvalente on 12/19/15.
  */
-public class unlinkwamodthemes extends AsyncTask<Void, Void, Void> {
+public class UnlinkWAMODThemes extends AsyncTask<Void, Void, Void> {
     String internalResponse = "";
     public AppCompatActivity activity;
     ProgressDialog dialog;
@@ -64,7 +67,7 @@ public class unlinkwamodthemes extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected void onPostExecute(Void v) {
-        dialog.hide();
+        //dialog.hide();
         try {
             JSONObject json = new JSONObject(internalResponse);
             String message;

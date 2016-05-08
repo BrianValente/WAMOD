@@ -28,7 +28,6 @@ import android.preference.PreferenceActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.ActionMode;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
@@ -38,18 +37,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.wamod.themes.CheckIn;
 import com.whatsapp.*;
 import com.whatsapp.registration.a;
 
@@ -67,7 +63,9 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
@@ -94,6 +92,8 @@ public class utils extends Activity {
     public static final int COLOR_TOOLBARTEXT = 4;
 
     public static boolean switchReady = false;
+
+    public static List<chat> openedChats = new ArrayList<chat>();
 
 
     public static void loadColors(android.support.v7.app.ActionBar actionBar, Window window) {
@@ -130,7 +130,7 @@ public class utils extends Activity {
     }
 
 
-    public static void loadColorsV2(AppCompatActivity a) {
+    public static void loadColorsV2(final AppCompatActivity a) {
         try {
             //if (a instanceof MediaView) return;
             ActionBar actionbar = a.getSupportActionBar();
@@ -141,20 +141,40 @@ public class utils extends Activity {
             if (actionbar != null && coloredToolbarColor) {
                 actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
                 int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
-                ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
+                final ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
                 if (actionbarVG != null) {
-                    for (int i=0; i<actionbarVG.getChildCount(); i++) {
-                        View child = actionbarVG.getChildAt(i);
-                        if (child instanceof TextView) ((TextView)child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
-                        if (child instanceof ImageButton) ((ImageButton)child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
-                    }
+                    actionbarVG.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                        @Override
+                        public void onGlobalLayout() {
+                            for (int i = 0; i < actionbarVG.getChildCount(); i++) {
+                                View child = actionbarVG.getChildAt(i);
+                                if (child instanceof TextView)
+                                    ((TextView) child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                                if (child instanceof ImageButton)
+                                    ((ImageButton) child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                            }
+                            actionbarVG.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        }
+                    });
                 }
+
             }
 
-            Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
+            final Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
             if (toolbar != null && coloredToolbarColor) {
                 toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
                 toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+
+                toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        View up2 = toolbar.getChildAt(1);
+                        if (up2 != null && up2 instanceof ImageButton) ((ImageButton) up2).setImageDrawable(tintToColor(((ImageButton) up2).getDrawable(), getUIColor(COLOR_FOREGROUND)));
+                        toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });
+
+
 
                 if (a instanceof com.whatsapp.Conversation) {
                     ImageView up = (ImageView) toolbar.findViewById(Resources.id.up);
@@ -435,7 +455,7 @@ public class utils extends Activity {
         initWAMOD();
 
         // Connect with the WAMOD server
-        new checkinv2().execute(a);
+        new CheckIn().execute(a);
     }
 
     public static boolean nightModeShouldRun() {

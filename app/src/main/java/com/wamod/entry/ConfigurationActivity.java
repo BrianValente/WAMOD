@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.entry;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,8 +10,14 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.wamod.Resources;
+import com.wamod.WAMODSettings;
+import com.wamod.id;
+import com.wamod.utils;
 
 import java.util.ArrayList;
 
@@ -20,7 +26,7 @@ import yuku.ambilwarna.AmbilWarnaDialog;
 /**
  * Created by brianvalente on 12/22/15.
  */
-public class EntryConfigActivity extends WAMODSettings {
+public class ConfigurationActivity extends WAMODSettings {
     static Context ctx;
     static AppCompatActivity a;
     @Override
@@ -41,6 +47,9 @@ public class EntryConfigActivity extends WAMODSettings {
             super.onCreate(paramBundle);
             getPreferenceManager().setSharedPreferencesName("wamod");
             switch (utils.prefs.getString("conversation_style_entry", "")) {
+                case "0":
+                    Stock();
+                    break;
                 case "1":
                     WAMOD();
                     break;
@@ -63,23 +72,33 @@ public class EntryConfigActivity extends WAMODSettings {
         }
 
         private void WAMOD() {
-            addPreferencesFromResource(id.theme_wamod_conversation_config);
+            addPreferencesFromResource(Resources.getXml("theme_wamod_conversation_config"));
         }
 
         private void Hangouts() {
-            addPreferencesFromResource(id.theme_hangouts_conversation_config);
+            addPreferencesFromResource(Resources.getXml("theme_hangouts_conversation_config"));
         }
 
         private void Aran() {
-            addPreferencesFromResource(id.theme_aran_conversation_config);
+            addPreferencesFromResource(Resources.getXml("theme_aran_conversation_config"));
         }
 
         private void Simple() {
-            addPreferencesFromResource(id.theme_simple_conversation_config);
+            addPreferencesFromResource(Resources.getXml("theme_simple_conversation_config"));
         }
 
         private void Mood() {
-            addPreferencesFromResource(id.theme_mood_conversation_config);
+            addPreferencesFromResource(Resources.getXml("theme_mood_conversation_config"));
         }
+
+        private void Stock() {
+            addPreferencesFromResource(Resources.getXml("theme_stock_conversation_config"));
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) onBackPressed();
+        return true;
     }
 }

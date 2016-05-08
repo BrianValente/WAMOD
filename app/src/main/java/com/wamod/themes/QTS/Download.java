@@ -1,4 +1,4 @@
-package com.wamod.themes;
+package com.wamod.themes.QTS;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Created by brianvalente on 12/19/15.
  */
-public class QTSDownload extends AsyncTask<Void, Void, Void> {
+public class Download extends AsyncTask<Void, Void, Void> {
     String internalResponse = "";
     public static AppCompatActivity activity;
     ProgressDialog progress;

@@ -1,4 +1,4 @@
-package com.wamod.themes;
+package com.wamod.themes.QTS;
 
 import android.app.ProgressDialog;
 import android.content.ClipData;
@@ -37,7 +37,7 @@ import io.fabric.sdk.android.Fabric;
 /**
  * Created by brianvalente on 12/19/15.
  */
-public class QTSUpload extends AsyncTask<Void, Void, Void> {
+public class Upload extends AsyncTask<Void, Void, Void> {
     String internalResponse = "";
     public static AppCompatActivity activity;
     ProgressDialog progress;

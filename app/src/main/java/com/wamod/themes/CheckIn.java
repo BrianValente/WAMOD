@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.themes;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -17,6 +17,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.wamod.Resources;
+import com.wamod.utils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +37,7 @@ import java.util.TimeZone;
 /**
  * Created by brianvalente on 12/19/15.
  */
-public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, AppCompatActivity> {
+public class CheckIn extends AsyncTask<AppCompatActivity, AppCompatActivity, AppCompatActivity> {
     String internalResponse = "";
     AppCompatActivity activity;
     boolean firstCheckin = true;
