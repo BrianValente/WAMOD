@@ -52,11 +52,15 @@ public class ThemePickerPreference extends ListPreference {
     }
 
     private void init() {
-        int arrayID = activity.getResources().getIdentifier(getKey(), "array", activity.getPackageName());
-        String[] items = activity.getResources().getStringArray(arrayID);
-        int themeid = Integer.parseInt(getValue());
-        String themeName = items[themeid];
-        setSummary(themeName);
+        try {
+            int arrayID = activity.getResources().getIdentifier(getKey(), "array", activity.getPackageName());
+            String[] items = activity.getResources().getStringArray(arrayID);
+            int themeid = Integer.parseInt(getValue());
+            String themeName = items[themeid];
+            setSummary(themeName);
+        } catch (Exception e) {
+            utils.manageException(e);
+        }
     }
 
     @Override
