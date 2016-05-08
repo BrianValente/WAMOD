@@ -6,5 +6,5 @@ AndroidStudioProject.iml
 WAMOD.iml
 local.properties
 *.smali
-#app/app.iml
-#library/library.iml
+app/app.iml
+library/library.iml
