@@ -279,7 +279,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#ffffff"
-                                    android:text="@string/wamod_wamodsettings"
+                                    android:text="@string/wamod_settings"
                                     android:textSize="15sp"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="20dp"/>
