@@ -267,27 +267,27 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
 
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
 
-                alertDialog.setTitle(activity.getResources().getString(id.updateavailable));
+                alertDialog.setTitle(activity.getResources().getString(Resources.string.wamod_updater_title));
                 String description = update.description;
                 if (Locale.getDefault().getLanguage().contentEquals("es") && !update.descriptionES.contentEquals(""))
                     description = update.descriptionES;
-                String message = activity.getResources().getString(id.updateavailablemessage, update.codename, utils.wamodVersionName) + " " + description;
+                String message = activity.getResources().getString(Resources.string.wamod_updater_message, update.codename, utils.wamodVersionName) + " " + description;
                 alertDialog.setMessage(message);
 
-                alertDialog.setPositiveButton(activity.getResources().getString(id.download), new DialogInterface.OnClickListener() {
+                alertDialog.setPositiveButton(activity.getResources().getString(Resources.string.wamod_updater_download), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, update.link);
                         activity.startActivity(browserIntent);
                     }
                 });
 
-                alertDialog.setNegativeButton(activity.getResources().getString(id.later), new DialogInterface.OnClickListener() {
+                alertDialog.setNegativeButton(activity.getResources().getString(Resources.string.wamod_updater_later), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //...
                     }
                 });
 
-                alertDialog.setNeutralButton(activity.getResources().getString(id.ignorethisupdate), new DialogInterface.OnClickListener() {
+                alertDialog.setNeutralButton(activity.getResources().getString(Resources.string.wamod_updater_ignore), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         utils.edit.putString("ignoreupdate", update.codename);
                         utils.edit.apply();
@@ -300,7 +300,7 @@ public class checkinv2 extends AsyncTask<AppCompatActivity, AppCompatActivity, A
 
             } catch (Exception e) {}
         } else if (activity instanceof com.wamod.WAMODSettingsActivity_Miscellaneous) {
-            Toast.makeText(activity, activity.getResources().getString(id.uptodate), Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, activity.getResources().getString(Resources.string.wamod_updater_uptodate), Toast.LENGTH_LONG).show();
         }
     }
 

@@ -64,6 +64,7 @@ public final class Resources {
 
         /** General */
         public static int toolbar = utils.getHexID("toolbar", "id");
+        public static int wamod_fragment = utils.getHexID("wamod_fragment", "id");
 
         /** FABS */
         public static int wamod_fab_reloadcontacts = utils.getHexID("wamod_fab_reloadcontacts", "id");
@@ -279,7 +280,6 @@ public final class Resources {
         /** Conversation */
         public static final int chat_with   = utils.getHexID("chat_with", "string");
 
-
         /** QTS */
         public static final int wamod_qts_upload           = utils.getHexID("wamod_qts_upload", "string");
         public static final int wamod_qts_upload_prompt    = utils.getHexID("wamod_qts_upload_prompt", "string");
@@ -287,24 +287,51 @@ public final class Resources {
         public static final int wamod_qts_download         = utils.getHexID("wamod_qts_download", "string");
         public static final int wamod_qts_download_themeid = utils.getHexID("wamod_qts_download_themeid", "string");
 
+        /** Updater */
+        public static final int wamod_updater_title    = utils.getHexID("wamod_updater_title", "string");
+        public static final int wamod_updater_message  = utils.getHexID("wamod_updater_message", "string");
+        public static final int wamod_updater_download = utils.getHexID("wamod_updater_download", "string");
+        public static final int wamod_updater_later    = utils.getHexID("wamod_updater_later", "string");
+        public static final int wamod_updater_ignore   = utils.getHexID("wamod_updater_ignore", "string");
+        public static final int wamod_updater_uptodate = utils.getHexID("wamod_updater_uptodate", "string");
+
+        /** WAMOD Settings */
+
+        /* WAMOD Themes */
+        public static final int wamod_settings_wamodthemes_unlink_title = utils.getHexID("wamod_settings_wamodthemes_unlink_title", "string");
+        public static final int wamod_settings_wamodthemes_unlink_message = utils.getHexID("wamod_settings_wamodthemes_unlink_message", "string");
+
+        /* Miscellaneous */
+        public static final int wamod_settings_miscellaneous_app_restoredefaults_title = utils.getHexID("wamod_settings_miscellaneous_app_restoredefaults_title", "string");
+        public static final int wamod_settings_miscellaneous_app_restoredefaults_message = utils.getHexID("wamod_settings_miscellaneous_app_restoredefaults_message", "string");
+
+
+        /** General */
         public static final int wamod_error = utils.getHexID("wamod_error", "string");
+        public static final int wamod_restartwamod = utils.getHexID("wamod_restartwamod", "string");
     }
 
     public static class xml {
         /** WAMOD Settings */
-        public static final int wamodsettings               = utils.getHexID("wamodsettings", "xml");
-        public static final int wamodsettings_generalcolors = utils.getHexID("wamodsettings_generalcolors", "xml");
-        public static final int wamodsettings_nightmode     = utils.getHexID("wamodsettings_nightmode", "xml");
-        public static final int wamodsettings_home          = utils.getHexID("wamodsettings_home", "xml");
-        public static final int wamodsettings_conversation  = utils.getHexID("wamodsettings_conversation", "xml");
-        public static final int wamodsettings_privacy       = utils.getHexID("wamodsettings_privacy", "xml");
-        public static final int wamodsettings_miscellaneous = utils.getHexID("wamodsettings_miscellaneous", "xml");
-        public static final int wamodsettings_wamodthemes   = utils.getHexID("wamodsettings_wamodthemes", "xml");
+        public static final int wamodsettings                      = utils.getHexID("wamodsettings", "xml");
+        public static final int wamodsettings_generalcolors        = utils.getHexID("wamodsettings_generalcolors", "xml");
+        public static final int wamodsettings_nightmode            = utils.getHexID("wamodsettings_nightmode", "xml");
+        public static final int wamodsettings_home                 = utils.getHexID("wamodsettings_home", "xml");
+        public static final int wamodsettings_conversation         = utils.getHexID("wamodsettings_conversation", "xml");
+        public static final int wamodsettings_conversation_bubbles = utils.getHexID("wamodsettings_conversation_bubbles", "xml");
+        public static final int wamodsettings_privacy              = utils.getHexID("wamodsettings_privacy", "xml");
+        public static final int wamodsettings_miscellaneous        = utils.getHexID("wamodsettings_miscellaneous", "xml");
+        public static final int wamodsettings_wamodthemes          = utils.getHexID("wamodsettings_wamodthemes", "xml");
     }
 
     public static class layout {
         /** Color picker */
         public static final int wamod_colorpicker_dialog = utils.getHexID("wamod_colorpicker_dialog", "layout");
+        public static final int wamod_activity_settings_bubbles = utils.getHexID("wamod_activity_settings_bubbles", "layout");
+
+        /** Home drawer header */
+        public static final int wamod_home_drawer_header_wamod = utils.getHexID("wamod_home_drawer_header_wamod", "layout");
+        public static final int wamod_home_drawer_header_wamodcentered = utils.getHexID("wamod_home_drawer_header_wamodcentered", "layout");
     }
 
     public static class styleable {

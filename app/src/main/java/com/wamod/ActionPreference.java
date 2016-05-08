@@ -92,14 +92,14 @@ public class ActionPreference extends Preference {
                 break;
             case "restoredefaults":
                 alertDialog  = new AlertDialog.Builder(activity);
-                alertDialog.setTitle(activity.getResources().getString(id.restoredefaults));
-                alertDialog.setMessage(activity.getResources().getString(id.restoredefaultsprompt));
+                alertDialog.setTitle(activity.getResources().getString(Resources.string.wamod_settings_miscellaneous_app_restoredefaults_title));
+                alertDialog.setMessage(activity.getResources().getString(Resources.string.wamod_settings_miscellaneous_app_restoredefaults_message));
                 alertDialog.setPositiveButton(activity.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         utils.edit.putInt("wamodversion", 0);
                         utils.edit.apply();
                         utils.initWAMOD();
-                        Toast.makeText(activity, activity.getResources().getString(com.wamod.id.donerestartwamod), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity, activity.getResources().getString(Resources.string.wamod_restartwamod), Toast.LENGTH_LONG).show();
                     }
                 });
                 alertDialog.setNegativeButton(activity.getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
@@ -109,8 +109,8 @@ public class ActionPreference extends Preference {
                 break;
             case "wamodthemes_unlinkdevice":
                 alertDialog = new AlertDialog.Builder(activity);
-                alertDialog.setTitle(activity.getResources().getString(id.wamod_unlinkdevice_title));
-                alertDialog.setMessage(activity.getResources().getString(id.wamod_unlinkdevice_message));
+                alertDialog.setTitle(activity.getResources().getString(Resources.string.wamod_settings_wamodthemes_unlink_title));
+                alertDialog.setMessage(activity.getResources().getString(Resources.string.wamod_settings_wamodthemes_unlink_message));
                 alertDialog.setPositiveButton(activity.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         unlinkwamodthemes async = new unlinkwamodthemes();

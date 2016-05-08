@@ -68,16 +68,17 @@ public class unlinkwamodthemes extends AsyncTask<Void, Void, Void> {
         try {
             JSONObject json = new JSONObject(internalResponse);
             String message;
-            if (json.getString("status").contentEquals("done")) message = activity.getResources().getString(id.wamod_done);
-            else message = activity.getResources().getString(id.wamod_error);
-            Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+            if (!json.getString("status").contentEquals("done")) {
+                message = activity.getResources().getString(Resources.string.wamod_error);
+                Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+            }
         } catch (JSONException e) {
-            Toast.makeText(activity, activity.getResources().getString(id.wamod_error), Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, activity.getResources().getString(Resources.string.wamod_error), Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
     protected void onPreExecute() {
-        dialog = ProgressDialog.show(activity, "", activity.getResources().getString(id.wamod_loading), true);
+        //dialog = ProgressDialog.show(activity, "", activity.getResources().getString(id.wamod_loading), true);
     }
 }
