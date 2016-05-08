@@ -229,14 +229,14 @@ public class Conversation extends DialogToastListActivity {
                 Toast.makeText(utils.context, e.getMessage(), Toast.LENGTH_LONG).show();
             }
 
-            /*for (int i=0; i < App.openedChats.size(); i++) {
-                chat chat = App.openedChats.get(i);
+            for (int i=0; i < utils.openedChats.size(); i++) {
+                chat chat = utils.openedChats.get(i);
                 if (chat.name.contentEquals(contactName)) {
-                    chat.activity.finish();
-                    App.openedChats.remove(i);
+                    chat.activity.finishAndRemoveTask();
+                    utils.openedChats.remove(i);
                 }
             }
-            App.openedChats.add(new chat(contactName,activity));*/
+            utils.openedChats.add(new chat(contactName,activity));
         }
     }
 
