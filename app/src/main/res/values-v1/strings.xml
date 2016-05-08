@@ -13,11 +13,11 @@
     <!-- WAMOD Settings - General -->
     <string name="wamod_settings_general">General</string>
     <string name="wamod_settings_general_colors">Colors</string>
-    <string name="wamod_settings_general_colors_statusbarcolor">Status bar color</string>
-    <string name="wamod_settings_general_colors_toolbarcolor">Toolbar color</string>
-    <string name="wamod_settings_general_colors_toolbartitlescolor">Toolbar titles color</string>
-    <string name="wamod_settings_general_colors_toolbariconscolor">Toolbar icons color</string>
-    <string name="wamod_settings_general_colors_navigationbarcolor">Navigation bar color</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Status bar</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">Toolbar</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Toolbar titles</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Toolbar icons</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">Navigation bar</string>
     <string name="wamod_settings_general_colors_darkstatusbaricons">Dark status bar icons</string>
     <string name="wamod_settings_general_nightmode">Night mode</string>
     <string name="wamod_settings_general_nightmode_enable">Enable</string>
@@ -28,7 +28,7 @@
     <!-- WAMOD Settings - Home -->
     <string name="wamod_settings_home">Home</string>
     <string name="wamod_settings_home_layout">Layout</string>
-    <string name="wamod_settings_home_layout_hometheme">Home theme</string>
+    <string name="wamod_settings_home_layout_hometheme">Theme</string>
     <string name="wamod_settings_home_drawer">Drawer</string>
     <string name="wamod_settings_home_drawer_style">Style</string>
     <string name="wamod_settings_home_drawer_darkdrawer">Dark drawer</string>
@@ -60,12 +60,12 @@
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Custom participant color</string>
     <string name="wamod_settings_conversation_bubbles_style">Style</string>
     <string name="wamod_settings_conversation_bubbles_ticksstyle">Ticks style</string>
-    <string name="wamod_settings_conversation_bubbles_right_color">Right bubble color</string>
-    <string name="wamod_settings_conversation_bubbles_right_textcolor">Right bubble text color</string>
-    <string name="wamod_settings_conversation_bubbles_right_datecolor">Right bubble date color</string>
-    <string name="wamod_settings_conversation_bubbles_left_color">Left bubble color</string>
-    <string name="wamod_settings_conversation_bubbles_left_textcolor">Left bubble text color</string>
-    <string name="wamod_settings_conversation_bubbles_left_datecolor">Left bubble date color</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">Right bubble</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Right bubble: text</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Right bubble: date</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">Left bubble</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Left bubble: text</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Left bubble: date</string>
 
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privacy</string>
