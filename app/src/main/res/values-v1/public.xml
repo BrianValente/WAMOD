@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- WAMOD -->
+
+
+    <!-- WAMOD Settings -->
+
+    <public type="layout" name="activity_main" id="0x7f031000" />
+    <public type="xml" name="wamod_settings" id="0x7f061000" />
+    <public type="string" name="wamod_settings" id="0x7f081000" />
+
+
+    <!-- Strings needed for multitasking -->
+
+    <public type="string" name="chat_with" id="0x7f081002" />
+    <public type="string" name="profile_of" id="0x7f081003" />
+
+
+    <!-- Strings -->
+
+    <public type="string" name="wamod_restoredefaults" id="0x7f081004" />
+    <public type="string" name="wamod_restoredefaultsprompt" id="0x7f081005" />
+    <public type="string" name="wamod_donerestartwamod" id="0x7f081006" />
+    <public type="string" name="wamod_updateavailable" id="0x7f081007" />
+    <public type="string" name="wamod_updateavailablemessage" id="0x7f081008" />
+    <public type="string" name="wamod_download" id="0x7f081009" />
+    <public type="string" name="wamod_later" id="0x7f08100a" />
+    <public type="string" name="wamod_ignorethisupdate" id="0x7f08100b" />
+    <public type="string" name="wamod_errorcontactingserver" id="0x7f08100c" />
+    <public type="string" name="wamod_uptodate" id="0x7f08100d" />
+    <public type="string" name="wamod_onlylollipopandup" id="0x7f08100e" />
+    <public type="string" name="wamod_insertahexcolorwithout" id="0x7f08100f" />
+    <public type="string" name="wamod_wamodsettings" id="0x7f081010" />
+
+    <public type="string" name="wamod_crash_title" id="0x7f081011" />
+    <public type="string" name="wamod_crash_message" id="0x7f081012" />
+    <public type="string" name="wamod_crash_button" id="0x7f081013" />
+
+    <public type="string" name="wamod_unlinkdevice_title" id="0x7f081014" />
+    <public type="string" name="wamod_unlinkdevice_message" id="0x7f081015" />
+    <public type="string" name="wamod_loading" id="0x7f081016" />
+    <public type="string" name="wamod_done" id="0x7f081017" />
+    <public type="string" name="wamod_error" id="0x7f081018" />
+
+    <!-- Array options -->
+
+    <public type="array" name="conversation_style_toolbar" id="0x7f0f1000" />
+    <public type="array" name="conversation_style_toolbar_values" id="0x7f0f100b" />
+    <public type="array" name="conversation_style_bubble" id="0x7f0f1001" />
+    <public type="array" name="conversation_style_bubble_values" id="0x7f0f1002" />
+    <public type="array" name="conversation_style_bubble_layout" id="0x7f0f1003" />
+    <public type="array" name="conversation_style_bubble_layout_values" id="0x7f0f1004" />
+    <public type="array" name="conversation_style_tick" id="0x7f0f1005" />
+    <public type="array" name="conversation_style_tick_values" id="0x7f0f1006" />
+    <public type="array" name="conversation_style_entry" id="0x7f0f1007" />
+    <public type="array" name="conversation_style_entry_values" id="0x7f0f1008" />
+    <public type="array" name="home_theme" id="0x7f0f1009" />
+    <public type="array" name="home_theme_values" id="0x7f0f100a" />
+
+
+    <!-- Balloons -->
+
+    <public type="drawable" name="wamod_style_bubble_wamod_balloon_incoming_normal" id="0x7f021000" />
+    <public type="drawable" name="wamod_style_bubble_wamod_balloon_incoming_normal_ext" id="0x7f021001" />
+    <public type="drawable" name="wamod_style_bubble_wamod_balloon_outgoing_normal" id="0x7f021002" />
+    <public type="drawable" name="wamod_style_bubble_wamod_balloon_outgoing_normal_ext" id="0x7f021003" />
+    <public type="drawable" name="wamod_style_bubble_wamod_input" id="0x7f021004" />
+
+    <public type="drawable" name="wamod_style_bubble_materialized_balloon_incoming_normal" id="0x7f021005" />
+    <public type="drawable" name="wamod_style_bubble_materialized_balloon_incoming_normal_ext" id="0x7f021006" />
+    <public type="drawable" name="wamod_style_bubble_materialized_balloon_outgoing_normal" id="0x7f021007" />
+    <public type="drawable" name="wamod_style_bubble_materialized_balloon_outgoing_normal_ext" id="0x7f021008" />
+    <public type="drawable" name="wamod_style_bubble_materialized_input" id="0x7f021009" />
+
+    <public type="drawable" name="wamod_style_bubble_lb_balloon_incoming_normal" id="0x7f02100a" />
+    <public type="drawable" name="wamod_style_bubble_lb_balloon_incoming_normal_ext" id="0x7f02100b" />
+    <public type="drawable" name="wamod_style_bubble_lb_balloon_outgoing_normal" id="0x7f02100c" />
+    <public type="drawable" name="wamod_style_bubble_lb_balloon_outgoing_normal_ext" id="0x7f02100d" />
+    <public type="drawable" name="wamod_style_bubble_lb_input" id="0x7f02100e" />
+
+    <public type="drawable" name="wamod_style_bubble_hangouts_balloon_incoming_normal" id="0x7f02100f" />
+    <public type="drawable" name="wamod_style_bubble_hangouts_balloon_incoming_normal_ext" id="0x7f021010" />
+    <public type="drawable" name="wamod_style_bubble_hangouts_balloon_outgoing_normal" id="0x7f021011" />
+    <public type="drawable" name="wamod_style_bubble_hangouts_balloon_outgoing_normal_ext" id="0x7f021012" />
+    <public type="drawable" name="wamod_style_bubble_hangouts_input" id="0x7f021013" />
+
+    <public type="drawable" name="wamod_style_bubble_rounded_balloon_incoming_normal" id="0x7f021014" />
+    <public type="drawable" name="wamod_style_bubble_rounded_balloon_incoming_normal_ext" id="0x7f021015" />
+    <public type="drawable" name="wamod_style_bubble_rounded_balloon_outgoing_normal" id="0x7f021016" />
+    <public type="drawable" name="wamod_style_bubble_rounded_balloon_outgoing_normal_ext" id="0x7f021017" />
+    <public type="drawable" name="wamod_style_bubble_rounded_input" id="0x7f021018" />
+
+    <public type="drawable" name="wamod_style_bubble_fbm_balloon_incoming_normal" id="0x7f021019" />
+    <public type="drawable" name="wamod_style_bubble_fbm_balloon_incoming_normal_ext" id="0x7f02101a" />
+    <public type="drawable" name="wamod_style_bubble_fbm_balloon_outgoing_normal" id="0x7f02101b" />
+    <public type="drawable" name="wamod_style_bubble_fbm_balloon_outgoing_normal_ext" id="0x7f02101c" />
+    <public type="drawable" name="wamod_style_bubble_fbm_input" id="0x7f02101d" />
+
+    <public type="drawable" name="wamod_style_bubble_newhangouts_balloon_incoming_normal" id="0x7f02101e" />
+    <public type="drawable" name="wamod_style_bubble_newhangouts_balloon_incoming_normal_ext" id="0x7f02101f" />
+    <public type="drawable" name="wamod_style_bubble_newhangouts_balloon_outgoing_normal" id="0x7f021020" />
+    <public type="drawable" name="wamod_style_bubble_newhangouts_balloon_outgoing_normal_ext" id="0x7f021021" />
+    <public type="drawable" name="wamod_style_bubble_newhangouts_input" id="0x7f021022" />
+
+
+
+    <!-- Ticks -->
+
+    <public type="drawable" name="wamod_style_tick_ios_message_unsent" id="0x7f021023" />
+    <public type="drawable" name="wamod_style_tick_ios_message_got_receipt_from_server" id="0x7f021024" />
+    <public type="drawable" name="wamod_style_tick_ios_message_got_receipt_from_target" id="0x7f021025" />
+    <public type="drawable" name="wamod_style_tick_ios_message_got_read_receipt_from_target" id="0x7f021026" />
+    <public type="drawable" name="wamod_style_tick_ios_message_unsent_onmedia" id="0x7f021027" />
+    <public type="drawable" name="wamod_style_tick_ios_message_got_receipt_from_server_onmedia" id="0x7f021028" />
+    <public type="drawable" name="wamod_style_tick_ios_message_got_receipt_from_target_onmedia" id="0x7f021029" />
+    <public type="drawable" name="wamod_style_tick_ios_message_got_read_receipt_from_target_onmedia" id="0x7f02102a" />
+
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_unsent" id="0x7f02102b" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_got_receipt_from_server" id="0x7f02102c" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_got_receipt_from_target" id="0x7f02102d" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_got_read_receipt_from_target" id="0x7f02102e" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_unsent_onmedia" id="0x7f02102f" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_got_receipt_from_server_onmedia" id="0x7f021030" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_got_receipt_from_target_onmedia" id="0x7f021031" />
+    <public type="drawable" name="wamod_style_tick_oldwaca_message_got_read_receipt_from_target_onmedia" id="0x7f021032" />
+
+    <public type="drawable" name="wamod_style_tick_newwaca_message_unsent" id="0x7f021033" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_got_receipt_from_server" id="0x7f021034" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_got_receipt_from_target" id="0x7f021035" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_got_read_receipt_from_target" id="0x7f021036" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_unsent_onmedia" id="0x7f021037" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_got_receipt_from_server_onmedia" id="0x7f021038" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_got_receipt_from_target_onmedia" id="0x7f021039" />
+    <public type="drawable" name="wamod_style_tick_newwaca_message_got_read_receipt_from_target_onmedia" id="0x7f02103a" />
+
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_unsent" id="0x7f02103b" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_got_receipt_from_server" id="0x7f02103c" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_got_receipt_from_target" id="0x7f02103d" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_got_read_receipt_from_target" id="0x7f02103e" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_unsent_onmedia" id="0x7f02103f" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_got_receipt_from_server_onmedia" id="0x7f021040" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_got_receipt_from_target_onmedia" id="0x7f021041" />
+    <public type="drawable" name="wamod_style_tick_oldwamd_message_got_read_receipt_from_target_onmedia" id="0x7f021042" />
+
+    <public type="drawable" name="wamod_style_tick_circles_message_unsent" id="0x7f021043" />
+    <public type="drawable" name="wamod_style_tick_circles_message_got_receipt_from_server" id="0x7f021044" />
+    <public type="drawable" name="wamod_style_tick_circles_message_got_receipt_from_target" id="0x7f021045" />
+    <public type="drawable" name="wamod_style_tick_circles_message_got_read_receipt_from_target" id="0x7f021046" />
+    <public type="drawable" name="wamod_style_tick_circles_message_unsent_onmedia" id="0x7f021047" />
+    <public type="drawable" name="wamod_style_tick_circles_message_got_receipt_from_server_onmedia" id="0x7f021048" />
+    <public type="drawable" name="wamod_style_tick_circles_message_got_receipt_from_target_onmedia" id="0x7f021049" />
+    <public type="drawable" name="wamod_style_tick_circles_message_got_read_receipt_from_target_onmedia" id="0x7f02104a" />
+
+
+
+    <!-- Themes -->
+    <public type="id" name="wamod_blur" id="0x7f101000" />
+
+    <!-- WAMOD Theme -->
+    <public type="id" name="wamod_theme_wamod_conversation_gallery" id="0x7f101001" />
+    <public type="id" name="wamod_theme_wamod_conversation_audio" id="0x7f101002" />
+    <public type="id" name="wamod_theme_wamod_conversation_location" id="0x7f101003" />
+    <public type="id" name="wamod_theme_wamod_conversation_contact" id="0x7f101004" />
+    <public type="id" name="wamod_theme_wamod_conversation_camera" id="0x7f101005" />
+    <public type="drawable" name="wamod_theme_wamod_conversation_emoji" id="0x7f02104b" />
+    <public type="layout" name="wamod_theme_wamod_conversations_row" id="0x7f031001" />
+    <public type="layout" name="wamod_theme_wamod_calls_row" id="0x7f031002" />
+    <public type="layout" name="wamod_theme_wamod_contact_picker_row" id="0x7f031003" />
+    <public type="layout" name="wamod_theme_wamod_conversation" id="0x7f031004" />
+    <public type="layout" name="wamod_theme_wamod_conversation_emoji_picker_horizontal" id="0x7f031005" />
+    <public type="xml" name="theme_wamod_conversation_config" id="0x7f061001" />
+    <public type="drawable" name="wamod_theme_wamod_conversation_input" id="0x7f02104c" />
+
+    <!-- Hangouts Theme -->
+    <public type="layout" name="wamod_theme_hangouts_conversation" id="0x7f031006" />
+    <public type="layout" name="wamod_theme_hangouts_conversation_emoji_picker_horizontal" id="0x7f031007" />
+    <public type="id" name="wamod_theme_hangouts_conversation_gallery" id="0x7f101006" />
+    <public type="id" name="wamod_theme_hangouts_conversation_camera" id="0x7f101007" />
+    <public type="id" name="wamod_theme_hangouts_conversation_emoji" id="0x7f101008" />
+    <public type="id" name="wamod_theme_hangouts_conversation_location" id="0x7f101009" />
+    <public type="xml" name="theme_hangouts_conversation_config" id="0x7f061002" />
+
+    <!-- Simple Theme -->
+    <public type="layout" name="wamod_theme_simple_conversation" id="0x7f031008" />
+    <public type="xml" name="theme_simple_conversation_config" id="0x7f061003" />
+
+    <!-- Aran theme -->
+    <public type="layout" name="wamod_theme_aran_conversation" id="0x7f031009" />
+    <public type="xml" name="theme_aran_conversation_config" id="0x7f061004" />
+
+    <!-- Mood Theme -->
+    <public type="layout" name="wamod_theme_mood_conversation" id="0x7f03100a" />
+    <public type="xml" name="theme_mood_conversation_config" id="0x7f061005" />
+
+    <!-- Test Theme -->
+    <public type="layout" name="wamod_theme_test_conversation" id="0x7f03100b" />
+    <public type="xml" name="theme_test_conversation_config" id="0x7f061006" />
+    <public type="id" name="wamod_theme_test_conversation_entry_send" id="0x7f10100a" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_btn" id="0x7f10100b" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_layout" id="0x7f10100c" />
+    <public type="id" name="wamod_theme_test_conversation_entry_reveallinearlayout" id="0x7f10100d" />
+    <public type="id" name="wamod_theme_test_conversation_entry_layout" id="0x7f10100e" />
+    <public type="id" name="wamod_theme_test_conversation_entry_edittext" id="0x7f10100f" />
+    <public type="id" name="wamod_theme_test_conversation_extras_mic_wave1" id="0x7f101010" />
+    <public type="id" name="wamod_theme_test_conversation_entry_mic" id="0x7f101011" />
+    <public type="id" name="wamod_theme_test_conversation_extras_mic" id="0x7f101012" />
+    <public type="id" name="wamod_theme_test_conversation_extras_mic_container" id="0x7f101013" />
+    <public type="id" name="wamod_theme_test_conversation_extras" id="0x7f101014" />
+    <public type="id" name="wamod_theme_test_conversation_extras_mic_delete" id="0x7f101015" />
+    <public type="id" name="wamod_theme_test_conversation_extras_mic_send" id="0x7f101016" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_gallery" id="0x7f101032" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_camera" id="0x7f101033" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_audio" id="0x7f101034" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_contact" id="0x7f101035" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_location" id="0x7f101036" />
+    <public type="id" name="wamod_theme_test_conversation_entry_attach_edit" id="0x7f101037" />
+
+    <!-- Toolbar layouts for Conversation -->
+    <public type="layout" name="wamod_style_stock_conversation_actionbar" id="0x7f03100c" />
+    <public type="layout" name="wamod_style_stockcentered_conversation_actionbar" id="0x7f03100d" />
+    <public type="layout" name="wamod_style_wamod_conversation_actionbar" id="0x7f03100e" />
+    <public type="layout" name="wamod_style_wamodcentered_conversation_actionbar" id="0x7f03100f" />
+
+    <!-- Close button drawable -->
+    <public type="drawable" name="wamod_action_close" id="0x7f02104d" />
+
+    <!-- Home themes -->
+    <public type="layout" name="wamod_theme_stockwcounterphoto_conversations_row" id="0x7f031010" />
+    <public type="layout" name="wamod_theme_telegram_conversations_row" id="0x7f031011" />
+
+
+
+    <!-- Color picker -->
+
+    <public type="id" name="ambilwarna_alphaCheckered" id="0x7f101017" />
+    <public type="id" name="ambilwarna_alphaCursor" id="0x7f101018" />
+    <public type="id" name="ambilwarna_cursor" id="0x7f101019" />
+    <public type="id" name="ambilwarna_dialogView" id="0x7f10101a" />
+    <public type="id" name="ambilwarna_newColor" id="0x7f10101b" />
+    <public type="id" name="ambilwarna_oldColor" id="0x7f10101c" />
+    <public type="id" name="ambilwarna_overlay" id="0x7f10101d" />
+    <public type="id" name="ambilwarna_pref_widget_box" id="0x7f10101e" />
+    <public type="id" name="ambilwarna_state" id="0x7f10101f" />
+    <public type="id" name="ambilwarna_target" id="0x7f101020" />
+    <public type="id" name="ambilwarna_viewContainer" id="0x7f101021" />
+    <public type="id" name="ambilwarna_viewHue" id="0x7f101022" />
+    <public type="id" name="ambilwarna_viewSatBri" id="0x7f101023" />
+
+    <public type="layout" name="ambilwarna_dialog" id="0x7f031012" />
+    <public type="layout" name="ambilwarna_pref_widget" id="0x7f031013" />
+
+    <public type="drawable" name="ambilwarna_alphacheckered" id="0x7f02104e" />
+    <public type="drawable" name="ambilwarna_alphacheckered_tiled" id="0x7f02104f" />
+    <public type="drawable" name="ambilwarna_arrow_down" id="0x7f021050" />
+    <public type="drawable" name="ambilwarna_arrow_right" id="0x7f021051" />
+    <public type="drawable" name="ambilwarna_cursor" id="0x7f021052" />
+    <public type="drawable" name="ambilwarna_hue" id="0x7f021053" />
+    <public type="drawable" name="ambilwarna_target" id="0x7f021054" />
+
+    <public type="dimen" name="ambilwarna_hsvHeight" id="0x7f0b1000" />
+    <public type="dimen" name="ambilwarna_hsvWidth" id="0x7f0b1001" />
+    <public type="dimen" name="ambilwarna_hueWidth" id="0x7f0b1002" />
+    <public type="dimen" name="ambilwarna_spacer" id="0x7f0b1003" />
+
+
+    <!-- Home drawer -->
+
+    <public type="drawable" name="wamod_ic_menu" id="0x7f021055" />
+    <public type="drawable" name="wamod_drawer_bg" id="0x7f021056" />
+    <public type="id" name="wamod_drawer_parent" id="0x7f10103b" />
+    <public type="id" name="wamod_drawer_overlay" id="0x7f10103c" />
+    <public type="id" name="wamod_drawer_bgview" id="0x7f10103d" />
+    <public type="id" name="wamod_drawer" id="0x7f101024" />
+    <public type="id" name="wamod_drawer_usernametv" id="0x7f101025" />
+    <public type="id" name="wamod_drawer_usernumbertv" id="0x7f101026" />
+    <public type="id" name="wamod_drawer_newgroup" id="0x7f101027" />
+    <public type="id" name="wamod_drawer_newbroadcast" id="0x7f101028" />
+    <public type="id" name="wamod_drawer_wamodweb" id="0x7f101029" />
+    <public type="id" name="wamod_drawer_setstatus" id="0x7f10102a" />
+    <public type="id" name="wamod_drawer_changeprofilepic" id="0x7f10102b" />
+    <public type="id" name="wamod_drawer_starredmessages" id="0x7f101039" />
+    <public type="id" name="wamod_drawer_search" id="0x7f10102c" />
+    <public type="id" name="wamod_drawer_settings" id="0x7f10102d" />
+    <public type="id" name="wamod_drawer_wamodsettings" id="0x7f10102e" />
+    <public type="id" name="wamod_drawer_container" id="0x7f10102f" />
+    <public type="id" name="wamod_drawer_back" id="0x7f101030" />
+    <public type="id" name="wamod_drawer_photo" id="0x7f101031" />
+    <public type="id" name="wamod_drawer_header" id="0x7f101038" />
+    <public type="id" name="wamod_drawer_buttons" id="0x7f10103a" />
+    <public type="id" name="wamod_drawer_debug1" id="0x7f10103e" />
+    <public type="id" name="wamod_drawer_statusbar" id="0x7f101041" />
+    <public type="id" name="wamod_drawer_privacy" id="0x7f101044" />
+
+    <public type="layout" name="wamod_home_drawer_header_wamod" id="0x7f031016" />
+    <public type="layout" name="wamod_home_drawer_header_wamodcentered" id="0x7f031017" />
+
+
+    <!-- Switch account -->
+    <public type="id" name="wamod_switchaccount" id="0x7f10103f" />
+    <public type="id" name="wamod_drawer_header_2ndprofilepic" id="0x7f101040" />
+    <public type="string" name="wamod_switchaccount_prompt_title" id="0x7f081019" />
+    <public type="string" name="wamod_switchaccount_prompt_message" id="0x7f08101a" />
+
+
+    <!-- New WAMOD Settings -->
+    <public type="xml" name="wamodsettings" id="0x7f061007" />
+    <public type="xml" name="wamodsettings_generalcolors" id="0x7f061008" />
+    <public type="xml" name="wamodsettings_home" id="0x7f061009" />
+    <public type="xml" name="wamodsettings_conversation" id="0x7f06100a" />
+    <public type="xml" name="wamodsettings_privacy" id="0x7f06100b" />
+    <public type="xml" name="wamodsettings_miscellaneous" id="0x7f06100c" />
+    <public type="xml" name="wamodsettings_wamodthemes" id="0x7f06100d" />
+    <public type="layout" name="wamod_activity_settings_bubbles" id="0x7f031015" />
+    <public type="id" name="wamod_fragment" id="0x7f101050" />
+
+
+    <!-- CircularImageView -->
+
+    <public type="attr" name="border" id="0x7f011000" />
+    <public type="attr" name="border_color" id="0x7f011001" />
+    <public type="attr" name="border_width" id="0x7f011002" />
+    <public type="attr" name="circularImageViewStyle" id="0x7f011003" />
+    <public type="attr" name="selector" id="0x7f011004" />
+    <public type="attr" name="selector_color" id="0x7f011005" />
+    <public type="attr" name="selector_stroke_color" id="0x7f011006" />
+    <public type="attr" name="selector_stroke_width" id="0x7f011007" />
+    <public type="attr" name="shadow" id="0x7f011008" />
+
+
+    <!-- FABS -->
+    <public type="id" name="wamod_fab_reloadcontacts" id="0x7f101042" />
+    <public type="id" name="wamod_fab_clearcalls" id="0x7f101043" />
+
+
+    <!-- Bottom navigation bar -->
+    <public type="id" name="wamod_bottomnav" id="0x7f101048" />
+    <public type="id" name="wamod_bottomnav_viewstub" id="0x7f101049" />
+    <public type="id" name="wamod_bottomnav_calls" id="0x7f101045" />
+    <public type="id" name="wamod_bottomnav_chats" id="0x7f101046" />
+    <public type="id" name="wamod_bottomnav_contacts" id="0x7f101047" />
+
+
+    <!-- Color picker -->
+    <public type="id" name="wamod_colorpicker_seekbar_red" id="0x7f10104a" />
+    <public type="id" name="wamod_colorpicker_seekbar_green" id="0x7f10104b" />
+    <public type="id" name="wamod_colorpicker_seekbar_blue" id="0x7f10104c" />
+    <public type="id" name="wamod_colorpicker_seekbar_alpha" id="0x7f10104d" />
+    <public type="id" name="wamod_colorpicker_tv_hex" id="0x7f10104e" />
+    <public type="id" name="wamod_colorpicker_preview" id="0x7f10104f" />
+    <public type="layout" name="wamod_colorpicker_dialog" id="0x7f031014" />
+    <public type="attr" name="wamod_supportsAlpha" id="0x7f011009" />
+
+
+    <!-- Dark mode -->
+    <public type="style" name="WAMOD.Theme" id="0x7f0c1004" />
+    <public type="style" name="WAMOD.Theme.Day" id="0x7f0c1005" />
+    <public type="style" name="WAMOD.Theme.Settings" id="0x7f0c1000" />
+    <public type="style" name="WAMOD.Theme.Settings.Day" id="0x7f0c1001" />
+    <public type="style" name="WAMOD.Theme.Home" id="0x7f0c1002" />
+    <public type="style" name="WAMOD.Theme.Home.Day" id="0x7f0c1003" />
+    <public type="style" name="WAMOD.Theme.Conversation" id="0x7f0c1006" />
+    <public type="style" name="WAMOD.Theme.Conversation.Day" id="0x7f0c1007" />
+
+
+    <!-- Updater -->
+    <public type="string" name="wamod_updater_title" id="0x7f08101b" />
+    <public type="string" name="wamod_updater_message" id="0x7f08101c" />
+    <public type="string" name="wamod_updater_download" id="0x7f08101d" />
+    <public type="string" name="wamod_updater_later" id="0x7f08101e" />
+    <public type="string" name="wamod_updater_ignore" id="0x7f08101f" />
+    <public type="string" name="wamod_updater_uptodate" id="0x7f081020" />
+</resources>

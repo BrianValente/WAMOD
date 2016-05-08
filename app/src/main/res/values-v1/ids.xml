@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- WAMOD -->
+
+    <item type="id" name="wamod_blur" />
+
+    <item type="id" name="wamod_theme_wamod_conversation_gallery" />
+    <item type="id" name="wamod_theme_wamod_conversation_audio" />
+    <item type="id" name="wamod_theme_wamod_conversation_location" />
+    <item type="id" name="wamod_theme_wamod_conversation_contact" />
+    <item type="id" name="wamod_theme_wamod_conversation_camera" />
+
+    <item type="id" name="wamod_theme_hangouts_conversation_gallery" />
+    <item type="id" name="wamod_theme_hangouts_conversation_camera" />
+    <item type="id" name="wamod_theme_hangouts_conversation_emoji" />
+    <item type="id" name="wamod_theme_hangouts_conversation_location" />
+
+    <item type="id" name="wamod_theme_test_conversation_entry_send" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_btn" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_layout" />
+    <item type="id" name="wamod_theme_test_conversation_entry_reveallinearlayout" />
+    <item type="id" name="wamod_theme_test_conversation_entry_layout" />
+    <item type="id" name="wamod_theme_test_conversation_entry_edittext" />
+    <item type="id" name="wamod_theme_test_conversation_extras_mic_wave1" />
+    <item type="id" name="wamod_theme_test_conversation_entry_mic" />
+    <item type="id" name="wamod_theme_test_conversation_extras_mic" />
+    <item type="id" name="wamod_theme_test_conversation_extras_mic_container" />
+    <item type="id" name="wamod_theme_test_conversation_extras" />
+    <item type="id" name="wamod_theme_test_conversation_extras_mic_delete" />
+    <item type="id" name="wamod_theme_test_conversation_extras_mic_send" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_gallery" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_camera" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_audio" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_contact" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_location" />
+    <item type="id" name="wamod_theme_test_conversation_entry_attach_edit" />
+
+    <item type="id" name="ambilwarna_dialogView">false</item>
+    <item type="id" name="ambilwarna_viewContainer">false</item>
+    <item type="id" name="ambilwarna_viewSatBri">false</item>
+    <item type="id" name="ambilwarna_viewHue">false</item>
+    <item type="id" name="ambilwarna_alphaCheckered">false</item>
+    <item type="id" name="ambilwarna_overlay">false</item>
+    <item type="id" name="ambilwarna_cursor">false</item>
+    <item type="id" name="ambilwarna_alphaCursor">false</item>
+    <item type="id" name="ambilwarna_target">false</item>
+    <item type="id" name="ambilwarna_state">false</item>
+    <item type="id" name="ambilwarna_oldColor">false</item>
+    <item type="id" name="ambilwarna_newColor">false</item>
+    <item type="id" name="ambilwarna_pref_widget_box">false</item>
+
+    <item type="id" name="wamod_drawer_parent" />
+    <item type="id" name="wamod_drawer_overlay" />
+    <item type="id" name="wamod_drawer" />
+    <item type="id" name="wamod_drawer_bgview" />
+    <item type="id" name="wamod_drawer_usernametv" />
+    <item type="id" name="wamod_drawer_usernumbertv" />
+    <item type="id" name="wamod_drawer_newgroup" />
+    <item type="id" name="wamod_drawer_newbroadcast"/>
+    <item type="id" name="wamod_drawer_wamodweb" />
+    <item type="id" name="wamod_drawer_setstatus" />
+    <item type="id" name="wamod_drawer_changeprofilepic" />
+    <item type="id" name="wamod_drawer_starredmessages" />
+    <item type="id" name="wamod_drawer_search" />
+    <item type="id" name="wamod_drawer_settings" />
+    <item type="id" name="wamod_drawer_wamodsettings" />
+    <item type="id" name="wamod_drawer_container" />
+    <item type="id" name="wamod_drawer_back" />
+    <item type="id" name="wamod_drawer_photo" />
+    <item type="id" name="wamod_drawer_header" />
+    <item type="id" name="wamod_drawer_buttons" />
+    <item type="id" name="wamod_drawer_debug1" />
+    <item type="id" name="wamod_drawer_statusbar" />
+    <item type="id" name="wamod_drawer_privacy" />
+
+    <item type="id" name="wamod_switchaccount" />
+    <item type="id" name="wamod_drawer_header_2ndprofilepic" />
+
+    <item type="id" name="wamod_fab_reloadcontacts" />
+    <item type="id" name="wamod_fab_clearcalls" />
+
+    <item type="id" name="wamod_bottomnav" />
+    <item type="id" name="wamod_bottomnav_viewstub" />
+    <item type="id" name="wamod_bottomnav_calls" />
+    <item type="id" name="wamod_bottomnav_chats" />
+    <item type="id" name="wamod_bottomnav_contacts" />
+
+    <!-- Color picker -->
+    <item type="id" name="wamod_colorpicker_seekbar_red" />
+    <item type="id" name="wamod_colorpicker_seekbar_green" />
+    <item type="id" name="wamod_colorpicker_seekbar_blue" />
+    <item type="id" name="wamod_colorpicker_seekbar_alpha" />
+    <item type="id" name="wamod_colorpicker_tv_hex" />
+    <item type="id" name="wamod_colorpicker_preview" />
+
+    <item type="id" name="wamod_fragment" />
+
+    <!-- WAMOD END -->
+</resources>
