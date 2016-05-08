@@ -4,6 +4,15 @@ package com.wamod;
  * Created by brianvalente on 11/21/15.
  */
 public class id {
+
+    /** AVOID USING THIS FILE PLOX */
+    /** AVOID USING THIS FILE PLOX */
+    /** AVOID USING THIS FILE PLOX */
+    /** AVOID USING THIS FILE PLOX */
+    /** AVOID USING THIS FILE PLOX */
+    /** AVOID USING THIS FILE PLOX */
+    /** AVOID USING THIS FILE PLOX */
+
     /** APP */
     public static int app_name = 0x7f080612;
     public static int action_bar = 0x7f10008e;
