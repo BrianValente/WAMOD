@@ -351,4 +351,8 @@ public final class Resources {
         public static final int WAMOD_Theme_Conversation = utils.getHexID("WAMOD.Theme.Conversation", "style");
         public static final int WAMOD_Theme_Conversation_Day = utils.getHexID("WAMOD.Theme.Conversation.Day", "style");
     }
+
+    public static int getXml(String xml) {
+        return utils.getHexID(xml, "xml");
+    }
 }
