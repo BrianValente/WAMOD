@@ -1,110 +1,143 @@
 ﻿<resources>
-    <!--
-
-    PLEASE UPDATE THIS TRANSLATION
-
-
-    <string name="type_a_message">Tulis sesuatu</string>
-    <string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
-    <string name="title_activity_theme_hangouts_conversation_config">Tetapan tema hangouts</string>
-    <string name="chat_with">Berbual dengan %1$s</string>
-    <string name="profile_of">Profil kepunyaan %1$s</string>
-    <string name="wamod_general">Umum</string>
-    <string name="wamod_statusbarcolor">Warna statusbar</string>
-    <string name="wamod_toolbarcolor">Warna toolbar</string>
-    <string name="wamod_toolbarforeground">Warna teks toolbar</string>
-    <string name="wamod_navbarcolor">Warna bar navigasi</string>
-    <string name="wamod_home">Utama</string>
-    <string name="wamod_hometheme">Tema utama</string>
-    <string name="wamod_conversation">Chat</string>
-    <string name="wamod_hideprofilephoto">Sembunyi gambar profil</string>
-    <string name="wamod_hidetoolbaricons">Sembunyi ikon toolbar</string>
-    <string name="wamod_proximitysensor">Sensor jarak</string>
-    <string name="wamod_rightbubblecolor">Warna bubble kanan</string>
-    <string name="wamod_rightbubbletextcolor">Warna teks bubble kanan</string>
-    <string name="wamod_rightbubbledatecolor">Warna tarikh bubble kanan</string>
-    <string name="wamod_leftbubblecolor">Warna bubble kiri</string>
-    <string name="wamod_leftbubbletextcolor">Warna teks bubble kiri</string>
-    <string name="wamod_leftbubbledatecolor">Warna tarikh bubble kiri</string>
-    <string name="wamod_enablecustomparticipantnamecolor">Warna nama ahli kumpulan</string>
-    <string name="wamod_enablecustomconversationbgcolor">Aktifkan warna latar</string>
-    <string name="wamod_customconversationbgcolor">Warna latar pilihan</string>
-    <string name="wamod_bubblestyle">Jenis bubble</string>
-    <string name="wamod_bubblelayoutstyle">Jenis susun atur bubble</string>
-    <string name="wamod_tickstyle">Jenis penanda</string>
-    <string name="wamod_entrystyle">Jenis kemasukan</string>
-    <string name="wamod_personalizeentry">Tetapan kemasukan</string>
-    <string name="wamod_overviewlollipopup">Gambar keseluruhan (Lollipop dan ke atas)</string>
-    <string name="wamod_enablecardcolor">Aktifkan warna kad</string>
-    <string name="wamod_openchatslikenewtasks">Buka perbualan sebagai tugasan baru</string>
-    <string name="wamod_privacy">Privasi</string>
-    <string name="wamod_freezelastseen">Bekukan masa dilihat</string>
-    <string name="wamod_no2ndtick">Tiada penanda kedua</string>
-    <string name="wamod_nobluetick">Tiada penanda biru</string>
-    <string name="wamod_hidetyping">Sembunyi menaip</string>
-    <string name="wamod_alwaysonline">Sentiasa aktif</string>
-    <string name="wamod_miscellaneous">Pelbagai</string>
-    <string name="wamod_disablecolorpicker">Matikan pemilih warna</string>
-    <string name="wamod_checkforupdates">Periksa kemas kini</string>
-    <string name="wamod_restoredefaults">Tetapan asal</string>
-    <string name="wamod_about">Tentang</string>
-    <string name="wamod_opengooglepluscommunity">Buka komuniti Google+</string>
-    <string name="wamod_opendevtwitterprofile">Buka profil twitter pemaju</string>
-    <string name="wamod_darkmode">Mod gelap</string>
-    <string name="wamod_customparticipantnamecolor">Warna nama ahli kumpulan</string>
-    <string name="wamod_darkmodesummary">UI menjadi gelap</string>
-    <string name="wamod_hideprofilephotosummary">Sembunyi gambar profil dari toolbar</string>
-    <string name="wamod_hidetoolbarattachsummary">Sembunyi ikon panggilan dan lampir</string>
-    <string name="wamod_proximitysensorsummary">Aktifkan sensor jarak ketika mendengar rakaman suara</string>
-    <string name="wamod_enablecardcolorsummary">Warnakan kad selari dengan warna toolbar</string>
-    <string name="wamod_openchatslikenewtaskssummary">Banyak chat boleh dibuka pada masa yang sama</string>
-    <string name="wamod_freezelastseensummary">Masa terakhir dilihat akan dibekukan</string>
-    <string name="wamod_no2ndticksummary">Penghantar tidak tahu jika anda sudah menerima chat</string>
-    <string name="wamod_noblueticksummary">Penghantar tidak tahu jika anda sudah membaca chat</string>
-    <string name="wamod_hidetypingsummary">Penerima tidak tahu jika anda sedang menaip</string>
-    <string name="wamod_alwaysonlinesummary">Tetapi jangan buang aplikasi dari recents!</string>
-    <string name="wamod_restoredefaultsprompt">Adakah anda pasti untuk kembali ke tetapan asal?</string>
-    <string name="wamod_donerestartwamod">Selesai,restart WAMOD</string>
-    <string name="wamod_updateavailable">Kemas kini tersedia</string>
-    <string name="wamod_updateavailablemessage">%1$s sedia untuk dimuat turun. Versi anda ialah %2$s.</string>
-    <string name="wamod_download">Muat turun</string>
-    <string name="wamod_later">Kemudian</string>
-    <string name="wamod_ignorethisupdate">Biarkan</string>
-    <string name="wamod_uptodate">Tiada kemas kini</string>
-    <string name="wamod_errorcontactingserver">Ralat ketika menghubungi pelayan</string>
-    <string name="wamod_onlylollipopandup">Hanya Lollipop dan ke atas</string>
-    <string name="wamod_insertahexcolorwithout">Masukkan warna HEX (tanpa #)</string>
-    <string name="wamod_wamodsettings">Tetapan WAMOD</string>
-    <string name="wamod_conversation_toolbar_style">Jenis Toolbar</string>
-    <string name="wamod_closebutton">Butang tutup</string>
-    <string name="wamod_closebuttonsummary">Tutup aktiviti serta merta</string>
-    <string name="wamod_unavailable">Tidak tersedia</string>
-    <string name="wamod_darkstatusbaricons">Ikon statusbar yang gelap</string>
-    <string name="wamod_marshmallowandup">Android 6.0 (Marshmallow) dan ke atas</string>
-    <string name="wamod_unlinkdevice">Putuskan sambungan peranti dari tema WAMOD</string>
-    <string name="wamod_unlinkdevice_title">Putuskan sambungan peranti</string>
-    <string name="wamod_unlinkdevice_message">Adakah anda pasti untuk putuskan sambungan?</string>
-    <string name="wamod_crash_title">WAMOD gagal berfungsi!</string>
-    <string name="wamod_crash_message">Terdapat ralat pada tetapan anda jadi tetapan asal telah diguna</string>
-    <string name="wamod_crash_button">Baiklah ☹️</string>
-    <string name="wamod_wamodthemes">Tema WAMOD</string>
-    <string name="wamod_wamodthemes_constantlycheck">Sentiasa periksa tema baru</string>
-    <string name="wamod_wamodthemes_constantlycheck_summary">Guna sedikit data tambahan</string>
-    <string name="wamod_loading">Sedang memuat...️</string>
-    <string name="wamod_done">Selesai</string>
-    <string name="wamod_error">Terdapat ralat</string>
-    <string name="wamod_visitwamodthemes">Lawat tema WAMOD</string>
-    <string name="wamod_androidgallery">Guna galeri android</string>
-    <string name="wamod_androidgallerysummary">Anda boleh pilih gambar dan video menggunakan galeri kegemaran anda</string>
-    <string name="tabs_indicator_color">Warna tab penunjuk</string>
+    <!-- WAMOD Settings -->
     <string name="wamod_settings">Tetapan WAMOD</string>
-    <string name="wamod_credits">Credits</string>
-    <string name="wamod_darkdrawer">Drawer gelap</string>
-    <string name="wamod_selectdrawerbackground">Pilih latar belakang drawer</string>
-    <string name="wamod_blacktextindrawerheader">Teks gelap pada drawer</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) dan ke atas</string>
+
+    <!-- WAMOD Settings - About -->
+    <string name="wamod_settings_about">Tentang aplikasi</string>
+    <string name="wamod_settings_about_googlepluscommunity">Buka komuniti Google+</string>
+    <string name="wamod_settings_about_developertwitterprofile">Buka profil twitter pemaju</string>
+    <string name="wamod_settings_about_sourcecode">Kod sumber</string>
+    <string name="wamod_settings_about_credits">Kredit</string>
+
+    <!-- WAMOD Settings - General -->
+    <string name="wamod_settings_general">Umum</string>
+    <string name="wamod_settings_general_colors">Warna</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Bar status</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">Bar perkakasan</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Tajuk bar perkakasan</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Ikon bar perkakasan</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">Bar navigasi</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Ikon gelap di bar status</string>
+    <string name="wamod_settings_general_nightmode">Mod malam</string>
+    <string name="wamod_settings_general_nightmode_enable">Aktif</string>
+    <string name="wamod_settings_general_nightmode_enable_summary">UI akan menjadi gelap</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight">Hanya pada waktu malam</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Mod malam akan aktif pada waktu malam sahaja</string>
+
+    <!-- WAMOD Settings - Home -->
+    <string name="wamod_settings_home">Utama</string>
+    <string name="wamod_settings_home_layout">Susun atur</string>
+    <string name="wamod_settings_home_layout_hometheme">Tema</string>
+    <string name="wamod_settings_home_drawer">Laci</string>
+    <string name="wamod_settings_home_drawer_style">Jenis</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Laci gelap</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Pilih latar belakang Laci</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Teks gelap pada Laci</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Tunjukkan akaun kedua di Laci</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Bar navigasi</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors">Warna automatik</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Warna akan dipilih secara automatik</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">Warna latar belakang</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Warna item yang aktif</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Warna item yang tidak aktif</string>
+
+    <!-- WAMOD Settings - Conversation -->
+    <string name="wamod_settings_conversation">Perbualan</string>
+    <string name="wamod_settings_conversation_toolbar">Bar perkakasan</string>
+    <string name="wamod_settings_conversation_toolbar_style">Jenis</string>
+    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Sembunyi gambar profil</string>
+    <string name="wamod_settings_conversation_toolbar_hideicons">Sembunyi ikon</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">Butang tutup</string>
+    <string name="wamod_settings_conversation_layout">Susun atur</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Aktifkan warna latar pilihan</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Warna latar pilihan</string>
+    <string name="wamod_settings_conversation_layout_entry_style">Jenis kemasukan</string>
+    <string name="wamod_settings_conversation_layout_entry_config">Ubahsuai kemasukan</string>
+    <string name="wamod_settings_conversation_bubbles">Buih</string>
+    <string name="wamod_settings_conversation_bubbles_personalize">Pengubahsuaian buih</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Aktifkan warna nama ahli kumpulan</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Warna nama ahli kumpulan</string>
+    <string name="wamod_settings_conversation_bubbles_style">Jenis</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Jenis penanda</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">Buih kanan</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Buih kanan: teks</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Buih kanan: tarikh</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">Buih kiri</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Buih kiri: teks</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Buih kiri: tarikh</string>
+
+    <!-- WAMOD Settings - Privacy -->
+    <string name="wamod_settings_privacy">Privasi</string>
+    <string name="wamod_settings_privacy_freezelastseen">Bekukan masa dilihat</string>
+    <string name="wamod_settings_privacy_hidebluetick">Sembunyi penanda biru</string>
+    <string name="wamod_settings_privacy_hidetyping">Sembunyi menaip</string>
+    <string name="wamod_settings_privacy_alwaysonline">Sentiasa aktif</string>
+    <string name="wamod_settings_privacy_alwaysonline_summary">Percubaan</string>
+
+    <!-- WAMOD Settings - WAMOD Themes -->
+    <string name="wamod_settings_wamodthemes">Tema WAMOD</string>
+    <string name="wamod_settings_wamodthemes_deviceid">ID peranti</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">Tema WAMOD</string>
+    <string name="wamod_settings_wamodthemes_unlink">Putuskan sambungan peranti</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Putuskan sambungan peranti</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">Adakah anda pasti untuk putuskan sambungan?</string>
+    <string name="wamod_settings_wamodthemes_visit">Lawat tema WAMOD</string>
+
+    <!-- WAMOD Settings - Miscellaneous -->
+    <string name="wamod_settings_miscellaneous">Pelbagai</string>
+    <string name="wamod_settings_miscellaneous_system">Berkaitan sistem</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">Guna galeri sistem</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Guna galeri kesukaan anda</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Warnakan gambaran keseluruhan (Aplikasi terdahulu)</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">Kad untuk perbualan</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Anda boleh melihat gambaran keseluruhan perbualan anda dan menukarnya secara senang</string>
+    <string name="wamod_settings_miscellaneous_app">Aplikasi</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">Periksa kemas kini</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults">Tetapan asal</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Tetapan asal</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Adakah anda pasti untuk kembali ke tetapan asal?</string>
+
+
+    <!-- QTS -->
+    <string name="wamod_qts">Perkongsian Tema Pantas (PTP)</string>
+    <string name="wamod_qts_upload">Muat naik tema</string>
+    <string name="wamod_qts_download">Muat turun tema</string>
+    <string name="wamod_qts_download_themeid">ID tema</string>
+    <string name="wamod_qts_upload_prompt">Adakah anda pasti untuk muat naik tema?</string>
+    <string name="wamod_qts_upload_success">ID tema anda %1$s telah disalin pada papan klip. Kongsi dengan rakan anda!</string>
+
+
+    <!-- Crash -->
+    <string name="wamod_crash_title">WAMOD gagal berfungsi!</string>
+    <string name="wamod_crash_message">Terdapat ralat pada tetapan anda. Tetapan asal telah diguna.</string>
+    <string name="wamod_crash_button">Baiklah ☹</string>
+
+
+    <!-- Switch accounts -->
     <string name="wamod_switchaccount_prompt_title">Tukar akaun</string>
     <string name="wamod_switchaccount_prompt_message">Adakah anda pasti untuk menukar akaun?</string>
-    <string name="wamod_generalcolors">Warna umum</string>
 
-    -->
+
+    <!-- Updater -->
+    <string name="wamod_updater_title">Kemas kini tersedia!</string>
+    <string name="wamod_updater_message">%1$s sedia untuk dimuat turun. Versi anda ialah %2$s.</string>
+    <string name="wamod_updater_download">Muat turun</string>
+    <string name="wamod_updater_later">Kemudian</string>
+    <string name="wamod_updater_ignore">Biarkan</string>
+    <string name="wamod_updater_uptodate">Tiada kemas kini</string>
+
+
+    <!-- Conversation -->
+    <string name="chat_with">Perbualan dengan %1$s</string>
+    <string name="profile_of">Profil kepunyaan %1$s</string>
+    <string name="conversation_last_seen">Dilihat pada</string>
+    <string name="conversation_contact_online">Sedang aktif</string>
+    <string name="type_a_message">Taip sesuatu</string>
+
+
+    <!-- General -->
+    <string name="wamod_error">Terdapat ralat</string>
+    <string name="wamod_error_contacting_server">Terdapat ralat ketika menghubungi pelayan, sila cuba sebentar lagi</string>
+    <string name="wamod_restartwamod">Buka semula WAMOD</string>
 </resources>
