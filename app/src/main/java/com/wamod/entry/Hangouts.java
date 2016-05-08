@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.entry;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -8,12 +8,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import com.wamod.Events;
+import com.wamod.Resources;
+import com.wamod.utils;
 import com.whatsapp.*;
 
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class conversationStyleEntryHangouts {
+public class Hangouts {
     private static final float BITMAP_SCALE = 0.4f;
     private static final float BLUR_RADIUS = 7.5f;
 

@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.entry;
 
 import android.graphics.Point;
 import android.os.Bundle;
@@ -19,6 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.wamod.Events;
+import com.wamod.R;
+import com.wamod.Resources;
 import com.whatsapp.Conversation;
 
 import io.codetail.animation.SupportAnimator;
@@ -28,7 +31,7 @@ import io.codetail.widget.RevealLinearLayout;
 /**
  * Created by brianvalente on 10/4/15.
  */
-public class conversationStyleEntryTest extends Conversation {
+public class Test extends Conversation {
     static LinearLayout attachPopup = null;
     static boolean wamod = true;
     private static float lastEntryHeight = 0;

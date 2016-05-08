@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.entry;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -7,13 +7,15 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
+import com.wamod.Resources;
+import com.wamod.utils;
 import com.whatsapp.Conversation;
 import com.whatsapp.api;
 
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class conversationStyleEntryAran {
+public class Aran {
     public static void init(final Conversation a) {
 
         FrameLayout footer = (FrameLayout) a.findViewById(Resources.id.footer);

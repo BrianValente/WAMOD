@@ -6,11 +6,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
-import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,12 +19,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.whatsapp.App;
+import com.wamod.entry.Aran;
+import com.wamod.entry.Hangouts;
+import com.wamod.entry.Mood;
+import com.wamod.entry.Simple;
+import com.wamod.entry.Stock;
+import com.wamod.entry.Test;
+import com.wamod.entry.WAMOD;
 import com.whatsapp.DialogToastListActivity;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 /**
  * Created by brianvalente on 7/9/15.
@@ -282,30 +282,31 @@ public class Conversation extends DialogToastListActivity {
         switch (utils.prefs.getString("conversation_style_entry","0")) {
             case "0":
                 // Stock
+                Stock.init(a);
                 break;
             case "1":
                 // WAMOD
-                conversationStyleEntryWAMOD.init(a);
+                WAMOD.init(a);
                 break;
             case "2":
                 // Hangouts
-                conversationStyleEntryHangouts.init(a);
+                Hangouts.init(a);
                 break;
             case "3":
                 // Simple
-                conversationStyleEntrySimple.init(a);
+                Simple.init(a);
                 break;
             case "4":
                 // Aran
-                conversationStyleEntryAran.init(a);
+                Aran.init(a);
                 break;
             case "5":
                 // Mood
-                conversationStyleEntryMood.init(a);
+                Mood.init(a);
                 break;
             case "6":
                 // Test
-                conversationStyleEntryTest.init(a);
+                Test.init(a);
                 break;
         }
 

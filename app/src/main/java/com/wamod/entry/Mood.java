@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.entry;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -7,12 +7,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import com.wamod.Resources;
+import com.wamod.utils;
 import com.whatsapp.api;
 
 /**
  * Created by brianvalente on 10/4/15.
  */
-public class conversationStyleEntryMood {
+public class Mood {
     public static void init(com.whatsapp.Conversation a) {
         EditText entry = (EditText) a.findViewById(Resources.id.entry);
         ImageButton voiceNoteBtn = (ImageButton) a.findViewById(Resources.id.voice_note_btn);

@@ -12,7 +12,7 @@ import com.whatsapp.Conversation;
 public class Events {
     public static class VoiceNoteManager {
         agq VoiceNote;
-        VoiceNoteManager(Conversation conversation) {
+        public VoiceNoteManager(Conversation conversation) {
             VoiceNote = new agg(conversation, conversation, conversation);
             VoiceNote.a(conversation.a8);
         }
@@ -30,7 +30,7 @@ public class Events {
     public static class AttachmentsManager {
         Conversation conversation;
         Button btn;
-        AttachmentsManager(Conversation conversation) {
+        public AttachmentsManager(Conversation conversation) {
             this.conversation = conversation;
             this.btn = new Button(conversation);
         }
