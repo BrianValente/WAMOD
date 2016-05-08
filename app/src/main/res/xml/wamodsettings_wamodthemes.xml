@@ -3,32 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
         android:title="@string/wamod_settings_wamodthemes">
-        <com.wamod.ActionPreference
+        <com.wamod.preference.ActionPreference
             android:icon="@null"
             android:title="@string/wamod_settings_wamodthemes_deviceid"
             android:key="device_id"
             android:summary="@string/wamod_settings_wamodthemes_deviceid_unavailable" />
-        <com.wamod.ActionPreference
+        <com.wamod.preference.ActionPreference
             android:icon="@null"
             android:title="@string/wamod_settings_wamodthemes_unlink"
             android:key="wamodthemes_unlinkdevice" />
         <!--<CheckBoxPreference android:icon="@null" android:title="@string/wamod_wamodthemes_constantlycheck" android:summary="@string/wamod_wamodthemes_constantlycheck_summary" android:key="wamodthemes_constantlycheck" />-->
-        <com.wamod.Preference
+        <com.wamod.preference.Preference
             android:icon="@null"
             android:title="@string/wamod_settings_wamodthemes_visit">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="http://wamod.ml/" />
-        </com.wamod.Preference>
+        </com.wamod.preference.Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/wamod_qts">
-        <com.wamod.ActionPreference
+        <com.wamod.preference.ActionPreference
             android:icon="@null"
             android:title="@string/wamod_qts_upload"
             android:key="wamodthemes_qts_upload" />
-        <com.wamod.ActionPreference
+        <com.wamod.preference.ActionPreference
             android:icon="@null"
             android:title="@string/wamod_qts_download"
             android:key="wamodthemes_qts_download" />

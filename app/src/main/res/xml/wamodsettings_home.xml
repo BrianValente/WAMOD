@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
         android:title="@string/wamod_settings_home_layout">
-        <com.wamod.ThemePickerPreference
+        <com.wamod.preference.ThemePickerPreference
             android:entries="@array/home_theme"
             android:title="@string/wamod_settings_home_layout_hometheme"
             android:key="home_theme"
@@ -14,43 +14,43 @@
 
     <PreferenceCategory
         android:title="@string/wamod_settings_home_drawer">
-        <com.wamod.ThemePickerPreference
+        <com.wamod.preference.ThemePickerPreference
             android:entries="@array/home_drawer_header_style"
             android:title="@string/wamod_settings_home_drawer_style"
             android:key="home_drawer_header_style"
             android:summary="WAMOD"
             android:entryValues="@array/home_drawer_header_style_values" />
-        <com.wamod.CheckboxPreference
+        <com.wamod.preference.CheckboxPreference
             android:title="@string/wamod_settings_home_drawer_darkdrawer"
             android:key="home_drawer_dark" />
-        <com.wamod.ActionPreference
+        <com.wamod.preference.ActionPreference
             android:title="@string/wamod_settings_home_drawer_selectdrawerbackground"
             android:key="home_drawer_bg" />
-        <com.wamod.CheckboxPreference
+        <com.wamod.preference.CheckboxPreference
             android:title="@string/wamod_settings_home_drawer_blacktextinheader"
             android:key="home_drawer_blackheadertext" />
-        <com.wamod.CheckboxPreference
+        <com.wamod.preference.CheckboxPreference
             android:title="@string/wamod_settings_home_drawer_showsecondsaccount"
             android:key="home_drawer_showsecondaccount" />
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/wamod_settings_home_bottomnavigationbar">
-        <com.wamod.CheckboxPreference
+        <com.wamod.preference.CheckboxPreference
             android:title="@string/wamod_settings_home_bottomnavigationbar_autocolors"
             android:summary="@string/wamod_settings_home_bottomnavigationbar_autocolors_summary"
             android:key="home_bottomnavigationbar_autocolor" />
-        <com.wamod.NewColorPickerPreference
+        <com.wamod.preference.NewColorPickerPreference
             app:wamod_supportsAlpha="true"
             android:title="@string/wamod_settings_home_bottomnavigationbar_color"
             android:key="home_bottomnavigationbar_colors_bg"
             android:summary="" />
-        <com.wamod.NewColorPickerPreference
+        <com.wamod.preference.NewColorPickerPreference
             app:wamod_supportsAlpha="true"
             android:title="@string/wamod_settings_home_bottomnavigationbar_activeitemcolor"
             android:key="home_bottomnavigationbar_colors_activeitem"
             android:summary="" />
-        <com.wamod.NewColorPickerPreference
+        <com.wamod.preference.NewColorPickerPreference
             app:wamod_supportsAlpha="true"
             android:title="@string/wamod_settings_home_bottomnavigationbar_inactiveitemcolor"
             android:key="home_bottomnavigationbar_colors_inactiveitem"

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.wamod.CheckboxPreference
+    <com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_freezelastseen"
         android:key="privacy_freezelastseen"/>
     <!--<com.wamod.CheckboxPreference android:title="@string/wamod_no2ndtick" android:key="privacy_no2ndTick" android:summary="@string/wamod_no2ndticksummary" />-->
-    <com.wamod.CheckboxPreference
+    <com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_hidebluetick"
         android:key="privacy_noBlueTick" />
-    <com.wamod.CheckboxPreference
+    <com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_hidetyping"
         android:key="privacy_hideTyping" />
-    <com.wamod.CheckboxPreference
+    <com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_alwaysonline"
         android:key="privacy_alwaysOnline"
         android:summary="@string/wamod_settings_privacy_alwaysonline_summary" />
