@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -75,6 +76,23 @@ public class NavigationDrawerGoogle extends RelativeLayout {
     private void init() {
         final NavigationView navigationView = (NavigationView) activity.findViewById(Resources.id.wamod_drawer);
         final DrawerLayout drawerLayout = (DrawerLayout) activity.findViewById(Resources.id.wamod_drawer_parent);
+        final ViewStub wamod_drawer_header = (ViewStub) activity.findViewById(Resources.id.wamod_drawer_header);
+
+        // Load header style
+        final int headerStyleID = Integer.parseInt(utils.prefs.getString("home_drawer_header_style", "0"));
+        int headerLayoutID;
+        switch (headerStyleID) {
+            case 0:
+            default:
+                headerLayoutID = Resources.layout.wamod_home_drawer_header_wamod;
+                break;
+            case 1:
+                headerLayoutID = Resources.layout.wamod_home_drawer_header_wamodcentered;
+                break;
+        }
+        wamod_drawer_header.setLayoutResource(headerLayoutID);
+        wamod_drawer_header.inflate();
+
         LinearLayout buttons = (LinearLayout) activity.findViewById(Resources.id.wamod_drawer_buttons);
         for (int i=0; i<buttons.getChildCount(); i++) {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
@@ -186,10 +204,20 @@ public class NavigationDrawerGoogle extends RelativeLayout {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final int padding = utils.getStatusBarHeight(getContext());
-            wamod_drawer_header_2ndprofilepic.setPadding(0, padding, 0, 0);
+            if (headerStyleID == 0) wamod_drawer_header_2ndprofilepic.setPadding(0, padding, 0, 0);
 
             ViewGroup userInfo = (ViewGroup) wamod_drawer_photo.getParent();
-            userInfo.setPadding(userInfo.getPaddingLeft(), padding, userInfo.getPaddingRight(), userInfo.getPaddingBottom());
+            switch (headerStyleID) {
+                case 0:
+                default:
+                    ((RelativeLayout.LayoutParams) userInfo.getLayoutParams()).topMargin = padding;
+                    break;
+                case 1:
+                    ((LinearLayout.LayoutParams) userInfo.getLayoutParams()).topMargin = padding;
+                    break;
+            }
+
+            //serInfo.setPadding(userInfo.getPaddingLeft(), padding, userInfo.getPaddingRight(), userInfo.getPaddingBottom());
 
             final RelativeLayout drawerHeader = (RelativeLayout) findViewById(Resources.id.wamod_drawer_header);
             drawerHeader.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -198,16 +226,9 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                     LayoutParams params = new LayoutParams(NavigationDrawerGoogle.this.getWidth(), drawerHeader.getHeight() + padding);
                     drawerHeader.setLayoutParams(params);
 
-                    /*LinearLayout mainLayout = (LinearLayout) NavigationDrawerGoogle.this.getChildAt(0);
-                    mainLayout.setPadding(0, padding, 0, 0);*/
-
-                    /*CoordinatorLayout coordinatorLayout = (CoordinatorLayout) activity.findViewById(Resources.id.wamod_drawer_overlay);
-                    coordinatorLayout.setPadding(0,padding,0,0);
-                    coordinatorLayout.setBackgroundColor(utils.getUIColor(utils.COLOR_STATUSBAR));*/
-
                     LayoutParams params1 = (LayoutParams) wamod_drawer_header_2ndprofilepic.getLayoutParams();
                     params1.setMargins(params1.leftMargin, params1.topMargin + padding, params1.rightMargin, params1.bottomMargin);
-                    wamod_drawer_header_2ndprofilepic.setLayoutParams(params1);
+                    if (headerStyleID == 0) wamod_drawer_header_2ndprofilepic.setLayoutParams(params1);
 
                     final LinearLayout statusbar = (LinearLayout) findViewById(Resources.id.wamod_drawer_statusbar);
                     statusbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
