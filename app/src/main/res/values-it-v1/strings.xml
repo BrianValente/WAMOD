@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- WAMOD -->
+    <!--
+
+    PLEASE UPDATE THIS TRANSLATION
+
     <string name="mark_read_label">Segna come letto</string>
     <string name="transition_photo">Foto</string>
     <string name="action_settings">Impostazioni</string>
@@ -102,4 +105,6 @@
     <string name="wamod_error">C\'è stato un errore</string>
     <string name="wamod_switchaccount_prompt_title">Commuta account</string>
     <string name="wamod_switchaccount_prompt_message">Sei sicuro di voler commutare il tuo account?</string>
+
+    -->
 </resources>

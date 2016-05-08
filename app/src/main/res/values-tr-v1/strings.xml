@@ -1,4 +1,9 @@
 <resources>
+    <!--
+
+    PLEASE UPDATE THIS TRANSLATION
+
+
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
     <string name="chat_with">%1$s ile sohbet et</string>
     <string name="profile_of">%1$s profili</string>
@@ -96,4 +101,6 @@
     <string name="wamod_switchaccount_prompt_title">Hesap değiştir</string>
     <string name="wamod_switchaccount_prompt_message">Hesaplarınız arasında geçiş yapmak istediğinizden emin misiniz?</string>
     <string name="wamod_generalcolors">Genel renkler</string>
+
+    -->
 </resources>

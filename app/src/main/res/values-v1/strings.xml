@@ -1,125 +1,143 @@
 <resources>
-    <string name="conversation_last_seen">seen</string>
-    <string name="conversation_contact_online">online now</string>
-    <string name="type_a_message">Say something</string>
-
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
-    <string name="chat_with">Chat with %1$s</string>
-    <string name="profile_of">Profile of %1$s</string>
-    <string name="wamod_general">General</string>
-    <string name="wamod_statusbarcolor">Status bar color</string>
-    <string name="wamod_toolbarcolor">Toolbar color</string>
-    <string name="wamod_toolbarforeground">Toolbar foreground</string>
-    <string name="wamod_navbarcolor">Navigation bar color</string>
-    <string name="wamod_home">Home</string>
-    <string name="wamod_hometheme">Home theme</string>
-    <string name="wamod_conversation">Conversation</string>
-    <string name="wamod_hideprofilephoto">Hide profile photo</string>
-    <string name="wamod_hidetoolbaricons">Hide toolbar icons</string>
-    <string name="wamod_proximitysensor">Proximity sensor</string>
-    <string name="wamod_rightbubblecolor">Right bubble color</string>
-    <string name="wamod_rightbubbletextcolor">Right bubble text color</string>
-    <string name="wamod_rightbubbledatecolor">Right bubble date color</string>
-    <string name="wamod_leftbubblecolor">Left bubble color</string>
-    <string name="wamod_leftbubbletextcolor">Left bubble text color</string>
-    <string name="wamod_leftbubbledatecolor">Left bubble date color</string>
-    <string name="wamod_enablecustomparticipantnamecolor">Enable custom participant name color</string>
-    <string name="wamod_enablecustomconversationbgcolor">Enable custom background color</string>
-    <string name="wamod_customconversationbgcolor">Custom background color</string>
-    <string name="wamod_bubblestyle">Bubble style</string>
-    <string name="wamod_bubblelayoutstyle">Bubble layout style</string>
-    <string name="wamod_tickstyle">Tick style</string>
-    <string name="wamod_entrystyle">Entry style</string>
-    <string name="wamod_personalizeentry">Personalize entry</string>
-    <string name="wamod_overviewlollipopup">Overview (Lollipop and up)</string>
-    <string name="wamod_enablecardcolor">Enable card color</string>
-    <string name="wamod_openchatslikenewtasks">Open chats like new tasks</string>
-    <string name="wamod_privacy">Privacy</string>
-    <string name="wamod_freezelastseen">Freeze last seen</string>
-    <string name="wamod_no2ndtick">No 2nd tick</string>
-    <string name="wamod_nobluetick">No blue tick</string>
-    <string name="wamod_hidetyping">Hide typing</string>
-    <string name="wamod_alwaysonline">Always online</string>
-    <string name="wamod_miscellaneous">Miscellaneous</string>
-    <string name="wamod_disablecolorpicker">Disable color picker</string>
-    <string name="wamod_checkforupdates">Check for updates</string>
-    <string name="wamod_restoredefaults">Restore defaults</string>
-    <string name="wamod_about">About</string>
-    <string name="wamod_opengooglepluscommunity">Google+ community</string>
-    <string name="wamod_opendevtwitterprofile">Developer Twitter profile</string>
-    <string name="wamod_darkmode">Dark mode</string>
-    <string name="wamod_customparticipantnamecolor">Custom participant name color</string>
-    <string name="wamod_darkmodesummary">The UI gets darker</string>
-    <string name="wamod_hideprofilephotosummary">Hides the profile photo from the toolbar</string>
-    <string name="wamod_hidetoolbarattachsummary">Hides the call and attach icons</string>
-    <string name="wamod_proximitysensorsummary">Enables the proximity sensor when you\'re listening a voice note</string>
-    <string name="wamod_enablecardcolorsummary">Tints the card with the toolbar color</string>
-    <string name="wamod_openchatslikenewtaskssummary">Multiple chats can be opened at the same time</string>
-    <string name="wamod_freezelastseensummary">Your last seen will be frozen</string>
-    <string name="wamod_no2ndticksummary">The sender won\'t know if you\'ve received the message</string>
-    <string name="wamod_noblueticksummary">The sender won\'t know if you\'ve read the message</string>
-    <string name="wamod_hidetypingsummary">The receiver won\'t know if you\'re typing</string>
-    <string name="wamod_alwaysonlinesummary">But don\'t close the app from recents!</string>
-    <string name="wamod_restoredefaultsprompt">Are you sure you want to restore ALL of your configurations?</string>
-    <string name="wamod_donerestartwamod">Done, restart WAMOD</string>
-    <string name="wamod_updateavailable">WAMOD update available</string>
-    <string name="wamod_updateavailablemessage">%1$s is available for download. Your version is %2$s.</string>
-    <string name="wamod_download">Download</string>
-    <string name="wamod_later">Later</string>
-    <string name="wamod_ignorethisupdate">Ignore this update</string>
-    <string name="wamod_uptodate">WAMOD is up to date</string>
-    <string name="wamod_errorcontactingserver">There was an error contacting the server</string>
-    <string name="wamod_onlylollipopandup">Only Lollipop and up</string>
-    <string name="wamod_insertahexcolorwithout">Insert a HEX color (without #)</string>
-    <string name="wamod_wamodsettings">WAMOD Settings</string>
-    <string name="wamod_conversation_toolbar_style">Toolbar style</string>
-    <string name="wamod_closebutton">Close button</string>
-    <string name="wamod_closebuttonsummary">Closes the activity instantly</string>
-    <string name="wamod_unavailable">Unavailable</string>
-    <string name="wamod_darkstatusbaricons">Dark status bar icons</string>
-    <string name="wamod_marshmallowandup">Android 6.0 (Marshmallow) and up</string>
-    <string name="wamod_unlinkdevice">Unlink device from WAMOD Themes</string>
-    <string name="wamod_unlinkdevice_title">Unlink device</string>
-    <string name="wamod_unlinkdevice_message">Are you sure you want to unlink your device from WAMOD Themes?</string>
-    <string name="wamod_crash_title">WAMOD crashed!</string>
-    <string name="wamod_crash_message">There was an error loading your configuration so the default values have been restored.</string>
-    <string name="wamod_crash_button">Okay ☹</string>
-    <string name="wamod_wamodthemes">WAMOD Themes️</string>
-    <string name="wamod_wamodthemes_constantlycheck">Constantly check for a new theme</string>
-    <string name="wamod_wamodthemes_constantlycheck_summary">Uses a little more of data</string>
-    <string name="wamod_loading">Loading...</string>
-    <string name="wamod_done">Done</string>
-    <string name="wamod_error">There was an error</string>
-    <string name="wamod_visitwamodthemes">Visit WAMOD Themes</string>
-    <string name="wamod_androidgallery">Use Android Gallery</string>
-    <string name="wamod_androidgallerysummary">You can attach photos and videos using your favorite gallery</string>
-    <string name="tabs_indicator_color">Tabs indicator color</string>
+    <!-- WAMOD Settings -->
     <string name="wamod_settings">WAMOD Settings</string>
-    <string name="wamod_credits">Credits</string>
-    <string name="new_group">New group</string>
-    <string name="whatsapp_web">WhatsApp Web</string>
-    <string name="settings_privacy_status">Status</string>
-    <string name="profile_photo">Profile photo</string>
-    <string name="starred_messages">Starred messages</string>
-    <string name="search">Search</string>
-    <string name="settings_general">Settings</string>
-    <string name="settings_profile_info">Profile</string>
-    <string name="wamod_darkdrawer">Dark drawer</string>
-    <string name="wamod_selectdrawerbackground">Select drawer background</string>
-    <string name="wamod_blacktextindrawerheader">Black text in drawer header</string>
-    <string name="wamod_switchaccount_prompt_title">Switch account</string>
-    <string name="wamod_switchaccount_prompt_message">Are you sure you want to switch your account?</string>
-    <string name="calls">Calls</string>
-    <string name="chats">Chats</string>
-    <string name="contacts">Contacts</string>
-    <string name="settings_privacy">Privacy</string>
-    <string name="wamod_generalcolors">General colors</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) and up</string>
+
+    <!-- WAMOD Settings - About -->
+    <string name="wamod_settings_about">About</string>
+    <string name="wamod_settings_about_googlepluscommunity">Google+ community</string>
+    <string name="wamod_settings_about_developertwitterprofile">Developer Twitter profile</string>
+    <string name="wamod_settings_about_sourcecode">Source code</string>
+    <string name="wamod_settings_about_credits">Credits</string>
+
+    <!-- WAMOD Settings - General -->
+    <string name="wamod_settings_general">General</string>
+    <string name="wamod_settings_general_colors">Colors</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Status bar color</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">Toolbar color</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Toolbar titles color</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Toolbar icons color</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">Navigation bar color</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Dark status bar icons</string>
+    <string name="wamod_settings_general_nightmode">Night mode</string>
+    <string name="wamod_settings_general_nightmode_enable">Enable</string>
+    <string name="wamod_settings_general_nightmode_enable_summary">The UI will be dark</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight">Only at night</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Night mode will be enabled at night only</string>
+
+    <!-- WAMOD Settings - Home -->
+    <string name="wamod_settings_home">Home</string>
+    <string name="wamod_settings_home_layout">Layout</string>
+    <string name="wamod_settings_home_layout_hometheme">Home theme</string>
+    <string name="wamod_settings_home_drawer">Drawer</string>
+    <string name="wamod_settings_home_drawer_style">Style</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Dark drawer</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Select drawer background</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Black text in drawer header</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Show second account in drawer</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Bottom navigation bar</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors">Auto colors</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Colors are selected automatically</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">Background color</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Active item color</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Inactive item color</string>
+
+    <!-- WAMOD Settings - Conversation -->
+    <string name="wamod_settings_conversation">Conversation</string>
+    <string name="wamod_settings_conversation_toolbar">Toolbar</string>
+    <string name="wamod_settings_conversation_toolbar_style">Style</string>
+    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Hide profile photo</string>
+    <string name="wamod_settings_conversation_toolbar_hideicons">Hide icons</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">Close button</string>
+    <string name="wamod_settings_conversation_layout">Layout</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Enable custom background color</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Custom background color</string>
+    <string name="wamod_settings_conversation_layout_entry_style">Entry style</string>
+    <string name="wamod_settings_conversation_layout_entry_config">Configure entry</string>
+    <string name="wamod_settings_conversation_bubbles">Bubbles</string>
+    <string name="wamod_settings_conversation_bubbles_personalize">Personalize bubbles</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Enable custom participant color</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Custom participant color</string>
+    <string name="wamod_settings_conversation_bubbles_style">Style</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Ticks style</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">Right bubble color</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Right bubble text color</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Right bubble date color</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">Left bubble color</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Left bubble text color</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Left bubble date color</string>
+
+    <!-- WAMOD Settings - Privacy -->
+    <string name="wamod_settings_privacy">Privacy</string>
+    <string name="wamod_settings_privacy_freezelastseen">Freeze last seen</string>
+    <string name="wamod_settings_privacy_hidebluetick">Don\'t report read messages (blue tick)</string>
+    <string name="wamod_settings_privacy_hidetyping">Don\'t report \"Typing\"</string>
+    <string name="wamod_settings_privacy_alwaysonline">Always online</string>
+    <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
+
+    <!-- WAMOD Settings - WAMOD Themes -->
+    <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
+    <string name="wamod_settings_wamodthemes_deviceid">Device ID</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Themes</string>
+    <string name="wamod_settings_wamodthemes_unlink">Unlink device</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Unlink device</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">Are you sure you want to unlink your device?</string>
+    <string name="wamod_settings_wamodthemes_visit">Visit WAMOD Themes</string>
+
+    <!-- WAMOD Settings - Miscellaneous -->
+    <string name="wamod_settings_miscellaneous">Miscellaneous</string>
+    <string name="wamod_settings_miscellaneous_system">System related</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">Use system gallery</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Attach media using your favorite gallery</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Colored cards in Overview (Recent apps)</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">Cards for chats</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">You can see your chats in the Overview to switch easily</string>
+    <string name="wamod_settings_miscellaneous_app">App</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">Check for updates</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults">Restore default configuration</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restore default configuration</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Are you sure you want to restore the default configuration?</string>
+
 
     <!-- QTS -->
+    <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Upload theme</string>
     <string name="wamod_qts_download">Download theme</string>
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Are you sure you want to upload your theme?</string>
     <string name="wamod_qts_upload_success">Your theme ID %1$s was copied to your clipboard. Share it with your friends!</string>
+
+
+    <!-- Crash -->
+    <string name="wamod_crash_title">WAMOD crashed!</string>
+    <string name="wamod_crash_message">There was an error loading your configuration so the default values have been restored.</string>
+    <string name="wamod_crash_button">Okay ☹</string>
+
+
+    <!-- Switch accounts -->
+    <string name="wamod_switchaccount_prompt_title">Switch account</string>
+    <string name="wamod_switchaccount_prompt_message">Are you sure you want to switch your account?</string>
+
+
+    <!-- Updater -->
+    <string name="wamod_updater_title">New update of WAMOD available!</string>
+    <string name="wamod_updater_message">%1$s is available for download. Your version is %2$s.</string>
+    <string name="wamod_updater_download">Download</string>
+    <string name="wamod_updater_later">Later</string>
+    <string name="wamod_updater_ignore">Ignore this update</string>
+    <string name="wamod_updater_uptodate">WAMOD is up to date</string>
+
+
+    <!-- Conversation -->
+    <string name="chat_with">Chat with %1$s</string>
+    <string name="profile_of">Profile of %1$s</string>
+    <string name="conversation_last_seen">seen</string>
+    <string name="conversation_contact_online">online now</string>
+    <string name="type_a_message">Say something</string>
+
+
+    <!-- General -->
+    <string name="wamod_error">There was an error</string>
+    <string name="wamod_error_contacting_server">There was an error contacting the server, please try again later</string>
+    <string name="wamod_restartwamod">Restart WAMOD</string>
 </resources>

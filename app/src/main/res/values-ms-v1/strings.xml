@@ -1,5 +1,9 @@
 ﻿<resources>
-    <!-- WAMOD -->
+    <!--
+
+    PLEASE UPDATE THIS TRANSLATION
+
+
     <string name="type_a_message">Tulis sesuatu</string>
     <string name="title_activity_theme_wamod_conversation_config">Tetapan tema WAMOD</string>
     <string name="title_activity_theme_hangouts_conversation_config">Tetapan tema hangouts</string>
@@ -101,4 +105,6 @@
     <string name="wamod_switchaccount_prompt_title">Tukar akaun</string>
     <string name="wamod_switchaccount_prompt_message">Adakah anda pasti untuk menukar akaun?</string>
     <string name="wamod_generalcolors">Warna umum</string>
+
+    -->
 </resources>

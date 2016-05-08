@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+
+    PLEASE UPDATE THIS TRANSLATION
+
     <string name="conversation_last_seen">দেখা</string>
     <string name="conversation_contact_online">এখন online</string>
     <string name="type_a_message">কিছু বল</string>
@@ -82,4 +86,6 @@
     <string name="wamod_unlinkdevice">WAMOD Themes থেকে ডিভাইসটি লিঙ্কমুক্ত</string>
     <string name="wamod_unlinkdevice_title">বিযুক্ত ডিভাইস</string>
     <string name="wamod_unlinkdevice_message">আপনি কি নিশ্চিত যে আপনি WAMOD থিমস থেকে আপনার ডিভাইসটি লিঙ্কমুক্ত ইচ্ছুক?</string>
+
+    -->
 </resources>

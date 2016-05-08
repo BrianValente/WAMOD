@@ -1,4 +1,9 @@
 <resources>
+    <!--
+
+    PLEASE UPDATE THIS TRANSLATION
+
+
     <string name="title_activity_theme_hangouts_conversation_config">theme_hangouts_conversation_config</string>
     <string name="chat_with">Conversa com %1$s</string>
     <string name="profile_of">Perfil de %1$s</string>
@@ -98,4 +103,6 @@
     <string name="wamod_switchaccount_prompt_title">Trocar de conta</string>
     <string name="wamod_switchaccount_prompt_message">Deseja mesmo trocar de conta?</string>
     <string name="wamod_generalcolors">Cores gerais</string>
+
+    -->
 </resources>
