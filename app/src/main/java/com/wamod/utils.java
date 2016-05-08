@@ -150,8 +150,8 @@ public class utils extends Activity {
                                 View child = actionbarVG.getChildAt(i);
                                 if (child instanceof TextView)
                                     ((TextView) child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
-                                if (child instanceof ImageButton)
-                                    ((ImageButton) child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                                if (child instanceof ImageButton || child instanceof ImageView)
+                                    ((ImageView) child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
                             }
                             actionbarVG.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                         }
@@ -245,6 +245,8 @@ public class utils extends Activity {
                 com.wamod.ContactInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.GroupChatInfo) {
                 com.wamod.GroupChatInfo._onCreate(a);
+            } else if (a instanceof com.whatsapp.ContactPicker) {
+                com.wamod.WAclass.ContactPicker._onCreate(a);
             }
         } catch (Exception e) {
             manageException(e);
