@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.preference;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,6 +20,8 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.wamod.utils;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
 

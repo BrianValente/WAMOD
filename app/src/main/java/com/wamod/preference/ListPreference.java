@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.preference;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.preference;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -25,6 +25,9 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.wamod.Resources;
+import com.wamod.utils;
 
 /**
  * Created by BrianValente on 3/3/16.

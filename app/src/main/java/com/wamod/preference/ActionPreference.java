@@ -1,9 +1,8 @@
-package com.wamod;
+package com.wamod.preference;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.preference.Preference;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +15,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wamod.themes.QTSDownload;
-import com.wamod.themes.QTSUpload;
+import com.wamod.Resources;
+import com.wamod.app;
+import com.wamod.themes.CheckIn;
+import com.wamod.themes.UnlinkWAMODThemes;
+import com.wamod.entry.ConfigurationActivity;
+import com.wamod.themes.QTS.Download;
+import com.wamod.themes.QTS.Upload;
+import com.wamod.utils;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -84,11 +89,11 @@ public class ActionPreference extends Preference {
                 alertDialog.show();
                 break;
             case "conversation_style_entry_config":
-                Intent intent = new Intent(app.getContext(), EntryConfigActivity.class);
+                Intent intent = new Intent(app.getContext(), ConfigurationActivity.class);
                 activity.startActivity(intent);
                 break;
             case "checkforupdates":
-                new checkinv2().execute(activity);
+                new CheckIn().execute(activity);
                 break;
             case "restoredefaults":
                 alertDialog  = new AlertDialog.Builder(activity);
@@ -113,7 +118,7 @@ public class ActionPreference extends Preference {
                 alertDialog.setMessage(activity.getResources().getString(Resources.string.wamod_settings_wamodthemes_unlink_message));
                 alertDialog.setPositiveButton(activity.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        unlinkwamodthemes async = new unlinkwamodthemes();
+                        UnlinkWAMODThemes async = new UnlinkWAMODThemes();
                         async.activity = activity;
                         async.execute();
                     }
@@ -130,7 +135,7 @@ public class ActionPreference extends Preference {
                 builder2.setPositiveButton(activity.getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        QTSUpload qtsUpload = new QTSUpload();
+                        Upload qtsUpload = new Upload();
                         qtsUpload.activity = activity;
                         qtsUpload.execute();
                     }
@@ -155,7 +160,7 @@ public class ActionPreference extends Preference {
                 builder.setPositiveButton(activity.getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        QTSDownload qtsDownload = new QTSDownload();
+                        Download qtsDownload = new Download();
                         qtsDownload.activity = activity;
                         qtsDownload.themeid = input.getText().toString();
                         qtsDownload.execute();

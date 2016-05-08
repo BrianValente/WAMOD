@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.preference;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.wamod.utils;
 
 /**
  * Created by BrianValente on 3/27/16.

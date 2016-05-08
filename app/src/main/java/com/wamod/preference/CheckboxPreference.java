@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.preference;
 
 import android.content.Context;
 import android.preference.CheckBoxPreference;
@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.wamod.utils;
 
 /**
  * Created by BrianValente on 3/3/16.
