@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.wamod.CheckboxPreference android:title="@string/wamod_androidgallery" android:key="conversation_androidgallery" android:summary="@string/wamod_androidgallerysummary" />
-    <com.wamod.CheckboxPreference android:title="@string/wamod_enablecardcolor" android:key="overview_cardcolor" android:summary="@string/wamod_enablecardcolorsummary" />
-    <com.wamod.CheckboxPreference android:title="@string/wamod_openchatslikenewtasks" android:key="overview_multiplechats" android:summary="@string/wamod_openchatslikenewtaskssummary" />
-    <com.wamod.ActionPreference android:icon="@null" android:title="@string/wamod_checkforupdates" android:key="checkforupdates" />
-    <com.wamod.ActionPreference android:icon="@null" android:title="@string/wamod_restoredefaults" android:key="restoredefaults" />
+    <com.wamod.CheckboxPreference
+        android:title="@string/wamod_settings_miscellaneous_system_osgallery"
+        android:key="conversation_androidgallery"
+        android:summary="@string/wamod_settings_miscellaneous_system_osgallery_summary" />
+    <com.wamod.CheckboxPreference
+        android:title="@string/wamod_settings_miscellaneous_system_cardcolor"
+        android:key="overview_cardcolor" />
+    <com.wamod.CheckboxPreference
+        android:title="@string/wamod_settings_miscellaneous_system_cardsforchats"
+        android:key="overview_multiplechats"
+        android:summary="@string/wamod_settings_miscellaneous_system_cardsforchats_summary" />
+    <com.wamod.ActionPreference
+        android:icon="@null"
+        android:title="@string/wamod_settings_miscellaneous_app_checkupdates"
+        android:key="checkforupdates" />
+    <com.wamod.ActionPreference
+        android:icon="@null"
+        android:title="@string/wamod_settings_miscellaneous_app_restoredefaults"
+        android:key="restoredefaults" />
 </PreferenceScreen>
