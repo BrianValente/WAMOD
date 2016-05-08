@@ -1,0 +1,143 @@
+<resources>
+    <!-- WAMOD Settings -->
+    <string name="wamod_settings">WAMOD Instellingen</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) en hoger</string>
+
+    <!-- WAMOD Settings - About -->
+    <string name="wamod_settings_about">Over</string>
+    <string name="wamod_settings_about_googlepluscommunity">Google+ gemeenschap</string>
+    <string name="wamod_settings_about_developertwitterprofile">Ontwikkelaar Twitter profiel</string>
+    <string name="wamod_settings_about_sourcecode">Broncode</string>
+    <string name="wamod_settings_about_credits">Credits</string>
+
+    <!-- WAMOD Settings - General -->
+    <string name="wamod_settings_general">Algemeen</string>
+    <string name="wamod_settings_general_colors">Kleuren</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Statusbalk</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">Werkbalk</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Werkbalk titels</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Werkbalk iconen</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">Navigatiebalk</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Donkere statusbalk iconen</string>
+    <string name="wamod_settings_general_nightmode">Nachtstand</string>
+    <string name="wamod_settings_general_nightmode_enable">Activeren</string>
+    <string name="wamod_settings_general_nightmode_enable_summary">Het uiterlijk word donker</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight">Alleen in de nacht</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Nachtstand word alleen s\'nachts geactiveerd</string>
+
+    <!-- WAMOD Settings - Home -->
+    <string name="wamod_settings_home">Hoofdscherm</string>
+    <string name="wamod_settings_home_layout">Indeling</string>
+    <string name="wamod_settings_home_layout_hometheme">Thema</string>
+    <string name="wamod_settings_home_drawer">Drawer</string>
+    <string name="wamod_settings_home_drawer_style">Stijl</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Donkere drawer</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Selecteer drawer achtergrond</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Zwarte tekst bovenin de drawer</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Toon tweede account in de drawer</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Bodem navigatiebalk</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors">Auto kleuren</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Kleuren worden automatisch geselecteerd</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">Achtergrond kleur</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Actief item kleur</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Inactief item kleur</string>
+
+    <!-- WAMOD Settings - Conversation -->
+    <string name="wamod_settings_conversation">Gesprekken</string>
+    <string name="wamod_settings_conversation_toolbar">Werkbalk</string>
+    <string name="wamod_settings_conversation_toolbar_style">Stijl</string>
+    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Verberg profielfoto</string>
+    <string name="wamod_settings_conversation_toolbar_hideicons">Verberg iconen</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">Sluitknop</string>
+    <string name="wamod_settings_conversation_layout">Indeling</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Activeer aangepaste achtergrond kleur</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Aangepaste achtergrond kleur</string>
+    <string name="wamod_settings_conversation_layout_entry_style">Invoer stijl</string>
+    <string name="wamod_settings_conversation_layout_entry_config">Configureer invoer</string>
+    <string name="wamod_settings_conversation_bubbles">Bubbels</string>
+    <string name="wamod_settings_conversation_bubbles_personalize">Personaliseer bubbels</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Activeer aangepaste deelnemer kleur</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Aangepaste deelnemer kleur</string>
+    <string name="wamod_settings_conversation_bubbles_style">Stijl</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Vinkjes stijl</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">Rechterbubbel</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Rechterbubbel: tekst</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Rechterbubbel: datum</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">Linkerbubbel</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Linkerbubbel: tekst</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Linkerbubbel: datum</string>
+
+    <!-- WAMOD Settings - Privacy -->
+    <string name="wamod_settings_privacy">Privacy</string>
+    <string name="wamod_settings_privacy_freezelastseen">Bevries laatst gezien</string>
+    <string name="wamod_settings_privacy_hidebluetick">Verberg dat je het gelezen hebt (blauwe vinkjes)</string>
+    <string name="wamod_settings_privacy_hidetyping">Verberg dat je aan het typen bent</string>
+    <string name="wamod_settings_privacy_alwaysonline">Altijd online</string>
+    <string name="wamod_settings_privacy_alwaysonline_summary">Experimenteel</string>
+
+    <!-- WAMOD Settings - WAMOD Themes -->
+    <string name="wamod_settings_wamodthemes">WAMOD Thema\'s</string>
+    <string name="wamod_settings_wamodthemes_deviceid">Apparaat ID</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Thema\'s</string>
+    <string name="wamod_settings_wamodthemes_unlink">Ontkoppel apparaat</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Ontkoppel apparaat</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">Weet je zeker dat je het apparaat wilt ontkoppelen?</string>
+    <string name="wamod_settings_wamodthemes_visit">Bekijk WAMOD Thema\'s</string>
+
+    <!-- WAMOD Settings - Miscellaneous -->
+    <string name="wamod_settings_miscellaneous">Diversen</string>
+    <string name="wamod_settings_miscellaneous_system">Systeem gerelateerd</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">Gebruik systeem gallerij</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Verstuur media met behulp van je favoriete gallerij</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Gekleurde kaarten in overzicht (recente apps)</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">Kaarten voor chats</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Je kunt je chats bekijken in het overzicht om eenvoudig te schakelen</string>
+    <string name="wamod_settings_miscellaneous_app">App</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">Controleer op updates</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults">Herstel standaard instellingen</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Herstel standaard instellingen</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Weet je zeker dat je de standaard instellingen wilt herstellen?</string>
+
+
+    <!-- QTS -->
+    <string name="wamod_qts">Snel thema\'s delen</string>
+    <string name="wamod_qts_upload">Upload thema</string>
+    <string name="wamod_qts_download">Download thema</string>
+    <string name="wamod_qts_download_themeid">Thema ID</string>
+    <string name="wamod_qts_upload_prompt">Weet je zeker dat je je thema wilt uploaden?</string>
+    <string name="wamod_qts_upload_success">Je thema ID %1$s is gekopiëerd naar je klembord. Deel het met je vrienden!</string>
+
+
+    <!-- Crash -->
+    <string name="wamod_crash_title">WAMOD is gecrashed!</string>
+    <string name="wamod_crash_message">Er was een fout bij het laden van je instellingen, dus de standaard waarden zijn hersteld.</string>
+    <string name="wamod_crash_button">Okay?</string>
+
+
+    <!-- Switch accounts -->
+    <string name="wamod_switchaccount_prompt_title">Schakel van account</string>
+    <string name="wamod_switchaccount_prompt_message">Weet je zeker dat je van account wilt schakelen?</string>
+
+
+    <!-- Updater -->
+    <string name="wamod_updater_title">Nieuwe update van WAMOD beschikbaar!</string>
+    <string name="wamod_updater_message">%1$s is beschikbaar om te downloaden. Je versie is %2$s.</string>
+    <string name="wamod_updater_download">Download</string>
+    <string name="wamod_updater_later">Later</string>
+    <string name="wamod_updater_ignore">Negeer deze update</string>
+    <string name="wamod_updater_uptodate">WAMOD is up to date</string>
+
+
+    <!-- Conversation -->
+    <string name="chat_with">Chat met %1$s</string>
+    <string name="profile_of">Profiel van %1$s</string>
+    <string name="conversation_last_seen">gezien</string>
+    <string name="conversation_contact_online">nu online</string>
+    <string name="type_a_message">Zeg iets</string>
+
+
+    <!-- General -->
+    <string name="wamod_error">Foutmelding opgetreden</string>
+    <string name="wamod_error_contacting_server">Er was een foutmelding bij het contacteren van de server, probeer het later nogmaals.</string>
+    <string name="wamod_restartwamod">Herstart WAMOD</string>
+</resources>
