@@ -1,7 +1,7 @@
 <resources>
     <!-- WAMOD Settings -->
     <string name="wamod_settings">Configurações WAMOD</string>
-    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) e mais recentes</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) e mais recente</string>
 
     <!-- WAMOD Settings - About -->
     <string name="wamod_settings_about">Sobre</string>
@@ -12,35 +12,35 @@
 
     <!-- WAMOD Settings - General -->
     <string name="wamod_settings_general">Geral</string>
-    <string name="wamod_settings_general_colors">Coress</string>
-    <string name="wamod_settings_general_colors_statusbarcolor">Barra de Status</string>
+    <string name="wamod_settings_general_colors">Cores</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Barra de status</string>
     <string name="wamod_settings_general_colors_toolbarcolor">Barra de Ações</string>
-    <string name="wamod_settings_general_colors_toolbartitlescolor">Titúlos da Barra de Ações</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Títulos na Barra de Ações</string>
     <string name="wamod_settings_general_colors_toolbariconscolor">Ícones da Barra de Ações</string>
     <string name="wamod_settings_general_colors_navigationbarcolor">Barra de Navegação</string>
-    <string name="wamod_settings_general_colors_darkstatusbaricons">Ícones escuros na Barra de Status</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Ícones Escuros na Barra de Status</string>
     <string name="wamod_settings_general_nightmode">Modo Noturno</string>
     <string name="wamod_settings_general_nightmode_enable">Ativar</string>
     <string name="wamod_settings_general_nightmode_enable_summary">A interface de usuário vai ficar escura</string>
     <string name="wamod_settings_general_nightmode_onlyatnight">Somente à noite</string>
-    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Modo Noturno será ativado apenas à noite</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">O Modo Noturno será ativado apenas à noite</string>
 
     <!-- WAMOD Settings - Home -->
-    <string name="wamod_settings_home">Inicio</string>
+    <string name="wamod_settings_home">Tela Inicial</string>
     <string name="wamod_settings_home_layout">Estilo</string>
     <string name="wamod_settings_home_layout_hometheme">Tema</string>
-    <string name="wamod_settings_home_drawer">Drawer</string>
+    <string name="wamod_settings_home_drawer">Menu Lateral</string>
     <string name="wamod_settings_home_drawer_style">Estilo</string>
-    <string name="wamod_settings_home_drawer_darkdrawer">Drawer Escuro</string>
-    <string name="wamod_settings_home_drawer_selectdrawerbackground">Selecionar Fundo do Drawer</string>
-    <string name="wamod_settings_home_drawer_blacktextinheader">Texto preto no Cabeçalho da Drawer</string>
-    <string name="wamod_settings_home_drawer_showsecondsaccount">Mostrar segunda conta no Drawer</string>
-    <string name="wamod_settings_home_bottomnavigationbar">Barra de Navegação inferior</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Menu Lateral Escuro</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Selecionar Fundo da Gaveta</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Texto preto no cabeçalho da gaveta</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Mostrar segunda conta na gaveta</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Barra de Navegação Inferior</string>
     <string name="wamod_settings_home_bottomnavigationbar_autocolors">Cores Automáticas</string>
-    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Cores vão ser escolhidas Automaticamente</string>
-    <string name="wamod_settings_home_bottomnavigationbar_color">Cor do Fundo</string>
-    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Cor do Ítem Ativo</string>
-    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Cor do Ítem Inativo</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Cores serão escolhidas automaticamente</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">Cor de Fundo</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Cor do Item Ativo</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Cor do Item Inativo</string>
 
     <!-- WAMOD Settings - Conversation -->
     <string name="wamod_settings_conversation">Conversas</string>
@@ -59,7 +59,7 @@
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Ativar Cor dos Participantes Personalizada</string>
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Cor dos Participantes Personalizada</string>
     <string name="wamod_settings_conversation_bubbles_style">Estilo</string>
-    <string name="wamod_settings_conversation_bubbles_ticksstyle">Estilos dos traços</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Estilos dos Checks</string>
     <string name="wamod_settings_conversation_bubbles_right_color">Bolha Direita</string>
     <string name="wamod_settings_conversation_bubbles_right_textcolor">Bolha Direita: Texto</string>
     <string name="wamod_settings_conversation_bubbles_right_datecolor">Bolha Direita: Data</string>
@@ -69,9 +69,9 @@
 
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privacidade</string>
-    <string name="wamod_settings_privacy_freezelastseen">Congelar Visto por Último</string>
-    <string name="wamod_settings_privacy_hidebluetick">Não reportar mensagens lidas (traços azuis)</string>
-    <string name="wamod_settings_privacy_hidetyping">Não reportar \"Escrevendo\"</string>
+    <string name="wamod_settings_privacy_freezelastseen">Congelar Última Visualização</string>
+    <string name="wamod_settings_privacy_hidebluetick">Não reportar mensagens lidas (checks azuis)</string>
+    <string name="wamod_settings_privacy_hidetyping">Não reportar \"escrevendo\"</string>
     <string name="wamod_settings_privacy_alwaysonline">Sempre Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
 
@@ -81,7 +81,7 @@
     <string name="wamod_settings_wamodthemes_deviceid_unavailable">Temas WAMOD</string>
     <string name="wamod_settings_wamodthemes_unlink">Desvincular o Dispositivo</string>
     <string name="wamod_settings_wamodthemes_unlink_title">Desvincular o Dispositivo</string>
-    <string name="wamod_settings_wamodthemes_unlink_message">Tem certeza de que quer Desvincular o Dispositivo?</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">Tem certeza de que quer desvincular o dispositivo?</string>
     <string name="wamod_settings_wamodthemes_visit">Visitar Temas WAMOD</string>
 
     <!-- WAMOD Settings - Miscellaneous -->
@@ -89,55 +89,55 @@
     <string name="wamod_settings_miscellaneous_system">Relacionadas ao Sistema</string>
     <string name="wamod_settings_miscellaneous_system_osgallery">Usar Galeria do Sistema</string>
     <string name="wamod_settings_miscellaneous_system_osgallery_summary">Anexar Mídia usando a Galeria do Sistema</string>
-    <string name="wamod_settings_miscellaneous_system_cardcolor">Cards Coloridos na Visão Geral(Apps Recentes)</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Cards Coloridos na Visão Geral</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats">Cards para cada Conversa</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Você pode ver suas conversas na Visão Geral para navegar mais facilmente</string>
     <string name="wamod_settings_miscellaneous_app">App</string>
     <string name="wamod_settings_miscellaneous_app_checkupdates">Verificar Atualizações</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Restaurar Configurações Padrão</string>
-    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restaurar ConfiguraçõesPadrão</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restaurar Configurações Padrão</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Tem certeza de que quer Restaurar as Configurações Padrão?</string>
 
 
     <!-- QTS -->
-    <string name="wamod_qts">Compartilhamento Rápido de Temas | Quick Theme Sharing (QTS)</string>
+    <string name="wamod_qts">Compartilhamento Rápido de Temas (QTS)</string>
     <string name="wamod_qts_upload">Carregar Tema no Servidor</string>
     <string name="wamod_qts_download">Baixar Tema do Servidor</string>
     <string name="wamod_qts_download_themeid">ID do Tema</string>
-    <string name="wamod_qts_upload_prompt">Tem certeza de que quer Carregar o seu Tema no Servidor?</string>
-    <string name="wamod_qts_upload_success">Seu Tema de ID %1$s foi copiado. Compartilhe com seus Amigos!</string>
+    <string name="wamod_qts_upload_prompt">Tem certeza de que quer carregar o seu tema no servidor?</string>
+    <string name="wamod_qts_upload_success">Seu ID de tema %1$s foi copiado. Compartilhe com seus amigos!</string>
 
 
     <!-- Crash -->
-    <string name="wamod_crash_title">WAMOD Quebrou!</string>
+    <string name="wamod_crash_title">O WAMOD fechou!</string>
     <string name="wamod_crash_message">Houve um erro carregando as suas Configurações, então as Configurações Padrão foram restauradas.</string>
-    <string name="wamod_crash_button">Okay ☹</string>
+    <string name="wamod_crash_button">Tá bom ☹</string>
 
 
     <!-- Switch accounts -->
-    <string name="wamod_switchaccount_prompt_title">Mudar Conta</string>
-    <string name="wamod_switchaccount_prompt_message">Tem certeza que quer Mudar de Conta?</string>
+    <string name="wamod_switchaccount_prompt_title">Mudar de Conta</string>
+    <string name="wamod_switchaccount_prompt_message">Tem certeza que quer mudar de conta?</string>
 
 
     <!-- Updater -->
-    <string name="wamod_updater_title">Nova Atualização do WAMOD disponível!</string>
-    <string name="wamod_updater_message">%1$s está disponível para Baixar. Sua versão é %2$s.</string>
+    <string name="wamod_updater_title">Nova atualização do WAMOD disponível!</string>
+    <string name="wamod_updater_message">A versão %1$s está disponível. Sua versão é %2$s.</string>
     <string name="wamod_updater_download">Baixar</string>
     <string name="wamod_updater_later">Depois</string>
     <string name="wamod_updater_ignore">Ignorar Atualização</string>
-    <string name="wamod_updater_uptodate">WAMOD está Atualizado</string>
+    <string name="wamod_updater_uptodate">O WAMOD está atualizado</string>
 
 
     <!-- Conversation -->
     <string name="chat_with">Conversa com %1$s</string>
     <string name="profile_of">Perfil de %1$s</string>
-    <string name="conversation_last_seen">Visto por Último</string>
-    <string name="conversation_contact_online">Online</string>
+    <string name="conversation_last_seen">visto por último</string>
+    <string name="conversation_contact_online">online</string>
     <string name="type_a_message">Escreva algo</string>
 
 
     <!-- General -->
     <string name="wamod_error">Houve um erro</string>
     <string name="wamod_error_contacting_server">Houve um erro contatando o Servidor, por favor, tente mais tarde</string>
-    <string name="wamod_restartwamod">Reiniciar WAMOD</string>
+    <string name="wamod_restartwamod">Reiniciar o WAMOD</string>
 </resources>
