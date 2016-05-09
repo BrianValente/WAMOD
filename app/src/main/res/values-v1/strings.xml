@@ -1,143 +1,143 @@
 <resources>
     <!-- WAMOD Settings -->
-    <string name="wamod_settings">WAMOD Settings</string>
-    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) and up</string>
+    <string name="wamod_settings">WAMOD Ayarları</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) ve üstü</string>
 
     <!-- WAMOD Settings - About -->
-    <string name="wamod_settings_about">About</string>
-    <string name="wamod_settings_about_googlepluscommunity">Google+ community</string>
-    <string name="wamod_settings_about_developertwitterprofile">Developer Twitter profile</string>
-    <string name="wamod_settings_about_sourcecode">Source code</string>
-    <string name="wamod_settings_about_credits">Credits</string>
+    <string name="wamod_settings_about">Hakkında</string>
+    <string name="wamod_settings_about_googlepluscommunity">Google+ topluluğu</string>
+    <string name="wamod_settings_about_developertwitterprofile">Geliştiricinin Twitter profili</string>
+    <string name="wamod_settings_about_sourcecode">Kaynak kodu</string>
+    <string name="wamod_settings_about_credits">Katkıda Bulunanlar</string>
 
     <!-- WAMOD Settings - General -->
-    <string name="wamod_settings_general">General</string>
-    <string name="wamod_settings_general_colors">Colors</string>
-    <string name="wamod_settings_general_colors_statusbarcolor">Status bar</string>
-    <string name="wamod_settings_general_colors_toolbarcolor">Toolbar</string>
-    <string name="wamod_settings_general_colors_toolbartitlescolor">Toolbar titles</string>
-    <string name="wamod_settings_general_colors_toolbariconscolor">Toolbar icons</string>
-    <string name="wamod_settings_general_colors_navigationbarcolor">Navigation bar</string>
-    <string name="wamod_settings_general_colors_darkstatusbaricons">Dark status bar icons</string>
-    <string name="wamod_settings_general_nightmode">Night mode</string>
-    <string name="wamod_settings_general_nightmode_enable">Enable</string>
-    <string name="wamod_settings_general_nightmode_enable_summary">The UI will be dark</string>
-    <string name="wamod_settings_general_nightmode_onlyatnight">Only at night</string>
-    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Night mode will be enabled at night only</string>
+    <string name="wamod_settings_general">Genel</string>
+    <string name="wamod_settings_general_colors">Renkler</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Durum çubuğu</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">Araç çubuğu</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Araç çubuğu başlıkları</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Araç çubuğu simgeleri</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">Gezinti çubuğu</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Koyu durum çubuğu simgeleri</string>
+    <string name="wamod_settings_general_nightmode">Gece modu</string>
+    <string name="wamod_settings_general_nightmode_enable">Etkin</string>
+    <string name="wamod_settings_general_nightmode_enable_summary">Kullanıcı arayüzü karanlık olacak</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight">Sadece geceleri</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Gece modu sadece geceleri etkin olacak</string>
 
     <!-- WAMOD Settings - Home -->
-    <string name="wamod_settings_home">Home</string>
-    <string name="wamod_settings_home_layout">Layout</string>
-    <string name="wamod_settings_home_layout_hometheme">Theme</string>
-    <string name="wamod_settings_home_drawer">Drawer</string>
-    <string name="wamod_settings_home_drawer_style">Style</string>
-    <string name="wamod_settings_home_drawer_darkdrawer">Dark drawer</string>
-    <string name="wamod_settings_home_drawer_selectdrawerbackground">Select drawer background</string>
-    <string name="wamod_settings_home_drawer_blacktextinheader">Black text in drawer header</string>
-    <string name="wamod_settings_home_drawer_showsecondsaccount">Show second account in drawer</string>
-    <string name="wamod_settings_home_bottomnavigationbar">Bottom navigation bar</string>
-    <string name="wamod_settings_home_bottomnavigationbar_autocolors">Auto colors</string>
-    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Colors are selected automatically</string>
-    <string name="wamod_settings_home_bottomnavigationbar_color">Background color</string>
-    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Active item color</string>
-    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Inactive item color</string>
+    <string name="wamod_settings_home">Ana sayfa</string>
+    <string name="wamod_settings_home_layout">Düzen</string>
+    <string name="wamod_settings_home_layout_hometheme">Tema</string>
+    <string name="wamod_settings_home_drawer">Çekmece</string>
+    <string name="wamod_settings_home_drawer_style">Stil</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Koyu çekmece</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Çekmece arka planını seç</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Çekmece başlığında siyah metin</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Çekmecede ikinci hesabı göster</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Alt gezinti çubuğu</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors">Otomatik renkler</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Renkler otomatik olarak seçilir</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">Arka plan rengi</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Etkin öğe rengi</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Etkin olmayan öğe rengi</string>
 
     <!-- WAMOD Settings - Conversation -->
-    <string name="wamod_settings_conversation">Conversation</string>
-    <string name="wamod_settings_conversation_toolbar">Toolbar</string>
-    <string name="wamod_settings_conversation_toolbar_style">Style</string>
-    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Hide profile photo</string>
-    <string name="wamod_settings_conversation_toolbar_hideicons">Hide icons</string>
-    <string name="wamod_settings_conversation_toolbar_closebutton">Close button</string>
-    <string name="wamod_settings_conversation_layout">Layout</string>
-    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Enable custom background color</string>
-    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Custom background color</string>
-    <string name="wamod_settings_conversation_layout_entry_style">Entry style</string>
-    <string name="wamod_settings_conversation_layout_entry_config">Configure entry</string>
-    <string name="wamod_settings_conversation_bubbles">Bubbles</string>
-    <string name="wamod_settings_conversation_bubbles_personalize">Personalize bubbles</string>
-    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Enable custom participant color</string>
-    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Custom participant color</string>
-    <string name="wamod_settings_conversation_bubbles_style">Style</string>
-    <string name="wamod_settings_conversation_bubbles_ticksstyle">Ticks style</string>
-    <string name="wamod_settings_conversation_bubbles_right_color">Right bubble</string>
-    <string name="wamod_settings_conversation_bubbles_right_textcolor">Right bubble: text</string>
-    <string name="wamod_settings_conversation_bubbles_right_datecolor">Right bubble: date</string>
-    <string name="wamod_settings_conversation_bubbles_left_color">Left bubble</string>
-    <string name="wamod_settings_conversation_bubbles_left_textcolor">Left bubble: text</string>
-    <string name="wamod_settings_conversation_bubbles_left_datecolor">Left bubble: date</string>
+    <string name="wamod_settings_conversation">Sohbet</string>
+    <string name="wamod_settings_conversation_toolbar">Araç çubuğu</string>
+    <string name="wamod_settings_conversation_toolbar_style">Stil</string>
+    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Profil resmini gizle</string>
+    <string name="wamod_settings_conversation_toolbar_hideicons">Simgeleri gizle</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">Kapatma tuşu</string>
+    <string name="wamod_settings_conversation_layout">Düzen</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Özel arkaplan rengini etkinleştir</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Özel arka plan rengi</string>
+    <string name="wamod_settings_conversation_layout_entry_style">Giriş stili</string>
+    <string name="wamod_settings_conversation_layout_entry_config">Girişi yapılandır</string>
+    <string name="wamod_settings_conversation_bubbles">Baloncuklar</string>
+    <string name="wamod_settings_conversation_bubbles_personalize">Kişiselleştirilmiş baloncuklar</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Özel katılımcı rengini etkinleştirme</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Özel katılımcı rengi</string>
+    <string name="wamod_settings_conversation_bubbles_style">Stil</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Tik stili</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">Sağ baloncuk</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Sağ baloncuk: yazı</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Sağ baloncuk: tarihi</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">Sol baloncuk</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Sol baloncuk: yazı</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Sol baloncuk: tarih</string>
 
     <!-- WAMOD Settings - Privacy -->
-    <string name="wamod_settings_privacy">Privacy</string>
-    <string name="wamod_settings_privacy_freezelastseen">Freeze last seen</string>
-    <string name="wamod_settings_privacy_hidebluetick">Don\'t report read messages (blue tick)</string>
-    <string name="wamod_settings_privacy_hidetyping">Don\'t report \"Typing\"</string>
-    <string name="wamod_settings_privacy_alwaysonline">Always online</string>
-    <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
+    <string name="wamod_settings_privacy">Gizlilik</string>
+    <string name="wamod_settings_privacy_freezelastseen">Son görülmeyi durdur</string>
+    <string name="wamod_settings_privacy_hidebluetick">Okunan mesajları rapor etmeyin (mavi tik)</string>
+    <string name="wamod_settings_privacy_hidetyping">\"Yazıyor\" \'u gizle</string>
+    <string name="wamod_settings_privacy_alwaysonline">Herzaman çevrim içi</string>
+    <string name="wamod_settings_privacy_alwaysonline_summary">Deneysel</string>
 
     <!-- WAMOD Settings - WAMOD Themes -->
-    <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
-    <string name="wamod_settings_wamodthemes_deviceid">Device ID</string>
-    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Themes</string>
-    <string name="wamod_settings_wamodthemes_unlink">Unlink device</string>
-    <string name="wamod_settings_wamodthemes_unlink_title">Unlink device</string>
-    <string name="wamod_settings_wamodthemes_unlink_message">Are you sure you want to unlink your device?</string>
-    <string name="wamod_settings_wamodthemes_visit">Visit WAMOD Themes</string>
+    <string name="wamod_settings_wamodthemes">WAMOD Temaları</string>
+    <string name="wamod_settings_wamodthemes_deviceid">Cihaz ID</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Temalar</string>
+    <string name="wamod_settings_wamodthemes_unlink">Cihazın bağlantısını kes</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Cihazın bağlantısını kes</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">Cihazınızı bağlantısını kesmek istediğinizden emin misiniz?</string>
+    <string name="wamod_settings_wamodthemes_visit">WAMOD Temalarını görüntüle</string>
 
     <!-- WAMOD Settings - Miscellaneous -->
-    <string name="wamod_settings_miscellaneous">Miscellaneous</string>
-    <string name="wamod_settings_miscellaneous_system">System related</string>
-    <string name="wamod_settings_miscellaneous_system_osgallery">Use system gallery</string>
-    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Attach media using your favorite gallery</string>
-    <string name="wamod_settings_miscellaneous_system_cardcolor">Colored cards in Overview (Recent apps)</string>
-    <string name="wamod_settings_miscellaneous_system_cardsforchats">Cards for chats</string>
-    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">You can see your chats in the Overview to switch easily</string>
-    <string name="wamod_settings_miscellaneous_app">App</string>
-    <string name="wamod_settings_miscellaneous_app_checkupdates">Check for updates</string>
-    <string name="wamod_settings_miscellaneous_app_restoredefaults">Restore default configuration</string>
-    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restore default configuration</string>
-    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Are you sure you want to restore the default configuration?</string>
+    <string name="wamod_settings_miscellaneous">Çeşitli ayarlar</string>
+    <string name="wamod_settings_miscellaneous_system">Sistem ile ilgili</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">Sistem galeri uygulamasını kullan</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">En sevdiğiniz galeri uygulaması ile medyayı ekleyin</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Genel bakış renkli kartlar (Son kullanılan uyg.)</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">Sohbetler için kartlar</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Genel bakış ile sohbetlerinizi görerek daha kolay geçiş yapabilrisiniz</string>
+    <string name="wamod_settings_miscellaneous_app">Uygulama</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">Güncellemeleri kontrol et</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults">Ayarları geri yükle</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Varsayılan ayarlara geri dön</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Varsayılan ayarları geri yüklemek istediğiniz emin misiniz?</string>
 
 
     <!-- QTS -->
-    <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
-    <string name="wamod_qts_upload">Upload theme</string>
-    <string name="wamod_qts_download">Download theme</string>
+    <string name="wamod_qts">Hızlı Tema Paylaşımı (HTP)</string>
+    <string name="wamod_qts_upload">Tema yükle</string>
+    <string name="wamod_qts_download">DTema indir</string>
     <string name="wamod_qts_download_themeid">Theme ID</string>
-    <string name="wamod_qts_upload_prompt">Are you sure you want to upload your theme?</string>
-    <string name="wamod_qts_upload_success">Your theme ID %1$s was copied to your clipboard. Share it with your friends!</string>
+    <string name="wamod_qts_upload_prompt">Temanızı yüklemek istediğiniz emin misiniz?</string>
+    <string name="wamod_qts_upload_success">Tema kimliği %1$s panoya kopyalanan edildi. Arkadaşlarınızla paylaşın!</string>
 
 
     <!-- Crash -->
-    <string name="wamod_crash_title">WAMOD crashed!</string>
-    <string name="wamod_crash_message">There was an error loading your configuration so the default values have been restored.</string>
-    <string name="wamod_crash_button">Okay ☹</string>
+    <string name="wamod_crash_title">WAMOD çöktü!</string>
+    <string name="wamod_crash_message">Yapılandırmanız yüklenirken bir hata oluştu ve varsayılan değerler geri yüklendi.</string>
+    <string name="wamod_crash_button">Tamam ☹</string>
 
 
     <!-- Switch accounts -->
-    <string name="wamod_switchaccount_prompt_title">Switch account</string>
-    <string name="wamod_switchaccount_prompt_message">Are you sure you want to switch your account?</string>
+    <string name="wamod_switchaccount_prompt_title">Hesap değiştir</string>
+    <string name="wamod_switchaccount_prompt_message">Hesaplarınız arasında geçiş yapmak istediğinizden emin misiniz?</string>
 
 
     <!-- Updater -->
-    <string name="wamod_updater_title">New update of WAMOD available!</string>
-    <string name="wamod_updater_message">%1$s is available for download. Your version is %2$s.</string>
-    <string name="wamod_updater_download">Download</string>
-    <string name="wamod_updater_later">Later</string>
-    <string name="wamod_updater_ignore">Ignore this update</string>
-    <string name="wamod_updater_uptodate">WAMOD is up to date</string>
+    <string name="wamod_updater_title">WAMOD güncellemesi mevcut</string>
+    <string name="wamod_updater_message">Şuan ki versiyon %2$s. Yeni kullanılabilir versiyon %2$s.</string>
+    <string name="wamod_updater_download">İndir</string>
+    <string name="wamod_updater_later">Sonra</string>
+    <string name="wamod_updater_ignore">Güncellemeyi yoksay</string>
+    <string name="wamod_updater_uptodate">WAMOD güncel</string>
 
 
     <!-- Conversation -->
-    <string name="chat_with">Chat with %1$s</string>
-    <string name="profile_of">Profile of %1$s</string>
-    <string name="conversation_last_seen">seen</string>
-    <string name="conversation_contact_online">online now</string>
-    <string name="type_a_message">Say something</string>
+    <string name="chat_with">%1$s ile sohbet et</string>
+    <string name="profile_of">%1$s profili</string>
+    <string name="conversation_last_seen">son görülme</string>
+    <string name="conversation_contact_online">çevirmiçi</string>
+    <string name="type_a_message">Bir mesaj yaz</string>
 
 
     <!-- General -->
-    <string name="wamod_error">There was an error</string>
-    <string name="wamod_error_contacting_server">There was an error contacting the server, please try again later</string>
-    <string name="wamod_restartwamod">Restart WAMOD</string>
+    <string name="wamod_error">Bir hata oluştu</string>
+    <string name="wamod_error_contacting_server">Sunucu bağlantısında bir hata oluştu, lütfen daha sonra tekrar deneyin</string>
+    <string name="wamod_restartwamod">WAMOD yeniden başlat</string>
 </resources>
