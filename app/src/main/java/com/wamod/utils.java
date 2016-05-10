@@ -247,6 +247,10 @@ public class utils extends Activity {
                 com.wamod.GroupChatInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.ContactPicker) {
                 com.wamod.WAclass.ContactPicker._onCreate(a);
+            } else if (a instanceof com.whatsapp.MessageDetailsActivity) {
+                MessageDetailsActivity messageDetailsActivity = (MessageDetailsActivity) a;
+                com.whatsapp.protocol.l l = messageDetailsActivity.c(messageDetailsActivity);
+                Toast.makeText(a, "ID: " + l.L + ", Content: " + l.a(), Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             manageException(e);
@@ -1154,5 +1158,25 @@ public class utils extends Activity {
         ClipboardManager clipboard = (ClipboardManager) utils.context.getSystemService(utils.context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("", s);
         clipboard.setPrimaryClip(clip);
+    }
+
+    public static void logThisShit(String str1, String str2, String[] str3, String str4) {
+        Log.i("WAMOD", "1: " + str1 + "\n2: " + str2 + "\n4: " + str4);
+        if (str3 != null)
+            for (String s : str3) {
+                Log.i("WAMOD", s);
+            }
+    }
+
+    public static void logThisShit(String str1, String str2, String str3, String str4) {
+        Log.i("WAMOD", "1: " + str1 + "\n2: " + str2 + "\n3: " + str3 + "\n4: " + str4);
+    }
+
+    public static void call_logThisShit() {
+        logThisShit(null, null, (String[])null, null);
+    }
+
+    public static void logThisShitFor2(String str1, String str2) {
+        Log.i("WAMOD", "1: " + str1 + " ------ 2: " + str2);
     }
 }
