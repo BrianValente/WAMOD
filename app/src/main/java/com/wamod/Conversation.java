@@ -338,17 +338,14 @@ public class Conversation extends DialogToastListActivity {
                             @Override
                             public void onGlobalLayout() {
                                 if (child instanceof TextView) {
-                                    Log.i("WAMOD", "Attach button");
                                     TextView tv = (TextView) child;
                                     Drawable[] icon = tv.getCompoundDrawables();
                                     icon[0].setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
                                     tv.setCompoundDrawables(icon[0], icon[1], icon[2], icon[3]);
                                 } else if (child instanceof ImageButton) {
-                                    Log.i("WAMOD", "Call button");
                                     ImageButton im = (ImageButton) child;
                                     im.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND));
                                 } else if (child instanceof ImageView) {
-                                    Log.i("WAMOD", "More button");
                                     ImageView im = (ImageView) child;
                                     im.setColorFilter(utils.getUIColor(utils.COLOR_FOREGROUND));
                                 }
