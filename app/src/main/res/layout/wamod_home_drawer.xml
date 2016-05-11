@@ -212,6 +212,21 @@
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="20dp"/>
                             </RelativeLayout>
+							<RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:id="@+id/wamod_drawer_restart">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ffffff"
+                                    android:text="@string/wamod_restart"
+                                    android:textSize="15sp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="20dp"/>
+                            </RelativeLayout>
                         </LinearLayout>
                     </ScrollView>
                 </RelativeLayout>
