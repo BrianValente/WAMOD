@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="content">
+    <PreferenceCategory
+        android:title="@string/wamod_settings_advanced_nightmode">
+        <com.wamod.preference.NewColorPickerPreference
+            android:title="@string/wamod_settings_advanced_nightmode_primarytextcolor"
+            android:key="nightmode_primarytextcolor" />
+        <com.wamod.preference.NewColorPickerPreference
+            android:title="@string/wamod_settings_advanced_nightmode_secondarytextcolor"
+            android:key="nightmode_secondarytextcolor" />
+        <com.wamod.preference.NewColorPickerPreference
+            android:title="@string/wamod_settings_advanced_nightmode_cardsbackgroundcolor"
+            android:key="nightmode_cardsbackgroundcolor" />
+        <com.wamod.preference.NewColorPickerPreference
+            android:title="@string/wamod_settings_advanced_nightmode_backgroundcolor"
+            android:key="nightmode_backgroundcolor" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/wamod_settings_advanced_navigationdrawer">
+        <com.wamod.preference.NewColorPickerPreference
+            android:title="@string/wamod_settings_advanced_navigationdrawer_light_background"
+            android:key="drawer_light_background" />
+        <com.wamod.preference.NewColorPickerPreference
+            android:title="@string/wamod_settings_advanced_navigationdrawer_dark_background"
+            android:key="drawer_dark_background" />
+    </PreferenceCategory>
+</PreferenceScreen>

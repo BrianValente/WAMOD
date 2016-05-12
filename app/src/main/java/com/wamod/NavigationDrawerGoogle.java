@@ -93,6 +93,14 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         wamod_drawer_header.setLayoutResource(headerLayoutID);
         wamod_drawer_header.inflate();
 
+        if (utils.prefs.getBoolean("home_drawer_dark", true)) {
+            int bgColor = Color.parseColor("#" + utils.prefs.getString("drawer_dark_background", "404040"));
+            setBackgroundColor(bgColor);
+        } else {
+            int bgColor = Color.parseColor("#" + utils.prefs.getString("drawer_light_background", "fefefe"));
+            setBackgroundColor(bgColor);
+        }
+
         LinearLayout buttons = (LinearLayout) activity.findViewById(Resources.id.wamod_drawer_buttons);
         for (int i=0; i<buttons.getChildCount(); i++) {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
@@ -105,6 +113,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                         icon.setColorFilter(Color.parseColor("#22222"));
                         label.setTextColor(Color.parseColor("#22222"));
                     }*/
+
                     int color = Color.parseColor("#222222");
 
                     View label1 = item.getChildAt(0);
@@ -184,9 +193,6 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                 activity.startActivity(intent);
             }
         });
-
-        if (!utils.prefs.getBoolean("home_drawer_dark", true)) setBackgroundColor(Color.parseColor("#fefefe"));
-
 
         ImageView drawerHeaderBg = (ImageView) findViewById(Resources.id.wamod_drawer_bgview);
         drawerHeaderBg.setImageDrawable(utils.getDrawerBackground(getContext()));

@@ -37,25 +37,32 @@ public class IconPreference extends Preference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        ViewGroup vg = (ViewGroup) view;
+
         if (!utils.nightModeShouldRun()) {
-            ViewGroup vg2 = (ViewGroup) vg.getChildAt(0);
-            for (int i=0; i<vg2.getChildCount();i++) {
-                View v = vg2.getChildAt(i);
-                if (v instanceof ImageView) {
-                    ImageView imageView = (ImageView) v;
-                    Drawable icon = imageView.getDrawable();
-                    icon.setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
-                    imageView.setColorFilter(Color.BLACK);
-                    imageView.setImageDrawable(icon);
-                }
-            }
+            tintIcon(Color.BLACK, view);
         } else {
+            tintIcon(utils.getDarkColor(0), view);
+
             TextView title = (TextView) view.findViewById(android.R.id.title);
             if (title != null) title.setTextColor(utils.getDarkColor(0));
 
             TextView summary = (TextView) view.findViewById(android.R.id.summary);
             if (summary != null) summary.setTextColor(utils.getDarkColor(1));
+        }
+    }
+
+    private void tintIcon(int color, View v1) {
+        ViewGroup vg = (ViewGroup) v1;
+        ViewGroup vg2 = (ViewGroup) vg.getChildAt(0);
+        for (int i=0; i<vg2.getChildCount();i++) {
+            View v = vg2.getChildAt(i);
+            if (v instanceof ImageView) {
+                ImageView imageView = (ImageView) v;
+                Drawable icon = imageView.getDrawable();
+                icon.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+                imageView.setColorFilter(color);
+                imageView.setImageDrawable(icon);
+            }
         }
     }
 }

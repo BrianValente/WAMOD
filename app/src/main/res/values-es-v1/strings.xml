@@ -85,6 +85,17 @@
     <string name="wamod_settings_wamodthemes_unlink_message">¿Estás seguro de desvincular el dispositivo?</string>
     <string name="wamod_settings_wamodthemes_visit">Visitar WAMOD Themes</string>
 
+    <!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Avanzado</string>
+    <string name="wamod_settings_advanced_nightmode">Modo noche</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Texto primario</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Texto secundario</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Fondo de las tarjetas</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Fondo</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Cajón</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Fondo claro</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Fondo oscuro</string>
+
     <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Misceláneos</string>
     <string name="wamod_settings_miscellaneous_system">Relacionado al sistema</string>

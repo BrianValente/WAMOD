@@ -78,8 +78,8 @@ import io.fabric.sdk.android.Fabric;
 public class utils extends Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.2 RC3";
-    public static int wamodVersionCode = 28;
+    public static String wamodVersionName = "1.2";
+    public static int wamodVersionCode = 29;
     public static Context context;
     public static boolean debug = false;
 
@@ -442,6 +442,13 @@ public class utils extends Activity {
                 utils.edit.putBoolean("home_bottomnavigationbar", true);
                 utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
                 utils.edit.putBoolean("home_drawer_showsecondaccount", true);
+            case 27:
+                utils.edit.putString("nightmode_primarytextcolor", "ffffff");
+                utils.edit.putString("nightmode_secondarytextcolor", "aaaaaa");
+                utils.edit.putString("nightmode_backgroundcolor", "303030");
+                utils.edit.putString("nightmode_cardsbackgroundcolor", "424242");
+                utils.edit.putString("drawer_light_background", "fefefe");
+                utils.edit.putString("drawer_dark_background", "404040");
                 break;
         }
         utils.edit.putInt("wamodversion", wamodVersionCode);
@@ -590,17 +597,18 @@ public class utils extends Activity {
         String colorStr;
         switch (id) {
             case 0:
-                colorStr = "#ffffff";
+                colorStr = "#" + utils.prefs.getString("nightmode_primarytextcolor", "ffffff");
                 break;
             case 1:
-                colorStr = "#aaaaaa";
+                colorStr = "#" + utils.prefs.getString("nightmode_secondarytextcolor", "aaaaaa");
                 break;
             default:
             case 2:
-                colorStr = "#303030";
+                colorStr = "#" + utils.prefs.getString("nightmode_backgroundcolor", "303030");
                 break;
             case 3:
-                colorStr = "#424242";
+                colorStr = "#" + utils.prefs.getString("nightmode_cardsbackgroundcolor", "424242");
+                break;
         }
         int color = Color.parseColor(colorStr);
         return color;

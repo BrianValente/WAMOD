@@ -37,6 +37,13 @@
             android:targetPackage="com.whatsapp"/>
     </com.wamod.preference.IconPreference>
     <com.wamod.preference.IconPreference
+        android:title="@string/wamod_settings_advanced"
+        android:icon="@drawable/wamod_ic_advanced">
+        <intent
+            android:targetClass="com.wamod.WAMODSettingsActivity_Advanced"
+            android:targetPackage="com.whatsapp"/>
+    </com.wamod.preference.IconPreference>
+    <com.wamod.preference.IconPreference
         android:title="@string/wamod_settings_miscellaneous"
         android:icon="@drawable/wamod_ic_miscellaneous">
         <intent
@@ -45,7 +52,7 @@
     </com.wamod.preference.IconPreference>
     <PreferenceCategory android:title="@string/wamod_settings_about" android:key="conversation_section">
         <com.wamod.preference.Preference
-            android:icon="@null" android:title="WAMOD 1.2 RC3" android:summary="WhatsApp 2.16.43" />
+            android:icon="@null" android:title="WAMOD 1.2" android:summary="WhatsApp 2.16.43" />
         <com.wamod.preference.Preference
             android:icon="@null" android:title="@string/wamod_settings_about_googlepluscommunity">
             <intent android:action="android.intent.action.VIEW" android:data="https://plus.google.com/communities/100280777780708899394" />

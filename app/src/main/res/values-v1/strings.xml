@@ -84,6 +84,18 @@
     <string name="wamod_settings_wamodthemes_unlink_message">Are you sure you want to unlink your device?</string>
     <string name="wamod_settings_wamodthemes_visit">Visit WAMOD Themes</string>
 
+    <!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Advanced</string>
+    <string name="wamod_settings_advanced_nightmode">Night mode</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Primary text</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Secondary text</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Cards background</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Background</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Navigation drawer</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Light background</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Dark background</string>
+
+
     <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Miscellaneous</string>
     <string name="wamod_settings_miscellaneous_system">System related</string>
