@@ -72,7 +72,6 @@
     <item type="id" name="wamod_drawer_debug1" />
     <item type="id" name="wamod_drawer_statusbar" />
     <item type="id" name="wamod_drawer_privacy" />
-	<item type="id" name="wamod_drawer_restart" />
 
     <item type="id" name="wamod_switchaccount" />
     <item type="id" name="wamod_drawer_header_2ndprofilepic" />

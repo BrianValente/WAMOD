@@ -20,8 +20,4 @@
         android:icon="@null"
         android:title="@string/wamod_settings_miscellaneous_app_restoredefaults"
         android:key="restoredefaults" />
-	<PreferenceCategory android:title="Backup And Restore" android:key="cat_br">
-        <com.wamod.misc.BackupP android:title="Backup" android:key="backup" android:summary="@string/BackupSum" />
-        <com.wamod.misc.RestoreP android:title="Restore" android:key="restore" android:summary="@string/RestoreSum" />
-    </PreferenceCategory>
 </PreferenceScreen>

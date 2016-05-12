@@ -135,8 +135,6 @@ public class NavigationDrawer extends RelativeLayout {
                         } else if (id == Resources.id.wamod_drawer_wamodsettings) {
                             intent = new Intent(activity, WAMODSettingsActivity.class);
                             activity.startActivity(intent);
-                        } else if (id == Resources.id.wamod_drawer_restart) {
-                            android.os.Process.killProcess(android.os.Process.myPid());
                         } else if (id == Resources.id.wamod_drawer_debug1) {
                             utils.switchAccount(getContext());
                         } else if (id == Resources.id.wamod_drawer_search) {
