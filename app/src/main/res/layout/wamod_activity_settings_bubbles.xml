@@ -187,14 +187,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="I'm playing LoL right now hehe"
+                        android:text="I'm working on WAMOD right now hehe"
                         android:id="@+id/msg5"
                         android:layout_below="@+id/participant5"
                         android:textColor="#000"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3:01 AM"
+                        android:text="3:12 AM"
                         android:layout_below="@+id/msg5"
                         android:layout_alignRight="@+id/msg5"
                         android:textSize="12sp"
