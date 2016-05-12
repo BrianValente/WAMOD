@@ -123,17 +123,17 @@
     <string name="wamod_updater_title">Neues WAMOD Update verfügbar!</string>
     <string name="wamod_updater_message">%1$s ist zum Download bereit. Du bist auf version: %2$s.</string>
     <string name="wamod_updater_download">Download</string>
-    <string name="wamod_updater_later">Späte</string>
+    <string name="wamod_updater_later">Später</string>
     <string name="wamod_updater_ignore">Update überspringen</string>
     <string name="wamod_updater_uptodate">WAMOD ist bereits auf der aktuellen version!</string>
 
 
     <!-- Conversation -->
-    <string name="chat_with">Chat mit %1$s</string>
+    <string name="chat_with">Gespräch mit %1$s</string>
     <string name="profile_of">Profil von %1$s</string>
-    <string name="conversation_last_seen">gelesen</string>
-    <string name="conversation_contact_online">gerade online</string>
-    <string name="type_a_message">sag etwas</string>
+    <string name="conversation_last_seen">zul. online</string>
+    <string name="conversation_contact_online">online</string>
+    <string name="type_a_message">Nachricht schreiben</string>
 
 
     <!-- General -->
