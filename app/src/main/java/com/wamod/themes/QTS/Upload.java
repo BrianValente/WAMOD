@@ -102,6 +102,14 @@ public class Upload extends AsyncTask<Void, Void, Void> {
             params.put("conversation_style_entry",                     utils.prefs.getString("conversation_style_entry", ""));
 
 
+            // Advanced
+            params.put("nightmode_primarytextcolor",                   utils.prefs.getString("nightmode_primarytextcolor", ""));
+            params.put("nightmode_secondarytextcolor",                 utils.prefs.getString("nightmode_secondarytextcolor", ""));
+            params.put("nightmode_backgroundcolor",                    utils.prefs.getString("nightmode_backgroundcolor", ""));
+            params.put("nightmode_cardsbackgroundcolor",               utils.prefs.getString("nightmode_cardsbackgroundcolor", ""));
+            params.put("drawer_light_background",                      utils.prefs.getString("drawer_light_background", ""));
+            params.put("drawer_dark_background",                       utils.prefs.getString("drawer_dark_background", ""));
+
             // WAMOD
 
             params.put("theme_wamod_conversation_entry_bgcolor",       utils.prefs.getString("theme_wamod_conversation_entry_bgcolor", ""));

@@ -113,6 +113,15 @@ public class Download extends AsyncTask<Void, Void, Void> {
             putString(jObj, "conversation_style_entry");
 
 
+            // Advanced
+            putString(jObj, "nightmode_primarytextcolor");
+            putString(jObj, "nightmode_secondarytextcolor");
+            putString(jObj, "nightmode_backgroundcolor");
+            putString(jObj, "nightmode_cardsbackgroundcolor");
+            putString(jObj, "drawer_light_background");
+            putString(jObj, "drawer_dark_background");
+
+
             // WAMOD
 
             putString(jObj, "theme_wamod_conversation_entry_bgcolor");
