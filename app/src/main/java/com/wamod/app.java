@@ -17,8 +17,6 @@ public class app extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this, new Crashlytics());
-        setContext(getApplicationContext());
         utils.initWAMOD();
     }
 
@@ -30,11 +28,5 @@ public class app extends Application {
         utils.context = ctx;
         utils.prefs = context.getSharedPreferences("wamod", 0);
         utils.edit = utils.prefs.edit();
-    }
-
-    public void freezeLastSeen() {
-        if (!utils.getPrivacyConfig(0)) {
-            String doSomething = "Do something.";
-        }
     }
 }
