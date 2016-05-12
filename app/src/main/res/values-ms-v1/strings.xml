@@ -84,6 +84,18 @@
     <string name="wamod_settings_wamodthemes_unlink_message">Adakah anda pasti untuk putuskan sambungan?</string>
     <string name="wamod_settings_wamodthemes_visit">Lawat tema WAMOD</string>
 
+    <!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Tambahan</string>
+    <string name="wamod_settings_advanced_nightmode">Mod malam</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Teks utama</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Teks kedua</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Latar belakang kad</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Latar belakang</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Laci navigasi</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Latar belakang cerah</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Latar belakang gelap</string>
+
+
     <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Pelbagai</string>
     <string name="wamod_settings_miscellaneous_system">Berkaitan sistem</string>
