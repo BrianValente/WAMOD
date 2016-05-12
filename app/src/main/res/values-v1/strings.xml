@@ -2,6 +2,7 @@
     <!-- WAMOD Settings -->
     <string name="wamod_settings">WAMOD Settings</string>
     <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) and up</string>
+	<string name="wamod_restart">Restart WAMOD</string>
 
     <!-- WAMOD Settings - About -->
     <string name="wamod_settings_about">About</string>
@@ -97,6 +98,8 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Restore default configuration</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restore default configuration</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Are you sure you want to restore the default configuration?</string>
+	<string name="BackupSum">Create a Backup of WhatsApp Data</string>
+    <string name="RestoreSum">Restore WhatsApp Data</string>
 
 
     <!-- QTS -->

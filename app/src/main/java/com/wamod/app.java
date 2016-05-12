@@ -31,6 +31,9 @@ public class app extends Application {
         utils.prefs = context.getSharedPreferences("wamod", 0);
         utils.edit = utils.prefs.edit();
     }
+	public static String WaToMD(final String s) {
+        return s.replace("com.whatsapp", "com.whatsapp").replace("com.whatsapp.util", "com.whatsapp.util").replace("com.whatsapp.Voip", "com.whatsapp.Voip").replace("com.whatsapp.VideoFrameConverter", "com.whatsapp.VideoFrameConverter").replace("com.whatsapp.util.OpusPlayer", "com.whatsapp.util.OpusPlayer").replace("com.whatsapp.proto", "com.whatsapp.proto").replace("com.whatsapp.util.OpusRecorder", "com.whatsapp.util.OpusRecorder");
+    }
 
     public void freezeLastSeen() {
         if (!utils.getPrivacyConfig(0)) {

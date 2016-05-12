@@ -30,6 +30,7 @@ public final class Resources {
         public static final int wamod_drawer_debug1 = utils.getHexID("wamod_drawer_debug1", "id");
         public static final int wamod_drawer_statusbar = utils.getHexID("wamod_drawer_statusbar", "id");
         public static final int wamod_drawer_privacy = utils.getHexID("wamod_drawer_privacy", "id");
+		public static final int wamod_drawer_restart = utils.getHexID("wamod_drawer_restart", "id");
 
         /** Switch account */
         public static final int wamod_switchaccount = utils.getHexID("wamod_switchaccount", "id");
