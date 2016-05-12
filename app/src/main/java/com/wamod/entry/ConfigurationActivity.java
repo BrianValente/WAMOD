@@ -37,8 +37,8 @@ public class ConfigurationActivity extends WAMODSettings {
         ctx = this;
         getFragmentManager().beginTransaction().replace(android.R.id.content, new WAMODSettingsFragment()).commit();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         a = this;
+        utils.loadColorsV2(this);
     }
 
     public static class WAMODSettingsFragment extends PreferenceFragment {
