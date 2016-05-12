@@ -5,4 +5,6 @@ package com.whatsapp.protocol;
  */
 public class q {
     public void a(l l,String[] s) {}
+
+    public void a(p p, String str1, String str2, String[] str3, String str4) {}
 }
