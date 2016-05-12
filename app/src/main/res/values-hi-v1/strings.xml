@@ -1,0 +1,143 @@
+<resources>
+    <!-- WAMOD Settings -->
+    <string name="wamod_settings">WAMOD सेटिंग्स</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) और ऊपर</string>
+
+    <!-- WAMOD Settings - About -->
+    <string name="wamod_settings_about">के बारे में</string>
+    <string name="wamod_settings_about_googlepluscommunity">Google+ समुदाय</string>
+    <string name="wamod_settings_about_developertwitterprofile">डेवलपर ट्विटर प्रोफाइल</string>
+    <string name="wamod_settings_about_sourcecode">सोर्स कोड</string>
+    <string name="wamod_settings_about_credits">क्रेडिट्स</string>
+
+    <!-- WAMOD Settings - General -->
+    <string name="wamod_settings_general">सामान्य</string>
+    <string name="wamod_settings_general_colors">रंग</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">स्टेटस बार</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">टूलबार</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">टूलबार खिताब</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">टूलबार प्रतीक</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">नेविगेशन बार</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">डार्क स्थिति पट्टी प्रतीक</string>
+    <string name="wamod_settings_general_nightmode">रात्री स्वरुप</string>
+    <string name="wamod_settings_general_nightmode_enable">सक्षम करें</string>
+    <string name="wamod_settings_general_nightmode_enable_summary">यूआई में अंधेरा हो जाएगा</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight">रात में ही</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">रात मोड रात में सक्षम हो जाएगा केवल</string>
+
+    <!-- WAMOD Settings - Home -->
+    <string name="wamod_settings_home">घर</string>
+    <string name="wamod_settings_home_layout">ख़ाका</string>
+    <string name="wamod_settings_home_layout_hometheme">विषय</string>
+    <string name="wamod_settings_home_drawer">दराज</string>
+    <string name="wamod_settings_home_drawer_style">अंदाज</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">डार्क दराज</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">चयन दराज पृष्ठभूमि</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">दराज शीर्षक में काले पाठ</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">दराज में दूसरे खाते दिखाएँ</string>
+    <string name="wamod_settings_home_bottomnavigationbar">नीचे नेविगेशन बार</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors">ऑटो रंग</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">रंग स्वचालित रूप से चयन कर रहे हैं</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">पीछे का रंग</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">सक्रिय आइटम रंग</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">निष्क्रिय मद रंग</string>
+
+    <!-- WAMOD Settings - Conversation -->
+    <string name="wamod_settings_conversation">बातचीत</string>
+    <string name="wamod_settings_conversation_toolbar">टूलबार</string>
+    <string name="wamod_settings_conversation_toolbar_style">अंदाज</string>
+    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">प्रोफ़ाइल तस्वीर छिपाएं</string>
+    <string name="wamod_settings_conversation_toolbar_hideicons">माउस को छिपाने</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">बंद बटन</string>
+    <string name="wamod_settings_conversation_layout">ख़ाका</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">कस्टम पृष्ठभूमि रंग सक्षम करें</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">कस्टम पृष्ठभूमि रंग</string>
+    <string name="wamod_settings_conversation_layout_entry_style">एंट्री शैली</string>
+    <string name="wamod_settings_conversation_layout_entry_config">प्रविष्टि को कॉन्फ़िगर</string>
+    <string name="wamod_settings_conversation_bubbles">बुलबुले</string>
+    <string name="wamod_settings_conversation_bubbles_personalize">बुलबुले निजीकृत</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">कस्टम भागीदार रंग सक्षम करें</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">कस्टम भागीदार रंग</string>
+    <string name="wamod_settings_conversation_bubbles_style">अंदाज</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">ticks शैली</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">दांए बुलबुले</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">दांए बुलबुले: टेक्स्ट</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">दांए बुलबुले: तारीख</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">बाएं बुलबुले</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">बाएं बुलबुले: टेक्स्ट</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">बाएं बुलबुले: तारीख</string>
+
+    <!-- WAMOD Settings - Privacy -->
+    <string name="wamod_settings_privacy">एकांत</string>
+    <string name="wamod_settings_privacy_freezelastseen">रुक पिछले देखा</string>
+    <string name="wamod_settings_privacy_hidebluetick">पढ़ें संदेशों रिपोर्ट न करें (blue tick)</string>
+    <string name="wamod_settings_privacy_hidetyping">"टाइप " रिपोर्ट न करें</string>
+    <string name="wamod_settings_privacy_alwaysonline">हमेशा ऑनलाइन</string>
+    <string name="wamod_settings_privacy_alwaysonline_summary">प्रयोगात्मक</string>
+
+    <!-- WAMOD Settings - WAMOD Themes -->
+    <string name="wamod_settings_wamodthemes">WAMOD विषय-वस्तु</string>
+    <string name="wamod_settings_wamodthemes_deviceid">Device ID</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD विषय-वस्तु</string>
+    <string name="wamod_settings_wamodthemes_unlink">अनलिंक डिवाइस</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">अनलिंक डिवाइस</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">आप अपने डिवाइस अनलिंक करना चाहते तुम्हें यकीन है?</string>
+    <string name="wamod_settings_wamodthemes_visit">WAMOD विषय-वस्तु पर जाएं</string>
+
+    <!-- WAMOD Settings - Miscellaneous -->
+    <string name="wamod_settings_miscellaneous">कई तरह का</string>
+    <string name="wamod_settings_miscellaneous_system">सिस्टम संबंधित</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">उपयोग प्रणाली गैलरी</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">अपने पसंदीदा गैलरी का उपयोग कर मीडिया संलग्न</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">अवलोकन में रंग का कार्ड (हाल ही क्षुधा)</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">चैट के लिए कार्ड</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">आप अवलोकन आसानी से स्विच करने में अपनी चैट को देख सकते हैं</string>
+    <string name="wamod_settings_miscellaneous_app">ऐप</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">अद्यतन के लिए जाँच</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults">डिफ़ॉल्ट विन्यास को बहाल</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">डिफ़ॉल्ट विन्यास को बहाल</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">आप डिफ़ॉल्ट विन्यास को बहाल करना चाहते हैं आप सुनिश्चित हैं?</string>
+
+
+    <!-- QTS -->
+    <string name="wamod_qts">त्वरित विषय बांटने (QTS)</string>
+    <string name="wamod_qts_upload">अपलोड विषय</string>
+    <string name="wamod_qts_download">डाउनलोड विषय</string>
+    <string name="wamod_qts_download_themeid">थीम आईडी</string>
+    <string name="wamod_qts_upload_prompt">आप अपने विषय को अपलोड करना चाहते हैं आप सुनिश्चित हैं?</string>
+    <string name="wamod_qts_upload_success">आपका विषय आईडी %1$s अपने क्लिपबोर्ड करने के लिए नकल की थी। इसे अपने दोस्तों के साथ साझा करें!</string>
+
+
+    <!-- Crash -->
+    <string name="wamod_crash_title">WAMOD दुर्घटनाग्रस्त हो गया!</string>
+    <string name="wamod_crash_message">आपके विन्यास लोड हो रहा है इसलिए मूलभूत मूल्यों बहाल कर दिया गया त्रुटि थी ।</string>
+    <string name="wamod_crash_button">ठीक है ☹</string>
+
+
+    <!-- Switch accounts -->
+    <string name="wamod_switchaccount_prompt_title">खाता बदलिये</string>
+    <string name="wamod_switchaccount_prompt_message">आप अपने खाते स्विच करना चाहते हैं आप सुनिश्चित हैं?</string>
+
+
+    <!-- Updater -->
+    <string name="wamod_updater_title">WAMOD उपलब्ध की नई अद्यतन!</string>
+    <string name="wamod_updater_message">%1$s डाउनलोड के लिए उपलब्ध है। आपका संस्करण है %2$s.</string>
+    <string name="wamod_updater_download">डाउनलोड</string>
+    <string name="wamod_updater_later">बाद में</string>
+    <string name="wamod_updater_ignore">इस अद्यतन पर ध्यान न दें</string>
+    <string name="wamod_updater_uptodate">WAMOD तारीख पर निर्भर है</string>
+
+
+    <!-- Conversation -->
+    <string name="chat_with">%1$s साथ बात</string>
+    <string name="profile_of">%1$s की प्रोफाइल</string>
+    <string name="conversation_last_seen">देखा</string>
+    <string name="conversation_contact_online">अब ऑनलाइन</string>
+    <string name="type_a_message">आप कुछ बोलो</string>
+
+
+    <!-- General -->
+    <string name="wamod_error">एक त्रुटि हुई</string>
+    <string name="wamod_error_contacting_server">सर्वर से संपर्क करने में त्रुटि हुई थी, बाद में पुन: प्रयास करें</string>
+    <string name="wamod_restartwamod">पुनः प्रारंभ WAMOD</string>
+</resources>
