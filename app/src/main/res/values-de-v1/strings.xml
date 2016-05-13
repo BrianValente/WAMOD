@@ -34,8 +34,8 @@
     <string name="wamod_settings_home_drawer_darkdrawer">Dunkler drawer</string>
     <string name="wamod_settings_home_drawer_selectdrawerbackground">Wähle drawer Hintergrund</string>
     <string name="wamod_settings_home_drawer_blacktextinheader">Schwarzen text im Drawer</string>
-    <string name="wamod_settings_home_drawer_showsecondsaccount">Zweit-Account in Drawer anzeigen</string>
-    <string name="wamod_settings_home_bottomnavigationbar">untlere Navigationleiste</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Zweit-Account im Drawer anzeigen</string>
+    <string name="wamod_settings_home_bottomnavigationbar">untere Navigationleiste (Anrufe, Chats, Kontakte)</string>
     <string name="wamod_settings_home_bottomnavigationbar_autocolors">Automatische Farben</string>
     <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Farben werden automatisch ausgewählt</string>
     <string name="wamod_settings_home_bottomnavigationbar_color">Hintergrund Farbe</string>
@@ -69,8 +69,8 @@
 
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privatsphäre</string>
-    <string name="wamod_settings_privacy_freezelastseen">zul. gesehen verstecken</string>
-    <string name="wamod_settings_privacy_hidebluetick">Nachrichten nicht als gelesen markieren (blauer Hacken)</string>
+    <string name="wamod_settings_privacy_freezelastseen">zul. online einfrieren</string>
+    <string name="wamod_settings_privacy_hidebluetick">Blauer Hacken bei empfangenen Nachrichten ausschalten</string>
     <string name="wamod_settings_privacy_hidetyping">\"schreiben...\" nicht anzeigen</string>
     <string name="wamod_settings_privacy_alwaysonline">Immer Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimentell</string>
@@ -79,8 +79,8 @@
     <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_deviceid">Geräte ID</string>
     <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Themes</string>
-    <string name="wamod_settings_wamodthemes_unlink">Entkopple Gerät</string>
-    <string name="wamod_settings_wamodthemes_unlink_title">Entkopple Gerät</string>
+    <string name="wamod_settings_wamodthemes_unlink">Gerät entkoppeln</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Gerät entkoppeln</string>
     <string name="wamod_settings_wamodthemes_unlink_message">Bist du dir sicher dass du dein Gerät entkoppeln willst?</string>
     <string name="wamod_settings_wamodthemes_visit">Besuche WAMOD Themes</string>
 
@@ -89,11 +89,11 @@
     <string name="wamod_settings_miscellaneous_system">System bezogen</string>
     <string name="wamod_settings_miscellaneous_system_osgallery">SystemGallery-App benutzen</string>
     <string name="wamod_settings_miscellaneous_system_osgallery_summary">Sende Dateien mit deiner bevorzugten App</string>
-    <string name="wamod_settings_miscellaneous_system_cardcolor">Gefärbte Apps in der Übersicht (Appübersicht)</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Gefärbte Apps in der Appübersicht</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats">Tabs für einzelne chats</string>
-    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Du kannst einzelne Gespräche in der Appübersicht sehen</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Du kannst einzelne Chats in der Appübersicht sehen</string>
     <string name="wamod_settings_miscellaneous_app">App</string>
-    <string name="wamod_settings_miscellaneous_app_checkupdates">auf aktualisierungen prüfen</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">Nach Updates suchen</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Einstellungen zurücksetzen</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Standartwerte werden zurückgesetzt</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Bist du dir sicher dass du die Einstellungen zurücksetzen willst?</string>
@@ -120,7 +120,7 @@
 
 
     <!-- Updater -->
-    <string name="wamod_updater_title">Neues WAMOD Update verfügbar!</string>
+    <string name="wamod_updater_title">WAMOD Update verfügbar!</string>
     <string name="wamod_updater_message">%1$s ist zum Download bereit. Du bist auf version: %2$s.</string>
     <string name="wamod_updater_download">Download</string>
     <string name="wamod_updater_later">Später</string>
