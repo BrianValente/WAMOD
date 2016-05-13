@@ -98,6 +98,16 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Standartwerte werden zurückgesetzt</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Bist du dir sicher dass du die Einstellungen zurücksetzen willst?</string>
 
+	<!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Erweiterte EInstellungen</string>
+    <string name="wamod_settings_advanced_nightmode">Nachtmodus</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Primäre Textfarbe</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Sekundäre Textfarbe</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Kartenhintergrundfarbe</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Hintergrundfarbe</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Drawer</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Hintergrund - Hell</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Hintergrund - Dunkel</string>
 
     <!-- QTS -->
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
