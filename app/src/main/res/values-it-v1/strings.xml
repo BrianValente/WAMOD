@@ -88,7 +88,7 @@
     <!-- WAMOD Settings - Advanced -->
     <string name="wamod_settings_advanced">Avanzate</string>
     <string name="wamod_settings_advanced_nightmode">Modalità notte</string>
-    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Tedto primario</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Testo primario</string>
     <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Testo secondario</string>
     <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Sfondo dei pulsanti</string>
     <string name="wamod_settings_advanced_nightmode_backgroundcolor">Sfondo</string>
