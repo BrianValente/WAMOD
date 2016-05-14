@@ -71,7 +71,7 @@
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privacy</string>
     <string name="wamod_settings_privacy_freezelastseen">Congela ultimo accesso</string>
-    <string name="wamod_settings_privacy_hidebluetick">Nascondi seconda spinta blu</string>
+    <string name="wamod_settings_privacy_hidebluetick">Nascondi seconda spunta blu</string>
     <string name="wamod_settings_privacy_hidetyping">Non mostrare che stai scrivendo</string>
     <string name="wamod_settings_privacy_alwaysonline">Sempre online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">È sperimentale</string>
@@ -91,7 +91,7 @@
     <string name="wamod_settings_advanced_nightmode_primarytextcolor">Tedto primario</string>
     <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Testo secondario</string>
     <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Sfondo dei pulsanti</string>
-    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Background</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Sfondo</string>
     <string name="wamod_settings_advanced_navigationdrawer">Drawer</string>
     <string name="wamod_settings_advanced_navigationdrawer_light_background">Sfondo chiaro</string>
     <string name="wamod_settings_advanced_navigationdrawer_dark_background">Sfondo scuro</string>
@@ -102,7 +102,7 @@
     <string name="wamod_settings_miscellaneous_system">Riguardo il sistema</string>
     <string name="wamod_settings_miscellaneous_system_osgallery">Usa la galleria di sistema</string>
     <string name="wamod_settings_miscellaneous_system_osgallery_summary">Allega media usando la tua galleria preferita</string>
-    <string name="wamod_settings_miscellaneous_system_cardcolor">Intestaziond colorata (App recenti ≥5.0)</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Intestazione colorata (App recenti ≥5.0)</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats">Processo per ogni chat</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Ogni chat viene aperta in un processo differente per scambiarle velocemente (≥5.0)</string>
     <string name="wamod_settings_miscellaneous_app">App</string>
@@ -115,7 +115,7 @@
     <!-- QTS -->
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Salva tema</string>
-    <string name="wamod_qts_download">Download tema</string>
+    <string name="wamod_qts_download">Scarica tema</string>
     <string name="wamod_qts_download_themeid">ID tema</string>
     <string name="wamod_qts_upload_prompt">Sicuro di voler fare l\'upload (salvare online) del tema?</string>
     <string name="wamod_qts_upload_success">L\'ID %1$s del tuo tema è stato copiato. Condividilo con gli amici!</string>
@@ -152,5 +152,5 @@
     <!-- General -->
     <string name="wamod_error">C\'è stato un errore</string>
     <string name="wamod_error_contacting_server">C\'è stato un errore nel contattare il server, prova più tardi</string>
-    <string name="wamod_restartwamod">Restart WAMOD</string>
+    <string name="wamod_restartwamod">Riavvia WAMOD</string>
 </resources>
