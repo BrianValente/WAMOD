@@ -56,8 +56,8 @@
     <string name="wamod_settings_conversation_layout_entry_config">Configurar Entrada</string>
     <string name="wamod_settings_conversation_bubbles">Bolhas</string>
     <string name="wamod_settings_conversation_bubbles_personalize">Personalizar Bolhas</string>
-    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Ativar Cor dos Participantes Personalizada</string>
-    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Cor dos Participantes Personalizada</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Cores dos Participantes Personalizadas</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Cor dos Participantes</string>
     <string name="wamod_settings_conversation_bubbles_style">Estilo</string>
     <string name="wamod_settings_conversation_bubbles_ticksstyle">Estilos dos Checks</string>
     <string name="wamod_settings_conversation_bubbles_right_color">Bolha Direita</string>
@@ -70,8 +70,8 @@
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privacidade</string>
     <string name="wamod_settings_privacy_freezelastseen">Congelar Última Visualização</string>
-    <string name="wamod_settings_privacy_hidebluetick">Não reportar mensagens lidas (checks azuis)</string>
-    <string name="wamod_settings_privacy_hidetyping">Não reportar \"escrevendo\"</string>
+    <string name="wamod_settings_privacy_hidebluetick">Não reportar a leitura de mensagens</string>
+    <string name="wamod_settings_privacy_hidetyping">Não reportar \"digitando\"</string>
     <string name="wamod_settings_privacy_alwaysonline">Sempre Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
 
@@ -83,6 +83,17 @@
     <string name="wamod_settings_wamodthemes_unlink_title">Desvincular o Dispositivo</string>
     <string name="wamod_settings_wamodthemes_unlink_message">Tem certeza de que quer desvincular o dispositivo?</string>
     <string name="wamod_settings_wamodthemes_visit">Visitar Temas WAMOD</string>
+
+<!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Avançado</string>
+    <string name="wamod_settings_advanced_nightmode">Modo Noturno</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Texto Primário</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Texto Secundário</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Fundo dos Cards</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Plano de Fundo</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Gaveta de Navegação</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Fundo Claro</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Fundo Escuro</string>
 
     <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Mais Configurações</string>
@@ -96,8 +107,7 @@
     <string name="wamod_settings_miscellaneous_app_checkupdates">Verificar Atualizações</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Restaurar Configurações Padrão</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restaurar Configurações Padrão</string>
-    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Tem certeza de que quer Restaurar as Configurações Padrão?</string>
-
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Tem certeza de que quer restaurar as configurações Padrão?</string>
 
     <!-- QTS -->
     <string name="wamod_qts">Compartilhamento Rápido de Temas (QTS)</string>
@@ -116,7 +126,7 @@
 
     <!-- Switch accounts -->
     <string name="wamod_switchaccount_prompt_title">Mudar de Conta</string>
-    <string name="wamod_switchaccount_prompt_message">Tem certeza que quer mudar de conta?</string>
+    <string name="wamod_switchaccount_prompt_message">Tem certeza de que quer trocar de conta?</string>
 
 
     <!-- Updater -->
@@ -138,6 +148,6 @@
 
     <!-- General -->
     <string name="wamod_error">Houve um erro</string>
-    <string name="wamod_error_contacting_server">Houve um erro contatando o Servidor, por favor, tente mais tarde</string>
+    <string name="wamod_error_contacting_server">Houve um erro contatando o servidor, por favor, tente mais tarde</string>
     <string name="wamod_restartwamod">Reiniciar o WAMOD</string>
 </resources>
