@@ -1,14 +1,12 @@
 package com.wamod.preference;
 
 import android.content.Context;
-import android.preference.CheckBoxPreference;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.wamod.utils;
+import com.wamod.Utils;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -41,7 +39,7 @@ public class CheckboxPreference extends android.preference.CheckBoxPreference {
         super.setChecked(checked);
         switch (getKey()) {
             case "general_darkstatusbaricons":
-                utils.loadColorsV2(activity);
+                Utils.loadColorsV2(activity);
                 break;
         }
     }
@@ -49,12 +47,12 @@ public class CheckboxPreference extends android.preference.CheckBoxPreference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        if (utils.nightModeShouldRun()) {
+        if (Utils.nightModeShouldRun()) {
             TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(utils.getDarkColor(0));
+            if (title != null) title.setTextColor(Utils.getDarkColor(0));
 
             TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(utils.getDarkColor(1));
+            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
         }
     }
 

@@ -8,4 +8,43 @@
 
     <style name="Theme.App.Home" parent="@style/Theme.App">
     </style>
+
+    <style name="Text">
+    </style>
+
+    <style name="Theme">
+    </style>
+
+    <style name="Theme.ActionBar">
+    </style>
+
+    <style name="Theme.ActionBar.SubtitleTextStyle">
+    </style>
+
+    <style name="Theme.ActionBar.TitleTextStyle">
+    </style>
+
+    <style name="Theme.ActionBar.TitleTextStyle.Condensed">
+    </style>
+
+    <style name="ListItemTitle">
+    </style>
+
+    <style name="ListItemSubtitle">
+    </style>
+
+    <style name="ScreenFooterButton">
+    </style>
+
+    <style name="FullScreenDialogSeparator">
+    </style>
+
+    <style name="List">
+    </style>
+
+    <style name="DateDivider">
+    </style>
+
+    <style name="ActionBarButtonStyle">
+    </style>
 </resources>

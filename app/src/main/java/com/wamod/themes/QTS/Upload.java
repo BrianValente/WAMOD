@@ -1,25 +1,15 @@
 package com.wamod.themes.QTS;
 
 import android.app.ProgressDialog;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Looper;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
 import com.wamod.Resources;
-import com.wamod.id;
-import com.wamod.utils;
+import com.wamod.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,10 +19,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Map;
-
-import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by brianvalente on 12/19/15.
@@ -56,111 +43,112 @@ public class Upload extends AsyncTask<Void, Void, Void> {
             // Get actual theme config ;_;
 
             // General colors
-            params.put("general_statusbarcolor",                       utils.prefs.getString("general_statusbarcolor", ""));
-            params.put("general_toolbarcolor",                         utils.prefs.getString("general_toolbarcolor", ""));
-            params.put("general_toolbartextcolor",                     utils.prefs.getString("general_toolbartextcolor", ""));
-            params.put("general_toolbarforeground",                    utils.prefs.getString("general_toolbarforeground", ""));
-            params.put("general_navbarcolor",                          utils.prefs.getString("general_navbarcolor", ""));
-            params.put("general_darkstatusbaricons",                   utils.parseBooleanToJson(utils.prefs.getBoolean("general_darkstatusbaricons", false)));
+            params.put("general_statusbarcolor",                       Utils.prefs.getString("general_statusbarcolor", ""));
+            params.put("general_toolbarcolor",                         Utils.prefs.getString("general_toolbarcolor", ""));
+            params.put("general_toolbartextcolor",                     Utils.prefs.getString("general_toolbartextcolor", ""));
+            params.put("general_toolbarforeground",                    Utils.prefs.getString("general_toolbarforeground", ""));
+            params.put("general_navbarcolor",                          Utils.prefs.getString("general_navbarcolor", ""));
+            params.put("general_darkstatusbaricons",                   Utils.parseBooleanToJson(Utils.prefs.getBoolean("general_darkstatusbaricons", false)));
 
-            params.put("nightmode_enable",                             utils.parseBooleanToJson(utils.prefs.getBoolean("nightmode_enable", false)));
-            params.put("nightmode_atnightonly",                        utils.parseBooleanToJson(utils.prefs.getBoolean("nightmode_atnightonly", false)));
+            params.put("nightmode_enable",                             Utils.parseBooleanToJson(Utils.prefs.getBoolean("nightmode_enable", false)));
+            params.put("nightmode_atnightonly",                        Utils.parseBooleanToJson(Utils.prefs.getBoolean("nightmode_atnightonly", false)));
 
 
             // Home
 
-            params.put("home_theme",                                   utils.prefs.getString("home_theme", ""));
-            params.put("home_tabsindicatorcolor",                      utils.prefs.getString("home_tabsindicatorcolor", ""));
-            params.put("home_drawer_dark",                             utils.parseBooleanToJson(utils.prefs.getBoolean("home_drawer_dark", false)));
-            params.put("home_drawer_blackheadertext",                  utils.parseBooleanToJson(utils.prefs.getBoolean("home_drawer_blackheadertext", false)));
-            params.put("home_drawer_showsecondaccount",                utils.parseBooleanToJson(utils.prefs.getBoolean("home_drawer_showsecondaccount", false)));
+            params.put("home_theme",                                   Utils.prefs.getString("home_theme", ""));
+            params.put("home_drawer_header_style",                     Utils.prefs.getString("home_drawer_header_style", ""));
+            params.put("home_tabsindicatorcolor",                      Utils.prefs.getString("home_tabsindicatorcolor", ""));
+            params.put("home_drawer_dark",                             Utils.parseBooleanToJson(Utils.prefs.getBoolean("home_drawer_dark", false)));
+            params.put("home_drawer_blackheadertext",                  Utils.parseBooleanToJson(Utils.prefs.getBoolean("home_drawer_blackheadertext", false)));
+            params.put("home_drawer_showsecondaccount",                Utils.parseBooleanToJson(Utils.prefs.getBoolean("home_drawer_showsecondaccount", false)));
 
-            params.put("home_bottomnavigationbar_autocolor",           utils.parseBooleanToJson(utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", false)));
-            params.put("home_bottomnavigationbar_colors_bg",           utils.prefs.getString("home_bottomnavigationbar_colors_bg", ""));
-            params.put("home_bottomnavigationbar_colors_activeitem",   utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", ""));
-            params.put("home_bottomnavigationbar_colors_inactiveitem", utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", ""));
+            params.put("home_bottomnavigationbar_autocolor",           Utils.parseBooleanToJson(Utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", false)));
+            params.put("home_bottomnavigationbar_colors_bg",           Utils.prefs.getString("home_bottomnavigationbar_colors_bg", ""));
+            params.put("home_bottomnavigationbar_colors_activeitem",   Utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", ""));
+            params.put("home_bottomnavigationbar_colors_inactiveitem", Utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", ""));
 
 
             // Conversation
 
-            params.put("conversation_style_toolbar",                   utils.prefs.getString("conversation_style_toolbar", ""));
-            params.put("conversation_hideprofilephoto",                utils.parseBooleanToJson(utils.prefs.getBoolean("conversation_hideprofilephoto", false)));
-            params.put("conversation_hidetoolbarattach",               utils.parseBooleanToJson(utils.prefs.getBoolean("conversation_hidetoolbarattach", false)));
-            params.put("conversation_toolbarexit",                     utils.parseBooleanToJson(utils.prefs.getBoolean("conversation_toolbarexit", false)));
-            params.put("conversation_rightbubblecolor",                utils.prefs.getString("conversation_rightbubblecolor", ""));
-            params.put("conversation_rightbubbletextcolor",            utils.prefs.getString("conversation_rightbubbletextcolor", ""));
-            params.put("conversation_rightbubbledatecolor",            utils.prefs.getString("conversation_rightbubbledatecolor", ""));
-            params.put("conversation_leftbubblecolor",                 utils.prefs.getString("conversation_leftbubblecolor", ""));
-            params.put("conversation_leftbubbletextcolor",             utils.prefs.getString("conversation_leftbubbletextcolor", ""));
-            params.put("conversation_leftbubbledatecolor",             utils.prefs.getString("conversation_leftbubbledatecolor", ""));
-            params.put("conversation_customparticipantcolorbool",      utils.parseBooleanToJson(utils.prefs.getBoolean("conversation_customparticipantcolorbool", false)));
-            params.put("conversation_customparticipantcolor",          utils.prefs.getString("conversation_customparticipantcolor", ""));
-            params.put("conversation_custombackcolorbool",             utils.parseBooleanToJson(utils.prefs.getBoolean("conversation_custombackcolorbool", false)));
-            params.put("conversation_custombackcolor",                 utils.prefs.getString("conversation_custombackcolor", ""));
-            params.put("conversation_style_bubble",                    utils.prefs.getString("conversation_style_bubble", ""));
-            params.put("conversation_style_tick",                      utils.prefs.getString("conversation_style_tick", ""));
-            params.put("conversation_style_entry",                     utils.prefs.getString("conversation_style_entry", ""));
+            params.put("conversation_style_toolbar",                   Utils.prefs.getString("conversation_style_toolbar", ""));
+            params.put("conversation_hideprofilephoto",                Utils.parseBooleanToJson(Utils.prefs.getBoolean("conversation_hideprofilephoto", false)));
+            params.put("conversation_hidetoolbarattach",               Utils.parseBooleanToJson(Utils.prefs.getBoolean("conversation_hidetoolbarattach", false)));
+            params.put("conversation_toolbarexit",                     Utils.parseBooleanToJson(Utils.prefs.getBoolean("conversation_toolbarexit", false)));
+            params.put("conversation_rightbubblecolor",                Utils.prefs.getString("conversation_rightbubblecolor", ""));
+            params.put("conversation_rightbubbletextcolor",            Utils.prefs.getString("conversation_rightbubbletextcolor", ""));
+            params.put("conversation_rightbubbledatecolor",            Utils.prefs.getString("conversation_rightbubbledatecolor", ""));
+            params.put("conversation_leftbubblecolor",                 Utils.prefs.getString("conversation_leftbubblecolor", ""));
+            params.put("conversation_leftbubbletextcolor",             Utils.prefs.getString("conversation_leftbubbletextcolor", ""));
+            params.put("conversation_leftbubbledatecolor",             Utils.prefs.getString("conversation_leftbubbledatecolor", ""));
+            params.put("conversation_customparticipantcolorbool",      Utils.parseBooleanToJson(Utils.prefs.getBoolean("conversation_customparticipantcolorbool", false)));
+            params.put("conversation_customparticipantcolor",          Utils.prefs.getString("conversation_customparticipantcolor", ""));
+            params.put("conversation_custombackcolorbool",             Utils.parseBooleanToJson(Utils.prefs.getBoolean("conversation_custombackcolorbool", false)));
+            params.put("conversation_custombackcolor",                 Utils.prefs.getString("conversation_custombackcolor", ""));
+            params.put("conversation_style_bubble",                    Utils.prefs.getString("conversation_style_bubble", ""));
+            params.put("conversation_style_tick",                      Utils.prefs.getString("conversation_style_tick", ""));
+            params.put("conversation_style_entry",                     Utils.prefs.getString("conversation_style_entry", ""));
 
 
             // Advanced
-            params.put("nightmode_primarytextcolor",                   utils.prefs.getString("nightmode_primarytextcolor", ""));
-            params.put("nightmode_secondarytextcolor",                 utils.prefs.getString("nightmode_secondarytextcolor", ""));
-            params.put("nightmode_backgroundcolor",                    utils.prefs.getString("nightmode_backgroundcolor", ""));
-            params.put("nightmode_cardsbackgroundcolor",               utils.prefs.getString("nightmode_cardsbackgroundcolor", ""));
-            params.put("drawer_light_background",                      utils.prefs.getString("drawer_light_background", ""));
-            params.put("drawer_dark_background",                       utils.prefs.getString("drawer_dark_background", ""));
+            params.put("nightmode_primarytextcolor",                   Utils.prefs.getString("nightmode_primarytextcolor", ""));
+            params.put("nightmode_secondarytextcolor",                 Utils.prefs.getString("nightmode_secondarytextcolor", ""));
+            params.put("nightmode_backgroundcolor",                    Utils.prefs.getString("nightmode_backgroundcolor", ""));
+            params.put("nightmode_cardsbackgroundcolor",               Utils.prefs.getString("nightmode_cardsbackgroundcolor", ""));
+            params.put("drawer_light_background",                      Utils.prefs.getString("drawer_light_background", ""));
+            params.put("drawer_dark_background",                       Utils.prefs.getString("drawer_dark_background", ""));
 
             // WAMOD
 
-            params.put("theme_wamod_conversation_entry_bgcolor",       utils.prefs.getString("theme_wamod_conversation_entry_bgcolor", ""));
-            params.put("theme_wamod_conversation_entry_entrybgcolor",  utils.prefs.getString("theme_wamod_conversation_entry_entrybgcolor", ""));
-            params.put("theme_wamod_conversation_entry_hinttextcolor", utils.prefs.getString("theme_wamod_conversation_entry_hinttextcolor", ""));
-            params.put("theme_wamod_conversation_entry_textcolor",     utils.prefs.getString("theme_wamod_conversation_entry_textcolor", ""));
-            params.put("theme_wamod_conversation_entry_emojibtncolor", utils.prefs.getString("theme_wamod_conversation_entry_emojibtncolor", ""));
-            params.put("theme_wamod_conversation_entry_btncolor",      utils.prefs.getString("theme_wamod_conversation_entry_btncolor", ""));
-            params.put("theme_wamod_conversation_entry_sendbtncolor",  utils.prefs.getString("theme_wamod_conversation_entry_sendbtncolor", ""));
+            params.put("theme_wamod_conversation_entry_bgcolor",       Utils.prefs.getString("theme_wamod_conversation_entry_bgcolor", ""));
+            params.put("theme_wamod_conversation_entry_entrybgcolor",  Utils.prefs.getString("theme_wamod_conversation_entry_entrybgcolor", ""));
+            params.put("theme_wamod_conversation_entry_hinttextcolor", Utils.prefs.getString("theme_wamod_conversation_entry_hinttextcolor", ""));
+            params.put("theme_wamod_conversation_entry_textcolor",     Utils.prefs.getString("theme_wamod_conversation_entry_textcolor", ""));
+            params.put("theme_wamod_conversation_entry_emojibtncolor", Utils.prefs.getString("theme_wamod_conversation_entry_emojibtncolor", ""));
+            params.put("theme_wamod_conversation_entry_btncolor",      Utils.prefs.getString("theme_wamod_conversation_entry_btncolor", ""));
+            params.put("theme_wamod_conversation_entry_sendbtncolor",  Utils.prefs.getString("theme_wamod_conversation_entry_sendbtncolor", ""));
 
 
             // Hangouts
 
-            params.put("theme_hangouts_conversation_entry_bgcolor",    utils.prefs.getString("theme_hangouts_conversation_entry_bgcolor", ""));
-            params.put("theme_hangouts_conversation_entry_hintcolor",  utils.prefs.getString("theme_hangouts_conversation_entry_hintcolor", ""));
-            params.put("theme_hangouts_conversation_entry_textcolor",  utils.prefs.getString("theme_hangouts_conversation_entry_textcolor", ""));
-            params.put("theme_hangouts_conversation_attach_color",     utils.prefs.getString("theme_hangouts_conversation_attach_color", ""));
-            params.put("theme_hangouts_conversation_mic_bg",           utils.prefs.getString("theme_hangouts_conversation_mic_bg", ""));
-            params.put("theme_hangouts_conversation_mic_color",        utils.prefs.getString("theme_hangouts_conversation_mic_color", ""));
-            params.put("theme_hangouts_conversation_send_bg",          utils.prefs.getString("theme_hangouts_conversation_send_bg", ""));
-            params.put("theme_hangouts_conversation_send_color",       utils.prefs.getString("theme_hangouts_conversation_send_color", ""));
+            params.put("theme_hangouts_conversation_entry_bgcolor",    Utils.prefs.getString("theme_hangouts_conversation_entry_bgcolor", ""));
+            params.put("theme_hangouts_conversation_entry_hintcolor",  Utils.prefs.getString("theme_hangouts_conversation_entry_hintcolor", ""));
+            params.put("theme_hangouts_conversation_entry_textcolor",  Utils.prefs.getString("theme_hangouts_conversation_entry_textcolor", ""));
+            params.put("theme_hangouts_conversation_attach_color",     Utils.prefs.getString("theme_hangouts_conversation_attach_color", ""));
+            params.put("theme_hangouts_conversation_mic_bg",           Utils.prefs.getString("theme_hangouts_conversation_mic_bg", ""));
+            params.put("theme_hangouts_conversation_mic_color",        Utils.prefs.getString("theme_hangouts_conversation_mic_color", ""));
+            params.put("theme_hangouts_conversation_send_bg",          Utils.prefs.getString("theme_hangouts_conversation_send_bg", ""));
+            params.put("theme_hangouts_conversation_send_color",       Utils.prefs.getString("theme_hangouts_conversation_send_color", ""));
 
 
             // Simple
 
-            params.put("theme_simple_conversation_bgcolor",            utils.prefs.getString("theme_simple_conversation_bgcolor", ""));
-            params.put("theme_simple_conversation_entry_hintcolor",    utils.prefs.getString("theme_simple_conversation_entry_hintcolor", ""));
-            params.put("theme_simple_conversation_entry_textcolor",    utils.prefs.getString("theme_simple_conversation_entry_textcolor", ""));
-            params.put("theme_simple_conversation_mic_color",          utils.prefs.getString("theme_simple_conversation_mic_color", ""));
-            params.put("theme_simple_conversation_send_color",         utils.prefs.getString("theme_simple_conversation_send_color", ""));
+            params.put("theme_simple_conversation_bgcolor",            Utils.prefs.getString("theme_simple_conversation_bgcolor", ""));
+            params.put("theme_simple_conversation_entry_hintcolor",    Utils.prefs.getString("theme_simple_conversation_entry_hintcolor", ""));
+            params.put("theme_simple_conversation_entry_textcolor",    Utils.prefs.getString("theme_simple_conversation_entry_textcolor", ""));
+            params.put("theme_simple_conversation_mic_color",          Utils.prefs.getString("theme_simple_conversation_mic_color", ""));
+            params.put("theme_simple_conversation_send_color",         Utils.prefs.getString("theme_simple_conversation_send_color", ""));
 
 
             // Mood
 
-            params.put("theme_mood_conversation_background_color",     utils.prefs.getString("theme_mood_conversation_background_color", ""));
-            params.put("theme_mood_conversation_entry_hintcolor",      utils.prefs.getString("theme_mood_conversation_entry_hintcolor", ""));
-            params.put("theme_mood_conversation_entry_textcolor",      utils.prefs.getString("theme_mood_conversation_entry_textcolor", ""));
-            params.put("theme_mood_conversation_mic_color",            utils.prefs.getString("theme_mood_conversation_mic_color", ""));
-            params.put("theme_mood_conversation_send_color",           utils.prefs.getString("theme_mood_conversation_send_color", ""));
-            params.put("theme_mood_conversation_emoji_color",          utils.prefs.getString("theme_mood_conversation_emoji_color", ""));
+            params.put("theme_mood_conversation_background_color",     Utils.prefs.getString("theme_mood_conversation_background_color", ""));
+            params.put("theme_mood_conversation_entry_hintcolor",      Utils.prefs.getString("theme_mood_conversation_entry_hintcolor", ""));
+            params.put("theme_mood_conversation_entry_textcolor",      Utils.prefs.getString("theme_mood_conversation_entry_textcolor", ""));
+            params.put("theme_mood_conversation_mic_color",            Utils.prefs.getString("theme_mood_conversation_mic_color", ""));
+            params.put("theme_mood_conversation_send_color",           Utils.prefs.getString("theme_mood_conversation_send_color", ""));
+            params.put("theme_mood_conversation_emoji_color",          Utils.prefs.getString("theme_mood_conversation_emoji_color", ""));
 
 
             // Aran
 
-            params.put("theme_aran_conversation_bgcolor",              utils.prefs.getString("theme_aran_conversation_bgcolor", ""));
-            params.put("theme_aran_conversation_entry_bgcolor",        utils.prefs.getString("theme_aran_conversation_entry_bgcolor", ""));
-            params.put("theme_aran_conversation_entry_hintcolor",      utils.prefs.getString("theme_aran_conversation_entry_hintcolor", ""));
-            params.put("theme_aran_conversation_entry_textcolor",      utils.prefs.getString("theme_aran_conversation_entry_textcolor", ""));
-            params.put("theme_aran_conversation_emoji_color",          utils.prefs.getString("theme_aran_conversation_emoji_color", ""));
-            params.put("theme_aran_conversation_mic_color",            utils.prefs.getString("theme_aran_conversation_mic_color", ""));
-            params.put("theme_aran_conversation_send_color",           utils.prefs.getString("theme_aran_conversation_send_color", ""));
+            params.put("theme_aran_conversation_bgcolor",              Utils.prefs.getString("theme_aran_conversation_bgcolor", ""));
+            params.put("theme_aran_conversation_entry_bgcolor",        Utils.prefs.getString("theme_aran_conversation_entry_bgcolor", ""));
+            params.put("theme_aran_conversation_entry_hintcolor",      Utils.prefs.getString("theme_aran_conversation_entry_hintcolor", ""));
+            params.put("theme_aran_conversation_entry_textcolor",      Utils.prefs.getString("theme_aran_conversation_entry_textcolor", ""));
+            params.put("theme_aran_conversation_emoji_color",          Utils.prefs.getString("theme_aran_conversation_emoji_color", ""));
+            params.put("theme_aran_conversation_mic_color",            Utils.prefs.getString("theme_aran_conversation_mic_color", ""));
+            params.put("theme_aran_conversation_send_color",           Utils.prefs.getString("theme_aran_conversation_send_color", ""));
 
             StringBuilder postData = new StringBuilder();
             for (Map.Entry<String,Object> param : params.entrySet()) {
@@ -177,7 +165,7 @@ public class Upload extends AsyncTask<Void, Void, Void> {
             conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
             conn.setDoOutput(true);
             conn.getOutputStream().write(postDataBytes);
-            internalResponse = utils.readStream(conn.getInputStream());
+            internalResponse = Utils.readStream(conn.getInputStream());
 
         } catch (IOException e) {}
         return null;
@@ -199,10 +187,10 @@ l
         try {
             JSONObject jObj = new JSONObject(internalResponse);
             String themeID = jObj.getString("theme_id");
-            utils.copyToClipboard(themeID);
-            Toast.makeText(activity, utils.context.getResources().getString(Resources.string.wamod_qts_upload_success, themeID), Toast.LENGTH_LONG).show();
+            Utils.copyToClipboard(themeID);
+            Toast.makeText(activity, Utils.context.getResources().getString(Resources.string.wamod_qts_upload_success, themeID), Toast.LENGTH_LONG).show();
         } catch (JSONException e) {
-            Toast.makeText(activity, utils.context.getResources().getString(Resources.string.wamod_error), Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, Utils.context.getResources().getString(Resources.string.wamod_error), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -210,7 +198,7 @@ l
     protected void onPreExecute() {
         progress = ProgressDialog.show(activity, "Loading...", "", true);
         try {
-            Signature sign = utils.context.getPackageManager().getPackageInfo(utils.context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
+            Signature sign = Utils.context.getPackageManager().getPackageInfo(Utils.context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
             if (sign.hashCode() == -282729318) official = true;
         } catch (PackageManager.NameNotFoundException e) {
             throw new RuntimeException(e);

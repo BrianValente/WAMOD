@@ -1,6 +1,5 @@
 package com.wamod;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -45,6 +44,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.wamod.settings.Activity;
 import com.wamod.themes.CheckIn;
 import com.whatsapp.*;
 import com.whatsapp.registration.a;
@@ -75,13 +75,13 @@ import io.fabric.sdk.android.Fabric;
 /**
  * Created by brianvalente on 7/8/15.
  */
-public class utils extends Activity {
+public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.2";
+    public static String wamodVersionName = "1.3 RC1";
     public static int wamodVersionCode = 29;
     public static Context context;
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     public static long timeSinceLastCheckin = 0;
 
@@ -93,38 +93,38 @@ public class utils extends Activity {
 
     public static boolean switchReady = false;
 
-    public static List<chat> openedChats = new ArrayList<chat>();
+    public static List<Chat> openedChats = new ArrayList<Chat>();
 
 
     public static void loadColors(android.support.v7.app.ActionBar actionBar, Window window) {
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"))));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff"))));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            window.setStatusBarColor(Color.parseColor("#" + utils.prefs.getString("general_statusbarcolor", "ffffff")));
-            window.setNavigationBarColor(Color.parseColor("#" + utils.prefs.getString("general_navbarcolor", "ffffff")));
+            window.setStatusBarColor(Color.parseColor("#" + Utils.prefs.getString("general_statusbarcolor", "ffffff")));
+            window.setNavigationBarColor(Color.parseColor("#" + Utils.prefs.getString("general_navbarcolor", "ffffff")));
         }
     }
 
     public static void loadColors(Toolbar toolbar, Window window) {
-        toolbar.setTitleTextColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "ffffff")));
-        toolbar.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff")));
+        toolbar.setTitleTextColor(Color.parseColor("#" + Utils.prefs.getString("general_toolbarforeground", "ffffff")));
+        toolbar.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff")));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            window.setStatusBarColor(Color.parseColor("#" + utils.prefs.getString("general_statusbarcolor", "ffffff")));
-            window.setNavigationBarColor(Color.parseColor("#" + utils.prefs.getString("general_navbarcolor", "ffffff")));
+            window.setStatusBarColor(Color.parseColor("#" + Utils.prefs.getString("general_statusbarcolor", "ffffff")));
+            window.setNavigationBarColor(Color.parseColor("#" + Utils.prefs.getString("general_navbarcolor", "ffffff")));
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && utils.prefs.getBoolean("general_darkstatusbaricons", false)) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Utils.prefs.getBoolean("general_darkstatusbaricons", false)) {
             toolbar.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
 
     public static void loadColors(AppCompatActivity activity) {
-        activity.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"))));
+        activity.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff"))));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            activity.getWindow().setStatusBarColor(Color.parseColor("#" + utils.prefs.getString("general_statusbarcolor", "ffffff")));
-            activity.getWindow().setNavigationBarColor(Color.parseColor("#" + utils.prefs.getString("general_navbarcolor", "ffffff")));
+            activity.getWindow().setStatusBarColor(Color.parseColor("#" + Utils.prefs.getString("general_statusbarcolor", "ffffff")));
+            activity.getWindow().setNavigationBarColor(Color.parseColor("#" + Utils.prefs.getString("general_navbarcolor", "ffffff")));
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && utils.prefs.getBoolean("general_darkstatusbaricons", false)) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Utils.prefs.getBoolean("general_darkstatusbaricons", false)) {
             activity.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
@@ -181,21 +181,21 @@ public class utils extends Activity {
                     TextView conversation_contact_name = (TextView) toolbar.findViewById(Resources.id.conversation_contact_name);
                     TextView conversation_contact_status = (TextView) toolbar.findViewById(Resources.id.conversation_contact_status);
                     up.setColorFilter(getUIColor(COLOR_FOREGROUND));
-                    conversation_contact_name.setTextColor(getUIColor(utils.COLOR_TOOLBARTEXT));
-                    conversation_contact_status.setTextColor(getUIColor(utils.COLOR_TOOLBARTEXT));
+                    conversation_contact_name.setTextColor(getUIColor(Utils.COLOR_TOOLBARTEXT));
+                    conversation_contact_status.setTextColor(getUIColor(Utils.COLOR_TOOLBARTEXT));
                 }
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 if (coloredToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
                 a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
-                if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
+                if (Utils.prefs.getBoolean("general_darkstatusbaricons", false))
                     a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 else
                     a.findViewById(android.R.id.content).setSystemUiVisibility(0);
                 if (a instanceof QuickContactActivity) a.getWindow().setStatusBarColor(Color.TRANSPARENT);
 
-                if (utils.prefs.getBoolean("overview_cardcolor", true) && !(a instanceof com.whatsapp.Conversation)) {
+                if (Utils.prefs.getBoolean("overview_cardcolor", true) && !(a instanceof com.whatsapp.Conversation)) {
                     a.setTaskDescription(new ActivityManager.TaskDescription(a.getResources().getString(Resources.string.app_name), BitmapFactory.decodeResource(a.getResources(), Resources.drawable.icon), getUIColor(COLOR_TOOLBAR)));
                 }
             }
@@ -226,25 +226,25 @@ public class utils extends Activity {
 
         try {
             if (a instanceof com.whatsapp.HomeActivity) {
-                com.wamod.HomeActivity.initHomeActivity((com.whatsapp.HomeActivity) a);
+                com.wamod.WAclass.HomeActivity.initHomeActivity((com.whatsapp.HomeActivity) a);
             } else if (a instanceof com.whatsapp.Conversation) {
-                com.wamod.Conversation.initConversation((com.whatsapp.Conversation) a);
+                com.wamod.WAclass.Conversation.initConversation((com.whatsapp.Conversation) a);
             } else if (a instanceof com.whatsapp.Settings) {
-                com.wamod.Settings._onCreate(a);
+                com.wamod.WAclass.Settings._onCreate(a);
             } else if (a instanceof com.whatsapp.ProfileInfoActivity) {
-                com.wamod.ProfileInfoActivity._onCreate(a);
+                com.wamod.WAclass.ProfileInfoActivity._onCreate(a);
             } else if (a instanceof com.whatsapp.NewGroup) {
-                com.wamod.NewGroup._onCreate(a);
+                com.wamod.WAclass.NewGroup._onCreate(a);
             } else if (a instanceof com.whatsapp.StarredMessagesActivity) {
-                com.wamod.StarredMessagesActivity._onCreate(a);
+                com.wamod.WAclass.StarredMessagesActivity._onCreate(a);
             } else if (a instanceof com.whatsapp.SetStatus) {
-                com.wamod.SetStatus._onCreate(a);
+                com.wamod.WAclass.SetStatus._onCreate(a);
             } else if (a instanceof com.whatsapp.WebSessionsActivity) {
-                com.wamod.WebSessionsActivity._onCreate(a);
+                com.wamod.WAclass.WebSessionsActivity._onCreate(a);
             } else if (a instanceof com.whatsapp.ContactInfo) {
-                com.wamod.ContactInfo._onCreate(a);
+                com.wamod.WAclass.ContactInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.GroupChatInfo) {
-                com.wamod.GroupChatInfo._onCreate(a);
+                com.wamod.WAclass.GroupChatInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.ContactPicker) {
                 com.wamod.WAclass.ContactPicker._onCreate(a);
             } else if (a instanceof com.whatsapp.MessageDetailsActivity) {
@@ -286,7 +286,7 @@ public class utils extends Activity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
                 a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
-                if (utils.prefs.getBoolean("general_darkstatusbaricons", false))
+                if (Utils.prefs.getBoolean("general_darkstatusbaricons", false))
                     a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 else
                     a.findViewById(android.R.id.content).setSystemUiVisibility(0);
@@ -297,8 +297,8 @@ public class utils extends Activity {
 
         if (a instanceof com.whatsapp.DialogToastPreferenceActivity) {
             ListView list = (ListView) a.findViewById(android.R.id.list);
-            if (list != null && utils.nightModeShouldRun()) {
-                list.setBackgroundColor(utils.getDarkColor(2));
+            if (list != null && Utils.nightModeShouldRun()) {
+                list.setBackgroundColor(Utils.getDarkColor(2));
             }
         }
     }
@@ -322,142 +322,142 @@ public class utils extends Activity {
                 value = "general_toolbartextcolor";
                 break;
         }
-        int colorint = Color.parseColor("#" + utils.prefs.getString(value, "ffffff"));
+        int colorint = Color.parseColor("#" + Utils.prefs.getString(value, "ffffff"));
         return colorint;
     }
 
     public static void tintHomeTabs(HorizontalScrollView tabs) {
-        tabs.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff")));
+        tabs.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff")));
     }
 
     public static String getDeviceID() {
-        return utils.prefs.getString("device_id", "");
+        return Utils.prefs.getString("device_id", "");
     }
 
     public static void setDeviceID(String deviceID) {
-        utils.edit.putString("device_id", deviceID);
-        utils.edit.apply();
+        Utils.edit.putString("device_id", deviceID);
+        Utils.edit.apply();
     }
 
     public static void initWAMOD() {
-        switch (utils.prefs.getInt("wamodversion", 0)) {
+        switch (Utils.prefs.getInt("wamodversion", 0)) {
             case 0:
-                utils.edit.putString("general_statusbarcolor", "0b8043");
-                utils.edit.putString("general_toolbarcolor", "0f9d58");
-                utils.edit.putString("general_toolbarforeground", "ffffff");
-                utils.edit.putString("general_navbarcolor", "555555");
-                utils.edit.putBoolean("general_darkmode", false);
-                utils.edit.putString("home_theme", "1");
-                utils.edit.putBoolean("conversation_hideprofilephoto", true);
-                utils.edit.putBoolean("conversation_hidetoolbarattach", true);
-                utils.edit.putBoolean("conversation_proximitysensor", true);
-                utils.edit.putString("conversation_rightbubblecolor", "cfd8dc");
-                utils.edit.putString("conversation_rightbubbletextcolor", "263238");
-                utils.edit.putString("conversation_rightbubbledatecolor", "263238");
-                utils.edit.putString("conversation_leftbubblecolor", "ffffff");
-                utils.edit.putString("conversation_leftbubbletextcolor", "263238");
-                utils.edit.putString("conversation_leftbubbledatecolor", "263238");
-                utils.edit.putBoolean("conversation_customparticipantcolorbool", false);
-                utils.edit.putString("conversation_customparticipantcolor", "000000");
-                utils.edit.putString("conversation_style_bubble", "7");
-                utils.edit.putString("conversation_style_tick", "1");
+                Utils.edit.putString("general_statusbarcolor", "0b8043");
+                Utils.edit.putString("general_toolbarcolor", "0f9d58");
+                Utils.edit.putString("general_toolbarforeground", "ffffff");
+                Utils.edit.putString("general_navbarcolor", "555555");
+                Utils.edit.putBoolean("general_darkmode", false);
+                Utils.edit.putString("home_theme", "1");
+                Utils.edit.putBoolean("conversation_hideprofilephoto", true);
+                Utils.edit.putBoolean("conversation_hidetoolbarattach", true);
+                Utils.edit.putBoolean("conversation_proximitysensor", true);
+                Utils.edit.putString("conversation_rightbubblecolor", "cfd8dc");
+                Utils.edit.putString("conversation_rightbubbletextcolor", "263238");
+                Utils.edit.putString("conversation_rightbubbledatecolor", "263238");
+                Utils.edit.putString("conversation_leftbubblecolor", "ffffff");
+                Utils.edit.putString("conversation_leftbubbletextcolor", "263238");
+                Utils.edit.putString("conversation_leftbubbledatecolor", "263238");
+                Utils.edit.putBoolean("conversation_customparticipantcolorbool", false);
+                Utils.edit.putString("conversation_customparticipantcolor", "000000");
+                Utils.edit.putString("conversation_style_bubble", "7");
+                Utils.edit.putString("conversation_style_tick", "1");
 
-                utils.edit.putBoolean("privacy_freezelastseen", false);
-                utils.edit.putBoolean("privacy_no2ndTick", false);
-                utils.edit.putBoolean("privacy_noBlueTick", false);
-                utils.edit.putBoolean("privacy_hideTyping", false);
-                utils.edit.putBoolean("privacy_alwaysOnline", false);
+                Utils.edit.putBoolean("privacy_freezelastseen", false);
+                Utils.edit.putBoolean("privacy_no2ndTick", false);
+                Utils.edit.putBoolean("privacy_noBlueTick", false);
+                Utils.edit.putBoolean("privacy_hideTyping", false);
+                Utils.edit.putBoolean("privacy_alwaysOnline", false);
 
-                utils.edit.putString("theme_wamod_conversation_entry_bgcolor", "ffffff");
-                utils.edit.putString("theme_wamod_conversation_entry_entrybgcolor", "cfd8dc");
-                utils.edit.putString("theme_wamod_conversation_entry_hinttextcolor", "263238");
-                utils.edit.putString("theme_wamod_conversation_entry_textcolor", "263238");
-                utils.edit.putString("theme_wamod_conversation_entry_emojibtncolor", "263238");
-                utils.edit.putString("theme_wamod_conversation_entry_btncolor", "263238");
-                utils.edit.putString("theme_wamod_conversation_entry_sendbtncolor", "263238");
+                Utils.edit.putString("theme_wamod_conversation_entry_bgcolor", "ffffff");
+                Utils.edit.putString("theme_wamod_conversation_entry_entrybgcolor", "cfd8dc");
+                Utils.edit.putString("theme_wamod_conversation_entry_hinttextcolor", "263238");
+                Utils.edit.putString("theme_wamod_conversation_entry_textcolor", "263238");
+                Utils.edit.putString("theme_wamod_conversation_entry_emojibtncolor", "263238");
+                Utils.edit.putString("theme_wamod_conversation_entry_btncolor", "263238");
+                Utils.edit.putString("theme_wamod_conversation_entry_sendbtncolor", "263238");
             case 1:
-                utils.edit.putString("theme_hangouts_conversation_entry_bgcolor", "ffffff");
-                utils.edit.putString("theme_hangouts_conversation_entry_hintcolor", "607d8b");
-                utils.edit.putString("theme_hangouts_conversation_entry_textcolor", "607d8b");
-                utils.edit.putString("theme_hangouts_conversation_attach_color", "307d8b");
-                utils.edit.putString("theme_hangouts_conversation_mic_bg", "eceff1");
-                utils.edit.putString("theme_hangouts_conversation_mic_color", "98aab4");
-                utils.edit.putString("theme_hangouts_conversation_send_bg", "0f9d58");
-                utils.edit.putString("theme_hangouts_conversation_send_color", "ffffff");
+                Utils.edit.putString("theme_hangouts_conversation_entry_bgcolor", "ffffff");
+                Utils.edit.putString("theme_hangouts_conversation_entry_hintcolor", "607d8b");
+                Utils.edit.putString("theme_hangouts_conversation_entry_textcolor", "607d8b");
+                Utils.edit.putString("theme_hangouts_conversation_attach_color", "307d8b");
+                Utils.edit.putString("theme_hangouts_conversation_mic_bg", "eceff1");
+                Utils.edit.putString("theme_hangouts_conversation_mic_color", "98aab4");
+                Utils.edit.putString("theme_hangouts_conversation_send_bg", "0f9d58");
+                Utils.edit.putString("theme_hangouts_conversation_send_color", "ffffff");
 
-                utils.edit.putBoolean("debug_disablecolorpicker", false);
+                Utils.edit.putBoolean("debug_disablecolorpicker", false);
             case 2:
-                utils.edit.putBoolean("overview_cardcolor", true);
-                utils.edit.putBoolean("overview_multiplechats", true);
-                utils.edit.putString("conversation_style_entry", "2");
-                utils.edit.putString("conversation_style_bubble_layout", "0");
+                Utils.edit.putBoolean("overview_cardcolor", true);
+                Utils.edit.putBoolean("overview_multiplechats", true);
+                Utils.edit.putString("conversation_style_entry", "2");
+                Utils.edit.putString("conversation_style_bubble_layout", "0");
             case 3:
-                utils.edit.putBoolean("conversation_custombackcolorbool", true);
-                utils.edit.putString("conversation_custombackcolor", "eceff1");
-                utils.edit.putString("conversation_style_toolbar", "2");
-                utils.edit.putBoolean("conversation_toolbarexit", false);
+                Utils.edit.putBoolean("conversation_custombackcolorbool", true);
+                Utils.edit.putString("conversation_custombackcolor", "eceff1");
+                Utils.edit.putString("conversation_style_toolbar", "2");
+                Utils.edit.putBoolean("conversation_toolbarexit", false);
             case 4:
-                utils.edit.putBoolean("general_darkstatusbaricons", false);
+                Utils.edit.putBoolean("general_darkstatusbaricons", false);
             case 5:
-                utils.edit.putBoolean("wamodthemes_constantlycheck", true);
+                Utils.edit.putBoolean("wamodthemes_constantlycheck", true);
             case 6:
-                utils.edit.putBoolean("conversation_androidgallery", true);
+                Utils.edit.putBoolean("conversation_androidgallery", true);
             case 7:
-                utils.edit.putString("theme_aran_conversation_bgcolor", "000000");
-                utils.edit.putString("theme_aran_conversation_entry_bgcolor", "222222");
-                utils.edit.putString("theme_aran_conversation_entry_hintcolor", "ffffff");
-                utils.edit.putString("theme_aran_conversation_entry_textcolor", "ffffff");
-                utils.edit.putString("theme_aran_conversation_mic_color", "ee5555");
-                utils.edit.putString("theme_aran_conversation_send_color", "ffffff");
-                utils.edit.putString("theme_aran_conversation_emoji_color", "ffffff");
+                Utils.edit.putString("theme_aran_conversation_bgcolor", "000000");
+                Utils.edit.putString("theme_aran_conversation_entry_bgcolor", "222222");
+                Utils.edit.putString("theme_aran_conversation_entry_hintcolor", "ffffff");
+                Utils.edit.putString("theme_aran_conversation_entry_textcolor", "ffffff");
+                Utils.edit.putString("theme_aran_conversation_mic_color", "ee5555");
+                Utils.edit.putString("theme_aran_conversation_send_color", "ffffff");
+                Utils.edit.putString("theme_aran_conversation_emoji_color", "ffffff");
             case 8:
-                utils.edit.putString("theme_simple_conversation_bgcolor", "ffffff");
-                utils.edit.putString("theme_simple_conversation_entry_hintcolor", "606060");
-                utils.edit.putString("theme_simple_conversation_entry_textcolor", "2a2a2a");
-                utils.edit.putString("theme_simple_conversation_mic_color", "606060");
-                utils.edit.putString("theme_simple_conversation_send_color", "606060");
-                utils.edit.putFloat("theme_simple_conversation_entry_textsize", 20);
+                Utils.edit.putString("theme_simple_conversation_bgcolor", "ffffff");
+                Utils.edit.putString("theme_simple_conversation_entry_hintcolor", "606060");
+                Utils.edit.putString("theme_simple_conversation_entry_textcolor", "2a2a2a");
+                Utils.edit.putString("theme_simple_conversation_mic_color", "606060");
+                Utils.edit.putString("theme_simple_conversation_send_color", "606060");
+                Utils.edit.putFloat("theme_simple_conversation_entry_textsize", 20);
 
-                utils.edit.putString("theme_mood_conversation_background_color", "55ffffff");
-                utils.edit.putString("theme_mood_conversation_entry_hintcolor", "000000");
-                utils.edit.putString("theme_mood_conversation_entry_textcolor", "000000");
-                utils.edit.putString("theme_mood_conversation_mic_color", "000000");
-                utils.edit.putString("theme_mood_conversation_send_color", "000000");
-                utils.edit.putString("theme_mood_conversation_emoji_color", "000000");
+                Utils.edit.putString("theme_mood_conversation_background_color", "55ffffff");
+                Utils.edit.putString("theme_mood_conversation_entry_hintcolor", "000000");
+                Utils.edit.putString("theme_mood_conversation_entry_textcolor", "000000");
+                Utils.edit.putString("theme_mood_conversation_mic_color", "000000");
+                Utils.edit.putString("theme_mood_conversation_send_color", "000000");
+                Utils.edit.putString("theme_mood_conversation_emoji_color", "000000");
             case 9:
-                utils.edit.putString("home_tabsindicatorcolor", "ffffff");
+                Utils.edit.putString("home_tabsindicatorcolor", "ffffff");
             case 12:
-                utils.edit.putBoolean("privacy_no2ndTick", false);
-                utils.edit.putBoolean("home_drawer_blackheadertext", false);
-                utils.edit.putBoolean("home_drawer_dark", true);
+                Utils.edit.putBoolean("privacy_no2ndTick", false);
+                Utils.edit.putBoolean("home_drawer_blackheadertext", false);
+                Utils.edit.putBoolean("home_drawer_dark", true);
             case 13:
-                utils.edit.putString("general_toolbartextcolor", "ffffff");
+                Utils.edit.putString("general_toolbartextcolor", "ffffff");
             case 23:
-                utils.edit.putBoolean("home_bottomnavigationbar", true);
-                utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
-                utils.edit.putString("home_bottomnavigationbar_colors_bg", "555555");
-                utils.edit.putString("home_bottomnavigationbar_colors_activeitem", "ffffff");
-                utils.edit.putString("home_bottomnavigationbar_colors_inactiveitem", "888888");
+                Utils.edit.putBoolean("home_bottomnavigationbar", true);
+                Utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
+                Utils.edit.putString("home_bottomnavigationbar_colors_bg", "555555");
+                Utils.edit.putString("home_bottomnavigationbar_colors_activeitem", "ffffff");
+                Utils.edit.putString("home_bottomnavigationbar_colors_inactiveitem", "888888");
             case 24:
-                utils.edit.putBoolean("home_bottomnavigationbar", true);
-                utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
-                utils.edit.putBoolean("home_drawer_showsecondaccount", true);
+                Utils.edit.putBoolean("home_bottomnavigationbar", true);
+                Utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
+                Utils.edit.putBoolean("home_drawer_showsecondaccount", true);
             case 27:
-                utils.edit.putString("nightmode_primarytextcolor", "ffffff");
-                utils.edit.putString("nightmode_secondarytextcolor", "aaaaaa");
-                utils.edit.putString("nightmode_backgroundcolor", "303030");
-                utils.edit.putString("nightmode_cardsbackgroundcolor", "424242");
-                utils.edit.putString("drawer_light_background", "fefefe");
-                utils.edit.putString("drawer_dark_background", "404040");
+                Utils.edit.putString("nightmode_primarytextcolor", "ffffff");
+                Utils.edit.putString("nightmode_secondarytextcolor", "aaaaaa");
+                Utils.edit.putString("nightmode_backgroundcolor", "303030");
+                Utils.edit.putString("nightmode_cardsbackgroundcolor", "424242");
+                Utils.edit.putString("drawer_light_background", "fefefe");
+                Utils.edit.putString("drawer_dark_background", "404040");
                 break;
         }
-        utils.edit.putInt("wamodversion", wamodVersionCode);
-        utils.edit.apply();
+        Utils.edit.putInt("wamodversion", wamodVersionCode);
+        Utils.edit.apply();
 
         if (!debug) {
             try {
                 Signature sign = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
-                if (sign.hashCode() == -282729318) Fabric.with(utils.context, new Crashlytics());
+                if (sign.hashCode() == -282729318) Fabric.with(Utils.context, new Crashlytics());
             } catch (PackageManager.NameNotFoundException e) {
                 throw new RuntimeException(e);
             }
@@ -472,8 +472,8 @@ public class utils extends Activity {
     }
 
     public static boolean nightModeShouldRun() {
-        if (!utils.prefs.getBoolean("nightmode_enable", false)) return false;
-        if (!utils.prefs.getBoolean("nightmode_atnightonly", false)) return true;
+        if (!Utils.prefs.getBoolean("nightmode_enable", false)) return false;
+        if (!Utils.prefs.getBoolean("nightmode_atnightonly", false)) return true;
         Boolean isNight;
         Calendar cal = Calendar.getInstance();
         int hour = cal.get(Calendar.HOUR_OF_DAY);
@@ -488,7 +488,7 @@ public class utils extends Activity {
     }
 
     public static int getTickDrawableHex(int optionID) {
-        String bubbleID = utils.prefs.getString("conversation_style_tick", "0");
+        String bubbleID = Utils.prefs.getString("conversation_style_tick", "0");
         int message_unsent,
             message_got_receipt_from_server,
             message_got_receipt_from_target,
@@ -597,17 +597,17 @@ public class utils extends Activity {
         String colorStr;
         switch (id) {
             case 0:
-                colorStr = "#" + utils.prefs.getString("nightmode_primarytextcolor", "ffffff");
+                colorStr = "#" + Utils.prefs.getString("nightmode_primarytextcolor", "ffffff");
                 break;
             case 1:
-                colorStr = "#" + utils.prefs.getString("nightmode_secondarytextcolor", "aaaaaa");
+                colorStr = "#" + Utils.prefs.getString("nightmode_secondarytextcolor", "aaaaaa");
                 break;
             default:
             case 2:
-                colorStr = "#" + utils.prefs.getString("nightmode_backgroundcolor", "303030");
+                colorStr = "#" + Utils.prefs.getString("nightmode_backgroundcolor", "303030");
                 break;
             case 3:
-                colorStr = "#" + utils.prefs.getString("nightmode_cardsbackgroundcolor", "424242");
+                colorStr = "#" + Utils.prefs.getString("nightmode_cardsbackgroundcolor", "424242");
                 break;
         }
         int color = Color.parseColor(colorStr);
@@ -618,20 +618,20 @@ public class utils extends Activity {
         boolean value = false;
         switch (id) {
             case 0:
-                value = utils.prefs.getBoolean("privacy_freezelastseen", false);
+                value = Utils.prefs.getBoolean("privacy_freezelastseen", false);
                 break;
             case 1:
-                value = utils.prefs.getBoolean("privacy_no2ndTick", false);
+                value = Utils.prefs.getBoolean("privacy_no2ndTick", false);
                 break;
             case 2:
-                value = utils.prefs.getBoolean("privacy_noBlueTick", false);
+                value = Utils.prefs.getBoolean("privacy_noBlueTick", false);
                 break;
             case 3:
-                value = utils.prefs.getBoolean("privacy_hideTyping", false);
+                value = Utils.prefs.getBoolean("privacy_hideTyping", false);
                 break;
             default:
             case 4:
-                value = utils.prefs.getBoolean("privacy_alwaysOnline", false);
+                value = Utils.prefs.getBoolean("privacy_alwaysOnline", false);
                 break;
         }
         return value;
@@ -642,7 +642,7 @@ public class utils extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                final int color = Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF"));
+                final int color = Color.parseColor("#" + Utils.prefs.getString("general_toolbarforeground", "FFFFFF"));
 
                 LinearLayoutCompat icons;
                 if ((actionbar.getChildAt(1) instanceof LinearLayoutCompat)) {
@@ -670,7 +670,7 @@ public class utils extends Activity {
     }
 
     public static Drawable tintToolbarIcon(Drawable icon) {
-        icon.setColorFilter(Color.parseColor("#" + utils.prefs.getString("general_toolbarforeground", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
+        icon.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("general_toolbarforeground", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
         return icon;
     }
 
@@ -691,9 +691,9 @@ public class utils extends Activity {
     public static void setTaskDescription(AppCompatActivity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             String title = activity.getString(Resources.string.app_name);
-            if (utils.prefs.getBoolean("overview_multiplechats", true)) title = activity.getTitle().toString();
+            if (Utils.prefs.getBoolean("overview_multiplechats", true)) title = activity.getTitle().toString();
             int color = Color.parseColor("#075e54");
-            if (utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + utils.prefs.getString("general_toolbarcolor", "ffffff"));
+            if (Utils.prefs.getBoolean("overview_cardcolor", true)) color = Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff"));
             ActivityManager.TaskDescription taskDesc = new ActivityManager.TaskDescription(title, BitmapFactory.decodeResource(activity.getResources(), Resources.drawable.icon), color);
             activity.setTaskDescription(taskDesc);
         }
@@ -717,28 +717,28 @@ public class utils extends Activity {
     }
 
     public static void restartWAMOD(Context ctx) {
-        PendingIntent intent = PendingIntent.getActivity(ctx, 0, new Intent(ctx, HomeActivity.class), PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent intent = PendingIntent.getActivity(ctx, 0, new Intent(ctx, com.wamod.WAclass.HomeActivity.class), PendingIntent.FLAG_ONE_SHOT);
         AlarmManager manager = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         manager.set(AlarmManager.RTC, System.currentTimeMillis() + 0, intent);
         System.exit(2);
     }
 
     public static void crashWAMOD(AppCompatActivity a) {
-        utils.edit.putInt("wamodversion", 0);
-        utils.edit.putBoolean("crash", true);
-        utils.edit.apply();
+        Utils.edit.putInt("wamodversion", 0);
+        Utils.edit.putBoolean("crash", true);
+        Utils.edit.apply();
 
         restartWAMOD(a);
     }
 
     public static void crashWAMOD() {
-        utils.edit.putInt("wamodversion", 0);
-        utils.edit.putBoolean("crash", true);
-        utils.edit.apply();
+        Utils.edit.putInt("wamodversion", 0);
+        Utils.edit.putBoolean("crash", true);
+        Utils.edit.apply();
     }
 
     public static void log(AppCompatActivity a, String message) {
-        if (utils.prefs.getBoolean("log_in_toasts", false)) Toast.makeText(a, message, Toast.LENGTH_LONG).show();
+        if (Utils.prefs.getBoolean("log_in_toasts", false)) Toast.makeText(a, message, Toast.LENGTH_LONG).show();
         else Log.i("WAMOD", message);
     }
 
@@ -1075,7 +1075,7 @@ public class utils extends Activity {
     }
 
     public static final int getHexID(String name, String type) {
-        return utils.context.getResources().getIdentifier(name, type, utils.context.getPackageName());
+        return Utils.context.getResources().getIdentifier(name, type, Utils.context.getPackageName());
     }
 
     public static String getVersionName() {
@@ -1087,7 +1087,7 @@ public class utils extends Activity {
     }
 
     public static void toastHome() {
-        Toast.makeText(utils.context, "Content loaded", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Utils.context, "Content loaded", Toast.LENGTH_SHORT).show();
     }
 
     public static void asdfdsf() {
@@ -1096,7 +1096,7 @@ public class utils extends Activity {
 
     public static void loadColorsBeforeSuper(AppCompatActivity a) {
         Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
-        if (a instanceof WAMODSettings) {
+        if (a instanceof Activity) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Settings);
             else a.setTheme(Resources.style.WAMOD_Theme_Settings_Day);
         } else if (a instanceof com.whatsapp.HomeActivity) {
@@ -1163,7 +1163,7 @@ public class utils extends Activity {
     }
 
     public static void copyToClipboard(String s) {
-        ClipboardManager clipboard = (ClipboardManager) utils.context.getSystemService(utils.context.CLIPBOARD_SERVICE);
+        ClipboardManager clipboard = (ClipboardManager) Utils.context.getSystemService(Utils.context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("", s);
         clipboard.setPrimaryClip(clip);
     }

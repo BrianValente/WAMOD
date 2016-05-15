@@ -2,18 +2,12 @@ package com.wamod;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -24,6 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
+import com.wamod.settings.Settings;
+import com.wamod.settings.Privacy;
 import com.whatsapp.HomeActivity;
 import com.whatsapp.NewGroup;
 import com.whatsapp.ProfileInfoActivity;
@@ -79,7 +75,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         final ViewStub wamod_drawer_header = (ViewStub) activity.findViewById(Resources.id.wamod_drawer_header);
 
         // Load header style
-        final int headerStyleID = Integer.parseInt(utils.prefs.getString("home_drawer_header_style", "0"));
+        final int headerStyleID = Integer.parseInt(Utils.prefs.getString("home_drawer_header_style", "0"));
         int headerLayoutID;
         switch (headerStyleID) {
             case 0:
@@ -93,11 +89,11 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         wamod_drawer_header.setLayoutResource(headerLayoutID);
         wamod_drawer_header.inflate();
 
-        if (utils.prefs.getBoolean("home_drawer_dark", true)) {
-            int bgColor = Color.parseColor("#" + utils.prefs.getString("drawer_dark_background", "404040"));
+        if (Utils.prefs.getBoolean("home_drawer_dark", true)) {
+            int bgColor = Color.parseColor("#" + Utils.prefs.getString("drawer_dark_background", "404040"));
             setBackgroundColor(bgColor);
         } else {
-            int bgColor = Color.parseColor("#" + utils.prefs.getString("drawer_light_background", "fefefe"));
+            int bgColor = Color.parseColor("#" + Utils.prefs.getString("drawer_light_background", "fefefe"));
             setBackgroundColor(bgColor);
         }
 
@@ -105,7 +101,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         for (int i=0; i<buttons.getChildCount(); i++) {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
                 final RelativeLayout item = (RelativeLayout) buttons.getChildAt(i);
-                if (!utils.prefs.getBoolean("home_drawer_dark", true)) {
+                if (!Utils.prefs.getBoolean("home_drawer_dark", true)) {
                     /*ImageView icon = (ImageView) item.getChildAt(0);
                     TextView label = (TextView)  item.getChildAt(1);
 
@@ -152,14 +148,14 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                             intent = new Intent(activity, com.whatsapp.Settings.class);
                             activity.startActivity(intent);
                         } else if (id == Resources.id.wamod_drawer_wamodsettings) {
-                            intent = new Intent(activity, WAMODSettingsActivity.class);
+                            intent = new Intent(activity, Settings.class);
                             activity.startActivity(intent);
                         } else if (id == Resources.id.wamod_drawer_debug1) {
-                            utils.switchAccount(getContext());
+                            Utils.switchAccount(getContext());
                         } else if (id == Resources.id.wamod_drawer_search) {
                             activity.onSearchRequested();
                         } else if (id == Resources.id.wamod_drawer_privacy) {
-                            intent = new Intent(activity, WAMODSettingsActivity_Privacy.class);
+                            intent = new Intent(activity, Privacy.class);
                             activity.startActivity(intent);
                         }
                         drawerLayout.closeDrawer(navigationView);
@@ -167,7 +163,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                 });
             } else if (buttons.getChildAt(i) instanceof LinearLayout) {
                 LinearLayout separator = (LinearLayout) buttons.getChildAt(i);
-                if (!utils.prefs.getBoolean("home_drawer_dark", true)) separator.setBackgroundColor(Color.parseColor("#55222222"));
+                if (!Utils.prefs.getBoolean("home_drawer_dark", true)) separator.setBackgroundColor(Color.parseColor("#55222222"));
             }
         }
 
@@ -175,12 +171,12 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         TextView userNumberTV                = (TextView)          findViewById(Resources.id.wamod_drawer_usernumbertv);
         CircularImageView wamod_drawer_photo = (CircularImageView) findViewById(Resources.id.wamod_drawer_photo);
 
-        userNameTV.setText(utils.getUserName(activity));
-        userNumberTV.setText(utils.getUserPhoneNumber(activity));
-        Drawable userPic = utils.getUserPicture(activity);
+        userNameTV.setText(Utils.getUserName(activity));
+        userNumberTV.setText(Utils.getUserPhoneNumber(activity));
+        Drawable userPic = Utils.getUserPicture(activity);
         if (userPic != null) wamod_drawer_photo.setImageDrawable(userPic);
 
-        if (utils.prefs.getBoolean("home_drawer_blackheadertext", false)) {
+        if (Utils.prefs.getBoolean("home_drawer_blackheadertext", false)) {
             userNameTV.setTextColor(Color.BLACK);
             userNumberTV.setTextColor(Color.BLACK);
         }
@@ -195,21 +191,21 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         });
 
         ImageView drawerHeaderBg = (ImageView) findViewById(Resources.id.wamod_drawer_bgview);
-        drawerHeaderBg.setImageDrawable(utils.getDrawerBackground(getContext()));
+        drawerHeaderBg.setImageDrawable(Utils.getDrawerBackground(getContext()));
 
         final CircularImageView wamod_drawer_header_2ndprofilepic = (CircularImageView) findViewById(Resources.id.wamod_drawer_header_2ndprofilepic);
         wamod_drawer_header_2ndprofilepic.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                utils.switchAccount(activity);
+                Utils.switchAccount(activity);
             }
         });
-        if (!utils.prefs.getBoolean("home_drawer_showsecondaccount", true)) wamod_drawer_header_2ndprofilepic.setVisibility(GONE);
-        final Drawable secondNumberProfilePhoto = utils.get2ndNumberUserPicture(getContext());
+        if (!Utils.prefs.getBoolean("home_drawer_showsecondaccount", true)) wamod_drawer_header_2ndprofilepic.setVisibility(GONE);
+        final Drawable secondNumberProfilePhoto = Utils.get2ndNumberUserPicture(getContext());
         if (secondNumberProfilePhoto != null) wamod_drawer_header_2ndprofilepic.setImageDrawable(secondNumberProfilePhoto);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            final int padding = utils.getStatusBarHeight(getContext());
+            final int padding = Utils.getStatusBarHeight(getContext());
             if (headerStyleID == 0) wamod_drawer_header_2ndprofilepic.setPadding(0, padding, 0, 0);
 
             ViewGroup userInfo = (ViewGroup) wamod_drawer_photo.getParent();
@@ -240,7 +236,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                     statusbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                         @Override
                         public void onGlobalLayout() {
-                            statusbar.setLayoutParams(new LayoutParams(NavigationDrawerGoogle.this.getWidth(), utils.getStatusBarHeight(getContext())));
+                            statusbar.setLayoutParams(new LayoutParams(NavigationDrawerGoogle.this.getWidth(), Utils.getStatusBarHeight(getContext())));
                             statusbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                         }
                     });

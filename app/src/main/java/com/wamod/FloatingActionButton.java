@@ -31,7 +31,7 @@ public class FloatingActionButton extends ImageView {
         super.onDraw(canvas);
 
         boolean lollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
-        if (lollipop) setElevation(utils.Nexus6PResToActualDevice(getContext(), 20, 20)[0]);
+        if (lollipop) setElevation(Utils.Nexus6PResToActualDevice(getContext(), 20, 20)[0]);
 
     }
 }

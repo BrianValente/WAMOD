@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.wamod.utils;
+import com.wamod.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,7 +50,7 @@ public class Download extends AsyncTask<Void, Void, Void> {
             conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
             conn.setDoOutput(true);
             conn.getOutputStream().write(postDataBytes);
-            internalResponse = utils.readStream(conn.getInputStream());
+            internalResponse = Utils.readStream(conn.getInputStream());
 
         } catch (IOException e) {}
         return null;
@@ -82,6 +82,7 @@ public class Download extends AsyncTask<Void, Void, Void> {
             // Home
 
             putString(jObj, "home_theme");
+            putString(jObj, "home_drawer_header_style");
             putString(jObj, "home_tabsindicatorcolor");
             putBoolean(jObj, "home_drawer_dark");
             putBoolean(jObj, "home_drawer_blackheadertext");
@@ -174,7 +175,7 @@ public class Download extends AsyncTask<Void, Void, Void> {
             putString(jObj, "theme_aran_conversation_mic_color");
             putString(jObj, "theme_aran_conversation_send_color");
 
-            if (utils.edit.commit()) utils.restartWAMOD(utils.context);
+            if (Utils.edit.commit()) Utils.restartWAMOD(Utils.context);
         } catch (JSONException e) {
             Toast.makeText(activity, "There was an error, sorry about that :(", Toast.LENGTH_LONG).show();
         }
@@ -189,13 +190,13 @@ public class Download extends AsyncTask<Void, Void, Void> {
 
     private void putString(JSONObject jObj, String s) {
         try {
-            utils.edit.putString(s, jObj.getString(s));
+            Utils.edit.putString(s, jObj.getString(s));
         } catch (JSONException e) {}
     }
 
     private void putBoolean(JSONObject jObj, String s) {
         try {
-            utils.edit.putBoolean(s, utils.parseJsonBoolean(jObj.getString(s)));
+            Utils.edit.putBoolean(s, Utils.parseJsonBoolean(jObj.getString(s)));
         } catch (JSONException e) {}
     }
 }

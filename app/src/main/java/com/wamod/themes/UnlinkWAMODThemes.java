@@ -1,19 +1,12 @@
 package com.wamod.themes;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.wamod.Resources;
-import com.wamod.utils;
+import com.wamod.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,7 +29,7 @@ public class UnlinkWAMODThemes extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... paramss) {
         // Get phone info
-        String deviceID = utils.getDeviceID();
+        String deviceID = Utils.getDeviceID();
 
         try {
             URL url = new URL("http://wamod.ml/api/api.php");
@@ -59,7 +52,7 @@ public class UnlinkWAMODThemes extends AsyncTask<Void, Void, Void> {
             conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
             conn.setDoOutput(true);
             conn.getOutputStream().write(postDataBytes);
-            internalResponse = utils.readStream(conn.getInputStream());
+            internalResponse = Utils.readStream(conn.getInputStream());
 
         } catch (IOException e) {}
         return null;

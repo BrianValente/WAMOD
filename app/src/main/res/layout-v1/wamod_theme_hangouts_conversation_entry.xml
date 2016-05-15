@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.whatsapp.util.ClippingLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@id/footer"
+        android:gravity="bottom">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="92dp"
+            android:background="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="40dp"
+            android:id="@id/input_layout">
+            <com.whatsapp.ConversationTextEntry
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/type_a_message"
+                android:textColorHint="#607d8b"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:paddingTop="7.5dp"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:paddingBottom="10dp"
+                android:id="@id/entry"
+                android:text=""
+                android:textColor="#000000"
+                android:maxLines="6"
+                android:background="@android:color/transparent"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="3dp"
+            android:layout_gravity="bottom">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/wamod_theme_hangouts_conversation_gallery"
+                android:tintMode="multiply"
+                android:tint="#607d8b"
+                android:scaleType="centerInside"
+                android:id="@id/wamod_theme_hangouts_conversation_gallery"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="0dp" />
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/wamod_theme_hangouts_conversation_camera"
+                android:tintMode="multiply"
+                android:tint="#607d8b"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="6dp"
+                android:id="@id/wamod_theme_hangouts_conversation_camera"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="0dp" />
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/wamod_theme_hangouts_conversation_emoji"
+                android:tintMode="multiply"
+                android:tint="#607d8b"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="6dp"
+                android:id="@id/wamod_theme_hangouts_conversation_emoji"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="0dp" />
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/wamod_theme_hangouts_conversation_location"
+                android:tintMode="multiply"
+                android:tint="#607d8b"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="6dp"
+                android:id="@id/wamod_theme_hangouts_conversation_location"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="0dp" />
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/wamod_theme_hangouts_conversation_circle"
+            android:backgroundTint="#eceff1"
+            android:scaleType="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:id="@id/send"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/wamod_theme_hangouts_conversation_send"
+            android:tint="#98aab4" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/wamod_theme_hangouts_conversation_circle"
+            android:backgroundTint="#eceff1"
+            android:scaleType="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:id="@id/voice_note_btn"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/wamod_theme_hangouts_conversation_mic"
+            android:tint="#98aab4" />
+        <RelativeLayout android:id="@id/edit_layout" android:layout_height="fill_parent" android:layout_width="20.0dip" />
+    </com.whatsapp.util.ClippingLayout>
+    <TextView android:id="@id/no_participant" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <!--<RelativeLayout android:id="@id/edit_layout" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />-->
+    <FrameLayout android:id="@id/text_entry_layout" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <RelativeLayout android:id="@id/input_layout_content" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <ImageButton android:id="@id/emoji_picker_btn" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <LinearLayout android:id="@id/voice_note_layout" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <FrameLayout android:id="@id/voice_note_indicator" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <ImageView android:id="@id/voice_note_pulse" android:src="@drawable/recording_mic_pulse" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <TextView android:id="@id/voice_note_info" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <FrameLayout android:id="@id/voice_note_slide_to_cancel_scroller" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <TextView android:id="@id/voice_note_slide_to_cancel" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <View android:id="@id/voice_note_slide_to_cancel_animation" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <ImageView android:id="@id/voice_cancel_animation" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <ImageButton android:id="@id/voice_note_btn_slider" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <LinearLayout android:id="@id/voice_cancel_trashcan" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <ImageView android:id="@id/voice_cancel_trashcan_lid" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <!--<ImageButton android:id="@id/voice_note_btn" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />-->
+    <ImageView android:id="@id/voice_cancel_trashcan_lid" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <ImageButton android:id="@id/camera_btn" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone" />
+    <LinearLayout android:id="@id/buttons" android:layout_height="0.0dip" android:layout_width="0.0dip" android:visibility="gone"></LinearLayout>
+    <TextView android:id="@id/voice_note_tip" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <FrameLayout android:id="@id/web_page_preview_holder" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ViewStub android:layout="@layout/voice_note_view" android:id="@id/voice_note_stub" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+</merge>

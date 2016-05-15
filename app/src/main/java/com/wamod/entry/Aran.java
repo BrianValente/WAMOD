@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.wamod.Resources;
-import com.wamod.utils;
+import com.wamod.Utils;
 import com.whatsapp.Conversation;
 import com.whatsapp.api;
 
@@ -25,20 +25,20 @@ public class Aran {
         ImageButton sendBtn = (ImageButton) a.findViewById(Resources.id.send);
         EditText entryET = (EditText) a.findViewById(Resources.id.entry);
 
-        footer.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_bgcolor", "000000")));
+        footer.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_bgcolor", "000000")));
 
         Drawable inputLayoutBg = inputLayout.getBackground();
-        inputLayoutBg.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_bgcolor", "222222")), PorterDuff.Mode.MULTIPLY);
+        inputLayoutBg.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_entry_bgcolor", "222222")), PorterDuff.Mode.MULTIPLY);
         inputLayout.setBackground(inputLayoutBg);
 
-        emojiBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_emoji_color", "ffffff")), PorterDuff.Mode.MULTIPLY);
+        emojiBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_emoji_color", "ffffff")), PorterDuff.Mode.MULTIPLY);
 
-        voiceNoteBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_mic_color", "ee5555")), PorterDuff.Mode.MULTIPLY);
+        voiceNoteBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_mic_color", "ee5555")), PorterDuff.Mode.MULTIPLY);
 
-        sendBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_send_color", "ffffff")), PorterDuff.Mode.MULTIPLY);
+        sendBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_send_color", "ffffff")), PorterDuff.Mode.MULTIPLY);
 
-        entryET.setTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_textcolor", "ffffff")));
-        entryET.setHintTextColor(Color.parseColor("#" + utils.prefs.getString("theme_aran_conversation_entry_hintcolor", "ffffff")));
+        entryET.setTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_entry_textcolor", "ffffff")));
+        entryET.setHintTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_entry_hintcolor", "ffffff")));
 
         emojiBtn.setOnClickListener(new api(a));
     }

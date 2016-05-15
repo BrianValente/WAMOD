@@ -5,8 +5,6 @@
 
     <!-- WAMOD Settings -->
 
-    <public type="layout" name="activity_main" id="0x7f031000" />
-    <public type="xml" name="wamod_settings" id="0x7f061000" />
     <public type="string" name="wamod_settings" id="0x7f081000" />
 
 
@@ -18,29 +16,10 @@
 
     <!-- Strings -->
 
-    <public type="string" name="wamod_restoredefaults" id="0x7f081004" />
-    <public type="string" name="wamod_restoredefaultsprompt" id="0x7f081005" />
-    <public type="string" name="wamod_donerestartwamod" id="0x7f081006" />
-    <public type="string" name="wamod_updateavailable" id="0x7f081007" />
-    <public type="string" name="wamod_updateavailablemessage" id="0x7f081008" />
-    <public type="string" name="wamod_download" id="0x7f081009" />
-    <public type="string" name="wamod_later" id="0x7f08100a" />
-    <public type="string" name="wamod_ignorethisupdate" id="0x7f08100b" />
-    <public type="string" name="wamod_errorcontactingserver" id="0x7f08100c" />
-    <public type="string" name="wamod_uptodate" id="0x7f08100d" />
-    <public type="string" name="wamod_onlylollipopandup" id="0x7f08100e" />
-    <public type="string" name="wamod_insertahexcolorwithout" id="0x7f08100f" />
-    <public type="string" name="wamod_wamodsettings" id="0x7f081010" />
-
     <public type="string" name="wamod_crash_title" id="0x7f081011" />
     <public type="string" name="wamod_crash_message" id="0x7f081012" />
     <public type="string" name="wamod_crash_button" id="0x7f081013" />
 
-    <public type="string" name="wamod_unlinkdevice_title" id="0x7f081014" />
-    <public type="string" name="wamod_unlinkdevice_message" id="0x7f081015" />
-    <public type="string" name="wamod_loading" id="0x7f081016" />
-    <public type="string" name="wamod_done" id="0x7f081017" />
-    <public type="string" name="wamod_error" id="0x7f081018" />
 
     <!-- Array options -->
 
@@ -227,40 +206,6 @@
     <!-- Home themes -->
     <public type="layout" name="wamod_theme_stockwcounterphoto_conversations_row" id="0x7f031010" />
     <public type="layout" name="wamod_theme_telegram_conversations_row" id="0x7f031011" />
-
-
-
-    <!-- Color picker -->
-
-    <public type="id" name="ambilwarna_alphaCheckered" id="0x7f101017" />
-    <public type="id" name="ambilwarna_alphaCursor" id="0x7f101018" />
-    <public type="id" name="ambilwarna_cursor" id="0x7f101019" />
-    <public type="id" name="ambilwarna_dialogView" id="0x7f10101a" />
-    <public type="id" name="ambilwarna_newColor" id="0x7f10101b" />
-    <public type="id" name="ambilwarna_oldColor" id="0x7f10101c" />
-    <public type="id" name="ambilwarna_overlay" id="0x7f10101d" />
-    <public type="id" name="ambilwarna_pref_widget_box" id="0x7f10101e" />
-    <public type="id" name="ambilwarna_state" id="0x7f10101f" />
-    <public type="id" name="ambilwarna_target" id="0x7f101020" />
-    <public type="id" name="ambilwarna_viewContainer" id="0x7f101021" />
-    <public type="id" name="ambilwarna_viewHue" id="0x7f101022" />
-    <public type="id" name="ambilwarna_viewSatBri" id="0x7f101023" />
-
-    <public type="layout" name="ambilwarna_dialog" id="0x7f031012" />
-    <public type="layout" name="ambilwarna_pref_widget" id="0x7f031013" />
-
-    <public type="drawable" name="ambilwarna_alphacheckered" id="0x7f02104e" />
-    <public type="drawable" name="ambilwarna_alphacheckered_tiled" id="0x7f02104f" />
-    <public type="drawable" name="ambilwarna_arrow_down" id="0x7f021050" />
-    <public type="drawable" name="ambilwarna_arrow_right" id="0x7f021051" />
-    <public type="drawable" name="ambilwarna_cursor" id="0x7f021052" />
-    <public type="drawable" name="ambilwarna_hue" id="0x7f021053" />
-    <public type="drawable" name="ambilwarna_target" id="0x7f021054" />
-
-    <public type="dimen" name="ambilwarna_hsvHeight" id="0x7f0b1000" />
-    <public type="dimen" name="ambilwarna_hsvWidth" id="0x7f0b1001" />
-    <public type="dimen" name="ambilwarna_hueWidth" id="0x7f0b1002" />
-    <public type="dimen" name="ambilwarna_spacer" id="0x7f0b1003" />
 
 
     <!-- Home drawer -->

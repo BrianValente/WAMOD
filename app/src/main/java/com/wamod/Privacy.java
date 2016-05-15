@@ -2,8 +2,6 @@ package com.wamod;
 
 import android.util.Log;
 
-import com.whatsapp.protocol.l;
-
 /**
  * Created by brianvalente on 5/8/16.
  */
@@ -13,7 +11,7 @@ public class Privacy {
     public static boolean blueTick(com.whatsapp.protocol.q q, com.whatsapp.protocol.p p, String str1, String str2, String[] str3, String str4) {
         // Returns TRUE if the "Hide blue tick" option is DISABLED
         log(p, str1, str2, str3, str4);
-        if (utils.prefs.getBoolean("privacy_noBlueTick", false)) {
+        if (Utils.prefs.getBoolean("privacy_noBlueTick", false)) {
             str1 = str4;
             //str2 = "";
             q.a(p, str1, str2, str3, str4);

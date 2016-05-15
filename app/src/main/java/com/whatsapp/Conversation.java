@@ -7,7 +7,7 @@ public class Conversation extends DialogToastActivity {
     public String a8; // Contact's number
 
     public void callInitConversation() {
-        com.wamod.Conversation.initConversation(this);
+        com.wamod.WAclass.Conversation.initConversation(this);
     }
 
     // Opens Android Gallery
@@ -25,7 +25,7 @@ public class Conversation extends DialogToastActivity {
     public void u() {}
 
     public void onCreateOptionsMenu() {
-        com.wamod.Conversation.tintToolbarButtons(null);
+        com.wamod.WAclass.Conversation.tintToolbarButtons(null);
     }
 
     // Load contact

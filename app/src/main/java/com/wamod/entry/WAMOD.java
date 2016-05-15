@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 
 import com.wamod.Events;
 import com.wamod.Resources;
-import com.wamod.utils;
+import com.wamod.Utils;
 import com.whatsapp.*;
 
 /**
@@ -37,23 +37,23 @@ public class WAMOD {
         entry.clearFocus();
 
 
-        footer.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_bgcolor", "ffffff")));
-        bg.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_entrybgcolor", "ffffff")), PorterDuff.Mode.MULTIPLY);
+        footer.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_bgcolor", "ffffff")));
+        bg.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_entrybgcolor", "ffffff")), PorterDuff.Mode.MULTIPLY);
         inputBg.setBackground(bg);
 
-        entry.setHintTextColor(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_hinttextcolor", "ffffff")));
-        entry.setTextColor(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_textcolor", "ffffff")));
+        entry.setHintTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_hinttextcolor", "ffffff")));
+        entry.setTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_textcolor", "ffffff")));
 
-        gallery.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
-        audio.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
-        location.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
-        contact.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
-        camera.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
+        gallery.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
+        audio.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
+        location.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
+        contact.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
+        camera.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_btncolor", "ffffff")));
 
-        send.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_sendbtncolor", "ffffff")));
-        voicenote.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_sendbtncolor", "ffffff")));
+        send.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_sendbtncolor", "ffffff")));
+        voicenote.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_sendbtncolor", "ffffff")));
 
-        emojibtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_wamod_conversation_entry_emojibtncolor", "ffffff")));
+        emojibtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_wamod_conversation_entry_emojibtncolor", "ffffff")));
 
 
         final int originalPadding = entry.getPaddingRight();

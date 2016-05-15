@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/contactpicker_row_content"
+    android:layout_width="fill_parent"
+    android:layout_height="88.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatsapp="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:id="@id/contact_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16.0dip"
+        android:layout_centerVertical="true">
+        <com.whatsapp.ThumbnailButton
+            android:enabled="false"
+            android:id="@+id/contactpicker_row_photo"
+            android:layout_width="56.0dip"
+            android:layout_height="56.0dip"
+            whatsapp:tbtnRadius="@dimen/small_avatar_radius"
+            whatsapp:tbtnForegroundOnly="true" />
+    </FrameLayout>
+    <TextView
+        android:textSize="13.0sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:id="@+id/invite"
+        android:background="@drawable/btn_invite"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/list_row_padding"
+        android:text="@string/invite"
+        android:singleLine="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="88.0dip"
+        android:layout_centerVertical="true">
+        <com.whatsapp.TextEmojiLabel
+            android:id="@+id/contactpicker_row_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+        
+        <com.whatsapp.TextEmojiLabel
+            android:id="@+id/contactpicker_row_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:layout_below="@id/contactpicker_row_name"
+            android:textSize="15sp"
+            android:textColor="#ff444444"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/contactpicker_row_phone_type"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/wamod_settings_conversation_toolbar">
+        <com.wamod.preference.ThemePickerPreference
+            android:entries="@array/conversation_style_toolbar"
+            android:title="@string/wamod_settings_conversation_toolbar_style"
+            android:key="conversation_style_toolbar"
+            android:entryValues="@array/conversation_style_toolbar_values" />
+        <com.wamod.preference.CheckboxPreference
+            android:title="@string/wamod_settings_conversation_toolbar_hideprofilephoto"
+            android:key="conversation_hideprofilephoto" />
+        <com.wamod.preference.CheckboxPreference
+            android:title="@string/wamod_settings_conversation_toolbar_hideicons"
+            android:key="conversation_hidetoolbarattach" />
+        <com.wamod.preference.CheckboxPreference
+            android:title="@string/wamod_settings_conversation_toolbar_closebutton"
+            android:key="conversation_toolbarexit" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/wamod_settings_conversation_layout">
+        <com.wamod.preference.SwitchPreference
+            android:title="@string/wamod_settings_conversation_layout_custombackgroundcolor_enable"
+            android:key="conversation_custombackcolorbool"
+            android:summary="" />
+        <com.wamod.preference.ColorPickerPreference
+            app:wamod_supportsAlpha="false"
+            android:title="@string/wamod_settings_conversation_layout_custombackgroundcolor"
+            android:key="conversation_custombackcolor"
+            android:summary="" />
+        <com.wamod.preference.ThemePickerPreference
+            android:entries="@array/conversation_style_entry"
+            android:title="@string/wamod_settings_conversation_layout_entry_style"
+            android:key="conversation_style_entry"
+            android:summary=""
+            android:entryValues="@array/conversation_style_entry_values" />
+        <com.wamod.preference.ActionPreference
+            android:title="@string/wamod_settings_conversation_layout_entry_config"
+            android:key="conversation_style_entry_config" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Bubbles">
+        <com.wamod.preference.Preference
+            android:title="@string/wamod_settings_conversation_bubbles_personalize">
+            <intent
+                android:targetClass="com.wamod.settings.Bubbles"
+                android:targetPackage="com.whatsapp"/>
+        </com.wamod.preference.Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -152,4 +152,5 @@
     <string name="wamod_error">There was an error</string>
     <string name="wamod_error_contacting_server">There was an error contacting the server, please try again later</string>
     <string name="wamod_restartwamod">Restart WAMOD</string>
+    <string name="wamod_done">Done</string>
 </resources>

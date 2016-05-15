@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.wamod.preference.ThemePickerPreference
+        android:entries="@array/conversation_style_bubble"
+        android:title="@string/wamod_settings_conversation_bubbles_style"
+        android:key="conversation_style_bubble"
+        android:summary=""
+        android:entryValues="@array/conversation_style_bubble_values" />
+    <com.wamod.preference.ThemePickerPreference
+        android:entries="@array/conversation_style_tick"
+        android:title="@string/wamod_settings_conversation_bubbles_ticksstyle"
+        android:key="conversation_style_tick"
+        android:summary=""
+        android:entryValues="@array/conversation_style_tick_values" />
+
+    <com.wamod.preference.SwitchPreference
+        android:title="@string/wamod_settings_conversation_bubbles_customparticipantcolor_enable"
+        android:key="conversation_customparticipantcolorbool"
+        android:summary="" />
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_customparticipantcolor"
+        android:key="conversation_customparticipantcolor"
+        android:summary="" />
+
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_right_color"
+        android:key="conversation_rightbubblecolor"
+        android:summary="" />
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_right_textcolor"
+        android:key="conversation_rightbubbletextcolor"
+        android:summary="" />
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_right_datecolor"
+        android:key="conversation_rightbubbledatecolor"
+        android:summary="" />
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_left_color"
+        android:key="conversation_leftbubblecolor"
+        android:summary="" />
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_left_textcolor"
+        android:key="conversation_leftbubbletextcolor"
+        android:summary="" />
+    <com.wamod.preference.ColorPickerPreference
+        app:wamod_supportsAlpha="true"
+        android:title="@string/wamod_settings_conversation_bubbles_left_datecolor"
+        android:key="conversation_leftbubbledatecolor"
+        android:summary="" />
+</PreferenceScreen>

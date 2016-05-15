@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.wamod.Resources;
-import com.wamod.utils;
+import com.wamod.Utils;
 
 /**
  * Created by brianvalente on 10/4/15.
@@ -20,14 +20,14 @@ public class Simple {
 
         FrameLayout footer = (FrameLayout) a.findViewById(Resources.id.footer);
 
-        footer.setBackgroundColor(Color.parseColor("#" + utils.prefs.getString("theme_simple_conversation_bgcolor", "ffffff")));
+        footer.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("theme_simple_conversation_bgcolor", "ffffff")));
 
-        entry.setTextSize(TypedValue.COMPLEX_UNIT_DIP, utils.prefs.getFloat("theme_simple_conversation_entry_textsize", 20));
-        entry.setHintTextColor(Color.parseColor("#" + utils.prefs.getString("theme_simple_conversation_entry_hintcolor", "606060")));
-        entry.setTextColor(Color.parseColor("#" + utils.prefs.getString("theme_simple_conversation_entry_textcolor", "2a2a2a")));
+        entry.setTextSize(TypedValue.COMPLEX_UNIT_DIP, Utils.prefs.getFloat("theme_simple_conversation_entry_textsize", 20));
+        entry.setHintTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_simple_conversation_entry_hintcolor", "606060")));
+        entry.setTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_simple_conversation_entry_textcolor", "2a2a2a")));
         entry.clearFocus();
 
-        voiceNoteBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_simple_conversation_mic_color", "606060")));
-        sendBtn.setColorFilter(Color.parseColor("#" + utils.prefs.getString("theme_simple_conversation_send_color", "606060")));
+        voiceNoteBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_simple_conversation_mic_color", "606060")));
+        sendBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_simple_conversation_send_color", "606060")));
     }
 }

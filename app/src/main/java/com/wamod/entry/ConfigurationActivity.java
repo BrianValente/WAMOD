@@ -1,44 +1,32 @@
 package com.wamod.entry;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.wamod.Resources;
-import com.wamod.WAMODSettings;
-import com.wamod.id;
-import com.wamod.utils;
-
-import java.util.ArrayList;
-
-import yuku.ambilwarna.AmbilWarnaDialog;
+import com.wamod.settings.Activity;
+import com.wamod.Utils;
 
 /**
  * Created by brianvalente on 12/22/15.
  */
-public class ConfigurationActivity extends WAMODSettings {
+public class ConfigurationActivity extends Activity {
     static Context ctx;
     static AppCompatActivity a;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        utils.loadColorsBeforeSuper(this);
+        Utils.loadColorsBeforeSuper(this);
         super.onCreate(savedInstanceState);
         ctx = this;
         getFragmentManager().beginTransaction().replace(android.R.id.content, new WAMODSettingsFragment()).commit();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         a = this;
-        utils.loadColorsV2(this);
+        Utils.loadColorsV2(this);
     }
 
     public static class WAMODSettingsFragment extends PreferenceFragment {
@@ -46,7 +34,7 @@ public class ConfigurationActivity extends WAMODSettings {
         public void onCreate(Bundle paramBundle) {
             super.onCreate(paramBundle);
             getPreferenceManager().setSharedPreferencesName("wamod");
-            switch (utils.prefs.getString("conversation_style_entry", "")) {
+            switch (Utils.prefs.getString("conversation_style_entry", "")) {
                 case "0":
                     Stock();
                     break;

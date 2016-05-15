@@ -1,29 +1,13 @@
 package com.wamod.preference;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.preference.ListPreference;
-import android.preference.Preference;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.wamod.utils;
-
-import yuku.ambilwarna.AmbilWarnaDialog;
+import com.wamod.Utils;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -59,7 +43,7 @@ public class ThemePickerPreference extends ListPreference {
             String themeName = items[themeid];
             setSummary(themeName);
         } catch (Exception e) {
-            utils.manageException(e);
+            Utils.manageException(e);
         }
     }
 
@@ -72,12 +56,12 @@ public class ThemePickerPreference extends ListPreference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        if (utils.nightModeShouldRun()) {
+        if (Utils.nightModeShouldRun()) {
             TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(utils.getDarkColor(0));
+            if (title != null) title.setTextColor(Utils.getDarkColor(0));
 
             TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(utils.getDarkColor(1));
+            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
         }
     }
 }

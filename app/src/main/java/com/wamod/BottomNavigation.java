@@ -2,27 +2,21 @@ package com.wamod;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
-import android.view.animation.Interpolator;
-import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Scroller;
 import android.widget.TextView;
 import com.whatsapp.HomeActivity;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
@@ -41,8 +35,8 @@ public class BottomNavigation extends LinearLayout {
     int backgroundColor;
     int activeItem;
     boolean firstAnim = true;
-    float labelMultiplier = utils.Nexus6PResToActualDevice(this.getContext(), 9, 9)[0];
-    float iconMultiplier = utils.Nexus6PResToActualDevice(this.getContext(), 5, 5)[0];
+    float labelMultiplier = Utils.Nexus6PResToActualDevice(this.getContext(), 9, 9)[0];
+    float iconMultiplier = Utils.Nexus6PResToActualDevice(this.getContext(), 5, 5)[0];
 
     public BottomNavigation(Context context) {
         super(context);
@@ -237,23 +231,23 @@ public class BottomNavigation extends LinearLayout {
 
     private void loadColors() {
         try {
-            if (utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", true)) {
-                if (utils.nightModeShouldRun()) {
-                    backgroundColor = utils.getDarkColor(2);
-                    inactiveColor = utils.getDarkColor(1);
+            if (Utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", true)) {
+                if (Utils.nightModeShouldRun()) {
+                    backgroundColor = Utils.getDarkColor(2);
+                    inactiveColor = Utils.getDarkColor(1);
                 } else {
                     backgroundColor = Color.WHITE;
                     inactiveColor = Color.parseColor("#555555");
                 }
-                activeColor = utils.getUIColor(utils.COLOR_TOOLBAR);
+                activeColor = Utils.getUIColor(Utils.COLOR_TOOLBAR);
             } else {
-                backgroundColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_bg", "FFFFFF"));
-                activeColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", "000000"));
-                inactiveColor = Color.parseColor("#" + utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", "555555"));
+                backgroundColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_bg", "FFFFFF"));
+                activeColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", "000000"));
+                inactiveColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", "555555"));
             }
             setBackgroundColor(backgroundColor);
         } catch (Exception e) {
-            utils.manageException(e);
+            Utils.manageException(e);
         }
     }
 }

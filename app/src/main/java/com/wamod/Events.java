@@ -35,7 +35,7 @@ public class Events {
             this.btn = new Button(conversation);
         }
         public void attachFromGallery() {
-            if (utils.prefs.getBoolean("conversation_androidgallery", true))
+            if (Utils.prefs.getBoolean("conversation_androidgallery", true))
                  attachPhotoUsingAndroidGallery();
             else attachPhotoUsingStockGallery();
         }
