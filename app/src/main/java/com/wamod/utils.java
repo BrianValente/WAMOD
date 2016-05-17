@@ -587,22 +587,33 @@ public class Utils extends android.app.Activity {
 
     public static int getDarkColor(int id) {
         String colorStr;
+        int color;
         switch (id) {
             case 0:
-                colorStr = "#" + Utils.prefs.getString("nightmode_primarytextcolor", "ffffff");
+                colorStr = Utils.prefs.getString("nightmode_primarytextcolor", "ffffff");
+                if (colorStr.contentEquals("")) colorStr = "ffffff";
                 break;
             case 1:
-                colorStr = "#" + Utils.prefs.getString("nightmode_secondarytextcolor", "aaaaaa");
+                colorStr = Utils.prefs.getString("nightmode_secondarytextcolor", "aaaaaa");
+                if (colorStr.contentEquals("")) colorStr = "aaaaaa";
                 break;
             default:
             case 2:
-                colorStr = "#" + Utils.prefs.getString("nightmode_backgroundcolor", "303030");
+                colorStr = Utils.prefs.getString("nightmode_backgroundcolor", "303030");
+                if (colorStr.contentEquals("")) colorStr = "303030";
                 break;
             case 3:
-                colorStr = "#" + Utils.prefs.getString("nightmode_cardsbackgroundcolor", "424242");
+                colorStr = Utils.prefs.getString("nightmode_cardsbackgroundcolor", "424242");
+                if (colorStr.contentEquals("")) colorStr = "424242";
                 break;
         }
-        int color = Color.parseColor(colorStr);
+        colorStr = "#" + colorStr;
+        try {
+            color = Color.parseColor(colorStr);
+        } catch (Exception e) {
+            manageException(e);
+            color = Color.WHITE;
+        }
         return color;
     }
 
