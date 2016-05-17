@@ -7,7 +7,7 @@
         android:layout_width="fill_parent"
         android:layout_height="6dp"
         android:background="@drawable/wamod_bottomnav_shadow"/>
-    <com.wamod.BottomNavigation
+    <com.wamod.view.BottomNavigation
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
@@ -85,5 +85,5 @@
                 android:textSize="12sp"
                 android:gravity="center"/>
         </RelativeLayout>
-    </com.wamod.BottomNavigation>
+    </com.wamod.view.BottomNavigation>
 </RelativeLayout>

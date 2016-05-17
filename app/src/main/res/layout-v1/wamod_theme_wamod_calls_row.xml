@@ -13,6 +13,6 @@
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout android:orientation="horizontal" android:id="@+id/call" android:background="@drawable/selector_orange_gradient" android:layout_width="wrap_content" android:layout_height="@dimen/conversations_row_height" android:layout_alignParentRight="true" android:layout_centerVertical="true">
-        <ImageView android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="64.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_action_call_dark" android:scaleType="center" android:tint="#ffeeeeee" android:contentDescription="@string/call" />
+        <ImageView android:id="@+id/call_btn" android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="64.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_action_call_dark" android:scaleType="center" android:tint="#ffeeeeee" android:contentDescription="@string/call" />
     </LinearLayout>
 </RelativeLayout>

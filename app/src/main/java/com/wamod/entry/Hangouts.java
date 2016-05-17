@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
-import com.wamod.Events;
 import com.wamod.Resources;
 import com.wamod.Utils;
 import com.whatsapp.*;
@@ -60,8 +59,8 @@ public class Hangouts {
             }
         });
 
-        camera.setOnClickListener(new aec(activity, true));
-        emoji.setOnClickListener(new api(activity));
-        location.setOnClickListener(new aqy(activity));
+        camera.setOnClickListener(new av(activity, true));
+        emoji.setOnClickListener(new uj(activity));
+        location.setOnClickListener(new a5i(activity));
     }
 }

@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
-import com.wamod.Events;
 import com.wamod.Resources;
 import com.wamod.Utils;
 import com.whatsapp.*;
@@ -93,10 +92,10 @@ public class WAMOD {
         });
 
 
-        gallery.setOnLongClickListener(new no(activity));
-        audio.setOnClickListener(new a8s(activity));
-        location.setOnClickListener(new aqy(activity));
-        contact.setOnClickListener(new ajg(activity));
-        camera.setOnClickListener(new aec(activity, true));
+        gallery.setOnLongClickListener(new dh(activity));
+        audio.setOnClickListener(new y5(activity));
+        location.setOnClickListener(new a5i(activity));
+        contact.setOnClickListener(new b8(activity));
+        camera.setOnClickListener(new av(activity, true));
     }
 }

@@ -276,4 +276,7 @@
     <ImageButton android:id="@id/emoji_picker_btn" android:layout_width="0.0dip" android:layout_height="0.0dip" android:visibility="gone" />
     <ImageButton android:id="@id/camera_btn" android:layout_width="0.0dip" android:layout_height="0.0dip" android:visibility="gone" />
     <ViewStub android:layout="@layout/voice_note_view" android:id="@id/voice_note_stub" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <FrameLayout android:id="@+id/web_page_preview_container" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
+    <FrameLayout android:id="@+id/quoted_message_preview_container" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
+    <FrameLayout android:id="@+id/quoted_message_preview_container" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
 </merge>

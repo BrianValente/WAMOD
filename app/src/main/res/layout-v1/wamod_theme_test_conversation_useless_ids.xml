@@ -35,4 +35,6 @@
     <LinearLayout android:id="@+id/voice_cancel_trashcan" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
     <ImageView android:id="@+id/voice_cancel_trashcan_lid" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone" />
     <ViewStub android:layout="@layout/voice_note_view" android:id="@id/voice_note_stub" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <FrameLayout android:id="@+id/web_page_preview_container" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
+    <FrameLayout android:id="@+id/quoted_message_preview_container" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
 </merge>

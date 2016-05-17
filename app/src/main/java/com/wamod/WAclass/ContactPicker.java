@@ -19,10 +19,10 @@ public class ContactPicker {
         ImageView tab3 = (ImageView) tabsContainer.getChildAt(2);
 
         a.getSupportActionBar().setElevation(0);
-        tabs.setBackgroundColor(Utils.getUIColor(Utils.COLOR_TOOLBAR));
+        if (tabs != null) tabs.setBackgroundColor(Utils.getUIColor(Utils.COLOR_TOOLBAR));
 
-        tab1.setImageDrawable(Utils.tintToColor(tab1.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
-        tab2.setImageDrawable(Utils.tintToColor(tab2.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
-        tab3.setImageDrawable(Utils.tintToColor(tab3.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
+        if (tab1 != null) tab1.setImageDrawable(Utils.tintToColor(tab1.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
+        if (tab2 != null) tab2.setImageDrawable(Utils.tintToColor(tab2.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
+        if (tab3 != null) tab3.setImageDrawable(Utils.tintToColor(tab3.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
     }
 }

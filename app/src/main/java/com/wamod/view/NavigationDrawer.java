@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
+import com.wamod.Resources;
+import com.wamod.Utils;
 import com.wamod.WAclass.NewGroup;
 import com.wamod.WAclass.ProfileInfoActivity;
 import com.wamod.WAclass.SetStatus;

@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

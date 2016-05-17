@@ -2,21 +2,33 @@ package com.wamod;
 
 import android.util.Log;
 
+import com.whatsapp.protocol.a;
+import com.whatsapp.protocol.g;
+
 /**
  * Created by brianvalente on 5/8/16.
  */
 public class Privacy {
     static boolean stringsDecoded = false;
 
-    public static boolean blueTick(com.whatsapp.protocol.q q, com.whatsapp.protocol.p p, String str1, String str2, String[] str3, String str4) {
+    public static boolean blueTick(a a, g g, String str1, String str2, String[] str3, String str4) {
         // Returns TRUE if the "Hide blue tick" option is DISABLED
-        log(p, str1, str2, str3, str4);
+        log(g, str1, str2, str3, str4);
         if (Utils.prefs.getBoolean("privacy_noBlueTick", false)) {
             str1 = str4;
             //str2 = "";
-            q.a(p, str1, str2, str3, str4);
+            a.a(g, str1, str2, str3, str4);
             return false;
         } else return true;
+    }
+
+    public static boolean hideTyping() {
+        if (Utils.prefs.getBoolean("privacy_hideTyping", false)) return true;
+        else return false;
+    }
+
+    public static void call_hideTyping() {
+        if (hideTyping()) return;
     }
 
     private void call_blueTick() {
@@ -42,17 +54,17 @@ public class Privacy {
         logStringArray(null);
     }
 
-    public static void logP(com.whatsapp.protocol.p p) {
-        Log.i("WAMOD_PRIVACY", "a: " + p.a + " -- b: " + (p.b? "true" : "false") + " -- c: " + p.c);
+    public static void logP(g g) {
+        Log.i("WAMOD_PRIVACY", "a: " + g.a + " -- b: " + (g.b? "true" : "false") + " -- c: " + g.c);
     }
 
     public static void call_logP() {
         log(null,null,null,null,null);
     }
 
-    public static void log(com.whatsapp.protocol.p p, String str1, String str2, String[] str3, String str4) {
+    public static void log(g g, String str1, String str2, String[] str3, String str4) {
         int i = 1;
-        Log.i("WAMOD_PRIVACY_READ", "a: " + p.a + " -- b: " + (p.b? "true" : "false") + " -- c: " + p.c);
+        Log.i("WAMOD_PRIVACY_READ", "a: " + g.a + " -- b: " + (g.b? "true" : "false") + " -- c: " + g.c);
         Log.i("WAMOD_PRIVACY_READ", "1: " + str1 + " -- 2: " + str2 + " -- 4: " + str4);
         if (str3 != null)
             for (String s : str3) {
@@ -62,9 +74,9 @@ public class Privacy {
         else Log.i("WAMOD_PRIVACY_READ", "String 3: NULL");
     }
 
-    public static void logReceived(com.whatsapp.protocol.p p, String str1, String str2, String[] str3, String str4) {
+    public static void logReceived(g g, String str1, String str2, String[] str3, String str4) {
         int i = 1;
-        Log.i("WAMOD_PRIVACY_RECEIVED", "a: " + p.a + " -- b: " + (p.b? "true" : "false") + " -- c: " + p.c);
+        Log.i("WAMOD_PRIVACY_RECEIVED", "a: " + g.a + " -- b: " + (g.b? "true" : "false") + " -- c: " + g.c);
         Log.i("WAMOD_PRIVACY_RECEIVED", "1: " + str1 + " -- 2: " + str2 + " -- 4: " + str4);
         if (str3 != null)
             for (String s : str3) {

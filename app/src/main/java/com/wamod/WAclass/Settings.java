@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.wamod.Resources;
-import com.wamod.SeparatorView;
+import com.wamod.view.SeparatorView;
 import com.wamod.Utils;
 
 public class Settings extends AppCompatActivity {

@@ -19,7 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.wamod.Events;
 import com.wamod.R;
 import com.wamod.Resources;
 import com.whatsapp.Conversation;
@@ -255,7 +254,7 @@ public class Test extends Conversation {
         public void onClick(View v) {
             EditText originalEditText = (EditText) a.findViewById(Resources.id.entry);
             originalEditText.setText(edittext.getText());
-            a.ai(a);
+            a.W(a);
             edittext.setText("");
         }
     }

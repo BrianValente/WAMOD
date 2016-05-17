@@ -47,7 +47,6 @@ import com.crashlytics.android.Crashlytics;
 import com.wamod.settings.Activity;
 import com.wamod.themes.CheckIn;
 import com.whatsapp.*;
-import com.whatsapp.registration.a;
 
 import org.apache.commons.io.FileUtils;
 
@@ -57,9 +56,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
@@ -78,10 +74,10 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3 RC1";
+    public static String wamodVersionName = "1.3 RC2";
     public static int wamodVersionCode = 29;
     public static Context context;
-    public static boolean debug = true;
+    public static boolean debug = false;
 
     public static long timeSinceLastCheckin = 0;
 
@@ -247,10 +243,6 @@ public class Utils extends android.app.Activity {
                 com.wamod.WAclass.GroupChatInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.ContactPicker) {
                 com.wamod.WAclass.ContactPicker._onCreate(a);
-            } else if (a instanceof com.whatsapp.MessageDetailsActivity) {
-                MessageDetailsActivity messageDetailsActivity = (MessageDetailsActivity) a;
-                com.whatsapp.protocol.l l = messageDetailsActivity.c(messageDetailsActivity);
-                Toast.makeText(a, "ID: " + l.L + ", Content: " + l.a(), Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             manageException(e);
@@ -853,7 +845,8 @@ public class Utils extends android.app.Activity {
         // 2.12.489 byte[] official = Base64.decode("w8Ar4WLq2n9/S5aonWMCGQ==", Base64.DEFAULT);
         // 2.12.551 byte[] official = Base64.decode("1E2kZOex25HvKMQPFpG1ZQ==", Base64.DEFAULT);
         // 2.16.21 byte[] official = Base64.decode("HQ3bHbhJnKQdh+B/qpAHhQ==", Base64.DEFAULT);
-        byte[] official = Base64.decode("qioEf1LzV3gfqCATDwgzGg==", Base64.DEFAULT); // 2.16.43
+        // 2.16.43 byte[] official = Base64.decode("qioEf1LzV3gfqCATDwgzGg==", Base64.DEFAULT);
+        byte[] official = Base64.decode("0M5VxNVpLgsnyqdzqdpCmQ==", Base64.DEFAULT); // 2.16.81
         return official;
     }
 
@@ -1041,7 +1034,7 @@ public class Utils extends android.app.Activity {
         return result;
     }
 
-    public static com.whatsapp.registration.a getRegistrationClass(String number) {
+    /*public static com.whatsapp.registration.a getRegistrationClass(String number) {
         Mac mac = null;
         try {
             SecretKey secretKey = getSecretKey();
@@ -1058,7 +1051,7 @@ public class Utils extends android.app.Activity {
         byte[] _final = mac.doFinal();
         Log.i("WAMOD", Base64.encodeToString(_final, Base64.DEFAULT));
         return new a(_final);
-    }
+    }*/
 
     public static void logItWorks() {
         Log.i("WAMOD", "It works!");
@@ -1186,5 +1179,9 @@ public class Utils extends android.app.Activity {
 
     public static void logThisShitFor2(String str1, String str2) {
         Log.i("WAMOD", "1: " + str1 + " ------ 2: " + str2);
+    }
+
+    public static void setTranslationYZero(View v) {
+        v.setTranslationY(0);
     }
 }

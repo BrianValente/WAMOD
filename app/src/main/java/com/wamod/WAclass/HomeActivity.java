@@ -164,27 +164,29 @@ public class HomeActivity extends AppCompatActivity {
         int conversationsRow, callsRow, contactPickerRow;
         switch (homeThemeID) {
             case 0:
-                conversationsRow = 0x7f03006c;
-                callsRow = 0x7f030031;
-                contactPickerRow = 0x7f030045;
+                // Stock
+                conversationsRow = Resources.getLayout("conversations_row");
+                callsRow = Resources.getLayout("calls_row");
+                contactPickerRow = Resources.getLayout("contact_picker_row");
                 break;
             default:
             case 1:
-                conversationsRow = 0x7f031001;
-                callsRow = 0x7f031002;
-                contactPickerRow = 0x7f031003;
+                // WAMOD
+                conversationsRow = Resources.getLayout("wamod_theme_wamod_conversations_row");
+                callsRow = Resources.getLayout("wamod_theme_wamod_calls_row");
+                contactPickerRow = Resources.getLayout("wamod_theme_wamod_contact_picker_row");
                 break;
             case 2:
                 // Stock w/ counter in photo
-                conversationsRow = 0x7f031010;
-                callsRow = 0x7f030031;
-                contactPickerRow = 0x7f030044;
+                conversationsRow = Resources.getLayout("wamod_theme_stockwcounterphoto_conversations_row");
+                callsRow = Resources.getLayout("calls_row");
+                contactPickerRow = Resources.getLayout("contact_picker_row");
                 break;
             case 3:
                 // Telegram
-                conversationsRow = 0x7f031011;
-                callsRow = 0x7f030031;
-                contactPickerRow = 0x7f030044;
+                conversationsRow = Resources.getLayout("wamod_theme_telegram_conversations_row");
+                callsRow = Resources.getLayout("calls_row");
+                contactPickerRow = Resources.getLayout("contact_picker_row");
                 break;
         }
         switch (id) {

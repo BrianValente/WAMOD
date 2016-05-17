@@ -1,10 +1,12 @@
-package com.wamod;
+package com.wamod.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
+import com.wamod.Utils;
 
 /**
  * Created by BrianValente on 3/3/16.

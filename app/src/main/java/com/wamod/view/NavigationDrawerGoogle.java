@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
+import com.wamod.Resources;
+import com.wamod.Utils;
 import com.wamod.settings.Settings;
 import com.wamod.settings.Privacy;
 import com.whatsapp.HomeActivity;
@@ -89,15 +91,19 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         wamod_drawer_header.setLayoutResource(headerLayoutID);
         wamod_drawer_header.inflate();
 
-        if (Utils.prefs.getBoolean("home_drawer_dark", true)) {
-            int bgColor = Color.parseColor("#" + Utils.prefs.getString("drawer_dark_background", "404040"));
-            setBackgroundColor(bgColor);
-        } else {
-            int bgColor = Color.parseColor("#" + Utils.prefs.getString("drawer_light_background", "fefefe"));
-            setBackgroundColor(bgColor);
+        try {
+            if (Utils.prefs.getBoolean("home_drawer_dark", true)) {
+                int bgColor = Color.parseColor("#" + Utils.prefs.getString("drawer_dark_background", "404040"));
+                setBackgroundColor(bgColor);
+            } else {
+                int bgColor = Color.parseColor("#" + Utils.prefs.getString("drawer_light_background", "fefefe"));
+                setBackgroundColor(bgColor);
+            }
+        } catch (Exception e) {
+            Utils.manageException(e);
         }
 
-        LinearLayout buttons = (LinearLayout) activity.findViewById(Resources.id.wamod_drawer_buttons);
+        LinearLayout buttons = (LinearLayout) activity.findViewById(Resources.getID("wamod_drawer_buttons"));
         for (int i=0; i<buttons.getChildCount(); i++) {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
                 final RelativeLayout item = (RelativeLayout) buttons.getChildAt(i);

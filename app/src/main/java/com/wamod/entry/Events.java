@@ -1,8 +1,9 @@
-package com.wamod;
+package com.wamod.entry;
 
 import android.view.View;
 import android.widget.Button;
 
+import com.wamod.Utils;
 import com.whatsapp.*;
 import com.whatsapp.Conversation;
 
@@ -11,19 +12,19 @@ import com.whatsapp.Conversation;
  */
 public class Events {
     public static class VoiceNoteManager {
-        agq VoiceNote;
+        m VoiceNote;
         public VoiceNoteManager(Conversation conversation) {
-            VoiceNote = new agg(conversation, conversation, conversation);
-            VoiceNote.a(conversation.a8);
+            VoiceNote = new n(conversation, conversation, conversation);
+            VoiceNote.a(conversation.V);
         }
         public void StartRecording() {
-            VoiceNote.c();
+            VoiceNote.i();
         }
         public void StopRecording() {
-            VoiceNote.b(true);
+            VoiceNote.a(true);
         }
         public void DiscardRecord() {
-            VoiceNote.b(false);
+            VoiceNote.a(false);
         }
     }
 
@@ -44,22 +45,22 @@ public class Events {
             btn.performClick();
         }
         private void attachPhotoUsingAndroidGallery() {
-            conversation.ac(conversation);
+            conversation.a(conversation);
         }
         private void attachPhotoUsingStockGallery() {
-            performClick(new fz(conversation));
+            performClick(new _y(conversation));
         }
         public void attachFromCamera() {
-            performClick(new aec(conversation, true));
+            performClick(new av(conversation, true));
         }
         public void attachAudio() {
-            performClick(new a8s(conversation));
+            performClick(new y5(conversation));
         }
         public void attachContact() {
-            performClick(new ajg(conversation));
+            performClick(new b8(conversation));
         }
         public void attachLocation() {
-            performClick(new aqy(conversation));
+            performClick(new a5i(conversation));
         }
     }
 }

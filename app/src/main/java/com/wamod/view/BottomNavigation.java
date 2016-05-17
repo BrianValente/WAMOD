@@ -1,4 +1,4 @@
-package com.wamod;
+package com.wamod.view;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -15,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.wamod.Resources;
+import com.wamod.Utils;
 import com.whatsapp.HomeActivity;
 
 import java.util.ArrayList;
