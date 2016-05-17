@@ -1,4 +1,11 @@
 <resources>
+    <!--
+    NOTES
+    Do NOT translate "WAMOD Themes" or "Quick Theme Sharing" to your language.
+    It's like renaming Facebook to Caralibro, or WhatsApp to KePaza in spanish.
+    -->
+
+
     <!-- WAMOD Settings -->
     <string name="wamod_settings">WAMOD Settings</string>
     <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) and up</string>
