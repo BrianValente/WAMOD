@@ -117,7 +117,7 @@
     <string name="wamod_qts_download">Descargar tema</string>
     <string name="wamod_qts_download_themeid">ID del tema</string>
     <string name="wamod_qts_upload_prompt">¿Estás seguro de que quieres subir tu tema a QTS?</string>
-    <string name="wamod_qts_upload_success">EL ID de tu tema %1$s fue guardado en tu portapapeles. ¡Compártelo con tus amigos!</string>
+    <string name="wamod_qts_upload_success">El ID de tu tema %1$s fue guardado en tu portapapeles. ¡Compártelo con tus amigos!</string>
 
 
     <!-- Crash -->
