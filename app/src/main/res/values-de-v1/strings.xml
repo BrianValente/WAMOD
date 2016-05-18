@@ -16,7 +16,7 @@
     <string name="wamod_settings_general_colors_statusbarcolor">Statusleiste</string>
     <string name="wamod_settings_general_colors_toolbarcolor">Toolbar</string>
     <string name="wamod_settings_general_colors_toolbartitlescolor">Toolbarkarten</string>
-    <string name="wamod_settings_general_colors_toolbariconscolor">Toolbaricons</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Toolbar Icons</string>
     <string name="wamod_settings_general_colors_navigationbarcolor">Navigationleiste</string>
     <string name="wamod_settings_general_colors_darkstatusbaricons">Dunkle Statusleisten Icons</string>
     <string name="wamod_settings_general_nightmode">Nachtmodus</string>
@@ -31,11 +31,11 @@
     <string name="wamod_settings_home_layout_hometheme">Theme</string>
     <string name="wamod_settings_home_drawer">Drawer</string>
     <string name="wamod_settings_home_drawer_style">Style</string>
-    <string name="wamod_settings_home_drawer_darkdrawer">Dunkler drawer</string>
-    <string name="wamod_settings_home_drawer_selectdrawerbackground">Wähle drawer Hintergrund</string>
-    <string name="wamod_settings_home_drawer_blacktextinheader">Schwarzen text im Drawer</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Dunkler Drawer</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Wähle Drawer Hintergrund</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Schwarzen Text im Drawer</string>
     <string name="wamod_settings_home_drawer_showsecondsaccount">Zweit-Account im Drawer anzeigen</string>
-    <string name="wamod_settings_home_bottomnavigationbar">untere Navigationleiste (Anrufe, Chats, Kontakte)</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Untere Navigationleiste (Anrufe, Chats, Kontakte)</string>
     <string name="wamod_settings_home_bottomnavigationbar_autocolors">Automatische Farben</string>
     <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Farben werden automatisch ausgewählt</string>
     <string name="wamod_settings_home_bottomnavigationbar_color">Hintergrund Farbe</string>
@@ -48,9 +48,9 @@
     <string name="wamod_settings_conversation_toolbar_style">Style</string>
     <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Verstecke Profilbild</string>
     <string name="wamod_settings_conversation_toolbar_hideicons">Verstecke Icons</string>
-    <string name="wamod_settings_conversation_toolbar_closebutton">Schließen button</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">Schließen Button</string>
     <string name="wamod_settings_conversation_layout">Layout</string>
-    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Aktiviere benutzerdefinierte Hintergrundfarbe</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Aktiviere Hintergrundfarbe</string>
     <string name="wamod_settings_conversation_layout_custombackgroundcolor">benutzerdefinierte Hintergrundfarbe</string>
     <string name="wamod_settings_conversation_layout_entry_style">Eingabe Style</string>
     <string name="wamod_settings_conversation_layout_entry_config">Eingabe anpassen</string>
@@ -112,7 +112,7 @@
     <!-- QTS -->
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Theme hochladen</string>
-    <string name="wamod_qts_download">Theme Downloaden</string>
+    <string name="wamod_qts_download">Theme herunterladen</string>
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Bist du dir sicher dass du dein Theme hochladen willst?</string>
     <string name="wamod_qts_upload_success">Deine Theme ID %1$s wurde zwischengespeichert. Teile es mit deinen Freunden!</string>
@@ -135,7 +135,7 @@
     <string name="wamod_updater_download">Download</string>
     <string name="wamod_updater_later">Später</string>
     <string name="wamod_updater_ignore">Update überspringen</string>
-    <string name="wamod_updater_uptodate">WAMOD ist bereits auf der aktuellen version!</string>
+    <string name="wamod_updater_uptodate">Du hast bereits die neueste Version von WAMOD!</string>
 
 
     <!-- Conversation -->
