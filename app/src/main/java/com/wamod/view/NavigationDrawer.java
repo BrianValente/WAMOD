@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.pkmmte.view.CircularImageView;
 import com.wamod.Resources;
+import com.wamod.SwitchAccounts;
 import com.wamod.Utils;
 import com.wamod.WAclass.NewGroup;
 import com.wamod.WAclass.ProfileInfoActivity;
@@ -144,7 +145,7 @@ public class NavigationDrawer extends RelativeLayout {
                             intent = new Intent(activity, Settings.class);
                             activity.startActivity(intent);
                         } else if (id == Resources.id.wamod_drawer_debug1) {
-                            Utils.switchAccount(getContext());
+                            SwitchAccounts.switchAccount(getContext());
                         } else if (id == Resources.id.wamod_drawer_search) {
                             activity.onSearchRequested();
                         } else if (id == Resources.id.wamod_drawer_privacy) {
@@ -199,10 +200,10 @@ public class NavigationDrawer extends RelativeLayout {
         wamod_drawer_header_2ndprofilepic.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.switchAccount(activity);
+                SwitchAccounts.switchAccount(activity);
             }
         });
-        final Drawable secondNumberProfilePhoto = Utils.get2ndNumberUserPicture(getContext());
+        final Drawable secondNumberProfilePhoto = SwitchAccounts.get2ndNumberUserPicture(getContext());
         if (secondNumberProfilePhoto != null) wamod_drawer_header_2ndprofilepic.setImageDrawable(secondNumberProfilePhoto);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

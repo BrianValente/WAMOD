@@ -129,6 +129,13 @@ public class ActionPreference extends Preference {
                 alertDialog.show();
                 break;
             case "wamodthemes_qts_upload":
+                if (!Utils.isOfficialWAMOD()) {
+                    AlertDialog.Builder unofficial = new AlertDialog.Builder(activity);
+                    unofficial.setMessage(activity.getResources().getString(Resources.getString("wamod_qts_upload_unofficial_message")));
+                    unofficial.show();
+                    return;
+                }
+
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(activity);
                 builder2.setTitle(Utils.context.getResources().getString(Resources.string.wamod_qts_upload));
                 builder2.setMessage(Utils.context.getResources().getString(Resources.string.wamod_qts_upload_prompt));

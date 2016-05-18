@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.wamod.Resources;
+import com.wamod.SwitchAccounts;
 import com.wamod.Utils;
 
 /**
@@ -16,7 +17,7 @@ public class EULA extends AppCompatActivity {
         switchAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.switchAccount(a);
+                SwitchAccounts.switchAccount(a);
             }
         });
     }

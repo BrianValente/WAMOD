@@ -31,29 +31,29 @@ public class Bubbles extends Activity {
     }
 
     public void reloadColors() {
-        RelativeLayout bubble1 = (RelativeLayout) findViewById(Utils.getHexID("bubble1", "id"));
-        RelativeLayout bubble2 = (RelativeLayout) findViewById(Utils.getHexID("bubble2", "id"));
-        RelativeLayout bubble3 = (RelativeLayout) findViewById(Utils.getHexID("bubble3", "id"));
-        RelativeLayout bubble4 = (RelativeLayout) findViewById(Utils.getHexID("bubble4", "id"));
-        RelativeLayout bubble5 = (RelativeLayout) findViewById(Utils.getHexID("bubble5", "id"));
+        RelativeLayout bubble1 = (RelativeLayout) findViewById(Resources.getHexID("bubble1", "id"));
+        RelativeLayout bubble2 = (RelativeLayout) findViewById(Resources.getHexID("bubble2", "id"));
+        RelativeLayout bubble3 = (RelativeLayout) findViewById(Resources.getHexID("bubble3", "id"));
+        RelativeLayout bubble4 = (RelativeLayout) findViewById(Resources.getHexID("bubble4", "id"));
+        RelativeLayout bubble5 = (RelativeLayout) findViewById(Resources.getHexID("bubble5", "id"));
 
-        TextView participant1 = (TextView) findViewById(Utils.getHexID("participant1", "id"));
-        TextView participant5 = (TextView) findViewById(Utils.getHexID("participant5", "id"));
+        TextView participant1 = (TextView) findViewById(Resources.getHexID("participant1", "id"));
+        TextView participant5 = (TextView) findViewById(Resources.getHexID("participant5", "id"));
 
-        TextView msg1 = (TextView) findViewById(Utils.getHexID("msg1", "id"));
-        TextView msg2 = (TextView) findViewById(Utils.getHexID("msg2", "id"));
-        TextView msg3 = (TextView) findViewById(Utils.getHexID("msg3", "id"));
-        TextView msg4 = (TextView) findViewById(Utils.getHexID("msg4", "id"));
-        TextView msg5 = (TextView) findViewById(Utils.getHexID("msg5", "id"));
+        TextView msg1 = (TextView) findViewById(Resources.getHexID("msg1", "id"));
+        TextView msg2 = (TextView) findViewById(Resources.getHexID("msg2", "id"));
+        TextView msg3 = (TextView) findViewById(Resources.getHexID("msg3", "id"));
+        TextView msg4 = (TextView) findViewById(Resources.getHexID("msg4", "id"));
+        TextView msg5 = (TextView) findViewById(Resources.getHexID("msg5", "id"));
 
-        TextView date1 = (TextView) findViewById(Utils.getHexID("date1", "id"));
-        TextView date2 = (TextView) findViewById(Utils.getHexID("date2", "id"));
-        TextView date3 = (TextView) findViewById(Utils.getHexID("date3", "id"));
-        TextView date4 = (TextView) findViewById(Utils.getHexID("date4", "id"));
-        TextView date5 = (TextView) findViewById(Utils.getHexID("date5", "id"));
+        TextView date1 = (TextView) findViewById(Resources.getHexID("date1", "id"));
+        TextView date2 = (TextView) findViewById(Resources.getHexID("date2", "id"));
+        TextView date3 = (TextView) findViewById(Resources.getHexID("date3", "id"));
+        TextView date4 = (TextView) findViewById(Resources.getHexID("date4", "id"));
+        TextView date5 = (TextView) findViewById(Resources.getHexID("date5", "id"));
 
-        ImageView tick3 = (ImageView) findViewById(Utils.getHexID("tick3", "id"));
-        ImageView tick4 = (ImageView) findViewById(Utils.getHexID("tick4", "id"));
+        ImageView tick3 = (ImageView) findViewById(Resources.getHexID("tick3", "id"));
+        ImageView tick4 = (ImageView) findViewById(Resources.getHexID("tick4", "id"));
 
 
         bubble1.setBackground(Conversation.getBubbleDrawable(0));

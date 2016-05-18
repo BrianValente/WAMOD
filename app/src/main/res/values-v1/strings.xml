@@ -125,6 +125,7 @@
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Are you sure you want to upload your theme?</string>
     <string name="wamod_qts_upload_success">Your theme ID %1$s was copied to your clipboard. Share it with your friends!</string>
+    <string name="wamod_qts_upload_unofficial_message">You\'re using an unofficial version of WAMOD and theme uploading is disabled due to incompatibilities.</string>
 
 
     <!-- Crash -->

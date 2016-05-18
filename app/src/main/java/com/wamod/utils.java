@@ -74,8 +74,8 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3 RC3";
-    public static int wamodVersionCode = 29;
+    public static String wamodVersionName = "1.3";
+    public static int wamodVersionCode = 30;
     public static Context context;
     public static boolean debug = false;
 
@@ -87,7 +87,7 @@ public class Utils extends android.app.Activity {
     public static final int COLOR_FOREGROUND = 3;
     public static final int COLOR_TOOLBARTEXT = 4;
 
-    public static boolean switchReady = false;
+
 
     public static List<Chat> openedChats = new ArrayList<Chat>();
 
@@ -199,27 +199,6 @@ public class Utils extends android.app.Activity {
             manageException(e);
         }
 
-        /*try {
-            if (nightModeShouldRun()) {
-                final ViewGroup content = (ViewGroup) a.findViewById(android.R.id.content);
-                content.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        for (int i=0; i<content.getChildCount();i++) {
-                            View v = content.getChildAt(i);
-                            if (v instanceof ScrollView) {
-                                ScrollView scrollView = (ScrollView) v;
-                                scrollView.setBackgroundColor(getDarkColor(2));
-                            }
-                        }
-                    }
-                });
-            }
-        } catch (Exception e) {
-            Log.i("WAMOD", e.getMessage());
-            if (debug) throw new RuntimeException(e);
-        }*/
-
         try {
             if (a instanceof com.whatsapp.HomeActivity) {
                 com.wamod.WAclass.HomeActivity.initHomeActivity((com.whatsapp.HomeActivity) a);
@@ -243,6 +222,8 @@ public class Utils extends android.app.Activity {
                 com.wamod.WAclass.GroupChatInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.ContactPicker) {
                 com.wamod.WAclass.ContactPicker._onCreate(a);
+            } else if (a instanceof com.whatsapp.EULA) {
+                com.wamod.WAclass.EULA._onCreate(a);
             }
         } catch (Exception e) {
             manageException(e);
@@ -663,11 +644,6 @@ public class Utils extends android.app.Activity {
         }, 0);
     }
 
-    public static Drawable tintToolbarIcon(Drawable icon) {
-        icon.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("general_toolbarforeground", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
-        return icon;
-    }
-
     public static String readStream(InputStream is) {
         try {
             ByteArrayOutputStream bo = new ByteArrayOutputStream();
@@ -717,20 +693,6 @@ public class Utils extends android.app.Activity {
         System.exit(2);
     }
 
-    public static void crashWAMOD(AppCompatActivity a) {
-        Utils.edit.putInt("wamodversion", 0);
-        Utils.edit.putBoolean("crash", true);
-        Utils.edit.apply();
-
-        restartWAMOD(a);
-    }
-
-    public static void crashWAMOD() {
-        Utils.edit.putInt("wamodversion", 0);
-        Utils.edit.putBoolean("crash", true);
-        Utils.edit.apply();
-    }
-
     public static void log(AppCompatActivity a, String message) {
         if (Utils.prefs.getBoolean("log_in_toasts", false)) Toast.makeText(a, message, Toast.LENGTH_LONG).show();
         else Log.i("WAMOD", message);
@@ -762,28 +724,11 @@ public class Utils extends android.app.Activity {
         }
     }
 
-    public static byte[] getCertificateBytes() {
-        Signature LeakedSignature = getSignature()[0];
-        return LeakedSignature.toByteArray();
-    }
-
     public static Signature[] getSignature() {
         Signature[] LeakedSignatureArray = new Signature[1];
         String LeakedSignature_String = "30820332308202f0a00302010202044c2536a4300b06072a8648ce3804030500307c310b3009060355040613025553311330110603550408130a43616c69666f726e6961311430120603550407130b53616e746120436c61726131163014060355040a130d576861747341707020496e632e31143012060355040b130b456e67696e656572696e67311430120603550403130b427269616e204163746f6e301e170d3130303632353233303731365a170d3434303231353233303731365a307c310b3009060355040613025553311330110603550408130a43616c69666f726e6961311430120603550407130b53616e746120436c61726131163014060355040a130d576861747341707020496e632e31143012060355040b130b456e67696e656572696e67311430120603550403130b427269616e204163746f6e308201b83082012c06072a8648ce3804013082011f02818100fd7f53811d75122952df4a9c2eece4e7f611b7523cef4400c31e3f80b6512669455d402251fb593d8d58fabfc5f5ba30f6cb9b556cd7813b801d346ff26660b76b9950a5a49f9fe8047b1022c24fbba9d7feb7c61bf83b57e7c6a8a6150f04fb83f6d3c51ec3023554135a169132f675f3ae2b61d72aeff22203199dd14801c70215009760508f15230bccb292b982a2eb840bf0581cf502818100f7e1a085d69b3ddecbbcab5c36b857b97994afbbfa3aea82f9574c0b3d0782675159578ebad4594fe67107108180b449167123e84c281613b7cf09328cc8a6e13c167a8b547c8d28e0a3ae1e2bb3a675916ea37f0bfa213562f1fb627a01243bcca4f1bea8519089a883dfe15ae59f06928b665e807b552564014c3bfecf492a0381850002818100d1198b4b81687bcf246d41a8a725f0a989a51bce326e84c828e1f556648bd71da487054d6de70fff4b49432b6862aa48fc2a93161b2c15a2ff5e671672dfb576e9d12aaff7369b9a99d04fb29d2bbbb2a503ee41b1ff37887064f41fe2805609063500a8e547349282d15981cdb58a08bede51dd7e9867295b3dfb45ffc6b259300b06072a8648ce3804030500032f00302c021400a602a7477acf841077237be090df436582ca2f0214350ce0268d07e71e55774ab4eacd4d071cd1efad";
         LeakedSignatureArray[0] = new Signature(LeakedSignature_String);
         return LeakedSignatureArray;
-    }
-
-    public static void decodeStrings(String[] strings) {
-        for (int i=0; i<strings.length; i++) {
-            log("String " + i + " : " + strings[i]);
-        }
-    }
-
-    public static void decodeStrings(String className, String[] strings) {
-        for (int i=0; i<strings.length; i++) {
-            log(className + " string " + i + " : " + strings[i]);
-        }
     }
 
     public static void logByteArray(byte[] bytes1, byte[] bytes2, int int1, int int2) {
@@ -896,137 +841,6 @@ public class Utils extends android.app.Activity {
         }
     }
 
-    public static boolean switchAccount(final Context ctx) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-        builder.setTitle(ctx.getResources().getString(Resources.string.wamod_switchaccount_prompt_title));
-        builder.setMessage(ctx.getResources().getString(Resources.string.wamod_switchaccount_prompt_message));
-        builder.setPositiveButton(ctx.getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int dialogID) {
-                copyWhatsAppFolderTemporary(ctx, "cache");
-                copyWhatsAppFolderTemporary(ctx, "databases");
-                copyWhatsAppFolderTemporary(ctx, "files");
-                copyWhatsAppFolderTemporary(ctx, "no_backup");
-                copyWhatsAppFolderTemporary(ctx, "shared_prefs");
-                deleteWhatsAppFolder(ctx, "cache");
-                deleteWhatsAppFolder(ctx, "databases");
-                deleteWhatsAppFolder(ctx, "files");
-                deleteWhatsAppFolder(ctx, "no_backup");
-                deleteWhatsAppFolder(ctx, "shared_prefs");
-                copyToWhatsAppFolder(ctx, "cache");
-                copyToWhatsAppFolder(ctx, "databases");
-                copyToWhatsAppFolder(ctx, "files");
-                copyToWhatsAppFolder(ctx, "no_backup");
-                copyToWhatsAppFolder(ctx, "shared_prefs");
-                deleteWhatsAppFolder(ctx, "WAMOD/cache");
-                deleteWhatsAppFolder(ctx, "WAMOD/databases");
-                deleteWhatsAppFolder(ctx, "WAMOD/files");
-                deleteWhatsAppFolder(ctx, "WAMOD/no_backup");
-                deleteWhatsAppFolder(ctx, "WAMOD/shared_prefs");
-                copyWhatsAppFolderFromTemp(ctx, "cache");
-                copyWhatsAppFolderFromTemp(ctx, "databases");
-                copyWhatsAppFolderFromTemp(ctx, "files");
-                copyWhatsAppFolderFromTemp(ctx, "no_backup");
-                copyWhatsAppFolderFromTemp(ctx, "shared_prefs");
-                deleteWAMODTempFolder(ctx);
-                while (true) if (switchReady) restartWAMOD(ctx);
-            }
-        });
-        builder.setNegativeButton(ctx.getResources().getString(android.R.string.cancel), null);
-        builder.show();
-        return true;
-    }
-
-    private static void copyWhatsAppFolderFromTemp(Context ctx, String name) {
-        switchReady = false;
-        try {
-            String appPath = getApplicationPath(ctx);
-            File dest = new File(appPath + "/WAMOD/" + name);
-            File source = new File(appPath + "/WAMOD_temp/" + name);
-            if (!dest.exists()) dest.mkdirs();
-            FileUtils.copyDirectory(source, dest);
-        } catch (IOException e) {}
-        switchReady = true;
-    }
-
-    private static void copyToWhatsAppFolder(Context ctx, String name) {
-        switchReady = false;
-        try {
-            String appPath = getApplicationPath(ctx);
-            File dest = new File(appPath + "/" + name);
-            File source = new File(appPath + "/WAMOD/" + name);
-            if (!dest.exists()) dest.mkdirs();
-            FileUtils.copyDirectory(source, dest);
-        } catch (IOException e) {}
-        switchReady = true;
-    }
-
-    private static void copyWhatsAppFolderTemporary(Context ctx, String name) {
-        switchReady = false;
-        try {
-            String appPath = getApplicationPath(ctx);
-            File dest = new File(appPath + "/WAMOD_temp/" + name);
-            File source = new File(appPath + "/" + name);
-            if (!dest.exists()) dest.mkdirs();
-            FileUtils.copyDirectory(source, dest);
-        } catch (IOException e) {}
-        switchReady = true;
-    }
-
-
-    private static void deleteWhatsAppFolder(Context ctx, String name) {
-        switchReady = false;
-        try {
-            String appPath = getApplicationPath(ctx);
-            File source = new File(appPath + "/" + name);
-            FileUtils.deleteDirectory(source);
-        } catch (IOException e) {}
-        switchReady = true;
-    }
-
-    private static void deleteWAMODTempFolder(Context ctx) {
-        switchReady = false;
-        try {
-            String appPath = getApplicationPath(ctx);
-            File source = new File(appPath + "/WAMOD_temp");
-            FileUtils.deleteDirectory(source);
-        } catch (IOException e) {}
-        switchReady = true;
-    }
-
-    public static String get2ndNumberUserName(Context ctx) {
-        try {
-            String appPath = getApplicationPath(ctx);
-            File dest = new File(appPath + "/shared_prefs/com.whatsapp_preferences_2nd.xml");
-            File source = new File(appPath + "/WAMOD/shared_prefs/com.whatsapp_preferences.xml");
-            FileUtils.copyDirectory(source, dest);
-            SharedPreferences prefs = ctx.getSharedPreferences("com.whatsapp_preferences_2nd", 0);
-            return prefs.getString("push_name", "");
-        } catch (IOException e) {}
-        return null;
-    }
-
-    public static String get2ndNumberUserPhoneNumber(Context ctx) {
-        try {
-            String appPath = getApplicationPath(ctx);
-            File dest = new File(appPath + "/shared_prefs/RegisterPhone_2nd.xml");
-            File source = new File(appPath + "/WAMOD/shared_prefs/RegisterPhone.xml");
-            FileUtils.copyDirectory(source, dest);
-            SharedPreferences prefs = ctx.getSharedPreferences("RegisterPhone_2nd", 0);
-            String number = prefs.getString("com.whatsapp.RegisterPhone.input_phone_number", "");
-            String country = prefs.getString("com.whatsapp.RegisterPhone.country_code", "");
-            String entireNumber = "+" + country + " " + number;
-            return entireNumber;
-        } catch (IOException e) {}
-        return null;
-    }
-
-    public static Drawable get2ndNumberUserPicture(Context ctx) {
-        String s = getApplicationPath(ctx);
-        String pathName = s + "/WAMOD/files/me.jpg";
-        Drawable d = Drawable.createFromPath(pathName);
-        return d;
-    }
-
     public static int getStatusBarHeight(Context ctx) {
         int result = 0;
         int resourceId = ctx.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -1055,10 +869,6 @@ public class Utils extends android.app.Activity {
         return new a(_final);
     }*/
 
-    public static void logItWorks() {
-        Log.i("WAMOD", "It works!");
-    }
-
     public static int[] Nexus6PResToActualDevice(Context ctx, int x, int y) {
         int[] newValues = new int[2];
         DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
@@ -1069,9 +879,7 @@ public class Utils extends android.app.Activity {
         return newValues;
     }
 
-    public static final int getHexID(String name, String type) {
-        return Utils.context.getResources().getIdentifier(name, type, Utils.context.getPackageName());
-    }
+
 
     public static String getVersionName() {
         return wamodVersionName;
@@ -1079,14 +887,6 @@ public class Utils extends android.app.Activity {
 
     public static int getVersionCode() {
         return wamodVersionCode;
-    }
-
-    public static void toastHome() {
-        Toast.makeText(Utils.context, "Content loaded", Toast.LENGTH_SHORT).show();
-    }
-
-    public static void asdfdsf() {
-        toastHome();
     }
 
     public static void loadColorsBeforeSuper(AppCompatActivity a) {
@@ -1163,27 +963,18 @@ public class Utils extends android.app.Activity {
         clipboard.setPrimaryClip(clip);
     }
 
-    public static void logThisShit(String str1, String str2, String[] str3, String str4) {
-        Log.i("WAMOD", "1: " + str1 + "\n2: " + str2 + "\n4: " + str4);
-        if (str3 != null)
-            for (String s : str3) {
-                Log.i("WAMOD", s);
-            }
-    }
-
-    public static void logThisShit(String str1, String str2, String str3, String str4) {
-        Log.i("WAMOD", "1: " + str1 + "\n2: " + str2 + "\n3: " + str3 + "\n4: " + str4);
-    }
-
-    public static void call_logThisShit() {
-        logThisShit(null, null, (String[])null, null);
-    }
-
-    public static void logThisShitFor2(String str1, String str2) {
-        Log.i("WAMOD", "1: " + str1 + " ------ 2: " + str2);
-    }
-
     public static void setTranslationYZero(View v) {
         v.setTranslationY(0);
+    }
+
+    public static boolean isOfficialWAMOD() {
+        boolean official = false;
+        try {
+            Signature sign = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
+            if (sign.hashCode() == -282729318) official = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return official;
     }
 }
