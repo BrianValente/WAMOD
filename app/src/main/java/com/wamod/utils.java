@@ -492,74 +492,65 @@ public class Utils extends android.app.Activity {
 
         switch (bubbleID) {
             case "0":
-                message_unsent = Resources.drawable.message_unsent;
-                message_got_receipt_from_server = Resources.drawable.message_got_receipt_from_server;
-                message_got_receipt_from_target = Resources.drawable.message_got_receipt_from_target;
-                message_got_read_receipt_from_target = Resources.drawable.message_got_read_receipt_from_target;
-                message_unsent_onmedia = Resources.drawable.message_unsent_onmedia;
-                message_got_receipt_from_server_onmedia = Resources.drawable.message_got_receipt_from_server_onmedia;
-                message_got_receipt_from_target_onmedia = Resources.drawable.message_got_receipt_from_target_onmedia;
-                message_got_read_receipt_from_target_onmedia = Resources.drawable.message_got_read_receipt_from_target_onmedia;
+            default:
+                message_unsent = Resources.getDrawable("message_unsent");
+                message_got_receipt_from_server = Resources.getDrawable("message_got_receipt_from_server");
+                message_got_receipt_from_target = Resources.getDrawable("message_got_receipt_from_target");
+                message_got_read_receipt_from_target = Resources.getDrawable("message_got_read_receipt_from_target");
+                message_unsent_onmedia = Resources.getDrawable("message_unsent_onmedia");
+                message_got_receipt_from_server_onmedia = Resources.getDrawable("message_got_receipt_from_server_onmedia");
+                message_got_receipt_from_target_onmedia = Resources.getDrawable("message_got_receipt_from_target_onmedia");
+                message_got_read_receipt_from_target_onmedia = Resources.getDrawable("message_got_read_receipt_from_target_onmedia");
                 break;
             case "1":
-                message_unsent = 0x7f021023;
-                message_got_receipt_from_server = 0x7f021024;
-                message_got_receipt_from_target = 0x7f021025;
-                message_got_read_receipt_from_target = 0x7f021026;
-                message_unsent_onmedia = 0x7f021027;
-                message_got_receipt_from_server_onmedia = 0x7f021028;
-                message_got_receipt_from_target_onmedia = 0x7f021029;
-                message_got_read_receipt_from_target_onmedia = 0x7f02102a;
+                message_unsent = Resources.getDrawable("wamod_style_tick_ios_message_unsent");
+                message_got_receipt_from_server = Resources.getDrawable("wamod_style_tick_ios_message_got_receipt_from_server");
+                message_got_receipt_from_target = Resources.getDrawable("wamod_style_tick_ios_message_got_receipt_from_target");
+                message_got_read_receipt_from_target = Resources.getDrawable("wamod_style_tick_ios_message_got_read_receipt_from_target");
+                message_unsent_onmedia = Resources.getDrawable("wamod_style_tick_ios_message_unsent_onmedia");
+                message_got_receipt_from_server_onmedia = Resources.getDrawable("wamod_style_tick_ios_message_got_receipt_from_server_onmedia");
+                message_got_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_ios_message_got_receipt_from_target_onmedia");
+                message_got_read_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_ios_message_got_read_receipt_from_target_onmedia");
                 break;
             case "2":
-                message_unsent = 0x7f02102b;
-                message_got_receipt_from_server = 0x7f02102c;
-                message_got_receipt_from_target = 0x7f02102d;
-                message_got_read_receipt_from_target = 0x7f02102e;
-                message_unsent_onmedia = 0x7f02102f;
-                message_got_receipt_from_server_onmedia = 0x7f021030;
-                message_got_receipt_from_target_onmedia = 0x7f021031;
-                message_got_read_receipt_from_target_onmedia = 0x7f021032;
+                message_unsent = Resources.getDrawable("wamod_style_tick_oldwaca_message_unsent");
+                message_got_receipt_from_server = Resources.getDrawable("wamod_style_tick_oldwaca_message_got_receipt_from_server");
+                message_got_receipt_from_target = Resources.getDrawable("wamod_style_tick_oldwaca_message_got_receipt_from_target");
+                message_got_read_receipt_from_target = Resources.getDrawable("wamod_style_tick_oldwaca_message_got_read_receipt_from_target");
+                message_unsent_onmedia = Resources.getDrawable("wamod_style_tick_oldwaca_message_unsent_onmedia");
+                message_got_receipt_from_server_onmedia = Resources.getDrawable("wamod_style_tick_oldwaca_message_got_receipt_from_server_onmedia");
+                message_got_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_oldwaca_message_got_receipt_from_target_onmedia");
+                message_got_read_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_oldwaca_message_got_read_receipt_from_target_onmedia");
                 break;
             case "3":
-                message_unsent = 0x7f021033;
-                message_got_receipt_from_server = 0x7f021034;
-                message_got_receipt_from_target = 0x7f021035;
-                message_got_read_receipt_from_target = 0x7f021036;
-                message_unsent_onmedia = 0x7f021037;
-                message_got_receipt_from_server_onmedia = 0x7f021038;
-                message_got_receipt_from_target_onmedia = 0x7f021039;
-                message_got_read_receipt_from_target_onmedia = 0x7f02103a;
+                message_unsent = Resources.getDrawable("wamod_style_tick_newwaca_message_unsent");
+                message_got_receipt_from_server = Resources.getDrawable("wamod_style_tick_newwaca_message_got_receipt_from_server");
+                message_got_receipt_from_target = Resources.getDrawable("wamod_style_tick_newwaca_message_got_receipt_from_target");
+                message_got_read_receipt_from_target = Resources.getDrawable("wamod_style_tick_newwaca_message_got_read_receipt_from_target");
+                message_unsent_onmedia = Resources.getDrawable("wamod_style_tick_newwaca_message_unsent_onmedia");
+                message_got_receipt_from_server_onmedia = Resources.getDrawable("wamod_style_tick_newwaca_message_got_receipt_from_server_onmedia");
+                message_got_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_newwaca_message_got_receipt_from_target_onmedia");
+                message_got_read_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_newwaca_message_got_read_receipt_from_target_onmedia");
                 break;
             case "4":
-                message_unsent = 0x7f02103b;
-                message_got_receipt_from_server = 0x7f02103c;
-                message_got_receipt_from_target = 0x7f02103d;
-                message_got_read_receipt_from_target = 0x7f02103e;
-                message_unsent_onmedia = 0x7f02103f;
-                message_got_receipt_from_server_onmedia = 0x7f021040;
-                message_got_receipt_from_target_onmedia = 0x7f021041;
-                message_got_read_receipt_from_target_onmedia = 0x7f021042;
+                message_unsent = Resources.getDrawable("wamod_style_tick_oldwamd_message_unsent");
+                message_got_receipt_from_server = Resources.getDrawable("wamod_style_tick_oldwamd_message_got_receipt_from_server");
+                message_got_receipt_from_target = Resources.getDrawable("wamod_style_tick_oldwamd_message_got_receipt_from_target");
+                message_got_read_receipt_from_target = Resources.getDrawable("wamod_style_tick_oldwamd_message_got_read_receipt_from_target");
+                message_unsent_onmedia = Resources.getDrawable("wamod_style_tick_oldwamd_message_unsent_onmedia");
+                message_got_receipt_from_server_onmedia = Resources.getDrawable("wamod_style_tick_oldwamd_message_got_receipt_from_server_onmedia");
+                message_got_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_oldwamd_message_got_receipt_from_target_onmedia");
+                message_got_read_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_oldwamd_message_got_read_receipt_from_target_onmedia");
                 break;
             case "5":
-                message_unsent = 0x7f021043;
-                message_got_receipt_from_server = 0x7f021044;
-                message_got_receipt_from_target = 0x7f021045;
-                message_got_read_receipt_from_target = 0x7f021046;
-                message_unsent_onmedia = 0x7f021047;
-                message_got_receipt_from_server_onmedia = 0x7f021048;
-                message_got_receipt_from_target_onmedia = 0x7f021049;
-                message_got_read_receipt_from_target_onmedia = 0x7f02104a;
-                break;
-            default:
-                message_unsent = 0x7f02104b;
-                message_got_receipt_from_server = 0x7f02104c;
-                message_got_receipt_from_target = 0x7f02104d;
-                message_got_read_receipt_from_target = 0x7f02104e;
-                message_unsent_onmedia = 0x7f02104f;
-                message_got_receipt_from_server_onmedia = 0x7f021050;
-                message_got_receipt_from_target_onmedia = 0x7f021051;
-                message_got_read_receipt_from_target_onmedia = 0x7f021052;
+                message_unsent = Resources.getDrawable("wamod_style_tick_circles_message_unsent");
+                message_got_receipt_from_server = Resources.getDrawable("wamod_style_tick_circles_message_got_receipt_from_server");
+                message_got_receipt_from_target = Resources.getDrawable("wamod_style_tick_circles_message_got_receipt_from_target");
+                message_got_read_receipt_from_target = Resources.getDrawable("wamod_style_tick_circles_message_got_read_receipt_from_target");
+                message_unsent_onmedia = Resources.getDrawable("wamod_style_tick_circles_message_unsent_onmedia");
+                message_got_receipt_from_server_onmedia = Resources.getDrawable("wamod_style_tick_circles_message_got_receipt_from_server_onmedia");
+                message_got_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_circles_message_got_receipt_from_target_onmedia");
+                message_got_read_receipt_from_target_onmedia = Resources.getDrawable("wamod_style_tick_circles_message_got_read_receipt_from_target_onmedia");
                 break;
         }
 

@@ -364,4 +364,7 @@ public final class Resources {
     public static int getLayout(String layout) {
         return Utils.getHexID(layout, "layout");
     }
+    public static int getDrawable(String drawable) {
+        return Utils.getHexID(drawable, "drawable");
+    }
 }
