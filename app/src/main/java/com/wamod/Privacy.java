@@ -23,19 +23,15 @@ public class Privacy {
     }
 
     public static boolean hideTyping() {
+        // Returns TRUE if the "Hide typing" option is ENABLED
         if (Utils.prefs.getBoolean("privacy_hideTyping", false)) return true;
         else return false;
     }
 
-    public static void call_hideTyping() {
-        if (hideTyping()) return;
-    }
+    
 
-    private void call_blueTick() {
-        if (blueTick(null, null, null, null, null, null)) {
-            String doSomething = "bitch";
-        }
-    }
+
+    /* Trash */
 
     public static void logStringArray(String[] strings) {
         if (strings == null) {
@@ -50,16 +46,8 @@ public class Privacy {
         Log.i("WAMOD_PRIVACY", str);
     }
 
-    private void call_logStringArray() {
-        logStringArray(null);
-    }
-
     public static void logP(g g) {
         Log.i("WAMOD_PRIVACY", "a: " + g.a + " -- b: " + (g.b? "true" : "false") + " -- c: " + g.c);
-    }
-
-    public static void call_logP() {
-        log(null,null,null,null,null);
     }
 
     public static void log(g g, String str1, String str2, String[] str3, String str4) {
@@ -93,9 +81,5 @@ public class Privacy {
             i++;
         }
         stringsDecoded = true;
-    }
-
-    public static void call_logStrings(String[] strings) {
-        logStrings(strings);
     }
 }
