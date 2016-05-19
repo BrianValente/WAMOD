@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="conversation_contact_online">online ora</string>
-    <string name="conversation_last_seen">visto</string>
-    <string name="type_a_message">Scrivi qualcosa</string>
+    <string name="conversation_contact_online">online</string>
+    <string name="conversation_last_seen">ultimo accesso</string>
+    <string name="type_a_message">Scrivi un messaggio</string>
     <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) e superiori</string>
     <string name="wamod_settings_about">info</string>
     <string name="wamod_settings_about_googlepluscommunity">Comunità Google+</string>
     <string name="wamod_settings_about_developertwitterprofile">Profilo Twitter dello sviluppatore</string>
     <string name="wamod_settings_about_sourcecode">Codice sorgente</string>
-    <string name="wamod_settings_about_credits">Crediti</string>
+    <string name="wamod_settings_about_credits">Ringraziamenti</string>
     <string name="wamod_settings_general">Generale</string>
     <string name="wamod_settings_general_colors">Colori</string>
     <string name="wamod_settings_general_colors_statusbarcolor">Status bar</string>
@@ -46,8 +46,8 @@
     <string name="wamod_settings_conversation_layout">Layout</string>
     <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Abilita il colore sfondo personalizzato</string>
     <string name="wamod_settings_conversation_layout_custombackgroundcolor">Colore sfondo personalizzato</string>
-    <string name="wamod_settings_conversation_layout_entry_style">Stile immissione</string>
-    <string name="wamod_settings_conversation_layout_entry_config">Configura immissione</string>
+    <string name="wamod_settings_conversation_layout_entry_style">Stile immissione testo</string>
+    <string name="wamod_settings_conversation_layout_entry_config">Configura immissione testo</string>
     <string name="wamod_settings_conversation_bubbles">Bolle</string>
     <string name="wamod_settings_conversation_bubbles_personalize">Personalizza bolle</string>
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Abilita colore personalizzato del partecipante</string>
@@ -62,8 +62,8 @@
     <string name="wamod_settings_conversation_bubbles_left_datecolor">Bolla sinistra: data</string>
     <string name="wamod_settings_privacy">Privacy</string>
     <string name="wamod_settings_privacy_freezelastseen">Congela ultimo accesso</string>
-    <string name="wamod_settings_privacy_hidebluetick">Non segnalare messaggi letti (Spunta Blu)</string>
-    <string name="wamod_settings_privacy_hidetyping">Non segnalare \"Sta scrivendo...\"</string>
+    <string name="wamod_settings_privacy_hidebluetick">Non mostrare che hai letto il messaggio (Spunta Blu)</string>
+    <string name="wamod_settings_privacy_hidetyping">Non mostrare che stai scrivendo</string>
     <string name="wamod_settings_privacy_alwaysonline">Sempre Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Sperimentale</string>
     <string name="wamod_settings_wamodthemes">Temi WAMOD</string>
@@ -74,7 +74,7 @@
     <string name="wamod_settings_wamodthemes_unlink_message">Sicuro di scollegare il tuo dispositivo?</string>
     <string name="wamod_settings_wamodthemes_visit">Visita Temi WAMOD</string>
     <string name="wamod_settings_advanced">Avanzate</string>
-    <string name="wamod_settings_advanced_nightmode">Modalità notte</string>
+    <string name="wamod_settings_advanced_nightmode">Modalità notturna</string>
     <string name="wamod_settings_advanced_nightmode_primarytextcolor">Testo primario</string>
     <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Testo secondario</string>
     <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Sfondo delle schede</string>
@@ -111,12 +111,12 @@
     <string name="wamod_crash_title">WAMOD ha crashato!</string>
     <string name="wamod_crash_message">Si è verificato un errore durante il caricamento delle configurazioni pertanto sono state ripristinate le configurazioni predefinite.</string>
     <string name="wamod_crash_button">Okay ☹</string>
-    <string name="wamod_switchaccount_prompt_title">Commuta account</string>
-    <string name="wamod_switchaccount_prompt_message">Sicuro di voler commutare il tuo account?</string>
+    <string name="wamod_switchaccount_prompt_title">Passa all\'altro account</string>
+    <string name="wamod_switchaccount_prompt_message">Sicuro di voler passare all\'altro account?</string>
     <string name="wamod_updater_title">E\' disponibile un nuovo aggiornamento!</string>
     <string name="wamod_updater_message">%1$s è disponibile per il download. La tua attuale versione è %2$s.</string>
     <string name="wamod_updater_download">Scarica</string>
     <string name="wamod_updater_later">Dopo</string>
     <string name="wamod_updater_ignore">Ignora questo aggiornamento</string>
-    <string name="wamod_updater_uptodate">WAMOD è aggiornata</string>
+    <string name="wamod_updater_uptodate">WAMOD è aggiornato!</string>
 </resources>
