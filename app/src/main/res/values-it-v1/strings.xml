@@ -19,7 +19,7 @@
     <string name="wamod_settings_general_colors_toolbartitlescolor">Titoli sull'intestazione</string>
     <string name="wamod_settings_general_colors_toolbariconscolor">Icone sull'intestazione</string>
     <string name="wamod_settings_general_colors_navigationbarcolor">Barra di navigazione</string>
-    <string name="wamod_settings_general_colors_darkstatusbaricons">Icone scure sulla barra di stato</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Icone scure barra di stato</string>
     <string name="wamod_settings_general_nightmode">Modalità notte</string>
     <string name="wamod_settings_general_nightmode_enable">Abilita</string>
     <string name="wamod_settings_general_nightmode_enable_summary">La UI diventerà scura</string>
@@ -40,8 +40,8 @@
     <string name="wamod_settings_home_bottomnavigationbar_autocolors">Colori automatici</string>
     <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">I colori sono selezionati automaticamente</string>
     <string name="wamod_settings_home_bottomnavigationbar_color">Colore di sfondo</string>
-    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Sfondo pulsante attivo</string>
-    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Sfondo pulsante inattivo</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Sfondo sezione attiva</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Sfondo sezione inattiva</string>
 
     <!-- WAMOD Settings - Conversation -->
     <string name="wamod_settings_conversation">Conversazione</string>
@@ -54,7 +54,7 @@
     <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Abilita colore di sfondo personalizzato</string>
     <string name="wamod_settings_conversation_layout_custombackgroundcolor">Colore di sfondo personalizzato</string>
     <string name="wamod_settings_conversation_layout_entry_style">Stile immisione testo</string>
-    <string name="wamod_settings_conversation_layout_entry_config">Configura immisione testo/string>
+    <string name="wamod_settings_conversation_layout_entry_config">Configura immissione testo/string>
     <string name="wamod_settings_conversation_bubbles">Bolle</string>
     <string name="wamod_settings_conversation_bubbles_personalize">Personalizza le bolle</string>
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Abilita colore del partecipante personalizzato</string>
@@ -89,7 +89,7 @@
     <string name="wamod_settings_advanced">Avanzate</string>
     <string name="wamod_settings_advanced_nightmode">Modalità notte</string>
     <string name="wamod_settings_advanced_nightmode_primarytextcolor">Testo in primo piano</string>
-    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Tedto in secondo piano</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Testo in secondo piano</string>
     <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Sfondo dei pulsanti</string>
     <string name="wamod_settings_advanced_nightmode_backgroundcolor">Sfondo</string>
     <string name="wamod_settings_advanced_navigationdrawer">Drawer</string>
@@ -104,7 +104,7 @@
     <string name="wamod_settings_miscellaneous_system_osgallery_summary">Allega media utilizzando la tua galleria preferita!</string>
     <string name="wamod_settings_miscellaneous_system_cardcolor">Intestazione colorata (App recenti ≥5.0)</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats">Processo per ogni chat</string>
-    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Ogni chat viene aperta in un processo separato per scambiarle velocemente</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Ogni chat viene aperta in un processo separato per scambiarle velocemente (Android ≥5.0)</string>
     <string name="wamod_settings_miscellaneous_app">App</string>
     <string name="wamod_settings_miscellaneous_app_checkupdates">Controlla aggiornamenti</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Ripristina la configurazione originale</string>
@@ -117,7 +117,7 @@
     <string name="wamod_qts_upload">Salva tema</string>
     <string name="wamod_qts_download">Scarica Tema</string>
     <string name="wamod_qts_download_themeid">ID tema</string>
-    <string name="wamod_qts_upload_prompt">Sicuro di voler fare l'upload (salvare online) del tema?</string>
+    <string name="wamod_qts_upload_prompt">Sicuro di voler fare l\'upload (salvare online) del tema?</string>
     <string name="wamod_qts_upload_success">L\'ID %1$s del tuo tema è stato copiato. Condividilo con gli amici!</string>
     <string name="wamod_qts_upload_unofficial_message">Stai usando una versione non ufficiale di WAMOD, così è stata disabilitata la possibilità di salvare i temi a causa delle incompatibilità</string>
 
