@@ -38,4 +38,9 @@
     <string name="emoji_button_description"></string>
     <string name="invite"></string>
     <string name="call"></string>
+    <string name="participants_title"></string>
+    <string name="add_group_participant"></string>
+    <string name="not_a_group_participant"></string>
+    <string name="contact_status_and_phone"></string>
+    <string name="groups_in_common"></string>
 </resources>

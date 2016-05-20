@@ -47,4 +47,19 @@
 
     <style name="ActionBarButtonStyle">
     </style>
+
+    <style name="FlatCardHeader">
+    </style>
+
+    <style name="FlatCardTitle">
+    </style>
+
+    <style name="FlatCardSeparator">
+    </style>
+
+    <style name="FlatCardInfo">
+    </style>
+
+    <style name="ListItemSubtitleSmall">
+    </style>
 </resources>

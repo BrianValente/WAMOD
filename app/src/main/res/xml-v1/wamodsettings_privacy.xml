@@ -5,14 +5,17 @@
         android:title="@string/wamod_settings_privacy_freezelastseen"
         android:key="privacy_freezelastseen"/>
     <!--<com.wamod.CheckboxPreference android:title="@string/wamod_no2ndtick" android:key="privacy_no2ndTick" android:summary="@string/wamod_no2ndticksummary" />-->
-    <com.wamod.preference.CheckboxPreference
+    <!--<com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_hidebluetick"
         android:key="privacy_noBlueTick" />
     <com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_hidetyping"
-        android:key="privacy_hideTyping" />
+        android:key="privacy_hideTyping" />-->
     <com.wamod.preference.CheckboxPreference
         android:title="@string/wamod_settings_privacy_alwaysonline"
         android:key="privacy_alwaysOnline"
         android:summary="@string/wamod_settings_privacy_alwaysonline_summary" />
+    <com.wamod.preference.Preference
+        android:title="WHERE ARE THE OTHER MODS?!?!"
+        android:summary="Now you will find the other privacy mods (Hide typing, hide second tick, hide blue tick) on the contact profile. I wrote this text before going to sleep so shhh" />
 </PreferenceScreen>

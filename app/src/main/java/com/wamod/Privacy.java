@@ -1,5 +1,6 @@
 package com.wamod;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.whatsapp.protocol.a;
@@ -14,21 +15,66 @@ public class Privacy {
     public static boolean blueTick(a a, g g, String str1, String str2, String[] str3, String str4) {
         // Returns TRUE if the "Hide blue tick" option is DISABLED
         log(g, str1, str2, str3, str4);
-        if (Utils.prefs.getBoolean("privacy_noBlueTick", false)) {
+        String JabberID = g.a;
+        if (contactAffectedByBlueTickMod(JabberID)) {
             str1 = str4;
-            //str2 = "";
             a.a(g, str1, str2, str3, str4);
             return false;
         } else return true;
     }
 
-    public static boolean hideTyping() {
-        // Returns TRUE if the "Hide typing" option is ENABLED
-        if (Utils.prefs.getBoolean("privacy_hideTyping", false)) return true;
-        else return false;
+    public static boolean hideTyping(String JabberID) {
+        // Returns TRUE if the "Hide typing" option is DISABLED
+        return !contactAffectedByHideTypingMod(JabberID);
+        /*if (Utils.prefs.getBoolean("privacy_hideTyping", false)) return true;
+        else return false;*/
     }
 
-    
+    public static boolean secondTick(g g) {
+        // Returns TRUE if the "Hide second tick" option is DISABLED
+        String JabberID = g.a;
+        return !contactAffectedBySecondTickMod(JabberID);
+    }
+
+
+    public static boolean contactAffectedByBlueTickMod(String JabberID) {
+        SharedPreferences prefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        boolean bool = prefs.getBoolean(JabberID + "_hidebluetick", false);
+        return bool;
+    }
+
+    public static boolean contactAffectedBySecondTickMod(String JabberID) {
+        SharedPreferences prefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        boolean bool = prefs.getBoolean(JabberID + "_hidesecondtick", false);
+        return bool;
+    }
+
+    public static boolean contactAffectedByHideTypingMod(String JabberID) {
+        SharedPreferences prefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        boolean bool = prefs.getBoolean(JabberID + "_hidetyping", false);
+        return bool;
+    }
+
+    public static void setContactAffectedByBlueTickMod(String JabberID, boolean affected) {
+        SharedPreferences prefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putBoolean(JabberID + "_hidebluetick", affected);
+        edit.apply();
+    }
+
+    public static void setContactAffectedBySecondTickMod(String JabberID, boolean affected) {
+        SharedPreferences prefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putBoolean(JabberID + "_hidesecondtick", affected);
+        edit.apply();
+    }
+
+    public static void setContactAffectedByHideTypingMod(String JabberID, boolean affected) {
+        SharedPreferences prefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putBoolean(JabberID + "_hidetyping", affected);
+        edit.apply();
+    }
 
 
     /* Trash */

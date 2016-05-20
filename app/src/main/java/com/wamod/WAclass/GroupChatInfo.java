@@ -1,13 +1,16 @@
 package com.wamod.WAclass;
 
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.wamod.Privacy;
 import com.wamod.Resources;
 import com.wamod.Utils;
 
@@ -19,6 +22,22 @@ public class GroupChatInfo extends AppCompatActivity {
                 content.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
+
+                        ViewGroup wamod_privacy_card = (ViewGroup) a.findViewById(Resources.getID("wamod_privacy_card"));
+                        TextView wamod_privacy_card_reportreceived_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_title"));
+                        TextView wamod_privacy_card_reportreceived_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_summary"));
+                        TextView wamod_privacy_card_reportread_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportread_title"));
+                        TextView wamod_privacy_card_reportread_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportread_summary"));
+                        TextView wamod_privacy_card_hidetyping_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_title"));
+                        TextView wamod_privacy_card_hidetyping_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_summary"));
+                        wamod_privacy_card.setBackgroundColor(Utils.getDarkColor(3));
+                        wamod_privacy_card_reportreceived_title.setTextColor(Utils.getDarkColor(0));
+                        wamod_privacy_card_reportreceived_summary.setTextColor(Utils.getDarkColor(1));
+                        wamod_privacy_card_reportread_title.setTextColor(Utils.getDarkColor(0));
+                        wamod_privacy_card_reportread_summary.setTextColor(Utils.getDarkColor(1));
+                        wamod_privacy_card_hidetyping_title.setTextColor(Utils.getDarkColor(0));
+                        wamod_privacy_card_hidetyping_summary.setTextColor(Utils.getDarkColor(1));
+
                         ListView list = (ListView) a.findViewById(android.R.id.list);
                         list.setBackgroundColor(Utils.getDarkColor(2));
 
@@ -85,6 +104,52 @@ public class GroupChatInfo extends AppCompatActivity {
         } catch (Exception e) {
             Utils.manageException(e);
         }
+
+        SwitchCompat reportReadSwitch     = (SwitchCompat) a.findViewById(Resources.getID("wamod_privacy_card_reportread_switch"));
+        SwitchCompat reportReceivedSwitch = (SwitchCompat) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_switch"));
+        SwitchCompat hideTypingSwitch     = (SwitchCompat) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_switch"));
+        com.whatsapp.GroupChatInfo groupChatInfo = (com.whatsapp.GroupChatInfo) a;
+        com.whatsapp.qj contact = groupChatInfo.o(groupChatInfo);
+
+        if (contact == null)  return;
+
+        final String JabberID = contact.r;
+
+        if (Privacy.contactAffectedByBlueTickMod(JabberID))
+            reportReadSwitch.setChecked(false);
+        else
+            reportReadSwitch.setChecked(true);
+
+        if (Privacy.contactAffectedBySecondTickMod(JabberID))
+            reportReceivedSwitch.setChecked(false);
+        else
+            reportReceivedSwitch.setChecked(true);
+
+        if (Privacy.contactAffectedByHideTypingMod(JabberID))
+            hideTypingSwitch.setChecked(false);
+        else
+            hideTypingSwitch.setChecked(true);
+
+        reportReadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Privacy.setContactAffectedByBlueTickMod(JabberID, !b);
+            }
+        });
+
+        reportReceivedSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Privacy.setContactAffectedBySecondTickMod(JabberID, !b);
+            }
+        });
+
+        hideTypingSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Privacy.setContactAffectedByHideTypingMod(JabberID, !b);
+            }
+        });
     }
 
     public static void _getView(View v) {
