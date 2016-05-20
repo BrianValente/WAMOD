@@ -16,8 +16,8 @@
     <string name="wamod_settings_general_colors">Colori</string>
     <string name="wamod_settings_general_colors_statusbarcolor">Barra di stato</string>
     <string name="wamod_settings_general_colors_toolbarcolor">Intestazione</string>
-    <string name="wamod_settings_general_colors_toolbartitlescolor">Titoli sull'intestazione</string>
-    <string name="wamod_settings_general_colors_toolbariconscolor">Icone sull'intestazione</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Titoli sull\'intestazione</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Icone sull\'intestazione</string>
     <string name="wamod_settings_general_colors_navigationbarcolor">Barra di navigazione</string>
     <string name="wamod_settings_general_colors_darkstatusbaricons">Icone scure barra di stato</string>
     <string name="wamod_settings_general_nightmode">Modalità notte</string>
@@ -54,7 +54,7 @@
     <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Abilita colore di sfondo personalizzato</string>
     <string name="wamod_settings_conversation_layout_custombackgroundcolor">Colore di sfondo personalizzato</string>
     <string name="wamod_settings_conversation_layout_entry_style">Stile immisione testo</string>
-    <string name="wamod_settings_conversation_layout_entry_config">Configura immissione testo/string>
+    <string name="wamod_settings_conversation_layout_entry_config">Configura immissione testo</string>
     <string name="wamod_settings_conversation_bubbles">Bolle</string>
     <string name="wamod_settings_conversation_bubbles_personalize">Personalizza le bolle</string>
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Abilita colore del partecipante personalizzato</string>
