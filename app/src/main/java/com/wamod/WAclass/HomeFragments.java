@@ -23,7 +23,7 @@ public class HomeFragments {
                 msgTV.setTextColor(Utils.getDarkColor(1));
                 senderTV.setTextColor(Utils.getDarkColor(1));
             } catch (Exception e) {
-                if (Utils.debug) throw new RuntimeException(e);
+                Utils.manageException(e);
             }
         }
     }
@@ -37,7 +37,7 @@ public class HomeFragments {
                 contactNameTV.setTextColor(Utils.getDarkColor(0));
                 dateTV.setTextColor(Utils.getDarkColor(1));
             } catch (Exception e) {
-                if (Utils.debug) throw new RuntimeException(e);
+                Utils.manageException(e);
             }
         }
     }
@@ -53,7 +53,7 @@ public class HomeFragments {
                 statusTV.setTextColor(Utils.getDarkColor(1));
                 phoneTypeTV.setTextColor(Utils.getDarkColor(1));
             } catch (Exception e) {
-                if (Utils.debug) throw new RuntimeException(e);
+                Utils.manageException(e);
             }
         }
     }
