@@ -110,48 +110,7 @@ public class ContactInfo extends AppCompatActivity {
             Utils.manageException(e);
         }
 
-        SwitchCompat reportReadSwitch     = (SwitchCompat) a.findViewById(Resources.getID("wamod_privacy_card_reportread_switch"));
-        SwitchCompat reportReceivedSwitch = (SwitchCompat) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_switch"));
-        SwitchCompat hideTypingSwitch     = (SwitchCompat) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_switch"));
-        com.whatsapp.ContactInfo contactInfo = (com.whatsapp.ContactInfo) a;
-        com.whatsapp.qj contact = contactInfo.f(contactInfo);
-        final String JabberID = contact.r;
-
-        if (Privacy.contactAffectedByBlueTickMod(JabberID))
-            reportReadSwitch.setChecked(false);
-        else
-            reportReadSwitch.setChecked(true);
-
-        if (Privacy.contactAffectedBySecondTickMod(JabberID))
-            reportReceivedSwitch.setChecked(false);
-        else
-            reportReceivedSwitch.setChecked(true);
-
-        if (Privacy.contactAffectedByHideTypingMod(JabberID))
-            hideTypingSwitch.setChecked(false);
-        else
-            hideTypingSwitch.setChecked(true);
-
-        reportReadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                Privacy.setContactAffectedByBlueTickMod(JabberID, !b);
-            }
-        });
-
-        reportReceivedSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                Privacy.setContactAffectedBySecondTickMod(JabberID, !b);
-            }
-        });
-
-        hideTypingSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                Privacy.setContactAffectedByHideTypingMod(JabberID, !b);
-            }
-        });
+        Privacy.initPrivacyOnChatInfo(a);
     }
 
     public static void _getView(View v) {

@@ -1,8 +1,14 @@
 package com.wamod;
 
 import android.content.SharedPreferences;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
+import android.widget.CompoundButton;
+import android.widget.Toast;
 
+import com.whatsapp.ContactInfo;
+import com.whatsapp.GroupChatInfo;
 import com.whatsapp.protocol.a;
 import com.whatsapp.protocol.g;
 
@@ -18,7 +24,7 @@ public class Privacy {
         String JabberID = g.a;
         if (contactAffectedByBlueTickMod(JabberID)) {
             str1 = str4;
-            a.a(g, str1, str2, str3, str4);
+            if (!contactAffectedBySecondTickMod(JabberID)) a.a(g, str1, str2, str3, str4);
             return false;
         } else return true;
     }
@@ -74,6 +80,56 @@ public class Privacy {
         SharedPreferences.Editor edit = prefs.edit();
         edit.putBoolean(JabberID + "_hidetyping", affected);
         edit.apply();
+    }
+
+    public static void initPrivacyOnChatInfo(AppCompatActivity activity) {
+        SwitchCompat reportReadSwitch     = (SwitchCompat) activity.findViewById(Resources.getID("wamod_privacy_card_reportread_switch"));
+        SwitchCompat reportReceivedSwitch = (SwitchCompat) activity.findViewById(Resources.getID("wamod_privacy_card_reportreceived_switch"));
+        SwitchCompat hideTypingSwitch     = (SwitchCompat) activity.findViewById(Resources.getID("wamod_privacy_card_hidetyping_switch"));
+        if (reportReadSwitch == null || reportReceivedSwitch == null || hideTypingSwitch == null) return;
+
+        com.whatsapp.qj contact = null;
+        if (activity instanceof GroupChatInfo) contact = ((GroupChatInfo) activity).getContact((GroupChatInfo) activity);
+        else if (activity instanceof ContactInfo) contact = ((ContactInfo) activity).f((ContactInfo) activity);
+        if (contact == null) return;
+
+        final String JabberID = contact.r;
+
+        if (Privacy.contactAffectedByBlueTickMod(JabberID))
+            reportReadSwitch.setChecked(false);
+        else
+            reportReadSwitch.setChecked(true);
+
+        if (Privacy.contactAffectedBySecondTickMod(JabberID))
+            reportReceivedSwitch.setChecked(false);
+        else
+            reportReceivedSwitch.setChecked(true);
+
+        if (Privacy.contactAffectedByHideTypingMod(JabberID))
+            hideTypingSwitch.setChecked(false);
+        else
+            hideTypingSwitch.setChecked(true);
+
+        reportReadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Privacy.setContactAffectedByBlueTickMod(JabberID, !b);
+            }
+        });
+
+        reportReceivedSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Privacy.setContactAffectedBySecondTickMod(JabberID, !b);
+            }
+        });
+
+        hideTypingSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Privacy.setContactAffectedByHideTypingMod(JabberID, !b);
+            }
+        });
     }
 
 

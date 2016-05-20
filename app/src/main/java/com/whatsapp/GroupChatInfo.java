@@ -8,4 +8,5 @@ import android.support.v7.app.AppCompatActivity;
 public class GroupChatInfo extends AppCompatActivity {
     // Get contact
     public static qj o(GroupChatInfo groupChatInfo) {return null;}
+    public static qj getContact(GroupChatInfo groupChatInfo) {return null;}
 }
