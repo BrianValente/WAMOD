@@ -107,7 +107,7 @@
     <string name="wamod_settings_miscellaneous_app_checkupdates">Verificar Atualizações</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Restaurar Configurações Padrão</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restaurar Configurações Padrão</string>
-    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Tem certeza de que quer restaurar as configurações Padrão?</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Tem certeza de que quer restaurar para as configurações padrão?</string>
 
     <!-- QTS -->
     <string name="wamod_qts">Compartilhamento Rápido de Temas (QTS)</string>
@@ -116,6 +116,7 @@
     <string name="wamod_qts_download_themeid">ID do Tema</string>
     <string name="wamod_qts_upload_prompt">Tem certeza de que quer carregar o seu tema no servidor?</string>
     <string name="wamod_qts_upload_success">Seu ID de tema %1$s foi copiado. Compartilhe com seus amigos!</string>
+    <string name="wamod_qts_upload_unofficial_message">Você está usando uma versão não oficial do WAMOD e o envio de temas está desativado para evitar incompatibilidade.</string>
 
 
     <!-- Crash -->
