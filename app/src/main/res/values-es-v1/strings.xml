@@ -111,6 +111,16 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">¿Estás seguro de restaurar la configuración por defecto?</string>
 
 
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_reportreceived_title">Reportar mensajes recibidos</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Tu contacto sabrá que has recibido su mensaje</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, puede no funcionar o recibir mensajes tarde si desactivas esta opción</string>
+    <string name="wamod_privacy_card_reportread_title">Reportar mensajes leídos</string>
+    <string name="wamod_privacy_card_reportread_summary">Tu contacto sabrá que has leído su mensaje</string>
+    <string name="wamod_privacy_card_reporttyping_title">Reportar cuando estoy escribiendo</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Tu contacto sabrá que estás escribiendo</string>
+
+
     <!-- QTS -->
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Subir tema</string>
@@ -118,7 +128,7 @@
     <string name="wamod_qts_download_themeid">ID del tema</string>
     <string name="wamod_qts_upload_prompt">¿Estás seguro de que quieres subir tu tema a QTS?</string>
     <string name="wamod_qts_upload_success">El ID de tu tema %1$s fue guardado en tu portapapeles. ¡Compártelo con tus amigos!</string>
-    <string name="wamod_qts_upload_unofficial_message">Estás utilizando una versión no oficial de WAMOD y la subida de temas a Quick Theme Sharing fue deshabilitada debido a incompatibilidades.</string>
+    <string name="wamod_qts_upload_unofficial_message">Estás utilizando una versión no oficial de WAMOD y la subida de temas a Quick Theme Sharing fue deshabilitada debido a incompatibilidades</string>
 
 
 

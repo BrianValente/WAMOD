@@ -32,15 +32,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Report received messages"
+                    android:text="@string/wamod_privacy_card_reportreceived_title"
                     style="@style/ListItemTitle"
                     android:id="@+id/wamod_privacy_card_reportreceived_title"/>
                 <TextView
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/ListItemSubtitleSmall"
-                    android:id="@+id/wamod_privacy_card_reportreceived_summary"/>
+                    android:id="@+id/wamod_privacy_card_reportreceived_summary"
+                    android:text="@string/wamod_privacy_card_reportreceived_summary_experimental"
+                    android:textSize="14.0sp"
+                    android:textColor="@color/list_item_info"
+                    android:gravity="left"
+                    android:layout_gravity="left"/>
             </LinearLayout>
             <android.support.v7.widget.SwitchCompat
                 android:layout_width="wrap_content"
@@ -67,15 +70,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Report read messages"
+                    android:text="@string/wamod_privacy_card_reportread_title"
                     style="@style/ListItemTitle"
                     android:id="@+id/wamod_privacy_card_reportread_title" />
                 <TextView
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/ListItemSubtitleSmall"
-                    android:id="@+id/wamod_privacy_card_reportread_summary" />
+                    android:id="@+id/wamod_privacy_card_reportread_summary"
+                    android:text="@string/wamod_privacy_card_reportread_summary"
+                    android:textSize="14.0sp"
+                    android:textColor="@color/list_item_info"
+                    android:gravity="left"
+                    android:layout_gravity="left"/>
             </LinearLayout>
             <android.support.v7.widget.SwitchCompat
                 android:layout_width="wrap_content"
@@ -102,15 +108,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Report when I'm typing"
+                    android:text="@string/wamod_privacy_card_reporttyping_title"
                     style="@style/ListItemTitle"
                     android:id="@+id/wamod_privacy_card_hidetyping_title" />
                 <TextView
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/ListItemSubtitleSmall"
-                    android:id="@+id/wamod_privacy_card_hidetyping_summary" />
+                    android:id="@+id/wamod_privacy_card_hidetyping_summary"
+                    android:text="@string/wamod_privacy_card_reporttyping_summary"
+                    android:textSize="14.0sp"
+                    android:textColor="@color/list_item_info"
+                    android:gravity="left"
+                    android:layout_gravity="left"/>
             </LinearLayout>
             <android.support.v7.widget.SwitchCompat
                 android:layout_width="wrap_content"

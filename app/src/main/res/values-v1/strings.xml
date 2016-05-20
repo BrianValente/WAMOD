@@ -118,6 +118,15 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Are you sure you want to restore the default configuration?</string>
 
 
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_reportreceived_title">Report received messages</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Your contact will know when the messages are received</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, it may not work or cause delays if you disable this option</string>
+    <string name="wamod_privacy_card_reportread_title">Report read messages</string>
+    <string name="wamod_privacy_card_reportread_summary">Your contact will know if you read the messages received</string>
+    <string name="wamod_privacy_card_reporttyping_title">Report when I\'m typing</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Your contact will know when you\'re typing</string>
+
     <!-- QTS -->
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Upload theme</string>
@@ -125,7 +134,7 @@
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Are you sure you want to upload your theme?</string>
     <string name="wamod_qts_upload_success">Your theme ID %1$s was copied to your clipboard. Share it with your friends!</string>
-    <string name="wamod_qts_upload_unofficial_message">You\'re using an unofficial version of WAMOD and theme uploading is disabled due to incompatibilities.</string>
+    <string name="wamod_qts_upload_unofficial_message">You\'re using an unofficial version of WAMOD and theme uploading is disabled due to incompatibilities</string>
 
 
     <!-- Crash -->
