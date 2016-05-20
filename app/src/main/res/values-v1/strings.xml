@@ -121,7 +121,7 @@
     <!-- Privacy -->
     <string name="wamod_privacy_card_reportreceived_title">Report received messages</string>
     <string name="wamod_privacy_card_reportreceived_summary">Your contact will know when the messages are received</string>
-    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, it may not work or cause delays if you disable this option</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, may not work or cause delays if you disable this option</string>
     <string name="wamod_privacy_card_reportread_title">Report read messages</string>
     <string name="wamod_privacy_card_reportread_summary">Your contact will know if you read the messages received</string>
     <string name="wamod_privacy_card_reporttyping_title">Report when I\'m typing</string>
