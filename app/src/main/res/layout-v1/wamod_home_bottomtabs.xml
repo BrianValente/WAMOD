@@ -26,7 +26,8 @@
                 android:src="@drawable/wamod_drawer_ic_calls"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="10dp"
-                android:tint="#555555"/>
+                android:tint="#555555"
+                android:id="@+id/icon"/>
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -44,13 +45,35 @@
             android:background="?selectableItemBackground"
             android:clickable="true"
             android:id="@+id/wamod_bottomnav_chats">
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="28dp"
-                android:src="@drawable/wamod_drawer_ic_chats"
+            <RelativeLayout
+                android:layout_width="28dp"
+                android:layout_height="33dp"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="10dp"
-                android:tint="#555555"/>
+                android:id="@+id/icon_container"
+                android:layout_marginTop="-5.5dp">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/wamod_drawer_ic_chats"
+                    android:tint="#555555"
+                    android:id="@+id/icon"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"/>
+                <RelativeLayout
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/wamod_badge_big"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/wamod_badge_big">
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@drawable/wamod_badge_small"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/wamod_badge_small"/>
+                </RelativeLayout>
+            </RelativeLayout>
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +97,8 @@
                 android:src="@drawable/wamod_drawer_ic_contacts"
                 android:layout_centerHorizontal="true"
                 android:paddingTop="10dp"
-                android:tint="#555555"/>
+                android:tint="#555555"
+                android:id="@+id/icon"/>
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

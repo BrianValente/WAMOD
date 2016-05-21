@@ -2,6 +2,9 @@ package com.wamod.view;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -15,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wamod.Resources;
 import com.wamod.Utils;
@@ -136,6 +140,22 @@ public class BottomNavigation extends LinearLayout {
 
                 Log.i("WAMOD", "Text size: " + originalLabelTextSize + "Icon margin: " + originalIconTopMargin);
 
+
+                HomeActivity a = (HomeActivity) ctx;
+                ViewGroup tabs2 = (ViewGroup) a.findViewById(Resources.getID("tabs"));
+                ViewGroup tabsChild = (ViewGroup) tabs2.getChildAt(0);
+                ViewGroup tab = (ViewGroup) tabsChild.getChildAt(1);
+
+                final TextView badge = (TextView) tab.findViewById(Resources.getID("badge"));
+                badge.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        ViewGroup wamod_badge_big = (ViewGroup) ((AppCompatActivity)ctx).findViewById(Resources.getID("wamod_badge_big"));
+                        if (badge.getVisibility() == GONE) wamod_badge_big.setVisibility(GONE);
+                        else wamod_badge_big.setVisibility(VISIBLE);
+                    }
+                });
+
                 getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
@@ -148,7 +168,8 @@ public class BottomNavigation extends LinearLayout {
         setInactive();
 
         final View label = button.getChildAt(1);
-        final View icon  = button.getChildAt(0);
+        final View iconContainer = button.findViewById(Resources.getID("icon_container"));
+        final View icon = button.findViewById(Resources.getID("icon"));
 
         if (label != null && label instanceof TextView) {
             TextView lb = ((TextView) label);
@@ -157,6 +178,14 @@ public class BottomNavigation extends LinearLayout {
         if (icon != null && icon instanceof ImageView) {
             ImageView icn = ((ImageView) icon);
             icn.setColorFilter(activeColor);
+        }
+
+        ImageView wamod_badge_small = (ImageView) button.findViewById(Resources.getID("wamod_badge_small"));
+
+        if (wamod_badge_small != null) {
+            Drawable badge_small = button.getResources().getDrawable(Resources.getDrawable("wamod_badge_small"));
+            badge_small.setColorFilter(activeColor, PorterDuff.Mode.MULTIPLY);
+            wamod_badge_small.setImageDrawable(badge_small);
         }
 
         Animation anim = new Animation() {
@@ -174,7 +203,8 @@ public class BottomNavigation extends LinearLayout {
                 if (interpolatedTime == 0 && originalIconTopMargin == 0)
                     originalIconTopMargin = icon.getPaddingTop();
                 int newPadding = (int) (originalIconTopMargin - (iconMultiplier * interpolatedTime));
-                icon.setPadding(0, newPadding, 0, 0);
+                if (iconContainer == null) icon.setPadding(0, newPadding, 0, 0);
+                else iconContainer.setPadding(0, newPadding, 0, 0);
             }
         };
         anim.setDuration(100);
@@ -199,7 +229,8 @@ public class BottomNavigation extends LinearLayout {
                 btn.setAnimation(null);
 
                 final View label = btn.getChildAt(1);
-                final View icon = btn.getChildAt(0);
+                final View iconContainer = btn.findViewById(Resources.getID("icon_container"));
+                final View icon = btn.findViewById(Resources.getID("icon"));
 
                 if (label != null && label instanceof TextView) {
                     TextView lb = ((TextView) label);
@@ -208,6 +239,14 @@ public class BottomNavigation extends LinearLayout {
                 if (icon != null && icon instanceof ImageView) {
                     ImageView icn = ((ImageView) icon);
                     icn.setColorFilter(inactiveColor);
+                }
+
+                ImageView wamod_badge_small = (ImageView) btn.findViewById(Resources.getID("wamod_badge_small"));
+
+                if (wamod_badge_small != null) {
+                    Drawable badge_small = btn.getResources().getDrawable(Resources.getDrawable("wamod_badge_small"));
+                    badge_small.setColorFilter(inactiveColor, PorterDuff.Mode.MULTIPLY);
+                    wamod_badge_small.setImageDrawable(badge_small);
                 }
 
                 if (((TextView) label).getTextSize() != originalLabelTextSize) {
@@ -221,7 +260,8 @@ public class BottomNavigation extends LinearLayout {
 
 
                             int newPadding = (int) (originalIconTopMargin - (iconMultiplier * interpolatorTime));
-                            icon.setPadding(0,newPadding,0,0);
+                            if (iconContainer == null) icon.setPadding(0, newPadding, 0, 0);
+                            else iconContainer.setPadding(0, newPadding, 0, 0);
                         }
                     };
                     anim.setDuration(100);
@@ -249,6 +289,13 @@ public class BottomNavigation extends LinearLayout {
                 inactiveColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", "555555"));
             }
             setBackgroundColor(backgroundColor);
+
+            ViewGroup wamod_badge_big = (ViewGroup) ((AppCompatActivity)ctx).findViewById(Resources.getID("wamod_badge_big"));
+            if (wamod_badge_big != null) {
+                Drawable badge_big = ctx.getResources().getDrawable(Resources.getDrawable("wamod_badge_big"));
+                badge_big.setColorFilter(backgroundColor, PorterDuff.Mode.MULTIPLY);
+                wamod_badge_big.setBackground(badge_big);
+            }
         } catch (Exception e) {
             Utils.manageException(e);
         }
