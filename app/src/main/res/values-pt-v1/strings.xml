@@ -74,6 +74,15 @@
     <string name="wamod_settings_privacy_hidetyping">Não reportar \"digitando\"</string>
     <string name="wamod_settings_privacy_alwaysonline">Sempre Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
+    
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_reportreceived_title">Relatar mensagens recebidas</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Seu contato saberá quando as mensagens forem recebidas</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, pode não funcionar ou causar atrasos caso desabilite esta opção</string>
+    <string name="wamod_privacy_card_reportread_title">Relatar mensagens lidas</string>
+    <string name="wamod_privacy_card_reportread_summary">Seu contato saberá se você leu as mensagens recebidas</string>
+    <string name="wamod_privacy_card_reporttyping_title">Relatar digitação</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Seu contato saberá quando você estiver digitando</string>
 
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">Temas WAMOD</string>
