@@ -3,6 +3,7 @@ package com.wamod.WAclass;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.wamod.Resources;
 import com.wamod.Utils;
@@ -24,5 +25,10 @@ public class ContactPicker {
         if (tab1 != null) tab1.setImageDrawable(Utils.tintToColor(tab1.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
         if (tab2 != null) tab2.setImageDrawable(Utils.tintToColor(tab2.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
         if (tab3 != null) tab3.setImageDrawable(Utils.tintToColor(tab3.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
+
+        if (Utils.nightModeShouldRun()) {
+            ViewGroup pager = (ViewGroup) a.findViewById(Resources.getID("pager"));
+            if (pager != null) pager.setBackgroundColor(Utils.getDarkColor(2));
+        }
     }
 }
