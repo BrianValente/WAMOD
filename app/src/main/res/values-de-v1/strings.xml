@@ -51,7 +51,7 @@
     <string name="wamod_settings_conversation_toolbar_closebutton">Schließen Button</string>
     <string name="wamod_settings_conversation_layout">Layout</string>
     <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Aktiviere Hintergrundfarbe</string>
-    <string name="wamod_settings_conversation_layout_custombackgroundcolor">benutzerdefinierte Hintergrundfarbe</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Benutzerdefinierte Hintergrundfarbe</string>
     <string name="wamod_settings_conversation_layout_entry_style">Eingabe Style</string>
     <string name="wamod_settings_conversation_layout_entry_config">Eingabe anpassen</string>
     <string name="wamod_settings_conversation_bubbles">Sprechblasen</string>
@@ -59,13 +59,13 @@
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Eigene Gruppenmitgliedsfarben</string>
     <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Eigene Mitgliedsfarben</string>
     <string name="wamod_settings_conversation_bubbles_style">Style</string>
-    <string name="wamod_settings_conversation_bubbles_ticksstyle">Hacken style</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Hacken Style</string>
     <string name="wamod_settings_conversation_bubbles_right_color">Rechte Sprechblase</string>
-    <string name="wamod_settings_conversation_bubbles_right_textcolor">Rechte Sprechblase: text</string>
-    <string name="wamod_settings_conversation_bubbles_right_datecolor">Rechte Sprechblase: datum</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Rechte Sprechblase: Text</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Rechte Sprechblase: Datum</string>
     <string name="wamod_settings_conversation_bubbles_left_color">Linke Sprechblase</string>
-    <string name="wamod_settings_conversation_bubbles_left_textcolor">Linke Sprechblase: text</string>
-    <string name="wamod_settings_conversation_bubbles_left_datecolor">Linke Sprechblase: datum</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Linke Sprechblase: Text</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Linke Sprechblase: Datum</string>
 
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privatsphäre</string>
@@ -87,10 +87,10 @@
     <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Weiteres</string>
     <string name="wamod_settings_miscellaneous_system">System bezogen</string>
-    <string name="wamod_settings_miscellaneous_system_osgallery">SystemGallery-App benutzen</string>
-    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Sende Dateien mit deiner bevorzugten App</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">System-Galerie-App benutzen</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Sende Dateien mit deiner bevorzugten Galerie App</string>
     <string name="wamod_settings_miscellaneous_system_cardcolor">Gefärbte Apps in der Appübersicht</string>
-    <string name="wamod_settings_miscellaneous_system_cardsforchats">Tabs für einzelne chats</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">Tabs für einzelne Chats</string>
     <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Du kannst einzelne Chats in der Appübersicht sehen</string>
     <string name="wamod_settings_miscellaneous_app">App</string>
     <string name="wamod_settings_miscellaneous_app_checkupdates">Nach Updates suchen</string>
@@ -131,7 +131,7 @@
 
     <!-- Updater -->
     <string name="wamod_updater_title">WAMOD Update verfügbar!</string>
-    <string name="wamod_updater_message">%1$s ist zum Download bereit. Du bist auf version: %2$s.</string>
+    <string name="wamod_updater_message">%1$s ist zum Download bereit. Du bist auf Version: %2$s.</string>
     <string name="wamod_updater_download">Download</string>
     <string name="wamod_updater_later">Später</string>
     <string name="wamod_updater_ignore">Update überspringen</string>
