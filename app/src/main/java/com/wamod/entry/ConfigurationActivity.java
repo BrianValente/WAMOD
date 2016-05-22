@@ -19,7 +19,6 @@ public class ConfigurationActivity extends Activity {
     static AppCompatActivity a;
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         Utils.loadColorsBeforeSuper(this);
         super.onCreate(savedInstanceState);
         ctx = this;
