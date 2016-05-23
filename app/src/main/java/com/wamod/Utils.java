@@ -74,8 +74,8 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.1 RC2";
-    public static int wamodVersionCode = 31;
+    public static String wamodVersionName = "1.3.1 RC4";
+    public static int wamodVersionCode = 32;
     public static Context context;
     public static boolean debug = false;
 
@@ -224,6 +224,8 @@ public class Utils extends android.app.Activity {
                 com.wamod.WAclass.ContactPicker._onCreate(a);
             } else if (a instanceof com.whatsapp.EULA) {
                 com.wamod.WAclass.EULA._onCreate(a);
+            } else if (a instanceof com.whatsapp.ArchivedConversationsActivity) {
+                com.wamod.WAclass.ArchivedConversationsActivity._onCreate(a);
             }
         } catch (Exception e) {
             manageException(e);
@@ -313,25 +315,27 @@ public class Utils extends android.app.Activity {
     }
 
     public static void initWAMOD() {
+        SharedPreferences privacyPrefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+        SharedPreferences.Editor privacyPrefs_Edit = privacyPrefs.edit();
         switch (Utils.prefs.getInt("wamodversion", 0)) {
             case 0:
-                Utils.edit.putString("general_statusbarcolor", "0b8043");
-                Utils.edit.putString("general_toolbarcolor", "0f9d58");
-                Utils.edit.putString("general_toolbarforeground", "ffffff");
-                Utils.edit.putString("general_navbarcolor", "555555");
-                Utils.edit.putBoolean("general_darkmode", false);
+                Utils.edit.putString("general_statusbarcolor", "0d8ed3");
+                Utils.edit.putString("general_toolbarcolor", "0dacf4");
+                Utils.edit.putString("general_toolbarforeground", "053954");
+                Utils.edit.putString("general_navbarcolor", "2a2a2a");
+                Utils.edit.putBoolean("general_darkmode", true);
                 Utils.edit.putString("home_theme", "1");
                 Utils.edit.putBoolean("conversation_hideprofilephoto", true);
                 Utils.edit.putBoolean("conversation_hidetoolbarattach", true);
                 Utils.edit.putBoolean("conversation_proximitysensor", true);
-                Utils.edit.putString("conversation_rightbubblecolor", "cfd8dc");
-                Utils.edit.putString("conversation_rightbubbletextcolor", "263238");
-                Utils.edit.putString("conversation_rightbubbledatecolor", "263238");
-                Utils.edit.putString("conversation_leftbubblecolor", "ffffff");
-                Utils.edit.putString("conversation_leftbubbletextcolor", "263238");
-                Utils.edit.putString("conversation_leftbubbledatecolor", "263238");
+                Utils.edit.putString("conversation_rightbubblecolor", "404040");
+                Utils.edit.putString("conversation_rightbubbletextcolor", "ffffff");
+                Utils.edit.putString("conversation_rightbubbledatecolor", "dadada");
+                Utils.edit.putString("conversation_leftbubblecolor", "303030");
+                Utils.edit.putString("conversation_leftbubbletextcolor", "ffffff");
+                Utils.edit.putString("conversation_leftbubbledatecolor", "dadada");
                 Utils.edit.putBoolean("conversation_customparticipantcolorbool", false);
-                Utils.edit.putString("conversation_customparticipantcolor", "000000");
+                Utils.edit.putString("conversation_customparticipantcolor", "ffffff");
                 Utils.edit.putString("conversation_style_bubble", "7");
                 Utils.edit.putString("conversation_style_tick", "1");
 
@@ -341,13 +345,13 @@ public class Utils extends android.app.Activity {
                 Utils.edit.putBoolean("privacy_hideTyping", false);
                 Utils.edit.putBoolean("privacy_alwaysOnline", false);
 
-                Utils.edit.putString("theme_wamod_conversation_entry_bgcolor", "ffffff");
-                Utils.edit.putString("theme_wamod_conversation_entry_entrybgcolor", "cfd8dc");
-                Utils.edit.putString("theme_wamod_conversation_entry_hinttextcolor", "263238");
-                Utils.edit.putString("theme_wamod_conversation_entry_textcolor", "263238");
-                Utils.edit.putString("theme_wamod_conversation_entry_emojibtncolor", "263238");
-                Utils.edit.putString("theme_wamod_conversation_entry_btncolor", "263238");
-                Utils.edit.putString("theme_wamod_conversation_entry_sendbtncolor", "263238");
+                Utils.edit.putString("theme_wamod_conversation_entry_bgcolor", "2a2a2a");
+                Utils.edit.putString("theme_wamod_conversation_entry_entrybgcolor", "303030");
+                Utils.edit.putString("theme_wamod_conversation_entry_hinttextcolor", "ffffff");
+                Utils.edit.putString("theme_wamod_conversation_entry_textcolor", "ffffff");
+                Utils.edit.putString("theme_wamod_conversation_entry_emojibtncolor", "ffffff");
+                Utils.edit.putString("theme_wamod_conversation_entry_btncolor", "ffffff");
+                Utils.edit.putString("theme_wamod_conversation_entry_sendbtncolor", "0dacf4");
             case 1:
                 Utils.edit.putString("theme_hangouts_conversation_entry_bgcolor", "ffffff");
                 Utils.edit.putString("theme_hangouts_conversation_entry_hintcolor", "607d8b");
@@ -362,15 +366,15 @@ public class Utils extends android.app.Activity {
             case 2:
                 Utils.edit.putBoolean("overview_cardcolor", true);
                 Utils.edit.putBoolean("overview_multiplechats", true);
-                Utils.edit.putString("conversation_style_entry", "2");
+                Utils.edit.putString("conversation_style_entry", "1");
                 Utils.edit.putString("conversation_style_bubble_layout", "0");
             case 3:
                 Utils.edit.putBoolean("conversation_custombackcolorbool", true);
-                Utils.edit.putString("conversation_custombackcolor", "eceff1");
+                Utils.edit.putString("conversation_custombackcolor", "202020");
                 Utils.edit.putString("conversation_style_toolbar", "2");
                 Utils.edit.putBoolean("conversation_toolbarexit", false);
             case 4:
-                Utils.edit.putBoolean("general_darkstatusbaricons", false);
+                Utils.edit.putBoolean("general_darkstatusbaricons", true);
             case 5:
                 Utils.edit.putBoolean("wamodthemes_constantlycheck", true);
             case 6:
@@ -404,28 +408,32 @@ public class Utils extends android.app.Activity {
                 Utils.edit.putBoolean("home_drawer_blackheadertext", false);
                 Utils.edit.putBoolean("home_drawer_dark", true);
             case 13:
-                Utils.edit.putString("general_toolbartextcolor", "ffffff");
+                Utils.edit.putString("general_toolbartextcolor", "255974");
             case 23:
                 Utils.edit.putBoolean("home_bottomnavigationbar", true);
-                Utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
-                Utils.edit.putString("home_bottomnavigationbar_colors_bg", "555555");
-                Utils.edit.putString("home_bottomnavigationbar_colors_activeitem", "ffffff");
-                Utils.edit.putString("home_bottomnavigationbar_colors_inactiveitem", "888888");
+                Utils.edit.putBoolean("home_bottomnavigationbar_autocolor", false);
+                Utils.edit.putString("home_bottomnavigationbar_colors_bg", "2a2a2a");
+                Utils.edit.putString("home_bottomnavigationbar_colors_activeitem", "0dacf4");
+                Utils.edit.putString("home_bottomnavigationbar_colors_inactiveitem", "828c91");
             case 24:
-                Utils.edit.putBoolean("home_bottomnavigationbar", true);
-                Utils.edit.putBoolean("home_bottomnavigationbar_autocolor", true);
                 Utils.edit.putBoolean("home_drawer_showsecondaccount", true);
             case 27:
+                Utils.edit.putBoolean("nightmode_enable", true);
                 Utils.edit.putString("nightmode_primarytextcolor", "ffffff");
                 Utils.edit.putString("nightmode_secondarytextcolor", "aaaaaa");
-                Utils.edit.putString("nightmode_backgroundcolor", "303030");
-                Utils.edit.putString("nightmode_cardsbackgroundcolor", "424242");
+                Utils.edit.putString("nightmode_backgroundcolor", "202020");
+                Utils.edit.putString("nightmode_cardsbackgroundcolor", "2a2a2a");
                 Utils.edit.putString("drawer_light_background", "fefefe");
-                Utils.edit.putString("drawer_dark_background", "404040");
+                Utils.edit.putString("drawer_dark_background", "2a2a2a");
+            case 31:
+                privacyPrefs_Edit.putBoolean("general_reportreceived", !prefs.getBoolean("privacy_no2ndTick", false));
+                privacyPrefs_Edit.putBoolean("general_reportread", !prefs.getBoolean("privacy_noBlueTick", false));
+                privacyPrefs_Edit.putBoolean("general_reporttyping", !prefs.getBoolean("privacy_hideTyping", false));
                 break;
         }
         Utils.edit.putInt("wamodversion", wamodVersionCode);
         Utils.edit.apply();
+        privacyPrefs_Edit.apply();
 
         if (!debug) {
             try {
