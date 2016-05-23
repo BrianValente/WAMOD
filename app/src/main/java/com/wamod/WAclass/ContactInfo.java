@@ -30,19 +30,25 @@ public class ContactInfo extends AppCompatActivity {
                     public void onGlobalLayout() {
 
                         ViewGroup wamod_privacy_card = (ViewGroup) a.findViewById(Resources.getID("wamod_privacy_card"));
-                        TextView wamod_privacy_card_reportreceived_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_title"));
+                        TextView wamod_privacy_card_customprivacy_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_customprivacy_title"));
+                        TextView wamod_privacy_card_customprivacy_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_customprivacy_summary"));
+
+                        wamod_privacy_card.setBackgroundColor(Utils.getDarkColor(3));
+                        wamod_privacy_card_customprivacy_title.setTextColor(Utils.getDarkColor(0));
+                        wamod_privacy_card_customprivacy_summary.setTextColor(Utils.getDarkColor(1));
+                        /*TextView wamod_privacy_card_reportreceived_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_title"));
                         TextView wamod_privacy_card_reportreceived_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_summary"));
                         TextView wamod_privacy_card_reportread_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportread_title"));
                         TextView wamod_privacy_card_reportread_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportread_summary"));
                         TextView wamod_privacy_card_hidetyping_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_title"));
                         TextView wamod_privacy_card_hidetyping_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_summary"));
-                        wamod_privacy_card.setBackgroundColor(Utils.getDarkColor(3));
+
                         wamod_privacy_card_reportreceived_title.setTextColor(Utils.getDarkColor(0));
                         wamod_privacy_card_reportreceived_summary.setTextColor(Utils.getDarkColor(1));
                         wamod_privacy_card_reportread_title.setTextColor(Utils.getDarkColor(0));
                         wamod_privacy_card_reportread_summary.setTextColor(Utils.getDarkColor(1));
                         wamod_privacy_card_hidetyping_title.setTextColor(Utils.getDarkColor(0));
-                        wamod_privacy_card_hidetyping_summary.setTextColor(Utils.getDarkColor(1));
+                        wamod_privacy_card_hidetyping_summary.setTextColor(Utils.getDarkColor(1));*/
 
                         ListView list = (ListView) a.findViewById(android.R.id.list);
                         list.setBackgroundColor(Utils.getDarkColor(2));

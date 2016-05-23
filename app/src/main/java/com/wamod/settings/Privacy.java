@@ -30,7 +30,7 @@ public class Privacy extends Activity {
         @Override
         public void onCreate(Bundle paramBundle) {
             super.onCreate(paramBundle);
-            getPreferenceManager().setSharedPreferencesName("wamod");
+            getPreferenceManager().setSharedPreferencesName("wamod_privacy");
             addPreferencesFromResource(Resources.xml.wamodsettings_privacy);
         }
     }
