@@ -21,6 +21,7 @@ import com.pkmmte.view.CircularImageView;
 import com.wamod.Resources;
 import com.wamod.SwitchAccounts;
 import com.wamod.Utils;
+import com.wamod.WAclass.ArchivedConversationsActivity;
 import com.wamod.settings.Settings;
 import com.wamod.settings.Privacy;
 import com.whatsapp.HomeActivity;
@@ -163,6 +164,9 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                             activity.onSearchRequested();
                         } else if (id == Resources.id.wamod_drawer_privacy) {
                             intent = new Intent(activity, Privacy.class);
+                            activity.startActivity(intent);
+                        } else if (id == Resources.getID("wamod_drawer_archivedchats")) {
+                            intent = new Intent(activity, com.whatsapp.ArchivedConversationsActivity.class);
                             activity.startActivity(intent);
                         }
                         drawerLayout.closeDrawer(navigationView);
