@@ -70,11 +70,10 @@
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privatsphäre</string>
     <string name="wamod_settings_privacy_freezelastseen">zul. online einfrieren</string>
-    <string name="wamod_settings_privacy_hidebluetick">Blauer Hacken bei empfangenen Nachrichten ausschalten</string>
-    <string name="wamod_settings_privacy_hidetyping">\"schreiben...\" nicht anzeigen</string>
     <string name="wamod_settings_privacy_alwaysonline">Immer Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimentell</string>
-
+    <string name="wamod_privacy_individual_summary">Hinweis: Du kannst für jeden Kontakt benutzderfinierte Privatsphäre Einstellungen an ihrem Profil einstellen.</string>
+    
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_deviceid">Geräte ID</string>
@@ -97,8 +96,18 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Einstellungen zurücksetzen</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Standartwerte werden zurückgesetzt</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Bist du dir sicher dass du die Einstellungen zurücksetzen willst?</string>
+    
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_customprivacy_title">Benutzerdefinierter Datenschutz</string>
+    <string name="wamod_privacy_card_reportreceived_title">Zweiten Hacken anzeigen</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Dein Kontakt wird wissen wann seine Nachricht angekommen ist</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimentell, funktoniert vielleicht nicht oder kann zu Verzögerungen deiner Nachrichten führen wenn du diese Option deaktivierst</string>
+    <string name="wamod_privacy_card_reportread_title">Blaue Hacken anzeigen</string>
+    <string name="wamod_privacy_card_reportread_summary">Dein Kontakt wird wissen ob du seine Nachricht gelesen hast</string>
+    <string name="wamod_privacy_card_reporttyping_title">\"schreibt...\"anzeigen</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Dein Kontakt wird wissen ob du schreibst</string>
 
-	<!-- WAMOD Settings - Advanced -->
+    <!-- WAMOD Settings - Advanced -->
     <string name="wamod_settings_advanced">Erweiterte EInstellungen</string>
     <string name="wamod_settings_advanced_nightmode">Nachtmodus</string>
     <string name="wamod_settings_advanced_nightmode_primarytextcolor">Primäre Textfarbe</string>
@@ -116,7 +125,7 @@
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Bist du dir sicher dass du dein Theme hochladen willst?</string>
     <string name="wamod_qts_upload_success">Deine Theme ID %1$s wurde zwischengespeichert. Teile es mit deinen Freunden!</string>
-
+    <string name="wamod_qts_upload_unofficial_message">Du benutzt eine inoffizielle Version von WAMOD und Theme hochladen ist deaktiviert wegen der inkompatibilitäten</string>
 
     <!-- Crash -->
     <string name="wamod_crash_title">WAMOD ist abgestürzt!</string>
