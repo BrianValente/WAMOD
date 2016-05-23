@@ -112,6 +112,16 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Sicuro di voler ripristinare le impostazioni iniziali?</string>
 
 
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_reportreceived_title">Mostra messaggi ricevuti</string>
+    <string name="wamod_privacy_card_reportreceived_summary">L\'altro saprà se hai ricevuto il messaggio</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Sperimentale, forse non funzionerà o causerà ritardi se disattivi quest\'opzione</string>
+    <string name="wamod_privacy_card_reportread_title">Mostra messaggi letti</string>
+    <string name="wamod_privacy_card_reportread_summary">L\'altro saprà se hai letto il messaggio</string>
+    <string name="wamod_privacy_card_reporttyping_title">Mostra \"stai scrivendo\"</string>
+    <string name="wamod_privacy_card_reporttyping_summary">L\'altro saprà se stai scrivendo</string>
+
+
     <!-- QTS -->
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Salva tema</string>
