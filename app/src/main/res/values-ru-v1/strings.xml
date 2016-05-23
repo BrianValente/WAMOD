@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- WAMOD Settings -->
+    <string name="wamod_settings">Настройки WAMOD</string>
+    <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) и выше</string>
+
+    <!-- WAMOD Settings - About -->
+    <string name="wamod_settings_about">О программе</string>
+    <string name="wamod_settings_about_googlepluscommunity">Google+ комьюнити</string>
+    <string name="wamod_settings_about_developertwitterprofile">Профиль разработчика Twitter</string>
+    <string name="wamod_settings_about_sourcecode">Исходный код</string>
+    <string name="wamod_settings_about_credits"><Благодарности</string>
+
+    <!-- WAMOD Settings - General -->
+    <string name="wamod_settings_general">Основоные</string>
+    <string name="wamod_settings_general_colors">Цвета</string>
+    <string name="wamod_settings_general_colors_statusbarcolor">Статус бар</string>
+    <string name="wamod_settings_general_colors_toolbarcolor">Тулбар</string>
+    <string name="wamod_settings_general_colors_toolbartitlescolor">Заголовок тулбара</string>
+    <string name="wamod_settings_general_colors_toolbariconscolor">Иконки тулбара</string>
+    <string name="wamod_settings_general_colors_navigationbarcolor">Панель навигации</string>
+    <string name="wamod_settings_general_colors_darkstatusbaricons">Темные иконки статус бара</string>
+    <string name="wamod_settings_general_nightmode">Ночной режим</string>
+    <string name="wamod_settings_general_nightmode_enable">Включить</string>
+    <string name="wamod_settings_general_nightmode_enable_summary">UI будет темным</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight">Только ночью</string>
+    <string name="wamod_settings_general_nightmode_onlyatnight_summary">Ночной режим будет включен только ночью</string>
+
+    <!-- WAMOD Settings - Home -->
+    <string name="wamod_settings_home">Главный экран</string>
+    <string name="wamod_settings_home_layout">Внешний вид</string>
+    <string name="wamod_settings_home_layout_hometheme">Стиль</string>
+    <string name="wamod_settings_home_drawer">Боковая панель</string>
+    <string name="wamod_settings_home_drawer_style">Стиль</string>
+    <string name="wamod_settings_home_drawer_darkdrawer">Темная панель</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Выбрать фон панели</string>
+    <string name="wamod_settings_home_drawer_blacktextinheader">Черный текст в заголовке</string>
+    <string name="wamod_settings_home_drawer_showsecondsaccount">Показывать второй аккаунт</string>
+    <string name="wamod_settings_home_bottomnavigationbar">Нижний навигационный бар</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors">Авто цвет</string>
+    <string name="wamod_settings_home_bottomnavigationbar_autocolors_summary">Цвета выбраны автоматически</string>
+    <string name="wamod_settings_home_bottomnavigationbar_color">Цвет фона</string>
+    <string name="wamod_settings_home_bottomnavigationbar_activeitemcolor">Цвет активного элемента</string>
+    <string name="wamod_settings_home_bottomnavigationbar_inactiveitemcolor">Цвет неактивных элементов</string>
+
+    <!-- WAMOD Settings - Conversation -->
+    <string name="wamod_settings_conversation">Переписка</string>
+    <string name="wamod_settings_conversation_toolbar">Тулбар</string>
+    <string name="wamod_settings_conversation_toolbar_style">Стиль</string>
+    <string name="wamod_settings_conversation_toolbar_hideprofilephoto">Скрыть фото профиля</string>
+    <string name="wamod_settings_conversation_toolbar_hideicons">Скрыть иконки</string>
+    <string name="wamod_settings_conversation_toolbar_closebutton">Кнопка закрытия</string>
+    <string name="wamod_settings_conversation_layout">Вид</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor_enable">Включить пользовательский цвет фона</string>
+    <string name="wamod_settings_conversation_layout_custombackgroundcolor">Пользовательский цвет фона</string>
+    <string name="wamod_settings_conversation_layout_entry_style">Стиль строки ввода</string>
+    <string name="wamod_settings_conversation_layout_entry_config">Редактировать строку ввода </string>
+    <string name="wamod_settings_conversation_bubbles">Пузыри</string>
+    <string name="wamod_settings_conversation_bubbles_personalize">Настроить пузыри</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor_enable">Включить пользовательский цвет участника</string>
+    <string name="wamod_settings_conversation_bubbles_customparticipantcolor">Пользовательский цвет участника</string>
+    <string name="wamod_settings_conversation_bubbles_style">Стиль</string>
+    <string name="wamod_settings_conversation_bubbles_ticksstyle">Стиль галочек</string>
+    <string name="wamod_settings_conversation_bubbles_right_color">Правый пузырь</string>
+    <string name="wamod_settings_conversation_bubbles_right_textcolor">Правый пузырь: текст</string>
+    <string name="wamod_settings_conversation_bubbles_right_datecolor">Правый пузырь: дата</string>
+    <string name="wamod_settings_conversation_bubbles_left_color">Левый пузырь</string>
+    <string name="wamod_settings_conversation_bubbles_left_textcolor">Левый пузырь: текст</string>
+    <string name="wamod_settings_conversation_bubbles_left_datecolor">Левый пузырь: дата</string>
+
+    <!-- WAMOD Settings - Privacy -->
+    <string name="wamod_settings_privacy">Приватность</string>
+    <string name="wamod_settings_privacy_freezelastseen">Заморозить последнее посещение</string>
+    <string name="wamod_settings_privacy_hidebluetick">Не докладывать о прочтении (синие галочки)</string>
+    <string name="wamod_settings_privacy_hidetyping">Не докладывать о \"печатает\"</string>
+    <string name="wamod_settings_privacy_alwaysonline">Всегда онлайн</string>
+    <string name="wamod_settings_privacy_alwaysonline_summary">Эксперементальная функция</string>
+
+    <!-- WAMOD Settings - WAMOD Themes -->
+    <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
+    <string name="wamod_settings_wamodthemes_deviceid">ID устройства</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Themes</string>
+    <string name="wamod_settings_wamodthemes_unlink">Отвязать устройства</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Отвязать устройства</string>
+    <string name="wamod_settings_wamodthemes_unlink_message">Вы уверены, что хотите отвязать устройство?</string>
+    <string name="wamod_settings_wamodthemes_visit">Посетить WAMOD Themes</string>
+
+    <!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Дополнительные</string>
+    <string name="wamod_settings_advanced_nightmode">Ночной режим</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Первичный текст</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Вторичный текст</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Фон карточек</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Фон</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Панель навигации</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Светлый фон</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Темный фон</string>
+
+
+    <!-- WAMOD Settings - Miscellaneous -->
+    <string name="wamod_settings_miscellaneous">Разное</string>
+    <string name="wamod_settings_miscellaneous_system">Связанные с системой</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery">Использовать галерею Whatsapp (если отключено)</string>
+    <string name="wamod_settings_miscellaneous_system_osgallery_summary">Прикреплять медиа файлы системной галереей (если включено)</string>
+    <string name="wamod_settings_miscellaneous_system_cardcolor">Цветные карточки (Недавние приложения)</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats">Карточки для чатов</string>
+    <string name="wamod_settings_miscellaneous_system_cardsforchats_summary">Вы можете видеть ваши чаты в Последних приложениях для легкого переключения</string>
+    <string name="wamod_settings_miscellaneous_app">Приложение</string>
+    <string name="wamod_settings_miscellaneous_app_checkupdates">Проверить обновление</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults">Восстановить настройки по умолчанию</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Восстановить настройки по умолчанию</string>
+    <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Вы уверены, что хотите восстановить настройки по умолчанию?</string>
+
+
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_reportreceived_title">Докладывать о полученных сообщениях</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Ваш собеседник будет знать, если сообщение доставится</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Эксперементальная функция, может не работать или привести к задержкам , если отключить</string>
+    <string name="wamod_privacy_card_reportread_title">Докладывать о прочтенных сообщениях</string>
+    <string name="wamod_privacy_card_reportread_summary">Ваш собеседник будет знать, если вы прочтете сообщение</string>
+    <string name="wamod_privacy_card_reporttyping_title">Докладывать о  "Печатаю"</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Ваш собеседник будет знать, если вы печатаете</string>
+
+    <!-- QTS -->
+    <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
+    <string name="wamod_qts_upload">Загрузть тему</string>
+    <string name="wamod_qts_download">Скачать тему</string>
+    <string name="wamod_qts_download_themeid">ID темы</string>
+    <string name="wamod_qts_upload_prompt">Вы уверены, что хотите загрузить тему?</string>
+    <string name="wamod_qts_upload_success">ID вашей темы %1$s было скопировано. Поделитесь с вашими друзьями!</string>
+    <string name="wamod_qts_upload_unofficial_message">Вы используете неофициальную версию WAMOD, поэтому загрузка тем отключена по причине несовместимости</string>
+
+
+    <!-- Crash -->
+    <string name="wamod_crash_title">Сбой в WAMOD!</string>
+    <string name="wamod_crash_message">Произошла ошибка при загрузке вашей конфигурации, по этой причине были восстановлены стандартные настройки.</string>
+    <string name="wamod_crash_button">Окай ☹</string>
+
+
+    <!-- Switch accounts -->
+    <string name="wamod_switchaccount_prompt_title">Сменить аккаунт</string>
+    <string name="wamod_switchaccount_prompt_message">Вы уверены, что хотите сменить аккаунт?</string>
+
+
+    <!-- Updater -->
+    <string name="wamod_updater_title">Новая версия WAMOD доступна!</string>
+    <string name="wamod_updater_message">%1$s доступна для загрузки. Ваша версия %2$s.</string>
+    <string name="wamod_updater_download">Скачать</string>
+    <string name="wamod_updater_later">Позже</string>
+    <string name="wamod_updater_ignore">Проигнорировать</string>
+    <string name="wamod_updater_uptodate">WAMOD обновлен</string>
+
+
+    <!-- Conversation -->
+    <string name="chat_with">Чат с %1$s</string>
+    <string name="profile_of">Профиль %1$s</string>
+    <string name="conversation_last_seen">Был/а в сети</string>
+    <string name="conversation_contact_online">В сети</string>
+    <string name="type_a_message">Напишите</string>
+
+
+    <!-- General -->
+    <string name="wamod_error">Произошла ошибка</string>
+    <string name="wamod_error_contacting_server">Произошла ошибка, при подключении к серверу, пожалуйста попробуйте позже</string>
+    <string name="wamod_restartwamod">Перезапустить WAMOD</string>
+    <string name="wamod_done">Готово</string>
+</resources>
