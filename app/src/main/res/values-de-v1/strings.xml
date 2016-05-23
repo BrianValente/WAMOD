@@ -108,7 +108,7 @@
     <string name="wamod_privacy_card_reporttyping_summary">Dein Kontakt wird wissen ob du schreibst</string>
 
     <!-- WAMOD Settings - Advanced -->
-    <string name="wamod_settings_advanced">Erweiterte EInstellungen</string>
+    <string name="wamod_settings_advanced">Erweiterte Einstellungen</string>
     <string name="wamod_settings_advanced_nightmode">Nachtmodus</string>
     <string name="wamod_settings_advanced_nightmode_primarytextcolor">Primäre Textfarbe</string>
     <string name="wamod_settings_advanced_nightmode_secondarytextcolor">Sekundäre Textfarbe</string>
