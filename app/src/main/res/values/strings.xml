@@ -43,4 +43,6 @@
     <string name="not_a_group_participant"></string>
     <string name="contact_status_and_phone"></string>
     <string name="groups_in_common"></string>
+    <string name="archived_chats"></string>
+    <string name="delete_chat_tip"></string>
 </resources>
