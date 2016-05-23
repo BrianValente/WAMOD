@@ -111,13 +111,23 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Adakah anda pasti untuk kembali ke tetapan asal?</string>
 
 
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_reportreceived_title">Laporan mesej diterima</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Kenalan anda akan tahu apabila mesej diterima</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Sedang diuji, mesej mungkin lambat dihantar/diterima</string>
+    <string name="wamod_privacy_card_reportread_title">Laporan mesej dibaca</string>
+    <string name="wamod_privacy_card_reportread_summary">Kenalan anda akan tahu apabila mesej dibaca</string>
+    <string name="wamod_privacy_card_reporttyping_title">Laporan sedang menaip</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Kenalan anda akan tahu apabila anda sedang menaip</string>
+
     <!-- QTS -->
-    <string name="wamod_qts">Perkongsian Tema Pantas (PTP)</string>
+    <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Muat naik tema</string>
     <string name="wamod_qts_download">Muat turun tema</string>
     <string name="wamod_qts_download_themeid">ID tema</string>
     <string name="wamod_qts_upload_prompt">Adakah anda pasti untuk muat naik tema?</string>
     <string name="wamod_qts_upload_success">ID tema anda %1$s telah disalin pada papan klip. Kongsi dengan rakan anda!</string>
+    <string name="wamod_qts_upload_unofficial_message">Anda sedang menggunakan WAMOD yang tidak rasmi, muat naik tema tidak tersedia</string>
 
 
     <!-- Crash -->
@@ -152,4 +162,5 @@
     <string name="wamod_error">Terdapat ralat</string>
     <string name="wamod_error_contacting_server">Terdapat ralat ketika menghubungi pelayan, sila cuba sebentar lagi</string>
     <string name="wamod_restartwamod">Buka semula WAMOD</string>
+    <string name="wamod_done">Selesai</string>
 </resources>
