@@ -9,7 +9,7 @@
     <string name="wamod_settings_about_googlepluscommunity">Google+ комьюнити</string>
     <string name="wamod_settings_about_developertwitterprofile">Профиль разработчика Twitter</string>
     <string name="wamod_settings_about_sourcecode">Исходный код</string>
-    <string name="wamod_settings_about_credits"><Благодарности</string>
+    <string name="wamod_settings_about_credits">Благодарности</string>
 
     <!-- WAMOD Settings - General -->
     <string name="wamod_settings_general">Основоные</string>
