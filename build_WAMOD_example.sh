@@ -42,6 +42,9 @@ echo ""
 echo "Signing..."
 jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore [YOUR_FILE].jks -storepass [YOUR_PASSWORD] -signedjar WAMOD_signed.apk WAMOD_unsigned.apk [YOUR_KEY]
 echo ""
+echo "Zipalign..."
+zipalign -f 4 WAMOD_signed.apk WAMOD_signed_zipalign.apk
+echo ""
 echo "Installing..."
 echo ""
 adb install -r -d WAMOD_signed.apk
