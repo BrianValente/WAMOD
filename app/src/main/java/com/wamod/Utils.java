@@ -77,7 +77,7 @@ public class Utils extends android.app.Activity {
     public static String wamodVersionName = "1.3.3 Release Candidate 1";
     public static int wamodVersionCode = 34;
     public static Context context;
-    public static boolean debug = true;
+    public static boolean debug = false;
 
     public static long timeSinceLastCheckin = 0;
 
