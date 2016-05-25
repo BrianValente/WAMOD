@@ -5,12 +5,13 @@ import android.view.View;
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class uj implements View.OnClickListener {
-    // OPENS EMOJI PICKER
+public class sm implements View.OnClickListener {
+    // OPENS WHATSAPP GALLERY
+
     @Override
     public void onClick(View v) {}
 
-    public uj(Conversation conversation) {}
+    public sm(Conversation conversation) {}
 
-    public uj() {}
+    public sm() {}
 }

@@ -59,8 +59,8 @@ public class Hangouts {
             }
         });
 
-        camera.setOnClickListener(new av(activity, true));
-        emoji.setOnClickListener(new uj(activity));
-        location.setOnClickListener(new a5i(activity));
+        camera.setOnClickListener(new a5o(activity, true));
+        emoji.setOnClickListener(new asz(activity));
+        location.setOnClickListener(new adw(activity));
     }
 }

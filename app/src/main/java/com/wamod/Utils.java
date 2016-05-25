@@ -74,10 +74,10 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.1";
-    public static int wamodVersionCode = 32;
+    public static String wamodVersionName = "1.3.3 Release Candidate 1";
+    public static int wamodVersionCode = 34;
     public static Context context;
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     public static long timeSinceLastCheckin = 0;
 
@@ -429,6 +429,9 @@ public class Utils extends android.app.Activity {
                 privacyPrefs_Edit.putBoolean("general_reportreceived", !prefs.getBoolean("privacy_no2ndTick", false));
                 privacyPrefs_Edit.putBoolean("general_reportread", !prefs.getBoolean("privacy_noBlueTick", false));
                 privacyPrefs_Edit.putBoolean("general_reporttyping", !prefs.getBoolean("privacy_hideTyping", false));
+            case 32:
+                privacyPrefs_Edit.putBoolean("general_freezelastseen", !prefs.getBoolean("privacy_freezelastseen", false));
+                privacyPrefs_Edit.putBoolean("general_alwaysonline", !prefs.getBoolean("privacy_alwaysOnline", false));
                 break;
         }
         Utils.edit.putInt("wamodversion", wamodVersionCode);
@@ -598,23 +601,15 @@ public class Utils extends android.app.Activity {
     }
 
     public static boolean getPrivacyConfig(int id) {
+        SharedPreferences privacyPrefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
         boolean value = false;
         switch (id) {
             case 0:
-                value = Utils.prefs.getBoolean("privacy_freezelastseen", false);
-                break;
-            case 1:
-                value = Utils.prefs.getBoolean("privacy_no2ndTick", false);
-                break;
-            case 2:
-                value = Utils.prefs.getBoolean("privacy_noBlueTick", false);
-                break;
-            case 3:
-                value = Utils.prefs.getBoolean("privacy_hideTyping", false);
+                value = privacyPrefs.getBoolean("general_freezelastseen", false);
                 break;
             default:
             case 4:
-                value = Utils.prefs.getBoolean("privacy_alwaysOnline", false);
+                value = privacyPrefs.getBoolean("general_alwaysonline", false);
                 break;
         }
         return value;

@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class ContactInfo extends AppCompatActivity {
     // Contact
-    private com.whatsapp.qj G;
+    private jn G;
 
-    public static qj f(ContactInfo contactInfo) {
+    public static jn f(ContactInfo contactInfo) {
         return null;
     }
 }

@@ -234,7 +234,25 @@ public final class Resources {
         public static final int wamod_drawer_bg = getHexID("wamod_drawer_bg", "drawable");
 
 
+        /** FloatingActionButton */
+        public static int wamod_fab_bg = getHexID("wamod_fab_bg", "drawable");
+
+
+        /** HomeActivity Menu */
+        public static int ic_action_search = getHexID("ic_action_search", "drawable");
+
+
+        /** Conversation */
+        public static int wamod_action_close = getHexID("wamod_action_close", "drawable");
+        public static int wamod_theme_wamod_conversation_input    = getHexID("wamod_theme_wamod_conversation_input", "drawable");
+
+
+        /** General */
+        public static int icon = getHexID("icon", "drawable");
+
+
         /** Ticks */
+
         // Stock
         public static int message_unsent                               = getHexID("message_unsent", "drawable");
         public static int message_got_receipt_from_server              = getHexID("message_got_receipt_from_server", "drawable");
@@ -245,22 +263,56 @@ public final class Resources {
         public static int message_got_receipt_from_target_onmedia      = getHexID("message_got_receipt_from_target_onmedia", "drawable");
         public static int message_got_read_receipt_from_target_onmedia = getHexID("message_got_read_receipt_from_target_onmedia", "drawable");
 
+        // iOS
+        public static int wamod_style_tick_ios_message_unsent                               = getHexID("wamod_style_tick_ios_message_unsent", "drawable");
+        public static int wamod_style_tick_ios_message_got_receipt_from_server              = getHexID("wamod_style_tick_ios_message_got_receipt_from_server", "drawable");
+        public static int wamod_style_tick_ios_message_got_receipt_from_target              = getHexID("wamod_style_tick_ios_message_got_receipt_from_target", "drawable");
+        public static int wamod_style_tick_ios_message_got_read_receipt_from_target         = getHexID("wamod_style_tick_ios_message_got_read_receipt_from_target", "drawable");
+        public static int wamod_style_tick_ios_message_unsent_onmedia                       = getHexID("wamod_style_tick_ios_message_unsent_onmedia", "drawable");
+        public static int wamod_style_tick_ios_message_got_receipt_from_server_onmedia      = getHexID("wamod_style_tick_ios_message_got_receipt_from_server_onmedia", "drawable");
+        public static int wamod_style_tick_ios_message_got_receipt_from_target_onmedia      = getHexID("wamod_style_tick_ios_message_got_receipt_from_target_onmedia", "drawable");
+        public static int wamod_style_tick_ios_message_got_read_receipt_from_target_onmedia = getHexID("wamod_style_tick_ios_message_got_read_receipt_from_target_onmedia", "drawable");
 
-        /** FloatingActionButton */
-        public static int wamod_fab_bg = getHexID("wamod_fab_bg", "drawable");
+        // Old WACA
+        public static int wamod_style_tick_oldwaca_message_unsent                               = getHexID("wamod_style_tick_oldwaca_message_unsent", "drawable");
+        public static int wamod_style_tick_oldwaca_message_got_receipt_from_server              = getHexID("wamod_style_tick_oldwaca_message_got_receipt_from_server", "drawable");
+        public static int wamod_style_tick_oldwaca_message_got_receipt_from_target              = getHexID("wamod_style_tick_oldwaca_message_got_receipt_from_target", "drawable");
+        public static int wamod_style_tick_oldwaca_message_got_read_receipt_from_target         = getHexID("wamod_style_tick_oldwaca_message_got_read_receipt_from_target", "drawable");
+        public static int wamod_style_tick_oldwaca_message_unsent_onmedia                       = getHexID("wamod_style_tick_oldwaca_message_unsent_onmedia", "drawable");
+        public static int wamod_style_tick_oldwaca_message_got_receipt_from_server_onmedia      = getHexID("wamod_style_tick_oldwaca_message_got_receipt_from_server_onmedia", "drawable");
+        public static int wamod_style_tick_oldwaca_message_got_receipt_from_target_onmedia      = getHexID("wamod_style_tick_oldwaca_message_got_receipt_from_target_onmedia", "drawable");
+        public static int wamod_style_tick_oldwaca_message_got_read_receipt_from_target_onmedia = getHexID("wamod_style_tick_oldwaca_message_got_read_receipt_from_target_onmedia", "drawable");
 
-        /** HomeActivity Menu */
-        public static int ic_action_search = getHexID("ic_action_search", "drawable");
+        // New WACA
+        public static int wamod_style_tick_newwaca_message_unsent                               = getHexID("wamod_style_tick_newwaca_message_unsent", "drawable");
+        public static int wamod_style_tick_newwaca_message_got_receipt_from_server              = getHexID("wamod_style_tick_newwaca_message_got_receipt_from_server", "drawable");
+        public static int wamod_style_tick_newwaca_message_got_receipt_from_target              = getHexID("wamod_style_tick_newwaca_message_got_receipt_from_target", "drawable");
+        public static int wamod_style_tick_newwaca_message_got_read_receipt_from_target         = getHexID("wamod_style_tick_newwaca_message_got_read_receipt_from_target", "drawable");
+        public static int wamod_style_tick_newwaca_message_unsent_onmedia                       = getHexID("wamod_style_tick_newwaca_message_unsent_onmedia", "drawable");
+        public static int wamod_style_tick_newwaca_message_got_receipt_from_server_onmedia      = getHexID("wamod_style_tick_newwaca_message_got_receipt_from_server_onmedia", "drawable");
+        public static int wamod_style_tick_newwaca_message_got_receipt_from_target_onmedia      = getHexID("wamod_style_tick_newwaca_message_got_receipt_from_target_onmedia", "drawable");
+        public static int wamod_style_tick_newwaca_message_got_read_receipt_from_target_onmedia = getHexID("wamod_style_tick_newwaca_message_got_read_receipt_from_target_onmedia", "drawable");
 
+        // Joaquin's WAMD
+        public static int wamod_style_tick_oldwamd_message_unsent                               = getHexID("wamod_style_tick_oldwamd_message_unsent", "drawable");
+        public static int wamod_style_tick_oldwamd_message_got_receipt_from_server              = getHexID("wamod_style_tick_oldwamd_message_got_receipt_from_server", "drawable");
+        public static int wamod_style_tick_oldwamd_message_got_receipt_from_target              = getHexID("wamod_style_tick_oldwamd_message_got_receipt_from_target", "drawable");
+        public static int wamod_style_tick_oldwamd_message_got_read_receipt_from_target         = getHexID("wamod_style_tick_oldwamd_message_got_read_receipt_from_target", "drawable");
+        public static int wamod_style_tick_oldwamd_message_unsent_onmedia                       = getHexID("wamod_style_tick_oldwamd_message_unsent_onmedia", "drawable");
+        public static int wamod_style_tick_oldwamd_message_got_receipt_from_server_onmedia      = getHexID("wamod_style_tick_oldwamd_message_got_receipt_from_server_onmedia", "drawable");
+        public static int wamod_style_tick_oldwamd_message_got_receipt_from_target_onmedia      = getHexID("wamod_style_tick_oldwamd_message_got_receipt_from_target_onmedia", "drawable");
+        public static int wamod_style_tick_oldwamd_message_got_read_receipt_from_target_onmedia = getHexID("wamod_style_tick_oldwamd_message_got_read_receipt_from_target_onmedia", "drawable");
 
-        /** Conversation */
-        public static int wamod_action_close = getHexID("wamod_action_close", "drawable");
+        // Circles
+        public static int wamod_style_tick_circles_message_unsent                               = getHexID("wamod_style_tick_circles_message_unsent", "drawable");
+        public static int wamod_style_tick_circles_message_got_receipt_from_server              = getHexID("wamod_style_tick_circles_message_got_receipt_from_server", "drawable");
+        public static int wamod_style_tick_circles_message_got_receipt_from_target              = getHexID("wamod_style_tick_circles_message_got_receipt_from_target", "drawable");
+        public static int wamod_style_tick_circles_message_got_read_receipt_from_target         = getHexID("wamod_style_tick_circles_message_got_read_receipt_from_target", "drawable");
+        public static int wamod_style_tick_circles_message_unsent_onmedia                       = getHexID("wamod_style_tick_circles_message_unsent_onmedia", "drawable");
+        public static int wamod_style_tick_circles_message_got_receipt_from_server_onmedia      = getHexID("wamod_style_tick_circles_message_got_receipt_from_server_onmedia", "drawable");
+        public static int wamod_style_tick_circles_message_got_receipt_from_target_onmedia      = getHexID("wamod_style_tick_circles_message_got_receipt_from_target_onmedia", "drawable");
+        public static int wamod_style_tick_circles_message_got_read_receipt_from_target_onmedia = getHexID("wamod_style_tick_circles_message_got_read_receipt_from_target_onmedia", "drawable");
 
-        public static int wamod_theme_wamod_conversation_input    = getHexID("wamod_theme_wamod_conversation_input", "drawable");
-
-
-        /** General */
-        public static int icon = getHexID("icon", "drawable");
     }
 
     public static class string {
@@ -368,6 +420,168 @@ public final class Resources {
         return getHexID(layout, "layout");
     }
     public static int getDrawable(String drawable) {
-        return getHexID(drawable, "drawable");
+        int id = 0;
+        // Better performance for ticks
+        switch (drawable) {
+            // Stock
+            case "message_unsent":
+                id = Resources.drawable.message_unsent;
+                break;
+            case "message_got_receipt_from_server":
+                id = Resources.drawable.message_got_receipt_from_server;
+                break;
+            case "message_got_receipt_from_target":
+                id = Resources.drawable.message_got_receipt_from_target;
+                break;
+            case "message_got_read_receipt_from_target":
+                id = Resources.drawable.message_got_read_receipt_from_target;
+                break;
+            case "message_unsent_onmedia":
+                id = Resources.drawable.message_unsent_onmedia;
+                break;
+            case "message_got_receipt_from_server_onmedia":
+                id = Resources.drawable.message_got_receipt_from_server_onmedia;
+                break;
+            case "message_got_receipt_from_target_onmedia":
+                id = Resources.drawable.message_got_receipt_from_target_onmedia;
+                break;
+            case "message_got_read_receipt_from_target_onmedia":
+                id = Resources.drawable.message_got_read_receipt_from_target_onmedia;
+                break;
+
+            // iOS
+            case "wamod_style_tick_ios_message_unsent":
+                id = Resources.drawable.wamod_style_tick_ios_message_unsent;
+                break;
+            case "wamod_style_tick_ios_message_got_receipt_from_server":
+                id = Resources.drawable.wamod_style_tick_ios_message_got_receipt_from_server;
+                break;
+            case "wamod_style_tick_ios_message_got_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_ios_message_got_receipt_from_target;
+                break;
+            case "wamod_style_tick_ios_message_got_read_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_ios_message_got_read_receipt_from_target;
+                break;
+            case "wamod_style_tick_ios_message_unsent_onmedia":
+                id = Resources.drawable.wamod_style_tick_ios_message_unsent_onmedia;
+                break;
+            case "wamod_style_tick_ios_message_got_receipt_from_server_onmedia":
+                id = Resources.drawable.wamod_style_tick_ios_message_got_receipt_from_server_onmedia;
+                break;
+            case "wamod_style_tick_ios_message_got_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_ios_message_got_receipt_from_target_onmedia;
+                break;
+            case "wamod_style_tick_ios_message_got_read_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_ios_message_got_read_receipt_from_target_onmedia;
+                break;
+
+            // Old WACA
+            case "wamod_style_tick_oldwaca_message_unsent":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_unsent;
+                break;
+            case "wamod_style_tick_oldwaca_message_got_receipt_from_server":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_got_receipt_from_server;
+                break;
+            case "wamod_style_tick_oldwaca_message_got_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_got_receipt_from_target;
+                break;
+            case "wamod_style_tick_oldwaca_message_got_read_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_got_read_receipt_from_target;
+                break;
+            case "wamod_style_tick_oldwaca_message_unsent_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_unsent_onmedia;
+                break;
+            case "wamod_style_tick_oldwaca_message_got_receipt_from_server_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_got_receipt_from_server_onmedia;
+                break;
+            case "wamod_style_tick_oldwaca_message_got_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_got_receipt_from_target_onmedia;
+                break;
+            case "wamod_style_tick_oldwaca_message_got_read_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwaca_message_got_read_receipt_from_target_onmedia;
+                break;
+
+            // New WACA
+            case "wamod_style_tick_newwaca_message_unsent":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_unsent;
+                break;
+            case "wamod_style_tick_newwaca_message_got_receipt_from_server":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_got_receipt_from_server;
+                break;
+            case "wamod_style_tick_newwaca_message_got_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_got_receipt_from_target;
+                break;
+            case "wamod_style_tick_newwaca_message_got_read_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_got_read_receipt_from_target;
+                break;
+            case "wamod_style_tick_newwaca_message_unsent_onmedia":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_unsent_onmedia;
+                break;
+            case "wamod_style_tick_newwaca_message_got_receipt_from_server_onmedia":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_got_receipt_from_server_onmedia;
+                break;
+            case "wamod_style_tick_newwaca_message_got_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_got_receipt_from_target_onmedia;
+                break;
+            case "wamod_style_tick_newwaca_message_got_read_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_newwaca_message_got_read_receipt_from_target_onmedia;
+                break;
+
+            // Joaquin's WAMD
+            case "wamod_style_tick_oldwamd_message_unsent":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_unsent;
+                break;
+            case "wamod_style_tick_oldwamd_message_got_receipt_from_server":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_got_receipt_from_server;
+                break;
+            case "wamod_style_tick_oldwamd_message_got_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_got_receipt_from_target;
+                break;
+            case "wamod_style_tick_oldwamd_message_got_read_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_got_read_receipt_from_target;
+                break;
+            case "wamod_style_tick_oldwamd_message_unsent_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_unsent_onmedia;
+                break;
+            case "wamod_style_tick_oldwamd_message_got_receipt_from_server_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_got_receipt_from_server_onmedia;
+                break;
+            case "wamod_style_tick_oldwamd_message_got_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_got_receipt_from_target_onmedia;
+                break;
+            case "wamod_style_tick_oldwamd_message_got_read_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_oldwamd_message_got_read_receipt_from_target_onmedia;
+                break;
+
+            // Circles
+            case "wamod_style_tick_circles_message_unsent":
+                id = Resources.drawable.wamod_style_tick_circles_message_unsent;
+                break;
+            case "wamod_style_tick_circles_message_got_receipt_from_server":
+                id = Resources.drawable.wamod_style_tick_circles_message_got_receipt_from_server;
+                break;
+            case "wamod_style_tick_circles_message_got_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_circles_message_got_receipt_from_target;
+                break;
+            case "wamod_style_tick_circles_message_got_read_receipt_from_target":
+                id = Resources.drawable.wamod_style_tick_circles_message_got_read_receipt_from_target;
+                break;
+            case "wamod_style_tick_circles_message_unsent_onmedia":
+                id = Resources.drawable.wamod_style_tick_circles_message_unsent_onmedia;
+                break;
+            case "wamod_style_tick_circles_message_got_receipt_from_server_onmedia":
+                id = Resources.drawable.wamod_style_tick_circles_message_got_receipt_from_server_onmedia;
+                break;
+            case "wamod_style_tick_circles_message_got_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_circles_message_got_receipt_from_target_onmedia;
+                break;
+            case "wamod_style_tick_circles_message_got_read_receipt_from_target_onmedia":
+                id = Resources.drawable.wamod_style_tick_circles_message_got_read_receipt_from_target_onmedia;
+                break;
+
+            default:
+                id = getHexID(drawable, "drawable");
+        }
+        return id;
     }
 }

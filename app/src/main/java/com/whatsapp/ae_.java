@@ -5,14 +5,14 @@ import android.app.Activity;
 /**
  * Created by brianvalente on 2/10/16.
  */
-public class m {
-    public m(Activity activity, pe pe) {}
+public class ae_ {
+    public ae_(Activity activity, a4h a4h) {}
 
     // Starts voice note recording
-    public void i() {}
+    public void e() {}
 
     // Stops voice note recording
-    public void a(boolean bool) {}
+    public void b(boolean bool) {}
 
     // Set the user number to send the voice note
     public void a(String user) {}

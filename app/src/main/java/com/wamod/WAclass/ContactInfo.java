@@ -1,21 +1,16 @@
 package com.wamod.WAclass;
 
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SwitchCompat;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wamod.Privacy;
 import com.wamod.Resources;
 import com.wamod.Utils;
-import com.whatsapp.qj;
 
 /**
  * Created by brianvalente on 9/20/15.
