@@ -70,12 +70,12 @@
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Privacidade</string>
     <string name="wamod_settings_privacy_freezelastseen">Congelar Última Visualização</string>
-    <string name="wamod_settings_privacy_hidebluetick">Não reportar a leitura de mensagens</string>
-    <string name="wamod_settings_privacy_hidetyping">Não reportar \"digitando\"</string>
     <string name="wamod_settings_privacy_alwaysonline">Sempre Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
+    <string name="wamod_privacy_individual_summary">Lembre-se de que você pode definir estas opções também por contato em seus perfis.</string>
     
     <!-- Privacy -->
+    <string name="wamod_privacy_card_customprivacy_title">Privacidade personalizada</string>
     <string name="wamod_privacy_card_reportreceived_title">Relatar mensagens recebidas</string>
     <string name="wamod_privacy_card_reportreceived_summary">Seu contato saberá quando as mensagens forem recebidas</string>
     <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, pode não funcionar ou causar atrasos caso desabilite esta opção</string>
