@@ -28,8 +28,10 @@ public class Privacy {
     public static boolean blueTick(c c, at at, String str1, String str2, String[] str3, String str4) {
         // Returns TRUE if the "Hide blue tick" option is DISABLED
         log(at, str1, str2, str3, str4);
-        String JabberID = at.a;
-        if (!reportReadForSpecificContact(JabberID)) {
+        String JabberID = at.c;
+        boolean value = reportReadForSpecificContact(JabberID);
+        Log.i("WAMOD_PRIVACY", "Report read: Jabber ID: " + JabberID + " Value: " + value);
+        if (!value) {
             str1 = str4;
             if (reportReceivedForSpecificContact(JabberID)) c.a(at, str1, str2, str3, str4);
             return false;
@@ -38,13 +40,17 @@ public class Privacy {
 
     public static boolean hideTyping(String JabberID) {
         // Returns TRUE if the "Hide typing" option is DISABLED
-        return reportTypingForSpecificContact(JabberID);
+        boolean value = reportTypingForSpecificContact(JabberID);
+        Log.i("WAMOD_PRIVACY", "Report typing: Jabber ID: " + JabberID + " Value: " + value);
+        return value;
     }
 
     public static boolean secondTick(at at) {
         // Returns TRUE if the "Hide second tick" option is DISABLED
-        String JabberID = at.a;
-        return reportReceivedForSpecificContact(JabberID);
+        String JabberID = at.c;
+        boolean value = reportReceivedForSpecificContact(JabberID);
+        Log.i("WAMOD_PRIVACY", "Report received: Jabber ID: " + JabberID + " Value: " + value);
+        return value;
     }
 
     public static boolean generalReportReceived() {
