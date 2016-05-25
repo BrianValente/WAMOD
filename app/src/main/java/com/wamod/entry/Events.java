@@ -129,8 +129,8 @@ public class Events {
             anim.setDuration(1250);
             anim.setInterpolator(new LinearInterpolator());
             anim.setRepeatCount(Animation.INFINITE);
-            //wave1.setAnimation(anim);
-            //anim.startNow();
+            wave1.setAnimation(anim);
+            anim.startNow();
         }
         
         public void StartRecording() {
