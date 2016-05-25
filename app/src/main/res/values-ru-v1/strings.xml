@@ -71,11 +71,10 @@
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Приватность</string>
     <string name="wamod_settings_privacy_freezelastseen">Заморозить последнее посещение</string>
-    <string name="wamod_settings_privacy_hidebluetick">Не докладывать о прочтении (синие галочки)</string>
-    <string name="wamod_settings_privacy_hidetyping">Не докладывать о \"печатает\"</string>
     <string name="wamod_settings_privacy_alwaysonline">Всегда онлайн</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Эксперементальная функция</string>
-
+    <string name="wamod_privacy_individual_summary">Помните, что вы можете установить пользовательские параметры конфиденциальности для каждого контакта в их профиле.</string>
+                                                    
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_deviceid">ID устройства</string>
@@ -113,12 +112,13 @@
 
 
     <!-- Privacy -->
-    <string name="wamod_privacy_card_reportreceived_title">Докладывать о полученных сообщениях</string>
+    <string name="wamod_privacy_card_customprivacy_title">Настройка приватности</string>
+    <string name="wamod_privacy_card_reportreceived_title">Докладывать о получении смс</string>
     <string name="wamod_privacy_card_reportreceived_summary">Ваш собеседник будет знать, если сообщение доставится</string>
     <string name="wamod_privacy_card_reportreceived_summary_experimental">Эксперементальная функция, может не работать или привести к задержкам , если отключить</string>
-    <string name="wamod_privacy_card_reportread_title">Докладывать о прочтенных сообщениях</string>
-    <string name="wamod_privacy_card_reportread_summary">Ваш собеседник будет знать, если вы прочтете сообщение</string>
-    <string name="wamod_privacy_card_reporttyping_title">Докладывать о  "Печатаю"</string>
+    <string name="wamod_privacy_card_reportread_title">Докладывать о прочтении смс</string>
+    <string name="wamod_privacy_card_reportread_summary">Ваш собеседник будет знать, если вы прочитаете сообщение</string>
+    <string name="wamod_privacy_card_reporttyping_title">Докладывать о "печатании"</string>
     <string name="wamod_privacy_card_reporttyping_summary">Ваш собеседник будет знать, если вы печатаете</string>
 
     <!-- QTS -->
