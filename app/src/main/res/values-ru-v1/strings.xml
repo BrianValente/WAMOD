@@ -12,7 +12,7 @@
     <string name="wamod_settings_about_credits">Благодарности</string>
 
     <!-- WAMOD Settings - General -->
-    <string name="wamod_settings_general">Основоные</string>
+    <string name="wamod_settings_general">Основные</string>
     <string name="wamod_settings_general_colors">Цвета</string>
     <string name="wamod_settings_general_colors_statusbarcolor">Статус бар</string>
     <string name="wamod_settings_general_colors_toolbarcolor">Тулбар</string>
@@ -33,7 +33,7 @@
     <string name="wamod_settings_home_drawer">Боковая панель</string>
     <string name="wamod_settings_home_drawer_style">Стиль</string>
     <string name="wamod_settings_home_drawer_darkdrawer">Темная панель</string>
-    <string name="wamod_settings_home_drawer_selectdrawerbackground">Выбрать фон панели</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Выбрать картинку панели</string>
     <string name="wamod_settings_home_drawer_blacktextinheader">Черный текст в заголовке</string>
     <string name="wamod_settings_home_drawer_showsecondsaccount">Показывать второй аккаунт</string>
     <string name="wamod_settings_home_bottomnavigationbar">Нижний навигационный бар</string>
@@ -156,7 +156,7 @@
     <string name="profile_of">Профиль %1$s</string>
     <string name="conversation_last_seen">Был/а в сети</string>
     <string name="conversation_contact_online">В сети</string>
-    <string name="type_a_message">Напишите</string>
+    <string name="type_a_message">Введите текст</string>
 
 
     <!-- General -->
