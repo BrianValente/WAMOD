@@ -11,7 +11,7 @@ public class Conversation extends DialogToastActivity {
     }
 
     // Opens Android Gallery
-    public static void o(Conversation c) {}
+    public static void i(Conversation c) {}
 
     // Send message
     public static void n(Conversation c) {}

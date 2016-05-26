@@ -60,7 +60,7 @@ public class Events {
             btn.performClick();
         }
         private void attachPhotoUsingAndroidGallery() {
-            conversation.o(conversation);
+            conversation.i(conversation);
         }
         private void attachPhotoUsingStockGallery() {
             performClick(new sm(conversation));
