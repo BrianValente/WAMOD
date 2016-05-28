@@ -3,6 +3,7 @@ package com.wamod.preference;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,8 @@ import com.wamod.entry.ConfigurationActivity;
 import com.wamod.themes.QTS.Download;
 import com.wamod.themes.QTS.Upload;
 import com.wamod.Utils;
+
+import java.util.Map;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -96,7 +99,7 @@ public class ActionPreference extends Preference {
                 new CheckIn().execute(activity);
                 break;
             case "restoredefaults":
-                alertDialog  = new AlertDialog.Builder(activity);
+                alertDialog = new AlertDialog.Builder(activity);
                 alertDialog.setTitle(activity.getResources().getString(Resources.string.wamod_settings_miscellaneous_app_restoredefaults_title));
                 alertDialog.setMessage(activity.getResources().getString(Resources.string.wamod_settings_miscellaneous_app_restoredefaults_message));
                 alertDialog.setPositiveButton(activity.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
@@ -108,7 +111,8 @@ public class ActionPreference extends Preference {
                     }
                 });
                 alertDialog.setNegativeButton(activity.getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {}
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
                 });
                 alertDialog.show();
                 break;
@@ -124,7 +128,8 @@ public class ActionPreference extends Preference {
                     }
                 });
                 alertDialog.setNegativeButton(activity.getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {}
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
                 });
                 alertDialog.show();
                 break;
@@ -180,6 +185,53 @@ public class ActionPreference extends Preference {
                     }
                 });
                 builder.show();
+                break;
+            case "wamod_privacy_restorecustomprivacy":
+                AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
+                dialog.setTitle(activity.getResources().getString(Resources.getString("wamod_settings_privacy_restorecustomprivacy")));
+                dialog.setMessage(activity.getResources().getString(Resources.getString("wamod_settings_privacy_restorecustomprivacy_message")));
+                dialog.setPositiveButton(activity.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        SharedPreferences privacyPrefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
+                        SharedPreferences.Editor privacyPrefs_Edit = privacyPrefs.edit();
+                        boolean general_freezelastseen = privacyPrefs.getBoolean("general_freezelastseen", false);
+                        boolean general_alwaysonline = privacyPrefs.getBoolean("general_alwaysonline", false);
+                        boolean general_reportreceived = privacyPrefs.getBoolean("general_reportreceived", true);
+                        boolean general_reportread = privacyPrefs.getBoolean("general_reportread", true);
+                        boolean general_reporttyping = privacyPrefs.getBoolean("general_reporttyping", true);
+                        privacyPrefs_Edit.clear();
+                        privacyPrefs_Edit.putBoolean("general_freezelastseen", general_freezelastseen);
+                        privacyPrefs_Edit.putBoolean("general_alwaysonline", general_alwaysonline);
+                        privacyPrefs_Edit.putBoolean("general_reportreceived", general_reportreceived);
+                        privacyPrefs_Edit.putBoolean("general_reportread", general_reportread);
+                        privacyPrefs_Edit.putBoolean("general_reporttyping", general_reporttyping);
+                        privacyPrefs_Edit.apply();
+                    }
+                });
+                dialog.setNegativeButton(activity.getResources().getString(android.R.string.no), null);
+                Utils.tintAndShowDialog(dialog);
+                break;
+            case "wamod_privacy_restoredefaultprivacy":
+                AlertDialog.Builder dialog2 = new AlertDialog.Builder(activity);
+                dialog2.setTitle(activity.getResources().getString(Resources.getString("wamod_settings_privacy_restoredefaultprivacy")));
+                dialog2.setMessage(activity.getResources().getString(Resources.getString("wamod_settings_privacy_restoredefaultprivacy_message")));
+                dialog2.setPositiveButton(activity.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        SharedPreferences privacyPrefs2 = Utils.context.getSharedPreferences("wamod_privacy", 0);
+                        SharedPreferences.Editor privacyPrefs_Edit2 = privacyPrefs2.edit();
+                        privacyPrefs_Edit2.clear();
+                        privacyPrefs_Edit2.putBoolean("general_freezelastseen", false);
+                        privacyPrefs_Edit2.putBoolean("general_alwaysonline", false);
+                        privacyPrefs_Edit2.putBoolean("general_reportreceived", true);
+                        privacyPrefs_Edit2.putBoolean("general_reportread", true);
+                        privacyPrefs_Edit2.putBoolean("general_reporttyping", true);
+                        privacyPrefs_Edit2.apply();
+                    }
+                });
+                dialog2.setNegativeButton(activity.getResources().getString(android.R.string.no), null);
+                Utils.tintAndShowDialog(dialog2);
                 break;
         }
     }

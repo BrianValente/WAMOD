@@ -263,8 +263,7 @@ public class Privacy {
 
                 Dialog dialog = alertDialog.create();
                 dialog.show();
-                View content = dialog.findViewById(android.R.id.content);
-                if (Utils.nightModeShouldRun()) content.setBackgroundColor(Utils.getDarkColor(2));
+                Utils.tintDialog(dialog);
             }
         });
     }

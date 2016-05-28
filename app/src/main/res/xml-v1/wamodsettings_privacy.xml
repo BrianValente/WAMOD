@@ -22,4 +22,12 @@
         android:summary="@string/wamod_privacy_card_reporttyping_summary" />
     <com.wamod.preference.Preference
         android:summary="@string/wamod_privacy_individual_summary" />
+    <com.wamod.preference.ActionPreference
+        android:key="wamod_privacy_restorecustomprivacy"
+        android:title="@string/wamod_settings_privacy_restorecustomprivacy"
+        android:summary="@string/wamod_settings_privacy_restorecustomprivacy_summary" />
+    <com.wamod.preference.ActionPreference
+        android:key="wamod_privacy_restoredefaultprivacy"
+        android:title="@string/wamod_settings_privacy_restoredefaultprivacy"
+        android:summary="@string/wamod_settings_privacy_restoredefaultprivacy_summary" />
 </PreferenceScreen>
