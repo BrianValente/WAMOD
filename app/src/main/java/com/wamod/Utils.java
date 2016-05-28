@@ -2,6 +2,7 @@ package com.wamod;
 
 import android.app.ActivityManager;
 import android.app.AlarmManager;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.UiModeManager;
 import android.content.ClipData;
@@ -275,6 +276,22 @@ public class Utils extends android.app.Activity {
             if (list != null && Utils.nightModeShouldRun()) {
                 list.setBackgroundColor(Utils.getDarkColor(2));
             }
+        }
+    }
+
+    public static void tintDialog(Dialog dialog) {
+        View content = dialog.findViewById(android.R.id.content);
+        if (Utils.nightModeShouldRun()) {
+            content.setBackgroundColor(Utils.getDarkColor(2));
+        }
+    }
+
+    public static void tintAndShowDialog(AlertDialog.Builder dialog) {
+        Dialog dialog1 = dialog.create();
+        dialog1.show();
+        View content = dialog1.findViewById(android.R.id.content);
+        if (Utils.nightModeShouldRun()) {
+            content.setBackgroundColor(Utils.getDarkColor(2));
         }
     }
 
