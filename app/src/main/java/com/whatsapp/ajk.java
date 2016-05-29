@@ -5,13 +5,12 @@ import android.view.View;
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class sm implements View.OnClickListener {
-    // OPENS WHATSAPP GALLERY
-
+public class ajk implements View.OnClickListener {
+    // SEND AUDIO
     @Override
     public void onClick(View v) {}
 
-    public sm(Conversation conversation) {}
+    public ajk(Conversation conversation) {}
 
-    public sm() {}
+    public ajk() {}
 }

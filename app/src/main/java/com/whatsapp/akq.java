@@ -5,12 +5,12 @@ import android.view.View;
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class s_ implements View.OnClickListener {
-    // SEND AUDIO
+public class akq implements View.OnClickListener {
+    // OPENS EMOJI PICKER
     @Override
     public void onClick(View v) {}
 
-    public s_(Conversation conversation) {}
+    public akq(Conversation conversation) {}
 
-    public s_() {}
+    public akq() {}
 }

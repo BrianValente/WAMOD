@@ -5,12 +5,12 @@ import android.view.View;
 /**
  * Created by brianvalente on 9/21/15.
  */
-public class w_ implements View.OnClickListener {
-    // SEND CONTACT
+public class aps implements View.OnClickListener {
+    // SEND LOCATION
     @Override
     public void onClick(View v) {}
 
-    public w_(Conversation conversation) {}
+    public aps(Conversation conversation) {}
 
-    public w_() {}
+    public aps() {}
 }

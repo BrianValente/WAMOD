@@ -47,7 +47,7 @@ zipalign -f 4 WAMOD_signed.apk WAMOD_signed_zipalign.apk
 echo ""
 echo "Installing..."
 echo ""
-adb install -r -d WAMOD_signed.apk
+adb install -r -d WAMOD_signed_zipalign.apk
 echo ""
 echo "Opening..."
 echo ""

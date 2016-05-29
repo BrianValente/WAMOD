@@ -75,7 +75,7 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.3 Release Candidate 1";
+    public static String wamodVersionName = "1.3.3 Release Candidate 2";
     public static int wamodVersionCode = 34;
     public static Context context;
     public static boolean debug = false;
@@ -161,6 +161,7 @@ public class Utils extends android.app.Activity {
             if (toolbar != null && coloredToolbarColor) {
                 toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
                 toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                toolbar.setOverflowIcon(tintToColor(toolbar.getOverflowIcon(), getUIColor(COLOR_FOREGROUND)));
 
                 toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
@@ -171,7 +172,28 @@ public class Utils extends android.app.Activity {
                     }
                 });
 
-
+                /*toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        Log.i("WAMOD_COLORING", "hello");
+                        for (int i=0; i<toolbar.getChildCount(); i++) {
+                            View linearLayoutCompat = toolbar.getChildAt(i);
+                            if (linearLayoutCompat != null && linearLayoutCompat instanceof LinearLayoutCompat) {
+                                Log.i("WAMOD_COLORING", "layout found");
+                                for (int i2 = 0; i2 < ((LinearLayoutCompat) linearLayoutCompat).getChildCount(); i2++) {
+                                    View more = ((ViewGroup) linearLayoutCompat).getChildAt(i2);
+                                    if (more != null && more instanceof ImageView) {
+                                        Log.i("WAMOD_COLORING", "imageview found");
+                                        ImageView moreIV = ((ImageView) more);
+                                        moreIV.setImageDrawable(context.getResources().getDrawable(Resources.getDrawable("wamod_brian_")));
+                                        moreIV.setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                                    }
+                                }
+                            }
+                        }
+                        toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });*/
 
                 if (a instanceof com.whatsapp.Conversation) {
                     ImageView up = (ImageView) toolbar.findViewById(Resources.id.up);
@@ -447,8 +469,8 @@ public class Utils extends android.app.Activity {
                 privacyPrefs_Edit.putBoolean("general_reportread", !prefs.getBoolean("privacy_noBlueTick", false));
                 privacyPrefs_Edit.putBoolean("general_reporttyping", !prefs.getBoolean("privacy_hideTyping", false));
             case 32:
-                privacyPrefs_Edit.putBoolean("general_freezelastseen", !prefs.getBoolean("privacy_freezelastseen", false));
-                privacyPrefs_Edit.putBoolean("general_alwaysonline", !prefs.getBoolean("privacy_alwaysOnline", false));
+                privacyPrefs_Edit.putBoolean("general_freezelastseen", prefs.getBoolean("privacy_freezelastseen", false));
+                privacyPrefs_Edit.putBoolean("general_alwaysonline", prefs.getBoolean("privacy_alwaysOnline", false));
                 break;
         }
         Utils.edit.putInt("wamodversion", wamodVersionCode);
@@ -813,7 +835,8 @@ public class Utils extends android.app.Activity {
         // 2.12.551 byte[] official = Base64.decode("1E2kZOex25HvKMQPFpG1ZQ==", Base64.DEFAULT);
         // 2.16.21 byte[] official = Base64.decode("HQ3bHbhJnKQdh+B/qpAHhQ==", Base64.DEFAULT);
         // 2.16.43 byte[] official = Base64.decode("qioEf1LzV3gfqCATDwgzGg==", Base64.DEFAULT);
-        byte[] official = Base64.decode("0M5VxNVpLgsnyqdzqdpCmQ==", Base64.DEFAULT); // 2.16.81
+        // 2.16.81 byte[] official = Base64.decode("0M5VxNVpLgsnyqdzqdpCmQ==", Base64.DEFAULT); // 2.16.81
+        byte[] official = Base64.decode("3Tqs7W3qktjj2MEiM/ierw==", Base64.DEFAULT); // 2.16.91
         return official;
     }
 

@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
  * Created by brianvalente on 2/22/16.
  */
 public class ContactInfo extends AppCompatActivity {
-    // Contact
-    private jn G;
-
-    public static jn f(ContactInfo contactInfo) {
+    // Get contact
+    public static ki a(ContactInfo contactInfo) {
         return null;
     }
 }

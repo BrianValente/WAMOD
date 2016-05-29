@@ -5,11 +5,11 @@ import android.app.Activity;
 /**
  * Created by brianvalente on 2/10/16.
  */
-public class ae_ {
-    public ae_(Activity activity, a4h a4h) {}
+public class q {
+    public q(Activity activity, ls ls) {}
 
     // Starts voice note recording
-    public void e() {}
+    public void i() {}
 
     // Stops voice note recording
     public void b(boolean bool) {}

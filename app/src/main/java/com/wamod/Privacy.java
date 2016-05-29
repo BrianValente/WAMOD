@@ -15,9 +15,9 @@ import android.widget.TextView;
 
 import com.whatsapp.ContactInfo;
 import com.whatsapp.GroupChatInfo;
-import com.whatsapp.jn;
-import com.whatsapp.protocol.c;
-import com.whatsapp.protocol.at;
+import com.whatsapp.ki;
+import com.whatsapp.protocol.s;
+import com.whatsapp.protocol.c2;
 
 /**
  * Created by brianvalente on 5/8/16.
@@ -25,15 +25,15 @@ import com.whatsapp.protocol.at;
 public class Privacy {
     static boolean stringsDecoded = false;
 
-    public static boolean blueTick(c c, at at, String str1, String str2, String[] str3, String str4) {
+    public static boolean blueTick(s s, c2 c2, String str1, String str2, String[] str3, String str4) {
         // Returns TRUE if the "Hide blue tick" option is DISABLED
-        log(at, str1, str2, str3, str4);
-        String JabberID = at.c;
+        log(c2, str1, str2, str3, str4);
+        String JabberID = c2.c;
         boolean value = reportReadForSpecificContact(JabberID);
         Log.i("WAMOD_PRIVACY", "Report read: Jabber ID: " + JabberID + " Value: " + value);
         if (!value) {
             str1 = str4;
-            if (reportReceivedForSpecificContact(JabberID)) c.a(at, str1, str2, str3, str4);
+            if (reportReceivedForSpecificContact(JabberID)) s.a(c2, str1, str2, str3, str4);
             return false;
         } else return true;
     }
@@ -45,9 +45,9 @@ public class Privacy {
         return value;
     }
 
-    public static boolean secondTick(at at) {
+    public static boolean secondTick(c2 c2) {
         // Returns TRUE if the "Hide second tick" option is DISABLED
-        String JabberID = at.c;
+        String JabberID = c2.c;
         boolean value = reportReceivedForSpecificContact(JabberID);
         Log.i("WAMOD_PRIVACY", "Report received: Jabber ID: " + JabberID + " Value: " + value);
         return value;
@@ -136,18 +136,24 @@ public class Privacy {
 
         // TODO Fix this mess please
 
-        jn contact = null;
+        ki contact = null;
         if (activity instanceof GroupChatInfo) contact = ((GroupChatInfo) activity).getContact((GroupChatInfo) activity);
-        else if (activity instanceof ContactInfo) contact = ((ContactInfo) activity).f((ContactInfo) activity);
+        else if (activity instanceof ContactInfo) contact = ((ContactInfo) activity).a((ContactInfo) activity);
         if (contact == null) return;
 
-        final String JabberID = contact.v;
+        final String JabberID = contact.j;
 
 
         final ViewGroup wamod_privacy_card_customprivacy = (ViewGroup) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy"));
-        /*final TextView wamod_privacy_card_customprivacy_title = (TextView) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_title"));
-        final TextView wamod_privacy_card_customprivacy_summary = (TextView) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_summary"));*/
+        final TextView wamod_privacy_card_customprivacy_title = (TextView) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_title"));
+        final TextView wamod_privacy_card_customprivacy_summary = (TextView) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_summary"));
         final SwitchCompat wamod_privacy_card_customprivacy_switch = (SwitchCompat) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_switch"));
+
+        if (Utils.nightModeShouldRun()) {
+            wamod_privacy_card_customprivacy.setBackgroundColor(Utils.getDarkColor(3));
+            wamod_privacy_card_customprivacy_title.setTextColor(Utils.getDarkColor(0));
+            wamod_privacy_card_customprivacy_summary.setTextColor(Utils.getDarkColor(1));
+        }
 
         wamod_privacy_card_customprivacy_switch.setChecked(customPrivacyForSpecificContact(JabberID));
         wamod_privacy_card_customprivacy_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -271,9 +277,9 @@ public class Privacy {
     /* Trash */
 
 
-    public static void log(at at, String str1, String str2, String[] str3, String str4) {
+    public static void log(c2 c2, String str1, String str2, String[] str3, String str4) {
         int i = 1;
-        Log.i("WAMOD_PRIVACY_READ", "a: " + at.a + " -- b: " + (at.b? "true" : "false") + " -- c: " + at.c);
+        Log.i("WAMOD_PRIVACY_READ", "a: " + (c2.a? "true" : "false") + " -- b: " + c2.b + " -- c: " + c2.c);
         Log.i("WAMOD_PRIVACY_READ", "1: " + str1 + " -- 2: " + str2 + " -- 4: " + str4);
         if (str3 != null)
             for (String s : str3) {
@@ -283,9 +289,9 @@ public class Privacy {
         else Log.i("WAMOD_PRIVACY_READ", "String 3: NULL");
     }
 
-    public static void logReceived(at at, String str1, String str2, String[] str3, String str4) {
+    public static void logReceived(c2 c2, String str1, String str2, String[] str3, String str4) {
         int i = 1;
-        Log.i("WAMOD_PRIVACY_RECEIVED", "a: " + at.a + " -- b: " + (at.b? "true" : "false") + " -- c: " + at.c);
+        Log.i("WAMOD_PRIVACY_RECEIVED", "a: " + (c2.a? "true" : "false") + " -- b: " + c2.b + " -- c: " + c2.c);
         Log.i("WAMOD_PRIVACY_RECEIVED", "1: " + str1 + " -- 2: " + str2 + " -- 4: " + str4);
         if (str3 != null)
             for (String s : str3) {

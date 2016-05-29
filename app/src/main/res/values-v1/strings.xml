@@ -80,12 +80,12 @@
     <string name="wamod_settings_privacy_alwaysonline">Always online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
     <string name="wamod_privacy_individual_summary">Remember you can set custom privacy options per contact on their profile.</string>
-    <string name="wamod_settings_privacy_restorecustomprivacy">Restore custom privacy configuration</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy">Delete custom privacy configuration</string>
     <string name="wamod_settings_privacy_restorecustomprivacy_summary">Deletes custom privacy for every contact</string>
-    <string name="wamod_settings_privacy_restorecustomprivacy_message">Are you sure you want to restore the custom privacy configuration?</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_message">Are you sure you want to delete the custom privacy configuration?</string>
     <string name="wamod_settings_privacy_restoredefaultprivacy">Restore default privacy configuration</string>
-    <string name="wamod_settings_privacy_restoredefaultprivacy_summary">Restores privacy to the default values (custom privacy included)</string>
-    <string name="wamod_settings_privacy_restoredefaultprivacy_message">Are you sure you want to restore the default privacy configuration?</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_summary">Restores privacy to the default values</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_message">Are you sure you want to restore the default privacy configuration? Your custom privacy settings will be deleted too.</string>
 
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">WAMOD Themes</string>

@@ -6,13 +6,10 @@ import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.wamod.Resources;
 import com.wamod.Utils;
@@ -95,11 +92,11 @@ public class WAMOD {
         });
 
 
-        gallery.setOnLongClickListener(new zv(activity));
-        audio.setOnClickListener(new s_(activity));
-        location.setOnClickListener(new adw(activity));
-        contact.setOnClickListener(new w_(activity));
-        camera.setOnClickListener(new a5o(activity, true));
+        gallery.setOnLongClickListener(new auw(activity));
+        audio.setOnClickListener(new ajk(activity));
+        location.setOnClickListener(new aps(activity));
+        contact.setOnClickListener(new g2(activity));
+        camera.setOnClickListener(new ax6(activity, true));
 
         // Voice note
         final Events.NewVoiceNoteManager voiceNoteManager = new Events.NewVoiceNoteManager(activity);

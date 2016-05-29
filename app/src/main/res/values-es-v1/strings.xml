@@ -74,6 +74,13 @@
     <string name="wamod_settings_privacy_alwaysonline">Siempre en línea</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
     <string name="wamod_privacy_individual_summary">Recuerda que puedes ajustar opciones de privacidad personalizadas para cada contacto desde su perfil.</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy">Eliminar privacidad personalizada</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_summary">Elimina tus configuraciones de privacidad personalizada para cada contacto</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_message">¿Estás seguro de que quieres eliminar tus configuraciones de privacidad personalizada?</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy">Restaurar privacidad por defecto</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_summary">Restaura la privacidad a los valores por defecto</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_message">¿Estás seguro de que quieres restaurar la privacidad a sus valores por defecto? Las configuraciones de privacidad personalizada también se eliminarán.</string>
+
 
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">WAMOD Themes</string>

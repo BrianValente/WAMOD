@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 import com.wamod.Resources;
 import com.wamod.Utils;
-import com.whatsapp.asz;
+import com.whatsapp.akq;
 
 /**
  * Created by brianvalente on 10/4/15.
@@ -29,7 +29,7 @@ public class Mood {
         voiceNoteBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_mood_conversation_mic_color", "000000")));
         sendBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_mood_conversation_send_color", "000000")));
         emojiBtn.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_mood_conversation_emoji_color", "000000")));
-        emojiBtn.setOnClickListener(new asz(a));
+        emojiBtn.setOnClickListener(new akq(a));
 
         Drawable inputLayoutBg = inputLayout.getBackground();
         inputLayoutBg.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("theme_mood_conversation_background_color", "55ffffff")), PorterDuff.Mode.MULTIPLY);

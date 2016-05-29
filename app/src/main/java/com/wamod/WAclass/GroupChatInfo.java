@@ -23,28 +23,6 @@ public class GroupChatInfo extends AppCompatActivity {
                 content.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-
-                        ViewGroup wamod_privacy_card = (ViewGroup) a.findViewById(Resources.getID("wamod_privacy_card"));
-                        TextView wamod_privacy_card_customprivacy_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_customprivacy_title"));
-                        TextView wamod_privacy_card_customprivacy_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_customprivacy_summary"));
-
-                        //wamod_privacy_card.setBackgroundColor(Utils.getDarkColor(3));
-                        wamod_privacy_card_customprivacy_title.setTextColor(Utils.getDarkColor(0));
-                        wamod_privacy_card_customprivacy_summary.setTextColor(Utils.getDarkColor(1));
-                        /*TextView wamod_privacy_card_reportreceived_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_title"));
-                        TextView wamod_privacy_card_reportreceived_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportreceived_summary"));
-                        TextView wamod_privacy_card_reportread_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportread_title"));
-                        TextView wamod_privacy_card_reportread_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_reportread_summary"));
-                        TextView wamod_privacy_card_hidetyping_title = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_title"));
-                        TextView wamod_privacy_card_hidetyping_summary = (TextView) a.findViewById(Resources.getID("wamod_privacy_card_hidetyping_summary"));
-
-                        wamod_privacy_card_reportreceived_title.setTextColor(Utils.getDarkColor(0));
-                        wamod_privacy_card_reportreceived_summary.setTextColor(Utils.getDarkColor(1));
-                        wamod_privacy_card_reportread_title.setTextColor(Utils.getDarkColor(0));
-                        wamod_privacy_card_reportread_summary.setTextColor(Utils.getDarkColor(1));
-                        wamod_privacy_card_hidetyping_title.setTextColor(Utils.getDarkColor(0));
-                        wamod_privacy_card_hidetyping_summary.setTextColor(Utils.getDarkColor(1));*/
-
                         ListView list = (ListView) a.findViewById(android.R.id.list);
                         list.setBackgroundColor(Utils.getDarkColor(2));
 
@@ -69,16 +47,17 @@ public class GroupChatInfo extends AppCompatActivity {
                             TextView encryption_title = (TextView) ((ViewGroup) encryption_info.getParent()).getChildAt(0);
                             ImageView encryption_indicator = (ImageView) a.findViewById(Resources.id.encryption_indicator);
 
-                            encryption_title.setTextColor(Utils.getDarkColor(0));
-                            encryption_info.setTextColor(Utils.getDarkColor(1));
-                            encryption_indicator.setImageDrawable(Utils.tintToColor(encryption_indicator.getDrawable(), Utils.getDarkColor(0)));
+                            if (encryption_title != null) encryption_title.setTextColor(Utils.getDarkColor(0));
+                            if (encryption_info != null) encryption_info.setTextColor(Utils.getDarkColor(1));
+                            if (encryption_indicator != null) encryption_indicator.setImageDrawable(Utils.tintToColor(encryption_indicator.getDrawable(), Utils.getDarkColor(0)));
                         }
 
 
-                        TextView starred_messages_btn = (TextView) a.findViewById(Resources.id.starred_messages_btn);
+                        ViewGroup starred_messages_layout = (ViewGroup) a.findViewById(Resources.getID("starred_messages_layout"));
+                        TextView starred_messages = (TextView) starred_messages_layout.getChildAt(0);
                         TextView starred_messages_count = (TextView) a.findViewById(Resources.id.starred_messages_count);
-                        starred_messages_btn.setTextColor(Utils.getDarkColor(0));
-                        starred_messages_count.setTextColor(Utils.getDarkColor(1));
+                        if (starred_messages != null) starred_messages.setTextColor(Utils.getDarkColor(0));
+                        if (starred_messages_count != null) starred_messages_count.setTextColor(Utils.getDarkColor(1));
 
 
                         muteContainer.setBackgroundColor(Utils.getDarkColor(3));

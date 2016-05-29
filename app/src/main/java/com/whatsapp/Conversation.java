@@ -4,31 +4,27 @@ package com.whatsapp;
  * Created by brianvalente on 9/21/15.
  */
 public class Conversation extends DialogToastActivity {
-    public String bk; // Contact's number
-
-    public void callInitConversation() {
-        com.wamod.WAclass.Conversation.initConversation(this);
-    }
+    public String y; // Contact's number
 
     // Opens Android Gallery
-    public static void i(Conversation c) {}
+    public static void ah(Conversation c) {}
 
     // Send message
-    public static void n(Conversation c) {}
+    public static void G(Conversation c) {}
 
     // For voice notes
-    public static ae_ aa(Conversation c) {
-        return new ae_(c,c);
+    public static q B(Conversation c) {
+        return new q(c,c);
     }
 
     // Init attachments
-    public void ac() {}
+    public void l() {}
 
     public void onCreateOptionsMenu() {
         com.wamod.WAclass.Conversation.tintToolbarButtons(null);
     }
 
     // Load contact
-    public static void s(Conversation c) {}
+    public static void ak(Conversation c) {}
 }
 
