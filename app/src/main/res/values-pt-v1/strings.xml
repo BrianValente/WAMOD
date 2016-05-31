@@ -1,4 +1,11 @@
 <resources>
+    <!--
+    NOTES
+    Do NOT translate "WAMOD Themes" or "Quick Theme Sharing" to your language.
+    It's like renaming Facebook to Caralibro, or WhatsApp to KePaza in spanish.
+    -->
+
+
     <!-- WAMOD Settings -->
     <string name="wamod_settings">Configurações WAMOD</string>
     <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) e mais recente</string>
@@ -73,27 +80,23 @@
     <string name="wamod_settings_privacy_alwaysonline">Sempre Online</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Experimental</string>
     <string name="wamod_privacy_individual_summary">Lembre-se de que você pode definir estas opções também por contato em seus perfis.</string>
-    
-    <!-- Privacy -->
-    <string name="wamod_privacy_card_customprivacy_title">Privacidade personalizada</string>
-    <string name="wamod_privacy_card_reportreceived_title">Relatar mensagens recebidas</string>
-    <string name="wamod_privacy_card_reportreceived_summary">Seu contato saberá quando as mensagens forem recebidas</string>
-    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, pode não funcionar ou causar atrasos caso desabilite esta opção</string>
-    <string name="wamod_privacy_card_reportread_title">Relatar mensagens lidas</string>
-    <string name="wamod_privacy_card_reportread_summary">Seu contato saberá se você leu as mensagens recebidas</string>
-    <string name="wamod_privacy_card_reporttyping_title">Relatar digitação</string>
-    <string name="wamod_privacy_card_reporttyping_summary">Seu contato saberá quando você estiver digitando</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy">Deletar configurações de privacidade personalizadas</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_summary">Deleta as configurações de privacidade personalizadas para todos os contatos</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_message">Tem certeza de que quer deletar configurações de privacidade personalizadas?</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy">Restaurar configurações de privacidade padrão</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_summary">Restaura as configurações de privacidade para os valores padrão</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_message">Tem certeza de que quer restaurar configurações de privacidade padrão? Suas configurações de privacidade personalizadas vão ser deletadas também.</string>
 
     <!-- WAMOD Settings - WAMOD Themes -->
-    <string name="wamod_settings_wamodthemes">Temas WAMOD</string>
+    <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_deviceid">ID do Dispositivo</string>
-    <string name="wamod_settings_wamodthemes_deviceid_unavailable">Temas WAMOD</string>
+    <string name="wamod_settings_wamodthemes_deviceid_unavailable">WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_unlink">Desvincular o Dispositivo</string>
-    <string name="wamod_settings_wamodthemes_unlink_title">Desvincular o Dispositivo</string>
+    <string name="wamod_settings_wamodthemes_unlink_title">Desvincula o Dispositivo do WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_unlink_message">Tem certeza de que quer desvincular o dispositivo?</string>
-    <string name="wamod_settings_wamodthemes_visit">Visitar Temas WAMOD</string>
+    <string name="wamod_settings_wamodthemes_visit">Visitar WAMOD Themes</string>
 
-<!-- WAMOD Settings - Advanced -->
+    <!-- WAMOD Settings - Advanced -->
     <string name="wamod_settings_advanced">Avançado</string>
     <string name="wamod_settings_advanced_nightmode">Modo Noturno</string>
     <string name="wamod_settings_advanced_nightmode_primarytextcolor">Texto Primário</string>
@@ -103,6 +106,7 @@
     <string name="wamod_settings_advanced_navigationdrawer">Gaveta de Navegação</string>
     <string name="wamod_settings_advanced_navigationdrawer_light_background">Fundo Claro</string>
     <string name="wamod_settings_advanced_navigationdrawer_dark_background">Fundo Escuro</string>
+
 
     <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Mais Configurações</string>
@@ -118,8 +122,19 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restaurar Configurações Padrão</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Tem certeza de que quer restaurar para as configurações padrão?</string>
 
+
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_customprivacy_title">Privacidade personalizada</string>
+    <string name="wamod_privacy_card_reportreceived_title">Relatar mensagens recebidas</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Seu contato saberá quando as mensagens forem recebidas</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Experimental, pode não funcionar ou causar atrasos caso desabilite esta opção</string>
+    <string name="wamod_privacy_card_reportread_title">Relatar mensagens lidas</string>
+    <string name="wamod_privacy_card_reportread_summary">Seu contato saberá se você leu as mensagens recebidas</string>
+    <string name="wamod_privacy_card_reporttyping_title">Relatar digitação</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Seu contato saberá quando você estiver digitando</string>
+
     <!-- QTS -->
-    <string name="wamod_qts">Compartilhamento Rápido de Temas (QTS)</string>
+    <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Carregar Tema no Servidor</string>
     <string name="wamod_qts_download">Baixar Tema do Servidor</string>
     <string name="wamod_qts_download_themeid">ID do Tema</string>
@@ -160,4 +175,5 @@
     <string name="wamod_error">Houve um erro</string>
     <string name="wamod_error_contacting_server">Houve um erro contatando o servidor, por favor, tente mais tarde</string>
     <string name="wamod_restartwamod">Reiniciar o WAMOD</string>
+    <string name="wamod_done">Feito!</string>
 </resources>
