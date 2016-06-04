@@ -1,7 +1,9 @@
 package com.wamod.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -26,6 +28,7 @@ public class SeparatorView extends View {
         init();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public SeparatorView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();

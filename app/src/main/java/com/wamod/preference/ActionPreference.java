@@ -1,9 +1,11 @@
 package com.wamod.preference;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.Preference;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +53,7 @@ public class ActionPreference extends Preference {
         onCreate();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ActionPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         activity = (AppCompatActivity) context;
@@ -83,7 +86,7 @@ public class ActionPreference extends Preference {
                     }
                 });
                 alertDialog.setView(wv);
-                alertDialog.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                alertDialog.setNegativeButton(activity.getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();

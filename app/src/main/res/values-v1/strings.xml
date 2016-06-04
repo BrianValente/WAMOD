@@ -133,7 +133,13 @@
     <string name="wamod_privacy_card_reporttyping_title">Report when I\'m typing</string>
     <string name="wamod_privacy_card_reporttyping_summary">Your contact will know when you\'re typing</string>
 
+
+    <!-- WAMOD Themes -->
+    <string name="wamod_wamodthemes_errorinstallingtheme">There was an error installing your theme</string>
+
+
     <!-- QTS -->
+
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Upload theme</string>
     <string name="wamod_qts_download">Download theme</string>
@@ -141,6 +147,7 @@
     <string name="wamod_qts_upload_prompt">Are you sure you want to upload your theme?</string>
     <string name="wamod_qts_upload_success">Your theme ID %1$s was copied to your clipboard. Share it with your friends!</string>
     <string name="wamod_qts_upload_unofficial_message">You\'re using an unofficial version of WAMOD and theme uploading is disabled due to incompatibilities</string>
+    <string name="wamod_qts_download_error">There was an error, sorry about that :(</string>
 
 
     <!-- Crash -->
@@ -176,4 +183,5 @@
     <string name="wamod_error_contacting_server">There was an error contacting the server, please try again later</string>
     <string name="wamod_restartwamod">Restart WAMOD</string>
     <string name="wamod_done">Done</string>
+    <string name="wamod_loading">Loading</string>
 </resources>

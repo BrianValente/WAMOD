@@ -75,7 +75,7 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.3 Release Candidate 2";
+    public static String wamodVersionName = "1.3.3";
     public static int wamodVersionCode = 34;
     public static Context context;
     public static boolean debug = false;
@@ -88,44 +88,7 @@ public class Utils extends android.app.Activity {
     public static final int COLOR_FOREGROUND = 3;
     public static final int COLOR_TOOLBARTEXT = 4;
 
-
-
     public static List<Chat> openedChats = new ArrayList<Chat>();
-
-
-    public static void loadColors(android.support.v7.app.ActionBar actionBar, Window window) {
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff"))));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            window.setStatusBarColor(Color.parseColor("#" + Utils.prefs.getString("general_statusbarcolor", "ffffff")));
-            window.setNavigationBarColor(Color.parseColor("#" + Utils.prefs.getString("general_navbarcolor", "ffffff")));
-        }
-    }
-
-    public static void loadColors(Toolbar toolbar, Window window) {
-        toolbar.setTitleTextColor(Color.parseColor("#" + Utils.prefs.getString("general_toolbarforeground", "ffffff")));
-        toolbar.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff")));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            window.setStatusBarColor(Color.parseColor("#" + Utils.prefs.getString("general_statusbarcolor", "ffffff")));
-            window.setNavigationBarColor(Color.parseColor("#" + Utils.prefs.getString("general_navbarcolor", "ffffff")));
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Utils.prefs.getBoolean("general_darkstatusbaricons", false)) {
-            toolbar.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
-    }
-
-    public static void loadColors(AppCompatActivity activity) {
-        activity.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + Utils.prefs.getString("general_toolbarcolor", "ffffff"))));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            activity.getWindow().setStatusBarColor(Color.parseColor("#" + Utils.prefs.getString("general_statusbarcolor", "ffffff")));
-            activity.getWindow().setNavigationBarColor(Color.parseColor("#" + Utils.prefs.getString("general_navbarcolor", "ffffff")));
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Utils.prefs.getBoolean("general_darkstatusbaricons", false)) {
-            activity.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
-    }
-
 
     public static void loadColorsV2(final AppCompatActivity a) {
         try {
@@ -171,29 +134,6 @@ public class Utils extends android.app.Activity {
                         toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 });
-
-                /*toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                    @Override
-                    public void onGlobalLayout() {
-                        Log.i("WAMOD_COLORING", "hello");
-                        for (int i=0; i<toolbar.getChildCount(); i++) {
-                            View linearLayoutCompat = toolbar.getChildAt(i);
-                            if (linearLayoutCompat != null && linearLayoutCompat instanceof LinearLayoutCompat) {
-                                Log.i("WAMOD_COLORING", "layout found");
-                                for (int i2 = 0; i2 < ((LinearLayoutCompat) linearLayoutCompat).getChildCount(); i2++) {
-                                    View more = ((ViewGroup) linearLayoutCompat).getChildAt(i2);
-                                    if (more != null && more instanceof ImageView) {
-                                        Log.i("WAMOD_COLORING", "imageview found");
-                                        ImageView moreIV = ((ImageView) more);
-                                        moreIV.setImageDrawable(context.getResources().getDrawable(Resources.getDrawable("wamod_brian_")));
-                                        moreIV.setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
-                                    }
-                                }
-                            }
-                        }
-                        toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    }
-                });*/
 
                 if (a instanceof com.whatsapp.Conversation) {
                     ImageView up = (ImageView) toolbar.findViewById(Resources.id.up);

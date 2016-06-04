@@ -201,7 +201,7 @@ public class CheckIn extends AsyncTask<AppCompatActivity, AppCompatActivity, App
 
                 // Restart when the theme is saved
                 if (Utils.edit.commit()) Utils.restartWAMOD(a);
-                else Toast.makeText(a, "There was an error installing your theme", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(a, activity.getResources().getString(Resources.getString("wamod_wamodthemes_errorinstallingtheme")), Toast.LENGTH_SHORT).show();
             }
 
             // Check if there's a new version available

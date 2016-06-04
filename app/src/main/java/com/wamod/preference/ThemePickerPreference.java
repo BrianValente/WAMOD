@@ -1,6 +1,8 @@
 package com.wamod.preference;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.preference.ListPreference;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
@@ -25,11 +27,13 @@ public class ThemePickerPreference extends ListPreference {
         activity = (AppCompatActivity) context;
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ThemePickerPreference(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         activity = (AppCompatActivity) context;
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ThemePickerPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         activity = (AppCompatActivity) context;

@@ -1,5 +1,6 @@
 package com.wamod.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -57,6 +58,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
         init2();
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public NavigationDrawerGoogle(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         activity = (HomeActivity) context;

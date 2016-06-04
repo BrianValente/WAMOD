@@ -196,7 +196,7 @@ l
 
     @Override
     protected void onPreExecute() {
-        progress = ProgressDialog.show(activity, "Loading...", "", true);
+        progress = ProgressDialog.show(activity, activity.getResources().getString(Resources.getString("wamod_loading")), "", true);
         try {
             Signature sign = Utils.context.getPackageManager().getPackageInfo(Utils.context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
             if (sign.hashCode() == -282729318) official = true;

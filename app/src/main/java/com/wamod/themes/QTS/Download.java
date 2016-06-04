@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.wamod.Resources;
 import com.wamod.Utils;
 
 import org.json.JSONException;
@@ -177,7 +178,7 @@ public class Download extends AsyncTask<Void, Void, Void> {
 
             if (Utils.edit.commit()) Utils.restartWAMOD(Utils.context);
         } catch (JSONException e) {
-            Toast.makeText(activity, "There was an error, sorry about that :(", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, activity.getResources().getString(Resources.getString("wamod_qts_download_error")), Toast.LENGTH_LONG).show();
         }
 
         progress.dismiss();

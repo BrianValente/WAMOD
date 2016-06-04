@@ -1,5 +1,6 @@
 package com.wamod.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
@@ -24,6 +25,7 @@ public class FloatingActionButton extends ImageView {
         super(context, attrs, defStyleAttr);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public FloatingActionButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
