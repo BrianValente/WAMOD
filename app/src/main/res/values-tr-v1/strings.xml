@@ -1,4 +1,11 @@
 <resources>
+<!--
+    NOTES
+    Do NOT translate "WAMOD Themes" or "Quick Theme Sharing" to your language.
+    It's like renaming Facebook to Caralibro, or WhatsApp to KePaza in spanish.
+    -->
+	
+	
     <!-- WAMOD Settings -->
     <string name="wamod_settings">WAMOD Ayarları</string>
     <string name="wamod_marshmallow_and_up">Android 6.0 (Marshmallow) ve üstü</string>
@@ -70,10 +77,15 @@
     <!-- WAMOD Settings - Privacy -->
     <string name="wamod_settings_privacy">Gizlilik</string>
     <string name="wamod_settings_privacy_freezelastseen">Son görülmeyi durdur</string>
-    <string name="wamod_settings_privacy_hidebluetick">Okunan mesajları rapor etmeyin (mavi tik)</string>
-    <string name="wamod_settings_privacy_hidetyping">\"Yazıyor\" \'u gizle</string>
     <string name="wamod_settings_privacy_alwaysonline">Herzaman çevrim içi</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Deneysel</string>
+	<string name="wamod_privacy_individual_summary">Kişinin profilinden kişiye özel gizlilik seçeneklerini ayarlayabileceğinizi unutmayın.</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy">Özel gizlilik yapılandırmasını sil</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_summary">Tüm kişiler için özel gizlilik seçeneğini sil</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_message">Özel gizlilik yapılandırmasını silmek istediğinizden emin misiniz?</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy">Varsayılan gizlilik yapılandırmasını geri yükle</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_summary">Varsayılan gizlilik değerlerini geri yükler</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_message">Varsayılan gizlilik yapılandırmasını geri yüklemek istediğinizden emin misiniz? Özel gizlilik ayarlarınızın tümü silinecektir.</string>
 
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">WAMOD Temaları</string>
@@ -84,7 +96,19 @@
     <string name="wamod_settings_wamodthemes_unlink_message">Cihazınızı bağlantısını kesmek istediğinizden emin misiniz?</string>
     <string name="wamod_settings_wamodthemes_visit">WAMOD Temalarını görüntüle</string>
 
-    <!-- WAMOD Settings - Miscellaneous -->
+    <!-- WAMOD Settings - Advanced -->
+    <string name="wamod_settings_advanced">Gelişmiş</string>
+    <string name="wamod_settings_advanced_nightmode">Gece modu</string>
+    <string name="wamod_settings_advanced_nightmode_primarytextcolor">Ana metin</string>
+    <string name="wamod_settings_advanced_nightmode_secondarytextcolor">İkincil metin</string>
+    <string name="wamod_settings_advanced_nightmode_cardsbackgroundcolor">Kartlar arka planı</string>
+    <string name="wamod_settings_advanced_nightmode_backgroundcolor">Arka plan</string>
+    <string name="wamod_settings_advanced_navigationdrawer">Gezinti çekmecesi</string>
+    <string name="wamod_settings_advanced_navigationdrawer_light_background">Açık arkaplan</string>
+    <string name="wamod_settings_advanced_navigationdrawer_dark_background">Koyu arka plan</string>
+	
+	
+	<!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Çeşitli ayarlar</string>
     <string name="wamod_settings_miscellaneous_system">Sistem ile ilgili</string>
     <string name="wamod_settings_miscellaneous_system_osgallery">Sistem galeri uygulamasını kullan</string>
@@ -99,13 +123,31 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Varsayılan ayarları geri yüklemek istediğiniz emin misiniz?</string>
 
 
-    <!-- QTS -->
+    <!-- Privacy -->
+    <string name="wamod_privacy_card_customprivacy_title">Özel gizlilik</string>
+    <string name="wamod_privacy_card_reportreceived_title">Alınan mesajlar raporu</string>
+    <string name="wamod_privacy_card_reportreceived_summary">Kişiniz mesaj geldiğinde bunu bilecek</string>
+    <string name="wamod_privacy_card_reportreceived_summary_experimental">Deneysel, çalışmayabilir veya bu seçeneği devre dışı bırakırsanız gecikmelere neden olmayabilir</string>
+    <string name="wamod_privacy_card_reportread_title">Mesajı okudu raporu</string>
+    <string name="wamod_privacy_card_reportread_summary">Alınan mesajları okursanız kişiniz bilecek</string>
+    <string name="wamod_privacy_card_reporttyping_title">Mesaj yazıyor raporu</string>
+    <string name="wamod_privacy_card_reporttyping_summary">Mesaj yazarken kişiniz bilecek</string>
+
+
+    <!-- WAMOD Themes -->
+    <string name="wamod_wamodthemes_errorinstallingtheme">Temanızı yüklerken bir hata oluştu</string>
+	
+	
+	<!-- QTS -->
+	
     <string name="wamod_qts">Hızlı Tema Paylaşımı (HTP)</string>
     <string name="wamod_qts_upload">Tema yükle</string>
-    <string name="wamod_qts_download">DTema indir</string>
+    <string name="wamod_qts_download">Tema indir</string>
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Temanızı yüklemek istediğiniz emin misiniz?</string>
     <string name="wamod_qts_upload_success">Tema kimliği %1$s panoya kopyalanan edildi. Arkadaşlarınızla paylaşın!</string>
+	<string name="wamod_qts_upload_unofficial_message">Eğer WAMOD resmi olmayan bir sürümünü kullanıyorsanız ve tema yükleme uyumsuzlukları nedeniyle devre dışı</string>
+    <string name="wamod_qts_download_error">Bir hata oluştu, bunun için üzgünüm :(</string>
 
 
     <!-- Crash -->
@@ -140,4 +182,6 @@
     <string name="wamod_error">Bir hata oluştu</string>
     <string name="wamod_error_contacting_server">Sunucu bağlantısında bir hata oluştu, lütfen daha sonra tekrar deneyin</string>
     <string name="wamod_restartwamod">WAMOD yeniden başlat</string>
+	<string name="wamod_done">Tamam</string>
+    <string name="wamod_loading">Yükleniyor</string>
 </resources>
