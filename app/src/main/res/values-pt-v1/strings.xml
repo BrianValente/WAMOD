@@ -133,7 +133,13 @@
     <string name="wamod_privacy_card_reporttyping_title">Relatar digitação</string>
     <string name="wamod_privacy_card_reporttyping_summary">Seu contato saberá quando você estiver digitando</string>
 
+
+    <!-- WAMOD Themes -->
+    <string name="wamod_wamodthemes_errorinstallingtheme">Houve um erro instalando o seu tema</string>
+
+
     <!-- QTS -->
+
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Carregar Tema no Servidor</string>
     <string name="wamod_qts_download">Baixar Tema do Servidor</string>
@@ -141,6 +147,7 @@
     <string name="wamod_qts_upload_prompt">Tem certeza de que quer carregar o seu tema no servidor?</string>
     <string name="wamod_qts_upload_success">Seu ID de tema %1$s foi copiado. Compartilhe com seus amigos!</string>
     <string name="wamod_qts_upload_unofficial_message">Você está usando uma versão não oficial do WAMOD e o envio de temas está desativado para evitar incompatibilidade.</string>
+    <string name="wamod_qts_download_error">Houve um erro, desculpas :(</string>
 
 
     <!-- Crash -->
@@ -176,4 +183,5 @@
     <string name="wamod_error_contacting_server">Houve um erro contatando o servidor, por favor, tente mais tarde</string>
     <string name="wamod_restartwamod">Reiniciar o WAMOD</string>
     <string name="wamod_done">Feito!</string>
+    <string name="wamod_loading">Carregando</string>
 </resources>
