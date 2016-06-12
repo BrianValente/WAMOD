@@ -5,7 +5,7 @@
     </declare-styleable>
 
     <!-- CircularImageView -->
-    <attr name="border" format="boolean" />
+    <!--<attr name="border" format="boolean" />
     <attr name="border_color" format="color" />
     <attr name="border_width" format="dimension" />
     <attr name="circularImageViewStyle" format="reference" />
@@ -13,5 +13,5 @@
     <attr name="selector_color" format="color" />
     <attr name="selector_stroke_color" format="color" />
     <attr name="selector_stroke_width" format="dimension" />
-    <attr name="shadow" format="boolean" />
+    <attr name="shadow" format="boolean" />-->
 </resources>
