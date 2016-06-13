@@ -1,10 +1,13 @@
 package com.whatsapp;
 
+import java.util.HashMap;
+
 /**
  * Created by brianvalente on 9/21/15.
  */
 public class Conversation extends DialogToastActivity {
     public String y; // Contact's number
+    public HashMap u;
 
     // Opens Android Gallery
     public static void ah(Conversation c) {}
@@ -26,5 +29,8 @@ public class Conversation extends DialogToastActivity {
 
     // Load contact
     public static void ak(Conversation c) {}
+
+    // Reply
+    public static void b(Conversation c, com.whatsapp.protocol.cv cv) {}
 }
 

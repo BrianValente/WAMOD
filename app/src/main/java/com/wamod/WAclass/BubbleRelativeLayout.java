@@ -3,6 +3,7 @@ package com.wamod.WAclass;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.wamod.Resources;
 import com.wamod.Utils;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by BrianValente on 3/1/16.
@@ -230,6 +233,20 @@ public class BubbleRelativeLayout {
             if (duration != null) duration.setTextColor(color);
 
             changeDateColor = true;
+        }
+
+        // Quoted message
+        View quoted_color = bubble.findViewById(Resources.getID("quoted_color"));
+        if (quoted_color != null) {
+            int color = rightBubble? Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"))
+                                   : Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
+            quoted_color.setBackgroundColor(color);
+
+            TextView quoted_name = (TextView) bubble.findViewById(Resources.getID("quoted_name"));
+            if (quoted_name != null) quoted_name.setTextColor(color);
+
+            TextView quoted_text = (TextView) bubble.findViewById(Resources.getID("quoted_text"));
+            if (quoted_text != null) quoted_text.setTextColor(color);
         }
 
         if (changeDateColor) {

@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -30,6 +31,9 @@ import com.wamod.entry.Test;
 import com.wamod.entry.WAMOD;
 import com.wamod.Utils;
 import com.whatsapp.DialogToastListActivity;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by brianvalente on 7/9/15.
@@ -444,5 +448,36 @@ public class Conversation extends DialogToastListActivity {
                 return emoji_picker_horizontal;
         }
         return conversation;
+    }
+
+    public static com.whatsapp.protocol.cv getCV(com.whatsapp.Conversation a) {
+        HashMap hashMap = a.u;
+        Map.Entry entry = (Map.Entry) hashMap.entrySet().iterator().next();
+        com.whatsapp.protocol.cv cv = (com.whatsapp.protocol.cv) entry.getValue();
+        return cv;
+    }
+
+    public static void logCV(com.whatsapp.protocol.cv cv) {
+        String array = "";
+        if (cv.M != null)
+            for (String s : cv.M) {
+                array += s + " | ";
+            }
+        Log.i("WAMOD_CV", "C: " + cv.C + "\n" +
+                          "D: " + cv.D + "\n" +
+                          "K: " + cv.K + "\n" +
+                          "M: " + array + "\n" +
+                          "P: " + cv.P + "\n" +
+                          "d: " + cv.d + "\n" +
+                          "e: " + cv.e + "\n" +
+                          "g: " + cv.g + "\n" +
+                          "j: " + cv.j + "\n" +
+                          "p: " + cv.p + "\n" +
+                          "x: " + cv.x + "\n" +
+                          "y: " + cv.y + "\n");
+    }
+
+    void callCV() {
+        logCV(null);
     }
 }

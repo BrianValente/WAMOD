@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.wamod"
-        minSdkVersion 'N'
+        minSdkVersion 23
         targetSdkVersion 'N'
         versionCode 1
         versionName "1.0"

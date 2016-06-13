@@ -75,10 +75,10 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.3";
-    public static int wamodVersionCode = 34;
+    public static String wamodVersionName = "1.3.4";
+    public static int wamodVersionCode = 35;
     public static Context context;
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     public static long timeSinceLastCheckin = 0;
 
