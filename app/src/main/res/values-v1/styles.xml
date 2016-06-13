@@ -58,4 +58,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="WAMOD.Theme.SetupWizard" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">#e0e0e0</item>
+        <item name="android:navigationBarColor">#e0e0e0</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:background">#ffffff</item>
+    </style>
 </resources>
