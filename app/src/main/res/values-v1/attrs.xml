@@ -14,4 +14,8 @@
     <attr name="selector_stroke_color" format="color" />
     <attr name="selector_stroke_width" format="dimension" />
     <attr name="shadow" format="boolean" />
+
+    <declare-styleable name="PaletteView">
+        <attr name="theme_id" format="integer"/>
+    </declare-styleable>
 </resources>

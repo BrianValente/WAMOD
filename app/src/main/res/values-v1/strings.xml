@@ -134,6 +134,11 @@
     <string name="wamod_privacy_card_reporttyping_summary">Your contact will know when you\'re typing</string>
 
 
+    <!-- Developer options -->
+    <string name="wamod_settings_developeroptions">Developer options</string>
+
+
+
     <!-- WAMOD Themes -->
     <string name="wamod_wamodthemes_errorinstallingtheme">There was an error installing your theme</string>
 

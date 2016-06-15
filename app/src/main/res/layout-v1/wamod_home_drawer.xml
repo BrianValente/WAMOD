@@ -195,6 +195,28 @@
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="72dp"/>
                             </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:id="@+id/wamod_drawer_debug">
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/wamod_drawer_ic_debug"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="16dp"
+                                    android:padding="2dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#ffffff"
+                                    android:text="@string/wamod_settings_developeroptions"
+                                    android:textSize="15sp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="72dp"/>
+                            </RelativeLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"

@@ -1,47 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
-    android:layout_gravity="bottom">
-    <RelativeLayout
+    android:background="#299030">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="#00000000"
+        android:layout_centerInParent="true"
+        android:id="@+id/wamod_setupwizard_start_container">
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/wamod_icon_big"/>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:layout_centerInParent="true"
-            android:paddingTop="50dp">
-            <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:src="@drawable/wamod_icon_big"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome to WAMOD"
-                android:textColor="#202020"
-                android:textSize="22sp"
-                android:layout_marginTop="60dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Let's configure the app"
-                android:layout_marginTop="12dp"
-                android:textSize="15sp"
-                android:textColor="#6a6a6a"/>
-            <android.support.design.widget.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="15dp"
-                app:backgroundTint="#49b050"
-                app:rippleColor="#299030"
-                app:fabSize="normal"
-                android:src="@drawable/wamod_arrow_right"/>
-        </LinearLayout>
-    </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+            android:text="Welcome to WAMOD"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:layout_marginTop="60dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's configure the app"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:textColor="#eaeaea"/>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="18dp"
+            app:backgroundTint="#ffffff"
+            app:rippleColor="#e0e0e0"
+            android:tint="#299030"
+            app:fabSize="normal"
+            android:src="@drawable/wamod_arrow_right"
+            android:background="@drawable/wamod_fab"
+            android:clickable="true"
+            android:id="@+id/wamod_setupwizard_start"/>
+        <!--<ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/wamod_fab"
+            android:elevation="12dp"
+            android:src="@drawable/wamod_fab_arrow_right"
+            android:tint="#000000"
+            android:backgroundTint="#ffffff"
+            android:scaleType="centerInside"
+            android:clickable="true"/>-->
+    </LinearLayout>
+    <io.codetail.widget.RevealLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/wamod_setupwizard_pages_container">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/wamod_setupwizard_overlay"
+            android:clickable="true"
+            android:background="#ffffff">
+            <io.codetail.widget.RevealLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/wamod_setupwizard_pages_background"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="46dp"
+                android:id="@+id/wamod_setupwizard_pages">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:background="#404040"
+                        android:id="@+id/wamod_setupwizard_header">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Choose a color palette"
+                            android:textColor="#ffffff"
+                            android:textSize="28sp"
+                            android:layout_margin="18dp"
+                            android:layout_alignParentBottom="true"
+                            android:id="@+id/wamod_setupwizard_header_title"/>
+                        <io.codetail.widget.RevealLinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/wamod_setupwizard_header_reveal" />
+                    </RelativeLayout>
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/wamod_setupwizard_header">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp"
+                            android:paddingBottom="20dp">
+                            <com.wamod.setup.PaletteView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:theme_id="0" />
+                            <com.wamod.setup.PaletteView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:theme_id="1" />
+                            <com.wamod.setup.PaletteView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:theme_id="2" />
+                            <com.wamod.setup.PaletteView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:theme_id="3" />
+                            <com.wamod.setup.PaletteView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:theme_id="4" />
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </io.codetail.widget.RevealLinearLayout>
+</RelativeLayout>

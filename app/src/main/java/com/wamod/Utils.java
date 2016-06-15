@@ -14,6 +14,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -30,10 +32,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
@@ -50,6 +56,7 @@ import com.wamod.themes.CheckIn;
 import com.whatsapp.*;
 
 import org.apache.commons.io.FileUtils;
+import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -959,5 +966,44 @@ public class Utils extends android.app.Activity {
             throw new RuntimeException(e);
         }
         return official;
+    }
+
+
+    // http://stackoverflow.com/questions/20264268/how-to-get-height-and-width-of-navigation-bar-programmatically
+    public static int getNavigationBarHeight() {
+        int result = 0;
+        boolean hasMenuKey = ViewConfiguration.get(context).hasPermanentMenuKey();
+        boolean hasBackKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_BACK);
+
+        if(!hasMenuKey && !hasBackKey) {
+            //The device has a navigation bar
+            android.content.res.Resources resources = context.getResources();
+
+            int orientation = context.getResources().getConfiguration().orientation;
+            int resourceId;
+            if (isTablet()){
+                resourceId = resources.getIdentifier(orientation == Configuration.ORIENTATION_PORTRAIT ? "navigation_bar_height" : "navigation_bar_height_landscape", "dimen", "android");
+            }  else {
+                resourceId = resources.getIdentifier(orientation == Configuration.ORIENTATION_PORTRAIT ? "navigation_bar_height" : "navigation_bar_width", "dimen", "android");
+            }
+
+            if (resourceId > 0) {
+                return context.getResources().getDimensionPixelSize(resourceId);
+            }
+        }
+        return result;
+    }
+    private static boolean isTablet() {
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+    public static int getAttribute_Int(AttributeSet attributeSet, String attributeName) {
+        int[] attrsArray = new int[] {
+                Resources.getAttribute(attributeName), // 0
+        };
+        TypedArray ta = context.obtainStyledAttributes(attributeSet, attrsArray);
+        return ta.getInt(0, 0);
     }
 }

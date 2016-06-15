@@ -5,6 +5,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/wamod_icon_big"/>
+            android:src="@drawable/wamod_icon_big" />
     </item>
 </layer-list>

@@ -419,6 +419,9 @@ public final class Resources {
     public static int getLayout(String layout) {
         return getHexID(layout, "layout");
     }
+    public static int getAttribute(String attribute) {
+        return getHexID(attribute, "attr");
+    }
     public static int getDrawable(String drawable) {
         int id = 0;
         // Better performance for ticks

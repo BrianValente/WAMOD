@@ -15,6 +15,19 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="f7f35f6ca95ccd57ca5ea79f49dd3850d17ade7f" />
+
+        <activity
+            android:hardwareAccelerated="true"
+            android:label="Setup Wizard"
+            android:theme="@style/WAMOD.Theme.SetupWizard"
+            android:name=".setup.SetupActivity"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
