@@ -147,7 +147,7 @@
 
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Загрузть тему</string>
-    <string name="wamod_qts_download">Скачать Тему</string>
+    <string name="wamod_qts_download">Скачать тему</string>
     <string name="wamod_qts_download_themeid">ID темы</string>
     <string name="wamod_qts_upload_prompt">Вы уверены, что хотите загрузить тему?</string>
     <string name="wamod_qts_upload_success">ID вашей темы %1$s было скопировано. Поделитесь с вашими друзьями!</string>
@@ -180,7 +180,7 @@
     <string name="profile_of">Профиль %1$s</string>
     <string name="conversation_last_seen">Был/а в сети</string>
     <string name="conversation_contact_online">В сети</string>
-    <string name="type_a_message">Напишите</string>
+    <string name="type_a_message">Введите текст</string>
 
 
     <!-- General -->
