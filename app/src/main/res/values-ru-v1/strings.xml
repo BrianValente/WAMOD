@@ -7,7 +7,7 @@
     <!-- WAMOD Settings - About -->
     <string name="wamod_settings_about">О программе</string>
     <string name="wamod_settings_about_googlepluscommunity">Google+ комьюнити</string>
-    <string name="wamod_settings_about_developertwitterprofile">Профиль разработчика Twitter</string>
+    <string name="wamod_settings_about_developertwitterprofile">Twitter разработчика</string>
     <string name="wamod_settings_about_sourcecode">Исходный код</string>
     <string name="wamod_settings_about_credits">Благодарности</string>
 
@@ -33,7 +33,7 @@
     <string name="wamod_settings_home_drawer">Боковая панель</string>
     <string name="wamod_settings_home_drawer_style">Стиль</string>
     <string name="wamod_settings_home_drawer_darkdrawer">Темная панель</string>
-    <string name="wamod_settings_home_drawer_selectdrawerbackground">Выбрать картинку панели</string>
+    <string name="wamod_settings_home_drawer_selectdrawerbackground">Выбрать фон панели</string>
     <string name="wamod_settings_home_drawer_blacktextinheader">Черный текст в заголовке</string>
     <string name="wamod_settings_home_drawer_showsecondsaccount">Показывать второй аккаунт</string>
     <string name="wamod_settings_home_bottomnavigationbar">Нижний навигационный бар</string>
@@ -74,7 +74,13 @@
     <string name="wamod_settings_privacy_alwaysonline">Всегда онлайн</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Эксперементальная функция</string>
     <string name="wamod_privacy_individual_summary">Помните, что вы можете установить пользовательские параметры конфиденциальности для каждого контакта в их профиле.</string>
-                                                    
+    <string name="wamod_settings_privacy_restorecustomprivacy">Удалить пользовательскую конфигурацию приватности</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_summary">Удаление пользовательской конфиденциальности для каждого контакта</string>
+    <string name="wamod_settings_privacy_restorecustomprivacy_message">Вы уверены, что хотите удалить пользовательскую конфигурацию конфиденциальности?</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy">Восстановить конфигурацию приватности по умолчанию</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_summary">Восстанавливает значения конфиденциальности по умолчанию</string>
+    <string name="wamod_settings_privacy_restoredefaultprivacy_message">Вы уверены, что хотите восстановить конфигурацию конфиденциальности по умолчанию? Ваша пользовательская конфигурация будет также удалена.</string>
+
     <!-- WAMOD Settings - WAMOD Themes -->
     <string name="wamod_settings_wamodthemes">WAMOD Themes</string>
     <string name="wamod_settings_wamodthemes_deviceid">ID устройства</string>
@@ -121,7 +127,18 @@
     <string name="wamod_privacy_card_reporttyping_title">Докладывать о "печатании"</string>
     <string name="wamod_privacy_card_reporttyping_summary">Ваш собеседник будет знать, если вы печатаете</string>
 
+
+    <!-- Developer options -->
+    <string name="wamod_settings_developeroptions">Настройки Разработчика</string>
+
+
+
+    <!-- WAMOD Themes -->
+    <string name="wamod_wamodthemes_errorinstallingtheme">Произошла ошибка при установке вашей темы</string>
+
+
     <!-- QTS -->
+
     <string name="wamod_qts">Quick Theme Sharing (QTS)</string>
     <string name="wamod_qts_upload">Загрузть тему</string>
     <string name="wamod_qts_download">Скачать тему</string>
@@ -129,6 +146,7 @@
     <string name="wamod_qts_upload_prompt">Вы уверены, что хотите загрузить тему?</string>
     <string name="wamod_qts_upload_success">ID вашей темы %1$s было скопировано. Поделитесь с вашими друзьями!</string>
     <string name="wamod_qts_upload_unofficial_message">Вы используете неофициальную версию WAMOD, поэтому загрузка тем отключена по причине несовместимости</string>
+    <string name="wamod_qts_download_error">Произошла ошибка, прошу прощения :(</string>
 
 
     <!-- Crash -->
@@ -164,4 +182,5 @@
     <string name="wamod_error_contacting_server">Произошла ошибка, при подключении к серверу, пожалуйста попробуйте позже</string>
     <string name="wamod_restartwamod">Перезапустить WAMOD</string>
     <string name="wamod_done">Готово</string>
+    <string name="wamod_loading">Загрузка</string>
 </resources>
