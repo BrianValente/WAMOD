@@ -79,7 +79,7 @@
     <string name="wamod_settings_privacy_freezelastseen">Son görülmeyi durdur</string>
     <string name="wamod_settings_privacy_alwaysonline">Herzaman çevrim içi</string>
     <string name="wamod_settings_privacy_alwaysonline_summary">Deneysel</string>
-	<string name="wamod_privacy_individual_summary">Kişinin profilinden kişiye özel gizlilik seçeneklerini ayarlayabileceğinizi unutmayın.</string>
+    <string name="wamod_privacy_individual_summary">Kişinin profilinden kişiye özel gizlilik seçeneklerini ayarlayabileceğinizi unutmayın.</string>
     <string name="wamod_settings_privacy_restorecustomprivacy">Özel gizlilik yapılandırmasını sil</string>
     <string name="wamod_settings_privacy_restorecustomprivacy_summary">Tüm kişiler için özel gizlilik seçeneğini sil</string>
     <string name="wamod_settings_privacy_restorecustomprivacy_message">Özel gizlilik yapılandırmasını silmek istediğinizden emin misiniz?</string>
@@ -108,7 +108,7 @@
     <string name="wamod_settings_advanced_navigationdrawer_dark_background">Koyu arka plan</string>
 	
 	
-	<!-- WAMOD Settings - Miscellaneous -->
+    <!-- WAMOD Settings - Miscellaneous -->
     <string name="wamod_settings_miscellaneous">Çeşitli ayarlar</string>
     <string name="wamod_settings_miscellaneous_system">Sistem ile ilgili</string>
     <string name="wamod_settings_miscellaneous_system_osgallery">Sistem galeri uygulamasını kullan</string>
@@ -134,11 +134,16 @@
     <string name="wamod_privacy_card_reporttyping_summary">Mesaj yazarken kişiniz bilecek</string>
 
 
+    <!-- Developer options -->
+    <string name="wamod_settings_developeroptions">Geliştirici seçenekleri</string>
+    
+    
+    
     <!-- WAMOD Themes -->
     <string name="wamod_wamodthemes_errorinstallingtheme">Temanızı yüklerken bir hata oluştu</string>
 	
 	
-	<!-- QTS -->
+    <!-- QTS -->
 	
     <string name="wamod_qts">Hızlı Tema Paylaşımı (HTP)</string>
     <string name="wamod_qts_upload">Tema yükle</string>
@@ -146,7 +151,7 @@
     <string name="wamod_qts_download_themeid">Theme ID</string>
     <string name="wamod_qts_upload_prompt">Temanızı yüklemek istediğiniz emin misiniz?</string>
     <string name="wamod_qts_upload_success">Tema kimliği %1$s panoya kopyalanan edildi. Arkadaşlarınızla paylaşın!</string>
-	<string name="wamod_qts_upload_unofficial_message">Eğer WAMOD resmi olmayan bir sürümünü kullanıyorsanız ve tema yükleme uyumsuzlukları nedeniyle devre dışı</string>
+    <string name="wamod_qts_upload_unofficial_message">Eğer WAMOD resmi olmayan bir sürümünü kullanıyorsanız ve tema yükleme uyumsuzlukları nedeniyle devre dışı</string>
     <string name="wamod_qts_download_error">Bir hata oluştu, bunun için üzgünüm :(</string>
 
 
@@ -182,6 +187,6 @@
     <string name="wamod_error">Bir hata oluştu</string>
     <string name="wamod_error_contacting_server">Sunucu bağlantısında bir hata oluştu, lütfen daha sonra tekrar deneyin</string>
     <string name="wamod_restartwamod">WAMOD yeniden başlat</string>
-	<string name="wamod_done">Tamam</string>
+    <string name="wamod_done">Tamam</string>
     <string name="wamod_loading">Yükleniyor</string>
 </resources>
