@@ -19,7 +19,7 @@ android {
         }
     }
     compileSdkVersion 23
-    buildToolsVersion '24.0.0 rc4'
+    buildToolsVersion '24.0.0'
 }
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
