@@ -66,48 +66,42 @@
             android:layout_height="match_parent"
             android:id="@+id/wamod_setupwizard_overlay"
             android:clickable="true"
-            android:background="#eaeaea">
+            android:background="#ffffff">
             <io.codetail.widget.RevealLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/wamod_setupwizard_pages_background"/>
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="46dp"
-                android:id="@+id/wamod_setupwizard_pages"
-                android:orientation="horizontal">
-                <com.wamod.setup.PageLayout
-                    android:layout_marginLeft="0dp"
+                android:id="@+id/wamod_setupwizard_pages">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/wamod_setupwizard_pages_beforecontinuing"
-                    app:header_title="Before continuing...">
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="125dp"
+                        android:background="#404040"
+                        android:id="@+id/wamod_setupwizard_header">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Choose a color palette"
+                            android:textColor="#ffffff"
+                            android:textSize="28sp"
+                            android:layout_margin="18dp"
+                            android:layout_alignParentBottom="true"
+                            android:id="@+id/wamod_setupwizard_header_title"/>
+                        <io.codetail.widget.RevealLinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/wamod_setupwizard_header_reveal" />
+                    </RelativeLayout>
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/wamod_setupwizard_page_content"
-                        android:layout_below="@+id/wamod_setupwizard_header"
-                        android:layout_marginBottom="50dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="EULA"
-                                android:textSize="16sp"
-                                android:layout_margin="18dp"/>
-                    </ScrollView>
-                </com.wamod.setup.PageLayout>
-                <com.wamod.setup.PageLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/wamod_setupwizard_pages_colorpalette"
-                    app:header_title="Choose a color palette">
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/wamod_setupwizard_page_content"
-                        android:layout_below="@+id/wamod_setupwizard_header"
-                        android:layout_marginBottom="50dp">
+                        android:layout_below="@id/wamod_setupwizard_header">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -125,38 +119,19 @@
                             <com.wamod.setup.PaletteView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:theme_id="3" />
+                                app:theme_id="2" />
                             <com.wamod.setup.PaletteView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:theme_id="2" />
+                                app:theme_id="3" />
                             <com.wamod.setup.PaletteView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 app:theme_id="4" />
                         </LinearLayout>
                     </ScrollView>
-                </com.wamod.setup.PageLayout>
-                <com.wamod.setup.PageLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/wamod_setupwizard_pages_setupfinished"
-                    app:header_title="Setup finished">
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/wamod_setupwizard_page_content"
-                        android:layout_below="@+id/wamod_setupwizard_header"
-                        android:layout_marginBottom="50dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="18dp"
-                            android:textSize="16sp"
-                            android:text="setup_finished"/>
-                    </ScrollView>
-                </com.wamod.setup.PageLayout>
-            </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
         </RelativeLayout>
     </io.codetail.widget.RevealLinearLayout>
 </RelativeLayout>

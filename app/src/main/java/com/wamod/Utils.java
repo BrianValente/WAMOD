@@ -56,7 +56,6 @@ import com.wamod.themes.CheckIn;
 import com.whatsapp.*;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.output.StringBuilderWriter;
 import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
@@ -132,7 +131,7 @@ public class Utils extends android.app.Activity {
             if (toolbar != null && coloredToolbarColor) {
                 toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
                 toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
-                // TODO toolbar.setOverflowIcon(tintToColor(toolbar.getOverflowIcon(), getUIColor(COLOR_FOREGROUND)));
+                toolbar.setOverflowIcon(tintToColor(toolbar.getOverflowIcon(), getUIColor(COLOR_FOREGROUND)));
 
                 toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
@@ -1006,13 +1005,5 @@ public class Utils extends android.app.Activity {
         };
         TypedArray ta = context.obtainStyledAttributes(attributeSet, attrsArray);
         return ta.getInt(0, 0);
-    }
-
-    public static String getAttribute_String(AttributeSet attributeSet, String attributeName) {
-        int[] attrsArray = new int[] {
-                Resources.getAttribute(attributeName), // 0
-        };
-        TypedArray ta = context.obtainStyledAttributes(attributeSet, attrsArray);
-        return ta.getString(0);
     }
 }

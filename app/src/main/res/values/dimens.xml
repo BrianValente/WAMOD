@@ -239,5 +239,4 @@
     <dimen name="undo_bar_margin_right">0.0dip</dimen>
     <dimen name="voice_note_avatar_radius">2.0dip</dimen>
     <dimen name="voice_note_avatar_size">52.0dip</dimen>
-    <dimen name="conversation_floating_date_offset">0.0dip</dimen>
 </resources>

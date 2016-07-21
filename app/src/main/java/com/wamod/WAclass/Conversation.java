@@ -161,12 +161,6 @@ public class Conversation extends DialogToastListActivity {
                 outgoing_normal = Resources.getHexID("wamod_style_bubble_newhangouts_balloon_outgoing_normal", "drawable");
                 outgoing_normal_ext = Resources.getHexID("wamod_style_bubble_newhangouts_balloon_outgoing_normal_ext", "drawable");
                 break;
-            case "8":
-                incoming_normal = Resources.getHexID("wamod_style_bubble_penis_balloon_incoming_normal", "drawable");
-                incoming_normal_ext = Resources.getHexID("wamod_style_bubble_penis_balloon_incoming_normal_ext", "drawable");
-                outgoing_normal = Resources.getHexID("wamod_style_bubble_penis_balloon_outgoing_normal", "drawable");
-                outgoing_normal_ext = Resources.getHexID("wamod_style_bubble_penis_balloon_outgoing_normal_ext", "drawable");
-                break;
         }
 
         switch (optionID) {
@@ -262,10 +256,10 @@ public class Conversation extends DialogToastListActivity {
 
 
         // Init attachments
-        // TODO a.l();
+        a.l();
 
         // Load contact
-        // TODO a.ak(a);
+        a.ak(a);
 
         // Load colors
         setTaskDescription(a);

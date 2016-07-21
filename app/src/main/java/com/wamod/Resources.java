@@ -422,9 +422,6 @@ public final class Resources {
     public static int getAttribute(String attribute) {
         return getHexID(attribute, "attr");
     }
-    public static int getStyleable(String styleable) {
-        return getHexID(styleable, "styleable");
-    }
     public static int getDrawable(String drawable) {
         int id = 0;
         // Better performance for ticks
