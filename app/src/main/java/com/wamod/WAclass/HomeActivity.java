@@ -31,22 +31,6 @@ import com.wamod.Utils;
  */
 public class HomeActivity extends AppCompatActivity {
 
-    public static void changeActiveTabTextColor(TextView tv) {
-        try {
-            tv.setTextColor(Color.parseColor("#" + Utils.prefs.getString("general_toolbarforeground", "FFFFFF")));
-        } catch (Exception e) {
-            Toast.makeText(tv.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
-
-    public static void changeInactiveTabTextColor(TextView tv) {
-        try {
-            tv.setTextColor(Color.parseColor("#" + "66" + Utils.prefs.getString("general_toolbarforeground", "FFFFFF")));
-        } catch (Exception e) {
-            Toast.makeText(tv.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
-
     public static void initHomeActivity(final com.whatsapp.HomeActivity a) {
         if (Utils.prefs.getBoolean("crash", false)) {
             Utils.edit.putBoolean("crash", false);
@@ -69,7 +53,6 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
         HorizontalScrollView tabs = (HorizontalScrollView) a.findViewById(Resources.id.tabs);
 
-        //utils.loadColorsV2(a);
         tabs.setBackgroundColor(Utils.getUIColor(Utils.COLOR_TOOLBAR));
 
         // Check if dark mode is activated and change the background
@@ -95,13 +78,8 @@ public class HomeActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window w = a.getWindow(); // in Activity's onCreate() for instance
-            //w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             w.setStatusBarColor(Color.parseColor("#00000000"));
-
-            /*DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
-            drawerLayout.setBackgroundColor(utils.getUIColor(utils.COLOR_STATUSBAR));*/
-
 
             int padding = Utils.getStatusBarHeight(a);
             CoordinatorLayout coordinatorLayout = (CoordinatorLayout) a.findViewById(Resources.id.wamod_drawer_overlay);
@@ -110,6 +88,18 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    /* Called on
+     *    com.whatsapp.HomeActivity.onPrepareOptionsMenu(Landroid/view/Menu;)Z
+     * Where
+     *    Replace the entire method
+     * Smali
+     *    .locals 1
+     *    .prologue
+     *    invoke-static {p1}, Lcom/wamod/WAclass/HomeActivity;->_onPrepareOptionsMenu(Landroid/view/Menu;)V
+     *    invoke-super {p0, p1}, Lcom/whatsapp/DialogToastActivity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
+     *    move-result v0
+     *    return v0
+     */
     public static void _onPrepareOptionsMenu(Menu menu) {
         menu.clear();
 
@@ -119,17 +109,26 @@ public class HomeActivity extends AppCompatActivity {
         menu.add(0, 0, 0, Resources.string.search).setIcon(searchIcon).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        _onPrepareOptionsMenu(menu);
-        return super.onPrepareOptionsMenu(menu);
-    }
 
+    /* Called on
+     *    com.whatsapp.HomeActivity.onOptionsItemSelected(Landroid/view/MenuItem;)Z
+     * Where
+     *    After prologue
+     * Smali
+     *    invoke-static {p0, p1}, Lcom/wamod/WAclass/HomeActivity;->_onOptionsItemSelected(Lcom/whatsapp/HomeActivity;Landroid/view/MenuItem;)Z
+     *    move-result v0
+     *    if-nez v0, :cond_4
+     *
+     *    ...
+     *
+     *    :cond_4
+     *    const/4 v0, 0x1
+     *    :goto_0
+     *    return v0
+     */
     public static boolean _onOptionsItemSelected(com.whatsapp.HomeActivity a, MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                /*NavigationDrawer drawer = (NavigationDrawer) a.findViewById(Resources.id.wamod_drawer_parent);
-                drawer.openDrawer2(true);*/
                 NavigationView navigationView = (NavigationView) a.findViewById(Resources.id.wamod_drawer);
                 DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
                 drawerLayout.openDrawer(navigationView);
@@ -141,6 +140,21 @@ public class HomeActivity extends AppCompatActivity {
         return false;
     }
 
+
+    /* Called on
+     *    com.whatsapp.HomeActivity.onBackPressed()V
+     * Where
+     *    After prologue
+     * Smali
+     *    invoke-static {p0}, Lcom/wamod/WAclass/HomeActivity;->_onBackPressed(Lcom/whatsapp/HomeActivity;)Z
+     *    move-result v0
+     *    if-nez v0, :cond_2
+     *
+     *    ...
+     *
+     *    :cond_2
+     *    return-void
+     */
     public static boolean _onBackPressed(com.whatsapp.HomeActivity a) {
         NavigationView navigationView = (NavigationView) a.findViewById(Resources.id.wamod_drawer);
         DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
@@ -150,15 +164,38 @@ public class HomeActivity extends AppCompatActivity {
         } else return false;
     }
 
-    private void callOnBackPressed() {
-        if (_onBackPressed(null)) return;
-    }
 
-    public static void test(MenuItem item) {
-        if (_onOptionsItemSelected(null, item)) return;
-    }
+    /* Called on
+     *    com.whatsapp.v.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Where
+     *    Where 0x7f030033 is located
+     * Smali
+     *    const/4 v3, 0x1
+     *    invoke-static {v3}, Lcom/wamod/WAclass/HomeActivity;->getHomeTheme(I)I
+     *    move-result v3
+     */
 
+    /* Called on
+     *    com.whatsapp.a91.<init>(Lcom/whatsapp/ContactPicker;Landroid/content/Context;Ljava/util/ArrayList;)V
+     *    com.whatsapp.pe.<init>(Lcom/whatsapp/ContactsFragment;Landroid/content/Context;Ljava/util/ArrayList;)V
+     * Where
+     *    ??
+     * Smali
+     *    const/4 v0, 0x2
+     *    invoke-static {v0}, Lcom/wamod/WAclass/HomeActivity;->getHomeTheme(I)I
+     *    move-result v0
+     */
 
+    /* Called on
+     *    com.whatsapp.wu.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Where
+     *    Where 0x7f030070 is located
+     * Smali
+     *    Replace with:
+     *    const/4 v4, 0x0
+     *    invoke-static {v4}, Lcom/wamod/WAclass/HomeActivity;->getHomeTheme(I)I
+     *    move-result v4
+     */
     public static int getHomeTheme(int id) {
         int homeThemeID = Integer.parseInt(Utils.prefs.getString("home_theme", "0"));
         int conversationsRow, callsRow, contactPickerRow;
@@ -200,18 +237,6 @@ public class HomeActivity extends AppCompatActivity {
         return conversationsRow;
     }
 
-    private void call_getHomeTheme() {
-        int hex = getHomeTheme(0);
-    }
-
-    public static int getTabsIndicatorColor() {
-        int color = Color.parseColor("#" + Utils.prefs.getString("home_tabsindicatorcolor", "ffffff"));
-        return color;
-    }
-
-    private void callgetcolor() {
-        int color = getTabsIndicatorColor();
-    }
 
     public static void styleFAB(ImageView fab) {
         Drawable bg = fab.getBackground();
@@ -220,9 +245,5 @@ public class HomeActivity extends AppCompatActivity {
         Drawable icon = fab.getDrawable();
         icon.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
         fab.setImageDrawable(icon);
-    }
-
-    public void _onCreate(Context ctx) {
-
     }
 }

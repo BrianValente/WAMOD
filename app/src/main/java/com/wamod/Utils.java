@@ -82,10 +82,10 @@ import io.fabric.sdk.android.Fabric;
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.4";
-    public static int wamodVersionCode = 35;
+    public static String wamodVersionName = "1.3.5";
+    public static int wamodVersionCode = 36;
     public static Context context;
-    public static boolean debug = true;
+    public static boolean debug = false;
 
     public static long timeSinceLastCheckin = 0;
 
@@ -97,6 +97,14 @@ public class Utils extends android.app.Activity {
 
     public static List<Chat> openedChats = new ArrayList<Chat>();
 
+
+    /* Called on
+     *     com.whatsapp.DialogToastActivity.onResume()V
+     * Before
+     *     return-void
+     * Smali
+     *     invoke-static {p0}, Lcom/wamod/Utils;->loadColorsV2(Landroid/support/v7/app/AppCompatActivity;)V
+     */
     public static void loadColorsV2(final AppCompatActivity a) {
         try {
             //if (a instanceof MediaView) return;
@@ -178,8 +186,8 @@ public class Utils extends android.app.Activity {
                 com.wamod.WAclass.Settings._onCreate(a);
             } else if (a instanceof com.whatsapp.ProfileInfoActivity) {
                 com.wamod.WAclass.ProfileInfoActivity._onCreate(a);
-            } else if (a instanceof com.whatsapp.NewGroup) {
-                com.wamod.WAclass.NewGroup._onCreate(a);
+            /*} else if (a instanceof com.whatsapp.NewGroup) {
+                com.wamod.WAclass.NewGroup._onCreate(a);*/
             } else if (a instanceof com.whatsapp.StarredMessagesActivity) {
                 com.wamod.WAclass.StarredMessagesActivity._onCreate(a);
             } else if (a instanceof com.whatsapp.SetStatus) {
@@ -192,7 +200,7 @@ public class Utils extends android.app.Activity {
                 com.wamod.WAclass.GroupChatInfo._onCreate(a);
             } else if (a instanceof com.whatsapp.ContactPicker) {
                 com.wamod.WAclass.ContactPicker._onCreate(a);
-            } else if (a instanceof com.whatsapp.EULA) {
+            } else if (a instanceof com.whatsapp.registration.EULA) {
                 com.wamod.WAclass.EULA._onCreate(a);
             } else if (a instanceof com.whatsapp.ArchivedConversationsActivity) {
                 com.wamod.WAclass.ArchivedConversationsActivity._onCreate(a);
@@ -424,14 +432,16 @@ public class Utils extends android.app.Activity {
         Utils.edit.apply();
         privacyPrefs_Edit.apply();
 
-        if (!debug) {
+        Fabric.with(Utils.context, new Crashlytics());
+
+        /*if (!debug) {
             try {
                 Signature sign = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
-                if (sign.hashCode() == -282729318) Fabric.with(Utils.context, new Crashlytics());
+                if (sign.hashCode() == -282729318)
             } catch (PackageManager.NameNotFoundException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
     }
 
     public static void initWAMODfromHome(AppCompatActivity a) {
@@ -457,6 +467,17 @@ public class Utils extends android.app.Activity {
         //return utils.prefs.getBoolean("general_darkmode", false);
     }
 
+
+    /* Called on
+     *    com.whatsapp.ConversationRow
+     *    com.whatsapp.ConversationRowImage
+     * Where
+     *    Where the ticks drawables are called
+     * Smali
+     *    const/4 v0, 0x4
+     *    invoke-static {v0}, Lcom/wamod/Utils;->getTickDrawableHex(I)I
+     *    move-result v0
+     */
     public static int getTickDrawableHex(int optionID) {
         String bubbleID = Utils.prefs.getString("conversation_style_tick", "0");
         int message_unsent,
@@ -687,6 +708,13 @@ public class Utils extends android.app.Activity {
         else Log.i("WAMOD", message);
     }
 
+
+    /*
+     * Call it using:
+     *
+     * const-string/jumbo v0, "Text"
+     * invoke-static {v0}, Lcom/wamod/Utils;->log(Ljava/lang/String;)V
+     */
     public static void log(String message) {
         Log.i("WAMOD", message);
     }
@@ -783,7 +811,9 @@ public class Utils extends android.app.Activity {
         // 2.16.21 byte[] official = Base64.decode("HQ3bHbhJnKQdh+B/qpAHhQ==", Base64.DEFAULT);
         // 2.16.43 byte[] official = Base64.decode("qioEf1LzV3gfqCATDwgzGg==", Base64.DEFAULT);
         // 2.16.81 byte[] official = Base64.decode("0M5VxNVpLgsnyqdzqdpCmQ==", Base64.DEFAULT); // 2.16.81
-        byte[] official = Base64.decode("3Tqs7W3qktjj2MEiM/ierw==", Base64.DEFAULT); // 2.16.91
+        // 2.16.102 byte[] official = Base64.decode("3Tqs7W3qktjj2MEiM/ierw==", Base64.DEFAULT); // 2.16.102
+
+        byte[] official = Base64.decode("Yxv0vu2cB+YpQYEsBNt1lQ==", Base64.DEFAULT); // 2.16.195
         return official;
     }
 
@@ -793,9 +823,19 @@ public class Utils extends android.app.Activity {
     }
 
     public static String getUserPhoneNumber(Context ctx) {
-        SharedPreferences prefs = ctx.getSharedPreferences("RegisterPhone", 0);
-        String number = prefs.getString("com.whatsapp.RegisterPhone.input_phone_number", "");
-        String country = prefs.getString("com.whatsapp.RegisterPhone.country_code", "");
+        String number,
+               country;
+        SharedPreferences oldPrefs = ctx.getSharedPreferences("RegisterPhone", 0),
+                          newPrefs = ctx.getSharedPreferences("registration.RegisterPhone", 0);
+
+        if (oldPrefs.contains("com.whatsapp.RegisterPhone.input_phone_number")) {
+            number  = oldPrefs.getString("com.whatsapp.RegisterPhone.input_phone_number", "");
+            country = oldPrefs.getString("com.whatsapp.RegisterPhone.country_code", "");
+        } else {
+            number = newPrefs.getString("com.whatsapp.registration.RegisterPhone.input_phone_number", "");
+            country = newPrefs.getString("com.whatsapp.registration.RegisterPhone.country_code", "");
+        }
+
         String entireNumber = "+" + country + " " + number;
         return entireNumber;
     }
@@ -875,10 +915,29 @@ public class Utils extends android.app.Activity {
         return wamodVersionName;
     }
 
+    public static String getWhatsAppVersionName() {
+        String versionName = new String();
+        try {
+            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            versionName = pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            Utils.manageException(e);
+        }
+        return versionName;
+    }
+
     public static int getVersionCode() {
         return wamodVersionCode;
     }
 
+
+    /* Called on
+     *    com.whatsapp.DialogToastActivity.onCreate(Landroid/os/Bundle;)V
+     * After
+     *    .prologue
+     * Smali
+     *    invoke-static {p0}, Lcom/wamod/Utils;->loadColorsBeforeSuper(Landroid/support/v7/app/AppCompatActivity;)V
+     */
     public static void loadColorsBeforeSuper(AppCompatActivity a) {
         Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
         if (a instanceof Activity) {
@@ -893,9 +952,9 @@ public class Utils extends android.app.Activity {
         } else if (a instanceof com.whatsapp.VoipActivity) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
             else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
-        } else if (a instanceof com.whatsapp.QuickContactActivity) {
+        /*} else if (a instanceof com.whatsapp.QuickContactActivity) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
-            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
+            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);*/
         } else if (a instanceof com.whatsapp.wallpaper.SolidColorWallpaper) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
             else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
@@ -953,6 +1012,14 @@ public class Utils extends android.app.Activity {
         clipboard.setPrimaryClip(clip);
     }
 
+
+    /* Called on
+     *    com.whatsapp.HomeActivity
+     * Where
+     *    setTranslationY is called
+     * Smali (replace with)
+     *    invoke-static {v0}, Lcom/wamod/Utils;->setTranslationYZero(Landroid/view/View;)V
+     */
     public static void setTranslationYZero(View v) {
         v.setTranslationY(0);
     }
@@ -1005,5 +1072,27 @@ public class Utils extends android.app.Activity {
         };
         TypedArray ta = context.obtainStyledAttributes(attributeSet, attrsArray);
         return ta.getInt(0, 0);
+    }
+
+    public static String getAttribute_String(AttributeSet attributeSet, String attributeName) {
+        int[] attrsArray = new int[] {
+                Resources.getAttribute(attributeName), // 0
+        };
+        TypedArray ta = context.obtainStyledAttributes(attributeSet, attrsArray);
+        return ta.getString(0);
+    }
+
+    public static boolean reportToCrashlytics() {
+        boolean official = false;
+        boolean report;
+
+        try {
+            Signature sign = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
+            if (sign.hashCode() == -282729318) official = true;
+        } catch (PackageManager.NameNotFoundException e) {}
+
+        report = !debug && official;
+
+        return report;
     }
 }

@@ -1,36 +1,38 @@
 package com.whatsapp;
 
+import com.whatsapp.protocol.x;
+
 import java.util.HashMap;
 
 /**
  * Created by brianvalente on 9/21/15.
  */
 public class Conversation extends DialogToastActivity {
-    public String y; // Contact's number
-    public HashMap u;
+    public String aT; // Contact's number
+    public HashMap aj;
 
     // Opens Android Gallery
-    public static void ah(Conversation c) {}
+    public static void openAndroidGallery(Conversation c) {}
 
     // Send message
-    public static void G(Conversation c) {}
+    public static void aj(Conversation c) {}
 
     // For voice notes
-    public static q B(Conversation c) {
-        return new q(c,c);
+    public static a6a af(Conversation c) {
+        return new a6a(c,c);
     }
 
     // Init attachments
-    public void l() {}
+    public void F() {}
 
     public void onCreateOptionsMenu() {
         com.wamod.WAclass.Conversation.tintToolbarButtons(null);
     }
 
     // Load contact
-    public static void ak(Conversation c) {}
+    public static void g(Conversation c) {}
 
     // Reply
-    public static void b(Conversation c, com.whatsapp.protocol.cv cv) {}
+    public static void c(Conversation c, x x) {}
 }
 

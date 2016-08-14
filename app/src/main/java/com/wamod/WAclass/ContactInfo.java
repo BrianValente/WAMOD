@@ -69,8 +69,8 @@ public class ContactInfo extends AppCompatActivity {
                             ImageView encryption_indicator = (ImageView) a.findViewById(Resources.id.encryption_indicator);
 
                             if (encryption_title != null) encryption_title.setTextColor(Utils.getDarkColor(0));
-                            if (encryption_info != null) encryption_info.setTextColor(Utils.getDarkColor(1));
                             if (encryption_indicator != null) encryption_indicator.setImageDrawable(Utils.tintToColor(encryption_indicator.getDrawable(), Utils.getDarkColor(0)));
+                            encryption_info.setTextColor(Utils.getDarkColor(1));
                         }
 
                         muteContainer.setBackgroundColor(Utils.getDarkColor(3));
@@ -93,6 +93,15 @@ public class ContactInfo extends AppCompatActivity {
         Privacy.initPrivacyOnChatInfo(a);
     }
 
+
+    /* Called on
+     *    com.whatsapp.zv.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     *    com.whatsapp.nc.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Before
+     *    return-object p2
+     * Smali
+     *    invoke-static {p2}, Lcom/wamod/WAclass/ContactInfo;->_getView(Landroid/view/View;)V
+     */
     public static void _getView(View v) {
         try {
             if (Utils.nightModeShouldRun()) {

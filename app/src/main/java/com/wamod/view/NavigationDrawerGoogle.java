@@ -1,22 +1,20 @@
 package com.wamod.view;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.StringRes;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewStub;
-import android.view.ViewTreeObserver;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.*;
+import android.widget.*;
 
 import com.pkmmte.view.CircularImageView;
 import com.wamod.Resources;
@@ -26,12 +24,9 @@ import com.wamod.WAclass.ArchivedConversationsActivity;
 import com.wamod.settings.Settings;
 import com.wamod.settings.Privacy;
 import com.wamod.setup.SetupActivity;
-import com.whatsapp.HomeActivity;
-import com.whatsapp.NewGroup;
-import com.whatsapp.ProfileInfoActivity;
-import com.whatsapp.SetStatus;
-import com.whatsapp.StarredMessagesActivity;
-import com.whatsapp.WebSessionsActivity;
+import com.whatsapp.*;
+
+import java.util.DuplicateFormatFlagsException;
 
 /**
  * Created by brianvalente on 2/24/16.
@@ -113,14 +108,6 @@ public class NavigationDrawerGoogle extends RelativeLayout {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
                 final RelativeLayout item = (RelativeLayout) buttons.getChildAt(i);
                 if (!Utils.prefs.getBoolean("home_drawer_dark", true)) {
-                    /*ImageView icon = (ImageView) item.getChildAt(0);
-                    TextView label = (TextView)  item.getChildAt(1);
-
-                    if (icon != null && label != null) {
-                        icon.setColorFilter(Color.parseColor("#22222"));
-                        label.setTextColor(Color.parseColor("#22222"));
-                    }*/
-
                     int color = Color.parseColor("#222222");
 
                     View label1 = item.getChildAt(0);
@@ -138,7 +125,7 @@ public class NavigationDrawerGoogle extends RelativeLayout {
                         Intent intent;
                         int id = item.getId();
                         if (id == Resources.id.wamod_drawer_newgroup) {
-                            intent = new Intent(activity, NewGroup.class);
+                            intent = new Intent(activity, GroupMembersSelector.class);
                             activity.startActivity(intent);
                         } else if (id == Resources.id.wamod_drawer_wamodweb) {
                             intent = new Intent(activity, WebSessionsActivity.class);

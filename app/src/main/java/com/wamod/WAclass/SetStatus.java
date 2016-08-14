@@ -31,13 +31,13 @@ public class SetStatus extends AppCompatActivity {
             TextView status_tv = (TextView) a.findViewById(Resources.id.status_tv);
             ImageView round_more_btn = (ImageView) a.findViewById(Resources.id.round_more_btn);
 
-            status_title.setTextColor(Utils.getDarkColor(0));
-            select_status_title.setTextColor(Utils.getDarkColor(0));
-            status_tv.setTextColor(Utils.getDarkColor(1));
-            round_more_btn.setImageDrawable(Utils.tintToColor(round_more_btn.getDrawable(), Utils.getDarkColor(1)));
+            if (status_title        != null) status_title.setTextColor(Utils.getDarkColor(0));
+            if (select_status_title != null) select_status_title.setTextColor(Utils.getDarkColor(0));
+            if (status_tv           != null) status_tv.setTextColor(Utils.getDarkColor(1));
+            if (round_more_btn      != null) round_more_btn.setImageDrawable(Utils.tintToColor(round_more_btn.getDrawable(), Utils.getDarkColor(1)));
 
             ListView list = (ListView) a.findViewById(Resources.id.list);
-            list.setDivider(null);
+            if (list != null) list.setDivider(null);
         }
     }
 

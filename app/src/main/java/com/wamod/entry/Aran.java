@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import com.wamod.Resources;
 import com.wamod.Utils;
 import com.whatsapp.Conversation;
-import com.whatsapp.akq;
+import com.whatsapp.u0;
 
 /**
  * Created by brianvalente on 9/21/15.
@@ -40,6 +40,6 @@ public class Aran {
         entryET.setTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_entry_textcolor", "ffffff")));
         entryET.setHintTextColor(Color.parseColor("#" + Utils.prefs.getString("theme_aran_conversation_entry_hintcolor", "ffffff")));
 
-        emojiBtn.setOnClickListener(new akq(a));
+        emojiBtn.setOnClickListener(u0.a(a));
     }
 }

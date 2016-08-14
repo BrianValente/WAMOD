@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class ContactInfo extends AppCompatActivity {
     // Get contact
-    public static ki a(ContactInfo contactInfo) {
+    public static rv h(ContactInfo contactInfo) {
         return null;
     }
 }

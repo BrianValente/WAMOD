@@ -33,6 +33,14 @@ public class StarredMessagesActivity extends AppCompatActivity {
         if (list != null) list.setBackgroundColor(Utils.getDarkColor(2));
     }
 
+
+    /* Called on
+     *    com.whatsapp.kj.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Before
+     *    return-object p2
+     * Smali
+     *    invoke-static {p2}, Lcom/wamod/WAclass/StarredMessagesActivity;->_getView(Landroid/view/View;)Landroid/view/View;
+     */
     public static View _getView(View v) {
         if (Utils.nightModeShouldRun()) {
             TextView sender_name    = (TextView) v.findViewById(Resources.id.sender_name);

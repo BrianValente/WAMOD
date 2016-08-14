@@ -17,5 +17,10 @@
 
     <declare-styleable name="PaletteView">
         <attr name="theme_id" format="integer"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="PageLayout">
+        <attr name="header_title" format="string" />
     </declare-styleable>
 </resources>

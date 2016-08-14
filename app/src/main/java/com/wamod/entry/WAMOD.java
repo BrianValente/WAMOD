@@ -92,11 +92,11 @@ public class WAMOD {
         });
 
 
-        gallery.setOnLongClickListener(new auw(activity));
-        audio.setOnClickListener(new ajk(activity));
-        location.setOnClickListener(new aps(activity));
-        contact.setOnClickListener(new g2(activity));
-        camera.setOnClickListener(new ax6(activity, true));
+        gallery.setOnLongClickListener(dk.a(activity));
+        audio.setOnClickListener(aic.a(activity));
+        location.setOnClickListener(tk.a(activity));
+        contact.setOnClickListener(q.a(activity));
+        camera.setOnClickListener(qd.a(activity, true));
 
         // Voice note
         final Events.NewVoiceNoteManager voiceNoteManager = new Events.NewVoiceNoteManager(activity);

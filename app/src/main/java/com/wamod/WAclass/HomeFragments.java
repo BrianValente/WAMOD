@@ -28,6 +28,14 @@ public class HomeFragments {
         }
     }
 
+
+    /* Called on
+     *    com.whatsapp.v.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Where
+     *    Before return-object p2
+     * Smali
+     *    invoke-static {p2}, Lcom/wamod/WAclass/HomeFragments;->CallsFragment(Landroid/view/View;)V
+     */
     public static void CallsFragment(View a) {
         if (Utils.nightModeShouldRun()) {
             try {
@@ -42,6 +50,15 @@ public class HomeFragments {
         }
     }
 
+
+    /* Called on
+     *    com.whatsapp.a91.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     *    com.whatsapp.pe.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Where
+     *    Before return-object p2
+     * Smali
+     *    invoke-static {p2}, Lcom/wamod/WAclass/HomeFragments;->ContactsFragment(Landroid/view/View;)V
+     */
     public static void ContactsFragment(View a) {
         if (Utils.nightModeShouldRun()) {
             try {

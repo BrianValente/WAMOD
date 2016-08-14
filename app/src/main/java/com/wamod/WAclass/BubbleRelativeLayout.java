@@ -18,42 +18,20 @@ import org.w3c.dom.Text;
  * Created by BrianValente on 3/1/16.
  */
 public class BubbleRelativeLayout {
+
+    /* Called on
+     *    com.whatsapp.BubbleRelativeLayout.onDraw(Landroid/graphics/Canvas;)V
+     * Where
+     *    Before return-void
+     * Smali
+     *    invoke-static {p0}, Lcom/wamod/WAclass/BubbleRelativeLayout;->init(Lcom/whatsapp/BubbleRelativeLayout;)V
+     */
     public static void init(final com.whatsapp.BubbleRelativeLayout bubble) {
         ImageView status = (ImageView) bubble.findViewById(Resources.id.status);
         boolean rightBubble = false;
         if (status != null) rightBubble = true;
         boolean changeDateColor = false;
-        //if (bubble.getTag(Resources.id.wamod_drawer_debug1) != null) extension = true;
-
-        /*int paddingHorizontal = utils.Nexus6PResToActualDevice(bubble.getContext(), 20, 0)[0];
-        int paddingVertical = utils.Nexus6PResToActualDevice(bubble.getContext(), 0, 7)[1];
-        bubble.setPadding(paddingHorizontal, paddingVertical, paddingHorizontal, paddingVertical);*/
-
         LinearLayout date_wrapper = (LinearLayout) bubble.findViewById(Resources.id.date_wrapper);
-
-        // Text message
-        LinearLayout main_layout = (LinearLayout) bubble.findViewById(Resources.id.main_layout);
-        if (main_layout != null) {
-
-            /*Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            main_layout.setBackground(bubbleBackground);*/
-
-            /*main_layout.setPadding(0,0,0,0);
-            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) main_layout.getLayoutParams();
-            params.setMargins(0,0,0,0);
-            main_layout.setLayoutParams(params);
-            main_layout.offsetLeftAndRight(0);*/
-        }
 
         // Text message
         TextView message_text = (TextView) bubble.findViewById(Resources.id.message_text);
@@ -61,30 +39,11 @@ public class BubbleRelativeLayout {
             if (rightBubble) message_text.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF")));
             else message_text.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF")));
             changeDateColor = true;
-
-            /*int left = message_text.getWidth();
-            int top = date_wrapper.getPaddingTop();
-            int right = date_wrapper.getPaddingRight();
-            int bottom = date_wrapper.getPaddingBottom();
-            date_wrapper.setPadding(left, top, right, bottom);*/
         }
 
         // Image
         FrameLayout image_holder = (FrameLayout) bubble.findViewById(Resources.id.image_holder);
         if (image_holder != null) {
-            /*LinearLayout parent = (LinearLayout) image_holder.getParent();
-            Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            parent.setBackground(bubbleBackground);*/
             int paddingRight = Utils.Nexus6PResToActualDevice(bubble.getContext(), 70, 0)[0];
             int paddingBottom = Utils.Nexus6PResToActualDevice(bubble.getContext(), 0, 25)[1];
             date_wrapper.setPadding(date_wrapper.getPaddingLeft(), date_wrapper.getPaddingTop(), paddingRight, paddingBottom);
@@ -93,38 +52,11 @@ public class BubbleRelativeLayout {
         // Video
         ImageView thumb = (ImageView) bubble.findViewById(Resources.id.thumb);
         if (thumb != null) {
-            /*View parent = (View) thumb.getParent().getParent();
-            Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            parent.setBackground(bubbleBackground);*/
         }
 
         // Audio
         FrameLayout control_btn_holder = (FrameLayout) bubble.findViewById(Resources.id.control_btn_holder);
         if (control_btn_holder != null) {
-            /*View parent = (View) control_btn_holder.getParent();
-            Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            parent.setBackground(bubbleBackground);*/
-
             changeDateColor = true;
         }
 
@@ -140,19 +72,6 @@ public class BubbleRelativeLayout {
         // Documents
         LinearLayout content = (LinearLayout) bubble.findViewById(Resources.id.content);
         if (content != null) {
-            /*Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            content.setBackground(bubbleBackground);*/
-
             TextView title = (TextView) bubble.findViewById(Resources.id.title);
             TextView info = (TextView) bubble.findViewById(Resources.id.info);
             TextView bullet_info = (TextView) bubble.findViewById(Resources.id.bullet_info);
@@ -183,19 +102,6 @@ public class BubbleRelativeLayout {
         // Contacts
         LinearLayout contact_card = (LinearLayout) bubble.findViewById(Resources.id.contact_card);
         if (contact_card != null) {
-            /*Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            ((View)contact_card.getParent()).setBackground(bubbleBackground);*/
-
             TextView vcard_text = (TextView) bubble.findViewById(Resources.id.vcard_text);
             TextView msg_contact_btn = (TextView) bubble.findViewById(Resources.id.msg_contact_btn);
             TextView add_contact_btn = (TextView) bubble.findViewById(Resources.id.add_contact_btn);
@@ -212,20 +118,6 @@ public class BubbleRelativeLayout {
         // Voice note
         FrameLayout thumbnail = (FrameLayout) bubble.findViewById(Resources.id.thumbnail);
         if (thumbnail != null) {
-            /*View parent = (View) thumbnail.getParent();
-            Drawable bubbleBackground;
-            int color;
-            if (rightBubble) {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 3:2));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF"));
-            }
-            else {
-                bubbleBackground = bubble.getResources().getDrawable(Conversation.getBubbleDrawableHex(extension? 1:0));
-                color = Color.parseColor("#" + utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF"));
-            }
-            bubbleBackground.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            parent.setBackground(bubbleBackground);*/
-
             int color;
             TextView duration = (TextView) bubble.findViewById(Resources.id.duration);
             if (rightBubble) color = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"));
@@ -265,14 +157,22 @@ public class BubbleRelativeLayout {
         }
     }
 
-    private void callInit() {
-        init(null);
-    }
 
     public static void isExtension(com.whatsapp.BubbleRelativeLayout bubble) {
         bubble.setTag(Resources.id.wamod_drawer_debug1, true);
     }
 
+
+    /* Called on
+     *    com.whatsapp.BubbleRelativeLayout.<clinit>()V
+     * Where
+     *    Where the bubbles drawables are saved, replace the code for the four bubbles
+     * Smali
+     *    const/4 v0, 0x2
+     *    invoke-static {v0}, Lcom/wamod/WAclass/BubbleRelativeLayout;->getBalloonDrawable(I)Landroid/graphics/drawable/Drawable;
+     *    move-result-object v0
+     *    sput-object v0, Lcom/whatsapp/BubbleRelativeLayout;->e:Landroid/graphics/drawable/Drawable;
+     */
     public static Drawable getBalloonDrawable(int balloon) {
         Drawable bubble = Utils.context.getResources().getDrawable(Conversation.getBubbleDrawableHex(balloon));
         switch (balloon) {

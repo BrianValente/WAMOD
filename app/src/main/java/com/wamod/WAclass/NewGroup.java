@@ -25,7 +25,7 @@ public class NewGroup extends AppCompatActivity {
 
             ((ViewGroup) ((ViewGroup) a.findViewById(android.R.id.content)).getChildAt(0)).getChildAt(0).setBackgroundColor(Utils.getDarkColor(2));
 
-            ((TextView) ((ViewGroup) (ViewGroup) a.findViewById(Resources.id.image_frame_layout).getParent()).getChildAt(1)).setTextColor(Utils.getDarkColor(0));
+            //((TextView) ((ViewGroup) (ViewGroup) a.findViewById(Resources.id.image_frame_layout).getParent()).getChildAt(1)).setTextColor(Utils.getDarkColor(0));
         }
     }
 }

@@ -15,9 +15,9 @@ import android.widget.TextView;
 
 import com.whatsapp.ContactInfo;
 import com.whatsapp.GroupChatInfo;
-import com.whatsapp.ki;
-import com.whatsapp.protocol.s;
-import com.whatsapp.protocol.c2;
+import com.whatsapp.rv;
+import com.whatsapp.protocol.z;
+import com.whatsapp.protocol.a_;
 
 /**
  * Created by brianvalente on 5/8/16.
@@ -25,17 +25,22 @@ import com.whatsapp.protocol.c2;
 public class Privacy {
     static boolean stringsDecoded = false;
 
-    public static boolean blueTick(s s, c2 c2, String str1, String str2, String[] str3, String str4) {
+    public static boolean blueTick(z z, a_ a_, String str1, String str2, String[] str3, String str4) {
         // Returns TRUE if the "Hide blue tick" option is DISABLED
-        log(c2, str1, str2, str3, str4);
-        String JabberID = c2.c;
+        log(a_, str1, str2, str3, str4);
+        String JabberID = a_.c;
         boolean value = reportReadForSpecificContact(JabberID);
         Log.i("WAMOD_PRIVACY", "Report read: Jabber ID: " + JabberID + " Value: " + value);
         if (!value) {
             str1 = str4;
-            if (reportReceivedForSpecificContact(JabberID)) s.a(c2, str1, str2, str3, str4);
+            if (reportReceivedForSpecificContact(JabberID)) z.a(a_, str1, str2, str3, str4);
             return false;
         } else return true;
+    }
+
+    private void callBlueTick() {
+        blueTick(null, null, null, null, null, null);
+        secondTick(null);
     }
 
     public static boolean hideTyping(String JabberID) {
@@ -45,9 +50,9 @@ public class Privacy {
         return value;
     }
 
-    public static boolean secondTick(c2 c2) {
+    public static boolean secondTick(a_ a_) {
         // Returns TRUE if the "Hide second tick" option is DISABLED
-        String JabberID = c2.c;
+        String JabberID = a_.c;
         boolean value = reportReceivedForSpecificContact(JabberID);
         Log.i("WAMOD_PRIVACY", "Report received: Jabber ID: " + JabberID + " Value: " + value);
         return value;
@@ -136,12 +141,12 @@ public class Privacy {
 
         // TODO Fix this mess please
 
-        ki contact = null;
+        rv contact = null;
         if (activity instanceof GroupChatInfo) contact = ((GroupChatInfo) activity).getContact((GroupChatInfo) activity);
-        else if (activity instanceof ContactInfo) contact = ((ContactInfo) activity).a((ContactInfo) activity);
+        else if (activity instanceof ContactInfo) contact = ((ContactInfo) activity).h((ContactInfo) activity);
         if (contact == null) return;
 
-        final String JabberID = contact.j;
+        final String JabberID = contact.v;
 
 
         final ViewGroup wamod_privacy_card_customprivacy = (ViewGroup) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy"));
@@ -277,9 +282,9 @@ public class Privacy {
     /* Trash */
 
 
-    public static void log(c2 c2, String str1, String str2, String[] str3, String str4) {
+    public static void log(a_ a_, String str1, String str2, String[] str3, String str4) {
         int i = 1;
-        Log.i("WAMOD_PRIVACY_READ", "a: " + (c2.a? "true" : "false") + " -- b: " + c2.b + " -- c: " + c2.c);
+        Log.i("WAMOD_PRIVACY_READ", "a: " + (a_.a? "true" : "false") + " -- b: " + a_.b + " -- c: " + a_.c);
         Log.i("WAMOD_PRIVACY_READ", "1: " + str1 + " -- 2: " + str2 + " -- 4: " + str4);
         if (str3 != null)
             for (String s : str3) {
@@ -289,9 +294,9 @@ public class Privacy {
         else Log.i("WAMOD_PRIVACY_READ", "String 3: NULL");
     }
 
-    public static void logReceived(c2 c2, String str1, String str2, String[] str3, String str4) {
+    public static void logReceived(a_ a_, String str1, String str2, String[] str3, String str4) {
         int i = 1;
-        Log.i("WAMOD_PRIVACY_RECEIVED", "a: " + (c2.a? "true" : "false") + " -- b: " + c2.b + " -- c: " + c2.c);
+        Log.i("WAMOD_PRIVACY_RECEIVED", "a: " + (a_.a? "true" : "false") + " -- b: " + a_.b + " -- c: " + a_.c);
         Log.i("WAMOD_PRIVACY_RECEIVED", "1: " + str1 + " -- 2: " + str2 + " -- 4: " + str4);
         if (str3 != null)
             for (String s : str3) {

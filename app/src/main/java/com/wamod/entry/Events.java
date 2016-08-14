@@ -27,19 +27,19 @@ import io.codetail.widget.RevealLinearLayout;
  */
 public class Events {
     public static class VoiceNoteManager {
-        q VoiceNote;
+        a6a VoiceNote;
         public VoiceNoteManager(Conversation conversation) {
-            VoiceNote = new r(conversation, conversation, conversation);
-            VoiceNote.a(conversation.y);
+            VoiceNote = new a69(conversation, conversation, conversation);
+            VoiceNote.a(conversation.aT);
         }
         public void StartRecording() {
             VoiceNote.i();
         }
         public void StopRecording() {
-            VoiceNote.b(true);
+            VoiceNote.a(true);
         }
         public void DiscardRecord() {
-            VoiceNote.b(false);
+            VoiceNote.a(false);
         }
     }
 
@@ -60,33 +60,33 @@ public class Events {
             btn.performClick();
         }
         private void attachPhotoUsingAndroidGallery() {
-            conversation.ah(conversation);
+            Conversation.openAndroidGallery(conversation);
         }
         private void attachPhotoUsingStockGallery() {
-            performClick(new a2m(conversation));
+            performClick(ax3.a(conversation));
         }
         public void attachFromCamera() {
-            performClick(new ax6(conversation, true));
+            performClick(qd.a(conversation, true));
         }
         public void attachAudio() {
-            performClick(new ajk(conversation));
+            performClick(aic.a(conversation));
         }
         public void attachContact() {
-            performClick(new g2(conversation));
+            performClick(q.a(conversation));
         }
         public void attachLocation() {
-            performClick(new aps(conversation));
+            performClick(tk.a(conversation));
         }
     }
 
     public static class NewVoiceNoteManager {
         public static final int ANIMATION_DURATION = 400;
-        q VoiceNote;
+        a6a VoiceNote;
         Conversation conversation;
 
         public NewVoiceNoteManager(final Conversation conversation) {
-            VoiceNote = new r(conversation, conversation, conversation);
-            VoiceNote.a(conversation.y);
+            VoiceNote = new a69(conversation, conversation, conversation);
+            VoiceNote.a(conversation.aT);
             this.conversation = conversation;
 
             final View voice_note_btn   = conversation.findViewById(Resources.getID("voice_note_btn"));
@@ -139,12 +139,12 @@ public class Events {
         }
         
         public void StopRecording() {
-            VoiceNote.b(true);
+            VoiceNote.a(true);
             animate(false);
         }
         
         public void DiscardRecord() {
-            VoiceNote.b(false);
+            VoiceNote.a(false);
             animate(false);
         }
         

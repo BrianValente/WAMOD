@@ -50,6 +50,14 @@ public class WebSessionsActivity extends AppCompatActivity {
         }
     }
 
+
+    /* Called on
+     *    com.whatsapp.iq.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Before
+     *    return-object p2
+     * Smali
+     *    invoke-static {p2}, Lcom/wamod/WAclass/WebSessionsActivity;->_getView(Landroid/view/View;)V
+     */
     public static void _getView(View v) {
         if (Utils.nightModeShouldRun()) {
             v.setBackground(Utils.tintToColor(v.getBackground(), Utils.getDarkColor(3)));

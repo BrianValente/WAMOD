@@ -8,19 +8,20 @@ import android.content.Context;
  */
 public class App extends Application {
     private static Context context;
-    public static String time = "";
-    //public static List<chat> openedChats = new ArrayList<chat>();
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        setContext(this);
-        Utils.initWAMOD();
-    }
 
-    public static Context getContext(){
+    public static Context getContext() {
         return context;
     }
+
+
+    /* Called on
+     *    com.facebook.buck.android.support.exopackage.ExopackageApplication.onCreate
+     * Before
+     *    return-void
+     * Smali
+     *    invoke-static {p0}, Lcom/wamod/App;->setContext(Landroid/content/Context;)V
+     */
     public static void setContext(Context ctx){
         context = ctx;
         Utils.context = ctx;

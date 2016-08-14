@@ -94,6 +94,14 @@ public class GroupChatInfo extends AppCompatActivity {
         Privacy.initPrivacyOnChatInfo(a);
     }
 
+
+    /* Called on
+     *    com.whatsapp.z4.getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+     * Before
+     *    return-object p2
+     * Smali
+     *    invoke-static {p2}, Lcom/wamod/WAclass/GroupChatInfo;->_getView(Landroid/view/View;)V
+     */
     public static void _getView(View v) {
         try {
             if (Utils.nightModeShouldRun()) {

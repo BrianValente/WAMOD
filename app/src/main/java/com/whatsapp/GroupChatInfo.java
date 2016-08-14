@@ -7,5 +7,5 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class GroupChatInfo extends AppCompatActivity {
     // Get contact
-    public static ki getContact(GroupChatInfo groupChatInfo) {return null;}
+    public static rv getContact(GroupChatInfo groupChatInfo) {return null;}
 }

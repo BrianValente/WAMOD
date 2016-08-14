@@ -31,6 +31,7 @@ import com.wamod.entry.Test;
 import com.wamod.entry.WAMOD;
 import com.wamod.Utils;
 import com.whatsapp.DialogToastListActivity;
+import com.whatsapp.protocol.x;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,7 +67,19 @@ public class Conversation extends DialogToastListActivity {
         tv.setTextColor(Utils.getUIColor(Utils.COLOR_TOOLBARTEXT));
     }
 
-
+    /* Called on
+     *    com.whatsapp.Conversation
+     * Where
+     *    Where setShowAsAction is called, replacing it
+     * Smali
+     *    invoke-static {}, Lcom/wamod/WAclass/Conversation;->getConversationAttachButtonBoolean()Z
+     *    move-result v2
+     *    if-nez v2, :cond_9
+     *
+     *    invoke-static {v0, v1}, Landroid/support/v4/view/MenuItemCompat;->setShowAsAction(Landroid/view/MenuItem;I)V
+     *
+     *    :cond_9
+     */
     public static boolean getConversationAttachButtonBoolean() {
         return Utils.prefs.getBoolean("conversation_hidetoolbarattach", false);
     }
@@ -202,6 +215,15 @@ public class Conversation extends DialogToastListActivity {
         return intent;
     }
 
+
+    /* Called on
+     *    com.whatsapp.Conversation
+     * Where
+     *    Where 0x7f030049 is located
+     * Smali
+     *    invoke-static {}, Lcom/wamod/WAclass/Conversation;->getActionBarStyle()I
+     *    move-result v1
+     */
     public static int getActionBarStyle() {
         String config = Utils.prefs.getString("conversation_style_toolbar", "0");
         int id = 0;
@@ -256,10 +278,10 @@ public class Conversation extends DialogToastListActivity {
 
 
         // Init attachments
-        a.l();
+        a.F();
 
         // Load contact
-        a.ak(a);
+        com.whatsapp.Conversation.g(a);
 
         // Load colors
         setTaskDescription(a);
@@ -280,7 +302,7 @@ public class Conversation extends DialogToastListActivity {
         if (Utils.prefs.getBoolean("conversation_custombackcolorbool", false)) {
             ImageView bg = (ImageView) a.findViewById(Resources.id.conversation_background);
             bg.setVisibility(View.GONE);
-            View content = a.findViewById(Resources.id.conversation_layout);
+            View content = a.findViewById(android.R.id.content);
             content.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("conversation_custombackcolor", "FFFFFF")));
         }
 
@@ -331,6 +353,14 @@ public class Conversation extends DialogToastListActivity {
         initConversation(null);
     }
 
+
+    /* Called on
+     *    com.whatsapp.Conversation, where Lcom/whatsapp/ConversationRowsActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z is located
+     * Where
+     *    Before return v0
+     * Smali
+     *    invoke-static {p0}, Lcom/wamod/WAclass/Conversation;->tintToolbarButtons(Lcom/whatsapp/Conversation;)V
+     */
     public static void tintToolbarButtons(com.whatsapp.Conversation a) {
         ViewGroup toolbar = (ViewGroup) a.findViewById(Resources.id.toolbar);
         View linearLayoutCompat = toolbar.getChildAt(2);
@@ -341,24 +371,26 @@ public class Conversation extends DialogToastListActivity {
                 public void onGlobalLayout() {
                     for (int i = 0; i < LinearLayoutCompat2.getChildCount(); i++) {
                         final View child = LinearLayoutCompat2.getChildAt(i);
-                        child.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                            @Override
-                            public void onGlobalLayout() {
-                                if (child instanceof TextView) {
-                                    TextView tv = (TextView) child;
-                                    Drawable[] icon = tv.getCompoundDrawables();
-                                    icon[0].setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
-                                    tv.setCompoundDrawables(icon[0], icon[1], icon[2], icon[3]);
-                                } else if (child instanceof ImageButton) {
-                                    ImageButton im = (ImageButton) child;
-                                    im.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND));
-                                } else if (child instanceof ImageView) {
-                                    ImageView im = (ImageView) child;
-                                    im.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                        if (child != null) {
+                            child.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                                @Override
+                                public void onGlobalLayout() {
+                                    if (child instanceof TextView) {
+                                        TextView tv = (TextView) child;
+                                        Drawable[] icon = tv.getCompoundDrawables();
+                                        icon[0].setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                                        tv.setCompoundDrawables(icon[0], icon[1], icon[2], icon[3]);
+                                    } else if (child instanceof ImageButton) {
+                                        ImageButton im = (ImageButton) child;
+                                        im.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                                    } else if (child instanceof ImageView) {
+                                        ImageView im = (ImageView) child;
+                                        im.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                                    }
+                                    child.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                                 }
-                                child.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                            }
-                        });
+                            });
+                        }
                     }
                     LinearLayoutCompat2.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
@@ -366,6 +398,14 @@ public class Conversation extends DialogToastListActivity {
         }
     }
 
+
+    /* Called on
+     *    com.whatsapp.Conversation.h()Z
+     * Where
+     *    Before return v0
+     * Smali
+     *    invoke-static {p0}, Lcom/wamod/WAclass/Conversation;->_startSupportActionMode(Lcom/whatsapp/Conversation;)V
+     */
     public static void _startSupportActionMode(final com.whatsapp.Conversation a) {
         ViewGroup action_mode_bar = (ViewGroup) a.findViewById(Resources.id.action_mode_bar);
         if (action_mode_bar != null) {
@@ -378,24 +418,22 @@ public class Conversation extends DialogToastListActivity {
                 @Override
                 public void onGlobalLayout() {
                     ViewGroup parent = (ViewGroup) menuitem_delete.getParent();
-
-                    for (int i=0; i<parent.getChildCount(); i++) {
-                        View v = parent.getChildAt(i);
-                        if (v instanceof TextView) {
-                            TextView tv = (TextView) v;
-                            Drawable[] icon = tv.getCompoundDrawables();
-                            icon[0] = Utils.tintToColor(icon[0], Utils.getUIColor(Utils.COLOR_FOREGROUND));
-                            tv.setCompoundDrawables(icon[0], null, null, null);
-                        } else if (v instanceof ImageView) {
-                            ImageView im = (ImageView) v;
-                            im.setImageDrawable(Utils.tintToColor(im.getDrawable(), Utils.COLOR_FOREGROUND));
+                    if (parent != null) {
+                        for (int i = 0; i < parent.getChildCount(); i++) {
+                            View v = parent.getChildAt(i);
+                            if (v instanceof TextView) {
+                                TextView tv = (TextView) v;
+                                Drawable[] icon = tv.getCompoundDrawables();
+                                icon[0] = Utils.tintToColor(icon[0], Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                                tv.setCompoundDrawables(icon[0], null, null, null);
+                            } else if (v instanceof ImageView) {
+                                ImageView im = (ImageView) v;
+                                im.setImageDrawable(Utils.tintToColor(im.getDrawable(), Utils.COLOR_FOREGROUND));
+                            }
                         }
                     }
-
                     action_mode_close_button.setImageDrawable(Utils.tintToColor(action_mode_close_button.getDrawable(), Utils.getUIColor(Utils.COLOR_FOREGROUND)));
                     if (action_bar_title != null) action_bar_title.setTextColor(Utils.getUIColor(Utils.COLOR_TOOLBARTEXT));
-
-                    //menuitem_delete.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
             });
 
@@ -407,6 +445,16 @@ public class Conversation extends DialogToastListActivity {
         _startSupportActionMode(null);
     }
 
+
+    /* Called on
+     *    com.whatsapp.Conversation
+     * Where
+     *    Where 0x7f030048 is located
+     * Smali
+     *    const/4 v0, 0x0
+     *    invoke-static {v0}, Lcom/wamod/WAclass/Conversation;->getConversationEntry(I)I
+     *    move-result v0
+     */
     public static int getConversationEntry(int id) {
         int activeTheme = Integer.parseInt(Utils.prefs.getString("conversation_style_entry", "0"));
         int conversation = 0, emoji_picker_horizontal = 0;
@@ -448,36 +496,5 @@ public class Conversation extends DialogToastListActivity {
                 return emoji_picker_horizontal;
         }
         return conversation;
-    }
-
-    public static com.whatsapp.protocol.cv getCV(com.whatsapp.Conversation a) {
-        HashMap hashMap = a.u;
-        Map.Entry entry = (Map.Entry) hashMap.entrySet().iterator().next();
-        com.whatsapp.protocol.cv cv = (com.whatsapp.protocol.cv) entry.getValue();
-        return cv;
-    }
-
-    public static void logCV(com.whatsapp.protocol.cv cv) {
-        String array = "";
-        if (cv.M != null)
-            for (String s : cv.M) {
-                array += s + " | ";
-            }
-        Log.i("WAMOD_CV", "C: " + cv.C + "\n" +
-                          "D: " + cv.D + "\n" +
-                          "K: " + cv.K + "\n" +
-                          "M: " + array + "\n" +
-                          "P: " + cv.P + "\n" +
-                          "d: " + cv.d + "\n" +
-                          "e: " + cv.e + "\n" +
-                          "g: " + cv.g + "\n" +
-                          "j: " + cv.j + "\n" +
-                          "p: " + cv.p + "\n" +
-                          "x: " + cv.x + "\n" +
-                          "y: " + cv.y + "\n");
-    }
-
-    void callCV() {
-        logCV(null);
     }
 }

@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gugul.firebase.iid.FirebaseInstanceId;
 import com.wamod.Resources;
 import com.wamod.App;
 import com.wamod.themes.CheckIn;
@@ -235,6 +236,11 @@ public class ActionPreference extends Preference {
                 });
                 dialog2.setNegativeButton(activity.getResources().getString(android.R.string.no), null);
                 Utils.tintAndShowDialog(dialog2);
+                break;
+            case "debugging_getfirebasetoken":
+                String token = com.google.firebase.iid.FirebaseInstanceId.getInstance().getToken();
+                Utils.copyToClipboard(token);
+                Toast.makeText(activity, "Token copied to clipboard: " + token, Toast.LENGTH_LONG).show();
                 break;
         }
     }
