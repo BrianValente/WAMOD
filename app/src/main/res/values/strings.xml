@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  !!! DO NOT TRANSLATE THIS FILE PLOX !!!  -->
+    <string name="app_name">WhatsApp</string>
     <string name="calls">Calls</string>
     <string name="chats">Chats</string>
     <string name="contacts">Contacts</string>
