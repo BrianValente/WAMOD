@@ -1,0 +1,16 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="wamodsettings"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_settings"
+        android:shortcutShortLabel="@string/wamod_settings"
+        android:shortcutLongLabel="@string/wamod_settings"
+        android:shortcutDisabledMessage="@string/wamod_settings">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.whatsapp"
+            android:targetClass="com.wamod.settings.Settings" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>
+
