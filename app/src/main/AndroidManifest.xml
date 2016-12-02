@@ -8,7 +8,8 @@
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
+        android:roundIcon="@drawable/icon_round"
         android:label="WAMOD"
         android:theme="@style/Theme.AppCompat" >
 
