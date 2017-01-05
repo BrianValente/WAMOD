@@ -3,9 +3,7 @@ package com.wamod.preference;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.TextView;
 import com.wamod.Utils;
 
 /**
@@ -37,12 +35,4 @@ public class VersionPreference extends Preference {
             }
         });
     }
-
-    /*@Override
-    public View getView(View convertView, ViewGroup parent) {
-        View v = super.getView(convertView, parent);
-        ((TextView)v.findViewById(android.R.id.title)).setText("WAMOD " + Utils.getVersionName());
-        ((TextView)v.findViewById(android.R.id.summary)).setText("WhatsApp " + Utils.getWhatsAppVersionName());
-        return v;
-    }*/
 }

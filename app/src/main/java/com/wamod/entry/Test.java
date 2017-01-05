@@ -12,17 +12,10 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-
+import android.widget.*;
 import com.wamod.R;
 import com.wamod.Resources;
 import com.whatsapp.Conversation;
-
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
 import io.codetail.widget.RevealLinearLayout;
@@ -254,7 +247,7 @@ public class Test extends Conversation {
         public void onClick(View v) {
             EditText originalEditText = (EditText) a.findViewById(Resources.id.entry);
             originalEditText.setText(edittext.getText());
-            a.aj(a);
+            aj(a);
             edittext.setText("");
         }
     }
@@ -274,7 +267,7 @@ public class Test extends Conversation {
             SupportAnimator animator;
             final int DURATION = ANIMATION_DURATION;
 
-            boolean visible = (attachPopup.getVisibility() == View.VISIBLE) ? true : false;
+            boolean visible = (attachPopup.getVisibility() == View.VISIBLE);
 
             if (visible) hideKeyboard(a);
 
@@ -322,7 +315,7 @@ public class Test extends Conversation {
     private static void hideKeyboard(Conversation a) {
         View view = a.getCurrentFocus();
         if (view != null) {
-            InputMethodManager imm = (InputMethodManager) a.getSystemService(a.INPUT_METHOD_SERVICE);
+            InputMethodManager imm = (InputMethodManager) a.getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }

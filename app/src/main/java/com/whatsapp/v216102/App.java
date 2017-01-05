@@ -1,7 +1,6 @@
 package com.whatsapp.v216102;
 
 import android.app.Application;
-
 import com.wamod.Chat;
 
 import java.util.ArrayList;

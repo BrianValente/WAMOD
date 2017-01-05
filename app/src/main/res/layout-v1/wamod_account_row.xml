@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="62dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?selectableItemBackground">
+        <com.pkmmte.view.CircularImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/wamod_brian_"
+            android:id="@+id/picture"
+            android:scaleType="center"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/sender_identity">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brian Valente"
+                android:textSize="16.5sp"
+                android:id="@+id/name"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+54 11 0000-0000"
+                android:textSize="12sp"
+                android:layout_marginTop="1dp"
+                android:id="@+id/phone"/>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#88aaaaaa"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

@@ -150,6 +150,15 @@
     <string name="wamod_switchaccount_prompt_message">¿Está seguro de que desea cambiar su cuenta?</string>
 
 
+    <!-- Accounts -->
+    <string name="wamod_accounts_noname">Sin nombre</string>
+    <string name="wamod_accounts_select_title">Selecciona una cuenta</string>
+    <string name="wamod_accounts_add">Añadir cuenta</string>
+    <string name="wamod_accounts_add_prompt_title">Añadir cuenta</string>
+    <string name="wamod_accounts_add_prompt_message">¿Estás seguro de que quieres añadir una cuenta?</string>
+
+
+
     <!-- Updater -->
     <string name="wamod_updater_title">¡Nueva versión de WAMOD disponible!</string>
     <string name="wamod_updater_message">%1$s está disponible para su descarga. Tu versión es %2$s.</string>

@@ -6,10 +6,9 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.wamod.Resources;
-import com.wamod.settings.Activity;
 import com.wamod.Utils;
+import com.wamod.settings.Activity;
 
 /**
  * Created by brianvalente on 12/22/15.

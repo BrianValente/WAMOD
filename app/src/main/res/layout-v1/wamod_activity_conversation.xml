@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="true"
+        android:id="@+id/messagesRV" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/toolbarContainer">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#55222222"
+            android:id="@+id/statusBarPadding" />
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#55333333"
+            android:id="@+id/toolbar">
+            <!-- To be continued... hehe -->
+        </android.support.v7.widget.Toolbar>
+    </LinearLayout>
+</RelativeLayout>

@@ -5,6 +5,6 @@ package com.whatsapp;
  */
 public class afx {
     public static rv g(String JabberID) {
-        return new rv();
+        return null;
     }
 }

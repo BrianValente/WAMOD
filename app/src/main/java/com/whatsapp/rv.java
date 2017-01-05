@@ -1,6 +1,6 @@
 package com.whatsapp;
 
-import android.util.SparseArray;
+import java.util.Map;
 
 /**
  * Created by brianvalente on 5/19/16.
@@ -8,19 +8,31 @@ import android.util.SparseArray;
 public class rv {
     // Contact
 
-    /*public String b; // ?? 2.16.81
-    public String k; // null :( 2.16.81
-    public String q; // null :( 2.16.81
-    public String x; // null :( 2.16.81
+    public transient boolean a; // Always true? ...
+    public  String  b; // Complete name
+    @Deprecated
+    public  int     c; // Always 0?
+    public  long    d; // 4 digits number
+    public  String  e; // Always null?
+    public  String  f; // Always null?
+    public  int     g; // Always 0?
+    @Deprecated
+    public  String  i; // Status
+    public  String  j; // Complete name
+    public  String  k; // First name
+    public  long    l; // Last interaction
+    public  int     m; // Looks like a timestamp with missing numbers, last message date?
+    public  String  n; // Last name
+    public  String  o; // Phone type (Mobile, Home, Tuenti, etc.)
+    public  Integer p; // ???
+    private Map     q; // ???
+    public  String  s; // Push name
+    public  String  u; // Always null?
+    public  String  v; // Jabber ID
+    public  boolean w; // Always false?
+    public long     z; // Registration date
 
-    public String d; // Complete name again? 2.16.91
-    public String f; // Last name 2.16.91
-    public String n; // First name 2.16.91
-    public String p; // Complete name 2.16.91
-    public String r; // First name + first char of the surname 2.16.91*/
-
-    public String i; // Status
-    public String v; // Jabber ID
+    public rv(String jabberId) {}
 
     public String toString() {return null;} // Useful data ;)
 }

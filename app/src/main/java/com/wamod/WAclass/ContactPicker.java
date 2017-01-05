@@ -3,8 +3,7 @@ package com.wamod.WAclass;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
-
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
 
@@ -20,15 +19,13 @@ public class ContactPicker {
         ImageView tab3 = (ImageView) tabsContainer.getChildAt(2);
 
         a.getSupportActionBar().setElevation(0);
-        if (tabs != null) tabs.setBackgroundColor(Utils.getUIColor(Utils.COLOR_TOOLBAR));
+        if (tabs != null) tabs.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR));
 
-        if (tab1 != null) tab1.setImageDrawable(Utils.tintToColor(tab1.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
-        if (tab2 != null) tab2.setImageDrawable(Utils.tintToColor(tab2.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
-        if (tab3 != null) tab3.setImageDrawable(Utils.tintToColor(tab3.getDrawable(), Utils.getUIColor(Utils.COLOR_TOOLBARTEXT)));
+        if (tab1 != null) tab1.setImageDrawable(Utils.tintToColor(tab1.getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE)));
+        if (tab2 != null) tab2.setImageDrawable(Utils.tintToColor(tab2.getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE)));
+        if (tab3 != null) tab3.setImageDrawable(Utils.tintToColor(tab3.getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE)));
 
-        if (Utils.nightModeShouldRun()) {
-            ViewGroup pager = (ViewGroup) a.findViewById(Resources.getID("pager"));
-            if (pager != null) pager.setBackgroundColor(Utils.getDarkColor(2));
-        }
+        ViewGroup pager = (ViewGroup) a.findViewById(Resources.getID("pager"));
+        if (pager != null) pager.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
     }
 }

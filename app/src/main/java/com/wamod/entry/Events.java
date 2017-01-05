@@ -1,5 +1,6 @@
 package com.wamod.entry;
 
+import android.content.Context;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -7,17 +8,10 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
+import android.widget.*;
 import com.wamod.Resources;
 import com.wamod.Utils;
 import com.whatsapp.*;
-import com.whatsapp.Conversation;
-
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
 import io.codetail.widget.RevealLinearLayout;
@@ -152,7 +146,7 @@ public class Events {
             // Hide keyboard
             View view = conversation.getCurrentFocus();
             if (view != null) {
-                InputMethodManager imm = (InputMethodManager) conversation.getSystemService(conversation.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) conversation.getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
             

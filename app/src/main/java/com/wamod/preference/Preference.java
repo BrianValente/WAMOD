@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
-
+import com.wamod.ColorsManager;
 import com.wamod.Utils;
 
 /**
@@ -30,12 +30,10 @@ public class Preference extends android.preference.Preference {
     }
 
     public static void loadColors(View v) {
-        if (Utils.nightModeShouldRun()) {
-            TextView title = (TextView) v.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(Utils.getDarkColor(0));
+        TextView title = (TextView) v.findViewById(android.R.id.title);
+        if (title != null) title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
 
-            TextView summary = (TextView) v.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
-        }
+        TextView summary = (TextView) v.findViewById(android.R.id.summary);
+        if (summary != null) summary.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY));
     }
 }

@@ -17,18 +17,17 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.gugul.firebase.iid.FirebaseInstanceId;
-import com.wamod.Resources;
+import com.wamod.AccountsManager;
 import com.wamod.App;
-import com.wamod.themes.CheckIn;
-import com.wamod.themes.UnlinkWAMODThemes;
+import com.wamod.Resources;
+import com.wamod.Utils;
 import com.wamod.entry.ConfigurationActivity;
+import com.wamod.themes.CheckIn;
 import com.wamod.themes.QTS.Download;
 import com.wamod.themes.QTS.Upload;
-import com.wamod.Utils;
+import com.wamod.themes.UnlinkWAMODThemes;
 
-import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -152,7 +151,7 @@ public class ActionPreference extends Preference {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Upload qtsUpload = new Upload();
-                        qtsUpload.activity = activity;
+                        Upload.activity = activity;
                         qtsUpload.execute();
                     }
                 });
@@ -177,8 +176,8 @@ public class ActionPreference extends Preference {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Download qtsDownload = new Download();
-                        qtsDownload.activity = activity;
-                        qtsDownload.themeid = input.getText().toString();
+                        Download.activity = activity;
+                        Download.themeid = input.getText().toString();
                         qtsDownload.execute();
                     }
                 });
@@ -242,18 +241,20 @@ public class ActionPreference extends Preference {
                 Utils.copyToClipboard(token);
                 Toast.makeText(activity, "Token copied to clipboard: " + token, Toast.LENGTH_LONG).show();
                 break;
+            case "debugging_switchaccount0":
+                AccountsManager accountsManager = App.getAccountsManager();
+                ArrayList<AccountsManager.Account> accounts = accountsManager.getAccounts();
+                App.getAccountsManager().switchToAccount(accounts.get(0));
+                break;
+            case "debugging_showaccounts":
+                App.getAccountsManager().showAccountsList(activity);
+                break;
         }
     }
 
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        if (Utils.nightModeShouldRun()) {
-            TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(Utils.getDarkColor(0));
-
-            TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
-        }
+        com.wamod.preference.Preference.loadColors(view);
     }
 }

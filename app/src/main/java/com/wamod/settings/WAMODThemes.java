@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.annotation.Nullable;
 import android.view.MenuItem;
-
 import com.wamod.Resources;
 import com.wamod.Utils;
 

@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-
 import com.wamod.Resources;
 import com.wamod.Utils;
-import com.whatsapp.*;
+import com.whatsapp.qd;
+import com.whatsapp.tk;
+import com.whatsapp.u0;
 
 /**
  * Created by brianvalente on 9/21/15.

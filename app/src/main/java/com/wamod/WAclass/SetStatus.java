@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
 
@@ -15,37 +15,33 @@ import com.wamod.Utils;
  */
 public class SetStatus extends AppCompatActivity {
     public static void _onCreate(AppCompatActivity a) {
-        if (Utils.nightModeShouldRun()) {
-            ViewGroup content = (ViewGroup) a.findViewById(android.R.id.content);
-            ViewGroup container = (ViewGroup) content.getChildAt(0);
-            container.setBackgroundColor(Utils.getDarkColor(2));
+        ViewGroup content = (ViewGroup) a.findViewById(android.R.id.content);
+        ViewGroup container = (ViewGroup) content.getChildAt(0);
+        container.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
 
-            ViewGroup myStatus = (ViewGroup) container.getChildAt(0);
-            ViewGroup suggestedStatus = (ViewGroup) container.getChildAt(1);
+        ViewGroup myStatus = (ViewGroup) container.getChildAt(0);
+        ViewGroup suggestedStatus = (ViewGroup) container.getChildAt(1);
 
-            myStatus.setBackground(Utils.tintToColor(myStatus.getBackground(), Utils.getDarkColor(3)));
-            suggestedStatus.setBackground(Utils.tintToColor(suggestedStatus.getBackground(), Utils.getDarkColor(3)));
+        myStatus.setBackground(Utils.tintToColor(myStatus.getBackground(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_CARD_BACKGROUND)));
+        suggestedStatus.setBackground(Utils.tintToColor(suggestedStatus.getBackground(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_CARD_BACKGROUND)));
 
-            TextView status_title = (TextView) a.findViewById(Resources.id.status_title);
-            TextView select_status_title = (TextView) a.findViewById(Resources.id.select_status_title);
-            TextView status_tv = (TextView) a.findViewById(Resources.id.status_tv);
-            ImageView round_more_btn = (ImageView) a.findViewById(Resources.id.round_more_btn);
+        TextView status_title = (TextView) a.findViewById(Resources.id.status_title);
+        TextView select_status_title = (TextView) a.findViewById(Resources.id.select_status_title);
+        TextView status_tv = (TextView) a.findViewById(Resources.id.status_tv);
+        ImageView round_more_btn = (ImageView) a.findViewById(Resources.id.round_more_btn);
 
-            if (status_title        != null) status_title.setTextColor(Utils.getDarkColor(0));
-            if (select_status_title != null) select_status_title.setTextColor(Utils.getDarkColor(0));
-            if (status_tv           != null) status_tv.setTextColor(Utils.getDarkColor(1));
-            if (round_more_btn      != null) round_more_btn.setImageDrawable(Utils.tintToColor(round_more_btn.getDrawable(), Utils.getDarkColor(1)));
+        if (status_title        != null) status_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+        if (select_status_title != null) select_status_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+        if (status_tv           != null) status_tv.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY));
+        if (round_more_btn      != null) round_more_btn.setImageDrawable(Utils.tintToColor(round_more_btn.getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY)));
 
-            ListView list = (ListView) a.findViewById(Resources.id.list);
-            if (list != null) list.setDivider(null);
-        }
+        ListView list = (ListView) a.findViewById(Resources.id.list);
+        if (list != null) list.setDivider(null);
     }
 
     public static void _getView(View v) {
-        if (Utils.nightModeShouldRun()) {
-            TextView status_row = (TextView) v.findViewById(Resources.id.status_row);
-            status_row.setTextColor(Utils.getDarkColor(1));
-        }
+        TextView status_row = (TextView) v.findViewById(Resources.id.status_row);
+        status_row.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY));
     }
 
     public static void callGetView() {

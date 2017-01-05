@@ -8,11 +8,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by BrianValente on 3/1/16.
@@ -36,8 +34,8 @@ public class BubbleRelativeLayout {
         // Text message
         TextView message_text = (TextView) bubble.findViewById(Resources.id.message_text);
         if (message_text != null) {
-            if (rightBubble) message_text.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF")));
-            else message_text.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF")));
+            if (rightBubble) message_text.setTextColor(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE));
+            else message_text.setTextColor(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE));
             changeDateColor = true;
         }
 
@@ -63,10 +61,13 @@ public class BubbleRelativeLayout {
         // Image/video caption
         TextView caption = (TextView) bubble.findViewById(Resources.id.caption);
         if (caption != null) {
-            if (rightBubble) caption.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF")));
-            else caption.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF")));
+            if (rightBubble)
+                caption.setTextColor(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE));
+            else
+                caption.setTextColor(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE));
 
-            if (thumb == null) changeDateColor = true;
+            if (thumb == null)
+                changeDateColor = true;
         }
 
         // Documents
@@ -77,12 +78,18 @@ public class BubbleRelativeLayout {
             TextView bullet_info = (TextView) bubble.findViewById(Resources.id.bullet_info);
             TextView file_type = (TextView) bubble.findViewById(Resources.id.file_type);
             int infoTextColor;
-            if (rightBubble) infoTextColor = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbledtextcolor", "FFFFFF"));
-            else infoTextColor = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
-            if (title != null) title.setTextColor(infoTextColor);
-            if (info != null) info.setTextColor(infoTextColor);
-            if (bullet_info != null) bullet_info.setTextColor(infoTextColor);
-            if (file_type != null) file_type.setTextColor(infoTextColor);
+            if (rightBubble)
+                infoTextColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE);
+            else
+                infoTextColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
+            if (title != null)
+                title.setTextColor(infoTextColor);
+            if (info != null)
+                info.setTextColor(infoTextColor);
+            if (bullet_info != null)
+                bullet_info.setTextColor(infoTextColor);
+            if (file_type != null)
+                file_type.setTextColor(infoTextColor);
 
             changeDateColor = true;
         }
@@ -91,12 +98,16 @@ public class BubbleRelativeLayout {
         FrameLayout web_page_preview_holder = (FrameLayout) bubble.findViewById(Resources.id.web_page_preview_holder);
         if (web_page_preview_holder != null) {
             int color;
-            if (rightBubble) color = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"));
-            else color = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
+            if (rightBubble)
+                color = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE);
+            else
+                color = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
             TextView title = (TextView) bubble.findViewById(Resources.id.title);
             TextView url = (TextView) bubble.findViewById(Resources.id.url);
-            if (title != null) title.setTextColor(color);
-            if (url != null) url.setTextColor(color);
+            if (title != null)
+                title.setTextColor(color);
+            if (url != null)
+                url.setTextColor(color);
         }
 
         // Contacts
@@ -106,11 +117,16 @@ public class BubbleRelativeLayout {
             TextView msg_contact_btn = (TextView) bubble.findViewById(Resources.id.msg_contact_btn);
             TextView add_contact_btn = (TextView) bubble.findViewById(Resources.id.add_contact_btn);
             int infoTextColor;
-            if (rightBubble) infoTextColor = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"));
-            else infoTextColor = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
-            if (vcard_text != null) vcard_text.setTextColor(infoTextColor);
-            if (msg_contact_btn != null) msg_contact_btn.setTextColor(infoTextColor);
-            if (add_contact_btn != null) add_contact_btn.setTextColor(infoTextColor);
+            if (rightBubble)
+                infoTextColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE);
+            else
+                infoTextColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
+            if (vcard_text != null)
+                vcard_text.setTextColor(infoTextColor);
+            if (msg_contact_btn != null)
+                msg_contact_btn.setTextColor(infoTextColor);
+            if (add_contact_btn != null)
+                add_contact_btn.setTextColor(infoTextColor);
 
             changeDateColor = true;
         }
@@ -120,8 +136,8 @@ public class BubbleRelativeLayout {
         if (thumbnail != null) {
             int color;
             TextView duration = (TextView) bubble.findViewById(Resources.id.duration);
-            if (rightBubble) color = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"));
-            else color = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
+            if (rightBubble) color = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE);
+            else color = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
             if (duration != null) duration.setTextColor(color);
 
             changeDateColor = true;
@@ -130,8 +146,8 @@ public class BubbleRelativeLayout {
         // Quoted message
         View quoted_color = bubble.findViewById(Resources.getID("quoted_color"));
         if (quoted_color != null) {
-            int color = rightBubble? Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"))
-                                   : Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
+            int color = rightBubble? ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE)
+                                   : ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
             quoted_color.setBackgroundColor(color);
 
             TextView quoted_name = (TextView) bubble.findViewById(Resources.getID("quoted_name"));
@@ -144,17 +160,15 @@ public class BubbleRelativeLayout {
         if (changeDateColor) {
             TextView date = (TextView) bubble.findViewById(Resources.id.date);
             if (date != null) {
-                int color;
-                if (rightBubble) color = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbledatecolor", "FFFFFF"));
-                else color = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbledatecolor", "FFFFFF"));
+                int color = rightBubble? ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE)
+                        : ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
                 date.setTextColor(color);
             }
         }
 
         TextView name_in_group_tv = (TextView) bubble.findViewById(Resources.id.name_in_group_tv);
-        if (name_in_group_tv != null && Utils.prefs.getBoolean("conversation_customparticipantcolorbool", false)) {
-            name_in_group_tv.setTextColor(Color.parseColor("#" + Utils.prefs.getString("conversation_customparticipantcolor", "FFFFFF")));
-        }
+        if (name_in_group_tv != null && Utils.prefs.getBoolean("conversation_customparticipantcolorbool", false))
+            name_in_group_tv.setTextColor(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_PARTICIPANT));
     }
 
 
@@ -178,11 +192,11 @@ public class BubbleRelativeLayout {
         switch (balloon) {
             case 0:
             case 1:
-                bubble.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubblecolor", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
+                bubble.setColorFilter(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_BACKGROUND), PorterDuff.Mode.MULTIPLY);
                 break;
             case 2:
             case 3:
-                bubble.setColorFilter(Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubblecolor", "FFFFFF")), PorterDuff.Mode.MULTIPLY);
+                bubble.setColorFilter(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_BACKGROUND), PorterDuff.Mode.MULTIPLY);
         }
         return bubble;
     }

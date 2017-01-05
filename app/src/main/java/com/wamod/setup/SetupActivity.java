@@ -2,32 +2,20 @@ package com.wamod.setup;
 
 import android.animation.Animator;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
 import com.wamod.Resources;
 import com.wamod.Utils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
-import io.codetail.widget.RevealLinearLayout;
+import org.json.JSONObject;
 
 /**
  * Created by brianvalente on 6/12/16.

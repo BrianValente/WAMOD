@@ -1,7 +1,5 @@
 package com.whatsapp.v216102;
 
-import android.util.SparseArray;
-
 /**
  * Created by brianvalente on 5/19/16.
  */

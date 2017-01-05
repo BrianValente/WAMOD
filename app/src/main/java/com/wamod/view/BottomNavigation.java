@@ -18,8 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
 import com.whatsapp.HomeActivity;
@@ -112,7 +111,7 @@ public class BottomNavigation extends LinearLayout {
                 /*View label = callsBtn.getChildAt(1);
                 if (label != null && label instanceof TextView) originalLabelTextSize = ((TextView) label).getTextSize();*/
                 View icon = callsBtn.getChildAt(0);
-                if (icon != null && icon instanceof ImageView) originalIconTopMargin = ((ImageView) icon).getPaddingTop();
+                if (icon != null && icon instanceof ImageView) originalIconTopMargin = icon.getPaddingTop();
 
                 callsBtn.setOnClickListener(new OnClickListener() {
                     @Override
@@ -275,18 +274,15 @@ public class BottomNavigation extends LinearLayout {
     private void loadColors() {
         try {
             if (Utils.prefs.getBoolean("home_bottomnavigationbar_autocolor", true)) {
-                if (Utils.nightModeShouldRun()) {
-                    backgroundColor = Utils.getDarkColor(2);
-                    inactiveColor = Utils.getDarkColor(1);
-                } else {
-                    backgroundColor = Color.WHITE;
-                    inactiveColor = Color.parseColor("#555555");
-                }
-                activeColor = Utils.getUIColor(Utils.COLOR_TOOLBAR);
+
+                backgroundColor = ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND);
+                inactiveColor = ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY);
+
+                activeColor = ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR);
             } else {
-                backgroundColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_bg", "FFFFFF"));
-                activeColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_activeitem", "000000"));
-                inactiveColor = Color.parseColor("#" + Utils.prefs.getString("home_bottomnavigationbar_colors_inactiveitem", "555555"));
+                backgroundColor = ColorsManager.getColor(ColorsManager.UI_HOME_BOTTOMBAR_BACKGROUND);
+                activeColor = ColorsManager.getColor(ColorsManager.UI_HOME_BOTTOMBAR_ACTIVEITEM);
+                inactiveColor = ColorsManager.getColor(ColorsManager.UI_HOME_BOTTOMBAR_INACTIVEITEM);
             }
             setBackgroundColor(backgroundColor);
 

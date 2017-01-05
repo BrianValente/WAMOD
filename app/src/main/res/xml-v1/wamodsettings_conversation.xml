@@ -28,7 +28,7 @@
         <com.wamod.preference.ColorPickerPreference
             app:wamod_supportsAlpha="false"
             android:title="@string/wamod_settings_conversation_layout_custombackgroundcolor"
-            android:key="conversation_custombackcolor"
+            android:key="ui_conversation_background"
             android:summary="" />
         <com.wamod.preference.ThemePickerPreference
             android:entries="@array/conversation_style_entry"

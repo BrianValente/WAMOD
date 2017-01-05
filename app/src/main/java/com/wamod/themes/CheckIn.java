@@ -9,11 +9,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.wamod.Resources;
-import com.wamod.settings.Miscellaneous;
 import com.wamod.Utils;
-
+import com.wamod.settings.Miscellaneous;
 import org.json.JSONException;
 import org.json.JSONObject;
 

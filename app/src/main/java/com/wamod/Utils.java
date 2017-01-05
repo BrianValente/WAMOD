@@ -1,26 +1,15 @@
 package com.wamod;
 
-import android.app.ActivityManager;
-import android.app.AlarmManager;
-import android.app.Dialog;
-import android.app.PendingIntent;
-import android.app.UiModeManager;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.animation.ValueAnimator;
+import android.app.*;
+import android.content.*;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.PorterDuff;
+import android.graphics.*;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -36,34 +25,17 @@ import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.KeyCharacterMap;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.view.Window;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.view.*;
+import android.widget.*;
 import com.crashlytics.android.Crashlytics;
 import com.wamod.settings.Activity;
 import com.wamod.themes.CheckIn;
 import com.whatsapp.*;
+import io.fabric.sdk.android.Fabric;
 
-import org.apache.commons.io.FileUtils;
-import org.json.JSONObject;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.crypto.Mac;
+import javax.crypto.SecretKey;
+import java.io.*;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
@@ -71,21 +43,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.crypto.Mac;
-import javax.crypto.SecretKey;
-
-import io.fabric.sdk.android.Fabric;
-
 /**
  * Created by brianvalente on 7/8/15.
  */
 public class Utils extends android.app.Activity {
     public static SharedPreferences prefs;
     public static SharedPreferences.Editor edit;
-    public static String wamodVersionName = "1.3.5";
+    public static String wamodVersionName = "BETA";
     public static int wamodVersionCode = 36;
     public static Context context;
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     public static long timeSinceLastCheckin = 0;
 
@@ -94,8 +61,19 @@ public class Utils extends android.app.Activity {
     public static final int COLOR_NAVBAR = 2;
     public static final int COLOR_FOREGROUND = 3;
     public static final int COLOR_TOOLBARTEXT = 4;
+    public static final int COLOR_BACKGROUND = 5;
 
     public static List<Chat> openedChats = new ArrayList<Chat>();
+
+
+    public static final int BUBBLE_STOCK        = 0;
+    public static final int BUBBLE_WAMOD        = 1;
+    public static final int BUBBLE_MATERIALIZED = 2;
+    public static final int BUBBLE_WHATSAPPLB   = 3;
+    public static final int BUBBLE_OLDHANGOUTS  = 4;
+    public static final int BUBBLE_ROUNDED      = 5;
+    public static final int BUBBLE_FBM          = 6;
+    public static final int BUBBLE_NEWHANGOUTS  = 7;
 
 
     /* Called on
@@ -107,14 +85,13 @@ public class Utils extends android.app.Activity {
      */
     public static void loadColorsV2(final AppCompatActivity a) {
         try {
-            //if (a instanceof MediaView) return;
             ActionBar actionbar = a.getSupportActionBar();
             boolean coloredToolbarColor = !(a instanceof ChatInfoActivity) &&
                                           !(a instanceof MediaView) &&
                                           !(a instanceof ViewProfilePhoto) &&
                                           !(a instanceof QuickContactActivity);
             if (actionbar != null && coloredToolbarColor) {
-                actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
+                actionbar.setBackgroundDrawable(new ColorDrawable(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR)));
                 int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
                 final ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
                 if (actionbarVG != null) {
@@ -124,9 +101,9 @@ public class Utils extends android.app.Activity {
                             for (int i = 0; i < actionbarVG.getChildCount(); i++) {
                                 View child = actionbarVG.getChildAt(i);
                                 if (child instanceof TextView)
-                                    ((TextView) child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                                    ((TextView) child).setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
                                 if (child instanceof ImageButton || child instanceof ImageView)
-                                    ((ImageView) child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                                    ((ImageView) child).setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS), PorterDuff.Mode.MULTIPLY);
                             }
                             actionbarVG.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                         }
@@ -137,32 +114,48 @@ public class Utils extends android.app.Activity {
 
             final Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
             if (toolbar != null && coloredToolbarColor) {
-                toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
-                toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
-                toolbar.setOverflowIcon(tintToColor(toolbar.getOverflowIcon(), getUIColor(COLOR_FOREGROUND)));
+                toolbar.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR));
+                toolbar.setTitleTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
+                toolbar.setOverflowIcon(tintToColor(toolbar.getOverflowIcon(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS)));
 
-                toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                /*toolbar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        View up2 = toolbar.getChildAt(1);
-                        if (up2 != null && up2 instanceof ImageButton) ((ImageButton) up2).setImageDrawable(tintToColor(((ImageButton) up2).getDrawable(), getUIColor(COLOR_FOREGROUND)));
+                        for (int i=0; i<toolbar.getChildCount(); i++) {
+                            View view = toolbar.getChildAt(i);
+                            if (view instanceof TextView) {
+                                Log.i("WAMOD", "Toolbar title found!");
+                                Log.i("WAMOD", "Toolbar width: " + toolbar.getWidth() + " TextView width: " + view.getWidth() + "TextView X: " + view.getX());
+
+                                int marginLeft = (int) (((toolbar.getWidth() - view.getWidth()) / 2) - view.getX());
+
+                                Log.i("WAMOD", "Calculated margin: " + marginLeft);
+
+                                view.setPadding(20 + view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+
+                                Log.i("WAMOD", "New padding: " + view.getPaddingLeft());
+                            } else if (view instanceof ImageView) {
+                                ((ImageButton) view).setImageDrawable(
+                                        tintToColor(((ImageButton) view).getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS)));
+                            }
+                        }
                         toolbar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
-                });
+                });*/
 
                 if (a instanceof com.whatsapp.Conversation) {
                     ImageView up = (ImageView) toolbar.findViewById(Resources.id.up);
                     TextView conversation_contact_name = (TextView) toolbar.findViewById(Resources.id.conversation_contact_name);
                     TextView conversation_contact_status = (TextView) toolbar.findViewById(Resources.id.conversation_contact_status);
-                    up.setColorFilter(getUIColor(COLOR_FOREGROUND));
-                    conversation_contact_name.setTextColor(getUIColor(Utils.COLOR_TOOLBARTEXT));
-                    conversation_contact_status.setTextColor(getUIColor(Utils.COLOR_TOOLBARTEXT));
+                    up.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS));
+                    conversation_contact_name.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
+                    conversation_contact_status.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
                 }
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                if (coloredToolbarColor) a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
-                a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
+                if (coloredToolbarColor) a.getWindow().setStatusBarColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_STATUSBAR));
+                a.getWindow().setNavigationBarColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_NAVBAR));
                 if (Utils.prefs.getBoolean("general_darkstatusbaricons", false))
                     a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 else
@@ -170,7 +163,7 @@ public class Utils extends android.app.Activity {
                 if (a instanceof QuickContactActivity) a.getWindow().setStatusBarColor(Color.TRANSPARENT);
 
                 if (Utils.prefs.getBoolean("overview_cardcolor", true) && !(a instanceof com.whatsapp.Conversation)) {
-                    a.setTaskDescription(new ActivityManager.TaskDescription(a.getResources().getString(Resources.string.app_name), BitmapFactory.decodeResource(a.getResources(), Resources.drawable.icon), getUIColor(COLOR_TOOLBAR)));
+                    a.setTaskDescription(new ActivityManager.TaskDescription(a.getResources().getString(Resources.string.app_name), BitmapFactory.decodeResource(a.getResources(), Resources.drawable.icon), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR)));
                 }
             }
         } catch (Exception e) {
@@ -216,29 +209,29 @@ public class Utils extends android.app.Activity {
         try {
             android.app.ActionBar actionbar = a.getActionBar();
             if (actionbar != null) {
-                actionbar.setBackgroundDrawable(new ColorDrawable(getUIColor(COLOR_TOOLBAR)));
+                actionbar.setBackgroundDrawable(new ColorDrawable(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR)));
                 int actionbarid = a.getResources().getIdentifier("action_bar", "id", a.getPackageName());
                 ViewGroup actionbarVG = (ViewGroup) a.findViewById(actionbarid);
                 if (actionbarVG != null) {
                     for (int i = 0; i < actionbarVG.getChildCount(); i++) {
                         View child = actionbarVG.getChildAt(i);
                         if (child instanceof TextView)
-                            ((TextView) child).setTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                            ((TextView) child).setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
                         if (child instanceof ImageButton)
-                            ((ImageButton) child).setColorFilter(getUIColor(COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                            ((ImageButton) child).setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS), PorterDuff.Mode.MULTIPLY);
                     }
                 }
             }
 
             Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
             if (toolbar != null) {
-                toolbar.setBackgroundColor(getUIColor(COLOR_TOOLBAR));
-                toolbar.setTitleTextColor(getUIColor(COLOR_TOOLBARTEXT));
+                toolbar.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR));
+                toolbar.setTitleTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                a.getWindow().setStatusBarColor(getUIColor(COLOR_STATUSBAR));
-                a.getWindow().setNavigationBarColor(getUIColor(COLOR_NAVBAR));
+                a.getWindow().setStatusBarColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_STATUSBAR));
+                a.getWindow().setNavigationBarColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_NAVBAR));
                 if (Utils.prefs.getBoolean("general_darkstatusbaricons", false))
                     a.findViewById(android.R.id.content).setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 else
@@ -250,49 +243,20 @@ public class Utils extends android.app.Activity {
 
         if (a instanceof com.whatsapp.DialogToastPreferenceActivity) {
             ListView list = (ListView) a.findViewById(android.R.id.list);
-            if (list != null && Utils.nightModeShouldRun()) {
-                list.setBackgroundColor(Utils.getDarkColor(2));
-            }
+            list.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
         }
     }
 
     public static void tintDialog(Dialog dialog) {
         View content = dialog.findViewById(android.R.id.content);
-        if (Utils.nightModeShouldRun()) {
-            content.setBackgroundColor(Utils.getDarkColor(2));
-        }
+        content.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
     }
 
     public static void tintAndShowDialog(AlertDialog.Builder dialog) {
         Dialog dialog1 = dialog.create();
         dialog1.show();
         View content = dialog1.findViewById(android.R.id.content);
-        if (Utils.nightModeShouldRun()) {
-            content.setBackgroundColor(Utils.getDarkColor(2));
-        }
-    }
-
-    public static int getUIColor(int color) {
-        String value = null;
-        switch (color) {
-            case COLOR_STATUSBAR:
-                value = "general_statusbarcolor";
-                break;
-            case COLOR_TOOLBAR:
-                value = "general_toolbarcolor";
-                break;
-            case COLOR_NAVBAR:
-                value = "general_navbarcolor";
-                break;
-            case COLOR_FOREGROUND:
-                value = "general_toolbarforeground";
-                break;
-            case COLOR_TOOLBARTEXT:
-                value = "general_toolbartextcolor";
-                break;
-        }
-        int colorint = Color.parseColor("#" + Utils.prefs.getString(value, "ffffff"));
-        return colorint;
+        content.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
     }
 
     public static void tintHomeTabs(HorizontalScrollView tabs) {
@@ -311,7 +275,7 @@ public class Utils extends android.app.Activity {
     public static void initWAMOD() {
         SharedPreferences privacyPrefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
         SharedPreferences.Editor privacyPrefs_Edit = privacyPrefs.edit();
-        switch (Utils.prefs.getInt("wamodversion", 0)) {
+        /*switch (Utils.prefs.getInt("wamodversion", 0)) {
             case 0:
                 Utils.edit.putString("general_statusbarcolor", "0d8ed3");
                 Utils.edit.putString("general_toolbarcolor", "0dacf4");
@@ -427,12 +391,12 @@ public class Utils extends android.app.Activity {
                 privacyPrefs_Edit.putBoolean("general_freezelastseen", prefs.getBoolean("privacy_freezelastseen", false));
                 privacyPrefs_Edit.putBoolean("general_alwaysonline", prefs.getBoolean("privacy_alwaysOnline", false));
                 break;
-        }
+        }*/
         Utils.edit.putInt("wamodversion", wamodVersionCode);
         Utils.edit.apply();
         privacyPrefs_Edit.apply();
 
-        Fabric.with(Utils.context, new Crashlytics());
+        //Fabric.with(Utils.context, new Crashlytics());
 
         /*if (!debug) {
             try {
@@ -445,13 +409,13 @@ public class Utils extends android.app.Activity {
     }
 
     public static void initWAMODfromHome(AppCompatActivity a) {
-        initWAMOD();
+        //initWAMOD();
 
         // Connect with the WAMOD server
         new CheckIn().execute(a);
     }
 
-    public static boolean nightModeShouldRun() {
+    /*public static boolean nightModeShouldRun() {
         if (!Utils.prefs.getBoolean("nightmode_enable", false)) return false;
         if (!Utils.prefs.getBoolean("nightmode_atnightonly", false)) return true;
         Boolean isNight;
@@ -459,7 +423,7 @@ public class Utils extends android.app.Activity {
         int hour = cal.get(Calendar.HOUR_OF_DAY);
         isNight = hour < 6 || hour > 18;
         return isNight;
-    }
+    }*/
 
     public static boolean ddarkMode() {
         UiModeManager uiModeManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);
@@ -575,7 +539,7 @@ public class Utils extends android.app.Activity {
         return message_unsent;
     }
 
-    public static int getDarkColor(int id) {
+    /*public static int getDarkColor(int id) {
         String colorStr;
         int color;
         switch (id) {
@@ -605,7 +569,7 @@ public class Utils extends android.app.Activity {
             color = Color.WHITE;
         }
         return color;
-    }
+    }*/
 
     public static boolean getPrivacyConfig(int id) {
         SharedPreferences privacyPrefs = Utils.context.getSharedPreferences("wamod_privacy", 0);
@@ -680,8 +644,7 @@ public class Utils extends android.app.Activity {
     }
 
     public static boolean parseJsonBoolean(String bool) {
-        if (bool.contentEquals("1")) return true;
-        else return false;
+        return bool.contentEquals("1");
     }
 
     public static String parseBooleanToJson(boolean bool) {
@@ -697,7 +660,7 @@ public class Utils extends android.app.Activity {
     }
 
     public static void restartWAMOD(Context ctx) {
-        PendingIntent intent = PendingIntent.getActivity(ctx, 0, new Intent(ctx, com.wamod.WAclass.HomeActivity.class), PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent intent = PendingIntent.getActivity(ctx, 0, new Intent(ctx, HomeActivity.class), PendingIntent.FLAG_ONE_SHOT);
         AlarmManager manager = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
         manager.set(AlarmManager.RTC, System.currentTimeMillis() + 0, intent);
         System.exit(2);
@@ -909,8 +872,6 @@ public class Utils extends android.app.Activity {
         return newValues;
     }
 
-
-
     public static String getVersionName() {
         return wamodVersionName;
     }
@@ -939,7 +900,7 @@ public class Utils extends android.app.Activity {
      *    invoke-static {p0}, Lcom/wamod/Utils;->loadColorsBeforeSuper(Landroid/support/v7/app/AppCompatActivity;)V
      */
     public static void loadColorsBeforeSuper(AppCompatActivity a) {
-        Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
+        /*Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
         if (a instanceof Activity) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Settings);
             else a.setTheme(Resources.style.WAMOD_Theme_Settings_Day);
@@ -952,9 +913,6 @@ public class Utils extends android.app.Activity {
         } else if (a instanceof com.whatsapp.VoipActivity) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
             else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
-        /*} else if (a instanceof com.whatsapp.QuickContactActivity) {
-            if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
-            else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);*/
         } else if (a instanceof com.whatsapp.wallpaper.SolidColorWallpaper) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Home);
             else a.setTheme(Resources.style.WAMOD_Theme_Home_Day);
@@ -973,16 +931,16 @@ public class Utils extends android.app.Activity {
         } else if (a instanceof com.whatsapp.MediaGallery) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme_Conversation);
             else a.setTheme(Resources.style.WAMOD_Theme_Conversation_Day);
-        }/* else if (a instanceof com.whatsapp.WAAppCompatActivity) {
+        } else if (a instanceof com.whatsapp.WAAppCompatActivity) {
             if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme);
             else a.setTheme(Resources.style.WAMOD_Theme_Day);
         }*/
     }
 
     public static void loadColorsBeforeSuper(PreferenceActivity a) {
-        Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
+        /*Log.i("WAMOD", "Loaded activity: " + a.getClass().getName());
         if (nightModeShouldRun()) a.setTheme(Resources.style.WAMOD_Theme);
-        else a.setTheme(Resources.style.WAMOD_Theme_Day);
+        else a.setTheme(Resources.style.WAMOD_Theme_Day);*/
     }
 
     public static Drawable tintToColor(Drawable drawable, int color) {
@@ -1007,7 +965,7 @@ public class Utils extends android.app.Activity {
     }
 
     public static void copyToClipboard(String s) {
-        ClipboardManager clipboard = (ClipboardManager) Utils.context.getSystemService(Utils.context.CLIPBOARD_SERVICE);
+        ClipboardManager clipboard = (ClipboardManager) Utils.context.getSystemService(CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("", s);
         clipboard.setPrimaryClip(clip);
     }
@@ -1089,10 +1047,122 @@ public class Utils extends android.app.Activity {
         try {
             Signature sign = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES).signatures[0];
             if (sign.hashCode() == -282729318) official = true;
-        } catch (PackageManager.NameNotFoundException e) {}
+        } catch (PackageManager.NameNotFoundException e) {
+        }
 
         report = !debug && official;
 
         return report;
+    }
+
+    public static void logClassStrings(String[] strings) {
+        for (int i = 0; i < strings.length; i++) {
+            Log.i("WAMOD", (i) + ": " + strings[i]);
+        }
+    }
+
+    public static int getBubbleStyle() {
+        return Integer.parseInt(Utils.prefs.getString("conversation_style_bubble", "0"));
+    }
+
+    // http://stackoverflow.com/questions/18229358/bitmap-in-imageview-with-rounded-corners
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap) {
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+
+        Bitmap output = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xfff5f5f5;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = Math.max(w, h);
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        /*canvas.drawRect(0, 0, w/2, h/2, paint);
+        canvas.drawRect(w/2, 0, w, h/2, paint);
+        canvas.drawRect(0, h/2, w/2, h, paint);
+        canvas.drawRect(w/2, h/2, w, h, paint);*/
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+
+        canvas.drawBitmap(bitmap, 0, 0, paint);
+
+        return output;
+    }
+
+
+    // http://stackoverflow.com/questions/3035692/how-to-convert-a-drawable-to-a-bitmap
+    public static Bitmap drawableToBitmap (Drawable drawable) {
+        Bitmap bitmap;
+
+        if (drawable instanceof BitmapDrawable) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+            if(bitmapDrawable.getBitmap() != null) {
+                return bitmapDrawable.getBitmap();
+            }
+        }
+
+        if (drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888); // Single color bitmap will be created of 1x1 pixel
+        } else {
+            bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        }
+
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+        return bitmap;
+    }
+
+    // http://stackoverflow.com/questions/4605527/converting-pixels-to-dp
+    /**
+     * This method converts dp unit to equivalent pixels, depending on device density.
+     *
+     * @param dp A value in dp (density independent pixels) unit. Which we need to convert into pixels
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent px equivalent to dp depending on device density
+     */
+    public static int convertDpToPixel(float dp, Context context){
+        android.content.res.Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        return (int) px;
+    }
+
+    // http://stackoverflow.com/questions/4605527/converting-pixels-to-dp
+    /**
+     * This method converts device specific pixels to density independent pixels.
+     *
+     * @param px A value in px (pixels) unit. Which we need to convert into db
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent dp equivalent to px value
+     */
+    public static float convertPixelsToDp(float px, Context context){
+        android.content.res.Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float dp = px / ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        return dp;
+    }
+
+    public static int getSystemShortAnimationDuration() {
+        return App.getContext().getResources().getInteger(android.R.integer.config_shortAnimTime);
+    }
+
+    // http://stackoverflow.com/questions/18049543/is-it-possible-to-detect-when-any-application-is-in-full-screen-in-android
+    /**
+     * Check if fullscreen is activated by a position of a top left View
+     * @param topLeftView View which position will be compared with 0,0
+     * @return
+     */
+    public static boolean isFullscreen(View topLeftView) {
+        int location[] = new int[2];
+        topLeftView.getLocationOnScreen(location);
+        return location[0] == 0 && location[1] == 0;
     }
 }

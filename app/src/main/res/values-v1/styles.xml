@@ -40,6 +40,18 @@
     <style name="WAMOD.Theme.Settings.Day" parent="@style/WAMOD.Theme.Day" />
 
     <style name="WAMOD.Theme.Home" parent="@style/WAMOD.Theme">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="WAMOD.Theme.Home.Splash" parent="@style/WAMOD.Theme">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">#ffbdbdbd</item>
+        <item name="android:navigationBarColor">#ffbdbdbd</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -65,5 +77,15 @@
         <!--<item name="android:statusBarColor">#e0e0e0</item>
         <item name="android:navigationBarColor">#e0e0e0</item>
         <item name="android:windowLightStatusBar">true</item>-->
+    </style>
+
+    <style name="WAMOD.Theme.Activity"></style>
+
+    <style name="WAMOD.Theme.Activity.Conversation" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>-->
     </style>
 </resources>

@@ -23,6 +23,13 @@
             android:targetPackage="com.whatsapp"/>
     </com.wamod.preference.IconPreference>
     <com.wamod.preference.IconPreference
+            android:title="@string/wamod_settings_mycolors"
+            android:icon="@drawable/wamod_ic_colorpalette">
+        <intent
+                android:targetClass="com.wamod.settings.MyColors"
+                android:targetPackage="com.whatsapp"/>
+    </com.wamod.preference.IconPreference>
+    <com.wamod.preference.IconPreference
         android:title="@string/wamod_settings_privacy"
         android:icon="@drawable/wamod_ic_privacy">
         <intent
@@ -36,13 +43,13 @@
             android:targetClass="com.wamod.settings.WAMODThemes"
             android:targetPackage="com.whatsapp"/>
     </com.wamod.preference.IconPreference>
-    <com.wamod.preference.IconPreference
+    <!--<com.wamod.preference.IconPreference
         android:title="@string/wamod_settings_advanced"
         android:icon="@drawable/wamod_ic_advanced">
         <intent
             android:targetClass="com.wamod.settings.Advanced"
             android:targetPackage="com.whatsapp"/>
-    </com.wamod.preference.IconPreference>
+    </com.wamod.preference.IconPreference>-->
     <com.wamod.preference.IconPreference
         android:title="@string/wamod_settings_miscellaneous"
         android:icon="@drawable/wamod_ic_miscellaneous">

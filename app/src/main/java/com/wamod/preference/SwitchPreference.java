@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
-
 import com.wamod.Utils;
 
 /**
@@ -26,12 +25,6 @@ public class SwitchPreference extends android.preference.SwitchPreference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        if (Utils.nightModeShouldRun()) {
-            TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(Utils.getDarkColor(0));
-
-            TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
-        }
+        com.wamod.preference.Preference.loadColors(view);
     }
 }

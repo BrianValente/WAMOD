@@ -4,10 +4,8 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
-
 import com.wamod.Resources;
 import com.wamod.Utils;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 

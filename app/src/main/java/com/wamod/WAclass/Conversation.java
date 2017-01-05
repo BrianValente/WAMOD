@@ -9,32 +9,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.wamod.Resources;
-import com.wamod.App;
-import com.wamod.Chat;
-import com.wamod.entry.Aran;
-import com.wamod.entry.Hangouts;
-import com.wamod.entry.Mood;
-import com.wamod.entry.Simple;
-import com.wamod.entry.Stock;
-import com.wamod.entry.Test;
-import com.wamod.entry.WAMOD;
-import com.wamod.Utils;
+import android.widget.*;
+import com.wamod.*;
+import com.wamod.activity.conversation.ConversationActivity;
+import com.wamod.entry.*;
 import com.whatsapp.DialogToastListActivity;
-import com.whatsapp.protocol.x;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by brianvalente on 7/9/15.
@@ -49,8 +31,8 @@ public class Conversation extends DialogToastListActivity {
     }
 
     public static int getDateTVColor(TextView dateTV) {
-        if (dateTV.getPaddingBottom() < 1) return Color.parseColor("#" + getBubbleColor(2));
-        else return Color.parseColor("#" + getBubbleColor(5));
+        if (dateTV.getPaddingBottom() < 1) return ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_DATE);
+        else return ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_DATE);
     }
 
     public static void call_getDateTVColor() {
@@ -60,11 +42,11 @@ public class Conversation extends DialogToastListActivity {
 
 
     public static void changeConversationTitleTextColor(TextView tv) {
-        tv.setTextColor(Utils.getUIColor(Utils.COLOR_TOOLBARTEXT));
+        tv.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
     }
 
     public static void changeConversationSubtitleTextColor(TextView tv) {
-        tv.setTextColor(Utils.getUIColor(Utils.COLOR_TOOLBARTEXT));
+        tv.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
     }
 
     /* Called on
@@ -91,7 +73,7 @@ public class Conversation extends DialogToastListActivity {
         up.setImageDrawable(arrow);
     }
 
-    public static String getBubbleColor(int optionID) {
+    /*public static String getBubbleColor(int optionID) {
         String value = "";
         switch (optionID) {
             case 0:
@@ -119,7 +101,7 @@ public class Conversation extends DialogToastListActivity {
                 break;
         }
         return value;
-    }
+    }*/
 
     public static int getBubbleDrawableHex(int optionID) {
         String bubbleID = Utils.prefs.getString("conversation_style_bubble", "0");
@@ -188,19 +170,6 @@ public class Conversation extends DialogToastListActivity {
         }
 
         return incoming_normal;
-    }
-
-    public static Drawable getBubbleDrawable(int id) {
-        int color = 0;
-        if (id == 0 || id == 1) color = Color.parseColor("#" + getBubbleColor(3));
-        else if (id == 2 || id == 3) color = Color.parseColor("#" + getBubbleColor(0));
-        Drawable bubble = App.getContext().getResources().getDrawable(getBubbleDrawableHex(id));
-        bubble.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-        return bubble;
-    }
-
-    public void callingGetBubbleDrawable() {
-        Drawable drawable = getBubbleDrawable(0);
     }
 
     public static int getConversationEntryID() {
@@ -272,6 +241,13 @@ public class Conversation extends DialogToastListActivity {
 
     public static void initConversation(com.whatsapp.Conversation a) {
 
+        if (Utils.prefs.getBoolean("debugging_wamodconversationactivity", false)) {
+            Intent intent = new Intent(a, ConversationActivity.class);
+            intent.putExtra("jid", a.getIntent().getStringExtra("jid"));
+            a.startActivity(intent);
+            a.finish();
+        }
+
         ViewGroup cntnt = (ViewGroup) a.findViewById(android.R.id.content);
         if (cntnt.getTag(Resources.id.bullet) == null) cntnt.setTag(Resources.id.bullet, true);
         else return;
@@ -303,7 +279,7 @@ public class Conversation extends DialogToastListActivity {
             ImageView bg = (ImageView) a.findViewById(Resources.id.conversation_background);
             bg.setVisibility(View.GONE);
             View content = a.findViewById(android.R.id.content);
-            content.setBackgroundColor(Color.parseColor("#" + Utils.prefs.getString("conversation_custombackcolor", "FFFFFF")));
+            content.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BACKGROUND));
         }
 
 
@@ -344,7 +320,7 @@ public class Conversation extends DialogToastListActivity {
             ImageView back = (ImageView) a.findViewById(Resources.id.up);
             //back.setImageBitmap(new BitmapFactory(activity.getResources().getDrawable(replace_ids_here.ic_action_close)));
             Drawable x = a.getResources().getDrawable(Resources.drawable.wamod_action_close);
-            x.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+            x.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS), PorterDuff.Mode.MULTIPLY);
             back.setImageDrawable(x);
         }
     }
@@ -378,14 +354,14 @@ public class Conversation extends DialogToastListActivity {
                                     if (child instanceof TextView) {
                                         TextView tv = (TextView) child;
                                         Drawable[] icon = tv.getCompoundDrawables();
-                                        icon[0].setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+                                        icon[0].setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS), PorterDuff.Mode.MULTIPLY);
                                         tv.setCompoundDrawables(icon[0], icon[1], icon[2], icon[3]);
                                     } else if (child instanceof ImageButton) {
                                         ImageButton im = (ImageButton) child;
-                                        im.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                                        im.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS));
                                     } else if (child instanceof ImageView) {
                                         ImageView im = (ImageView) child;
-                                        im.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                                        im.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS));
                                     }
                                     child.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                                 }
@@ -409,7 +385,7 @@ public class Conversation extends DialogToastListActivity {
     public static void _startSupportActionMode(final com.whatsapp.Conversation a) {
         ViewGroup action_mode_bar = (ViewGroup) a.findViewById(Resources.id.action_mode_bar);
         if (action_mode_bar != null) {
-            action_mode_bar.setBackgroundColor(Utils.getUIColor(Utils.COLOR_TOOLBAR));
+            action_mode_bar.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR));
             final ImageView action_mode_close_button = (ImageView) a.findViewById(Resources.id.action_mode_close_button);
             final TextView action_bar_title = (TextView) a.findViewById(Resources.id.action_bar_title);
             final TextView menuitem_delete  = (TextView) a.findViewById(Resources.id.menuitem_delete);
@@ -424,21 +400,21 @@ public class Conversation extends DialogToastListActivity {
                             if (v instanceof TextView) {
                                 TextView tv = (TextView) v;
                                 Drawable[] icon = tv.getCompoundDrawables();
-                                icon[0] = Utils.tintToColor(icon[0], Utils.getUIColor(Utils.COLOR_FOREGROUND));
+                                icon[0] = Utils.tintToColor(icon[0], ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS));
                                 tv.setCompoundDrawables(icon[0], null, null, null);
                             } else if (v instanceof ImageView) {
                                 ImageView im = (ImageView) v;
-                                im.setImageDrawable(Utils.tintToColor(im.getDrawable(), Utils.COLOR_FOREGROUND));
+                                im.setImageDrawable(Utils.tintToColor(im.getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS)));
                             }
                         }
                     }
-                    action_mode_close_button.setImageDrawable(Utils.tintToColor(action_mode_close_button.getDrawable(), Utils.getUIColor(Utils.COLOR_FOREGROUND)));
-                    if (action_bar_title != null) action_bar_title.setTextColor(Utils.getUIColor(Utils.COLOR_TOOLBARTEXT));
+                    action_mode_close_button.setImageDrawable(Utils.tintToColor(action_mode_close_button.getDrawable(), ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS)));
+                    if (action_bar_title != null) action_bar_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_TITLE));
                 }
             });
 
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) a.getWindow().setStatusBarColor(Utils.getUIColor(Utils.COLOR_STATUSBAR));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) a.getWindow().setStatusBarColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_STATUSBAR));
     }
 
     private void callSAM() {

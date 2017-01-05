@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
-
 import com.wamod.Utils;
 
 /**
@@ -41,11 +40,22 @@ public class ThemePickerPreference extends ListPreference {
 
     private void init() {
         try {
-            int arrayID = activity.getResources().getIdentifier(getKey(), "array", activity.getPackageName());
-            String[] items = activity.getResources().getStringArray(arrayID);
-            int themeid = Integer.parseInt(getValue());
-            String themeName = items[themeid];
-            setSummary(themeName);
+            int arrayId = activity.getResources().getIdentifier(getKey(), "array", activity.getPackageName());
+            String[] arrayStrings = activity.getResources().getStringArray(arrayId);
+
+            int valuesArrayId = activity.getResources().getIdentifier(getKey() + "_values", "array", activity.getPackageName());
+            String[] valuesArrayStrings = activity.getResources().getStringArray(valuesArrayId);
+
+            String value = getValue();
+
+            int valueIndex;
+
+            for (valueIndex = 0; valueIndex<valuesArrayStrings.length; valueIndex++) {
+                if (valuesArrayStrings[valueIndex].contentEquals(value))
+                    break;
+            }
+
+            setSummary(arrayStrings[valueIndex]);
         } catch (Exception e) {
             Utils.manageException(e);
         }
@@ -60,12 +70,6 @@ public class ThemePickerPreference extends ListPreference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        if (Utils.nightModeShouldRun()) {
-            TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(Utils.getDarkColor(0));
-
-            TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
-        }
+        com.wamod.preference.Preference.loadColors(view);
     }
 }

@@ -2,25 +2,17 @@ package com.wamod.setup;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import com.wamod.R;
 import com.wamod.Resources;
 import com.wamod.Utils;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.AttributedCharacterIterator;
 
 /**
  * Created by brianvalente on 6/14/16.

@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
-
+import com.wamod.ColorsManager;
 import com.wamod.Utils;
 
 /**
@@ -35,11 +35,9 @@ public class SeparatorView extends View {
     }
 
     private void init() {
-        if (Utils.nightModeShouldRun()) {
-            setBackgroundColor(Utils.getDarkColor(0));
-            invalidate();
-            requestLayout();
-        }
+        setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+        invalidate();
+        requestLayout();
     }
 
     @Override

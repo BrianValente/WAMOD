@@ -12,12 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-
 import com.whatsapp.ContactInfo;
 import com.whatsapp.GroupChatInfo;
-import com.whatsapp.rv;
-import com.whatsapp.protocol.z;
 import com.whatsapp.protocol.a_;
+import com.whatsapp.protocol.z;
+import com.whatsapp.rv;
 
 /**
  * Created by brianvalente on 5/8/16.
@@ -139,11 +138,11 @@ public class Privacy {
 
     public static void initPrivacyOnChatInfo(final AppCompatActivity activity) {
 
-        // TODO Fix this mess please
+        // TODO: Fix this mess please
 
         rv contact = null;
-        if (activity instanceof GroupChatInfo) contact = ((GroupChatInfo) activity).getContact((GroupChatInfo) activity);
-        else if (activity instanceof ContactInfo) contact = ((ContactInfo) activity).h((ContactInfo) activity);
+        if (activity instanceof GroupChatInfo) contact = GroupChatInfo.getContact((GroupChatInfo) activity);
+        else if (activity instanceof ContactInfo) contact = ContactInfo.h((ContactInfo) activity);
         if (contact == null) return;
 
         final String JabberID = contact.v;
@@ -154,11 +153,9 @@ public class Privacy {
         final TextView wamod_privacy_card_customprivacy_summary = (TextView) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_summary"));
         final SwitchCompat wamod_privacy_card_customprivacy_switch = (SwitchCompat) activity.findViewById(Resources.getID("wamod_privacy_card_customprivacy_switch"));
 
-        if (Utils.nightModeShouldRun()) {
-            wamod_privacy_card_customprivacy.setBackgroundColor(Utils.getDarkColor(3));
-            wamod_privacy_card_customprivacy_title.setTextColor(Utils.getDarkColor(0));
-            wamod_privacy_card_customprivacy_summary.setTextColor(Utils.getDarkColor(1));
-        }
+        wamod_privacy_card_customprivacy.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_CARD_BACKGROUND));
+        wamod_privacy_card_customprivacy_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+        wamod_privacy_card_customprivacy_summary.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY));
 
         wamod_privacy_card_customprivacy_switch.setChecked(customPrivacyForSpecificContact(JabberID));
         wamod_privacy_card_customprivacy_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -188,23 +185,22 @@ public class Privacy {
                 final SwitchCompat wamod_privacy_card_reportread_switch = (SwitchCompat) view1.findViewById(Resources.getID("wamod_privacy_card_reportread_switch"));
                 final SwitchCompat wamod_privacy_card_reporttyping_switch = (SwitchCompat) view1.findViewById(Resources.getID("wamod_privacy_card_hidetyping_switch"));
 
-                if (Utils.nightModeShouldRun()) {
-                    View wamod_privacy_card = view1.findViewById(Resources.getID("wamod_privacy"));
-                    TextView wamod_privacy_card_reportreceived_title = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportreceived_title"));
-                    TextView wamod_privacy_card_reportreceived_summary = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportreceived_summary"));
-                    TextView wamod_privacy_card_reportread_title = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportread_title"));
-                    TextView wamod_privacy_card_reportread_summary = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportread_summary"));
-                    TextView wamod_privacy_card_hidetyping_title = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_hidetyping_title"));
-                    TextView wamod_privacy_card_hidetyping_summary = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_hidetyping_summary"));
+                View wamod_privacy_card = view1.findViewById(Resources.getID("wamod_privacy"));
+                TextView wamod_privacy_card_reportreceived_title = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportreceived_title"));
+                TextView wamod_privacy_card_reportreceived_summary = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportreceived_summary"));
+                TextView wamod_privacy_card_reportread_title = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportread_title"));
+                TextView wamod_privacy_card_reportread_summary = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_reportread_summary"));
+                TextView wamod_privacy_card_hidetyping_title = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_hidetyping_title"));
+                TextView wamod_privacy_card_hidetyping_summary = (TextView) view1.findViewById(Resources.getID("wamod_privacy_card_hidetyping_summary"));
 
-                    wamod_privacy_card.setBackgroundColor(Utils.getDarkColor(2));
-                    wamod_privacy_card_reportreceived_title.setTextColor(Utils.getDarkColor(0));
-                    wamod_privacy_card_reportreceived_summary.setTextColor(Utils.getDarkColor(1));
-                    wamod_privacy_card_reportread_title.setTextColor(Utils.getDarkColor(0));
-                    wamod_privacy_card_reportread_summary.setTextColor(Utils.getDarkColor(1));
-                    wamod_privacy_card_hidetyping_title.setTextColor(Utils.getDarkColor(0));
-                    wamod_privacy_card_hidetyping_summary.setTextColor(Utils.getDarkColor(1));
-                }
+                wamod_privacy_card.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
+                wamod_privacy_card_reportreceived_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+                wamod_privacy_card_reportreceived_summary.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+                wamod_privacy_card_reportread_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+                wamod_privacy_card_reportread_summary.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+                wamod_privacy_card_hidetyping_title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+                wamod_privacy_card_hidetyping_summary.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
+
 
 
                 wamod_privacy_card_reportreceived_switch.setChecked(reportreceived_original);

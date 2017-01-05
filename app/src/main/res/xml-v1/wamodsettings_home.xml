@@ -29,9 +29,6 @@
         <com.wamod.preference.CheckboxPreference
             android:title="@string/wamod_settings_home_drawer_blacktextinheader"
             android:key="home_drawer_blackheadertext" />
-        <com.wamod.preference.CheckboxPreference
-            android:title="@string/wamod_settings_home_drawer_showsecondsaccount"
-            android:key="home_drawer_showsecondaccount" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -43,17 +40,17 @@
         <com.wamod.preference.ColorPickerPreference
             app:wamod_supportsAlpha="true"
             android:title="@string/wamod_settings_home_bottomnavigationbar_color"
-            android:key="home_bottomnavigationbar_colors_bg"
+            android:key="ui_home_bottombar_background"
             android:summary="" />
         <com.wamod.preference.ColorPickerPreference
             app:wamod_supportsAlpha="true"
             android:title="@string/wamod_settings_home_bottomnavigationbar_activeitemcolor"
-            android:key="home_bottomnavigationbar_colors_activeitem"
+            android:key="ui_home_bottombar_activeitem"
             android:summary="" />
         <com.wamod.preference.ColorPickerPreference
             app:wamod_supportsAlpha="true"
             android:title="@string/wamod_settings_home_bottomnavigationbar_inactiveitemcolor"
-            android:key="home_bottomnavigationbar_colors_inactiveitem"
+            android:key="ui_home_bottombar_inactiveitem"
             android:summary="" />
     </PreferenceCategory>
 </PreferenceScreen>

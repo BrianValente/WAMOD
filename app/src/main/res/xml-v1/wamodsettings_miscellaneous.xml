@@ -20,4 +20,10 @@
         android:icon="@null"
         android:title="@string/wamod_settings_miscellaneous_app_restoredefaults"
         android:key="restoredefaults" />
+    <com.wamod.preference.ThemePickerPreference
+            android:icon="@null"
+            android:title="@string/wamod_settings_miscellaneous_emojiset"
+            android:key="emojiset"
+            android:entries="@array/emojiset"
+            android:entryValues="@array/emojiset_values" />
 </PreferenceScreen>

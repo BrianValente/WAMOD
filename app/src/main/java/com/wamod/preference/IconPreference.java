@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.wamod.ColorsManager;
 import com.wamod.Utils;
 
 /**
@@ -37,17 +37,13 @@ public class IconPreference extends Preference {
     protected void onBindView(View view) {
         super.onBindView(view);
 
-        if (!Utils.nightModeShouldRun()) {
-            tintIcon(Color.BLACK, view);
-        } else {
-            tintIcon(Utils.getDarkColor(0), view);
+        tintIcon(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY), view);
 
-            TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(Utils.getDarkColor(0));
+        TextView title = (TextView) view.findViewById(android.R.id.title);
+        if (title != null) title.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_PRIMARY));
 
-            TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
-        }
+        TextView summary = (TextView) view.findViewById(android.R.id.summary);
+        if (summary != null) summary.setTextColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TEXT_SECONDARY));
     }
 
     private void tintIcon(int color, View v1) {

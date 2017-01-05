@@ -11,7 +11,7 @@
         android:icon="@drawable/icon"
         android:roundIcon="@drawable/icon_round"
         android:label="WAMOD"
-        android:theme="@style/Theme.AppCompat" >
+        android:theme="@style/Theme.AppCompat">
 
         <meta-data
             android:name="io.fabric.ApiKey"
@@ -31,6 +31,11 @@
             <meta-data android:name="android.app.shortcuts"
                        android:resource="@xml/shortcuts" />
         </activity>
+
+        <activity
+            android:name="com.wamod.activity.home.HomeActivity"
+            android:theme="@style/WAMOD.Theme.Home"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

@@ -3,7 +3,6 @@ package com.wamod.WAclass;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-
 import com.whatsapp.DialogToastActivity;
 
 /**

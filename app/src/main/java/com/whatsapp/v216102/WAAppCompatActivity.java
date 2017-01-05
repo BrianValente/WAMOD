@@ -1,7 +1,6 @@
 package com.whatsapp.v216102;
 
 import android.support.v7.app.AppCompatActivity;
-
 import com.wamod.Utils;
 
 /**

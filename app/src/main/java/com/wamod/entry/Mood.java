@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-
 import com.wamod.Resources;
 import com.wamod.Utils;
 import com.whatsapp.u0;

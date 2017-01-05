@@ -1,7 +1,7 @@
 package com.wamod.WAclass;
 
-import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -12,17 +12,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewStub;
-import android.view.Window;
+import android.view.*;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
 
@@ -32,6 +25,12 @@ import com.wamod.Utils;
 public class HomeActivity extends AppCompatActivity {
 
     public static void initHomeActivity(final com.whatsapp.HomeActivity a) {
+        //if (Utils.prefs.getBoolean("debugging_wamodhomeactivity", false)) {
+            Intent intent = new Intent(a, com.wamod.activity.home.HomeActivity.class);
+            a.startActivity(intent);
+            a.finish();
+        //}
+
         if (Utils.prefs.getBoolean("crash", false)) {
             Utils.edit.putBoolean("crash", false);
             Utils.edit.apply();
@@ -50,18 +49,13 @@ public class HomeActivity extends AppCompatActivity {
             dialog.show();
         }
 
-        Toolbar toolbar = (Toolbar) a.findViewById(Resources.id.toolbar);
         HorizontalScrollView tabs = (HorizontalScrollView) a.findViewById(Resources.id.tabs);
 
-        tabs.setBackgroundColor(Utils.getUIColor(Utils.COLOR_TOOLBAR));
+        tabs.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR));
 
         // Check if dark mode is activated and change the background
         View pager = a.findViewById(Resources.id.pager);
-        if (Utils.nightModeShouldRun()) {
-            pager.setBackgroundColor(Utils.getDarkColor(2));
-        } else {
-            pager.setBackgroundColor(Color.WHITE);
-        }
+        pager.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_BACKGROUND));
 
 
         // Load bottom navbar
@@ -84,8 +78,13 @@ public class HomeActivity extends AppCompatActivity {
             int padding = Utils.getStatusBarHeight(a);
             CoordinatorLayout coordinatorLayout = (CoordinatorLayout) a.findViewById(Resources.id.wamod_drawer_overlay);
             coordinatorLayout.setPadding(0,padding,0,0);
-            coordinatorLayout.setBackgroundColor(Utils.getUIColor(Utils.COLOR_STATUSBAR));
+            coordinatorLayout.setBackgroundColor(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_STATUSBAR));
         }
+
+        NavigationView navigationView = (NavigationView) a.findViewById(Resources.id.wamod_drawer);
+        DrawerLayout drawerLayout = (DrawerLayout) a.findViewById(Resources.id.wamod_drawer_parent);
+
+        drawerLayout.closeDrawer(navigationView, false);
     }
 
     /* Called on
@@ -105,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Search
         Drawable searchIcon = Utils.context.getResources().getDrawable(Resources.drawable.ic_action_search);
-        searchIcon.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+        searchIcon.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS), PorterDuff.Mode.MULTIPLY);
         menu.add(0, 0, 0, Resources.string.search).setIcon(searchIcon).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
@@ -240,10 +239,10 @@ public class HomeActivity extends AppCompatActivity {
 
     public static void styleFAB(ImageView fab) {
         Drawable bg = fab.getBackground();
-        bg.setColorFilter(Utils.getUIColor(Utils.COLOR_TOOLBAR), PorterDuff.Mode.MULTIPLY);
+        bg.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR), PorterDuff.Mode.MULTIPLY);
         fab.setBackground(bg);
         Drawable icon = fab.getDrawable();
-        icon.setColorFilter(Utils.getUIColor(Utils.COLOR_FOREGROUND), PorterDuff.Mode.MULTIPLY);
+        icon.setColorFilter(ColorsManager.getColor(ColorsManager.UI_ACTIVITY_TOOLBAR_ICONS), PorterDuff.Mode.MULTIPLY);
         fab.setImageDrawable(icon);
     }
 }

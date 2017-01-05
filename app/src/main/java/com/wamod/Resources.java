@@ -416,6 +416,9 @@ public final class Resources {
     public static int getString(String string) {
         return getHexID(string, "string");
     }
+    public static int getStyle(String style) {
+        return getHexID(style, "style");
+    }
     public static int getLayout(String layout) {
         return getHexID(layout, "layout");
     }

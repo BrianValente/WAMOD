@@ -9,10 +9,11 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.wamod.WAclass.Conversation;
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
+import com.wamod.WAclass.BubbleRelativeLayout;
+import com.wamod.WAclass.Conversation;
 
 /**
  * Created by brianvalente on 5/7/16.
@@ -25,7 +26,7 @@ public class Bubbles extends Activity {
         Utils.loadColorsV2(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ConfigurationFragment configurationFragment = new ConfigurationFragment();
-        configurationFragment.a = this;
+        ConfigurationFragment.a = this;
         getFragmentManager().beginTransaction().replace(Resources.id.wamod_fragment, configurationFragment).commit();
         reloadColors();
     }
@@ -56,26 +57,26 @@ public class Bubbles extends Activity {
         ImageView tick4 = (ImageView) findViewById(Resources.getHexID("tick4", "id"));
 
 
-        bubble1.setBackground(Conversation.getBubbleDrawable(0));
-        bubble2.setBackground(Conversation.getBubbleDrawable(1));
-        bubble3.setBackground(Conversation.getBubbleDrawable(2));
-        bubble4.setBackground(Conversation.getBubbleDrawable(3));
-        bubble5.setBackground(Conversation.getBubbleDrawable(0));
+        bubble1.setBackground(BubbleRelativeLayout.getBalloonDrawable(0));
+        bubble2.setBackground(BubbleRelativeLayout.getBalloonDrawable(1));
+        bubble3.setBackground(BubbleRelativeLayout.getBalloonDrawable(2));
+        bubble4.setBackground(BubbleRelativeLayout.getBalloonDrawable(3));
+        bubble5.setBackground(BubbleRelativeLayout.getBalloonDrawable(0));
 
-        int participantColor = Utils.prefs.getBoolean("conversation_customparticipantcolorbool", false)? Color.parseColor("#" + Utils.prefs.getString("conversation_customparticipantcolor", "FFFFFF")) : Color.parseColor("#dd5020");
+        int participantColor = Utils.prefs.getBoolean("conversation_customparticipantcolorbool", false)? ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_PARTICIPANT) : Color.parseColor("#dd5020");
         participant1.setTextColor(participantColor);
         participant5.setTextColor(participantColor);
 
-        int rightTextColor = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbletextcolor", "FFFFFF"));
-        int leftTextColor  = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbletextcolor", "FFFFFF"));
+        int rightTextColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_MESSAGE);
+        int leftTextColor  = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_MESSAGE);
         msg1.setTextColor(leftTextColor);
         msg2.setTextColor(leftTextColor);
         msg3.setTextColor(rightTextColor);
         msg4.setTextColor(rightTextColor);
         msg5.setTextColor(leftTextColor);
 
-        int rightDateColor = Color.parseColor("#" + Utils.prefs.getString("conversation_rightbubbledatecolor", "FFFFFF"));
-        int leftDateColor = Color.parseColor("#" + Utils.prefs.getString("conversation_leftbubbledatecolor", "FFFFFF"));
+        int rightDateColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_RIGHT_DATE);
+        int leftDateColor = ColorsManager.getColor(ColorsManager.UI_CONVERSATION_BUBBLE_LEFT_DATE);
         date1.setTextColor(leftDateColor);
         date2.setTextColor(leftDateColor);
         date3.setTextColor(rightDateColor);

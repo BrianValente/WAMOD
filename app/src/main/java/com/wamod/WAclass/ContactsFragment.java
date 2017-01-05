@@ -2,7 +2,6 @@ package com.wamod.WAclass;
 
 import android.view.View;
 import android.widget.ImageView;
-
 import com.wamod.Resources;
 
 /**

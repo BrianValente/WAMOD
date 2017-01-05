@@ -1,5 +1,5 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
-    <shortcut
+    <!--<shortcut
         android:shortcutId="wamodsettings"
         android:enabled="true"
         android:icon="@drawable/ic_shortcut_settings"
@@ -11,6 +11,6 @@
             android:targetPackage="com.whatsapp"
             android:targetClass="com.wamod.settings.Settings" />
         <categories android:name="android.shortcut.conversation" />
-    </shortcut>
+    </shortcut>-->
 </shortcuts>
 

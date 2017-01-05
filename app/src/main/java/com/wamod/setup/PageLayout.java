@@ -2,43 +2,28 @@ package com.wamod.setup;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.ViewTreeObserver;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
+import android.view.*;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.wamod.R;
 import com.wamod.Resources;
 import com.wamod.Utils;
-
+import io.codetail.animation.SupportAnimator;
+import io.codetail.animation.ViewAnimationUtils;
+import io.codetail.widget.RevealLinearLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
-import io.codetail.animation.SupportAnimator;
-import io.codetail.animation.ViewAnimationUtils;
-import io.codetail.widget.RevealLinearLayout;
 
 /**
  * Created by brianvalente on 6/16/16.

@@ -2,7 +2,6 @@ package com.wamod.entry;
 
 import android.graphics.Color;
 import android.widget.EditText;
-
 import com.wamod.Resources;
 
 /**

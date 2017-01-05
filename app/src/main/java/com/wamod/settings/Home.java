@@ -14,7 +14,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.wamod.Resources;
 import com.wamod.Utils;
 

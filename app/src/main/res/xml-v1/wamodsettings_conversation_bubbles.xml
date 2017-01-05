@@ -21,37 +21,37 @@
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_customparticipantcolor"
-        android:key="conversation_customparticipantcolor"
+        android:key="ui_conversation_bubble_participant"
         android:summary="" />
 
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_right_color"
-        android:key="conversation_rightbubblecolor"
+        android:key="ui_conversation_bubble_right_background"
         android:summary="" />
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_right_textcolor"
-        android:key="conversation_rightbubbletextcolor"
+        android:key="ui_conversation_bubble_right_message"
         android:summary="" />
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_right_datecolor"
-        android:key="conversation_rightbubbledatecolor"
+        android:key="ui_conversation_bubble_right_date"
         android:summary="" />
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_left_color"
-        android:key="conversation_leftbubblecolor"
+        android:key="ui_conversation_bubble_left_background"
         android:summary="" />
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_left_textcolor"
-        android:key="conversation_leftbubbletextcolor"
+        android:key="ui_conversation_bubble_left_message"
         android:summary="" />
     <com.wamod.preference.ColorPickerPreference
         app:wamod_supportsAlpha="true"
         android:title="@string/wamod_settings_conversation_bubbles_left_datecolor"
-        android:key="conversation_leftbubbledatecolor"
+        android:key="ui_conversation_bubble_left_date"
         android:summary="" />
 </PreferenceScreen>

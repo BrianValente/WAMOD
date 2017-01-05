@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ColorPickerPreference">
+    <declare-styleable name="ColorPickerDialog">
         <attr name="wamod_supportsAlpha" format="boolean" />
     </declare-styleable>
 

@@ -21,9 +21,10 @@ import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
+import com.wamod.ColorsManager;
 import com.wamod.Resources;
 import com.wamod.Utils;
+import com.wamod.settings.Bubbles;
 
 /**
  * Created by BrianValente on 3/3/16.
@@ -67,7 +68,7 @@ public class ColorPickerPreference extends Preference {
     }
 
     private void init() {
-        setSummary("#" + Utils.prefs.getString(getKey(), "0"));
+        setSummary(ColorsManager.getColorHex(getKey()));
     }
 
     @Override
@@ -97,9 +98,9 @@ public class ColorPickerPreference extends Preference {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (updating) return;
+                updatingFromED = true;
                 try {
-                    if (updating) return;
-                    updatingFromED = true;
                     alphah = 255;
                     Log.i("WAMOD", "Color charsequence: " + s);
                     String input = s.toString();
@@ -122,10 +123,8 @@ public class ColorPickerPreference extends Preference {
                     wamod_colorpicker_seekbar_blue.setProgress((blue * 100) / 255);
                     wamod_colorpicker_seekbar_alpha.setProgress((alphah * 100) / 255);
                     wamod_colorpicker_preview.setBackgroundColor(color);
-                    updatingFromED = false;
-                } catch (Exception e) {
-                    Log.i("WAMOD", e.getMessage());
-                }
+                } catch (Exception e) {}
+                updatingFromED = false;
             }
 
             @Override
@@ -144,15 +143,20 @@ public class ColorPickerPreference extends Preference {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String hex = getHexString(view);
-                Utils.edit.putString(getKey(), hex);
+                /*Utils.edit.putString(getKey(), hex);
                 Utils.edit.apply();
+                */
+                ColorsManager.setColor(getKey(), hex);
+                setSummary(hex);
                 Utils.loadColorsV2(activity);
-                setSummary("#" + hex);
+
+                if (activity instanceof Bubbles)
+                    ((Bubbles) activity).reloadColors();
             }
         });
         dialog.show();
 
-        String colorHex = Utils.prefs.getString(getKey(), "ffffff");
+        String colorHex = ColorsManager.getColorHex(getKey()).substring(1);
         if (!alpha && colorHex.length() == 8) colorHex = colorHex.substring(2,8);
         wamod_colorpicker_tv_hex.setText(colorHex);
 
@@ -196,11 +200,11 @@ public class ColorPickerPreference extends Preference {
         final View wamod_colorpicker_preview          = v.findViewById(Resources.id.wamod_colorpicker_preview);
 
         String colorHex = getHexStringFromSeekbars(v);
-        int color = Color.parseColor("#" + colorHex);
+        int color = Color.parseColor(colorHex);
 
         if (!updatingFromED) {
             wamod_colorpicker_preview.setBackgroundColor(color);
-            wamod_colorpicker_tv_hex.setText(colorHex);
+            wamod_colorpicker_tv_hex.setText(colorHex.substring(1));
         }
         updating = false;
     }
@@ -234,14 +238,13 @@ public class ColorPickerPreference extends Preference {
 
         if (!alpha) values[3] = "";
 
-        return values[3] + values[0] + values[1] + values[2];
+        return "#" + values[3] + values[0] + values[1] + values[2];
     }
 
     private String getHexString(View v) {
         try {
             final EditText wamod_colorpicker_tv_hex = (EditText) v.findViewById(Resources.id.wamod_colorpicker_tv_hex);
-            String hex = wamod_colorpicker_tv_hex.getText().toString();
-            int color = Color.parseColor("#" + hex);
+            String hex = "#" + wamod_colorpicker_tv_hex.getText().toString();
             return hex;
         } catch (Exception e) {
             return getHexStringFromSeekbars(v);
@@ -251,12 +254,6 @@ public class ColorPickerPreference extends Preference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        if (Utils.nightModeShouldRun()) {
-            TextView title = (TextView) view.findViewById(android.R.id.title);
-            if (title != null) title.setTextColor(Utils.getDarkColor(0));
-
-            TextView summary = (TextView) view.findViewById(android.R.id.summary);
-            if (summary != null) summary.setTextColor(Utils.getDarkColor(1));
-        }
+        com.wamod.preference.Preference.loadColors(view);
     }
 }

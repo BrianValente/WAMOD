@@ -18,24 +18,34 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.pkmmte.view.CircularImageView;
 import com.wamod.Resources;
-import com.wamod.SwitchAccounts;
 import com.wamod.Utils;
-import com.wamod.WAclass.NewGroup;
-import com.wamod.WAclass.ProfileInfoActivity;
-import com.wamod.WAclass.SetStatus;
-import com.wamod.WAclass.StarredMessagesActivity;
-import com.wamod.WAclass.WebSessionsActivity;
-import com.wamod.settings.Settings;
+import com.wamod.WAclass.*;
 import com.wamod.settings.Privacy;
+import com.wamod.settings.Settings;
 import com.whatsapp.HomeActivity;
 
 /**
  * Created by brianvalente on 2/24/16.
  */
+public class NavigationDrawer {
+
+/*
+
+
+
+
+    R.I.P. Custom Navigation Drawer (2016-2016)
+
+    Always in my heart.
+
+
+
+
+
 public class NavigationDrawer extends RelativeLayout {
+
     RelativeLayout mDragView;
     ViewDragHelper mDragHelper;
     com.whatsapp.HomeActivity activity;
@@ -85,8 +95,6 @@ public class NavigationDrawer extends RelativeLayout {
                 LayoutParams params = new LayoutParams(newWidth,mDragView.getHeight());
                 mDragView.setLayoutParams(params);
                 mDragView.setTranslationX(-newWidth);
-                /*BORDER_SIZE = (int) (newWidth * 0.05);
-                mDragView.setPadding(0,0,BORDER_SIZE,0);*/
                 mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT);
                 mDragView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
@@ -97,13 +105,6 @@ public class NavigationDrawer extends RelativeLayout {
             if (buttons.getChildAt(i) instanceof RelativeLayout) {
                 final RelativeLayout item = (RelativeLayout) buttons.getChildAt(i);
                 if (!Utils.prefs.getBoolean("home_drawer_dark", true)) {
-                    /*ImageView icon = (ImageView) item.getChildAt(0);
-                    TextView label = (TextView)  item.getChildAt(1);
-
-                    if (icon != null && label != null) {
-                        icon.setColorFilter(Color.parseColor("#22222"));
-                        label.setTextColor(Color.parseColor("#22222"));
-                    }*/
                     int color = Color.parseColor("#222222");
 
                     View label1 = item.getChildAt(0);
@@ -256,9 +257,6 @@ public class NavigationDrawer extends RelativeLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        /*if (isDrawerTarget(event) && mDragHelper.shouldInterceptTouchEvent(event))
-            return true;
-        else return false;*/
         return mDragHelper.shouldInterceptTouchEvent(event);
     }
 
@@ -296,15 +294,13 @@ public class NavigationDrawer extends RelativeLayout {
         int[] location = new int[2];
         mDragView.getLocationOnScreen(location);
         Log.i("WAMOD", "X: " + location[0] + " Width: " + -mDragView.getWidth());
-        if (location[0] < -mDragView.getWidth() + 5) return true;
-        else return false;
+        return location[0] < -mDragView.getWidth() + 5;
     }
 
     private boolean finishedMoving() {
         int[] location = new int[2];
         mDragView.getLocationOnScreen(location);
-        if (location[0] == 0 || location[0] < (-mDragView.getWidth() - 5)) return true;
-        else return false;
+        return location[0] == 0 || location[0] < (-mDragView.getWidth() - 5);
     }
 
     private class DragHelperCallback extends ViewDragHelper.Callback {
@@ -403,22 +399,9 @@ public class NavigationDrawer extends RelativeLayout {
         invalidate();
     }
 
-    /*private void updateOverlayOpacity(int left) {
-        int percentage = (left * 100) / mDragView.getWidth();
-        int alpha = ((percentage * 255) / 100) - 75;
-        if (alpha < 0) alpha = 0;
-        if (!drawerOpen && !isMoving) overlay.setVisibility(GONE);
-        else overlay.setVisibility(VISIBLE);
-
-        if (!drawerOpen) overlay.setClickable(false);
-        else overlay.setClickable(true);
-
-        overlay.getBackground().setAlpha(alpha);
-    }*/
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         //updateOverlayOpacity(drawerOpen ? mDragView.getWidth() : 0);
-    }
+    }*/
 }

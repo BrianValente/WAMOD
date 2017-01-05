@@ -121,6 +121,12 @@
     <string name="wamod_settings_miscellaneous_app_restoredefaults">Restore default configuration</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_title">Restore default configuration</string>
     <string name="wamod_settings_miscellaneous_app_restoredefaults_message">Are you sure you want to restore the default configuration?</string>
+    <string name="wamod_settings_miscellaneous_emojiset">Emoji set</string>
+
+
+    <!-- WAMOD Settings - My colors -->
+    <string name="wamod_settings_mycolors">My colors</string>
+    <string name="wamod_settings_mycolors_add">Add color</string>
 
 
     <!-- Privacy -->
@@ -166,6 +172,16 @@
     <string name="wamod_switchaccount_prompt_message">Are you sure you want to switch your account?</string>
 
 
+    <!-- Accounts -->
+    <string name="wamod_accounts">Accounts</string>
+    <string name="wamod_accounts_noname">No name</string>
+    <string name="wamod_accounts_select_title">Select an account</string>
+    <string name="wamod_accounts_add">Add account</string>
+    <string name="wamod_accounts_add_prompt_title">Add account</string>
+    <string name="wamod_accounts_add_prompt_message">Are you sure you want to add an account?</string>
+
+
+
     <!-- Updater -->
     <string name="wamod_updater_title">New update of WAMOD available!</string>
     <string name="wamod_updater_message">%1$s is available for download. Your version is %2$s.</string>
@@ -202,4 +218,5 @@
     <string name="google_crash_reporting_api_key">AIzaSyCi-9GE_9fFFczRtUizkAlYBZhcLEhsP74</string>
     <string name="google_storage_bucket">whatsapp-90f20.appspot.com</string>
     <string name="wa_gcm_defaultSenderId">293955441834</string>
+
 </resources>
