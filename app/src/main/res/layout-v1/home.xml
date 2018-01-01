@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout android:id="@+id/root_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
-             xmlns:android="http://schemas.android.com/apk/res/android" xmlns:whatsapp="http://schemas.android.com/apk/res-auto">
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:whatsapp="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_gravity="bottom" android:id="@+id/navigation_bar_protection" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" />
     <FrameLayout android:id="@+id/camera_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" />
     <LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
         <RelativeLayout android:id="@+id/call_notification" android:background="@drawable/call_duration_bar_background" android:paddingLeft="16.0dip" android:paddingTop="8.0dip" android:paddingRight="16.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
@@ -13,37 +14,12 @@
             </FrameLayout>
             <LinearLayout android:orientation="vertical" android:id="@+id/header" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content">
                 <include layout="@layout/toolbar" />
-                <com.whatsapp.PagerSlidingTabStrip android:id="@+id/tabs" android:background="@color/primary" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height" whatsapp:pstsIndicatorColor="@color/tab_indicator" whatsapp:pstsDividerColor="@android:color/transparent" whatsapp:pstsIndicatorHeight="3.0dip" whatsapp:pstsUnderlineHeight="1.0dip" whatsapp:pstsTabPaddingLeftRight="12.0dip" whatsapp:pstsShouldExpand="true" />
+                <com.whatsapp.HomePagerSlidingTabStrip android:id="@+id/tabs" android:background="@color/primary" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height" whatsapp:pstsIndicatorColor="@color/tab_indicator" whatsapp:pstsDividerColor="@android:color/transparent" whatsapp:pstsIndicatorHeight="3.0dip" whatsapp:pstsUnderlineHeight="1.0dip" whatsapp:pstsTabPaddingLeftRight="8.0dip" whatsapp:pstsShouldExpand="true" />
             </LinearLayout>
-            <FrameLayout android:id="@+id/search_holder" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" android:elevation="@dimen/actionbar_elevation" />
+            <FrameLayout android:id="@+id/search_holder" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" />
+            <ImageView android:layout_gravity="bottom|center|right" android:id="@+id/fab" android:background="@drawable/input_circle_green" android:layout_width="@dimen/submit_button_size" android:layout_height="@dimen/submit_button_size" android:layout_margin="16.0dip" android:scaleType="center" />
+            <ImageView android:layout_gravity="bottom|center|right" android:id="@+id/fab_aux" android:background="@drawable/input_circle_grey" android:visibility="gone" android:layout_width="46.0dip" android:layout_height="46.0dip" android:layout_marginRight="21.0dip" android:layout_marginBottom="88.0dip" android:scaleType="center" android:contentDescription="@string/menuitem_new_text_status" />
         </FrameLayout>
     </LinearLayout>
     <FrameLayout android:id="@+id/preview_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
 </FrameLayout>
-<!--<?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout android:id="@id/wamod_drawer_parent" android:background="#ffff0000" android:layout_width="fill_parent" android:layout_height="fill_parent"
-xmlns:android="http://schemas.android.com/apk/res/android" xmlns:whatsapp="http://schemas.android.com/apk/res-auto">
-    <android.support.design.widget.CoordinatorLayout android:id="@id/wamod_drawer_overlay" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:whatsapp="http://schemas.android.com/apk/res-auto">
-            <RelativeLayout android:id="@+id/call_notification" android:background="@drawable/call_duration_bar_background" android:paddingLeft="16.0dip" android:paddingTop="8.0dip" android:paddingRight="16.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="17.0sp" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tap_to_return_to_call" android:layout_toLeftOf="@+id/call_notification_timer" android:layout_alignParentLeft="true" />
-                <TextView android:textSize="16.0sp" android:textColor="@android:color/white" android:gravity="center_vertical" android:id="@+id/call_notification_timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
-            </RelativeLayout>
-            <FrameLayout android:id="@+id/content" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                <FrameLayout android:id="@+id/pager_holder" android:paddingTop="@dimen/tab_height" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                    <view android:id="@+id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" class="com.whatsapp.HomeActivity$TabsPager" />
-                </FrameLayout>
-                <LinearLayout android:orientation="vertical" android:id="@+id/header" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <include layout="@layout/toolbar" />
-                    <com.whatsapp.PagerSlidingTabStrip android:id="@+id/tabs" android:background="@color/primary" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height" whatsapp:pstsIndicatorColor="@color/tab_indicator" whatsapp:pstsDividerColor="@android:color/transparent" whatsapp:pstsIndicatorHeight="3.0dip" whatsapp:pstsUnderlineHeight="1.0dip" whatsapp:pstsTabPaddingLeftRight="12.0dip" whatsapp:pstsShouldExpand="true" />
-                </LinearLayout>
-                <FrameLayout android:id="@+id/search_holder" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" />
-            </FrameLayout>
-            <ViewStub android:id="@id/wamod_bottomnav_viewstub" android:layout="@layout/wamod_home_bottomtabs" android:layout_width="fill_parent" android:layout_height="62.0dip" android:layout_alignParentBottom="true" />
-        </RelativeLayout>
-    </android.support.design.widget.CoordinatorLayout>
-    <android.support.design.widget.NavigationView android:layout_gravity="start" android:id="@id/wamod_drawer" android:layout_width="wrap_content" android:layout_height="fill_parent">
-        <include layout="@layout/wamod_home_drawer" />
-    </android.support.design.widget.NavigationView>
-</android.support.v4.widget.DrawerLayout>-->

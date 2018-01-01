@@ -1,9 +1,8 @@
 package com.whatsapp;
 
-import android.support.v7.app.AppCompatActivity;
-
 /**
- * Created by brianvalente on 2/22/16.
+ * Created by brianvalente on 11/26/17.
  */
-public class Settings extends AppCompatActivity {
+
+public class Settings extends Activity {
 }

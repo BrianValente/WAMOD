@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/wamod_home_toolbar" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Coming soon!" android:layout_centerInParent="true" />
+</RelativeLayout>

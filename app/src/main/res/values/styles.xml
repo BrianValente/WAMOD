@@ -1,65 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.App" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-    </style>
-
-    <style name="Theme.App.Home" parent="@style/Theme.App">
-    </style>
-
-    <style name="Text">
-    </style>
-
-    <style name="Theme">
-    </style>
-
-    <style name="Theme.ActionBar">
-    </style>
-
-    <style name="Theme.ActionBar.SubtitleTextStyle">
-    </style>
-
-    <style name="Theme.ActionBar.TitleTextStyle">
-    </style>
-
-    <style name="Theme.ActionBar.TitleTextStyle.Condensed">
-    </style>
-
-    <style name="ListItemTitle">
-    </style>
-
-    <style name="ListItemSubtitle">
-    </style>
-
-    <style name="ScreenFooterButton">
-    </style>
-
-    <style name="FullScreenDialogSeparator">
-    </style>
-
-    <style name="List">
-    </style>
-
-    <style name="DateDivider">
-    </style>
-
-    <style name="ActionBarButtonStyle">
-    </style>
-
-    <style name="FlatCardHeader">
-    </style>
-
-    <style name="FlatCardTitle">
-    </style>
-
-    <style name="FlatCardSeparator">
-    </style>
-
-    <style name="FlatCardInfo">
-    </style>
-
-    <style name="ListItemSubtitleSmall">
-    </style>
 </resources>

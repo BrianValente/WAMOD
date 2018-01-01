@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ColorPickerDialog">
-        <attr name="wamod_supportsAlpha" format="boolean" />
-    </declare-styleable>
-
-    <!-- CircularImageView -->
-    <attr name="border" format="boolean" />
-    <attr name="border_color" format="color" />
-    <attr name="border_width" format="dimension" />
-    <attr name="circularImageViewStyle" format="reference" />
-    <attr name="selector" format="boolean" />
-    <attr name="selector_color" format="color" />
-    <attr name="selector_stroke_color" format="color" />
-    <attr name="selector_stroke_width" format="dimension" />
-    <attr name="shadow" format="boolean" />
-
-    <declare-styleable name="PaletteView">
-        <attr name="theme_id" format="integer"/>
-
-    </declare-styleable>
-
-    <declare-styleable name="PageLayout">
-        <attr name="header_title" format="string" />
-    </declare-styleable>
+    <attr name="title" format="string" />
+    <attr name="label" format="string" />
+    <attr name="blurOverlayColor" format="color" />
 </resources>

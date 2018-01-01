@@ -1,9 +1,8 @@
 package com.whatsapp;
 
-import android.support.v7.app.AppCompatActivity;
-
 /**
- * Created by brianvalente on 2/22/16.
+ * Created by brianvalente on 12/8/17.
  */
-public class StarredMessagesActivity extends AppCompatActivity {
+
+public class StarredMessagesActivity extends Activity {
 }

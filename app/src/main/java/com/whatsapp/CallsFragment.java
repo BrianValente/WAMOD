@@ -1,12 +1,10 @@
 package com.whatsapp;
 
-import android.app.ListFragment;
-
-import java.util.List;
+import android.support.v4.app.ListFragment;
 
 /**
- * Created by BrianValente on 3/5/16.
+ * Created by brianvalente on 11/24/17.
  */
-public class CallsFragment extends android.support.v4.app.ListFragment {
-    public void clearCalls() {}
+
+public class CallsFragment extends ListFragment {
 }

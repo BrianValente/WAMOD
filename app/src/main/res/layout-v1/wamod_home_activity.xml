@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wamod.widget.ContentLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffffff">
+
+        <RelativeLayout
+            android:id="@+id/home_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/bottom">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <RelativeLayout
+                    android:id="@+id/home_fragment_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/toolbar_container">
+
+                    <FrameLayout
+                        android:id="@+id/home_fragment"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="57.0dip"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:background="#ffcccccc" />
+
+            <wamod.widget.BottomNavigationView
+                android:layout_width="fill_parent"
+                android:layout_height="56.0dip"
+                android:background="@android:color/white"
+                android:id="@+id/bottom_navigation_view">
+
+                <wamod.widget.BottomNavigationItemView
+                    android:id="@+id/bnv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:label="@string/website_type_home"
+                    app:icon="@drawable/ic_home" />
+
+                <wamod.widget.BottomNavigationItemView
+                    android:id="@+id/bnv_calls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:label="@string/calls"
+                    app:icon="@drawable/ic_call" />
+
+                <wamod.widget.BottomNavigationItemView
+                    android:id="@+id/bnv_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:label="@string/camera_button_description"
+                    app:icon="@drawable/ic_photo_camera" />
+
+                <wamod.widget.BottomNavigationItemView
+                    android:id="@+id/bnv_contacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:label="@string/contacts"
+                    app:icon="@drawable/ic_people" />
+
+                <wamod.widget.BottomNavigationItemView
+                    android:id="@+id/bnv_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:label="@string/settings_general"
+                    app:icon="@drawable/ic_settings" />
+
+            </wamod.widget.BottomNavigationView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/wamod_home_drawer" />
+
+</wamod.widget.ContentLayout>

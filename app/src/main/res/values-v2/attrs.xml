@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="pstsDividerColor"></attr>
+    <attr name="pstsIndicatorColor"></attr>
+    <attr name="pstsIndicatorHeight"></attr>
+    <attr name="pstsShouldExpand"></attr>
+    <attr name="pstsTabPaddingLeftRight"></attr>
+    <attr name="pstsUnderlineHeight"></attr>
+
+    <attr name="cstErrorColor"></attr>
+    <attr name="cstSeenColor"></attr>
+    <attr name="cstUnseenColor"></attr>
+    <attr name="tbtnBorderSize"></attr>
+    <attr name="tbtnForegroundOnly"></attr>
+    <attr name="tbtnRadius"></attr>
+</resources>

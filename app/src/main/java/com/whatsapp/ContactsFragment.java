@@ -1,10 +1,10 @@
 package com.whatsapp;
 
-import android.app.ListFragment;
+import android.support.v4.app.ListFragment;
 
 /**
- * Created by BrianValente on 3/5/16.
+ * Created by brianvalente on 11/24/17.
  */
-public class ContactsFragment extends android.support.v4.app.ListFragment {
-    public void reloadContacts(){}
+
+public class ContactsFragment extends ListFragment {
 }

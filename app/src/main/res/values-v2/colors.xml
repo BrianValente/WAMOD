@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary"></color>
+    <color name="tab_indicator"></color>
+
+    <color name="status_error"></color>
+    <color name="status_seen"></color>
+    <color name="status_unseen"></color>
+</resources>

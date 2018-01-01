@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/wamod_home_toolbar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <Button android:id="@+id/theming" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open Theming page" />
+        <Button android:id="@+id/privacy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open Privacy page" />
+        <Button android:id="@+id/about" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open About page" />
+        <Button android:id="@+id/debug" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open Debug page" />
+    </LinearLayout>
+</RelativeLayout>

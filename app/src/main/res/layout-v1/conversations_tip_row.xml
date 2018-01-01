@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:visibility="gone" android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/conversations_text_gray" android:gravity="center" android:id="@+id/conversations_row_tip_tv" android:layout_width="0dp" android:layout_height="0.0dip" android:text="@string/delete_chat_tip" />
-</FrameLayout>

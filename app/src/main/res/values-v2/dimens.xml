@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="submit_button_size"></dimen>
+    <dimen name="actionbar_elevation"></dimen>
+    <dimen name="tab_height"></dimen>
+    <dimen name="conversations_row_height">76.0dip</dimen>
+    <dimen name="small_avatar_radius"></dimen>
+    <dimen name="list_row_padding"></dimen>
+    <dimen name="selection_check_image_size"></dimen>
+    <dimen name="status_thumbnail_size"></dimen>
+</resources>

@@ -2,9 +2,6 @@ smali/*
 build/*
 .idea/*
 .gradle/*
-AndroidStudioProject.iml
-WAMOD.iml
+*.iml
 local.properties
 *.smali
-app/app.iml
-library/library.iml
