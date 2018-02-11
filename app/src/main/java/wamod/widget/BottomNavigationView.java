@@ -17,6 +17,7 @@ import com.whatsapp.TextStatusComposerActivity;
 import com.whatsapp.camera.CameraActivity;
 
 import wamod.utils.Resources;
+import wamod.utils.Theme;
 import wamod.utils.Utils;
 
 /**
@@ -82,6 +83,8 @@ public class BottomNavigationView extends LinearLayout implements ViewTreeObserv
         mCameraItem.setOnLongClickListener(this);
 
         setItemActive(mHomeItem);
+
+        loadTheme();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
             getViewTreeObserver().removeOnGlobalLayoutListener(this);
@@ -157,6 +160,10 @@ public class BottomNavigationView extends LinearLayout implements ViewTreeObserv
         mCameraItem.setActive(false);
         mContactsItem.setActive(mContactsItem == item);
         mSettingsItem.setActive(mSettingsItem == item);
+    }
+
+    private void loadTheme() {
+        setBackgroundColor(Theme.getColor(Theme.Key.COLOR_BNV_BACKGROUND));
     }
 
 }

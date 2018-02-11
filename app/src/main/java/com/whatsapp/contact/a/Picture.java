@@ -29,7 +29,7 @@ public class Picture {
                 myDrawable = App.mContext.getDrawable(R.drawable.brian2);
                 break;
             case "someone":
-                myDrawable = App.mContext.getDrawable(R.drawable.brian);
+                myDrawable = App.mContext.getDrawable(R.drawable.brian3);
         }
 
         if (myDrawable != null) {

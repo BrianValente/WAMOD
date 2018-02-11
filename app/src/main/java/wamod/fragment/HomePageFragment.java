@@ -1,5 +1,8 @@
 package wamod.fragment;
 
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +12,22 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Stack;
 
 import wamod.activity.HomeActivity;
+import wamod.utils.Resources;
+import wamod.utils.Theme;
+import wamod.utils.Utils;
 import wamod.widget.HomePageContentLayout;
+import wamod.widget.Toolbar;
 
 public class HomePageFragment extends OldAppCompatBridgeFragment {
 
     public HomeActivity mHomeActivity;
     public HomePageContentLayout mContent;
     public Stack<PageFragment> mPages = new Stack<>();
-    public View mRootView;
+    public View mRootView = null;
     public static final String PAGE_TAG = "page_tag";
     public HomeActivity.Fragment mFragmentType;
-    public boolean mLightStatusBar = true;
+    public boolean mLightStatusBar = false;
+    public Toolbar mToolbar;
 
 
     private boolean mOnResumeCalled = false;
@@ -128,6 +136,30 @@ public class HomePageFragment extends OldAppCompatBridgeFragment {
             return true;
         }
         return false;
+    }
+
+    public void loadTheme() {
+
+        if (mRootView != null) {
+            mRootView.setBackgroundColor(Theme.getColor(Theme.Key.COLOR_BACKGROUND));
+
+            if (mToolbar != null) {
+                Drawable menuDrawable = mHomeActivity.getDrawable(Resources.getDrawable(mHomeActivity, "ic_menu"));
+                menuDrawable.setColorFilter(Theme.getColor(Theme.Key.COLOR_TOOLBAR_MENU), PorterDuff.Mode.MULTIPLY);
+                mToolbar.setNavigationIcon(menuDrawable);
+                mToolbar.setTitleTextColor(Theme.getColor(Theme.Key.COLOR_TOOLBAR_TITLE));
+                mToolbar.setBackgroundColor(Theme.getColor(Theme.Key.COLOR_PRIMARY));
+                mToolbar.setPadding(0, Utils.getStatusBarHeight(mHomeActivity), 0, 0);
+
+                View toolbarShadow = mRootView.findViewById(Resources.getId(mRootView.getContext(), "toolbar_shadow"));
+                toolbarShadow.setBackgroundColor(Theme.getColor(Theme.Key.COLOR_PRIMARY_DARK));
+
+                Typeface typeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/ProductSans-Medium.ttf");
+                mToolbar.setTitleTypeface(typeface);
+            }
+
+        }
+
     }
 
 }

@@ -20,6 +20,7 @@ import android.view.View;
 
 import wamod.utils.Log;
 import wamod.utils.Resources;
+import wamod.utils.Theme;
 import wamod.utils.Utils;
 
 /**
@@ -34,7 +35,7 @@ public class BottomNavigationItemView extends View {
     private Paint mIconPaint, mLabelPaint;
     private Rect mLabelRect;
     private int mIconSize;
-    private int mIconTopMargin, mLabelBottomMargin, mInactiveColor, mActiveColor;
+    private int mIconTopMargin, mLabelBottomMargin;
 
     // Resources
     private Bitmap mIcon;
@@ -49,9 +50,8 @@ public class BottomNavigationItemView extends View {
     private int mLastMotionEvent = -1;
 
     // Settings
-    private static final int COLOR_ACTIVE = Color.parseColor("#e0000000");
-    private static final int COLOR_INACTIVE = Color.parseColor("#50000000");
-    //private static final int COLOR_PRESSED = Color.parseColor("#a0000000");
+    private static final int COLOR_ACTIVE = Theme.getColor(Theme.Key.COLOR_BNV_ITEM_ACTIVE);
+    private static final int COLOR_INACTIVE = Theme.getColor(Theme.Key.COLOR_BNV_ITEM_INACTIVE);
     private static final float ICON_SIZE_DP = 26;
     private static final float TEXT_SIZE_DP = 11;
     private static final float BUTTON_PRESSED_SCALE = 0.85f;
@@ -100,9 +100,6 @@ public class BottomNavigationItemView extends View {
         mIconSize = Utils.dpToPx(mContext, ICON_SIZE_DP);
         mIconTopMargin = Utils.dpToPx(mContext, 8f);
         mLabelBottomMargin = Utils.dpToPx(mContext, 1.5f);
-
-        mActiveColor = COLOR_ACTIVE;
-        mInactiveColor = COLOR_INACTIVE;
 
         mLabelPaint = new Paint();
         mIconPaint = new Paint();

@@ -16,11 +16,11 @@ import wamod.utils.Utils;
 
 public class CallsFragment extends HomePageFragment {
 
-    View mRootView;
     com.whatsapp.CallsFragment mStockCallsFragment;
 
     public CallsFragment() {
         mFragmentType = HomeActivity.Fragment.CALLS;
+        mLightStatusBar = false;
     }
 
     @Override
@@ -35,16 +35,14 @@ public class CallsFragment extends HomePageFragment {
         getFragmentManager().beginTransaction().add(Resources.getId(mHomeActivity, "fragment"), mStockCallsFragment).commit();
 
         // Toolbar
-        Toolbar toolbar = mRootView.findViewById(Resources.getId(mHomeActivity, "toolbar"));
+        mToolbar = mRootView.findViewById(Resources.getId(mHomeActivity, "toolbar"));
 
-        Drawable menuDrawable = mHomeActivity.getDrawable(Resources.getDrawable(mHomeActivity, "ic_menu"));
-        menuDrawable.setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+        mToolbar.setTitle(Resources.getString(mHomeActivity, "calls"));
+        mToolbar.setNavigationOnClickListener(new NavigationClickListener(this));
 
-        toolbar.setNavigationIcon(menuDrawable);
-        toolbar.setTitle(Resources.getString(mHomeActivity, "calls"));
-        toolbar.setPadding(0, Utils.getStatusBarHeight(mHomeActivity), 0, 0);
-        toolbar.setNavigationOnClickListener(new NavigationClickListener(this));
+        loadTheme();
 
         return mRootView;
     }
+
 }

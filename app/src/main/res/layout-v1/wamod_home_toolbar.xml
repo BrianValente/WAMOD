@@ -5,13 +5,23 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <Toolbar
+    <wamod.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffffff" />
+        android:background="#ffffffff">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:text="Title" />
+
+    </wamod.widget.Toolbar>
 
     <View
+        android:id="@+id/toolbar_shadow"
         android:layout_width="fill_parent"
         android:layout_height="1.0dip"
         android:background="#ffcccccc" />

@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#ffffffff">
+        android:background="#1d1d1d">
 
         <RelativeLayout
             android:id="@+id/home_content"
@@ -15,42 +15,29 @@
             android:layout_height="fill_parent"
             android:layout_above="@+id/bottom">
 
-            <RelativeLayout
+            <FrameLayout
+                android:id="@+id/home_fragment"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-                <RelativeLayout
-                    android:id="@+id/home_fragment_container"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_below="@+id/toolbar_container">
-
-                    <FrameLayout
-                        android:id="@+id/home_fragment"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                </RelativeLayout>
-
-            </RelativeLayout>
+                android:layout_height="fill_parent"/>
 
         </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/bottom"
             android:layout_width="fill_parent"
-            android:layout_height="57.0dip"
+            android:layout_height="56.0dip"
             android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
-            <View
+           <!-- <View
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dip"
-                android:background="#ffcccccc" />
+                android:background="#ffcccccc" />-->
 
             <wamod.widget.BottomNavigationView
                 android:layout_width="fill_parent"
                 android:layout_height="56.0dip"
-                android:background="@android:color/white"
+                android:background="#2a2a2a"
                 android:id="@+id/bottom_navigation_view">
 
                 <wamod.widget.BottomNavigationItemView

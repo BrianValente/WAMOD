@@ -20,7 +20,12 @@ public class ContactsManager {
                 break;
             case "someone":
                 contactInfo.mJabberId = "someone";
-                contactInfo.mFullName = "Sexy Guy";
+                contactInfo.mPushName = "Bri";
+                contactInfo.mFullName = "Brian Valente";
+                break;
+            case "5491100000000@s.whatsapp.net":
+                contactInfo.mPushName = "Push Name";
+                contactInfo.mJabberId = "5491100000000@s.whatsapp.net";
                 break;
         }
 

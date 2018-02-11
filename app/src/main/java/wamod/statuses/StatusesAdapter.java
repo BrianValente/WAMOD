@@ -21,6 +21,7 @@ import com.whatsapp.data.StatusInfo;
 
 import wamod.activity.HomeActivity;
 import wamod.utils.Resources;
+import wamod.utils.Theme;
 
 /**
  * Created by brianvalente on 11/27/17.
@@ -71,6 +72,8 @@ public class StatusesAdapter extends RecyclerView.Adapter<StatusesAdapter.ViewHo
 
         final ViewHolder viewHolder = new ViewHolder(relativeLayout, mOnClickListener);
 
+        viewHolder.mContactName.setTextColor(Theme.getColor(Theme.Key.COLOR_LIST_ITEM_TITLE));
+
         return viewHolder;
     }
 
@@ -80,7 +83,7 @@ public class StatusesAdapter extends RecyclerView.Adapter<StatusesAdapter.ViewHo
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        StatusesRowAbstract status = mHomeActivity.mConversationsFragment.mStockConversationsFragment.getStatusesDataSet().get(position);
+        StatusesRowAbstract status = mHomeActivity.mConversationsFragment.getStatusesDataSet().get(position);
 
 
         // Hide titles plox
@@ -195,6 +198,6 @@ public class StatusesAdapter extends RecyclerView.Adapter<StatusesAdapter.ViewHo
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mHomeActivity.mConversationsFragment.mStockConversationsFragment.getStatusesDataSet().size();
+        return mHomeActivity.mConversationsFragment.getStatusesDataSet().size();
     }
 }

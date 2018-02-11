@@ -18,6 +18,7 @@ import wamod.fragment.ConversationsFragment;
 import wamod.fragment.HomePageFragment;
 import wamod.fragment.SettingsFragment;
 import wamod.utils.Resources;
+import wamod.utils.Theme;
 import wamod.widget.BottomNavigationView;
 import wamod.widget.NavigationDrawer;
 
@@ -39,7 +40,7 @@ public class HomeActivity extends Activity {
     public NavigationDrawer mNavigationDrawer;
     public FragmentManager mFragmentManager;
 
-    private int mLightStatusBarSystemUIVisibility;
+    private int mDefaultSystemUIVisibility;
 
     private BottomNavigationView mBottomNavigationView;
 
@@ -65,12 +66,8 @@ public class HomeActivity extends Activity {
 
         // Transparent status bar
         Window window = getWindow();
-        mLightStatusBarSystemUIVisibility = window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-        window.getDecorView().setSystemUiVisibility(mLightStatusBarSystemUIVisibility);
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            getWindow().setStatusBarColor(Color.parseColor("#40000000"));
-        }
+        mDefaultSystemUIVisibility = window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+        window.getDecorView().setSystemUiVisibility(mDefaultSystemUIVisibility);
 
         mConversationsFragment = new ConversationsFragment();
         mCallsFragment         = new CallsFragment();
@@ -85,7 +82,7 @@ public class HomeActivity extends Activity {
         fragmentTransaction.add(Resources.getId(this, "home_fragment"), mContactsFragment);
         fragmentTransaction.add(Resources.getId(this, "home_fragment"), mSettingsFragment);
 
-        fragmentTransaction.show(mConversationsFragment);
+        //fragmentTransaction.show(mConversationsFragment);
 
         mCurrentFragment = mConversationsFragment;
 
@@ -93,9 +90,10 @@ public class HomeActivity extends Activity {
         mHomeContent      = findViewById(Resources.getId(this, "home_content"));
         mBottomNavigationView = findViewById(Resources.getId(this, "bottom_navigation_view"));
 
-        FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        transaction.replace(Resources.getId(this, "home_fragment"), mConversationsFragment);
-        transaction.commit();
+        mHomeContent.setBackgroundColor(Theme.getColor(Theme.Key.COLOR_BACKGROUND));
+
+        fragmentTransaction.replace(Resources.getId(this, "home_fragment"), mConversationsFragment);
+        fragmentTransaction.commit();
     }
 
     public void showFragment(Fragment fragment) {
@@ -169,7 +167,7 @@ public class HomeActivity extends Activity {
 
     public void setLightStatusBar(boolean light) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            getWindow().getDecorView().setSystemUiVisibility(light? mLightStatusBarSystemUIVisibility : mLightStatusBarSystemUIVisibility - View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().getDecorView().setSystemUiVisibility(light? mDefaultSystemUIVisibility | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR : mDefaultSystemUIVisibility);
         }
     }
 }

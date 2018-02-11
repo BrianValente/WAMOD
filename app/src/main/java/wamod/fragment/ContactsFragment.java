@@ -21,11 +21,11 @@ import wamod.utils.Utils;
 
 public class ContactsFragment extends HomePageFragment {
 
-    View mRootView;
     StockContactsFragment mStockContactsFragment;
 
     public ContactsFragment() {
         mFragmentType = HomeActivity.Fragment.CONTACTS;
+        mLightStatusBar = false;
     }
 
     @Override
@@ -40,15 +40,12 @@ public class ContactsFragment extends HomePageFragment {
         getFragmentManager().beginTransaction().add(Resources.getId(mHomeActivity, "fragment"), mStockContactsFragment).commit();
 
         // Toolbar
-        Toolbar toolbar = mRootView.findViewById(Resources.getId(mHomeActivity, "toolbar"));
+        mToolbar = mRootView.findViewById(Resources.getId(mHomeActivity, "toolbar"));
 
-        Drawable menuDrawable = mHomeActivity.getDrawable(Resources.getDrawable(mHomeActivity, "ic_menu"));
-        menuDrawable.setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+        mToolbar.setTitle(Resources.getString(mHomeActivity, "contacts"));
+        mToolbar.setNavigationOnClickListener(new NavigationClickListener(this));
 
-        toolbar.setNavigationIcon(menuDrawable);
-        toolbar.setTitle(Resources.getString(mHomeActivity, "contacts"));
-        toolbar.setPadding(0, Utils.getStatusBarHeight(mHomeActivity), 0, 0);
-        toolbar.setNavigationOnClickListener(new NavigationClickListener(this));
+        loadTheme();
 
         return mRootView;
     }

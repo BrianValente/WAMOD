@@ -15,7 +15,7 @@ public class StatusesFragment extends ListFragment {
         FragmentActivity activity = getActivity();
 
         if (activity instanceof HomeActivity) {
-            ((HomeActivity) activity).mConversationsFragment.mStockConversationsFragment.statusesDataSetChanged();
+            ((HomeActivity) activity).mConversationsFragment.statusesDataSetChanged();
         }
     }
 

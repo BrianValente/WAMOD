@@ -17,7 +17,7 @@ import wamod.utils.Utils;
 public class StockPicture {
 
     public Bitmap getStockPicture(ContactInfo contactInfo) {
-        Drawable myDrawable = App.mContext.getDrawable(R.drawable.ic_people);
+        Drawable myDrawable = App.mContext.getDrawable(R.drawable.ic_avatar);
         return Utils.drawableToBitmap(myDrawable);
     }
 

@@ -9,7 +9,7 @@ import com.whatsapp.data.ContactInfo;
 public class NumberParser {
 
     public static String parseNumber(ContactInfo contactInfo) {
-        return "";
+        return contactInfo.mJabberId;
     }
 
 }

@@ -14,10 +14,10 @@ import wamod.fragment.PageFragment;
 import wamod.utils.Resources;
 import wamod.utils.Utils;
 
-public class ThemingFragment extends PageFragment {
+public class ThemesFragment extends PageFragment {
 
     public static PageFragment create(HomePageFragment homePageFragment) {
-        ThemingFragment privacyFragment = new ThemingFragment();
+        ThemesFragment privacyFragment = new ThemesFragment();
         privacyFragment.mHomePageFragment = homePageFragment;
         return privacyFragment;
     }
@@ -41,7 +41,7 @@ public class ThemingFragment extends PageFragment {
         toolbar.setTitleTextColor(Color.BLACK);
 
         toolbar.setNavigationIcon(backDrawable);
-        toolbar.setTitle("Theming");
+        toolbar.setTitle("Themes");
         toolbar.setNavigationOnClickListener(new NavigationClickListener());
         toolbar.setPadding(0, Utils.getStatusBarHeight(mHomeActivity), 0, 0);
 

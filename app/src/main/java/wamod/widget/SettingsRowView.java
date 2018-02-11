@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -28,9 +27,10 @@ import wamod.activity.HomeActivity;
 import wamod.fragment.settings.AboutFragment;
 import wamod.fragment.settings.DebugFragment;
 import wamod.fragment.settings.PrivacyFragment;
-import wamod.fragment.settings.ThemingFragment;
+import wamod.fragment.settings.ThemesFragment;
 import wamod.fragment.settings.TipsFragment;
 import wamod.utils.Resources;
+import wamod.utils.Theme;
 import wamod.utils.Utils;
 
 /**
@@ -100,7 +100,7 @@ public class SettingsRowView extends View implements View.OnClickListener {
         mIconSize = Utils.dpToPx(mActivity, 20);
         mIconMarginLeft = Utils.dpToPx(mActivity, 16);
 
-        int color = Color.parseColor("#ff606060");
+        int color = Theme.getColor(Theme.Key.COLOR_PREFERENCE_ITEM_BUTTON_ICON);
 
         mIconPaint = new Paint();
         mIconPaint.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
@@ -112,7 +112,7 @@ public class SettingsRowView extends View implements View.OnClickListener {
 
         mLabelPaint = new Paint();
         mLabelPaint.setAntiAlias(true);
-        mLabelPaint.setColor(Color.BLACK);
+        mLabelPaint.setColor(Theme.getColor(Theme.Key.COLOR_PREFERENCE_ITEM_BUTTON_TITLE));
         mLabelPaint.getTextBounds(mLabel, 0, mLabel.length(), mLabelRect);
         mLabelPaint.setTextSize(Utils.spToPx(mActivity, 14));
 
@@ -120,6 +120,8 @@ public class SettingsRowView extends View implements View.OnClickListener {
 
         float textHeight = mLabelPaint.descent() - mLabelPaint.ascent();
         mLabelOffset = (textHeight / 2) - mLabelPaint.descent();
+
+        setBackgroundColor(Theme.getColor(Theme.Key.COLOR_PREFERENCE_ITEM_BUTTON_BACKGROUND));
 
         setOnClickListener(this);
     }
@@ -151,8 +153,8 @@ public class SettingsRowView extends View implements View.OnClickListener {
 
         switch (name) {
             // WAMOD
-            case "wamod_theming":
-                mActivity.mSettingsFragment.openPage(ThemingFragment.class);
+            case "wamod_themes":
+                mActivity.mSettingsFragment.openPage(ThemesFragment.class);
                 break;
             case "wamod_privacy":
                 mActivity.mSettingsFragment.openPage(PrivacyFragment.class);

@@ -4,6 +4,7 @@
 
     <style name="Theme.WAMOD.Home" parent="@style/Theme.WAMOD">
         <item name="android:statusBarColor">#00000000</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
     </style>
 </resources>

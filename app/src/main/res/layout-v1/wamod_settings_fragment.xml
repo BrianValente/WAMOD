@@ -11,39 +11,39 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/toolbar_container"
-        android:background="#fff0f0f0">
+        android:layout_below="@+id/toolbar_container">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
+            <!--<View
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dip"
                 android:layout_marginTop="24.0dip"
                 android:background="#ffcccccc" />
-
+-->
             <LinearLayout
                 android:id="@+id/profile"
                 android:layout_width="fill_parent"
                 android:layout_height="96.0dip"
-                android:background="#ffffffff"
+                android:background="#303030"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingEnd="16.0dip"
-                android:paddingStart="16.0dip">
+                android:paddingStart="16.0dip"
+                android:layout_marginTop="16dp">
 
                 <wamod.widget.CircleImageView
                     android:id="@+id/profile_picture"
                     android:layout_width="72.0dip"
                     android:layout_height="72.0dip"
                     android:layout_marginEnd="16.0dip"
-                    android:src="@drawable/brian" />
+                    android:src="@drawable/brian3" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Brian Valente"
-                        android:textColor="#ff000000"
+                        android:textColor="#ffffff"
                         android:textSize="18.0sp"
                         android:textStyle="bold" />
 
@@ -72,11 +72,18 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <View
+            <!--<View
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dip"
                 android:layout_marginBottom="24.0dip"
-                android:background="#ffcccccc" />
+                android:background="#ffcccccc" />-->
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="24.0dip" />
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,26 +99,26 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24.0dip"
-                android:background="#ffffffff"
+                android:background="#303030"
                 android:orientation="vertical">
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
-                    android:id="@+id/wamod_theming"
+                    android:id="@+id/wamod_themes"
                     android:layout_width="fill_parent"
                     android:layout_height="48.0dip"
                     app:icon="@drawable/ic_palette"
-                    app:label="Theming" />
+                    app:label="Themes" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/wamod_privacy"
@@ -120,11 +127,11 @@
                     app:icon="@drawable/ic_lock"
                     app:label="Privacy" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/wamod_donate"
@@ -133,11 +140,11 @@
                     app:icon="@drawable/ic_money"
                     app:label="Donate" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/wamod_tips"
@@ -146,11 +153,11 @@
                     app:icon="@drawable/ic_lightbulb"
                     app:label="Tips &amp; Help" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/wamod_about"
@@ -159,10 +166,10 @@
                     app:icon="@drawable/ic_info"
                     app:label="About" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
             </LinearLayout>
 
@@ -180,13 +187,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24.0dip"
-                android:background="#ffffffff"
+                android:background="#303030"
                 android:orientation="vertical">
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/account_info"
@@ -195,11 +202,11 @@
                     app:icon="@drawable/ic_account_box"
                     app:label="@string/settings_account_info" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/chat"
@@ -208,11 +215,11 @@
                     app:icon="@drawable/ic_chat"
                     app:label="@string/settings_chat" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/notifications"
@@ -221,11 +228,11 @@
                     app:icon="@drawable/ic_notifications"
                     app:label="@string/settings_notifications" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/data"
@@ -234,11 +241,11 @@
                     app:icon="@drawable/ic_data_usage"
                     app:label="@string/settings_data_and_storage_usage" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/contacts"
@@ -247,11 +254,11 @@
                     app:icon="@drawable/ic_people"
                     app:label="@string/contacts" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/help"
@@ -260,11 +267,11 @@
                     app:icon="@drawable/wamod_ic_help"
                     app:label="@string/settings_help" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
                     android:layout_marginStart="52.0dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
 
                 <wamod.widget.SettingsRowView
                     android:id="@+id/about"
@@ -273,11 +280,12 @@
                     app:icon="@drawable/ic_info"
                     app:label="@string/settings_about" />
 
-                <View
+                <!--<View
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dip"
-                    android:background="#ffcccccc" />
+                    android:background="#ffcccccc" />-->
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
 </wamod.widget.HomePageContentLayout>

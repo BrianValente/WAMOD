@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#1d1d1d">
+
     <include layout="@layout/wamod_home_toolbar" />
-    <FrameLayout android:id="@+id/fragment" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@+id/toolbar_container" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_container">
+
+        <!-- android:layout_below="@+id/toolbar_container" -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/website_type_home"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="48sp"
+                android:layout_marginTop="52dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="20dp"/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical"
+                    android:paddingBottom="24.0dip"
+                    android:layout_marginTop="16dp">
+
+                    <!--<TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10.0dip"
+                        android:layout_marginLeft="16.0dip"
+                        android:layout_marginStart="16.0dip"
+                        android:layout_marginTop="15.0dip"
+                        android:text="Stories"
+                        android:textColor="@android:color/white"
+                        android:textSize="14.0sp"
+                        android:textStyle="bold" />-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/statuses_recyclerview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="82.0dip"
+                        android:scrollbars="horizontal" />
+
+                    <FrameLayout
+                        android:id="@+id/statuses_fragment"
+                        android:layout_width="0.0dip"
+                        android:layout_height="0.0dip" />
+                </LinearLayout>
+
+                <!--<TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
+                    android:layout_marginLeft="16.0dip"
+                    android:layout_marginStart="16.0dip"
+                    android:layout_marginTop="15.0dip"
+                    android:text="Chats"
+                    android:textColor="@android:color/white"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold" />-->
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <FrameLayout
+        android:id="@+id/stock_statuses_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 </RelativeLayout>

@@ -77,6 +77,10 @@ public class HomePageContentLayout extends RelativeLayout {
     public void computeScroll() {
         super.computeScroll();
 
+        if (isInEditMode()) {
+            return;
+        }
+
         if (mDragHelper.continueSettling(true)) {
             invalidate();
         }

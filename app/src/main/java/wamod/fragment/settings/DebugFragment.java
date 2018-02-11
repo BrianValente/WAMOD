@@ -51,7 +51,7 @@ public class DebugFragment extends PageFragment {
 
         ArrayList<Button> buttons = new ArrayList<>();
 
-        buttons.add((Button) mRootView.findViewById(Resources.getId(mHomeActivity, "theming")));
+        buttons.add((Button) mRootView.findViewById(Resources.getId(mHomeActivity, "themes")));
         buttons.add((Button) mRootView.findViewById(Resources.getId(mHomeActivity, "privacy")));
         buttons.add((Button) mRootView.findViewById(Resources.getId(mHomeActivity, "about")));
         buttons.add((Button) mRootView.findViewById(Resources.getId(mHomeActivity, "debug")));
@@ -68,8 +68,8 @@ public class DebugFragment extends PageFragment {
         String name = mHomeActivity.getResources().getResourceEntryName(view.getId());
 
         switch (name) {
-            case "theming":
-                mHomePageFragment.openPage(ThemingFragment.class);
+            case "themes":
+                mHomePageFragment.openPage(ThemesFragment.class);
                 break;
             case "privacy":
                 mHomePageFragment.openPage(PrivacyFragment.class);

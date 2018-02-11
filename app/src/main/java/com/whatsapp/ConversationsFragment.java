@@ -8,13 +8,35 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import wamod.fragment.OldAppCompatBridgeListFragment;
 
 /**
  * Created by brianvalente on 11/24/17.
  */
 
-public class ConversationsFragment extends OldAppCompatBridgeListFragment {
+public class ConversationsFragment extends wamod.com.whatsapp.ConversationsFragment {
+
+    public ArrayList<Row> mArrayList = new ArrayList<>();
+
+    public ConversationsFragment() {
+        mArrayList.add(new Row() {
+            @Override
+            public String getJabberId() {
+                return "5491100000000@s.whatsapp.net";
+            }
+        });
+
+        for(int i=0; i<20; i++) {
+            mArrayList.add(new Row() {
+                @Override
+                public String getJabberId() {
+                    return "someone";
+                }
+            });
+        }
+    }
 
     String[] numbers_text = new String[] { "one", "two", "three", "four",
             "five", "six", "seven", "eight", "nine", "ten", "eleven",
@@ -37,5 +59,9 @@ public class ConversationsFragment extends OldAppCompatBridgeListFragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+    }
+
+    public interface Row {
+        String getJabberId();
     }
 }
